@@ -251,11 +251,10 @@ Paths default to the repository root and relocate with `PHYSIOGRAPH_ROOT`.
 
 ## Status
 
-Submission-ready and **under double-blind review at WSDM 2027** (Feb 15–19, 2027,
-Hong Kong). Earlier lineage: originally planned for the ICDM 2026 Applied Track,
-then reframed from a method paper into a benchmark once the negative result proved
-robust. The manuscript is not included here while review is in progress; the code
-and all frozen result records are.
+Research code, simulator and frozen result records for an unpublished manuscript,
+which is not included in this repository. This work was originally framed as a
+method paper and was reframed into a benchmark once the negative result proved
+robust — the code and every frozen result record behind that reframe are here.
 
 ## Author
 
