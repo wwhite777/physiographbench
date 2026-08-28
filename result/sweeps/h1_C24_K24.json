@@ -1,0 +1,100 @@
+{
+  "config": {
+    "npz": "data/cinc2019_cohort.npz",
+    "models": "physiograph_gru,grud",
+    "epochs": 35,
+    "C": 24,
+    "K": 24,
+    "batch": 128,
+    "lr": 0.001,
+    "gpu": 0,
+    "d_hidden": 128,
+    "d_model": 96,
+    "d_state": 48,
+    "n_layers": 2,
+    "seed": 0,
+    "train_frac": 1.0,
+    "out": "result/sweeps/h1_C24_K24.json"
+  },
+  "results": {
+    "persistence": {
+      "model": "persistence",
+      "n_params": 0,
+      "A_test": {
+        "RMSE@6": 0.8262467384338379,
+        "MAE@6": 0.548888087272644,
+        "RMSE@24": 0.9377318620681763,
+        "MAE@24": 0.6505817770957947,
+        "RMSE_cardiovascular": 0.9050281047821045,
+        "RMSE_pulmonary": 1.0252513885498047,
+        "RMSE_renal": 0.6913082599639893,
+        "RMSE_metabolic": 0.8780839443206787
+      },
+      "B_external": {
+        "RMSE@6": 0.8877708911895752,
+        "MAE@6": 0.5735253691673279,
+        "RMSE@24": 1.011071801185608,
+        "MAE@24": 0.682905375957489,
+        "RMSE_cardiovascular": 1.0109153985977173,
+        "RMSE_pulmonary": 1.0749279260635376,
+        "RMSE_renal": 0.7581351399421692,
+        "RMSE_metabolic": 0.8782728910446167
+      },
+      "degradation_pct": 7.82099255491647
+    },
+    "physiograph_gru": {
+      "model": "physiograph_gru",
+      "n_params": 912032,
+      "val_RMSE": 0.828511655330658,
+      "A_test": {
+        "RMSE@6": 0.7574821710586548,
+        "MAE@6": 0.5415455102920532,
+        "RMSE@24": 0.8283191919326782,
+        "MAE@24": 0.6016491055488586,
+        "RMSE_cardiovascular": 0.7842499017715454,
+        "RMSE_pulmonary": 0.8647408485412598,
+        "RMSE_renal": 0.9929118752479553,
+        "RMSE_metabolic": 0.8708259463310242
+      },
+      "B_external": {
+        "RMSE@6": 0.7952470183372498,
+        "MAE@6": 0.5651007294654846,
+        "RMSE@24": 0.8604979515075684,
+        "MAE@24": 0.6197993159294128,
+        "RMSE_cardiovascular": 0.8506001234054565,
+        "RMSE_pulmonary": 0.8594042658805847,
+        "RMSE_renal": 1.036706566810608,
+        "RMSE_metabolic": 0.8686366081237793
+      },
+      "degradation_pct": 3.8848260294209713,
+      "train_seconds": 446.2
+    },
+    "grud": {
+      "model": "grud",
+      "n_params": 126624,
+      "val_RMSE": 0.807678759098053,
+      "A_test": {
+        "RMSE@6": 0.7259740829467773,
+        "MAE@6": 0.5212729573249817,
+        "RMSE@24": 0.8021027445793152,
+        "MAE@24": 0.5836127400398254,
+        "RMSE_cardiovascular": 0.7809706926345825,
+        "RMSE_pulmonary": 0.8502158522605896,
+        "RMSE_renal": 0.6986883878707886,
+        "RMSE_metabolic": 0.7831816077232361
+      },
+      "B_external": {
+        "RMSE@6": 0.7746647596359253,
+        "MAE@6": 0.5565698146820068,
+        "RMSE@24": 0.849247395992279,
+        "MAE@24": 0.6163225769996643,
+        "RMSE_cardiovascular": 0.8489608764648438,
+        "RMSE_pulmonary": 0.8635751008987427,
+        "RMSE_renal": 0.7802911400794983,
+        "RMSE_metabolic": 0.8278288841247559
+      },
+      "degradation_pct": 5.877632476833148,
+      "train_seconds": 53.4
+    }
+  }
+}
