@@ -1,0 +1,575 @@
+{
+  "schema_version": 4,
+  "checkpoint": "runs/checkpoints/ncde.pt",
+  "checkpoint_sha256": "32b77bdf040a23cc1a6a521b52da86efa08b597e0f16e6e30974c78b0723137f",
+  "data": {
+    "C": 12,
+    "K": 12,
+    "organ_slices": [
+      [
+        0,
+        4
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        8,
+        11
+      ],
+      [
+        11,
+        16
+      ]
+    ],
+    "organ_names": [
+      "cardiovascular",
+      "pulmonary",
+      "renal",
+      "metabolic"
+    ],
+    "features": [
+      "HR",
+      "SBP",
+      "MAP",
+      "DBP",
+      "O2Sat",
+      "Resp",
+      "FiO2",
+      "PaCO2",
+      "Creatinine",
+      "BUN",
+      "Potassium",
+      "Lactate",
+      "Glucose",
+      "HCO3",
+      "WBC",
+      "Temp"
+    ],
+    "split_stay_indices": {
+      "train": [
+        13413,
+        18674,
+        7969,
+        3710,
+        894,
+        3044,
+        18894,
+        18746,
+        373,
+        2378,
+        16835,
+        16873,
+        20131,
+        8187,
+        14128,
+        10773
+      ],
+      "val": [
+        6170,
+        4069,
+        17993,
+        2060,
+        8955,
+        18609,
+        16282,
+        2336,
+        2528,
+        14467,
+        14195,
+        9873,
+        4005,
+        14085,
+        14210,
+        1643
+      ],
+      "A": [
+        11102,
+        15278,
+        2384,
+        18764,
+        2665,
+        4742,
+        11333,
+        5900,
+        18723,
+        8280,
+        4868,
+        17921,
+        133,
+        19623,
+        5784,
+        2462
+      ],
+      "B": [
+        7095,
+        2253,
+        15434,
+        122,
+        19082,
+        5230,
+        5371,
+        14399,
+        18046,
+        4340,
+        13241,
+        3185,
+        10366,
+        14779,
+        18295,
+        9898
+      ]
+    },
+    "counts": {
+      "train": 16,
+      "val": 16,
+      "A": 16,
+      "B": 16
+    },
+    "cohort_sha256": "d52d8131323fc7a3838ae4fe523c2edbc02d2daa781de1859e7d184897dfb51f",
+    "min_length": 0,
+    "max_stays": 64
+  },
+  "trace": [
+    {
+      "mode": "frozen_default_index_grid",
+      "spline_grid": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0,
+        11.0
+      ],
+      "time_channel": [
+        0.0,
+        0.09090909361839294,
+        0.1818181872367859,
+        0.27272728085517883,
+        0.3636363744735718,
+        0.4545454680919647,
+        0.5454545021057129,
+        0.6363636255264282,
+        0.7272727489471436,
+        0.8181818127632141,
+        0.9090908765792847,
+        1.0
+      ],
+      "rk4_step_size": 0.09090909090909091,
+      "nominal_solver_steps": 121,
+      "coefficients_nonfinite": 0,
+      "status": "complete",
+      "loss": 17325.779296875,
+      "predictions_nonfinite": 0,
+      "latent_nonfinite": 0,
+      "latent_abs_max": 3601.97509765625,
+      "prediction_abs_max": 823.1526489257812,
+      "gradient_nonfinite": 0,
+      "gradient_norm": 134262570064835.95,
+      "parameter_gradients": {
+        "z0.weight": {
+          "norm": 0.0,
+          "nonfinite": 0
+        },
+        "z0.bias": {
+          "norm": 2242250672.721541,
+          "nonfinite": 0
+        },
+        "func.net.0.weight": {
+          "norm": 134172335011888.6,
+          "nonfinite": 0
+        },
+        "func.net.0.bias": {
+          "norm": 3783540567.6599135,
+          "nonfinite": 0
+        },
+        "func.net.2.weight": {
+          "norm": 4909988245840.634,
+          "nonfinite": 0
+        },
+        "func.net.2.bias": {
+          "norm": 337985140715.808,
+          "nonfinite": 0
+        },
+        "dec.cell.weight_ih": {
+          "norm": 168479.3776483429,
+          "nonfinite": 0
+        },
+        "dec.cell.weight_hh": {
+          "norm": 1174788.4903267524,
+          "nonfinite": 0
+        },
+        "dec.cell.bias_ih": {
+          "norm": 107.26845506156833,
+          "nonfinite": 0
+        },
+        "dec.cell.bias_hh": {
+          "norm": 107.24930719625135,
+          "nonfinite": 0
+        },
+        "dec.out.weight": {
+          "norm": 316122.66089795687,
+          "nonfinite": 0
+        },
+        "dec.out.bias": {
+          "norm": 34.585903844043784,
+          "nonfinite": 0
+        }
+      },
+      "batch_index": 0,
+      "stay_indices": [
+        7095,
+        2253,
+        15434,
+        122,
+        19082,
+        5230,
+        5371,
+        14399
+      ]
+    },
+    {
+      "mode": "explicit_0_1_grid",
+      "spline_grid": [
+        0.0,
+        0.09090909361839294,
+        0.1818181872367859,
+        0.27272728085517883,
+        0.3636363744735718,
+        0.4545454680919647,
+        0.5454545021057129,
+        0.6363636255264282,
+        0.7272727489471436,
+        0.8181818127632141,
+        0.9090908765792847,
+        1.0
+      ],
+      "time_channel": [
+        0.0,
+        0.09090909361839294,
+        0.1818181872367859,
+        0.27272728085517883,
+        0.3636363744735718,
+        0.4545454680919647,
+        0.5454545021057129,
+        0.6363636255264282,
+        0.7272727489471436,
+        0.8181818127632141,
+        0.9090908765792847,
+        1.0
+      ],
+      "rk4_step_size": 0.09090909090909091,
+      "nominal_solver_steps": 11,
+      "coefficients_nonfinite": 0,
+      "status": "complete",
+      "loss": 836454.75,
+      "predictions_nonfinite": 0,
+      "latent_nonfinite": 0,
+      "latent_abs_max": 30886.470703125,
+      "prediction_abs_max": 4583.283203125,
+      "gradient_nonfinite": 0,
+      "gradient_norm": 13765123.812817112,
+      "parameter_gradients": {
+        "z0.weight": {
+          "norm": 0.0,
+          "nonfinite": 0
+        },
+        "z0.bias": {
+          "norm": 88.64722738211124,
+          "nonfinite": 0
+        },
+        "func.net.0.weight": {
+          "norm": 76954.3899215024,
+          "nonfinite": 0
+        },
+        "func.net.0.bias": {
+          "norm": 109.96950090244171,
+          "nonfinite": 0
+        },
+        "func.net.2.weight": {
+          "norm": 3082499.865309151,
+          "nonfinite": 0
+        },
+        "func.net.2.bias": {
+          "norm": 1551.2063932550727,
+          "nonfinite": 0
+        },
+        "dec.cell.weight_ih": {
+          "norm": 2756.8615144591363,
+          "nonfinite": 0
+        },
+        "dec.cell.weight_hh": {
+          "norm": 1186501.198893548,
+          "nonfinite": 0
+        },
+        "dec.cell.bias_ih": {
+          "norm": 10.210431878527638,
+          "nonfinite": 0
+        },
+        "dec.cell.bias_hh": {
+          "norm": 10.17288332584181,
+          "nonfinite": 0
+        },
+        "dec.out.weight": {
+          "norm": 13362750.877123617,
+          "nonfinite": 0
+        },
+        "dec.out.bias": {
+          "norm": 242.27087820647728,
+          "nonfinite": 0
+        }
+      },
+      "batch_index": 0,
+      "stay_indices": [
+        7095,
+        2253,
+        15434,
+        122,
+        19082,
+        5230,
+        5371,
+        14399
+      ]
+    },
+    {
+      "mode": "frozen_default_index_grid",
+      "spline_grid": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0,
+        11.0
+      ],
+      "time_channel": [
+        0.0,
+        0.09090909361839294,
+        0.1818181872367859,
+        0.27272728085517883,
+        0.3636363744735718,
+        0.4545454680919647,
+        0.5454545021057129,
+        0.6363636255264282,
+        0.7272727489471436,
+        0.8181818127632141,
+        0.9090908765792847,
+        1.0
+      ],
+      "rk4_step_size": 0.09090909090909091,
+      "nominal_solver_steps": 121,
+      "coefficients_nonfinite": 0,
+      "status": "complete",
+      "loss": 0.762683093547821,
+      "predictions_nonfinite": 0,
+      "latent_nonfinite": 0,
+      "latent_abs_max": 12.101326942443848,
+      "prediction_abs_max": 2.13651967048645,
+      "gradient_nonfinite": 0,
+      "gradient_norm": 4.0886941652215745,
+      "parameter_gradients": {
+        "z0.weight": {
+          "norm": 0.20524039937172608,
+          "nonfinite": 0
+        },
+        "z0.bias": {
+          "norm": 0.06312984223554535,
+          "nonfinite": 0
+        },
+        "func.net.0.weight": {
+          "norm": 1.764019189298887,
+          "nonfinite": 0
+        },
+        "func.net.0.bias": {
+          "norm": 0.0894495821153292,
+          "nonfinite": 0
+        },
+        "func.net.2.weight": {
+          "norm": 1.59164477749651,
+          "nonfinite": 0
+        },
+        "func.net.2.bias": {
+          "norm": 0.18145825264112084,
+          "nonfinite": 0
+        },
+        "dec.cell.weight_ih": {
+          "norm": 2.140505757282615,
+          "nonfinite": 0
+        },
+        "dec.cell.weight_hh": {
+          "norm": 0.6206031268839552,
+          "nonfinite": 0
+        },
+        "dec.cell.bias_ih": {
+          "norm": 0.02497602034834445,
+          "nonfinite": 0
+        },
+        "dec.cell.bias_hh": {
+          "norm": 0.019431925193931738,
+          "nonfinite": 0
+        },
+        "dec.out.weight": {
+          "norm": 2.4515583189204464,
+          "nonfinite": 0
+        },
+        "dec.out.bias": {
+          "norm": 0.08504777850126878,
+          "nonfinite": 0
+        }
+      },
+      "batch_index": 1,
+      "stay_indices": [
+        18046,
+        4340,
+        13241,
+        3185,
+        10366,
+        14779,
+        18295,
+        9898
+      ]
+    },
+    {
+      "mode": "explicit_0_1_grid",
+      "spline_grid": [
+        0.0,
+        0.09090909361839294,
+        0.1818181872367859,
+        0.27272728085517883,
+        0.3636363744735718,
+        0.4545454680919647,
+        0.5454545021057129,
+        0.6363636255264282,
+        0.7272727489471436,
+        0.8181818127632141,
+        0.9090908765792847,
+        1.0
+      ],
+      "time_channel": [
+        0.0,
+        0.09090909361839294,
+        0.1818181872367859,
+        0.27272728085517883,
+        0.3636363744735718,
+        0.4545454680919647,
+        0.5454545021057129,
+        0.6363636255264282,
+        0.7272727489471436,
+        0.8181818127632141,
+        0.9090908765792847,
+        1.0
+      ],
+      "rk4_step_size": 0.09090909090909091,
+      "nominal_solver_steps": 11,
+      "coefficients_nonfinite": 0,
+      "status": "complete",
+      "loss": 0.7826545238494873,
+      "predictions_nonfinite": 0,
+      "latent_nonfinite": 0,
+      "latent_abs_max": 14.93098258972168,
+      "prediction_abs_max": 2.239896535873413,
+      "gradient_nonfinite": 0,
+      "gradient_norm": 4.811221643701593,
+      "parameter_gradients": {
+        "z0.weight": {
+          "norm": 0.09119431686119711,
+          "nonfinite": 0
+        },
+        "z0.bias": {
+          "norm": 0.048512929209941935,
+          "nonfinite": 0
+        },
+        "func.net.0.weight": {
+          "norm": 2.592062110403456,
+          "nonfinite": 0
+        },
+        "func.net.0.bias": {
+          "norm": 0.06771811865314464,
+          "nonfinite": 0
+        },
+        "func.net.2.weight": {
+          "norm": 1.9773724791817673,
+          "nonfinite": 0
+        },
+        "func.net.2.bias": {
+          "norm": 0.18373427504186723,
+          "nonfinite": 0
+        },
+        "dec.cell.weight_ih": {
+          "norm": 2.153001734898157,
+          "nonfinite": 0
+        },
+        "dec.cell.weight_hh": {
+          "norm": 0.6412467830590176,
+          "nonfinite": 0
+        },
+        "dec.cell.bias_ih": {
+          "norm": 0.022276167021238424,
+          "nonfinite": 0
+        },
+        "dec.cell.bias_hh": {
+          "norm": 0.017288500793725972,
+          "nonfinite": 0
+        },
+        "dec.out.weight": {
+          "norm": 2.7223956963810325,
+          "nonfinite": 0
+        },
+        "dec.out.bias": {
+          "norm": 0.10585135451207954,
+          "nonfinite": 0
+        }
+      },
+      "batch_index": 1,
+      "stay_indices": [
+        18046,
+        4340,
+        13241,
+        3185,
+        10366,
+        14779,
+        18295,
+        9898
+      ]
+    }
+  ],
+  "full_B_frozen_error_summary": {
+    "n_stays": 14824,
+    "n_evaluable_stays": 14820,
+    "nonfinite_predictions": 0,
+    "pooled_masked_RMSE": 3.061957605882857,
+    "window_RMSE_percentiles": {
+      "50": 0.753813624382019,
+      "90": 1.1318669319152832,
+      "95": 1.3019740581512451,
+      "99": 1.8237580060958862,
+      "100": 326.516357421875
+    },
+    "worst_stay_indices_in_probe": [
+      7095,
+      2253,
+      15434,
+      122,
+      19082,
+      5230,
+      5371,
+      14399
+    ],
+    "error_sha256": "6ce0c09f5ae16dedb120b920e44eb64e3bfb23db0e7572649ad4af7344b2d677",
+    "selection": "half of B probe from worst frozen-checkpoint window RMSEs; remainder from fixed random subset"
+  },
+  "external_B_updates": 0,
+  "purpose": "diagnosis only; explicit grid is a numerical comparison, not a newly tuned baseline"
+}

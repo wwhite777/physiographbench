@@ -1,0 +1,549 @@
+{
+  "schema_version": 4,
+  "criterion": "minimum A-validation pooled masked RMSE; cfg lexical tie break",
+  "grid_seed": 0,
+  "selected_seeds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "epochs_budget": 35,
+  "grid": [
+    {
+      "path": "runs/clinical/grid/gru/lr0.0005_small/seed0/run.json",
+      "sha256": "0ef0ca22384cb0d8ea210c918ad8e8ce5dcb94499bee6aa1bdf90e3b6c066d41",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru/lr0.0005_large/seed0/run.json",
+      "sha256": "b8781748d3ee0032ea107f21ef81cb0f5503c45a5c40dba80c904916242d9f82",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru/lr0.001_small/seed0/run.json",
+      "sha256": "75c785c5bc85afb507d933f19a49c5162c311fe492593cf6b6b278a8914874fd",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru/lr0.001_large/seed0/run.json",
+      "sha256": "92d04c6649d551ce42efcb16440b55a8b5e9901e907eabe0fb0ad798ca95ac70",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru/lr0.002_small/seed0/run.json",
+      "sha256": "a001528c2187b43eb134d93532a832d6c3120f04e9e47d5ebe7066cee5a39e7f",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru/lr0.002_large/seed0/run.json",
+      "sha256": "db85101c092475000a205d24b25d84cf95ec17e406e90d04c0e842ed1650fecb",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru_med/lr0.0005_small/seed0/run.json",
+      "sha256": "71ea6d8142dad63bf6f9283c8dde523db3c863a6cf5e67be774acee84b99d14c",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru_med/lr0.0005_large/seed0/run.json",
+      "sha256": "67cfe63357cd558579a2213a532d49d1fbcdd05611277fdcd9a0e2a94e230999",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru_med/lr0.001_small/seed0/run.json",
+      "sha256": "8e0903c6f7c3da5ea2ecaddb30f93d8c4d983b6abf8a8bb00527090f8ccc6bfc",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru_med/lr0.001_large/seed0/run.json",
+      "sha256": "3f16f15f8ee75400a5f4a091c9029251327e6b00e9087d0b5bc78be68d36e63c",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru_med/lr0.002_small/seed0/run.json",
+      "sha256": "fedde9d89411a74f4e141757b857e2dd9c4758f97e3349192c16f5c9b389431b",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru_med/lr0.002_large/seed0/run.json",
+      "sha256": "32074988c682b55d642d6033fa9bb76e688c797acaa5b3082184969a80657651",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru_large/lr0.0005_small/seed0/run.json",
+      "sha256": "cf378858108741936174cf2122bb5532812db3d9f4f9c76d0a4af5ccbfafedaf",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru_large/lr0.0005_large/seed0/run.json",
+      "sha256": "c996615a5f66fc660984b67d944b5b8de35a1e1c8679094182aa1a79c3c92f7c",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru_large/lr0.001_small/seed0/run.json",
+      "sha256": "bbfb2455b96826910ffb1c8e640dfe339e6836392ab5d23186610a925fdda78b",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru_large/lr0.001_large/seed0/run.json",
+      "sha256": "ea6899f60d090bb5d0590186e9999c1bbd542622811123784d44a2c5725a9c9b",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru_large/lr0.002_small/seed0/run.json",
+      "sha256": "a56d29194acf411af9e445c20224451e5d01dc929864a2d7b6c7653d8c0660e5",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/gru_large/lr0.002_large/seed0/run.json",
+      "sha256": "3ec243bbb30a14b62424172f81170772de43f4f2c4ad49f6e9d4f6006b9e3135",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/grud/lr0.0005_small/seed0/run.json",
+      "sha256": "0e71eb76e7bbbe8c44513976a32048d1838f4f74b4c3bee32eee2be88776ddc2",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/grud/lr0.0005_large/seed0/run.json",
+      "sha256": "dd1db779fa48c3535e5c2231479d3d3c231efb75e65bb37543bfe61dad12745e",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/grud/lr0.001_small/seed0/run.json",
+      "sha256": "523f0de980d4db235a3c666f7bc3e1b769d16027ccb59c52149c79579e6cb334",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/grud/lr0.001_large/seed0/run.json",
+      "sha256": "302695919b44758c01c0bfa6b32c3092807063d9988ba04726744547461bb997",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/grud/lr0.002_small/seed0/run.json",
+      "sha256": "bb91ac217b965d779b6eb0ccd14c72e8ef51c293d5c15e227654c36e1fec2344",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/grud/lr0.002_large/seed0/run.json",
+      "sha256": "b8650604b55aa4fe4d10e703d34d530d83905280faa1fa4b287263c14f41504f",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/ncde/lr0.0005_small/seed0/run.json",
+      "sha256": "a6abbfb6016f1a5f678b5a10a590d1e327bfef30b34a306f065d656518ccf2ec",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/ncde/lr0.0005_large/seed0/run.json",
+      "sha256": "d40d47ff4cb7921c5f6b15a8eac1c1035ad183f35afcdc4814e9e7828a5db970",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/ncde/lr0.001_small/seed0/run.json",
+      "sha256": "d703d6217adb74ec715c982b2bb0ffc6287c9833faf40f9c3a6b4116f0d45022",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/ncde/lr0.001_large/seed0/run.json",
+      "sha256": "92a0d744950dc0016ce5ec145479f21b3199b8c7e3f64e9df8c585555a5a5ea2",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/ncde/lr0.002_small/seed0/run.json",
+      "sha256": "b9b70f05781364d6f19c784f8ee74c25ea7ac11dcea0b4f03b0585ad4074519b",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/ncde/lr0.002_large/seed0/run.json",
+      "sha256": "c9fb4b6457258bc22c37fb70566658f800d9d2ff1e471d404d450e3aa332d7e8",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/odernn/lr0.0005_small/seed0/run.json",
+      "sha256": "672cb8f33d3c9f61d5344c8b4f07c1944e3774044656de77baed976ace046a77",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/odernn/lr0.0005_large/seed0/run.json",
+      "sha256": "bbefb202efb80a950de9beb3f336c3c4dcb9034bf7d3cca012a16d4c0e7134d1",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/odernn/lr0.001_small/seed0/run.json",
+      "sha256": "12efa4d942944be3dc66f558f283bdc34c372fdd8cdd5fea3af913932ce5d659",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/odernn/lr0.001_large/seed0/run.json",
+      "sha256": "16099ee94e1f492eb6641c3ff9f9c3f8850bed15ad452a151325e97b631b1ddc",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/odernn/lr0.002_small/seed0/run.json",
+      "sha256": "10f011b4f72e1cfdfaf96da958984707bcd17735c52f7845173957013cb11fff",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/odernn/lr0.002_large/seed0/run.json",
+      "sha256": "06e968f8eea69e848faf64e50b1435f2e2bc9ddb95cbb01e1f4ae212a95c0a2a",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/graphgru/lr0.0005_small/seed0/run.json",
+      "sha256": "f9e9ca2a1b1e8203182ec216b73a45bb38cc76fb40ea770b2e7971a0422f8c60",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/graphgru/lr0.0005_large/seed0/run.json",
+      "sha256": "085a4fa7fd71b75f5129b140ec362aeb3a7be939440cf709c39926fd2eeaf246",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/graphgru/lr0.001_small/seed0/run.json",
+      "sha256": "b15f731e1f798408075e3881a7ba8beefee26e09ed60c30fcaeb85a45a25c21d",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/graphgru/lr0.001_large/seed0/run.json",
+      "sha256": "af097d798c71d39e8b9a9cfc1e207f57fddde9243e210e7ac584e351bc614c90",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/graphgru/lr0.002_small/seed0/run.json",
+      "sha256": "6c3b7f67152d93a02ceec2a6cf878b064e0a5c8317960df921e636a167516826",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/graphgru/lr0.002_large/seed0/run.json",
+      "sha256": "86a941d039f60dfa49f46de6e4d02f09deb4ebb5c28bb68d590a3719231a8eba",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/physiograph/lr0.0005_small/seed0/run.json",
+      "sha256": "01c24cd5fbcaa6a36c181ccffc5aaf2ae11813aba25da27c0e4831ccc4706d2d",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/physiograph/lr0.0005_large/seed0/run.json",
+      "sha256": "dc8e39a79cdd1ec0b54cadfc42558795409e3b4701536d44fe419acfd19df356",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/physiograph/lr0.001_small/seed0/run.json",
+      "sha256": "8494cb3128e93e7e1fecfd27ac6f6487825e9dca4c27d4cba269190cb3a31931",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/physiograph/lr0.001_large/seed0/run.json",
+      "sha256": "f07bf9211e02af6f283bfc92bd4125ae7a1e0b5fefee9c8e106cbe59b26105f6",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/physiograph/lr0.002_small/seed0/run.json",
+      "sha256": "1c367eb19dadd5c5cff49b11073910ebab9b5292f3b630c63b71a56f8de452a2",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/physiograph/lr0.002_large/seed0/run.json",
+      "sha256": "8fadeff658f9d361c726e79ee2e7441c3bcf95360d6d54062bc1c0b3887978c5",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/physiograph_gru/lr0.0005_small/seed0/run.json",
+      "sha256": "6fced9bb3888f60a8d8f831c15bd89659798fcd70e1ee870b4b89421d57f7e31",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/physiograph_gru/lr0.0005_large/seed0/run.json",
+      "sha256": "edd4570970acc5a8c15167d4ca72b168e9f8169743d902a10e0b1cd0a73cc096",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/physiograph_gru/lr0.001_small/seed0/run.json",
+      "sha256": "1d0c32b21602025bf7bbe5adb7a9b208cdbe2e9417e83e68cd8afec8a47b9ae3",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/physiograph_gru/lr0.001_large/seed0/run.json",
+      "sha256": "71acfa20873e66303fc125ff794197d5825467943981f9f1d89c88aa814ca624",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/physiograph_gru/lr0.002_small/seed0/run.json",
+      "sha256": "49e60930562bc46012d434a96f9b05e639de43903f4083ace541d236a8a4e8e4",
+      "status": "complete"
+    },
+    {
+      "path": "runs/clinical/grid/physiograph_gru/lr0.002_large/seed0/run.json",
+      "sha256": "c3c8655d89bc5761d84c170a219ac44b5dc54f2350da0c1174112d56b620bcff",
+      "status": "complete"
+    }
+  ],
+  "models": {
+    "gru": {
+      "status": "selected",
+      "lr": 0.001,
+      "width": "large",
+      "cfg": "lr0.001_large",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "validation_RMSE": 0.7566246327734621,
+      "grid_run": "runs/clinical/grid/gru/lr0.001_large/seed0/run.json",
+      "grid_run_sha256": "92d04c6649d551ce42efcb16440b55a8b5e9901e907eabe0fb0ad798ca95ac70"
+    },
+    "gru_med": {
+      "status": "selected",
+      "lr": 0.0005,
+      "width": "large",
+      "cfg": "lr0.0005_large",
+      "sizes": {
+        "d_hidden": 640,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "validation_RMSE": 0.755580957140956,
+      "grid_run": "runs/clinical/grid/gru_med/lr0.0005_large/seed0/run.json",
+      "grid_run_sha256": "67cfe63357cd558579a2213a532d49d1fbcdd05611277fdcd9a0e2a94e230999"
+    },
+    "gru_large": {
+      "status": "selected",
+      "lr": 0.002,
+      "width": "large",
+      "cfg": "lr0.002_large",
+      "sizes": {
+        "d_hidden": 1024,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "validation_RMSE": 0.7549771733639279,
+      "grid_run": "runs/clinical/grid/gru_large/lr0.002_large/seed0/run.json",
+      "grid_run_sha256": "3ec243bbb30a14b62424172f81170772de43f4f2c4ad49f6e9d4f6006b9e3135"
+    },
+    "grud": {
+      "status": "selected",
+      "lr": 0.0005,
+      "width": "large",
+      "cfg": "lr0.0005_large",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "validation_RMSE": 0.7525840344980832,
+      "grid_run": "runs/clinical/grid/grud/lr0.0005_large/seed0/run.json",
+      "grid_run_sha256": "dd1db779fa48c3535e5c2231479d3d3c231efb75e65bb37543bfe61dad12745e"
+    },
+    "ncde": {
+      "status": "selected",
+      "lr": 0.002,
+      "width": "small",
+      "cfg": "lr0.002_small",
+      "sizes": {
+        "d_hidden": 128,
+        "d_model": 64,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "validation_RMSE": 0.8159515917870815,
+      "grid_run": "runs/clinical/grid/ncde/lr0.002_small/seed0/run.json",
+      "grid_run_sha256": "b9b70f05781364d6f19c784f8ee74c25ea7ac11dcea0b4f03b0585ad4074519b"
+    },
+    "odernn": {
+      "status": "selected",
+      "lr": 0.002,
+      "width": "small",
+      "cfg": "lr0.002_small",
+      "sizes": {
+        "d_hidden": 128,
+        "d_model": 64,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "validation_RMSE": 0.758014419731271,
+      "grid_run": "runs/clinical/grid/odernn/lr0.002_small/seed0/run.json",
+      "grid_run_sha256": "10f011b4f72e1cfdfaf96da958984707bcd17735c52f7845173957013cb11fff"
+    },
+    "graphgru": {
+      "status": "selected",
+      "lr": 0.0005,
+      "width": "large",
+      "cfg": "lr0.0005_large",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "validation_RMSE": 0.7623009519145487,
+      "grid_run": "runs/clinical/grid/graphgru/lr0.0005_large/seed0/run.json",
+      "grid_run_sha256": "085a4fa7fd71b75f5129b140ec362aeb3a7be939440cf709c39926fd2eeaf246"
+    },
+    "physiograph": {
+      "status": "selected",
+      "lr": 0.001,
+      "width": "small",
+      "cfg": "lr0.001_small",
+      "sizes": {
+        "d_hidden": 128,
+        "d_model": 64,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "validation_RMSE": 0.7910993755788721,
+      "grid_run": "runs/clinical/grid/physiograph/lr0.001_small/seed0/run.json",
+      "grid_run_sha256": "8494cb3128e93e7e1fecfd27ac6f6487825e9dca4c27d4cba269190cb3a31931"
+    },
+    "physiograph_gru": {
+      "status": "selected",
+      "lr": 0.0005,
+      "width": "large",
+      "cfg": "lr0.0005_large",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "validation_RMSE": 0.7813288028221809,
+      "grid_run": "runs/clinical/grid/physiograph_gru/lr0.0005_large/seed0/run.json",
+      "grid_run_sha256": "edd4570970acc5a8c15167d4ca72b168e9f8169743d902a10e0b1cd0a73cc096"
+    }
+  },
+  "width_definition": {
+    "gru": {
+      "small": {
+        "d_hidden": 128,
+        "d_model": 64,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "large": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      }
+    },
+    "gru_med": {
+      "small": {
+        "d_hidden": 320,
+        "d_model": 64,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "large": {
+        "d_hidden": 640,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      }
+    },
+    "gru_large": {
+      "small": {
+        "d_hidden": 512,
+        "d_model": 64,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "large": {
+        "d_hidden": 1024,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      }
+    },
+    "grud": {
+      "small": {
+        "d_hidden": 128,
+        "d_model": 64,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "large": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      }
+    },
+    "ncde": {
+      "small": {
+        "d_hidden": 128,
+        "d_model": 64,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "large": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      }
+    },
+    "odernn": {
+      "small": {
+        "d_hidden": 128,
+        "d_model": 64,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "large": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      }
+    },
+    "graphgru": {
+      "small": {
+        "d_hidden": 128,
+        "d_model": 64,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "large": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      }
+    },
+    "physiograph": {
+      "small": {
+        "d_hidden": 128,
+        "d_model": 64,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "large": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      }
+    },
+    "physiograph_gru": {
+      "small": {
+        "d_hidden": 128,
+        "d_model": 64,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "large": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      }
+    }
+  }
+}

@@ -1,0 +1,3463 @@
+{
+  "schema_version": 4,
+  "table": {
+    "physiograph": {
+      "none": {
+        "edges": [],
+        "runs": [
+          {
+            "seed": 0,
+            "path": "runs/clinical/variants/physiograph/none/seed0/run.json",
+            "sha256": "2e3ecbbd4f92664b2e12d9f287b877cdd48ce03fe23933c387c7a70e320497e1",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7738706887607586,
+              "pooled_masked_MAE": 0.550000505011591,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.704489474009259
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8448262285659589
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.7667145435245734
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8737422730593196
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8230669847878539,
+              "pooled_masked_MAE": 0.5859199238548909,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.806829039345391
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8179932559925697
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.0084616684014993
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8751585346484437
+                }
+              }
+            },
+            "n_params": 274960
+          },
+          {
+            "seed": 1,
+            "path": "runs/clinical/variants/physiograph/none/seed1/run.json",
+            "sha256": "41c77c1aac290216a2f59f460f3efdf409a59501bf9c3cd94f9fbdf25d6e07bb",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7714967861892068,
+              "pooled_masked_MAE": 0.5485874084353414,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7012966579486315
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8411704062941566
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.7811513524226964
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8733913431032447
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8187858092864223,
+              "pooled_masked_MAE": 0.5822679335704214,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8004925176004438
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8179710499695864
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.017252645535128
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8668717128063883
+                }
+              }
+            },
+            "n_params": 274960
+          },
+          {
+            "seed": 2,
+            "path": "runs/clinical/variants/physiograph/none/seed2/run.json",
+            "sha256": "ea498be99054da61e167fffd88173c33ac286773b8349bb174510afba98e66bb",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7742679335450772,
+              "pooled_masked_MAE": 0.5508231939732432,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7031465005108882
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8442570995413101
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.8032319272305041
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8729566120651305
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8220526132952132,
+              "pooled_masked_MAE": 0.585204263401504,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.803129819663902
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8201683076225397
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.0346024967411458
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8721398578349725
+                }
+              }
+            },
+            "n_params": 274960
+          },
+          {
+            "seed": 3,
+            "path": "runs/clinical/variants/physiograph/none/seed3/run.json",
+            "sha256": "abca95e6ea22ad2c46c9fd3bf75aab7f41c0ff051daeba130b033aeabb148552",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7730442262361785,
+              "pooled_masked_MAE": 0.5504316918249901,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7035596784690342
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8428794012035373
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.7839244968964171
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8711487843996067
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.820244755001643,
+              "pooled_masked_MAE": 0.5845419673053769,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8015364719129237
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8194998458723438
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.0120181281569083
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8721919544577588
+                }
+              }
+            },
+            "n_params": 274960
+          }
+        ],
+        "A": {
+          "n_seeds": 4,
+          "mean": 0.7731699086828052,
+          "sd_sample": 0.001226361321389244,
+          "status": "complete"
+        },
+        "B": {
+          "n_seeds": 4,
+          "mean": 0.821037540592783,
+          "sd_sample": 0.0019015624454370812,
+          "status": "complete"
+        }
+      },
+      "admissible": {
+        "edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "runs": [
+          {
+            "seed": 0,
+            "path": "runs/clinical/selected/physiograph/seed0/run.json",
+            "sha256": "a1b775936136fe16b6c145da4eb42f5e8fcd851f3ed1d4d319b0178f0fecab50",
+            "reused_table1": true,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7773809656263176,
+              "pooled_masked_MAE": 0.5545633424581236,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7006548072707343
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8426879762896667
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9417292821710311
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8662935534191117
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8233647000570375,
+              "pooled_masked_MAE": 0.5855336458804851,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8006217341757385
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8178636121249636
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1427880601369471
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.870074666974876
+                }
+              }
+            },
+            "n_params": 343584
+          },
+          {
+            "seed": 1,
+            "path": "runs/clinical/selected/physiograph/seed1/run.json",
+            "sha256": "03eb8ca13d5998e16f183ff86e83c656b7120fd1e647419184ec8d01e5e584dd",
+            "reused_table1": true,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7797067142107236,
+              "pooled_masked_MAE": 0.5582618072650873,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7077582201440081
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8421828174927809
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9373371118503844
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8600635852454016
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8306909279644377,
+              "pooled_masked_MAE": 0.593626994718793,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8116530552098764
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8195104319001407
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1434016434060976
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8750490517229031
+                }
+              }
+            },
+            "n_params": 343584
+          },
+          {
+            "seed": 2,
+            "path": "runs/clinical/selected/physiograph/seed2/run.json",
+            "sha256": "205f9f6cfce1bc18956427a99de4f1a81dec56a84c2b36bf620664b080ff108a",
+            "reused_table1": true,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7785874768206166,
+              "pooled_masked_MAE": 0.5560432908688092,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7039338834303581
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8445000067775067
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9367713150334678
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8593409656926446
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8254142344713097,
+              "pooled_masked_MAE": 0.588690590275916,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8034292375412665
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8204772357222013
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1390688172988328
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.86864157168923
+                }
+              }
+            },
+            "n_params": 343584
+          },
+          {
+            "seed": 3,
+            "path": "runs/clinical/selected/physiograph/seed3/run.json",
+            "sha256": "0d4a364a17458b68ace61e62404a56b73f738d07169acfe3b230fe26acbd955e",
+            "reused_table1": true,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7836918333414078,
+              "pooled_masked_MAE": 0.560689892640277,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.711842909439028
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8461685579737868
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9431379573424651
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8630897826529879
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8347502592032598,
+              "pooled_masked_MAE": 0.5976192956550086,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8183084228624767
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8219127295621723
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1388870834860982
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8725952526773775
+                }
+              }
+            },
+            "n_params": 343584
+          }
+        ],
+        "A": {
+          "n_seeds": 4,
+          "mean": 0.7798417474997663,
+          "sd_sample": 0.002736788710784118,
+          "status": "complete"
+        },
+        "B": {
+          "n_seeds": 4,
+          "mean": 0.8285550304240112,
+          "sd_sample": 0.005155807290983168,
+          "status": "complete"
+        }
+      },
+      "dense": {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "runs": [
+          {
+            "seed": 0,
+            "path": "runs/clinical/variants/physiograph/dense/seed0/run.json",
+            "sha256": "834d84a927c3de18728b24771ec262a2882443318235818d00c2e41ca96a7d04",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7844540306570407,
+              "pooled_masked_MAE": 0.5606185638303136,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7018486235685397
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8401099909153634
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9348719846505501
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.931269851582184
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8330887135107372,
+              "pooled_masked_MAE": 0.5934306139228199,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8027317020052908
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8166110924254939
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1374867655814092
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.9489528979460385
+                }
+              }
+            },
+            "n_params": 377896
+          },
+          {
+            "seed": 1,
+            "path": "runs/clinical/variants/physiograph/dense/seed1/run.json",
+            "sha256": "169199478aa97404c4e35a922653356497a97fc2ba21e872c2f58e3868d649b7",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7758008014516531,
+              "pooled_masked_MAE": 0.5530985752958266,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7006800741962679
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8414939907632585
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9302774391261471
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8604951866098397
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8231492151769153,
+              "pooled_masked_MAE": 0.5855753986355614,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8020110373399347
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.817511482700447
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1327855586228965
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8650251605388509
+                }
+              }
+            },
+            "n_params": 377896
+          },
+          {
+            "seed": 2,
+            "path": "runs/clinical/variants/physiograph/dense/seed2/run.json",
+            "sha256": "32e6208f4c43342a6053530ae320b3b9b22d89b6b7050b0516d55e8fb17c215d",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.778552826316444,
+              "pooled_masked_MAE": 0.5562255382364016,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7055605746704128
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8408261631841398
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9351421446796986
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8642917931041654
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8294287116733292,
+              "pooled_masked_MAE": 0.5920354250861993,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8089905034344995
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8201511963040574
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.13726763283428
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8776870554224617
+                }
+              }
+            },
+            "n_params": 377896
+          },
+          {
+            "seed": 3,
+            "path": "runs/clinical/variants/physiograph/dense/seed3/run.json",
+            "sha256": "f9d8339aa9aab5c60efc5b38632f015009800811da393902f7670680814deffc",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7774647819137023,
+              "pooled_masked_MAE": 0.5551208207858928,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7009429389063845
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8460161013601316
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9280244122173507
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8606345226146669
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8259560914127155,
+              "pooled_masked_MAE": 0.5884220072639263,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8019059467568801
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8225202519982535
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1405926419794994
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.875658238832962
+                }
+              }
+            },
+            "n_params": 377896
+          }
+        ],
+        "A": {
+          "n_seeds": 4,
+          "mean": 0.77906811008471,
+          "sd_sample": 0.0037647321596136767,
+          "status": "complete"
+        },
+        "B": {
+          "n_seeds": 4,
+          "mean": 0.8279056829434244,
+          "sd_sample": 0.004305357713526492,
+          "status": "complete"
+        }
+      },
+      "reversed": {
+        "edges": [
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "runs": [
+          {
+            "seed": 0,
+            "path": "runs/clinical/variants/physiograph/reversed/seed0/run.json",
+            "sha256": "24b084f4cd86ed9b7b77fa885fefb2ed46de24dbb62360523b7afed528506f25",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.776930058323992,
+              "pooled_masked_MAE": 0.5545703493299097,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7008055147967477
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8435810421385166
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9304232285010388
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.863253870064759
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8234057691790264,
+              "pooled_masked_MAE": 0.5861355668288816,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8004675123532086
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8179706024075662
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1370842993416197
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.872768993113374
+                }
+              }
+            },
+            "n_params": 343584
+          },
+          {
+            "seed": 1,
+            "path": "runs/clinical/variants/physiograph/reversed/seed1/run.json",
+            "sha256": "41e570f09f362dcb5b7eca3730df30f260dc4be7d1ea43ab24e212ce8da6bd11",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7795952868038958,
+              "pooled_masked_MAE": 0.5574595644470294,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7085994116423446
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8401813419278454
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9258142571669569
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8661354478887381
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8297820674419869,
+              "pooled_masked_MAE": 0.5918902137749151,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8114839138733715
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8181816467352377
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1312666791625396
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8748880924528022
+                }
+              }
+            },
+            "n_params": 343584
+          },
+          {
+            "seed": 2,
+            "path": "runs/clinical/variants/physiograph/reversed/seed2/run.json",
+            "sha256": "5315d74d1b85443edb47e405bc33f9d25f8a1d188a58a0616ff70c03b0702383",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7760451086312941,
+              "pooled_masked_MAE": 0.5532429700064836,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7010376959296587
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8421163066976586
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9243930644539784
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8614122926334896
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8228333866514346,
+              "pooled_masked_MAE": 0.5854384260567146,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.800643867161074
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8179730801457364
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.134449541712898
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8675145210910503
+                }
+              }
+            },
+            "n_params": 343584
+          },
+          {
+            "seed": 3,
+            "path": "runs/clinical/variants/physiograph/reversed/seed3/run.json",
+            "sha256": "578220dcbd243080d32d0ae7ab1372cc540804e8a3222c65e09e29a611a78480",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7764346764330844,
+              "pooled_masked_MAE": 0.5531669793274387,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7011472350811984
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8447813015019552
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9235427477294759
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8563245270176345
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8234442622053826,
+              "pooled_masked_MAE": 0.5852319305238102,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8008898152740574
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8207255814748402
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1324029768433101
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8653497528485035
+                }
+              }
+            },
+            "n_params": 343584
+          }
+        ],
+        "A": {
+          "n_seeds": 4,
+          "mean": 0.7772512825480665,
+          "sd_sample": 0.0016040825018273856,
+          "status": "complete"
+        },
+        "B": {
+          "n_seeds": 4,
+          "mean": 0.8248663713694576,
+          "sd_sample": 0.003289014440752412,
+          "status": "complete"
+        }
+      },
+      "random": {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "runs": [
+          {
+            "seed": 0,
+            "path": "runs/clinical/variants/physiograph/random/seed0/run.json",
+            "sha256": "869132f489bba6cba0b57771999bf7866735b95f438c9c8b0ac56c22b53560ec",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.771574495488277,
+              "pooled_masked_MAE": 0.5503400628139228,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.69969559162525
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8427302681689989
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.8078844182347587
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8672996937344404
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8201206676291568,
+              "pooled_masked_MAE": 0.583621422340279,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.7999509373426639
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8188678252733863
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.0291633076024675
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8759683221388757
+                }
+              }
+            },
+            "n_params": 343584
+          },
+          {
+            "seed": 1,
+            "path": "runs/clinical/variants/physiograph/random/seed1/run.json",
+            "sha256": "4deb146a1fcbc7240e48dab7dae3daf47ce23a1942789e90ba2a9cae55d54075",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.777392435334489,
+              "pooled_masked_MAE": 0.5556204906735464,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7036865572085399
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8406196471142128
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9366869113587228
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8620816571139108
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8259579160083202,
+              "pooled_masked_MAE": 0.5884310203882679,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8037947749414108
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8189624101928348
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1443389380967222
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8738892350200975
+                }
+              }
+            },
+            "n_params": 343584
+          },
+          {
+            "seed": 2,
+            "path": "runs/clinical/variants/physiograph/random/seed2/run.json",
+            "sha256": "74b9ffb45d8ecd2cbfec94d27d7492fc44d46fdaa38fabf611f334287fdeec33",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7789509477309149,
+              "pooled_masked_MAE": 0.5558334431478881,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7064076362624568
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8421445622242171
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9353703763204171
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8600107988965663
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8276725010667069,
+              "pooled_masked_MAE": 0.5902281710946828,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8069249232549014
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8187301795913196
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1425342687257338
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8744272183533476
+                }
+              }
+            },
+            "n_params": 343584
+          },
+          {
+            "seed": 3,
+            "path": "runs/clinical/variants/physiograph/random/seed3/run.json",
+            "sha256": "55ac77cb920448b0ab9ea553e00062338c1b72f738c69ca10ae893e3d7442d82",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.777228605826284,
+              "pooled_masked_MAE": 0.5547184239540648,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7013315575741099
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8452337286971506
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9393013763409084
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8550823424340857
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8249515900533773,
+              "pooled_masked_MAE": 0.5877545181935951,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8012606481325555
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8217561544329202
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1423322625627683
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8713069086370171
+                }
+              }
+            },
+            "n_params": 343584
+          }
+        ],
+        "A": {
+          "n_seeds": 4,
+          "mean": 0.7762866210949911,
+          "sd_sample": 0.003235888570527388,
+          "status": "complete"
+        },
+        "B": {
+          "n_seeds": 4,
+          "mean": 0.8246756686893904,
+          "sd_sample": 0.0032377631034645185,
+          "status": "complete"
+        }
+      },
+      "misspecified-1": {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "runs": [
+          {
+            "seed": 0,
+            "path": "runs/clinical/variants/physiograph/misspecified-1/seed0/run.json",
+            "sha256": "b5e3acaec622d1446ae2654d55ffa51410d9dc3ce28e3891e9e5a582fa18a652",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7716423751955881,
+              "pooled_masked_MAE": 0.5501745019150512,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7009586119624986
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8429062109094603
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.7898801039434141
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8679143767121814
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8193584620713922,
+              "pooled_masked_MAE": 0.5832705896499875,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8006331786332206
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8178047348791689
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.0108060190023118
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8735410438505492
+                }
+              }
+            },
+            "n_params": 343584
+          },
+          {
+            "seed": 1,
+            "path": "runs/clinical/variants/physiograph/misspecified-1/seed1/run.json",
+            "sha256": "1fe1060f0999e6536b2e0ccf6eda3da189a348d00b9a5fd0980d965ca21deca8",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7719602753011929,
+              "pooled_masked_MAE": 0.5514304005660844,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.70302117306256
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.842919438135094
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.8045534493035279
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8572344803732705
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8225619518740127,
+              "pooled_masked_MAE": 0.5864348718475486,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8037261755060615
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8210146603841211
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.0392156227418299
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.870160141292086
+                }
+              }
+            },
+            "n_params": 343584
+          },
+          {
+            "seed": 2,
+            "path": "runs/clinical/variants/physiograph/misspecified-1/seed2/run.json",
+            "sha256": "d64cbdd377e7ee6520231942712adc625de5a81be05b51f7f1114afca5de6ccc",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.781059845844515,
+              "pooled_masked_MAE": 0.5585969717338285,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7089787352754935
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8425739512703623
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9496243605593239
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.860833180361206
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8293952904734664,
+              "pooled_masked_MAE": 0.5927527152302201,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8097917855814069
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8188806522630585
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1527310793285697
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8715832637284476
+                }
+              }
+            },
+            "n_params": 343584
+          },
+          {
+            "seed": 3,
+            "path": "runs/clinical/variants/physiograph/misspecified-1/seed3/run.json",
+            "sha256": "2319398a87afd8feffa3c9e31d70ce84d32b063fbfac614f857c13ff576434ec",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7796619133821823,
+              "pooled_masked_MAE": 0.5567367957487339,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7024088869765082
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8460634600914115
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9582506173469592
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8619674905914348
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8260995636848536,
+              "pooled_masked_MAE": 0.588625243242928,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.802489788233581
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8221162483914451
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1519883059115497
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8713751594165979
+                }
+              }
+            },
+            "n_params": 343584
+          }
+        ],
+        "A": {
+          "n_seeds": 4,
+          "mean": 0.7760811024308696,
+          "sd_sample": 0.004976397919173656,
+          "status": "complete"
+        },
+        "B": {
+          "n_seeds": 4,
+          "mean": 0.8243538170259312,
+          "sd_sample": 0.004344668677963773,
+          "status": "complete"
+        }
+      }
+    },
+    "physiograph_gru": {
+      "none": {
+        "edges": [],
+        "runs": [
+          {
+            "seed": 0,
+            "path": "runs/clinical/variants/physiograph_gru/none/seed0/run.json",
+            "sha256": "14cd812eea88ae995d39c9bb1d2e9f44783312db03ef1ad4d144aa10e17ed666",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7700986716090558,
+              "pooled_masked_MAE": 0.5470526831265556,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6995317198605835
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8427318287423473
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.7964620456390357
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8589340555555305
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.817404118007034,
+              "pooled_masked_MAE": 0.5799180673210735,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8000495615105704
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8180357649729669
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.018164211572283
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.856208530951206
+                }
+              }
+            },
+            "n_params": 759952
+          },
+          {
+            "seed": 1,
+            "path": "runs/clinical/variants/physiograph_gru/none/seed1/run.json",
+            "sha256": "2e2bc50e40be12729a8144b52d5b1bd96bec415496c568d9f2a9a57e86f93def",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7767655487334495,
+              "pooled_masked_MAE": 0.5512324558320394,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6987727356125482
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.842261039062162
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9324387428791938
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8735875261186326
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8226227160624967,
+              "pooled_masked_MAE": 0.5838651399203668,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.7997733438885345
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8185951343505719
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.148012892586001
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8641736793547976
+                }
+              }
+            },
+            "n_params": 759952
+          },
+          {
+            "seed": 2,
+            "path": "runs/clinical/variants/physiograph_gru/none/seed2/run.json",
+            "sha256": "b5dcf0d2ded55d1469f7b6732038effc2af99cfaee8fa02c9909b3c26765b6d6",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7730097119433096,
+              "pooled_masked_MAE": 0.5499906941727466,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6985101388064723
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8450324398267037
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.8513802532534729
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8628243347317235
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8182083546189494,
+              "pooled_masked_MAE": 0.5818688742551816,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.7968937625652186
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8188561721318126
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.0811143513666839
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8591887924097678
+                }
+              }
+            },
+            "n_params": 759952
+          },
+          {
+            "seed": 3,
+            "path": "runs/clinical/variants/physiograph_gru/none/seed3/run.json",
+            "sha256": "efbbae0285ccf2cca4dec68c29984c527b82caf61e134b3ba9d85992f7991514",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.769564753373572,
+              "pooled_masked_MAE": 0.5466621679306775,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6994437689692466
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8405610921972606
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.8050483672027449
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8586506381722878
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8168879389592926,
+              "pooled_masked_MAE": 0.580115794661972,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.7988929837498321
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8170663708306588
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.0208803880943302
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8592705836990837
+                }
+              }
+            },
+            "n_params": 759952
+          }
+        ],
+        "A": {
+          "n_seeds": 4,
+          "mean": 0.7723596714148467,
+          "sd_sample": 0.003304441183944841,
+          "status": "complete"
+        },
+        "B": {
+          "n_seeds": 4,
+          "mean": 0.8187807819119431,
+          "sd_sample": 0.002618281177505095,
+          "status": "complete"
+        }
+      },
+      "admissible": {
+        "edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "runs": [
+          {
+            "seed": 0,
+            "path": "runs/clinical/selected/physiograph_gru/seed0/run.json",
+            "sha256": "88ff086bee7e3b739408b2883080839ba3dd33cd399b50262befacc3156545b5",
+            "reused_table1": true,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7685327029842733,
+              "pooled_masked_MAE": 0.545664909979466,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6991943235224015
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.842552704718035
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.7684898621984302
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8562598918309605
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8167802075141782,
+              "pooled_masked_MAE": 0.5797729583331275,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8008154201022266
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8174797687051795
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 0.9915970425891535
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8555063665689374
+                }
+              }
+            },
+            "n_params": 912032
+          },
+          {
+            "seed": 1,
+            "path": "runs/clinical/selected/physiograph_gru/seed1/run.json",
+            "sha256": "fa3d019d258a5e9d86bbba56816930024b5438fe6125afd8773ded8f41f7f6ee",
+            "reused_table1": true,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7680656422820467,
+              "pooled_masked_MAE": 0.5457690224292701,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6972309905616928
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8414196578005622
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.7913186625022787
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8566937599134437
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8171482433218333,
+              "pooled_masked_MAE": 0.5804543182038613,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.7995322047109724
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8178373114169697
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.0093352464362306
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8596146185601089
+                }
+              }
+            },
+            "n_params": 912032
+          },
+          {
+            "seed": 2,
+            "path": "runs/clinical/selected/physiograph_gru/seed2/run.json",
+            "sha256": "dda62db67888c41f2c58336adc6d4324b3db8fa3ae0d288368f66b3dd249c58c",
+            "reused_table1": true,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.772589411372634,
+              "pooled_masked_MAE": 0.549566653371181,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6998760822027469
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8430052815470382
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.8532478751841199
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8591626176474113
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8177784826685053,
+              "pooled_masked_MAE": 0.5819501755935467,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.7996105848837928
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8174474107279044
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.0396981397526897
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8571851135441714
+                }
+              }
+            },
+            "n_params": 912032
+          },
+          {
+            "seed": 3,
+            "path": "runs/clinical/selected/physiograph_gru/seed3/run.json",
+            "sha256": "34c2b1af1bc8acdd063518b0607134bf125d6108d3a968dd54d8169205a2f3c0",
+            "reused_table1": true,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.771474130655641,
+              "pooled_masked_MAE": 0.5492725995654858,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6994781414653467
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8416984218931978
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.8404457096895015
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8596419052733857
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8190874331881465,
+              "pooled_masked_MAE": 0.5830834924072057,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.800539445002675
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8169292922285508
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.0531201849187142
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8616489311676329
+                }
+              }
+            },
+            "n_params": 912032
+          }
+        ],
+        "A": {
+          "n_seeds": 4,
+          "mean": 0.7701654718236488,
+          "sd_sample": 0.002210828582402716,
+          "status": "complete"
+        },
+        "B": {
+          "n_seeds": 4,
+          "mean": 0.8176985916731658,
+          "sd_sample": 0.0010135048258664593,
+          "status": "complete"
+        }
+      },
+      "dense": {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "runs": [
+          {
+            "seed": 0,
+            "path": "runs/clinical/variants/physiograph_gru/dense/seed0/run.json",
+            "sha256": "bf04c405124650b41c4bc1c4c0868e11520c2c6807e3bca52d0c1e2be3f8daf8",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7690818418868934,
+              "pooled_masked_MAE": 0.5458922107515785,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6985796388603066
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8412618141641237
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.7996307811438312
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8576611343244245
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8180652064041568,
+              "pooled_masked_MAE": 0.580664252583066,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8012319391450323
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8166594305254514
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.0133362486488224
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.861009895785828
+                }
+              }
+            },
+            "n_params": 988072
+          },
+          {
+            "seed": 1,
+            "path": "runs/clinical/variants/physiograph_gru/dense/seed1/run.json",
+            "sha256": "f2a0f41f3289b2fd459c64177e7810fcb4aecc7dce2168c8fe6b992c0acad19e",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.77292003467083,
+              "pooled_masked_MAE": 0.5501227886624273,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6987144380439119
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8407805784100474
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9276258115202157
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8467205484981055
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8210310074176279,
+              "pooled_masked_MAE": 0.5827036947196814,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.7997224307694615
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8173389820456837
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1383229332312506
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8562767157395359
+                }
+              }
+            },
+            "n_params": 988072
+          },
+          {
+            "seed": 2,
+            "path": "runs/clinical/variants/physiograph_gru/dense/seed2/run.json",
+            "sha256": "cf5e3f62a4dd0645808819d4769fe68ebf326470e360618ffd8fbfb2440628db",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7747258210421974,
+              "pooled_masked_MAE": 0.5514397310004354,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6997433510740502
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8424392224673133
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9289225748574839
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8525545851758848
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8212052608278373,
+              "pooled_masked_MAE": 0.5832819155251464,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.7994221389387154
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8180448647237016
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1356350834018474
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8584659970814961
+                }
+              }
+            },
+            "n_params": 988072
+          },
+          {
+            "seed": 3,
+            "path": "runs/clinical/variants/physiograph_gru/dense/seed3/run.json",
+            "sha256": "979f93e0729b57ef00369efedddeee6704471c963d9443dd9590e467333f9629",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7667317116739277,
+              "pooled_masked_MAE": 0.5453860298447462,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6973662023118818
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8373226388056635
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.7909376060102423
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8574965390799126
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8147920640020511,
+              "pooled_masked_MAE": 0.5790488283599488,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.7962142657226011
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8160334639267754
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.0037517684398476
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8617067854970646
+                }
+              }
+            },
+            "n_params": 988072
+          }
+        ],
+        "A": {
+          "n_seeds": 4,
+          "mean": 0.7708648523184622,
+          "sd_sample": 0.0036236644332191246,
+          "status": "complete"
+        },
+        "B": {
+          "n_seeds": 4,
+          "mean": 0.8187733846629183,
+          "sd_sample": 0.0030201166001174247,
+          "status": "complete"
+        }
+      },
+      "reversed": {
+        "edges": [
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "runs": [
+          {
+            "seed": 0,
+            "path": "runs/clinical/variants/physiograph_gru/reversed/seed0/run.json",
+            "sha256": "a0084705ba5829b69a886a36bf8788daa6a7c260535e096ecd79fef2a3938af0",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7658585152097044,
+              "pooled_masked_MAE": 0.5443305078571834,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6976629127979747
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8390135534694021
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.7760652809545366
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.848133836548711
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.816496843501257,
+              "pooled_masked_MAE": 0.5791762188187907,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8010510011194069
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8166590648083775
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 0.9896437262932274
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.854369659896048
+                }
+              }
+            },
+            "n_params": 912032
+          },
+          {
+            "seed": 1,
+            "path": "runs/clinical/variants/physiograph_gru/reversed/seed1/run.json",
+            "sha256": "bdd865775b7de4fdac36cefac75f057464b3ba928bb75f4aaad96f3ae8ccc0c3",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7725188444970705,
+              "pooled_masked_MAE": 0.549751691359298,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6971270947812993
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8399871803793726
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9243387858217867
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8536519830929652
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8213015715969153,
+              "pooled_masked_MAE": 0.5826766526073508,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.798928720168929
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8170238134865238
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1426646955475943
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8622960592856016
+                }
+              }
+            },
+            "n_params": 912032
+          },
+          {
+            "seed": 2,
+            "path": "runs/clinical/variants/physiograph_gru/reversed/seed2/run.json",
+            "sha256": "cbbc1d2a417bdf4b257a553d291534537fbc37fb124cb3c27a538da9a7e21908",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.776754464462033,
+              "pooled_masked_MAE": 0.5516736303990922,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7006289481709251
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8420476442083292
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9368606459769344
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8647969733557077
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8216281207795013,
+              "pooled_masked_MAE": 0.5835082777750301,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8006939931376524
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8174214465468186
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.138992739868516
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8562438611677508
+                }
+              }
+            },
+            "n_params": 912032
+          },
+          {
+            "seed": 3,
+            "path": "runs/clinical/variants/physiograph_gru/reversed/seed3/run.json",
+            "sha256": "17b8555de9cc099e1d65d0d30027a7f7034578c562fb6463741c2a5126914cfe",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7749873026741105,
+              "pooled_masked_MAE": 0.5508704424650503,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7003360355731311
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8391085333432702
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9301775076642129
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8623106598970197
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8214644962435715,
+              "pooled_masked_MAE": 0.5831714320982802,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.7996715637469398
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8163600429257812
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1329196402816935
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8647486900338787
+                }
+              }
+            },
+            "n_params": 912032
+          }
+        ],
+        "A": {
+          "n_seeds": 4,
+          "mean": 0.7725297817107296,
+          "sd_sample": 0.00477469964098829,
+          "status": "complete"
+        },
+        "B": {
+          "n_seeds": 4,
+          "mean": 0.8202227580303112,
+          "sd_sample": 0.0024875179085712983,
+          "status": "complete"
+        }
+      },
+      "random": {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "runs": [
+          {
+            "seed": 0,
+            "path": "runs/clinical/variants/physiograph_gru/random/seed0/run.json",
+            "sha256": "40c44b3ceef121624bb90c310e53dd18bcae518cceb5c67334efb0cad6ebc4da",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7657849207136737,
+              "pooled_masked_MAE": 0.5452354339024331,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6980503079633882
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8371949424993543
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.8001252686400298
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8437315657946193
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8176815550297097,
+              "pooled_masked_MAE": 0.5805134823407324,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8013229704550665
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8162716918817461
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.020323614649626
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8560449239851694
+                }
+              }
+            },
+            "n_params": 912032
+          },
+          {
+            "seed": 1,
+            "path": "runs/clinical/variants/physiograph_gru/random/seed1/run.json",
+            "sha256": "a97fbf7fce33a4c2303dc11ffe4e916b9bb79d31bf6634ef8cd3672bc44dd547",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.775091726096357,
+              "pooled_masked_MAE": 0.5510892001867849,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6983483692906837
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8424817464167298
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9367473706204184
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8584998132052387
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8225595917267357,
+              "pooled_masked_MAE": 0.5841112018401621,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8003553528433296
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8178145980638817
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1421101414718722
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8644917657897642
+                }
+              }
+            },
+            "n_params": 912032
+          },
+          {
+            "seed": 2,
+            "path": "runs/clinical/variants/physiograph_gru/random/seed2/run.json",
+            "sha256": "8f639bf2027c470463f21fc5a3d7120cc06ee725cad94d643026bbf7f945b839",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7692684900851221,
+              "pooled_masked_MAE": 0.5465537869806681,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6987817567817844
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8437903080046107
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.7825359619336895
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.856035085873317
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8163424225300924,
+              "pooled_masked_MAE": 0.5803483047570613,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.7985132280816463
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8178833906985866
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.0049080309338076
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8587289007573997
+                }
+              }
+            },
+            "n_params": 912032
+          },
+          {
+            "seed": 3,
+            "path": "runs/clinical/variants/physiograph_gru/random/seed3/run.json",
+            "sha256": "33a71a6422545aaded4a1dcdc813b4090edc80e0c9054417767482311815f6b3",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7743995250354408,
+              "pooled_masked_MAE": 0.5501342815300732,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6986745127819914
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8399508451849474
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9324094671981756
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8606595128816845
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8207347984089016,
+              "pooled_masked_MAE": 0.5829189711277224,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.7983843587996273
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8167560390190343
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.1399207703504546
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8615273478155112
+                }
+              }
+            },
+            "n_params": 912032
+          }
+        ],
+        "A": {
+          "n_seeds": 4,
+          "mean": 0.7711361654826484,
+          "sd_sample": 0.004412860270751431,
+          "status": "complete"
+        },
+        "B": {
+          "n_seeds": 4,
+          "mean": 0.8193295919238598,
+          "sd_sample": 0.0028311782343353256,
+          "status": "complete"
+        }
+      },
+      "misspecified-1": {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "runs": [
+          {
+            "seed": 0,
+            "path": "runs/clinical/variants/physiograph_gru/misspecified-1/seed0/run.json",
+            "sha256": "3f8025ace8d7e03bff0b93aa64be086df95cb9e05a73a973d16eab292fdec922",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7675587724725024,
+              "pooled_masked_MAE": 0.5458501920941029,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6997163456879121
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8407438589866716
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.7664346278419664
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8519175261067503
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.817340932052579,
+              "pooled_masked_MAE": 0.5807421591891614,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8020398457305009
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8173571320011815
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 0.994605978831125
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8536834024581975
+                }
+              }
+            },
+            "n_params": 912032
+          },
+          {
+            "seed": 1,
+            "path": "runs/clinical/variants/physiograph_gru/misspecified-1/seed1/run.json",
+            "sha256": "f607a280f777d034caff776bf0d400b25d31979d94d2d110070634e4948f88e3",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7754647275573955,
+              "pooled_masked_MAE": 0.5510149104693385,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.6980982280710484
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8416519860607791
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9456767233837561
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.861966245081443
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8225330235654965,
+              "pooled_masked_MAE": 0.5836749805629551,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8004810439999757
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8169768378154519
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.158032596401944
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8606232669876073
+                }
+              }
+            },
+            "n_params": 912032
+          },
+          {
+            "seed": 2,
+            "path": "runs/clinical/variants/physiograph_gru/misspecified-1/seed2/run.json",
+            "sha256": "520c6f68e89d25db6547bf94899e729a0aa441fba2bd2d372bd7fe0cf2fe4e0e",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.7698303396550927,
+              "pooled_masked_MAE": 0.5474769555499664,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.699558664535187
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.8431616078541299
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.7762869384830621
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8616230826940708
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8172423911958726,
+              "pooled_masked_MAE": 0.5812648515007177,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.7995654499994614
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.817809924033897
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.00097109350782
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8627282264002478
+                }
+              }
+            },
+            "n_params": 912032
+          },
+          {
+            "seed": 3,
+            "path": "runs/clinical/variants/physiograph_gru/misspecified-1/seed3/run.json",
+            "sha256": "10b9858daf7ea265c18b6717abedc866545ed274d81900c2c0895ddb217d8bfa",
+            "reused_table1": false,
+            "status": "complete",
+            "A": {
+              "n_stays": 2368,
+              "observed_entries": 174879,
+              "zero_target_stays": 1,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.776769941675623,
+              "pooled_masked_MAE": 0.5527337580374443,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 92837,
+                  "RMSE": 0.7012662769105164
+                },
+                "pulmonary": {
+                  "observed_entries": 57657,
+                  "RMSE": 0.841075802912424
+                },
+                "renal": {
+                  "observed_entries": 6336,
+                  "RMSE": 0.9498293068807225
+                },
+                "metabolic": {
+                  "observed_entries": 18049,
+                  "RMSE": 0.8603180312965971
+                }
+              }
+            },
+            "B": {
+              "n_stays": 14824,
+              "observed_entries": 1074461,
+              "zero_target_stays": 4,
+              "nonfinite_predictions": 0,
+              "pooled_masked_RMSE": 0.8223935764990451,
+              "pooled_masked_MAE": 0.5850929872927353,
+              "organs": {
+                "cardiovascular": {
+                  "observed_entries": 628618,
+                  "RMSE": 0.8000325249070597
+                },
+                "pulmonary": {
+                  "observed_entries": 306178,
+                  "RMSE": 0.8165341250308283
+                },
+                "renal": {
+                  "observed_entries": 27206,
+                  "RMSE": 1.155114376248229
+                },
+                "metabolic": {
+                  "observed_entries": 112459,
+                  "RMSE": 0.8637681604759297
+                }
+              }
+            },
+            "n_params": 912032
+          }
+        ],
+        "A": {
+          "n_seeds": 4,
+          "mean": 0.7724059453401534,
+          "sd_sample": 0.0044169915146819606,
+          "status": "complete"
+        },
+        "B": {
+          "n_seeds": 4,
+          "mean": 0.8198774808282483,
+          "sd_sample": 0.002986660438011972,
+          "status": "complete"
+        }
+      }
+    }
+  },
+  "protocol": "Same selected widths/lr, optimizer, seeds 0–3, split and 35-epoch budget as Table 1; no per-variant retuning.",
+  "reconciliation": "Admissible runs point to selected/<model>/seed<k>/run.json; no duplicate training or separately rounded source.",
+  "misspecified_1": "Replace cardiovascular->renal (0,2) by pulmonary->renal (1,2); seven original edges retained, count fixed at eight.",
+  "random": "Frozen source resolver: eight of twelve directed non-self edges, NumPy default_rng(0), fixed for all training seeds.",
+  "limits": [
+    "Graph variants allocate different parameter counts; these are structural ablations, not equal-parameter controls.",
+    "The reversed edge set overlaps six of eight original edges; it is not disjoint from the physiological prior."
+  ]
+}

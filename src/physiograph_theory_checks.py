@@ -12,7 +12,12 @@ Results are saved as JSON for the paper + a figure.
 """
 from __future__ import annotations
 
-import os
+# Resolve all public modules and scratch from the release root.
+import sys as _release_sys
+from pathlib import Path as _ReleasePath
+_release_sys.path.insert(0, str(_ReleasePath(__file__).resolve().parents[1]))
+from release_paths import ROOT as RELEASE_ROOT, SCRATCH as RELEASE_SCRATCH
+
 import argparse
 import json
 from pathlib import Path
@@ -22,10 +27,6 @@ import torch
 
 from physiograph_data_loader import make_loaders
 from organ_graph_ssm_model import build_model
-
-# Repository root. Defaults to the parent of src/; override with the
-# PHYSIOGRAPH_ROOT environment variable to relocate data/result trees.
-REPO_ROOT = Path(os.environ.get("PHYSIOGRAPH_ROOT", Path(__file__).resolve().parents[1]))
 
 
 @torch.no_grad()
@@ -83,7 +84,7 @@ def thm3_sparsity(npz, C=12, K=12, gpu=1, epochs=12, seeds=(0, 1), out=None, con
                 task, edges=sp, **{k: v for k, v in kw.items() if k != "edges"}))(spec)
             try:
                 r = train_one("physiograph", loaders, meta, device, epochs, 1e-3, sizes, s,
-                              str(REPO_ROOT / "ckpt/_thm3"))
+                              str(RELEASE_ROOT / 'runs/checkpoints/_thm3'))
             finally:
                 TR.build_model = orig
             ext.append(r["B_external"][f"RMSE@{K}"])
@@ -98,19 +99,19 @@ def thm3_sparsity(npz, C=12, K=12, gpu=1, epochs=12, seeds=(0, 1), out=None, con
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--which", default="thm1")
-    ap.add_argument("--ckpt", default=str(REPO_ROOT / "ckpt/physiograph.pt"))
-    ap.add_argument("--npz", default=str(REPO_ROOT / "data/cinc2019_cohort.npz"))
+    ap.add_argument("--ckpt", default=str(RELEASE_ROOT / 'runs/checkpoints/physiograph.pt'))
+    ap.add_argument("--npz", default=str(RELEASE_ROOT / 'data/cinc2019_cohort.npz'))
     ap.add_argument("--gpu", type=int, default=1)
     ap.add_argument("--epochs", type=int, default=12)
     a = ap.parse_args()
     if a.which == "thm1":
         thm1_rollout(a.ckpt, a.npz, gpu=a.gpu,
-                     out=str(REPO_ROOT / "result/thm1_rollout.json"))
+                     out=str(RELEASE_ROOT / 'results/legacy/thm1_rollout.json'))
     elif a.which == "thm3":
         thm3_sparsity(a.npz, gpu=a.gpu, epochs=a.epochs,
-                      out=str(REPO_ROOT / "result/thm3_sparsity.json"))
+                      out=str(RELEASE_ROOT / 'results/legacy/thm3_sparsity.json'))
     elif a.which == "h4":          # graph falsification: does the PHYSIOLOGICAL prior matter?
         thm3_sparsity(a.npz, gpu=a.gpu, epochs=a.epochs, seeds=(0, 1),
                       configs={"admissible": "admissible", "reversed": "reversed",
                                "random": "random", "no_graph": "none"},
-                      out=str(REPO_ROOT / "result/h4_falsification.json"))
+                      out=str(RELEASE_ROOT / 'results/legacy/h4_falsification.json'))

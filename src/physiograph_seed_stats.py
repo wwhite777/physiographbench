@@ -9,7 +9,12 @@
 """
 from __future__ import annotations
 
-import os
+# Resolve all public modules and scratch from the release root.
+import sys as _release_sys
+from pathlib import Path as _ReleasePath
+_release_sys.path.insert(0, str(_ReleasePath(__file__).resolve().parents[1]))
+from release_paths import ROOT as RELEASE_ROOT, SCRATCH as RELEASE_SCRATCH
+
 import argparse
 import glob
 import json
@@ -21,10 +26,6 @@ from scipy import stats
 
 from physiograph_data_loader import make_loaders
 from physiograph_training_runner import build_any
-
-# Repository root. Defaults to the parent of src/; override with the
-# PHYSIOGRAPH_ROOT environment variable to relocate data/result trees.
-REPO_ROOT = Path(os.environ.get("PHYSIOGRAPH_ROOT", Path(__file__).resolve().parents[1]))
 
 
 def aggregate_seeds(seed_glob, K=12):
@@ -92,10 +93,10 @@ def per_window_test(npz, ckpt_a, ckpt_b, name_a, name_b, C=12, K=12, gpu=2, n_bo
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--seed_glob", default=str(REPO_ROOT / "result/seeds/forecast_seed*.json"))
-    ap.add_argument("--npz", default=str(REPO_ROOT / "data/cinc2019_cohort.npz"))
+    ap.add_argument("--seed_glob", default=str(RELEASE_ROOT / 'results/legacy/seeds/forecast_seed*.json'))
+    ap.add_argument("--npz", default=str(RELEASE_ROOT / 'data/cinc2019_cohort.npz'))
     ap.add_argument("--gpu", type=int, default=2)
-    ap.add_argument("--out", default=str(REPO_ROOT / "result/forecast_seed_stats.json"))
+    ap.add_argument("--out", default=str(RELEASE_ROOT / 'results/legacy/forecast_seed_stats.json'))
     a = ap.parse_args()
     agg, nf = aggregate_seeds(a.seed_glob)
     print(f"[stats] aggregated {nf} seeds")
@@ -110,7 +111,7 @@ def main():
             tests[f"{a_}_vs_{b_}_seeds"] = r
             print(f"  paired(seeds) {a_} vs {b_}: diff {r['mean_diff']:+.4f} p={r['p_value']:.3f}")
     # stronger across-window test for the headline pair, using final checkpoints
-    ck = str(REPO_ROOT / "ckpt")
+    ck = str(RELEASE_ROOT / 'runs/checkpoints')
     try:
         pw = per_window_test(a.npz, f"{ck}/physiograph_gru.pt", f"{ck}/grud.pt",
                              "physiograph_gru", "grud", gpu=a.gpu)

@@ -1,0 +1,312 @@
+{
+  "task": "cohort_replay-cohort-replay-build",
+  "started_utc": "2026-11-04T09:50:09+00:00",
+  "finished_utc": "2026-11-04T09:50:34+00:00",
+  "elapsed_seconds": 24.702,
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "src/cinc2019_cohort_preprocessor.py",
+    "--data_root",
+    "data",
+    "--out",
+    "tools/cohort_replay.npz",
+    "--max_patients",
+    "0",
+    "--workers",
+    "8",
+    "--val_frac",
+    "0.15",
+    "--seed",
+    "0"
+  ],
+  "preprocessor_returncode": 0,
+  "source_sha256": "ad39d19cdd3849e23f00b966404b06412ba21a4142bdcdccca6cde19171c31bb",
+  "frozen_sha256": "d52d8131323fc7a3838ae4fe523c2edbc02d2daa781de1859e7d184897dfb51f",
+  "replay_sha256": "d52d8131323fc7a3838ae4fe523c2edbc02d2daa781de1859e7d184897dfb51f",
+  "identity": true,
+  "archive_bytes_equal": true,
+  "keys_equal": true,
+  "comparisons": [
+    {
+      "name": "A_ever_sepsis",
+      "shape": [
+        20336
+      ],
+      "dtype": "float32",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "A_length",
+      "shape": [
+        20336
+      ],
+      "dtype": "int32",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "A_mask",
+      "shape": [
+        20336,
+        48,
+        16
+      ],
+      "dtype": "float32",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "A_sepsis",
+      "shape": [
+        20336,
+        48
+      ],
+      "dtype": "float32",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "A_static",
+      "shape": [
+        20336,
+        5
+      ],
+      "dtype": "float32",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "A_values",
+      "shape": [
+        20336,
+        48,
+        16
+      ],
+      "dtype": "float32",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "B_ever_sepsis",
+      "shape": [
+        20000
+      ],
+      "dtype": "float32",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "B_length",
+      "shape": [
+        20000
+      ],
+      "dtype": "int32",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "B_mask",
+      "shape": [
+        20000,
+        48,
+        16
+      ],
+      "dtype": "float32",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "B_sepsis",
+      "shape": [
+        20000,
+        48
+      ],
+      "dtype": "float32",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "B_static",
+      "shape": [
+        20000,
+        5
+      ],
+      "dtype": "float32",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "B_values",
+      "shape": [
+        20000,
+        48,
+        16
+      ],
+      "dtype": "float32",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "features",
+      "shape": [
+        16
+      ],
+      "dtype": "<U10",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "norm_mean",
+      "shape": [
+        16
+      ],
+      "dtype": "float32",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "norm_std",
+      "shape": [
+        16
+      ],
+      "dtype": "float32",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "organ_names",
+      "shape": [
+        4
+      ],
+      "dtype": "<U14",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "organ_slices",
+      "shape": [
+        4,
+        2
+      ],
+      "dtype": "int64",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "test_idx",
+      "shape": [
+        3050
+      ],
+      "dtype": "int64",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "train_idx",
+      "shape": [
+        14236
+      ],
+      "dtype": "int64",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    },
+    {
+      "name": "val_idx",
+      "shape": [
+        3050
+      ],
+      "dtype": "int64",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "array_equal": true,
+      "payload_bytes_equal": true
+    }
+  ],
+  "counts": {
+    "A": {
+      "found": 20336,
+      "included": 20336,
+      "reasons": {},
+      "min_rows": 8,
+      "max_rows": 336,
+      "truncated": 4442
+    },
+    "B": {
+      "found": 20000,
+      "included": 20000,
+      "reasons": {},
+      "min_rows": 8,
+      "max_rows": 336,
+      "truncated": 4128
+    }
+  },
+  "manifest_length_mapping": {
+    "A": true,
+    "B": true
+  },
+  "split_checks": {
+    "counts": {
+      "train": 14236,
+      "val": 3050,
+      "test": 3050
+    },
+    "disjoint_complete_A_partition": true,
+    "seed_0_exact_order": true,
+    "B_external_count": 20000
+  },
+  "input_unchanged": true,
+  "passed": true,
+  "environment": {
+    "python": "3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0]",
+    "executable": "/usr/bin/python3",
+    "numpy": "2.2.6",
+    "platform": "Linux-5.15.0-171-generic-x86_64-with-glibc2.35",
+    "machine": "x86_64",
+    "cpu_count": 48,
+    "workers": 8,
+    "thread_limit": 1,
+    "scratch": "tools/.engineering-tmp/cohort_replay-cohort-replay-build",
+    "cwd": "tools",
+    "zlib": "1.2.11"
+  }
+}

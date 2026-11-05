@@ -1,0 +1,162 @@
+{
+  "clinical_table": {
+    "display": "four models, A/B mean ± sample standard deviation, 4 decimal places",
+    "derived_file": "results/findings.json",
+    "path": "clinical",
+    "original_files": [
+      "results/v4/tuning_grid.json",
+      "results/learned_graph_baselines_v1/tpatchgnn/cinc_tpatchgnn_s0.json",
+      "results/learned_graph_baselines_v1/tpatchgnn/cinc_tpatchgnn_s1.json",
+      "results/learned_graph_baselines_v1/tpatchgnn/cinc_tpatchgnn_s2.json",
+      "results/learned_graph_baselines_v1/tpatchgnn/cinc_tpatchgnn_s3.json",
+      "results/learned_graph_baselines_v1/grafiti_v3/cinc_grafiti_s0.json",
+      "results/learned_graph_baselines_v1/grafiti_v3/cinc_grafiti_s1.json",
+      "results/learned_graph_baselines_v1/grafiti_v3/cinc_grafiti_s2.json",
+      "results/learned_graph_baselines_v1/grafiti_v3/cinc_grafiti_s3.json"
+    ]
+  },
+  "capacity": {
+    "source": "results/findings.json",
+    "value": {
+      "A": 0.0016535684231021586,
+      "B": 0.0009203518403657629
+    },
+    "display_threshold": 0.002,
+    "parameter_source": "results/v4/tuning_grid.json: selected_runs/<model>/0/n_params",
+    "parameter_counts": {
+      "grud": 449568,
+      "gru": 444944,
+      "physiograph_gru": 912032,
+      "gru_med": 2586896,
+      "gru_large": 6498320
+    }
+  },
+  "paired_stay_gaps": {
+    "source": "results/v4/stats_v4.json",
+    "path": "selected_seed_uncertainty/A|B/grud/mean_gap|sd_sample",
+    "display": {
+      "A": "0.0198 ± 0.0022",
+      "B": "0.0115 ± 0.0007"
+    }
+  },
+  "variants": {
+    "source": "results/v4/variant_ablation_v4.json",
+    "path": "table/physiograph_gru/<variant>/runs/<seed>/A|B/pooled_masked_RMSE",
+    "mean_span": {
+      "A": 0.0023643098870808066,
+      "B": 0.002524166357145474
+    },
+    "display_upper_bound": 0.003,
+    "n_variants": 6,
+    "mean_span_by_backbone": {
+      "physiograph": {
+        "A": 0.006671838816961206,
+        "B": 0.00751748983122813
+      },
+      "physiograph_gru": {
+        "A": 0.0023643098870808066,
+        "B": 0.002524166357145474
+      }
+    },
+    "display_upper_bound_scope": "GRU backbone only"
+  },
+  "simulator_decomposition": {
+    "source": "results/sim_grids_v1/h3_grid_with_controls.json",
+    "selector": "cells[kappa=1,variant=control_gru_matched|none|admissible].metrics.macro_nrmse_fixed.mean",
+    "display": {
+      "admissible": "0.0377",
+      "none": "0.0364",
+      "control_gru_matched": "0.0389"
+    },
+    "kappas": [
+      0,
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "small_exception": {
+      "kappa": 0.75,
+      "display_paired_difference": "-0.00001",
+      "interpretation": "tied; no consistent improvement"
+    }
+  },
+  "policy_grid": {
+    "source": "results/sim_grids_v1/h5_grid.json",
+    "selector": "cells[cf_protocol=shared].metrics.direction_accuracy.population_sign_correct",
+    "deterministic_sigma": 0,
+    "low_c_upper": 0.1,
+    "deterministic_failure_c_lower": 0.5,
+    "noise_values_with_restored_MAP_UO_at_c1": [
+      0.15,
+      0.25
+    ],
+    "n_primary_models": 4
+  },
+  "crn": {
+    "source_directories": [
+      "results/learned_graph_baselines_v1/crn_v2_policy_grid",
+      "results/learned_graph_baselines_v1/crn_v2_lambda_sweep"
+    ],
+    "selector": "config.epochs,config.lamb,metrics.direction_accuracy",
+    "maximum_epochs": 120
+  },
+  "coupling": {
+    "source": "results/coupling_index_v1/coupling_index.json",
+    "path": "datasets/cinc2019/probes/ridge/splits/A_val/mean_off_diagonal",
+    "display": "+0.0033 [0.0023, 0.0043]",
+    "hourly_source": "results/coupling_index_v1/simulator_hourly/sim_hourly_index.json",
+    "hourly_selector": "datasets/hourly_k>0/ridge/splits/A_val|B/mean_off_diagonal/value",
+    "rounded_hourly_range": [
+      0.17,
+      0.21
+    ]
+  },
+  "horizons": {
+    "source": "results/v4/horizon_table_v4.json",
+    "selector": "table/C12_K6|12|24/physiograph_gru|grud/runs/<seed>/B/pooled_masked_RMSE",
+    "display": {
+      "6": "+0.026",
+      "12": "+0.021",
+      "24": "+0.019"
+    },
+    "common_min_length": 48,
+    "context": 12
+  },
+  "cohort": {
+    "source": "results/cohort_replay_v1/REPLAY_RESULTS.json",
+    "selector": "counts/A|B/found|included|reasons",
+    "total_raw_files": 40336,
+    "exclusions": 0
+  },
+  "training_protocol": {
+    "source": "results/v4/selection.json",
+    "paths": [
+      "selected_seeds",
+      "epochs_budget",
+      "grid",
+      "width_definition"
+    ],
+    "context_horizon_source": "results/v4/stats_v4.json",
+    "context_horizon_path": "data/C|K"
+  },
+  "simulator_structure": {
+    "source": "results/spec_appendix_v1/SPEC_FACTS.json",
+    "cohort_source": "results/cinc2012_cohort_v1/BUILD_SUMMARY.json",
+    "notes": "Base simulator has three organ groups; clinical arrays have four. Numerical units and source timeline rules are documented in the cohort report."
+  },
+  "unstable_external_cde": {
+    "source": "results/v4/ncde_diagnosis.md",
+    "policy": "reported as diverged; external numeric fields are archived diagnostics and excluded from display tables"
+  },
+  "cinc2012": {
+    "source": "results/clinical_v4_v1/cinc2012/cinc2012_results.json",
+    "table": "results/clinical_v4_v1/cinc2012/TABLE_CINC2012.md",
+    "selector": "protocols/transfer|within/models/<model>/splits/pooled|testB/RMSE",
+    "display": "mean and sample standard deviation over seeds 0..3, rounded to 4 decimal places",
+    "transfer_eligible_stays": 7982,
+    "within_test_eligible_stays": 3993,
+    "caveat": "Hospital-system overlap with CinC-2019 set-A; set-a/set-b are not asserted to be different hospitals"
+  }
+}

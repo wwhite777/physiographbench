@@ -6,7 +6,12 @@ of whether the physiological graph prior helps in any regime. Emits a figure.
 """
 from __future__ import annotations
 
-import os
+# Resolve all public modules and scratch from the release root.
+import sys as _release_sys
+from pathlib import Path as _ReleasePath
+_release_sys.path.insert(0, str(_ReleasePath(__file__).resolve().parents[1]))
+from release_paths import ROOT as RELEASE_ROOT, SCRATCH as RELEASE_SCRATCH
+
 import argparse
 import glob
 import json
@@ -18,11 +23,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-# Repository root. Defaults to the parent of src/; override with the
-# PHYSIOGRAPH_ROOT environment variable to relocate data/result trees.
-REPO_ROOT = Path(os.environ.get("PHYSIOGRAPH_ROOT", Path(__file__).resolve().parents[1]))
-
-FIG = REPO_ROOT / "result/figure"
+FIG = Path(str(RELEASE_ROOT / 'results/legacy/figure'))
 BLUE, GREEN, GREY, RED = "#1f6fb4", "#2a9d8f", "#9aa7b4", "#d1495b"
 
 
@@ -91,9 +92,9 @@ def analyse_h1(globpat, out_json=None):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--which", default="h2")
-    ap.add_argument("--glob", default=str(REPO_ROOT / "result/sweeps/h2_frac*.json"))
+    ap.add_argument("--glob", default=str(RELEASE_ROOT / 'results/legacy/sweeps/h2_frac*.json'))
     a = ap.parse_args()
     if a.which == "h2":
-        analyse_h2(a.glob, out_json=str(REPO_ROOT / "result/h2_lowdata.json"))
+        analyse_h2(a.glob, out_json=str(RELEASE_ROOT / 'results/legacy/h2_lowdata.json'))
     elif a.which == "h1":
-        analyse_h1(a.glob, out_json=str(REPO_ROOT / "result/h1_horizon.json"))
+        analyse_h1(a.glob, out_json=str(RELEASE_ROOT / 'results/legacy/h1_horizon.json'))

@@ -1,40 +1,14 @@
-# Data (downloaded from PhysioNet, not redistributed) and derived cohorts
-data/training_set*/
-data/*.psv
-data/*.npz
-data/*.zip
-data/urls.txt
-data/s3_urls.txt
-data/*.list
-data/robots.txt
-
-# Model checkpoints and run logs
-ckpt/
-logs/
-result/figure/
-
-# Python
+.scratch/
 __pycache__/
-*.py[cod]
-*.egg-info/
-.venv/
-venv/
-
-# Manuscript and encrypted artifacts (kept out of the public tree)
-*.gpg
-*.pdf
-*.docx
-*.tex
-*.aux
-*.bbl
-*.blg
-*.cls
-*.bst
-paper/
-upload/
-
-# OS / editor
-.DS_Store
-*.swp
-.idea/
-.vscode/
+.pytest_cache/
+*.pyc
+/runs/
+artifacts/
+data/*
+!data/README.md
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.psv
+*.part

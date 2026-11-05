@@ -1,267 +1,191 @@
-# PhysioGraphBench: When Do Physiological Graph Priors Help?
+![PhysioGraphBench overview](figures/F1_overview.png)
 
-*A Reproducible, Baseline-Aware Benchmark for Multi-Organ ICU Trajectory Mining*
+# PhysioGraphBench: when do physiological graph priors help?
 
-![PhysioGraphBench overview](fig1.png)
+**On hourly intensive care forecasting, tuned GRU-D outperforms the hand-specified organ graph; matched simulator controls attribute the earlier apparent graph gain to factorisation.**
 
-**Encoding the body as a graph of coupled organs sounds obviously right. Measured
-against tuned recurrent baselines under an identical budget, it makes short-horizon
-ICU forecasting *worse* — external RMSE 0.820 for the organ-graph model against
-0.806 for GRU-D, a gap that holds across every seed (paired *t* = 13.82,
-*p* = 8.2e-4) and across 2,368 held-out windows (Wilcoxon *p* = 4.3e-53).**
+This is a benchmark release: the simulator, cohort builders, baselines, protocols,
+and frozen v4 results for evaluating physiological graph priors. The findings
+concern the tested prediction tasks and implementations. They do not establish
+clinical utility or validate recovered edges as causal physiology.
 
-This repository is the benchmark, the simulator, the baselines and every frozen
-result behind that sentence. It is **not** a method release: the model we audit
-loses, and the point of the artifact is that the loss is measured properly.
+Figure 1 summarizes the two open corpora, the three-organ simulator and the v4
+audit protocol. Its CinC-2012 set-b comparison is GRU-D 0.7684 versus
+PhysioGraph-GRU 0.8239 under within-corpus training. The clinical models use four
+organ groups; zero simulator coupling retains a shared sepsis course.
 
----
+## Main findings
 
-## The short version
+The task observes a 12-hour context and predicts the next 12 hours. Root mean
+squared error (RMSE) is pooled over observed target entries after normalization
+by training-cohort statistics; lower is better. In CinC-2019, set A is internal
+and set B is external. Values are mean ± sample standard deviation over four seeds.
 
-Multi-organ failure is coupled: falling blood pressure starves the kidney, poor
-perfusion drives lactate. So the natural modelling move is to write that anatomy
-down — organs as nodes, known physiological influences as edges — and pass
-messages only along admissible paths. The prior is free, interpretable, and
-almost universally assumed to help. We built the fairest test we could and it
-does not help.
+| Model | Internal A | External B | Frozen source |
+|---|---:|---:|---|
+| GRU-D | 0.7458 ± 0.0005 | 0.8059 ± 0.0009 | [selected runs](results/v4/tuning_grid.json) |
+| PhysioGraph-GRU | 0.7702 ± 0.0022 | 0.8177 ± 0.0010 | [selected runs](results/v4/tuning_grid.json) |
+| t-PatchGNN | 0.7492 ± 0.0016 | 0.7939 ± 0.0009 | [four runs](results/learned_graph_baselines_v1/tpatchgnn/) |
+| GraFITi | 0.7483 ± 0.0003 | 0.7932 ± 0.0001 | [four runs](results/learned_graph_baselines_v1/grafiti_v3/) |
 
-| question | answer | evidence |
+GRU-D and PhysioGraph-GRU use the same learning-rate × width grid, validation
+selection, and 35-epoch cap. The selected GRU-D has 449,568 parameters and
+PhysioGraph-GRU has 912,032. t-PatchGNN and GraFITi use declared paper settings
+without a grid; this is a comparison of tuned recurrent models with untuned
+learned variable graphs. Both learned graphs achieve lower external error than
+the tuned recurrent reference. The implementations and declared adaptations
+are described in [baselines/METHODS.md](baselines/METHODS.md).
+
+On CinC-2012, transfer evaluates the CinC-2019-trained models with CinC-2019
+training normalization on set-a and set-b, pooling 7,982 eligible stays.
+Within-corpus training uses set-a (3,390 training / 599 validation stays),
+CinC-2012 training normalization and the CinC-2019-selected configurations,
+then evaluates set-b (3,993 eligible stays). The 16-variable protocol is shared.
+
+| Model | CinC-2012 transfer, pooled | CinC-2012 within, set-b | Frozen source |
+|---|---:|---:|---|
+| GRU-D | 0.8273 ± 0.0018 | 0.7684 ± 0.0018 | [Result table](results/clinical_v4_v1/cinc2012/TABLE_CINC2012.md) |
+| PhysioGraph-GRU | 0.8529 ± 0.0020 | 0.8239 ± 0.0152 | [Result table](results/clinical_v4_v1/cinc2012/TABLE_CINC2012.md) |
+| t-PatchGNN | 0.8142 ± 0.0005 | 0.7460 ± 0.0029 | [Result table](results/clinical_v4_v1/cinc2012/TABLE_CINC2012.md) |
+| GraFITi | 0.8192 ± 0.0059 | 0.7335 ± 0.0017 | [Result table](results/clinical_v4_v1/cinc2012/TABLE_CINC2012.md) |
+
+The CinC-2012 corpus overlaps CinC-2019 set-A's hospital system, and its set-a
+and set-b are not asserted to be different hospitals. Its arterial oxygen
+saturation (SaO2) stands in for pulse-oximetry oxygen saturation (O2Sat).
+
+| Question | v4 finding | Frozen evidence |
 |---|---|---|
-| beats a plain GRU on the external cohort? | **no** | 0.820 vs 0.808 |
-| explained by too few parameters? | **no** | loses to a 124k GRU *and* a capacity-matched 679k GRU (*p* = 2.6e-4) |
-| does the *correct* edge direction beat its reverse? | **no** | 0.8243 vs 0.8232 |
-| does any graph beat no graph at all? | **no** | no-graph 0.8196 is the most accurate variant |
-| does it ever help? | **yes, narrowly** | ~14% better on a simulator with strong organ coupling |
+| Does the clinical gap depend on capacity? | Plain GRU (444,944 parameters; 0.7489 / 0.8059 A/B) and GRU-D beat PhysioGraph-GRU with about half its parameters. Wider GRU-med (2,586,896; 0.7475 / 0.8068) and GRU-large (6,498,320; 0.7533 / 0.8104) do not improve on GRU-D; selected GRU-med is not parameter-matched. PhysioGraph-GRU minus GRU-D paired per-stay gaps are 0.0198 ± 0.0022 on A and 0.0115 ± 0.0007 on B. | [Tuning](results/v4/tuning_grid.json), [paired statistics](results/v4/stats_v4.json) |
+| Do imposed edge sets distinguish clinical performance? | No edge set is consistently better, including no edges. Across six variants, GRU-backbone mean RMSE spans 0.0024 / 0.0025 A/B; state-space-backbone spans are 0.0067 / 0.0075, with no variant best on both cohorts (seed standard deviations 0.001–0.005). These tables do not establish statistical equivalence. | [Variants](results/v4/variant_ablation_v4.json) |
+| What explains the simulator gain? | At κ = 1: capacity-matched monolithic GRU 0.0389 → factorised no edges 0.0364 → physiological edges 0.0377. Admissible edges show no consistent improvement across κ ∈ {0, .1, .25, .5, .75, 1}: worse at five of six values and tied at κ = 0.75 (paired difference −0.00001). Factorisation carries the earlier gain; edges subtract. | [Matched controls](results/sim_grids_v1/h3_grid_with_controls.json) |
+| When are counterfactual directions recovered? | With deterministic severity-driven dosing (σ = 0) and shared histories, all four primary models recover all three population directions at c ≤ 0.1, two at c = 0.25 and none at c ≥ 0.5. With assignment noise σ ≥ 0.15, mean arterial pressure and urine-output directions survive even at c = 1 (0.86–0.96); at σ = 0.25 all three survive to c = 0.5. Lactate fails earlier; loss of treatment support governs recovery. | [Policy grid](results/sim_grids_v1/h5_grid.json) |
+| Does treatment balancing rescue direction recovery? | Neither the CRN-lite surrogate nor the continuous-dose CRN adaptation improves on the unadjusted GRU. The full adaptation fails the identifiable positive control even with different balancing weights and up to 120 epochs. | [Policy grid](results/sim_grids_v1/h5_grid.json), [CRN sweep](results/learned_graph_baselines_v1/crn_v2_lambda_sweep/) |
+| How much next-hour cross-organ predictive gain is observed? | Ridge gain on A validation is +0.0033 [0.0023, 0.0043]; there is no positive gain on B. Coupled hourly simulator settings score 0.17–0.21 on the same definition; no numerical mapping onto κ is claimed. | [Clinical index](results/coupling_index_v1/coupling_index.json), [hourly simulator](results/coupling_index_v1/simulator_hourly/sim_hourly_index.json) |
+| Does the external graph gap close with horizon? | With a 12-hour context on the common cohort with at least 48 hours: +0.026 at horizon 6, +0.021 at 12, +0.019 at 24. | [Horizon table](results/v4/horizon_table_v4.json) |
+| Can the cohort be rebuilt? | All 40,336 public raw files are included, with zero exclusions. Rebuilding reproduces the complete CinC-2019 archive bytes. Both CinC-2012 cohort views also have expected archive and per-array hashes. | [Replay](results/cohort_replay_v1/REPLAY_RESULTS.json), [cohort hashes](manifests/cohorts.json) |
+| Do the orderings reproduce on CinC-2012? | Both orderings reproduce with larger margins: transfer GRU-D 0.8273 ± 0.0018 versus PhysioGraph-GRU 0.8529 ± 0.0020; within-corpus 0.7684 ± 0.0018 versus 0.8239 ± 0.0152. Learned variable graphs have the lowest errors on both protocols (t-PatchGNN 0.8142 / 0.7460; GraFITi 0.8192 / 0.7335, transfer / within). Organ-graph models are the least seed-stable. The corpus overlaps CinC-2019 set-A's hospital system. | [Full table](results/clinical_v4_v1/cinc2012/TABLE_CINC2012.md), [numerical results](results/clinical_v4_v1/cinc2012/cinc2012_results.json), [interpretation](results/clinical_v4_v1/cinc2012/CINC2012_READING.md) |
+| What is withheld as a numerical comparison? | Neural controlled differential equation (CDE) external inference on CinC-2019 is unstable and is reported as diverged. Its CinC-2012 results are finite and are retained in the full table. | [CDE diagnosis](results/v4/ncde_diagnosis.md), [CinC-2012 table](results/clinical_v4_v1/cinc2012/TABLE_CINC2012.md) |
 
-What the graph reliably buys is **robustness and readability, not accuracy**: it
-has the smallest internal-to-external degradation of any model (5.9% vs 7.2–8.0%)
-while remaining the *worst* model in absolute external terms, and its learned edge
-gates are extremely stable under bootstrap resampling.
+The simulator score is a macro-average of organ errors normalized by one fixed
+reference range; it is distinct from clinical pooled RMSE. κ scales the tested
+coupling terms; c controls severity-dependent dosing; σ is the total standard
+deviation of assignment noise. The counterfactual grid holds observed history
+fixed and changes the future dose. Direction recovery means recovering the sign
+of the simulated response to adjacent doses. The four primary models are the
+organ state-space model, organ GRU, monolithic Control-GRU, and CRN-lite.
 
-## The organ graph
+## Data and licences
 
-**Nodes — 4 organ systems, 16 variables** (`organ_dims = (4, 4, 3, 5)`):
-*cardiovascular* (HR, SBP, MAP, DBP), *pulmonary* (O2Sat, Resp, FiO2, PaCO2),
-*renal* (creatinine, BUN, potassium), *metabolic-inflammatory* (lactate, glucose,
-HCO3, WBC, temperature).
-
-**Edges — 8 hand-specified, physiologically admissible, directed:** CV→Renal
-(MAP→GFR), CV→Pulm, CV→Metab, Pulm→CV, Pulm→Metab, Metab→CV, Renal→Metab,
-Renal→CV. Every non-admissible edge is masked to zero. **That sparsity pattern is
-the prior under audit.**
-
-**Node model.** Each organ is a compact diagonal complex state-space (LRU-style)
-cell with a provably stable pole `λ = exp(−exp(ν) + iθ)`, *or* a GRU cell
-(`node_type = "ssm" | "gru"`). Both backbones are reported, so a weak node model
-cannot be confused with a bad graph. Messages travel only along admissible edges,
-each modulated by a per-patient scalar gate — an organ-level mixture of experts.
-Time-varying treatments are injected into the latent dynamics, so one model both
-forecasts (controls = 0) and rolls out interventional counterfactuals by
-free-running g-computation. 0.1–0.9M parameters.
-
-**Protocol.** Masked MSE (errors scored only over observed entries), Adam, cosine
-schedule, 35-epoch cap, early stopping — **identical budget for every model**.
-Normalisation is fit on the internal training split only.
-
-## Results: the prior does not help
-
-CinC-2019, 12h context → 12h horizon, normalised RMSE@12, mean ± std over 4 seeds.
-Set A is internal, set B is a **different hospital system**. Lower is better.
-*(`result/forecast_seed_stats.json`)*
-
-| model | params | internal A | external B | drop |
-|---|---:|---|---|---:|
-| GRU-D | 126,624 | **0.748 ± 0.001** | **0.806 ± 0.001** | 7.8% |
-| GRU-med | 679,056 | 0.750 ± 0.001 | 0.808 ± 0.001 | 7.7% |
-| GRU | 124,176 | 0.753 ± 0.000 | 0.808 ± 0.000 | 7.3% |
-| GRU-large | 1,676,304 | 0.751 ± 0.001 | 0.811 ± 0.001 | 8.0% |
-| ODE-RNN | 157,200 | 0.757 ± 0.001 | 0.813 ± 0.001 | 7.4% |
-| GraphGRU | 211,056 | 0.761 ± 0.002 | 0.816 ± 0.001 | 7.2% |
-| **PhysioGraph (GRU)** | 912,032 | 0.774 ± 0.002 | 0.820 ± 0.002 | **5.9%** |
-| **PhysioGraph (SSM)** | 687,008 | 0.778 ± 0.001 | 0.826 ± 0.002 | 6.1% |
-| persistence | 0 | 0.875 | 0.932 | 6.5% |
-
-PhysioGraph has the **best relative cross-cohort drop and the worst absolute
-external error**. The ordering is stable and is not a capacity artifact: vs GRU-D,
-paired *t* over 4 seeds **t = 13.82, p = 8.20e-4**; across 2,368 test windows mean
-gap **0.02531**, bootstrap 95% CI **[0.0220, 0.0285]** (excludes zero), **Wilcoxon
-p = 4.30e-53**, better on only 36.7% of windows; vs the capacity-matched GRU-med
-**t = 20.34, p = 2.60e-04**. Neural-CDE diverged on the external cohort and is
-excluded rather than reported as a favourable comparison.
-
-**Does the graph structure matter at all?** *(`result/h4_falsification.json`,
-`result/thm3_sparsity.json`, 2 seeds)*
-
-| edge set | external RMSE |
-|---|---|
-| no graph | **0.8196 ± 0.0002** |
-| reversed edges | 0.8232 ± 0.0001 |
-| admissible (physiologically correct) | 0.8243 ± 0.0004 |
-| fully connected (dense) | 0.8245 ± 0.0012 |
-| random edges | 0.8349 ± 0.0060 |
-
-Coherent structure beats random structure — but **the physiologically correct
-direction is no better than its exact reverse**, and removing the graph is best of
-all. Sparse is ~2.9× more seed-stable than dense; it is not more accurate.
-**Forecasting accuracy does not certify edge direction** — a caution for any paper
-claiming to have "discovered" physiology from predictive gain.
-
-## When it *does* help
-
-**H3 — organ coupling: POSITIVE.** Sweeping simulator coupling complexity κ,
-macro-NRMSE *(`result/tier2_sweeps.json`)*:
-
-| κ | PhysioGraph-GRU | Control-GRU | relative |
+| Resource | Access | Data licence | Reproduction |
 |---|---|---|---|
-| 1.0 | **0.0454** | 0.0530 | 14.3% better |
-| 0.5 | **0.0503** | 0.0590 | 14.7% better |
-| 0.0 | 0.5787 | 1.8930 | *degenerate — the decoupled renal compartment is near-unpredictable for both* |
+| CinC-2019 sepsis challenge, version 1.0.0 | [PhysioNet](https://physionet.org/content/challenge-2019/1.0.0/), [public S3 mirror](https://physionet-open.s3.amazonaws.com/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | `python3 tools/fetch_s3_cinc2019.py --root data` |
+| CinC-2012 challenge, version 1.0.0 | [PhysioNet](https://physionet.org/content/challenge-2012/1.0.0/) | [ODC-By 1.0](https://opendatacommons.org/licenses/by/1-0/) | `python3 tools/fetch_cinc2012.py --root data/cinc2012` |
+| Simulator and benchmark software | This repository | [MIT](LICENSE) | `python3 tools/replay_simulators.py --group all --run` |
 
-At κ = 1.0 the gain lands exactly where theory predicts, on the **downstream**
-organs: renal 0.0534 vs 0.0630, metabolic 0.0582 vs 0.0676, while the upstream
-cardiovascular node barely moves. **When cross-organ coupling is genuinely strong,
-the graph earns its keep.** Real ICU data at a 12h horizon is not that regime.
+Data attribution: PhysioNet/Computing in Cardiology Challenge 2019, Early Prediction
+of Sepsis from Clinical Data; PhysioNet/Computing in Cardiology Challenge 2012,
+Predicting Mortality of ICU Patients. Preserve the original dataset attribution
+and applicable data terms when obtaining or reusing the corpora. The MIT software
+licence does not replace the upstream data licences. No raw patient data or model
+weights are redistributed here.
 
-**H2 — low data: NEGATIVE.** The usual defence of a structural prior is that it
-helps when data is scarce. The opposite happens; the deficit *grows* as data
-shrinks: 0.0175 (100%) → 0.0178 → 0.0227 → 0.0264 → **0.0271** (5%).
+## Run the artifact
 
-**H1 — horizon: WEAK.** The gap narrows at longer horizons (0.0145 at C12/K12 →
-0.0056 at C12/K24) but never reverses.
-
-## Every model gets the treatment direction wrong — and we show why
-
-On the CVSim counterfactual benchmark we sweep a vasopressor dose grid and ask
-whether models get the *direction* of the response right.
-*(`result/cvsim_counterfactual.json`)*
-
-| model | macro NRMSE | cardiac | renal | metabolic | correct directions |
-|---|---|---|---|---|---|
-| Control-GRU | **0.074** | 0.039 | 0.088 | 0.095 | **0/3** |
-| CRN-lite (causal adjustment) | 0.075 | 0.039 | 0.088 | 0.097 | **0/3** |
-| PhysioGraph (GRU) | 0.087 | 0.040 | 0.096 | 0.124 | **0/3** |
-| PhysioGraph (SSM) | 0.088 | 0.052 | 0.094 | 0.119 | **0/3** |
-
-Ground truth: mean arterial pressure **rises** from 84.93 to 93.49 mmHg across the
-dose grid. **Every model predicts a fall** (PhysioGraph: 91.46 → 86.27). Lactate is
-inverted too — truly 1.48 → 1.20, predicted 0.74 → 1.93. Zero of three directions,
-for all four models, *including an explicit causal-adjustment baseline*.
-
-That looks like a modelling failure. It is not. **H5 — confounding:** sweeping
-confounding strength *c*, which takes dosing from random to severity-driven
-(treatment/severity correlation 0 → 0.94):
-
-| confounding *c* | PhysioGraph (SSM) | PhysioGraph (GRU) | Control-GRU | CRN-lite |
-|---|---|---|---|---|
-| 0.0 | **3/3** | **3/3** | **3/3** | **3/3** |
-| 0.5 | 0/3 | 0/3 | 0/3 | 0/3 |
-| 1.0 | 0/3 | 0/3 | 0/3 | 0/3 |
-
-At *c* = 0 every model recovers all three directions. The wrong-direction result is
-therefore a **confounding and overlap effect, not a model defect** — sicker patients
-get more pressor, so the observational association between dose and outcome is
-sign-flipped relative to the causal effect, and no architecture fixes it. This is
-the most transferable finding here: **a counterfactual benchmark that does not
-sweep confounding cannot tell a broken model from a broken identification.**
-
-## What the graph buys instead
-
-Not accuracy — stability and readability. The learned per-patient edge gates are
-strikingly reproducible under bootstrap resampling and rank the edges in a
-clinically sensible order *(`result/edge_stability.json`)*:
-
-| edge | gate | bootstrap CV |
-|---|---|---|
-| CV → Renal (MAP → GFR) | **0.892** | 0.0008 |
-| Pulm → Metab | 0.782 | 0.0032 |
-| Metab → CV | 0.736 | 0.0021 |
-| CV → Pulm | 0.089 | 0.0123 |
-
-The model concentrates on the perfusion→kidney pathway a clinician would name
-first, with a coefficient of variation under 0.1%. Together with the smallest
-cross-cohort degradation in the table (5.9%) and a rollout error that stays inside
-its geometric bound (one-step ε = 0.6636, L = 1.0233, measured 12-step RMSE 0.8418
-against a bound of 9.07; `result/thm1_rollout.json`), the honest summary is: *the
-prior makes the model better behaved and easier to read, and slightly worse at the
-job.*
-
-## Datasets
-
-**No credentialing required — that is deliberate.** Every result here is
-reproducible by anyone with an internet connection: no data-use agreement, no CITI
-training, no institutional sponsor.
-
-- **PhysioNet/CinC-2019 early-sepsis corpus** (CC-BY). 40,336 ICU stays, hourly
-  vitals and labs from two hospital systems: set A (20,336) internal, set B
-  (20,000) a genuine external cohort. Vitals ~65% observed, labs <10% — missingness
-  is the dominant nuisance, which is why GRU-D is the baseline to beat. Fetch with
-  `data/fetch_parallel.sh`.
-- **CVSim-style mechanistic simulator** (`src/cvsim_hemodynamics_simulator.py`,
-  generated in-repo, nothing downloaded). A four-compartment mean-circulation model
-  in the CVSim tradition: two Frank-Starling ventricles plus an arterial baroreflex
-  producing MAP/HR/CO/CVP, baseline MAP 90 mmHg and CO 5.0 L/min. A MAP→GFR
-  urine-output saturation and a hypoperfusion/sepsis→lactate first-order clearance
-  carry interventions across organs. Two knobs make it a benchmark rather than a
-  demo: **confounding strength *c*** (random → severity-driven dosing, correlation
-  0 → 0.94) and **coupling complexity κ** (0 → 1).
-
-## Repository structure
-
-- **Data & simulator** — `src/cinc2019_cohort_preprocessor.py` (CinC-2019 → 4-organ
-  / 16-variable cohort), `src/cvsim_hemodynamics_simulator.py` (four-compartment
-  simulator and both knobs), `data/fetch_*.sh`.
-- **Models** — `src/organ_graph_ssm_model.py` (PhysioGraph: gated organ graph, SSM
-  and GRU nodes), `src/clinical_timeseries_baselines.py` (GRU, GRU-D, ODE-RNN,
-  GraphGRU, Neural-CDE).
-- **Experiments** — `src/physiograph_training_runner.py` (forecasting table under a
-  shared budget), `src/cvsim_counterfactual_runner.py` (dose-grid counterfactuals),
-  `src/physiograph_theory_checks.py` (rollout bound, sparse-vs-dense, edge
-  falsification), `src/physiograph_seed_stats.py` (paired *t*, bootstrap, Wilcoxon),
-  `src/physiograph_sweep_analysis.py`, `src/physiograph_result_figures.py`.
-- **`result/*.json`** — **every reported number, frozen; the only authoritative
-  source.** Per-sweep and per-seed raw records in `result/sweeps/` and
-  `result/seeds/`.
-- **`figures/`** — `fig_when.png` (the four sweeps), plus forecast, counterfactual,
-  graph and tradeoff panels.
+Use Python and the package versions in [requirements.txt](requirements.txt).
+The recorded environment is [manifests/environment.json](manifests/environment.json).
+From the repository root:
 
 ```bash
-pip install torch numpy scipy matplotlib
-bash data/fetch_parallel.sh     # public download, no credentials
-bash run_all.sh                 # GPU=<idx> PYTHON=<interpreter> to override
+make smoke
+make findings
+python3 tools/summarize_results.py --out-dir runs/tables --check
 ```
 
-Paths default to the repository root and relocate with `PHYSIOGRAPH_ROOT`.
+The complete download, cohort rebuild, simulator generation, experiment, table,
+and figure sequence is in [REPRODUCE.md](REPRODUCE.md), including expected hashes.
+`PHYSIOGRAPH_ROOT` can select the repository root; `TMPDIR` selects private scratch.
+The v4 experiment outputs go to `runs/`, with generated-data and probe caches
+in ignored `data/` and `artifacts/` locations. `results/` holds the frozen records. `SHA256SUMS` checks the exact public distribution. Historical source and
+archive fingerprints are retained separately from distribution fingerprints.
+
+| Directory | Contents |
+|---|---|
+| `src/` | Original organ model, clinical baselines, loader, cohort parser, simulator, and supporting legacy entry points |
+| `tools/` | Portable v4 protocol, cohort/replay utilities, statistics, coupling index, experiment plans, table/plot generation |
+| `sim/` | Matched edge controls, shared-history generation, monolithic controls, grid aggregators |
+| `baselines/` | Paper-based variable-graph and continuous-dose CRN adaptations |
+| `results/` | Frozen numerical evidence and machine-generated display tables |
+| `manifests/` | Generation settings, original/distributed hashes, environment, cohort and simulator array checks |
 
 ## Limitations
 
-- **The headline is negative, and this is a benchmark, not a method.** Nothing here
-  should be read as a proposal to use PhysioGraph; it is the object of study.
-- **Counterfactual validity rests on one simulator.** There is no credentialed-ICU
-  treatment-effect validation, so the 0/3 direction result and the H5 explanation
-  are simulator-internal.
-- **Narrow scope.** Horizons ≤12h, one corpus family, one graph architecture
-  audited. A different horizon, corpus or architecture could reverse the sign.
-- **Edge "discovery" is up-weighting, not discovery.** The gates re-weight
-  hand-specified edges and cannot find new ones. H4 shows accuracy does not certify
-  direction, so the stable gates are *hypotheses*, not evidence.
-- **Ablations use 2 seeds** where the main table uses 4. The H4 and sparsity
-  differences are small relative to that, and we claim no significance for them.
-- **Robustness is relative only.** The 5.9% degradation is the smallest in the
-  table, but it is the smallest drop from the worst starting point.
+Diagnostics: the post-hoc [renal shared-input diagnostic](diagnostics/renal_shared_input/)
+compares partitioned and shared inputs at one fixed configuration over four paired seeds;
+its code, saved runs, limitations and rerun commands accompany the reported results.
+The post-hoc [shared-input edge ablation](diagnostics/shared_input_edges/) adds six fixed edge sets over four paired seeds, with code, archived runs and rerun commands.
 
-## Status
+The simulator findings come from one simulator family with three organ groups:
+cardiovascular, renal and metabolic. This structure-matched setting does not
+establish generality across physiological simulators or all organ systems.
 
-Research code, simulator and frozen result records for an unpublished manuscript,
-which is not included in this repository. This work was originally framed as a
-method paper and was reframed into a benchmark once the negative result proved
-robust — the code and every frozen result record behind that reframe are here.
+Clinical forecasting does not observe treatments in CinC-2019. Counterfactual
+claims therefore refer to the simulator. The simulator contains cardiovascular,
+renal and metabolic groups, a step onset of sepsis, and a shared sepsis course
+even at κ = 0. Its extended hourly trajectories can reach nonphysiological
+states; the hourly index is descriptive calibration and does not validate the
+simulator or locate the clinical data on a causal coupling scale.
 
-## Author
+The clinical forecasting protocol contains no real treatment variables or
+interventions; treatment-direction claims are confined to simulated outcomes.
+Each reported comparison uses four seeds. Seed standard deviations summarize
+that limited set of runs and do not establish broad robustness. Neural CDE
+diverged during external CinC-2019 re-inference and is excluded from numerical
+comparisons there; finite CinC-2012 runs do not resolve that failure.
 
-Woncheol Jeong
+The learned variable graphs use paper hyper-parameters without a tuning grid,
+whereas the recurrent and organ-graph models use equal-budget validation tuning.
+Their rankings compare these implementations and settings, rather than an equal
+search over every model family. Within-corpus CinC-2012 configurations were
+selected on CinC-2019 and were not re-tuned on CinC-2012. The hospital-system
+overlap and measurement substitutions described above limit claims of
+independent clinical generalization.
 
-## License
+Two lineage disclosures affect interpretation of the earlier results.
+The earlier counterfactual targets received treatment since warm-up and did not
+share the factual history. v4 branches from the factual state at the future
+intervention time. Severity–dose correlations are measured per file; the policy
+noise term is retained. The previously reported per-window interval came from a
+checkpoint pair that was later overwritten. v4 saves seed-specific checkpoints
+when rerun and distinguishes seed variation from paired patient sampling
+uncertainty. Historical diagnostics and their exception remain in the frozen run
+manifest; they are not silently relabelled as new evidence.
 
-MIT — see [LICENSE](LICENSE). PhysioNet/CinC-2019 is distributed by PhysioNet under
-CC-BY and is not redistributed here; `data/fetch_parallel.sh` retrieves it from the
-original source.
+The cohort uses numerical units as distributed: inspired oxygen fraction (FiO2)
+is fraction-valued; lactate is on the mmol/L numerical scale despite conflicting
+upstream descriptions. The CinC-2012 report documents its hourly pressure
+fallback, modality differences, missing static covariates, and evaluation-only
+transfer view. These are reproducible measurement and protocol choices rather
+than evidence of clinical interchangeability.
+
+Code and data transformations for distribution preserve numerical results and
+record both original and distributed file hashes in
+[manifests/distribution.json](manifests/distribution.json). Simulator metadata
+contains new paths and code fingerprints, so the portable archive bytes can
+differ while every scientific array is checked against frozen payload hashes.
+
+## Citation
+
+Code and results: https://github.com/wwhite777/physiographbench — archived at Zenodo, DOI 10.5281/zenodo.23976172.
+
+```bibtex
+@software{jeong2026physiographbench,
+  author    = {Jeong, Woncheol and Oh, Hayoung},
+  title     = {PhysioGraphBench: code, results and diagnostics for a matched-control benchmark of physiological graph priors in multi-organ ICU trajectory forecasting},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23976172},
+  url       = {https://github.com/wwhite777/physiographbench}
+}
+```
+
+Software is distributed under the [MIT licence](LICENSE).

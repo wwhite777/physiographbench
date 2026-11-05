@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "task": "hourly_calibration-sim-hourly-calibration-build",
+  "kappa": 0.25,
+  "confound": 1.0,
+  "sigma": 0.03,
+  "seed": 0,
+  "n_patients": 400,
+  "horizon_h": 36.0,
+  "out_dt": 3600.0,
+  "c": 1.0,
+  "horizon_s": 129600.0,
+  "warmup_s": 180.0,
+  "integration_dt": 0.5,
+  "backend": "vectorized",
+  "command_line": "python3 -B tools/generate_hourly.py --kappa 0.25 --confound 1 --sigma 0.03 --seed 0 --n_patients 400 --horizon_h 36 --out_dt 3600 --out data/hourly_k0.25.npz --deadline-utc 1793790827",
+  "generation_command_line": "python3 -B tools/generate_hourly.py --kappa 0.25 --confound 1 --sigma 0.03 --seed 0 --n_patients 400 --horizon_h 36 --out_dt 3600 --out data/hourly_k0.25.npz --deadline-utc 1793790827",
+  "generation_args": {
+    "kappa": 0.25,
+    "confound": 1.0,
+    "sigma": 0.03,
+    "seed": 0,
+    "n_patients": 400,
+    "horizon_h": 36.0,
+    "out_dt": 3600.0
+  },
+  "code_sha256": {
+    "sim/sim_policy_ext.py": "fcc48abf17728656c18bc4e57b23029f2887effefef191b799c3396cd964f5b7",
+    "src/cvsim_hemodynamics_simulator.py": "7cf88f7918b698a03e09b5efc5dfd2691fb44b2550df861f6ea7d54ef5868af0",
+    "tools/generate_hourly.py": "f68553a7939cfb7afc0ae4eddb0733edc8a45de3883953d68738acb6a6aeaf0e"
+  },
+  "source_sha256": "7cf88f7918b698a03e09b5efc5dfd2691fb44b2550df861f6ea7d54ef5868af0",
+  "source_integrity_verified": true,
+  "output_path": "data/sim_hourly/hourly_k0.25.npz",
+  "output_sha256": "36495d6a8ffdea8961da4ffb8d921e091cf39eea96817250727a4ecbf8de1f32",
+  "generation_wall_seconds": 957.251569705084,
+  "started_utc": "2026-11-04T08:45:33.678006+00:00",
+  "finished_utc": "2026-11-04T09:01:30.929587+00:00",
+  "environment": {
+    "python": "3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0]",
+    "executable": "python3",
+    "numpy": "2.2.6",
+    "device": "cpu",
+    "threads": 1
+  },
+  "shapes": {
+    "t_min": [
+      37
+    ],
+    "cf_doses": [
+      5
+    ],
+    "severity": [
+      400
+    ],
+    "factual_dose": [
+      400
+    ],
+    "factual": [
+      400,
+      37,
+      8
+    ],
+    "counterfactual": [
+      400,
+      5,
+      37,
+      6
+    ],
+    "channels": [
+      6
+    ],
+    "metadata_json": []
+  },
+  "storage_note": "Unchanged simulator_grid make_dataset_grid called with out_path=None; returned arrays saved in this owned workspace.",
+  "deadline_note": "Imported RK4 method wrapped only to print progress and check wall deadline; numerical step is unchanged.",
+  "schedule": {
+    "factual_dose_onset_hours": 7.2,
+    "sepsis_onset_hours_range": [
+      0,
+      9.0
+    ],
+    "sepsis_final_knot_offset_hours": 0.5,
+    "counterfactuals": "five full trajectories, not used by hourly probe"
+  },
+  "all_entries_observed": true,
+  "observation_mask": 1
+}

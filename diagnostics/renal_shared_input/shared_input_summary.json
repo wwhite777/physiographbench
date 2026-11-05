@@ -1,0 +1,3695 @@
+{
+  "schema_version": 1,
+  "clock": {
+    "start_utc": "2026-11-05 05:42:58 UTC",
+    "analysis_utc": "2026-11-05 05:47:23 UTC"
+  },
+  "decision": "Does shared dynamic input reduce renal pooled RMSE relative to partitioned dynamic input at the fixed selected configuration and paired seeds?",
+  "definitions": {
+    "A": "A-test",
+    "B": "external hospital B",
+    "C": 12,
+    "K": 12,
+    "n_organs": 4,
+    "n_dynamic_variables": 16,
+    "n_planned_seeds": 4,
+    "seeds": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "minimum_included_epochs": 10,
+    "RMSE_at_12": "root mean squared error over all observed target entries across the next 12 forecast hours, normalized in A-train standard-deviation units",
+    "organ_pooling": "pool stays, forecast hours, and variables within that organ",
+    "all_organ_pooling": "pool observed target entries across all organs; not the average of organ RMSEs",
+    "seed_mean": "arithmetic mean of eligible per-run pooled RMSEs; no pooling of errors across seeds",
+    "span": "maximum minus minimum among eligible seeds; not a confidence interval",
+    "negative_paired_difference": "shared input has lower RMSE",
+    "exclusion_rule": "status failed or epochs_completed below 10: report run, exclude from arm means and its seed from paired aggregates"
+  },
+  "inputs": {
+    "renal_diagnosis": {
+      "file": "diagnostics/renal_shared_input/renal_diagnosis.json",
+      "field": "reference; provenance; reference_deficits",
+      "method": "read_saved_json_field"
+    },
+    "renal_diagnosis_sha256": "8e3f783b526c051c576e7ac37821a98288dc4e141821031b0df5c365be0c5bb0",
+    "diagnosis_reading": "diagnostics/renal_shared_input/RENAL_DIAGNOSIS.md",
+    "diagnosis_reading_sha256": "a864f9cbd14dc9d60cc94d40a5b6a436da2554fc588711886d0ebc2c2f17fd18",
+    "shared_input_variant": "diagnostics/renal_shared_input/shared_input_variant.py",
+    "shared_input_variant_sha256": "439e589d1dcc7a5c399a72f0b9c7ddc96ec78bba750e6f1750f0f5c5126794af",
+    "renal_protocol": "diagnostics/renal_shared_input/renal_protocol.py",
+    "renal_protocol_sha256": "59392466c0e10337cb62d43985deb3c8d671e686a00a844f623f79228ead281a",
+    "frozen_reference": "results/v4/per_organ_v4.json",
+    "frozen_reference_sha256": "e96e0aec4ef24a00487b7efa2dcf3ea8bd23f6d63c7b5575e4ab091c7e913028",
+    "diagnosis_cited_reference": "results/v4/per_organ_v4.json",
+    "reference_copies_identical": true,
+    "selection": "results/v4/selection.json",
+    "selection_sha256": "00d6a6c3577063751010700ac554a1802fd6c92016a6a518b60fd8582f129bef"
+  },
+  "configuration": {
+    "C": 12,
+    "K": 12,
+    "lr": 0.0005,
+    "width": "large",
+    "sizes": {
+      "d_hidden": 256,
+      "d_model": 96,
+      "d_state": 48,
+      "n_layers": 2
+    },
+    "edges": [],
+    "variant": "none",
+    "epochs_budget": 35,
+    "patience": 8,
+    "min_delta": 0.0001,
+    "optimizer": "Adam",
+    "weight_decay": 1e-05,
+    "scheduler": "CosineAnnealingLR",
+    "gradient_clip": 1.0
+  },
+  "configuration_provenance": {
+    "C": [
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+        "field": "C",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+        "field": "C",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+        "field": "C",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+        "field": "C",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+        "field": "C",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+        "field": "C",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+        "field": "C",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+        "field": "C",
+        "method": "read_saved_json_field"
+      }
+    ],
+    "K": [
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+        "field": "K",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+        "field": "K",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+        "field": "K",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+        "field": "K",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+        "field": "K",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+        "field": "K",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+        "field": "K",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+        "field": "K",
+        "method": "read_saved_json_field"
+      }
+    ],
+    "lr": [
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+        "field": "lr",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+        "field": "lr",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+        "field": "lr",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+        "field": "lr",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+        "field": "lr",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+        "field": "lr",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+        "field": "lr",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+        "field": "lr",
+        "method": "read_saved_json_field"
+      }
+    ],
+    "width": [
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+        "field": "width",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+        "field": "width",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+        "field": "width",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+        "field": "width",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+        "field": "width",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+        "field": "width",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+        "field": "width",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+        "field": "width",
+        "method": "read_saved_json_field"
+      }
+    ],
+    "sizes": [
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+        "field": "sizes",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+        "field": "sizes",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+        "field": "sizes",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+        "field": "sizes",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+        "field": "sizes",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+        "field": "sizes",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+        "field": "sizes",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+        "field": "sizes",
+        "method": "read_saved_json_field"
+      }
+    ],
+    "edges": [
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+        "field": "edges",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+        "field": "edges",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+        "field": "edges",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+        "field": "edges",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+        "field": "edges",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+        "field": "edges",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+        "field": "edges",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+        "field": "edges",
+        "method": "read_saved_json_field"
+      }
+    ],
+    "variant": [
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+        "field": "variant",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+        "field": "variant",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+        "field": "variant",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+        "field": "variant",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+        "field": "variant",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+        "field": "variant",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+        "field": "variant",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+        "field": "variant",
+        "method": "read_saved_json_field"
+      }
+    ],
+    "epochs_budget": [
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+        "field": "epochs_budget",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+        "field": "epochs_budget",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+        "field": "epochs_budget",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+        "field": "epochs_budget",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+        "field": "epochs_budget",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+        "field": "epochs_budget",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+        "field": "epochs_budget",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+        "field": "epochs_budget",
+        "method": "read_saved_json_field"
+      }
+    ],
+    "patience": [
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+        "field": "patience",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+        "field": "patience",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+        "field": "patience",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+        "field": "patience",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+        "field": "patience",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+        "field": "patience",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+        "field": "patience",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+        "field": "patience",
+        "method": "read_saved_json_field"
+      }
+    ],
+    "min_delta": [
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+        "field": "min_delta",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+        "field": "min_delta",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+        "field": "min_delta",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+        "field": "min_delta",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+        "field": "min_delta",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+        "field": "min_delta",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+        "field": "min_delta",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+        "field": "min_delta",
+        "method": "read_saved_json_field"
+      }
+    ],
+    "optimizer": [
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+        "field": "optimizer",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+        "field": "optimizer",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+        "field": "optimizer",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+        "field": "optimizer",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+        "field": "optimizer",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+        "field": "optimizer",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+        "field": "optimizer",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+        "field": "optimizer",
+        "method": "read_saved_json_field"
+      }
+    ],
+    "weight_decay": [
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+        "field": "weight_decay",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+        "field": "weight_decay",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+        "field": "weight_decay",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+        "field": "weight_decay",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+        "field": "weight_decay",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+        "field": "weight_decay",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+        "field": "weight_decay",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+        "field": "weight_decay",
+        "method": "read_saved_json_field"
+      }
+    ],
+    "scheduler": [
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+        "field": "scheduler",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+        "field": "scheduler",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+        "field": "scheduler",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+        "field": "scheduler",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+        "field": "scheduler",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+        "field": "scheduler",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+        "field": "scheduler",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+        "field": "scheduler",
+        "method": "read_saved_json_field"
+      }
+    ],
+    "gradient_clip": [
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+        "field": "gradient_clip",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+        "field": "gradient_clip",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+        "field": "gradient_clip",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+        "field": "gradient_clip",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+        "field": "gradient_clip",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+        "field": "gradient_clip",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+        "field": "gradient_clip",
+        "method": "read_saved_json_field"
+      },
+      {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+        "field": "gradient_clip",
+        "method": "read_saved_json_field"
+      }
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "partitioned/seed0",
+      "input_mode": "partitioned",
+      "seed": 0,
+      "run_json": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+      "run_json_sha256": "95194a5ca34974429fcf405166994d765830363b2622a92ec106fddd4f6adf7c",
+      "status": "complete",
+      "epochs_completed": 35,
+      "best_epoch": 35,
+      "n_params": 759952,
+      "included_in_means": true,
+      "exclusion_reasons": [],
+      "metadata_provenance": {
+        "input_mode": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+          "field": "input_mode",
+          "method": "read_saved_json_field"
+        },
+        "seed": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+          "field": "seed",
+          "method": "read_saved_json_field"
+        },
+        "status": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+          "field": "status",
+          "method": "read_saved_json_field"
+        },
+        "epochs_completed": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+          "field": "epochs_completed",
+          "method": "read_saved_json_field"
+        },
+        "best_epoch": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+          "field": "best_epoch",
+          "method": "read_saved_json_field"
+        },
+        "n_params": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        }
+      },
+      "metrics": {
+        "A": {
+          "cardiovascular": 0.6995317198605835,
+          "pulmonary": 0.8427318287423473,
+          "renal": 0.7964620456390357,
+          "metabolic": 0.8589340555555305,
+          "all_organ_pooled": 0.7700986716090558
+        },
+        "B": {
+          "cardiovascular": 0.8000495615105704,
+          "pulmonary": 0.8180357649729669,
+          "renal": 1.018164211572283,
+          "metabolic": 0.856208530951206,
+          "all_organ_pooled": 0.817404118007034
+        }
+      },
+      "metric_provenance": {
+        "A": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+            "field": "A.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+            "field": "A.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+            "field": "A.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+            "field": "A.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+            "field": "A.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+            "field": "B.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+            "field": "B.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+            "field": "B.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+            "field": "B.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+            "field": "B.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "evaluation_denominators": {
+        "A": {
+          "n_stays": 2368,
+          "observed_entries": 174879,
+          "organ_observed_entries": {
+            "cardiovascular": 92837,
+            "pulmonary": 57657,
+            "renal": 6336,
+            "metabolic": 18049
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+            "field": "A.n_stays; A.observed_entries; A.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "n_stays": 14824,
+          "observed_entries": 1074461,
+          "organ_observed_entries": {
+            "cardiovascular": 628618,
+            "pulmonary": 306178,
+            "renal": 27206,
+            "metabolic": 112459
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+            "field": "B.n_stays; B.observed_entries; B.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "node_input_widths": [
+        4,
+        4,
+        3,
+        5
+      ],
+      "projection_input_widths": [
+        13,
+        13,
+        11,
+        15
+      ],
+      "curve_check": {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/curve.csv",
+        "sha256": "2f6dec15e531546913e028d827a1e6b545db4a67a85f6cc1cc76d3913d5ab522",
+        "rows": 35,
+        "matches_epochs_completed": true
+      }
+    },
+    {
+      "run_id": "partitioned/seed1",
+      "input_mode": "partitioned",
+      "seed": 1,
+      "run_json": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+      "run_json_sha256": "59ea6e2f24eca1e495c43d7de2447706863c222679a41c70467a27b35fd7aee6",
+      "status": "complete",
+      "epochs_completed": 35,
+      "best_epoch": 34,
+      "n_params": 759952,
+      "included_in_means": true,
+      "exclusion_reasons": [],
+      "metadata_provenance": {
+        "input_mode": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+          "field": "input_mode",
+          "method": "read_saved_json_field"
+        },
+        "seed": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+          "field": "seed",
+          "method": "read_saved_json_field"
+        },
+        "status": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+          "field": "status",
+          "method": "read_saved_json_field"
+        },
+        "epochs_completed": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+          "field": "epochs_completed",
+          "method": "read_saved_json_field"
+        },
+        "best_epoch": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+          "field": "best_epoch",
+          "method": "read_saved_json_field"
+        },
+        "n_params": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        }
+      },
+      "metrics": {
+        "A": {
+          "cardiovascular": 0.6987727356125482,
+          "pulmonary": 0.842261039062162,
+          "renal": 0.9324387428791938,
+          "metabolic": 0.8735875261186326,
+          "all_organ_pooled": 0.7767655487334495
+        },
+        "B": {
+          "cardiovascular": 0.7997733438885345,
+          "pulmonary": 0.8185951343505719,
+          "renal": 1.148012892586001,
+          "metabolic": 0.8641736793547976,
+          "all_organ_pooled": 0.8226227160624967
+        }
+      },
+      "metric_provenance": {
+        "A": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+            "field": "A.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+            "field": "A.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+            "field": "A.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+            "field": "A.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+            "field": "A.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+            "field": "B.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+            "field": "B.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+            "field": "B.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+            "field": "B.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+            "field": "B.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "evaluation_denominators": {
+        "A": {
+          "n_stays": 2368,
+          "observed_entries": 174879,
+          "organ_observed_entries": {
+            "cardiovascular": 92837,
+            "pulmonary": 57657,
+            "renal": 6336,
+            "metabolic": 18049
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+            "field": "A.n_stays; A.observed_entries; A.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "n_stays": 14824,
+          "observed_entries": 1074461,
+          "organ_observed_entries": {
+            "cardiovascular": 628618,
+            "pulmonary": 306178,
+            "renal": 27206,
+            "metabolic": 112459
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+            "field": "B.n_stays; B.observed_entries; B.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "node_input_widths": [
+        4,
+        4,
+        3,
+        5
+      ],
+      "projection_input_widths": [
+        13,
+        13,
+        11,
+        15
+      ],
+      "curve_check": {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/curve.csv",
+        "sha256": "c30f35caaaeb1c53dc45b3e2575b12412c63dcef25b05a8af463622895d51be0",
+        "rows": 35,
+        "matches_epochs_completed": true
+      }
+    },
+    {
+      "run_id": "partitioned/seed2",
+      "input_mode": "partitioned",
+      "seed": 2,
+      "run_json": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+      "run_json_sha256": "8ee028f6d344bf7419bfbd599f78254c4d9476e8b748c26dffc41ef4ea03d813",
+      "status": "complete",
+      "epochs_completed": 35,
+      "best_epoch": 34,
+      "n_params": 759952,
+      "included_in_means": true,
+      "exclusion_reasons": [],
+      "metadata_provenance": {
+        "input_mode": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+          "field": "input_mode",
+          "method": "read_saved_json_field"
+        },
+        "seed": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+          "field": "seed",
+          "method": "read_saved_json_field"
+        },
+        "status": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+          "field": "status",
+          "method": "read_saved_json_field"
+        },
+        "epochs_completed": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+          "field": "epochs_completed",
+          "method": "read_saved_json_field"
+        },
+        "best_epoch": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+          "field": "best_epoch",
+          "method": "read_saved_json_field"
+        },
+        "n_params": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        }
+      },
+      "metrics": {
+        "A": {
+          "cardiovascular": 0.6985101388064723,
+          "pulmonary": 0.8450324398267037,
+          "renal": 0.8513802532534729,
+          "metabolic": 0.8628243347317235,
+          "all_organ_pooled": 0.7730097119433096
+        },
+        "B": {
+          "cardiovascular": 0.7968937625652186,
+          "pulmonary": 0.8188561721318126,
+          "renal": 1.0811143513666839,
+          "metabolic": 0.8591887924097678,
+          "all_organ_pooled": 0.8182083546189494
+        }
+      },
+      "metric_provenance": {
+        "A": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+            "field": "A.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+            "field": "A.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+            "field": "A.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+            "field": "A.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+            "field": "A.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+            "field": "B.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+            "field": "B.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+            "field": "B.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+            "field": "B.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+            "field": "B.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "evaluation_denominators": {
+        "A": {
+          "n_stays": 2368,
+          "observed_entries": 174879,
+          "organ_observed_entries": {
+            "cardiovascular": 92837,
+            "pulmonary": 57657,
+            "renal": 6336,
+            "metabolic": 18049
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+            "field": "A.n_stays; A.observed_entries; A.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "n_stays": 14824,
+          "observed_entries": 1074461,
+          "organ_observed_entries": {
+            "cardiovascular": 628618,
+            "pulmonary": 306178,
+            "renal": 27206,
+            "metabolic": 112459
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+            "field": "B.n_stays; B.observed_entries; B.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "node_input_widths": [
+        4,
+        4,
+        3,
+        5
+      ],
+      "projection_input_widths": [
+        13,
+        13,
+        11,
+        15
+      ],
+      "curve_check": {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/curve.csv",
+        "sha256": "beeacbfb00df851a9d11ef9d104fdf3d2bb21f7f75d92f9a1df9c5decca78824",
+        "rows": 35,
+        "matches_epochs_completed": true
+      }
+    },
+    {
+      "run_id": "partitioned/seed3",
+      "input_mode": "partitioned",
+      "seed": 3,
+      "run_json": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+      "run_json_sha256": "64abcbfbcd25d794159cdb1fa1eac0796e31dae366c06f28bda3cb694c234a56",
+      "status": "complete",
+      "epochs_completed": 35,
+      "best_epoch": 34,
+      "n_params": 759952,
+      "included_in_means": true,
+      "exclusion_reasons": [],
+      "metadata_provenance": {
+        "input_mode": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+          "field": "input_mode",
+          "method": "read_saved_json_field"
+        },
+        "seed": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+          "field": "seed",
+          "method": "read_saved_json_field"
+        },
+        "status": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+          "field": "status",
+          "method": "read_saved_json_field"
+        },
+        "epochs_completed": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+          "field": "epochs_completed",
+          "method": "read_saved_json_field"
+        },
+        "best_epoch": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+          "field": "best_epoch",
+          "method": "read_saved_json_field"
+        },
+        "n_params": {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        }
+      },
+      "metrics": {
+        "A": {
+          "cardiovascular": 0.6994437689692466,
+          "pulmonary": 0.8405610921972606,
+          "renal": 0.8050483672027449,
+          "metabolic": 0.8586506381722878,
+          "all_organ_pooled": 0.769564753373572
+        },
+        "B": {
+          "cardiovascular": 0.7988929837498321,
+          "pulmonary": 0.8170663708306588,
+          "renal": 1.0208803880943302,
+          "metabolic": 0.8592705836990837,
+          "all_organ_pooled": 0.8168879389592926
+        }
+      },
+      "metric_provenance": {
+        "A": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+            "field": "A.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+            "field": "A.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+            "field": "A.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+            "field": "A.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+            "field": "A.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+            "field": "B.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+            "field": "B.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+            "field": "B.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+            "field": "B.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+            "field": "B.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "evaluation_denominators": {
+        "A": {
+          "n_stays": 2368,
+          "observed_entries": 174879,
+          "organ_observed_entries": {
+            "cardiovascular": 92837,
+            "pulmonary": 57657,
+            "renal": 6336,
+            "metabolic": 18049
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+            "field": "A.n_stays; A.observed_entries; A.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "n_stays": 14824,
+          "observed_entries": 1074461,
+          "organ_observed_entries": {
+            "cardiovascular": 628618,
+            "pulmonary": 306178,
+            "renal": 27206,
+            "metabolic": 112459
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+            "field": "B.n_stays; B.observed_entries; B.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "node_input_widths": [
+        4,
+        4,
+        3,
+        5
+      ],
+      "projection_input_widths": [
+        13,
+        13,
+        11,
+        15
+      ],
+      "curve_check": {
+        "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/curve.csv",
+        "sha256": "f39d9d50f7890e14fda748fea22875efe5cf34a0315a8b5a710e5dc03476a943",
+        "rows": 35,
+        "matches_epochs_completed": true
+      }
+    },
+    {
+      "run_id": "shared/seed0",
+      "input_mode": "shared",
+      "seed": 0,
+      "run_json": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+      "run_json_sha256": "e6ae76ebfa7b04e6f50854dd024675be558e578dfc0c1041bbc703332e5acbd9",
+      "status": "complete",
+      "epochs_completed": 35,
+      "best_epoch": 35,
+      "n_params": 778384,
+      "included_in_means": true,
+      "exclusion_reasons": [],
+      "metadata_provenance": {
+        "input_mode": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+          "field": "input_mode",
+          "method": "read_saved_json_field"
+        },
+        "seed": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+          "field": "seed",
+          "method": "read_saved_json_field"
+        },
+        "status": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+          "field": "status",
+          "method": "read_saved_json_field"
+        },
+        "epochs_completed": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+          "field": "epochs_completed",
+          "method": "read_saved_json_field"
+        },
+        "best_epoch": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+          "field": "best_epoch",
+          "method": "read_saved_json_field"
+        },
+        "n_params": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        }
+      },
+      "metrics": {
+        "A": {
+          "cardiovascular": 0.696719313262036,
+          "pulmonary": 0.8319764844763646,
+          "renal": 0.7140969094652259,
+          "metabolic": 0.8156232575138342,
+          "all_organ_pooled": 0.7569912507941172
+        },
+        "B": {
+          "cardiovascular": 0.8003089749149099,
+          "pulmonary": 0.8139754580338301,
+          "renal": 0.9414797321519264,
+          "metabolic": 0.8304291981716359,
+          "all_organ_pooled": 0.8112633185496341
+        }
+      },
+      "metric_provenance": {
+        "A": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+            "field": "A.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+            "field": "A.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+            "field": "A.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+            "field": "A.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+            "field": "A.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+            "field": "B.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+            "field": "B.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+            "field": "B.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+            "field": "B.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+            "field": "B.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "evaluation_denominators": {
+        "A": {
+          "n_stays": 2368,
+          "observed_entries": 174879,
+          "organ_observed_entries": {
+            "cardiovascular": 92837,
+            "pulmonary": 57657,
+            "renal": 6336,
+            "metabolic": 18049
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+            "field": "A.n_stays; A.observed_entries; A.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "n_stays": 14824,
+          "observed_entries": 1074461,
+          "organ_observed_entries": {
+            "cardiovascular": 628618,
+            "pulmonary": 306178,
+            "renal": 27206,
+            "metabolic": 112459
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+            "field": "B.n_stays; B.observed_entries; B.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "node_input_widths": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "projection_input_widths": [
+        37,
+        37,
+        37,
+        37
+      ],
+      "curve_check": {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed0/curve.csv",
+        "sha256": "a03384d82e0da65bc112af6071f67b7bdd761a2188441c5e14757084143da142",
+        "rows": 35,
+        "matches_epochs_completed": true
+      }
+    },
+    {
+      "run_id": "shared/seed1",
+      "input_mode": "shared",
+      "seed": 1,
+      "run_json": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+      "run_json_sha256": "7aa16b7d1faff19fc68e2e2ea2a289b7b001f3c3fa71036dd0e96de4f644a7fa",
+      "status": "complete",
+      "epochs_completed": 35,
+      "best_epoch": 34,
+      "n_params": 778384,
+      "included_in_means": true,
+      "exclusion_reasons": [],
+      "metadata_provenance": {
+        "input_mode": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+          "field": "input_mode",
+          "method": "read_saved_json_field"
+        },
+        "seed": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+          "field": "seed",
+          "method": "read_saved_json_field"
+        },
+        "status": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+          "field": "status",
+          "method": "read_saved_json_field"
+        },
+        "epochs_completed": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+          "field": "epochs_completed",
+          "method": "read_saved_json_field"
+        },
+        "best_epoch": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+          "field": "best_epoch",
+          "method": "read_saved_json_field"
+        },
+        "n_params": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        }
+      },
+      "metrics": {
+        "A": {
+          "cardiovascular": 0.694947302505159,
+          "pulmonary": 0.8337573506093322,
+          "renal": 0.7129242210602451,
+          "metabolic": 0.8179052107056265,
+          "all_organ_pooled": 0.7569866189391361
+        },
+        "B": {
+          "cardiovascular": 0.7952406896639042,
+          "pulmonary": 0.8142447950848914,
+          "renal": 0.9413808377173977,
+          "metabolic": 0.8270411699719832,
+          "all_organ_pooled": 0.8080529130129669
+        }
+      },
+      "metric_provenance": {
+        "A": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+            "field": "A.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+            "field": "A.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+            "field": "A.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+            "field": "A.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+            "field": "A.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+            "field": "B.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+            "field": "B.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+            "field": "B.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+            "field": "B.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+            "field": "B.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "evaluation_denominators": {
+        "A": {
+          "n_stays": 2368,
+          "observed_entries": 174879,
+          "organ_observed_entries": {
+            "cardiovascular": 92837,
+            "pulmonary": 57657,
+            "renal": 6336,
+            "metabolic": 18049
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+            "field": "A.n_stays; A.observed_entries; A.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "n_stays": 14824,
+          "observed_entries": 1074461,
+          "organ_observed_entries": {
+            "cardiovascular": 628618,
+            "pulmonary": 306178,
+            "renal": 27206,
+            "metabolic": 112459
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+            "field": "B.n_stays; B.observed_entries; B.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "node_input_widths": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "projection_input_widths": [
+        37,
+        37,
+        37,
+        37
+      ],
+      "curve_check": {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed1/curve.csv",
+        "sha256": "29cd5c489e2c5b00a6e70bd7cc648dcd407059a45c740bf6546d5cb1619529d8",
+        "rows": 35,
+        "matches_epochs_completed": true
+      }
+    },
+    {
+      "run_id": "shared/seed2",
+      "input_mode": "shared",
+      "seed": 2,
+      "run_json": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+      "run_json_sha256": "98794e7f58ee14b9d7091a05d300abdcf40e70cf3ab3f1d276b8948dfe853dae",
+      "status": "complete",
+      "epochs_completed": 35,
+      "best_epoch": 34,
+      "n_params": 778384,
+      "included_in_means": true,
+      "exclusion_reasons": [],
+      "metadata_provenance": {
+        "input_mode": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+          "field": "input_mode",
+          "method": "read_saved_json_field"
+        },
+        "seed": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+          "field": "seed",
+          "method": "read_saved_json_field"
+        },
+        "status": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+          "field": "status",
+          "method": "read_saved_json_field"
+        },
+        "epochs_completed": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+          "field": "epochs_completed",
+          "method": "read_saved_json_field"
+        },
+        "best_epoch": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+          "field": "best_epoch",
+          "method": "read_saved_json_field"
+        },
+        "n_params": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        }
+      },
+      "metrics": {
+        "A": {
+          "cardiovascular": 0.6955850955332012,
+          "pulmonary": 0.8390055976038815,
+          "renal": 0.715663374357878,
+          "metabolic": 0.817470131689355,
+          "all_organ_pooled": 0.7592511579893022
+        },
+        "B": {
+          "cardiovascular": 0.797213225789031,
+          "pulmonary": 0.815105523005666,
+          "renal": 0.9441416008326701,
+          "metabolic": 0.8338359704817149,
+          "all_organ_pooled": 0.8102468091641492
+        }
+      },
+      "metric_provenance": {
+        "A": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+            "field": "A.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+            "field": "A.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+            "field": "A.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+            "field": "A.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+            "field": "A.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+            "field": "B.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+            "field": "B.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+            "field": "B.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+            "field": "B.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+            "field": "B.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "evaluation_denominators": {
+        "A": {
+          "n_stays": 2368,
+          "observed_entries": 174879,
+          "organ_observed_entries": {
+            "cardiovascular": 92837,
+            "pulmonary": 57657,
+            "renal": 6336,
+            "metabolic": 18049
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+            "field": "A.n_stays; A.observed_entries; A.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "n_stays": 14824,
+          "observed_entries": 1074461,
+          "organ_observed_entries": {
+            "cardiovascular": 628618,
+            "pulmonary": 306178,
+            "renal": 27206,
+            "metabolic": 112459
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+            "field": "B.n_stays; B.observed_entries; B.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "node_input_widths": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "projection_input_widths": [
+        37,
+        37,
+        37,
+        37
+      ],
+      "curve_check": {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed2/curve.csv",
+        "sha256": "ed6c93c5e4f192ced8f4031ef21f1cfdd6171a23587bbffce29e3627a90c2667",
+        "rows": 35,
+        "matches_epochs_completed": true
+      }
+    },
+    {
+      "run_id": "shared/seed3",
+      "input_mode": "shared",
+      "seed": 3,
+      "run_json": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+      "run_json_sha256": "2cd93bddc48f16388a16c436129f1f33ab0bd38db4f606ba9efd87f258914ac8",
+      "status": "complete",
+      "epochs_completed": 35,
+      "best_epoch": 34,
+      "n_params": 778384,
+      "included_in_means": true,
+      "exclusion_reasons": [],
+      "metadata_provenance": {
+        "input_mode": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+          "field": "input_mode",
+          "method": "read_saved_json_field"
+        },
+        "seed": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+          "field": "seed",
+          "method": "read_saved_json_field"
+        },
+        "status": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+          "field": "status",
+          "method": "read_saved_json_field"
+        },
+        "epochs_completed": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+          "field": "epochs_completed",
+          "method": "read_saved_json_field"
+        },
+        "best_epoch": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+          "field": "best_epoch",
+          "method": "read_saved_json_field"
+        },
+        "n_params": {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        }
+      },
+      "metrics": {
+        "A": {
+          "cardiovascular": 0.6960276578059543,
+          "pulmonary": 0.8358299003558118,
+          "renal": 0.7053264259194371,
+          "metabolic": 0.8236157261442224,
+          "all_organ_pooled": 0.7586464301018799
+        },
+        "B": {
+          "cardiovascular": 0.7986858481758264,
+          "pulmonary": 0.8152235400691893,
+          "renal": 0.931436056649927,
+          "metabolic": 0.8361313815293664,
+          "all_organ_pooled": 0.8110040093720697
+        }
+      },
+      "metric_provenance": {
+        "A": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+            "field": "A.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+            "field": "A.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+            "field": "A.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+            "field": "A.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+            "field": "A.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "cardiovascular": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+            "field": "B.organs.cardiovascular.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "pulmonary": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+            "field": "B.organs.pulmonary.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "renal": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+            "field": "B.organs.renal.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "metabolic": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+            "field": "B.organs.metabolic.RMSE",
+            "method": "read_saved_json_field"
+          },
+          "all_organ_pooled": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+            "field": "B.pooled_masked_RMSE",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "evaluation_denominators": {
+        "A": {
+          "n_stays": 2368,
+          "observed_entries": 174879,
+          "organ_observed_entries": {
+            "cardiovascular": 92837,
+            "pulmonary": 57657,
+            "renal": 6336,
+            "metabolic": 18049
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+            "field": "A.n_stays; A.observed_entries; A.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        },
+        "B": {
+          "n_stays": 14824,
+          "observed_entries": 1074461,
+          "organ_observed_entries": {
+            "cardiovascular": 628618,
+            "pulmonary": 306178,
+            "renal": 27206,
+            "metabolic": 112459
+          },
+          "source": {
+            "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+            "field": "B.n_stays; B.observed_entries; B.organs.*.observed_entries",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "node_input_widths": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "projection_input_widths": [
+        37,
+        37,
+        37,
+        37
+      ],
+      "curve_check": {
+        "file": "diagnostics/renal_shared_input/runs/shared/seed3/curve.csv",
+        "sha256": "5c4e9861ac97ed47842a1f613b97969ec0ed2e4e6c3c1dbdea31491ccd2adbab",
+        "rows": 35,
+        "matches_epochs_completed": true
+      }
+    }
+  ],
+  "arm_summary": {
+    "partitioned": {
+      "A": {
+        "cardiovascular": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.6995317198605835,
+            "1": 0.6987727356125482,
+            "2": 0.6985101388064723,
+            "3": 0.6994437689692466
+          },
+          "mean": 0.6990645908122126,
+          "min": 0.6985101388064723,
+          "max": 0.6995317198605835,
+          "span": 0.0010215810541112091,
+          "source_refs": {
+            "0": "/runs/0/metrics/A/cardiovascular",
+            "1": "/runs/1/metrics/A/cardiovascular",
+            "2": "/runs/2/metrics/A/cardiovascular",
+            "3": "/runs/3/metrics/A/cardiovascular"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "pulmonary": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.8427318287423473,
+            "1": 0.842261039062162,
+            "2": 0.8450324398267037,
+            "3": 0.8405610921972606
+          },
+          "mean": 0.8426465999571184,
+          "min": 0.8405610921972606,
+          "max": 0.8450324398267037,
+          "span": 0.004471347629443123,
+          "source_refs": {
+            "0": "/runs/0/metrics/A/pulmonary",
+            "1": "/runs/1/metrics/A/pulmonary",
+            "2": "/runs/2/metrics/A/pulmonary",
+            "3": "/runs/3/metrics/A/pulmonary"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "renal": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.7964620456390357,
+            "1": 0.9324387428791938,
+            "2": 0.8513802532534729,
+            "3": 0.8050483672027449
+          },
+          "mean": 0.8463323522436118,
+          "min": 0.7964620456390357,
+          "max": 0.9324387428791938,
+          "span": 0.13597669724015815,
+          "source_refs": {
+            "0": "/runs/0/metrics/A/renal",
+            "1": "/runs/1/metrics/A/renal",
+            "2": "/runs/2/metrics/A/renal",
+            "3": "/runs/3/metrics/A/renal"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "metabolic": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.8589340555555305,
+            "1": 0.8735875261186326,
+            "2": 0.8628243347317235,
+            "3": 0.8586506381722878
+          },
+          "mean": 0.8634991386445436,
+          "min": 0.8586506381722878,
+          "max": 0.8735875261186326,
+          "span": 0.014936887946344735,
+          "source_refs": {
+            "0": "/runs/0/metrics/A/metabolic",
+            "1": "/runs/1/metrics/A/metabolic",
+            "2": "/runs/2/metrics/A/metabolic",
+            "3": "/runs/3/metrics/A/metabolic"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "all_organ_pooled": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.7700986716090558,
+            "1": 0.7767655487334495,
+            "2": 0.7730097119433096,
+            "3": 0.769564753373572
+          },
+          "mean": 0.7723596714148467,
+          "min": 0.769564753373572,
+          "max": 0.7767655487334495,
+          "span": 0.007200795359877499,
+          "source_refs": {
+            "0": "/runs/0/metrics/A/all_organ_pooled",
+            "1": "/runs/1/metrics/A/all_organ_pooled",
+            "2": "/runs/2/metrics/A/all_organ_pooled",
+            "3": "/runs/3/metrics/A/all_organ_pooled"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        }
+      },
+      "B": {
+        "cardiovascular": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.8000495615105704,
+            "1": 0.7997733438885345,
+            "2": 0.7968937625652186,
+            "3": 0.7988929837498321
+          },
+          "mean": 0.7989024129285389,
+          "min": 0.7968937625652186,
+          "max": 0.8000495615105704,
+          "span": 0.0031557989453517843,
+          "source_refs": {
+            "0": "/runs/0/metrics/B/cardiovascular",
+            "1": "/runs/1/metrics/B/cardiovascular",
+            "2": "/runs/2/metrics/B/cardiovascular",
+            "3": "/runs/3/metrics/B/cardiovascular"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "pulmonary": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.8180357649729669,
+            "1": 0.8185951343505719,
+            "2": 0.8188561721318126,
+            "3": 0.8170663708306588
+          },
+          "mean": 0.8181383605715026,
+          "min": 0.8170663708306588,
+          "max": 0.8188561721318126,
+          "span": 0.0017898013011538039,
+          "source_refs": {
+            "0": "/runs/0/metrics/B/pulmonary",
+            "1": "/runs/1/metrics/B/pulmonary",
+            "2": "/runs/2/metrics/B/pulmonary",
+            "3": "/runs/3/metrics/B/pulmonary"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "renal": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 1.018164211572283,
+            "1": 1.148012892586001,
+            "2": 1.0811143513666839,
+            "3": 1.0208803880943302
+          },
+          "mean": 1.0670429609048244,
+          "min": 1.018164211572283,
+          "max": 1.148012892586001,
+          "span": 0.12984868101371783,
+          "source_refs": {
+            "0": "/runs/0/metrics/B/renal",
+            "1": "/runs/1/metrics/B/renal",
+            "2": "/runs/2/metrics/B/renal",
+            "3": "/runs/3/metrics/B/renal"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "metabolic": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.856208530951206,
+            "1": 0.8641736793547976,
+            "2": 0.8591887924097678,
+            "3": 0.8592705836990837
+          },
+          "mean": 0.8597103966037137,
+          "min": 0.856208530951206,
+          "max": 0.8641736793547976,
+          "span": 0.007965148403591638,
+          "source_refs": {
+            "0": "/runs/0/metrics/B/metabolic",
+            "1": "/runs/1/metrics/B/metabolic",
+            "2": "/runs/2/metrics/B/metabolic",
+            "3": "/runs/3/metrics/B/metabolic"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "all_organ_pooled": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.817404118007034,
+            "1": 0.8226227160624967,
+            "2": 0.8182083546189494,
+            "3": 0.8168879389592926
+          },
+          "mean": 0.8187807819119431,
+          "min": 0.8168879389592926,
+          "max": 0.8226227160624967,
+          "span": 0.005734777103204136,
+          "source_refs": {
+            "0": "/runs/0/metrics/B/all_organ_pooled",
+            "1": "/runs/1/metrics/B/all_organ_pooled",
+            "2": "/runs/2/metrics/B/all_organ_pooled",
+            "3": "/runs/3/metrics/B/all_organ_pooled"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        }
+      }
+    },
+    "shared": {
+      "A": {
+        "cardiovascular": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.696719313262036,
+            "1": 0.694947302505159,
+            "2": 0.6955850955332012,
+            "3": 0.6960276578059543
+          },
+          "mean": 0.6958198422765877,
+          "min": 0.694947302505159,
+          "max": 0.696719313262036,
+          "span": 0.0017720107568769405,
+          "source_refs": {
+            "0": "/runs/4/metrics/A/cardiovascular",
+            "1": "/runs/5/metrics/A/cardiovascular",
+            "2": "/runs/6/metrics/A/cardiovascular",
+            "3": "/runs/7/metrics/A/cardiovascular"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "pulmonary": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.8319764844763646,
+            "1": 0.8337573506093322,
+            "2": 0.8390055976038815,
+            "3": 0.8358299003558118
+          },
+          "mean": 0.8351423332613476,
+          "min": 0.8319764844763646,
+          "max": 0.8390055976038815,
+          "span": 0.007029113127516862,
+          "source_refs": {
+            "0": "/runs/4/metrics/A/pulmonary",
+            "1": "/runs/5/metrics/A/pulmonary",
+            "2": "/runs/6/metrics/A/pulmonary",
+            "3": "/runs/7/metrics/A/pulmonary"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "renal": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.7140969094652259,
+            "1": 0.7129242210602451,
+            "2": 0.715663374357878,
+            "3": 0.7053264259194371
+          },
+          "mean": 0.7120027327006965,
+          "min": 0.7053264259194371,
+          "max": 0.715663374357878,
+          "span": 0.010336948438440907,
+          "source_refs": {
+            "0": "/runs/4/metrics/A/renal",
+            "1": "/runs/5/metrics/A/renal",
+            "2": "/runs/6/metrics/A/renal",
+            "3": "/runs/7/metrics/A/renal"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "metabolic": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.8156232575138342,
+            "1": 0.8179052107056265,
+            "2": 0.817470131689355,
+            "3": 0.8236157261442224
+          },
+          "mean": 0.8186535815132595,
+          "min": 0.8156232575138342,
+          "max": 0.8236157261442224,
+          "span": 0.007992468630388161,
+          "source_refs": {
+            "0": "/runs/4/metrics/A/metabolic",
+            "1": "/runs/5/metrics/A/metabolic",
+            "2": "/runs/6/metrics/A/metabolic",
+            "3": "/runs/7/metrics/A/metabolic"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "all_organ_pooled": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.7569912507941172,
+            "1": 0.7569866189391361,
+            "2": 0.7592511579893022,
+            "3": 0.7586464301018799
+          },
+          "mean": 0.7579688644561089,
+          "min": 0.7569866189391361,
+          "max": 0.7592511579893022,
+          "span": 0.0022645390501661034,
+          "source_refs": {
+            "0": "/runs/4/metrics/A/all_organ_pooled",
+            "1": "/runs/5/metrics/A/all_organ_pooled",
+            "2": "/runs/6/metrics/A/all_organ_pooled",
+            "3": "/runs/7/metrics/A/all_organ_pooled"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        }
+      },
+      "B": {
+        "cardiovascular": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.8003089749149099,
+            "1": 0.7952406896639042,
+            "2": 0.797213225789031,
+            "3": 0.7986858481758264
+          },
+          "mean": 0.7978621846359178,
+          "min": 0.7952406896639042,
+          "max": 0.8003089749149099,
+          "span": 0.005068285251005777,
+          "source_refs": {
+            "0": "/runs/4/metrics/B/cardiovascular",
+            "1": "/runs/5/metrics/B/cardiovascular",
+            "2": "/runs/6/metrics/B/cardiovascular",
+            "3": "/runs/7/metrics/B/cardiovascular"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "pulmonary": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.8139754580338301,
+            "1": 0.8142447950848914,
+            "2": 0.815105523005666,
+            "3": 0.8152235400691893
+          },
+          "mean": 0.8146373290483941,
+          "min": 0.8139754580338301,
+          "max": 0.8152235400691893,
+          "span": 0.0012480820353591993,
+          "source_refs": {
+            "0": "/runs/4/metrics/B/pulmonary",
+            "1": "/runs/5/metrics/B/pulmonary",
+            "2": "/runs/6/metrics/B/pulmonary",
+            "3": "/runs/7/metrics/B/pulmonary"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "renal": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.9414797321519264,
+            "1": 0.9413808377173977,
+            "2": 0.9441416008326701,
+            "3": 0.931436056649927
+          },
+          "mean": 0.9396095568379803,
+          "min": 0.931436056649927,
+          "max": 0.9441416008326701,
+          "span": 0.012705544182743056,
+          "source_refs": {
+            "0": "/runs/4/metrics/B/renal",
+            "1": "/runs/5/metrics/B/renal",
+            "2": "/runs/6/metrics/B/renal",
+            "3": "/runs/7/metrics/B/renal"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "metabolic": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.8304291981716359,
+            "1": 0.8270411699719832,
+            "2": 0.8338359704817149,
+            "3": 0.8361313815293664
+          },
+          "mean": 0.831859430038675,
+          "min": 0.8270411699719832,
+          "max": 0.8361313815293664,
+          "span": 0.00909021155738321,
+          "source_refs": {
+            "0": "/runs/4/metrics/B/metabolic",
+            "1": "/runs/5/metrics/B/metabolic",
+            "2": "/runs/6/metrics/B/metabolic",
+            "3": "/runs/7/metrics/B/metabolic"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        },
+        "all_organ_pooled": {
+          "n_included": 4,
+          "included_seeds": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "per_seed": {
+            "0": 0.8112633185496341,
+            "1": 0.8080529130129669,
+            "2": 0.8102468091641492,
+            "3": 0.8110040093720697
+          },
+          "mean": 0.8101417625247049,
+          "min": 0.8080529130129669,
+          "max": 0.8112633185496341,
+          "span": 0.0032104055366671824,
+          "source_refs": {
+            "0": "/runs/4/metrics/B/all_organ_pooled",
+            "1": "/runs/5/metrics/B/all_organ_pooled",
+            "2": "/runs/6/metrics/B/all_organ_pooled",
+            "3": "/runs/7/metrics/B/all_organ_pooled"
+          },
+          "method": "arithmetic mean, minimum, maximum, and maximum minus minimum of eligible per-run RMSEs"
+        }
+      }
+    }
+  },
+  "paired_differences": {
+    "A": {
+      "cardiovascular": {
+        "per_seed": {
+          "0": -0.0028124065985475344,
+          "1": -0.0038254331073891423,
+          "2": -0.002925043273271033,
+          "3": -0.0034161111632923236
+        },
+        "mean": -0.0032447485356250083,
+        "min": -0.0038254331073891423,
+        "max": -0.0028124065985475344,
+        "sign_count": {
+          "negative": 4,
+          "zero": 0,
+          "positive": 0,
+          "eligible_pairs": 4,
+          "planned_pairs": 4
+        },
+        "excluded_seeds": [],
+        "source_refs": {
+          "0": {
+            "partitioned": "/runs/0/metrics/A/cardiovascular",
+            "shared": "/runs/4/metrics/A/cardiovascular"
+          },
+          "1": {
+            "partitioned": "/runs/1/metrics/A/cardiovascular",
+            "shared": "/runs/5/metrics/A/cardiovascular"
+          },
+          "2": {
+            "partitioned": "/runs/2/metrics/A/cardiovascular",
+            "shared": "/runs/6/metrics/A/cardiovascular"
+          },
+          "3": {
+            "partitioned": "/runs/3/metrics/A/cardiovascular",
+            "shared": "/runs/7/metrics/A/cardiovascular"
+          }
+        },
+        "method": "shared minus partitioned per paired seed; arithmetic mean, minimum, maximum, and sign counts over eligible pairs"
+      },
+      "pulmonary": {
+        "per_seed": {
+          "0": -0.01075534426598268,
+          "1": -0.008503688452829783,
+          "2": -0.006026842222822237,
+          "3": -0.0047311918414487675
+        },
+        "mean": -0.007504266695770867,
+        "min": -0.01075534426598268,
+        "max": -0.0047311918414487675,
+        "sign_count": {
+          "negative": 4,
+          "zero": 0,
+          "positive": 0,
+          "eligible_pairs": 4,
+          "planned_pairs": 4
+        },
+        "excluded_seeds": [],
+        "source_refs": {
+          "0": {
+            "partitioned": "/runs/0/metrics/A/pulmonary",
+            "shared": "/runs/4/metrics/A/pulmonary"
+          },
+          "1": {
+            "partitioned": "/runs/1/metrics/A/pulmonary",
+            "shared": "/runs/5/metrics/A/pulmonary"
+          },
+          "2": {
+            "partitioned": "/runs/2/metrics/A/pulmonary",
+            "shared": "/runs/6/metrics/A/pulmonary"
+          },
+          "3": {
+            "partitioned": "/runs/3/metrics/A/pulmonary",
+            "shared": "/runs/7/metrics/A/pulmonary"
+          }
+        },
+        "method": "shared minus partitioned per paired seed; arithmetic mean, minimum, maximum, and sign counts over eligible pairs"
+      },
+      "renal": {
+        "per_seed": {
+          "0": -0.0823651361738098,
+          "1": -0.2195145218189487,
+          "2": -0.13571687889559492,
+          "3": -0.0997219412833078
+        },
+        "mean": -0.1343296195429153,
+        "min": -0.2195145218189487,
+        "max": -0.0823651361738098,
+        "sign_count": {
+          "negative": 4,
+          "zero": 0,
+          "positive": 0,
+          "eligible_pairs": 4,
+          "planned_pairs": 4
+        },
+        "excluded_seeds": [],
+        "source_refs": {
+          "0": {
+            "partitioned": "/runs/0/metrics/A/renal",
+            "shared": "/runs/4/metrics/A/renal"
+          },
+          "1": {
+            "partitioned": "/runs/1/metrics/A/renal",
+            "shared": "/runs/5/metrics/A/renal"
+          },
+          "2": {
+            "partitioned": "/runs/2/metrics/A/renal",
+            "shared": "/runs/6/metrics/A/renal"
+          },
+          "3": {
+            "partitioned": "/runs/3/metrics/A/renal",
+            "shared": "/runs/7/metrics/A/renal"
+          }
+        },
+        "method": "shared minus partitioned per paired seed; arithmetic mean, minimum, maximum, and sign counts over eligible pairs"
+      },
+      "metabolic": {
+        "per_seed": {
+          "0": -0.04331079804169624,
+          "1": -0.055682315413006056,
+          "2": -0.04535420304236848,
+          "3": -0.03503491202806541
+        },
+        "mean": -0.04484555713128405,
+        "min": -0.055682315413006056,
+        "max": -0.03503491202806541,
+        "sign_count": {
+          "negative": 4,
+          "zero": 0,
+          "positive": 0,
+          "eligible_pairs": 4,
+          "planned_pairs": 4
+        },
+        "excluded_seeds": [],
+        "source_refs": {
+          "0": {
+            "partitioned": "/runs/0/metrics/A/metabolic",
+            "shared": "/runs/4/metrics/A/metabolic"
+          },
+          "1": {
+            "partitioned": "/runs/1/metrics/A/metabolic",
+            "shared": "/runs/5/metrics/A/metabolic"
+          },
+          "2": {
+            "partitioned": "/runs/2/metrics/A/metabolic",
+            "shared": "/runs/6/metrics/A/metabolic"
+          },
+          "3": {
+            "partitioned": "/runs/3/metrics/A/metabolic",
+            "shared": "/runs/7/metrics/A/metabolic"
+          }
+        },
+        "method": "shared minus partitioned per paired seed; arithmetic mean, minimum, maximum, and sign counts over eligible pairs"
+      },
+      "all_organ_pooled": {
+        "per_seed": {
+          "0": -0.013107420814938542,
+          "1": -0.019778929794313393,
+          "2": -0.01375855395400738,
+          "3": -0.010918323271692065
+        },
+        "mean": -0.014390806958737845,
+        "min": -0.019778929794313393,
+        "max": -0.010918323271692065,
+        "sign_count": {
+          "negative": 4,
+          "zero": 0,
+          "positive": 0,
+          "eligible_pairs": 4,
+          "planned_pairs": 4
+        },
+        "excluded_seeds": [],
+        "source_refs": {
+          "0": {
+            "partitioned": "/runs/0/metrics/A/all_organ_pooled",
+            "shared": "/runs/4/metrics/A/all_organ_pooled"
+          },
+          "1": {
+            "partitioned": "/runs/1/metrics/A/all_organ_pooled",
+            "shared": "/runs/5/metrics/A/all_organ_pooled"
+          },
+          "2": {
+            "partitioned": "/runs/2/metrics/A/all_organ_pooled",
+            "shared": "/runs/6/metrics/A/all_organ_pooled"
+          },
+          "3": {
+            "partitioned": "/runs/3/metrics/A/all_organ_pooled",
+            "shared": "/runs/7/metrics/A/all_organ_pooled"
+          }
+        },
+        "method": "shared minus partitioned per paired seed; arithmetic mean, minimum, maximum, and sign counts over eligible pairs"
+      }
+    },
+    "B": {
+      "cardiovascular": {
+        "per_seed": {
+          "0": 0.00025941340433954796,
+          "1": -0.004532654224630339,
+          "2": 0.00031946322381237735,
+          "3": -0.00020713557400564575
+        },
+        "mean": -0.001040228292621015,
+        "min": -0.004532654224630339,
+        "max": 0.00031946322381237735,
+        "sign_count": {
+          "negative": 2,
+          "zero": 0,
+          "positive": 2,
+          "eligible_pairs": 4,
+          "planned_pairs": 4
+        },
+        "excluded_seeds": [],
+        "source_refs": {
+          "0": {
+            "partitioned": "/runs/0/metrics/B/cardiovascular",
+            "shared": "/runs/4/metrics/B/cardiovascular"
+          },
+          "1": {
+            "partitioned": "/runs/1/metrics/B/cardiovascular",
+            "shared": "/runs/5/metrics/B/cardiovascular"
+          },
+          "2": {
+            "partitioned": "/runs/2/metrics/B/cardiovascular",
+            "shared": "/runs/6/metrics/B/cardiovascular"
+          },
+          "3": {
+            "partitioned": "/runs/3/metrics/B/cardiovascular",
+            "shared": "/runs/7/metrics/B/cardiovascular"
+          }
+        },
+        "method": "shared minus partitioned per paired seed; arithmetic mean, minimum, maximum, and sign counts over eligible pairs"
+      },
+      "pulmonary": {
+        "per_seed": {
+          "0": -0.004060306939136837,
+          "1": -0.004350339265680403,
+          "2": -0.0037506491261466435,
+          "3": -0.001842830761469516
+        },
+        "mean": -0.00350103152310835,
+        "min": -0.004350339265680403,
+        "max": -0.001842830761469516,
+        "sign_count": {
+          "negative": 4,
+          "zero": 0,
+          "positive": 0,
+          "eligible_pairs": 4,
+          "planned_pairs": 4
+        },
+        "excluded_seeds": [],
+        "source_refs": {
+          "0": {
+            "partitioned": "/runs/0/metrics/B/pulmonary",
+            "shared": "/runs/4/metrics/B/pulmonary"
+          },
+          "1": {
+            "partitioned": "/runs/1/metrics/B/pulmonary",
+            "shared": "/runs/5/metrics/B/pulmonary"
+          },
+          "2": {
+            "partitioned": "/runs/2/metrics/B/pulmonary",
+            "shared": "/runs/6/metrics/B/pulmonary"
+          },
+          "3": {
+            "partitioned": "/runs/3/metrics/B/pulmonary",
+            "shared": "/runs/7/metrics/B/pulmonary"
+          }
+        },
+        "method": "shared minus partitioned per paired seed; arithmetic mean, minimum, maximum, and sign counts over eligible pairs"
+      },
+      "renal": {
+        "per_seed": {
+          "0": -0.07668447942035672,
+          "1": -0.20663205486860325,
+          "2": -0.1369727505340138,
+          "3": -0.08944433144440322
+        },
+        "mean": -0.12743340406684425,
+        "min": -0.20663205486860325,
+        "max": -0.07668447942035672,
+        "sign_count": {
+          "negative": 4,
+          "zero": 0,
+          "positive": 0,
+          "eligible_pairs": 4,
+          "planned_pairs": 4
+        },
+        "excluded_seeds": [],
+        "source_refs": {
+          "0": {
+            "partitioned": "/runs/0/metrics/B/renal",
+            "shared": "/runs/4/metrics/B/renal"
+          },
+          "1": {
+            "partitioned": "/runs/1/metrics/B/renal",
+            "shared": "/runs/5/metrics/B/renal"
+          },
+          "2": {
+            "partitioned": "/runs/2/metrics/B/renal",
+            "shared": "/runs/6/metrics/B/renal"
+          },
+          "3": {
+            "partitioned": "/runs/3/metrics/B/renal",
+            "shared": "/runs/7/metrics/B/renal"
+          }
+        },
+        "method": "shared minus partitioned per paired seed; arithmetic mean, minimum, maximum, and sign counts over eligible pairs"
+      },
+      "metabolic": {
+        "per_seed": {
+          "0": -0.02577933277957012,
+          "1": -0.03713250938281443,
+          "2": -0.025352821928052882,
+          "3": -0.02313920216971732
+        },
+        "mean": -0.027850966565038687,
+        "min": -0.03713250938281443,
+        "max": -0.02313920216971732,
+        "sign_count": {
+          "negative": 4,
+          "zero": 0,
+          "positive": 0,
+          "eligible_pairs": 4,
+          "planned_pairs": 4
+        },
+        "excluded_seeds": [],
+        "source_refs": {
+          "0": {
+            "partitioned": "/runs/0/metrics/B/metabolic",
+            "shared": "/runs/4/metrics/B/metabolic"
+          },
+          "1": {
+            "partitioned": "/runs/1/metrics/B/metabolic",
+            "shared": "/runs/5/metrics/B/metabolic"
+          },
+          "2": {
+            "partitioned": "/runs/2/metrics/B/metabolic",
+            "shared": "/runs/6/metrics/B/metabolic"
+          },
+          "3": {
+            "partitioned": "/runs/3/metrics/B/metabolic",
+            "shared": "/runs/7/metrics/B/metabolic"
+          }
+        },
+        "method": "shared minus partitioned per paired seed; arithmetic mean, minimum, maximum, and sign counts over eligible pairs"
+      },
+      "all_organ_pooled": {
+        "per_seed": {
+          "0": -0.006140799457399981,
+          "1": -0.014569803049529817,
+          "2": -0.007961545454800212,
+          "3": -0.005883929587222836
+        },
+        "mean": -0.008639019387238212,
+        "min": -0.014569803049529817,
+        "max": -0.005883929587222836,
+        "sign_count": {
+          "negative": 4,
+          "zero": 0,
+          "positive": 0,
+          "eligible_pairs": 4,
+          "planned_pairs": 4
+        },
+        "excluded_seeds": [],
+        "source_refs": {
+          "0": {
+            "partitioned": "/runs/0/metrics/B/all_organ_pooled",
+            "shared": "/runs/4/metrics/B/all_organ_pooled"
+          },
+          "1": {
+            "partitioned": "/runs/1/metrics/B/all_organ_pooled",
+            "shared": "/runs/5/metrics/B/all_organ_pooled"
+          },
+          "2": {
+            "partitioned": "/runs/2/metrics/B/all_organ_pooled",
+            "shared": "/runs/6/metrics/B/all_organ_pooled"
+          },
+          "3": {
+            "partitioned": "/runs/3/metrics/B/all_organ_pooled",
+            "shared": "/runs/7/metrics/B/all_organ_pooled"
+          }
+        },
+        "method": "shared minus partitioned per paired seed; arithmetic mean, minimum, maximum, and sign counts over eligible pairs"
+      }
+    }
+  },
+  "frozen_references": {
+    "persistence": {
+      "A": {
+        "mean": 0.7624865706275453,
+        "per_seed": {
+          "seed0": 0.7624865706275453,
+          "seed1": 0.7624865706275453,
+          "seed2": 0.7624865706275453,
+          "seed3": 0.7624865706275453
+        },
+        "sd_sample": 0.0,
+        "provenance": {
+          "mean": {
+            "file": "results/v4/per_organ_v4.json",
+            "field": "selected_seed_summary.persistence.A.renal.mean",
+            "method": "read_saved_json_field"
+          },
+          "per_seed": {
+            "file": "results/v4/per_organ_v4.json",
+            "field": "selected_seed_summary.persistence.A.renal.per_seed",
+            "method": "read_saved_json_field"
+          },
+          "sd_sample": {
+            "file": "results/v4/per_organ_v4.json",
+            "field": "selected_seed_summary.persistence.A.renal.sd_sample",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "B": {
+        "mean": 0.9770494307631641,
+        "per_seed": {
+          "seed0": 0.9770494307631641,
+          "seed1": 0.9770494307631641,
+          "seed2": 0.9770494307631641,
+          "seed3": 0.9770494307631641
+        },
+        "sd_sample": 0.0,
+        "provenance": {
+          "mean": {
+            "file": "results/v4/per_organ_v4.json",
+            "field": "selected_seed_summary.persistence.B.renal.mean",
+            "method": "read_saved_json_field"
+          },
+          "per_seed": {
+            "file": "results/v4/per_organ_v4.json",
+            "field": "selected_seed_summary.persistence.B.renal.per_seed",
+            "method": "read_saved_json_field"
+          },
+          "sd_sample": {
+            "file": "results/v4/per_organ_v4.json",
+            "field": "selected_seed_summary.persistence.B.renal.sd_sample",
+            "method": "read_saved_json_field"
+          }
+        }
+      }
+    },
+    "physiograph_gru": {
+      "A": {
+        "mean": 0.8133755273935825,
+        "per_seed": {
+          "seed0": 0.7684898621984302,
+          "seed1": 0.7913186625022787,
+          "seed2": 0.8532478751841199,
+          "seed3": 0.8404457096895015
+        },
+        "sd_sample": 0.040099156752182875,
+        "provenance": {
+          "mean": {
+            "file": "results/v4/per_organ_v4.json",
+            "field": "selected_seed_summary.physiograph_gru.A.renal.mean",
+            "method": "read_saved_json_field"
+          },
+          "per_seed": {
+            "file": "results/v4/per_organ_v4.json",
+            "field": "selected_seed_summary.physiograph_gru.A.renal.per_seed",
+            "method": "read_saved_json_field"
+          },
+          "sd_sample": {
+            "file": "results/v4/per_organ_v4.json",
+            "field": "selected_seed_summary.physiograph_gru.A.renal.sd_sample",
+            "method": "read_saved_json_field"
+          }
+        }
+      },
+      "B": {
+        "mean": 1.023437653424197,
+        "per_seed": {
+          "seed0": 0.9915970425891535,
+          "seed1": 1.0093352464362306,
+          "seed2": 1.0396981397526897,
+          "seed3": 1.0531201849187142
+        },
+        "sd_sample": 0.028036633611313096,
+        "provenance": {
+          "mean": {
+            "file": "results/v4/per_organ_v4.json",
+            "field": "selected_seed_summary.physiograph_gru.B.renal.mean",
+            "method": "read_saved_json_field"
+          },
+          "per_seed": {
+            "file": "results/v4/per_organ_v4.json",
+            "field": "selected_seed_summary.physiograph_gru.B.renal.per_seed",
+            "method": "read_saved_json_field"
+          },
+          "sd_sample": {
+            "file": "results/v4/per_organ_v4.json",
+            "field": "selected_seed_summary.physiograph_gru.B.renal.sd_sample",
+            "method": "read_saved_json_field"
+          }
+        }
+      }
+    }
+  },
+  "renal_vs_persistence": {
+    "A": {
+      "partitioned": {
+        "persistence_RMSE": 0.7624865706275453,
+        "persistence_source_ref": "/frozen_references/persistence/A/mean",
+        "per_seed": {
+          "0": {
+            "renal_RMSE": 0.7964620456390357,
+            "minus_persistence": 0.03397547501149034,
+            "worse_than_persistence": true,
+            "included_in_mean": true,
+            "source_ref": "/runs/0/metrics/A/renal"
+          },
+          "1": {
+            "renal_RMSE": 0.9324387428791938,
+            "minus_persistence": 0.1699521722516485,
+            "worse_than_persistence": true,
+            "included_in_mean": true,
+            "source_ref": "/runs/1/metrics/A/renal"
+          },
+          "2": {
+            "renal_RMSE": 0.8513802532534729,
+            "minus_persistence": 0.08889368262592756,
+            "worse_than_persistence": true,
+            "included_in_mean": true,
+            "source_ref": "/runs/2/metrics/A/renal"
+          },
+          "3": {
+            "renal_RMSE": 0.8050483672027449,
+            "minus_persistence": 0.04256179657519954,
+            "worse_than_persistence": true,
+            "included_in_mean": true,
+            "source_ref": "/runs/3/metrics/A/renal"
+          }
+        },
+        "mean_renal_RMSE": 0.8463323522436118,
+        "mean_minus_persistence": 0.08384578161606648,
+        "mean_worse_than_persistence": true,
+        "n_worse_than_persistence": 4,
+        "mean_source_ref": "/arm_summary/partitioned/A/renal/mean",
+        "method": "subtract one deterministic frozen persistence RMSE from each recorded renal RMSE and the eligible-seed arithmetic mean"
+      },
+      "shared": {
+        "persistence_RMSE": 0.7624865706275453,
+        "persistence_source_ref": "/frozen_references/persistence/A/mean",
+        "per_seed": {
+          "0": {
+            "renal_RMSE": 0.7140969094652259,
+            "minus_persistence": -0.048389661162319464,
+            "worse_than_persistence": false,
+            "included_in_mean": true,
+            "source_ref": "/runs/4/metrics/A/renal"
+          },
+          "1": {
+            "renal_RMSE": 0.7129242210602451,
+            "minus_persistence": -0.04956234956730021,
+            "worse_than_persistence": false,
+            "included_in_mean": true,
+            "source_ref": "/runs/5/metrics/A/renal"
+          },
+          "2": {
+            "renal_RMSE": 0.715663374357878,
+            "minus_persistence": -0.046823196269667355,
+            "worse_than_persistence": false,
+            "included_in_mean": true,
+            "source_ref": "/runs/6/metrics/A/renal"
+          },
+          "3": {
+            "renal_RMSE": 0.7053264259194371,
+            "minus_persistence": -0.05716014470810826,
+            "worse_than_persistence": false,
+            "included_in_mean": true,
+            "source_ref": "/runs/7/metrics/A/renal"
+          }
+        },
+        "mean_renal_RMSE": 0.7120027327006965,
+        "mean_minus_persistence": -0.05048383792684885,
+        "mean_worse_than_persistence": false,
+        "n_worse_than_persistence": 0,
+        "mean_source_ref": "/arm_summary/shared/A/renal/mean",
+        "method": "subtract one deterministic frozen persistence RMSE from each recorded renal RMSE and the eligible-seed arithmetic mean"
+      }
+    },
+    "B": {
+      "partitioned": {
+        "persistence_RMSE": 0.9770494307631641,
+        "persistence_source_ref": "/frozen_references/persistence/B/mean",
+        "per_seed": {
+          "0": {
+            "renal_RMSE": 1.018164211572283,
+            "minus_persistence": 0.04111478080911901,
+            "worse_than_persistence": true,
+            "included_in_mean": true,
+            "source_ref": "/runs/0/metrics/B/renal"
+          },
+          "1": {
+            "renal_RMSE": 1.148012892586001,
+            "minus_persistence": 0.17096346182283684,
+            "worse_than_persistence": true,
+            "included_in_mean": true,
+            "source_ref": "/runs/1/metrics/B/renal"
+          },
+          "2": {
+            "renal_RMSE": 1.0811143513666839,
+            "minus_persistence": 0.1040649206035198,
+            "worse_than_persistence": true,
+            "included_in_mean": true,
+            "source_ref": "/runs/2/metrics/B/renal"
+          },
+          "3": {
+            "renal_RMSE": 1.0208803880943302,
+            "minus_persistence": 0.043830957331166154,
+            "worse_than_persistence": true,
+            "included_in_mean": true,
+            "source_ref": "/runs/3/metrics/B/renal"
+          }
+        },
+        "mean_renal_RMSE": 1.0670429609048244,
+        "mean_minus_persistence": 0.08999353014166034,
+        "mean_worse_than_persistence": true,
+        "n_worse_than_persistence": 4,
+        "mean_source_ref": "/arm_summary/partitioned/B/renal/mean",
+        "method": "subtract one deterministic frozen persistence RMSE from each recorded renal RMSE and the eligible-seed arithmetic mean"
+      },
+      "shared": {
+        "persistence_RMSE": 0.9770494307631641,
+        "persistence_source_ref": "/frozen_references/persistence/B/mean",
+        "per_seed": {
+          "0": {
+            "renal_RMSE": 0.9414797321519264,
+            "minus_persistence": -0.03556969861123771,
+            "worse_than_persistence": false,
+            "included_in_mean": true,
+            "source_ref": "/runs/4/metrics/B/renal"
+          },
+          "1": {
+            "renal_RMSE": 0.9413808377173977,
+            "minus_persistence": -0.03566859304576642,
+            "worse_than_persistence": false,
+            "included_in_mean": true,
+            "source_ref": "/runs/5/metrics/B/renal"
+          },
+          "2": {
+            "renal_RMSE": 0.9441416008326701,
+            "minus_persistence": -0.032907829930494015,
+            "worse_than_persistence": false,
+            "included_in_mean": true,
+            "source_ref": "/runs/6/metrics/B/renal"
+          },
+          "3": {
+            "renal_RMSE": 0.931436056649927,
+            "minus_persistence": -0.04561337411323707,
+            "worse_than_persistence": false,
+            "included_in_mean": true,
+            "source_ref": "/runs/7/metrics/B/renal"
+          }
+        },
+        "mean_renal_RMSE": 0.9396095568379803,
+        "mean_minus_persistence": -0.037439873925183775,
+        "mean_worse_than_persistence": false,
+        "n_worse_than_persistence": 0,
+        "mean_source_ref": "/arm_summary/shared/B/renal/mean",
+        "method": "subtract one deterministic frozen persistence RMSE from each recorded renal RMSE and the eligible-seed arithmetic mean"
+      }
+    }
+  },
+  "parameter_counts": {
+    "partitioned": {
+      "n_params": 759952,
+      "sources": [
+        {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed0/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        },
+        {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed1/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        },
+        {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed2/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        },
+        {
+          "file": "diagnostics/renal_shared_input/runs/partitioned/seed3/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        }
+      ]
+    },
+    "shared": {
+      "n_params": 778384,
+      "sources": [
+        {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed0/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        },
+        {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed1/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        },
+        {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed2/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        },
+        {
+          "file": "diagnostics/renal_shared_input/runs/shared/seed3/run.json",
+          "field": "n_params",
+          "method": "read_saved_json_field"
+        }
+      ]
+    },
+    "shared_minus_partitioned": 18432,
+    "difference_method": "shared n_params minus partitioned n_params; no model instantiated"
+  },
+  "remaining_untested_explanations": [
+    "projection capacity changes together with dynamic input access; no parameter-matched comparison",
+    "optimization under alternative training settings or a retuned configuration",
+    "forecast boundary behavior: last context row rather than last observed values; initial missing zeros are fed with masks set to one",
+    "missingness representation, including the absence of an explicit elapsed-time channel",
+    "unchanged recurrent-state/coupling handling in the admissible-edge architecture",
+    "separate CinC-2012 seed behavior is outside this CinC-2019 control"
+  ],
+  "reading_display_values": {
+    "/definitions/n_planned_seeds": "4",
+    "/definitions/n_dynamic_variables": "16",
+    "/arm_summary/partitioned/A/renal/mean": "0.846332",
+    "/arm_summary/shared/A/renal/mean": "0.712003",
+    "/paired_differences/A/renal/mean [signed]": "-0.134330",
+    "/arm_summary/partitioned/B/renal/mean": "1.067043",
+    "/arm_summary/shared/B/renal/mean": "0.939610",
+    "/paired_differences/B/renal/mean [signed]": "-0.127433",
+    "/parameter_counts/partitioned/n_params": "759952",
+    "/parameter_counts/shared/n_params": "778384",
+    "/verification/n_runs": "8",
+    "/configuration/epochs_budget": "35",
+    "/definitions/minimum_included_epochs": "10",
+    "/configuration/lr": "0.000500",
+    "/configuration/sizes/d_model": "96",
+    "/configuration/sizes/d_state": "48",
+    "/configuration/sizes/n_layers": "2",
+    "/definitions/K": "12",
+    "/runs/0/seed": "0",
+    "/runs/0/epochs_completed": "35",
+    "/runs/0/n_params": "759952",
+    "/runs/0/metrics/A/cardiovascular": "0.699532",
+    "/runs/0/metrics/B/cardiovascular": "0.800050",
+    "/runs/0/metrics/A/pulmonary": "0.842732",
+    "/runs/0/metrics/B/pulmonary": "0.818036",
+    "/runs/0/metrics/A/renal": "0.796462",
+    "/runs/0/metrics/B/renal": "1.018164",
+    "/runs/0/metrics/A/metabolic": "0.858934",
+    "/runs/0/metrics/B/metabolic": "0.856209",
+    "/runs/0/metrics/A/all_organ_pooled": "0.770099",
+    "/runs/0/metrics/B/all_organ_pooled": "0.817404",
+    "/runs/1/seed": "1",
+    "/runs/1/epochs_completed": "35",
+    "/runs/1/n_params": "759952",
+    "/runs/1/metrics/A/cardiovascular": "0.698773",
+    "/runs/1/metrics/B/cardiovascular": "0.799773",
+    "/runs/1/metrics/A/pulmonary": "0.842261",
+    "/runs/1/metrics/B/pulmonary": "0.818595",
+    "/runs/1/metrics/A/renal": "0.932439",
+    "/runs/1/metrics/B/renal": "1.148013",
+    "/runs/1/metrics/A/metabolic": "0.873588",
+    "/runs/1/metrics/B/metabolic": "0.864174",
+    "/runs/1/metrics/A/all_organ_pooled": "0.776766",
+    "/runs/1/metrics/B/all_organ_pooled": "0.822623",
+    "/runs/2/seed": "2",
+    "/runs/2/epochs_completed": "35",
+    "/runs/2/n_params": "759952",
+    "/runs/2/metrics/A/cardiovascular": "0.698510",
+    "/runs/2/metrics/B/cardiovascular": "0.796894",
+    "/runs/2/metrics/A/pulmonary": "0.845032",
+    "/runs/2/metrics/B/pulmonary": "0.818856",
+    "/runs/2/metrics/A/renal": "0.851380",
+    "/runs/2/metrics/B/renal": "1.081114",
+    "/runs/2/metrics/A/metabolic": "0.862824",
+    "/runs/2/metrics/B/metabolic": "0.859189",
+    "/runs/2/metrics/A/all_organ_pooled": "0.773010",
+    "/runs/2/metrics/B/all_organ_pooled": "0.818208",
+    "/runs/3/seed": "3",
+    "/runs/3/epochs_completed": "35",
+    "/runs/3/n_params": "759952",
+    "/runs/3/metrics/A/cardiovascular": "0.699444",
+    "/runs/3/metrics/B/cardiovascular": "0.798893",
+    "/runs/3/metrics/A/pulmonary": "0.840561",
+    "/runs/3/metrics/B/pulmonary": "0.817066",
+    "/runs/3/metrics/A/renal": "0.805048",
+    "/runs/3/metrics/B/renal": "1.020880",
+    "/runs/3/metrics/A/metabolic": "0.858651",
+    "/runs/3/metrics/B/metabolic": "0.859271",
+    "/runs/3/metrics/A/all_organ_pooled": "0.769565",
+    "/runs/3/metrics/B/all_organ_pooled": "0.816888",
+    "/runs/4/seed": "0",
+    "/runs/4/epochs_completed": "35",
+    "/runs/4/n_params": "778384",
+    "/runs/4/metrics/A/cardiovascular": "0.696719",
+    "/runs/4/metrics/B/cardiovascular": "0.800309",
+    "/runs/4/metrics/A/pulmonary": "0.831976",
+    "/runs/4/metrics/B/pulmonary": "0.813975",
+    "/runs/4/metrics/A/renal": "0.714097",
+    "/runs/4/metrics/B/renal": "0.941480",
+    "/runs/4/metrics/A/metabolic": "0.815623",
+    "/runs/4/metrics/B/metabolic": "0.830429",
+    "/runs/4/metrics/A/all_organ_pooled": "0.756991",
+    "/runs/4/metrics/B/all_organ_pooled": "0.811263",
+    "/runs/5/seed": "1",
+    "/runs/5/epochs_completed": "35",
+    "/runs/5/n_params": "778384",
+    "/runs/5/metrics/A/cardiovascular": "0.694947",
+    "/runs/5/metrics/B/cardiovascular": "0.795241",
+    "/runs/5/metrics/A/pulmonary": "0.833757",
+    "/runs/5/metrics/B/pulmonary": "0.814245",
+    "/runs/5/metrics/A/renal": "0.712924",
+    "/runs/5/metrics/B/renal": "0.941381",
+    "/runs/5/metrics/A/metabolic": "0.817905",
+    "/runs/5/metrics/B/metabolic": "0.827041",
+    "/runs/5/metrics/A/all_organ_pooled": "0.756987",
+    "/runs/5/metrics/B/all_organ_pooled": "0.808053",
+    "/runs/6/seed": "2",
+    "/runs/6/epochs_completed": "35",
+    "/runs/6/n_params": "778384",
+    "/runs/6/metrics/A/cardiovascular": "0.695585",
+    "/runs/6/metrics/B/cardiovascular": "0.797213",
+    "/runs/6/metrics/A/pulmonary": "0.839006",
+    "/runs/6/metrics/B/pulmonary": "0.815106",
+    "/runs/6/metrics/A/renal": "0.715663",
+    "/runs/6/metrics/B/renal": "0.944142",
+    "/runs/6/metrics/A/metabolic": "0.817470",
+    "/runs/6/metrics/B/metabolic": "0.833836",
+    "/runs/6/metrics/A/all_organ_pooled": "0.759251",
+    "/runs/6/metrics/B/all_organ_pooled": "0.810247",
+    "/runs/7/seed": "3",
+    "/runs/7/epochs_completed": "35",
+    "/runs/7/n_params": "778384",
+    "/runs/7/metrics/A/cardiovascular": "0.696028",
+    "/runs/7/metrics/B/cardiovascular": "0.798686",
+    "/runs/7/metrics/A/pulmonary": "0.835830",
+    "/runs/7/metrics/B/pulmonary": "0.815224",
+    "/runs/7/metrics/A/renal": "0.705326",
+    "/runs/7/metrics/B/renal": "0.931436",
+    "/runs/7/metrics/A/metabolic": "0.823616",
+    "/runs/7/metrics/B/metabolic": "0.836131",
+    "/runs/7/metrics/A/all_organ_pooled": "0.758646",
+    "/runs/7/metrics/B/all_organ_pooled": "0.811004",
+    "/paired_differences/A/cardiovascular/per_seed/0 [signed]": "-0.002812",
+    "/paired_differences/A/cardiovascular/per_seed/1 [signed]": "-0.003825",
+    "/paired_differences/A/cardiovascular/per_seed/2 [signed]": "-0.002925",
+    "/paired_differences/A/cardiovascular/per_seed/3 [signed]": "-0.003416",
+    "/paired_differences/A/cardiovascular/mean [signed]": "-0.003245",
+    "/paired_differences/A/cardiovascular/min [signed]": "-0.003825",
+    "/paired_differences/A/cardiovascular/max [signed]": "-0.002812",
+    "/paired_differences/A/cardiovascular/sign_count/negative": "4",
+    "/paired_differences/A/cardiovascular/sign_count/zero": "0",
+    "/paired_differences/A/cardiovascular/sign_count/positive": "0",
+    "/paired_differences/A/cardiovascular/sign_count/planned_pairs": "4",
+    "/paired_differences/A/pulmonary/per_seed/0 [signed]": "-0.010755",
+    "/paired_differences/A/pulmonary/per_seed/1 [signed]": "-0.008504",
+    "/paired_differences/A/pulmonary/per_seed/2 [signed]": "-0.006027",
+    "/paired_differences/A/pulmonary/per_seed/3 [signed]": "-0.004731",
+    "/paired_differences/A/pulmonary/mean [signed]": "-0.007504",
+    "/paired_differences/A/pulmonary/min [signed]": "-0.010755",
+    "/paired_differences/A/pulmonary/max [signed]": "-0.004731",
+    "/paired_differences/A/pulmonary/sign_count/negative": "4",
+    "/paired_differences/A/pulmonary/sign_count/zero": "0",
+    "/paired_differences/A/pulmonary/sign_count/positive": "0",
+    "/paired_differences/A/pulmonary/sign_count/planned_pairs": "4",
+    "/paired_differences/A/renal/per_seed/0 [signed]": "-0.082365",
+    "/paired_differences/A/renal/per_seed/1 [signed]": "-0.219515",
+    "/paired_differences/A/renal/per_seed/2 [signed]": "-0.135717",
+    "/paired_differences/A/renal/per_seed/3 [signed]": "-0.099722",
+    "/paired_differences/A/renal/min [signed]": "-0.219515",
+    "/paired_differences/A/renal/max [signed]": "-0.082365",
+    "/paired_differences/A/renal/sign_count/negative": "4",
+    "/paired_differences/A/renal/sign_count/zero": "0",
+    "/paired_differences/A/renal/sign_count/positive": "0",
+    "/paired_differences/A/renal/sign_count/planned_pairs": "4",
+    "/paired_differences/A/metabolic/per_seed/0 [signed]": "-0.043311",
+    "/paired_differences/A/metabolic/per_seed/1 [signed]": "-0.055682",
+    "/paired_differences/A/metabolic/per_seed/2 [signed]": "-0.045354",
+    "/paired_differences/A/metabolic/per_seed/3 [signed]": "-0.035035",
+    "/paired_differences/A/metabolic/mean [signed]": "-0.044846",
+    "/paired_differences/A/metabolic/min [signed]": "-0.055682",
+    "/paired_differences/A/metabolic/max [signed]": "-0.035035",
+    "/paired_differences/A/metabolic/sign_count/negative": "4",
+    "/paired_differences/A/metabolic/sign_count/zero": "0",
+    "/paired_differences/A/metabolic/sign_count/positive": "0",
+    "/paired_differences/A/metabolic/sign_count/planned_pairs": "4",
+    "/paired_differences/A/all_organ_pooled/per_seed/0 [signed]": "-0.013107",
+    "/paired_differences/A/all_organ_pooled/per_seed/1 [signed]": "-0.019779",
+    "/paired_differences/A/all_organ_pooled/per_seed/2 [signed]": "-0.013759",
+    "/paired_differences/A/all_organ_pooled/per_seed/3 [signed]": "-0.010918",
+    "/paired_differences/A/all_organ_pooled/mean [signed]": "-0.014391",
+    "/paired_differences/A/all_organ_pooled/min [signed]": "-0.019779",
+    "/paired_differences/A/all_organ_pooled/max [signed]": "-0.010918",
+    "/paired_differences/A/all_organ_pooled/sign_count/negative": "4",
+    "/paired_differences/A/all_organ_pooled/sign_count/zero": "0",
+    "/paired_differences/A/all_organ_pooled/sign_count/positive": "0",
+    "/paired_differences/A/all_organ_pooled/sign_count/planned_pairs": "4",
+    "/paired_differences/B/cardiovascular/per_seed/0 [signed]": "+0.000259",
+    "/paired_differences/B/cardiovascular/per_seed/1 [signed]": "-0.004533",
+    "/paired_differences/B/cardiovascular/per_seed/2 [signed]": "+0.000319",
+    "/paired_differences/B/cardiovascular/per_seed/3 [signed]": "-0.000207",
+    "/paired_differences/B/cardiovascular/mean [signed]": "-0.001040",
+    "/paired_differences/B/cardiovascular/min [signed]": "-0.004533",
+    "/paired_differences/B/cardiovascular/max [signed]": "+0.000319",
+    "/paired_differences/B/cardiovascular/sign_count/negative": "2",
+    "/paired_differences/B/cardiovascular/sign_count/zero": "0",
+    "/paired_differences/B/cardiovascular/sign_count/positive": "2",
+    "/paired_differences/B/cardiovascular/sign_count/planned_pairs": "4",
+    "/paired_differences/B/pulmonary/per_seed/0 [signed]": "-0.004060",
+    "/paired_differences/B/pulmonary/per_seed/1 [signed]": "-0.004350",
+    "/paired_differences/B/pulmonary/per_seed/2 [signed]": "-0.003751",
+    "/paired_differences/B/pulmonary/per_seed/3 [signed]": "-0.001843",
+    "/paired_differences/B/pulmonary/mean [signed]": "-0.003501",
+    "/paired_differences/B/pulmonary/min [signed]": "-0.004350",
+    "/paired_differences/B/pulmonary/max [signed]": "-0.001843",
+    "/paired_differences/B/pulmonary/sign_count/negative": "4",
+    "/paired_differences/B/pulmonary/sign_count/zero": "0",
+    "/paired_differences/B/pulmonary/sign_count/positive": "0",
+    "/paired_differences/B/pulmonary/sign_count/planned_pairs": "4",
+    "/paired_differences/B/renal/per_seed/0 [signed]": "-0.076684",
+    "/paired_differences/B/renal/per_seed/1 [signed]": "-0.206632",
+    "/paired_differences/B/renal/per_seed/2 [signed]": "-0.136973",
+    "/paired_differences/B/renal/per_seed/3 [signed]": "-0.089444",
+    "/paired_differences/B/renal/min [signed]": "-0.206632",
+    "/paired_differences/B/renal/max [signed]": "-0.076684",
+    "/paired_differences/B/renal/sign_count/negative": "4",
+    "/paired_differences/B/renal/sign_count/zero": "0",
+    "/paired_differences/B/renal/sign_count/positive": "0",
+    "/paired_differences/B/renal/sign_count/planned_pairs": "4",
+    "/paired_differences/B/metabolic/per_seed/0 [signed]": "-0.025779",
+    "/paired_differences/B/metabolic/per_seed/1 [signed]": "-0.037133",
+    "/paired_differences/B/metabolic/per_seed/2 [signed]": "-0.025353",
+    "/paired_differences/B/metabolic/per_seed/3 [signed]": "-0.023139",
+    "/paired_differences/B/metabolic/mean [signed]": "-0.027851",
+    "/paired_differences/B/metabolic/min [signed]": "-0.037133",
+    "/paired_differences/B/metabolic/max [signed]": "-0.023139",
+    "/paired_differences/B/metabolic/sign_count/negative": "4",
+    "/paired_differences/B/metabolic/sign_count/zero": "0",
+    "/paired_differences/B/metabolic/sign_count/positive": "0",
+    "/paired_differences/B/metabolic/sign_count/planned_pairs": "4",
+    "/paired_differences/B/all_organ_pooled/per_seed/0 [signed]": "-0.006141",
+    "/paired_differences/B/all_organ_pooled/per_seed/1 [signed]": "-0.014570",
+    "/paired_differences/B/all_organ_pooled/per_seed/2 [signed]": "-0.007962",
+    "/paired_differences/B/all_organ_pooled/per_seed/3 [signed]": "-0.005884",
+    "/paired_differences/B/all_organ_pooled/mean [signed]": "-0.008639",
+    "/paired_differences/B/all_organ_pooled/min [signed]": "-0.014570",
+    "/paired_differences/B/all_organ_pooled/max [signed]": "-0.005884",
+    "/paired_differences/B/all_organ_pooled/sign_count/negative": "4",
+    "/paired_differences/B/all_organ_pooled/sign_count/zero": "0",
+    "/paired_differences/B/all_organ_pooled/sign_count/positive": "0",
+    "/paired_differences/B/all_organ_pooled/sign_count/planned_pairs": "4",
+    "/arm_summary/partitioned/A/cardiovascular/mean": "0.699065",
+    "/arm_summary/partitioned/A/cardiovascular/min": "0.698510",
+    "/arm_summary/partitioned/A/cardiovascular/max": "0.699532",
+    "/arm_summary/partitioned/A/cardiovascular/span": "0.001022",
+    "/arm_summary/shared/A/cardiovascular/mean": "0.695820",
+    "/arm_summary/shared/A/cardiovascular/min": "0.694947",
+    "/arm_summary/shared/A/cardiovascular/max": "0.696719",
+    "/arm_summary/shared/A/cardiovascular/span": "0.001772",
+    "/arm_summary/partitioned/A/pulmonary/mean": "0.842647",
+    "/arm_summary/partitioned/A/pulmonary/min": "0.840561",
+    "/arm_summary/partitioned/A/pulmonary/max": "0.845032",
+    "/arm_summary/partitioned/A/pulmonary/span": "0.004471",
+    "/arm_summary/shared/A/pulmonary/mean": "0.835142",
+    "/arm_summary/shared/A/pulmonary/min": "0.831976",
+    "/arm_summary/shared/A/pulmonary/max": "0.839006",
+    "/arm_summary/shared/A/pulmonary/span": "0.007029",
+    "/arm_summary/partitioned/A/renal/min": "0.796462",
+    "/arm_summary/partitioned/A/renal/max": "0.932439",
+    "/arm_summary/partitioned/A/renal/span": "0.135977",
+    "/arm_summary/shared/A/renal/min": "0.705326",
+    "/arm_summary/shared/A/renal/max": "0.715663",
+    "/arm_summary/shared/A/renal/span": "0.010337",
+    "/arm_summary/partitioned/A/metabolic/mean": "0.863499",
+    "/arm_summary/partitioned/A/metabolic/min": "0.858651",
+    "/arm_summary/partitioned/A/metabolic/max": "0.873588",
+    "/arm_summary/partitioned/A/metabolic/span": "0.014937",
+    "/arm_summary/shared/A/metabolic/mean": "0.818654",
+    "/arm_summary/shared/A/metabolic/min": "0.815623",
+    "/arm_summary/shared/A/metabolic/max": "0.823616",
+    "/arm_summary/shared/A/metabolic/span": "0.007992",
+    "/arm_summary/partitioned/A/all_organ_pooled/mean": "0.772360",
+    "/arm_summary/partitioned/A/all_organ_pooled/min": "0.769565",
+    "/arm_summary/partitioned/A/all_organ_pooled/max": "0.776766",
+    "/arm_summary/partitioned/A/all_organ_pooled/span": "0.007201",
+    "/arm_summary/shared/A/all_organ_pooled/mean": "0.757969",
+    "/arm_summary/shared/A/all_organ_pooled/min": "0.756987",
+    "/arm_summary/shared/A/all_organ_pooled/max": "0.759251",
+    "/arm_summary/shared/A/all_organ_pooled/span": "0.002265",
+    "/arm_summary/partitioned/B/cardiovascular/mean": "0.798902",
+    "/arm_summary/partitioned/B/cardiovascular/min": "0.796894",
+    "/arm_summary/partitioned/B/cardiovascular/max": "0.800050",
+    "/arm_summary/partitioned/B/cardiovascular/span": "0.003156",
+    "/arm_summary/shared/B/cardiovascular/mean": "0.797862",
+    "/arm_summary/shared/B/cardiovascular/min": "0.795241",
+    "/arm_summary/shared/B/cardiovascular/max": "0.800309",
+    "/arm_summary/shared/B/cardiovascular/span": "0.005068",
+    "/arm_summary/partitioned/B/pulmonary/mean": "0.818138",
+    "/arm_summary/partitioned/B/pulmonary/min": "0.817066",
+    "/arm_summary/partitioned/B/pulmonary/max": "0.818856",
+    "/arm_summary/partitioned/B/pulmonary/span": "0.001790",
+    "/arm_summary/shared/B/pulmonary/mean": "0.814637",
+    "/arm_summary/shared/B/pulmonary/min": "0.813975",
+    "/arm_summary/shared/B/pulmonary/max": "0.815224",
+    "/arm_summary/shared/B/pulmonary/span": "0.001248",
+    "/arm_summary/partitioned/B/renal/min": "1.018164",
+    "/arm_summary/partitioned/B/renal/max": "1.148013",
+    "/arm_summary/partitioned/B/renal/span": "0.129849",
+    "/arm_summary/shared/B/renal/min": "0.931436",
+    "/arm_summary/shared/B/renal/max": "0.944142",
+    "/arm_summary/shared/B/renal/span": "0.012706",
+    "/arm_summary/partitioned/B/metabolic/mean": "0.859710",
+    "/arm_summary/partitioned/B/metabolic/min": "0.856209",
+    "/arm_summary/partitioned/B/metabolic/max": "0.864174",
+    "/arm_summary/partitioned/B/metabolic/span": "0.007965",
+    "/arm_summary/shared/B/metabolic/mean": "0.831859",
+    "/arm_summary/shared/B/metabolic/min": "0.827041",
+    "/arm_summary/shared/B/metabolic/max": "0.836131",
+    "/arm_summary/shared/B/metabolic/span": "0.009090",
+    "/arm_summary/partitioned/B/all_organ_pooled/mean": "0.818781",
+    "/arm_summary/partitioned/B/all_organ_pooled/min": "0.816888",
+    "/arm_summary/partitioned/B/all_organ_pooled/max": "0.822623",
+    "/arm_summary/partitioned/B/all_organ_pooled/span": "0.005735",
+    "/arm_summary/shared/B/all_organ_pooled/mean": "0.810142",
+    "/arm_summary/shared/B/all_organ_pooled/min": "0.808053",
+    "/arm_summary/shared/B/all_organ_pooled/max": "0.811263",
+    "/arm_summary/shared/B/all_organ_pooled/span": "0.003210",
+    "/frozen_references/persistence/A/mean": "0.762487",
+    "/frozen_references/persistence/B/mean": "0.977049",
+    "/frozen_references/physiograph_gru/A/mean": "0.813376",
+    "/frozen_references/physiograph_gru/B/mean": "1.023438",
+    "/renal_vs_persistence/A/partitioned/per_seed/0/minus_persistence [signed]": "+0.033975",
+    "/renal_vs_persistence/A/partitioned/per_seed/1/minus_persistence [signed]": "+0.169952",
+    "/renal_vs_persistence/A/partitioned/per_seed/2/minus_persistence [signed]": "+0.088894",
+    "/renal_vs_persistence/A/partitioned/per_seed/3/minus_persistence [signed]": "+0.042562",
+    "/renal_vs_persistence/A/partitioned/mean_minus_persistence [signed]": "+0.083846",
+    "/renal_vs_persistence/A/shared/per_seed/0/minus_persistence [signed]": "-0.048390",
+    "/renal_vs_persistence/A/shared/per_seed/1/minus_persistence [signed]": "-0.049562",
+    "/renal_vs_persistence/A/shared/per_seed/2/minus_persistence [signed]": "-0.046823",
+    "/renal_vs_persistence/A/shared/per_seed/3/minus_persistence [signed]": "-0.057160",
+    "/renal_vs_persistence/A/shared/mean_minus_persistence [signed]": "-0.050484",
+    "/renal_vs_persistence/B/partitioned/per_seed/0/minus_persistence [signed]": "+0.041115",
+    "/renal_vs_persistence/B/partitioned/per_seed/1/minus_persistence [signed]": "+0.170963",
+    "/renal_vs_persistence/B/partitioned/per_seed/2/minus_persistence [signed]": "+0.104065",
+    "/renal_vs_persistence/B/partitioned/per_seed/3/minus_persistence [signed]": "+0.043831",
+    "/renal_vs_persistence/B/partitioned/mean_minus_persistence [signed]": "+0.089994",
+    "/renal_vs_persistence/B/shared/per_seed/0/minus_persistence [signed]": "-0.035570",
+    "/renal_vs_persistence/B/shared/per_seed/1/minus_persistence [signed]": "-0.035669",
+    "/renal_vs_persistence/B/shared/per_seed/2/minus_persistence [signed]": "-0.032908",
+    "/renal_vs_persistence/B/shared/per_seed/3/minus_persistence [signed]": "-0.045613",
+    "/renal_vs_persistence/B/shared/mean_minus_persistence [signed]": "-0.037440",
+    "/parameter_counts/shared_minus_partitioned": "18432"
+  },
+  "interpretation": "Giving every no-edge organ node all 16 dynamic variables and their masks lowers renal pooled RMSE in 4/4 paired seeds on both splits: the seed mean changes from 0.846332 to 0.712003 on A (shared − partitioned -0.134330) and from 1.067043 to 0.939610 on B (-0.127433). This is a one-factor input-scope control at a fixed selected configuration, not a retuned model. Both context and forecast-step inputs are widened, while both arms retain no edges, organ-specific output heads, static inputs, and the same forecast boundary/mask rules; shared forecast feedback carries the preceding predictions of all organs. The comparison also widens projection capacity (759952 versus 778384 parameters), so it does not distinguish input access from that capacity change. The unresolved alternatives named in RENAL_DIAGNOSIS.md remain optimization, forecast boundary handling, and missingness representation, including the lack of explicit elapsed-time inputs; recurrent-state/coupling handling is unchanged. This comparison does not resolve the frozen admissible-edge architecture or the separate CinC-2012 seed behavior. It reports direction and magnitude for these saved fits.",
+  "historical_verification": {
+    "n_runs": 8,
+    "n_included": 8,
+    "excluded_runs": [],
+    "per_run_metric_fields_read": 80,
+    "missing_metric_fields": [],
+    "metrics_recomputations": 0,
+    "metric_route": "All requested per-run metrics already present in run.json; no error-array recomputation required. renal_protocol and shared_input_variant were read, not imported or executed.",
+    "configuration_checks": [
+      {
+        "run_id": "partitioned/seed0",
+        "configuration_matches": true,
+        "cohort_and_stay_membership_match": true,
+        "selection_sha256_matches": true,
+        "extension_sha256_matches": true
+      },
+      {
+        "run_id": "partitioned/seed1",
+        "configuration_matches": true,
+        "cohort_and_stay_membership_match": true,
+        "selection_sha256_matches": true,
+        "extension_sha256_matches": true
+      },
+      {
+        "run_id": "partitioned/seed2",
+        "configuration_matches": true,
+        "cohort_and_stay_membership_match": true,
+        "selection_sha256_matches": true,
+        "extension_sha256_matches": true
+      },
+      {
+        "run_id": "partitioned/seed3",
+        "configuration_matches": true,
+        "cohort_and_stay_membership_match": true,
+        "selection_sha256_matches": true,
+        "extension_sha256_matches": true
+      },
+      {
+        "run_id": "shared/seed0",
+        "configuration_matches": true,
+        "cohort_and_stay_membership_match": true,
+        "selection_sha256_matches": true,
+        "extension_sha256_matches": true
+      },
+      {
+        "run_id": "shared/seed1",
+        "configuration_matches": true,
+        "cohort_and_stay_membership_match": true,
+        "selection_sha256_matches": true,
+        "extension_sha256_matches": true
+      },
+      {
+        "run_id": "shared/seed2",
+        "configuration_matches": true,
+        "cohort_and_stay_membership_match": true,
+        "selection_sha256_matches": true,
+        "extension_sha256_matches": true
+      },
+      {
+        "run_id": "shared/seed3",
+        "configuration_matches": true,
+        "cohort_and_stay_membership_match": true,
+        "selection_sha256_matches": true,
+        "extension_sha256_matches": true
+      }
+    ],
+    "frozen_selected_run_checks": [
+      {
+        "file": "runs/clinical/selected/physiograph_gru/seed0/run.json",
+        "sha256": "88ff086bee7e3b739408b2883080839ba3dd33cd399b50262befacc3156545b5",
+        "status": "complete",
+        "epochs_completed": 35,
+        "renal_RMSE_matches_frozen_reference": true
+      },
+      {
+        "file": "runs/clinical/selected/physiograph_gru/seed1/run.json",
+        "sha256": "fa3d019d258a5e9d86bbba56816930024b5438fe6125afd8773ded8f41f7f6ee",
+        "status": "complete",
+        "epochs_completed": 35,
+        "renal_RMSE_matches_frozen_reference": true
+      },
+      {
+        "file": "runs/clinical/selected/physiograph_gru/seed2/run.json",
+        "sha256": "dda62db67888c41f2c58336adc6d4324b3db8fa3ae0d288368f66b3dd249c58c",
+        "status": "complete",
+        "epochs_completed": 35,
+        "renal_RMSE_matches_frozen_reference": true
+      },
+      {
+        "file": "runs/clinical/selected/physiograph_gru/seed3/run.json",
+        "sha256": "34c2b1af1bc8acdd063518b0607134bf125d6108d3a968dd54d8169205a2f3c0",
+        "status": "complete",
+        "epochs_completed": 35,
+        "renal_RMSE_matches_frozen_reference": true
+      }
+    ],
+    "scope": "author self-check of this evidence reading; no new independent scientific audit"
+  },
+  "distribution_note": "File locators are relative to the repository root. Hash fields and historical verification describe the original run inputs/outputs before portability changes. Current distributed hashes are in manifests/distribution.json and SHA256SUMS. Checkpoints and per-stay error arrays are generated outputs and are not bundled."
+}

@@ -12,7 +12,12 @@ and the predicted-vs-true MAP dose-response arrays for the figure.
 """
 from __future__ import annotations
 
-import os
+# Resolve all public modules and scratch from the release root.
+import sys as _release_sys
+from pathlib import Path as _ReleasePath
+_release_sys.path.insert(0, str(_ReleasePath(__file__).resolve().parents[1]))
+from release_paths import ROOT as RELEASE_ROOT, SCRATCH as RELEASE_SCRATCH
+
 import argparse
 import json
 from pathlib import Path
@@ -22,10 +27,6 @@ import torch
 import torch.nn as nn
 
 from organ_graph_ssm_model import PhysioGraph, PhysioGraphConfig
-
-# Repository root. Defaults to the parent of src/; override with the
-# PHYSIOGRAPH_ROOT environment variable to relocate data/result trees.
-REPO_ROOT = Path(os.environ.get("PHYSIOGRAPH_ROOT", Path(__file__).resolve().parents[1]))
 
 OBS = ["MAP", "HR", "CO", "CVP", "UO", "Lac"]
 # organ grouping of observables for per-organ counterfactual error
@@ -243,11 +244,11 @@ def eval_factual_forecast(model, D, C, K, device):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--npz", default=str(REPO_ROOT / "data/cvsim_counterfactual.npz"))
+    ap.add_argument("--npz", default=str(RELEASE_ROOT / 'data/cvsim_counterfactual.npz'))
     ap.add_argument("--C", type=int, default=12); ap.add_argument("--K", type=int, default=24)
     ap.add_argument("--epochs", type=int, default=60); ap.add_argument("--lr", type=float, default=2e-3)
     ap.add_argument("--gpu", type=int, default=1); ap.add_argument("--seed", type=int, default=0)
-    ap.add_argument("--out", default=str(REPO_ROOT / "result/cvsim_counterfactual.json"))
+    ap.add_argument("--out", default=str(RELEASE_ROOT / 'results/legacy/cvsim_counterfactual.json'))
     ap.add_argument("--task", default="counterfactual", choices=["counterfactual", "forecast"])
     args = ap.parse_args()
     device = torch.device(f"cuda:{args.gpu}" if torch.cuda.is_available() else "cpu")

@@ -10,7 +10,12 @@ Usage:
 """
 from __future__ import annotations
 
-import os
+# Resolve all public modules and scratch from the release root.
+import sys as _release_sys
+from pathlib import Path as _ReleasePath
+_release_sys.path.insert(0, str(_ReleasePath(__file__).resolve().parents[1]))
+from release_paths import ROOT as RELEASE_ROOT, SCRATCH as RELEASE_SCRATCH
+
 import argparse
 import json
 import time
@@ -23,10 +28,6 @@ import torch.nn as nn
 from physiograph_data_loader import make_loaders, masked_metrics
 from clinical_timeseries_baselines import build_baseline, REGISTRY
 from organ_graph_ssm_model import build_model
-
-# Repository root. Defaults to the parent of src/; override with the
-# PHYSIOGRAPH_ROOT environment variable to relocate data/result trees.
-REPO_ROOT = Path(os.environ.get("PHYSIOGRAPH_ROOT", Path(__file__).resolve().parents[1]))
 
 
 def seed_all(s):
@@ -126,7 +127,7 @@ def train_one(name, loaders, meta, device, epochs, lr, sizes, seed, ckpt_dir):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--npz", default=str(REPO_ROOT / "data/cinc2019_cohort.npz"))
+    ap.add_argument("--npz", default=str(RELEASE_ROOT / 'data/cinc2019_cohort.npz'))
     ap.add_argument("--models", default="physiograph,grud,ncde,odernn,graphgru,gru")
     ap.add_argument("--epochs", type=int, default=40)
     ap.add_argument("--C", type=int, default=12); ap.add_argument("--K", type=int, default=12)
@@ -136,7 +137,7 @@ def main():
     ap.add_argument("--d_model", type=int, default=96); ap.add_argument("--d_state", type=int, default=48)
     ap.add_argument("--n_layers", type=int, default=2); ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--train_frac", type=float, default=1.0)
-    ap.add_argument("--out", default=str(REPO_ROOT / "result/cinc_forecasting.json"))
+    ap.add_argument("--out", default=str(RELEASE_ROOT / 'results/legacy/cinc_forecasting.json'))
     args = ap.parse_args()
 
     device = torch.device(f"cuda:{args.gpu}" if torch.cuda.is_available() else "cpu")
@@ -165,7 +166,7 @@ def main():
         print(f"[run] === training {name} ===", flush=True)
         try:
             r = train_one(name, (train_dl, val_dl, testA_dl, testB_dl), meta, device,
-                          args.epochs, args.lr, sizes, args.seed, str(REPO_ROOT / "ckpt"))
+                          args.epochs, args.lr, sizes, args.seed, str(RELEASE_ROOT / 'runs/checkpoints'))
             r["train_seconds"] = round(time.time() - t0, 1)
             results[name] = r
             print(f"[run] {name}: A RMSE@{args.K}={r['A_test'][f'RMSE@{args.K}']:.4f} "

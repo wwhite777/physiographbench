@@ -1,0 +1,15 @@
+{
+  "python": "3.10.12",
+  "packages": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "torch": "2.6.0+cu124",
+    "torchcde": "0.2.5",
+    "torchdiffeq": "0.2.5",
+    "torchsde": "0.2.6",
+    "matplotlib": "3.10.9",
+    "pytest": "9.2.0"
+  },
+  "execution": "CPU",
+  "archive_zlib": "1.2.11"
+}

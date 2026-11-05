@@ -9,15 +9,15 @@ observed target entries (mask==1), as is standard for irregularly sampled ICU da
 """
 from __future__ import annotations
 
-import os
+# Resolve all public modules and scratch from the release root.
+import sys as _release_sys
+from pathlib import Path as _ReleasePath
+_release_sys.path.insert(0, str(_ReleasePath(__file__).resolve().parents[1]))
+from release_paths import ROOT as RELEASE_ROOT, SCRATCH as RELEASE_SCRATCH
+
 import numpy as np
 import torch
 from torch.utils.data import DataLoader, Dataset
-from pathlib import Path
-
-# Repository root. Defaults to the parent of src/; override with the
-# PHYSIOGRAPH_ROOT environment variable to relocate data/result trees.
-REPO_ROOT = Path(os.environ.get("PHYSIOGRAPH_ROOT", Path(__file__).resolve().parents[1]))
 
 
 class ForecastWindows(Dataset):
@@ -109,7 +109,7 @@ def masked_metrics(pred, target, tmask, horizons=(6, 12), organ_slices=None,
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--npz", default=str(REPO_ROOT / "data/cinc2019_cohort.npz"))
+    ap.add_argument("--npz", default=str(RELEASE_ROOT / 'data/cinc2019_cohort.npz'))
     ap.add_argument("--C", type=int, default=12); ap.add_argument("--K", type=int, default=12)
     a = ap.parse_args()
     tr, va, ta, tb, meta = make_loaders(a.npz, a.C, a.K, batch_size=64)

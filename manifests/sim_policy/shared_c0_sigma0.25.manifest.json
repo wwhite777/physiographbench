@@ -1,0 +1,52 @@
+{
+  "kappa": 1.0,
+  "confound": 0.0,
+  "c": 0.0,
+  "sigma": 0.25,
+  "seed": 0,
+  "n_patients": 400,
+  "horizon_h": 6.0,
+  "horizon_s": 21600.0,
+  "out_dt": 300.0,
+  "warmup_s": 180.0,
+  "integration_dt": 0.5,
+  "C": 12,
+  "K": 24,
+  "switch_s": 3600.0,
+  "cf_protocol": "shared",
+  "backend": "vectorized",
+  "factual_dose_onset_s": 4320.000000000001,
+  "zero_dose_throughout_context": true,
+  "context_note": "At H=6 h, C=12 and out_dt=300 s, t_C=3600 s precedes the factual dose onset at 4320 s; dose is zero throughout context and warm-up.",
+  "target_interval_s": [
+    3600.0,
+    10800.0
+  ],
+  "target_storage": "counterfactual_target; full counterfactual retained for history checks",
+  "boundary_note": "The RK4 step ending at t_C uses the factual schedule; the new dose applies from t_C, including direct observation effects.",
+  "policy_note": "sigma is total noise SD; frozen policy has SD=0.03. sigma=0 follows the card equation but cannot equal frozen doses.",
+  "source_sha256": "7cf88f7918b698a03e09b5efc5dfd2691fb44b2550df861f6ea7d54ef5868af0",
+  "code_sha256": {
+    "src/cvsim_hemodynamics_simulator.py": "7cf88f7918b698a03e09b5efc5dfd2691fb44b2550df861f6ea7d54ef5868af0",
+    "sim/sim_policy_ext.py": "fcc48abf17728656c18bc4e57b23029f2887effefef191b799c3396cd964f5b7",
+    "sim/sim_policy_ext2.py": "ec7ea141a631e4d8e07a1a5b80ce9d6da8c57a2d1e22289250382f5e5f5de777"
+  },
+  "schema_version": 2,
+  "command_line": "python3 sim/sim_policy_ext2.py --kappa 1 --confound 0 --sigma 0.25 --seed 0 --n_patients 400 --cf_protocol shared --C 12 --K 24 --horizon_h 6 --out_dt 300 --out data/sim_policy/shared_c0_sigma0.25.npz",
+  "generation_command_line": "python3 -B sim/sim_policy_ext2.py --kappa 1.0 --confound 0.0 --sigma 0.25 --seed 0 --n_patients 400 --horizon_h 6.0 --out_dt 300.0 --cf_protocol shared --C 12 --K 24 --out data/sim_policy/shared_c0_sigma0.25.npz",
+  "generation_args": {
+    "kappa": 1.0,
+    "confound": 0.0,
+    "sigma": 0.25,
+    "seed": 0,
+    "n_patients": 400,
+    "horizon_h": 6.0,
+    "out_dt": 300.0,
+    "cf_protocol": "shared",
+    "C": 12,
+    "K": 24
+  },
+  "output_path": "data/sim_policy/shared_c0_sigma0.25.npz",
+  "output_sha256": "543f8de77ff35416452299aa78506382999bbc7e83f17fedc70d1cd18519e834",
+  "generation_wall_seconds": 76.92860127612948
+}

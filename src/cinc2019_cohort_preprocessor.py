@@ -16,16 +16,17 @@ the A-train split only and reused everywhere (no external-cohort leakage).
 """
 from __future__ import annotations
 
-import os
+# Resolve all public modules and scratch from the release root.
+import sys as _release_sys
+from pathlib import Path as _ReleasePath
+_release_sys.path.insert(0, str(_ReleasePath(__file__).resolve().parents[1]))
+from release_paths import ROOT as RELEASE_ROOT, SCRATCH as RELEASE_SCRATCH
+
 import argparse
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
 import numpy as np
-
-# Repository root. Defaults to the parent of src/; override with the
-# PHYSIOGRAPH_ROOT environment variable to relocate data/result trees.
-REPO_ROOT = Path(os.environ.get("PHYSIOGRAPH_ROOT", Path(__file__).resolve().parents[1]))
 
 # ---- 16 curated variables grouped into 4 organ systems (order matters) ----
 ORGAN_GROUPS = {
@@ -124,8 +125,8 @@ def fit_norm_stats(values, mask):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--data_root", default=str(REPO_ROOT / "data"))
-    ap.add_argument("--out", default=str(REPO_ROOT / "data/cinc2019_cohort.npz"))
+    ap.add_argument("--data_root", default=str(RELEASE_ROOT / 'data'))
+    ap.add_argument("--out", default=str(RELEASE_ROOT / 'data/cinc2019_cohort.npz'))
     ap.add_argument("--max_patients", type=int, default=0)
     ap.add_argument("--workers", type=int, default=16)
     ap.add_argument("--val_frac", type=float, default=0.15)

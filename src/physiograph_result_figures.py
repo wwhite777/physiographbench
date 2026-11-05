@@ -11,7 +11,12 @@ panel). Figures are written under result/figure/exp{1,2,3}/.
 """
 from __future__ import annotations
 
-import os
+# Resolve all public modules and scratch from the release root.
+import sys as _release_sys
+from pathlib import Path as _ReleasePath
+_release_sys.path.insert(0, str(_ReleasePath(__file__).resolve().parents[1]))
+from release_paths import ROOT as RELEASE_ROOT, SCRATCH as RELEASE_SCRATCH
+
 import argparse
 import json
 from pathlib import Path
@@ -22,16 +27,12 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, Circle
 
-# Repository root. Defaults to the parent of src/; override with the
-# PHYSIOGRAPH_ROOT environment variable to relocate data/result trees.
-REPO_ROOT = Path(os.environ.get("PHYSIOGRAPH_ROOT", Path(__file__).resolve().parents[1]))
-
 plt.rcParams.update({
     "figure.facecolor": "white", "axes.facecolor": "white", "savefig.facecolor": "white",
     "font.size": 12, "axes.spines.top": False, "axes.spines.right": False,
     "axes.linewidth": 1.0, "figure.dpi": 140,
 })
-FIGROOT = REPO_ROOT / "result/figure"
+FIGROOT = Path(str(RELEASE_ROOT / 'results/legacy/figure'))
 BLUE, GREY, RED, GREEN = "#1f6fb4", "#9aa7b4", "#d1495b", "#2a9d8f"
 
 
@@ -177,9 +178,9 @@ def compute_edge_stability(ckpt, npz, C=12, K=12, gpu=1, n_boot=20, out=None):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--which", default="all")
-    ap.add_argument("--forecast_json", default=str(REPO_ROOT / "result/cinc_forecasting.json"))
-    ap.add_argument("--cf_json", default=str(REPO_ROOT / "result/cvsim_counterfactual.json"))
-    ap.add_argument("--edge_json", default=str(REPO_ROOT / "result/edge_stability.json"))
+    ap.add_argument("--forecast_json", default=str(RELEASE_ROOT / 'results/legacy/cinc_forecasting.json'))
+    ap.add_argument("--cf_json", default=str(RELEASE_ROOT / 'results/legacy/cvsim_counterfactual.json'))
+    ap.add_argument("--edge_json", default=str(RELEASE_ROOT / 'results/legacy/edge_stability.json'))
     ap.add_argument("--K", type=int, default=12)
     a = ap.parse_args()
     if a.which in ("all", "forecast") and Path(a.forecast_json).exists():

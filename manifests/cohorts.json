@@ -1,0 +1,744 @@
+{
+  "data/cinc2019_cohort.npz": {
+    "sha256": "d52d8131323fc7a3838ae4fe523c2edbc02d2daa781de1859e7d184897dfb51f",
+    "bytes": 18602564,
+    "arrays": {
+      "A_values": {
+        "dtype": "float32",
+        "shape": [
+          20336,
+          48,
+          16
+        ],
+        "sha256": "18700104ef262c4d31597c683fe8d76d4223eb781266ce7a7949d96639d5efe6"
+      },
+      "A_mask": {
+        "dtype": "float32",
+        "shape": [
+          20336,
+          48,
+          16
+        ],
+        "sha256": "857808216b0d9720ae4a21c6f76c01ba789c9139fd62ac7b89c2894d953f608b"
+      },
+      "A_static": {
+        "dtype": "float32",
+        "shape": [
+          20336,
+          5
+        ],
+        "sha256": "8ff353d5971fb93041a00207d57f6a8bcbe1e6ab4d0212503b5932038ce9c909"
+      },
+      "A_sepsis": {
+        "dtype": "float32",
+        "shape": [
+          20336,
+          48
+        ],
+        "sha256": "eb6d55b485a4d90155348188544778b1867b911d3260c904aa28b79c8160bccd"
+      },
+      "A_length": {
+        "dtype": "int32",
+        "shape": [
+          20336
+        ],
+        "sha256": "3564add302976ea476d3c376afa9aa680ccedb99dcda03f50b588fe8b6396619"
+      },
+      "A_ever_sepsis": {
+        "dtype": "float32",
+        "shape": [
+          20336
+        ],
+        "sha256": "1b27edd5705ce5b40723b836ea0850fa22a051757f24add157f64fa3b0104ab4"
+      },
+      "B_values": {
+        "dtype": "float32",
+        "shape": [
+          20000,
+          48,
+          16
+        ],
+        "sha256": "0aced9418384aa5985f50cbaddbea57f1b7f02a66728b6af0b4dab2d3d807285"
+      },
+      "B_mask": {
+        "dtype": "float32",
+        "shape": [
+          20000,
+          48,
+          16
+        ],
+        "sha256": "aede22beba4b6e9348dacd6ee90d927eb6bded24e17365cd08db4619310549c3"
+      },
+      "B_static": {
+        "dtype": "float32",
+        "shape": [
+          20000,
+          5
+        ],
+        "sha256": "0ca951b803b0f04a24f20f7f7f528feeba6d52164416846f1eb5995803e8b019"
+      },
+      "B_sepsis": {
+        "dtype": "float32",
+        "shape": [
+          20000,
+          48
+        ],
+        "sha256": "d7e66f610053a7dc8f65e8722f2f82c9850d2b1926e1ab62d4c03f3cce01e8e3"
+      },
+      "B_length": {
+        "dtype": "int32",
+        "shape": [
+          20000
+        ],
+        "sha256": "7cab7e6a99330910a9f6783efa7dfa5ca4c7b36f2f7781f28ee3ea258db2df2f"
+      },
+      "B_ever_sepsis": {
+        "dtype": "float32",
+        "shape": [
+          20000
+        ],
+        "sha256": "ab646cc618eeb67198ef2696eca6503bef727c9af1f8bed3af2fcf789b5dae48"
+      },
+      "train_idx": {
+        "dtype": "int64",
+        "shape": [
+          14236
+        ],
+        "sha256": "777712a2a1630575e8f0e7c2ed7a48d9b644fbe98e3eec08aae478243f87430c"
+      },
+      "val_idx": {
+        "dtype": "int64",
+        "shape": [
+          3050
+        ],
+        "sha256": "81051cbbbfe244c427e7dc172aadfaf372142c7446a604838eb816b404b5b1e4"
+      },
+      "test_idx": {
+        "dtype": "int64",
+        "shape": [
+          3050
+        ],
+        "sha256": "47c0e36eeb3ae5818f090d9b9359d06f5a3c8b9be912351276a3351c0d8a85fe"
+      },
+      "norm_mean": {
+        "dtype": "float32",
+        "shape": [
+          16
+        ],
+        "sha256": "712d0a300c2ea0ec6c900d356ee66af73dfc84edf81b9fee226d03d6b0483a7f"
+      },
+      "norm_std": {
+        "dtype": "float32",
+        "shape": [
+          16
+        ],
+        "sha256": "b270f7934747404f90c800c45287594098741d92dee8f691fa7e0040e7670ad8"
+      },
+      "features": {
+        "dtype": "<U10",
+        "shape": [
+          16
+        ],
+        "sha256": "88ed068ad0853f1e8c43c86ddf5a755a99a427e09f6a60f5c63f61431fad780c"
+      },
+      "organ_names": {
+        "dtype": "<U14",
+        "shape": [
+          4
+        ],
+        "sha256": "92c5aa6efd0b37b2fee8f65f6a68b0e7bc1acaa91775c33a1b469e5e75015c6c"
+      },
+      "organ_slices": {
+        "dtype": "int64",
+        "shape": [
+          4,
+          2
+        ],
+        "sha256": "76653a81b70f6ddabaf0163c719317db1c7e0692c76a3c3c17970429323e8671"
+      }
+    }
+  },
+  "data/cinc2012/cinc2012_cohort.npz": {
+    "sha256": "f3de48a075d671a92aeae6c254063dbfe036f9d8760d0a3a1423fdb1942550b8",
+    "bytes": 4636151,
+    "arrays": {
+      "A_values": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          48,
+          16
+        ],
+        "sha256": "d9d469181bff2c342444b93bbc5c55c573b8d3f43f3d528ea5f148264db8e7bd"
+      },
+      "A_mask": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          48,
+          16
+        ],
+        "sha256": "92b23480e6f006504b3db5cf8d9ffed9780e2b39f625551e41bf32e9a25a5cb4"
+      },
+      "A_static": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          5
+        ],
+        "sha256": "9b8e25ceb2b3abc80b9904b1ade6867e4dfa742e73060cf529c3a59abe1071ea"
+      },
+      "A_sepsis": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          48
+        ],
+        "sha256": "351a8054b23144894668c6a51d5dbba82f56523ef43cc45b6f4d7060a969c31a"
+      },
+      "A_length": {
+        "dtype": "int32",
+        "shape": [
+          4000
+        ],
+        "sha256": "ed9b7e01c66e253ab9b37e7c36b391e380941de219ff20dd48e6ce1a22d96192"
+      },
+      "A_ever_sepsis": {
+        "dtype": "float32",
+        "shape": [
+          4000
+        ],
+        "sha256": "f85f2c34eb2843d2aa5951ee6e8e76985655b2e3ae2cbdd76bdfd654ecf19997"
+      },
+      "A_record_id": {
+        "dtype": "int64",
+        "shape": [
+          4000
+        ],
+        "sha256": "505e2b7d01fe3b3c5e1f306e9d735d65be21e0bf9db837b8ec8ca75fd2ece39f"
+      },
+      "A_static_mask": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          5
+        ],
+        "sha256": "87aa1ba40f91609d462ff78c14674ca82b7adc984a4299c023830ddcf3bc3a74"
+      },
+      "A_mapped_length": {
+        "dtype": "int32",
+        "shape": [
+          4000
+        ],
+        "sha256": "d1791244ecdda09278f78cf4900293efffd73b9506ce6c8bd4b53362388c5546"
+      },
+      "B_values": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          48,
+          16
+        ],
+        "sha256": "1285728ff0e68dad6fc39e7ac9bcde52bd286bfb636c6315606737d255171435"
+      },
+      "B_mask": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          48,
+          16
+        ],
+        "sha256": "c3f5b7827ceb01dc7707fec72d231394cc6d3c2ec56c52b9c392b1b67427bb30"
+      },
+      "B_static": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          5
+        ],
+        "sha256": "88bb72087f6fe69e1f187abd388bf5323b5de92b156068605f16cfdd6d5ffc21"
+      },
+      "B_sepsis": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          48
+        ],
+        "sha256": "351a8054b23144894668c6a51d5dbba82f56523ef43cc45b6f4d7060a969c31a"
+      },
+      "B_length": {
+        "dtype": "int32",
+        "shape": [
+          4000
+        ],
+        "sha256": "1220d38a2d326c577ffb0cf9acbdb141013b8dd0defe6d9b382541f0c98ea211"
+      },
+      "B_ever_sepsis": {
+        "dtype": "float32",
+        "shape": [
+          4000
+        ],
+        "sha256": "f85f2c34eb2843d2aa5951ee6e8e76985655b2e3ae2cbdd76bdfd654ecf19997"
+      },
+      "B_record_id": {
+        "dtype": "int64",
+        "shape": [
+          4000
+        ],
+        "sha256": "47e1a655c07db9fb0b172cc104aa80f1b64df98a64bb4e1353c0337614966e11"
+      },
+      "B_static_mask": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          5
+        ],
+        "sha256": "456c9e64f78e14968564df4b765f7478c725e02cb02eeeec5fd77ea876d355bf"
+      },
+      "B_mapped_length": {
+        "dtype": "int32",
+        "shape": [
+          4000
+        ],
+        "sha256": "c6120918d2a9feb22d8d9cff6ef0f18b4365c8db0371347dda52563fb6ee2834"
+      },
+      "train_idx": {
+        "dtype": "int64",
+        "shape": [
+          3400
+        ],
+        "sha256": "d26843cdc259b327ce640df4d4968bd4656e8eafedf2ca767d1fd6a2f85d9283"
+      },
+      "val_idx": {
+        "dtype": "int64",
+        "shape": [
+          600
+        ],
+        "sha256": "07dfe7f7ed1772791c8a00bdd22bcf88f7263df31090c8bdeb8eec8fdf94650e"
+      },
+      "test_idx": {
+        "dtype": "int64",
+        "shape": [
+          0
+        ],
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "norm_mean": {
+        "dtype": "float32",
+        "shape": [
+          16
+        ],
+        "sha256": "3ceffc3343ebb09c544171d3a19842858f736df6c874459cebf94944f1b686b1"
+      },
+      "norm_std": {
+        "dtype": "float32",
+        "shape": [
+          16
+        ],
+        "sha256": "5f753c0e9af27f88005d8e70168cd41f3728643fae659384a5fd38e4a1b6b1f2"
+      },
+      "norm_mean_within2012": {
+        "dtype": "float32",
+        "shape": [
+          16
+        ],
+        "sha256": "3ceffc3343ebb09c544171d3a19842858f736df6c874459cebf94944f1b686b1"
+      },
+      "norm_std_within2012": {
+        "dtype": "float32",
+        "shape": [
+          16
+        ],
+        "sha256": "5f753c0e9af27f88005d8e70168cd41f3728643fae659384a5fd38e4a1b6b1f2"
+      },
+      "norm_mean_transfer2019": {
+        "dtype": "float32",
+        "shape": [
+          16
+        ],
+        "sha256": "712d0a300c2ea0ec6c900d356ee66af73dfc84edf81b9fee226d03d6b0483a7f"
+      },
+      "norm_std_transfer2019": {
+        "dtype": "float32",
+        "shape": [
+          16
+        ],
+        "sha256": "b270f7934747404f90c800c45287594098741d92dee8f691fa7e0040e7670ad8"
+      },
+      "transfer_A_test_idx": {
+        "dtype": "int64",
+        "shape": [
+          4000
+        ],
+        "sha256": "f222201c5bedc56132a93b8d112ddc70423cf8ee83935a07c67745d221347c40"
+      },
+      "transfer_B_test_idx": {
+        "dtype": "int64",
+        "shape": [
+          4000
+        ],
+        "sha256": "f222201c5bedc56132a93b8d112ddc70423cf8ee83935a07c67745d221347c40"
+      },
+      "features": {
+        "dtype": "<U10",
+        "shape": [
+          16
+        ],
+        "sha256": "88ed068ad0853f1e8c43c86ddf5a755a99a427e09f6a60f5c63f61431fad780c"
+      },
+      "organ_names": {
+        "dtype": "<U14",
+        "shape": [
+          4
+        ],
+        "sha256": "92c5aa6efd0b37b2fee8f65f6a68b0e7bc1acaa91775c33a1b469e5e75015c6c"
+      },
+      "organ_slices": {
+        "dtype": "int64",
+        "shape": [
+          4,
+          2
+        ],
+        "sha256": "76653a81b70f6ddabaf0163c719317db1c7e0692c76a3c3c17970429323e8671"
+      },
+      "static_cols": {
+        "dtype": "<U7",
+        "shape": [
+          5
+        ],
+        "sha256": "23825e6250ecc9c88a83d470daf902d4f8b19bb9e1859bbbaa51c6dee0de7fd8"
+      },
+      "units": {
+        "dtype": "<U32",
+        "shape": [
+          16
+        ],
+        "sha256": "05770849ea82ba24061f27ffad8db4fae5e14695e7d712196d59fd8796a63c40"
+      },
+      "unit_flags": {
+        "dtype": "<U71",
+        "shape": [
+          16
+        ],
+        "sha256": "9a09d5b38495c416b2aa7f0c494ac914d819c0344dddd4111f4832ef07e8bd44"
+      },
+      "protocol": {
+        "dtype": "<U25",
+        "shape": [],
+        "sha256": "15454e36f0a7c3a8d5cada0d73088c3801f8c9308aa17dc96697a541315fe94b"
+      },
+      "sepsis_labels_available": {
+        "dtype": "bool",
+        "shape": [],
+        "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+      },
+      "seed": {
+        "dtype": "int64",
+        "shape": [],
+        "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+      }
+    }
+  },
+  "data/cinc2012/cinc2012_transfer.npz": {
+    "sha256": "9cf9e31101464f0661e0619311d9db42211582868d0e0e96581cdc82a2c3b18c",
+    "bytes": 4657179,
+    "arrays": {
+      "A_values": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          48,
+          16
+        ],
+        "sha256": "d9d469181bff2c342444b93bbc5c55c573b8d3f43f3d528ea5f148264db8e7bd"
+      },
+      "A_mask": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          48,
+          16
+        ],
+        "sha256": "92b23480e6f006504b3db5cf8d9ffed9780e2b39f625551e41bf32e9a25a5cb4"
+      },
+      "A_static": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          5
+        ],
+        "sha256": "fb0b58648f64e91d7bbae9eeb065a96e2db9b4a222bc39a92f00273e9cc61189"
+      },
+      "A_sepsis": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          48
+        ],
+        "sha256": "351a8054b23144894668c6a51d5dbba82f56523ef43cc45b6f4d7060a969c31a"
+      },
+      "A_length": {
+        "dtype": "int32",
+        "shape": [
+          4000
+        ],
+        "sha256": "ed9b7e01c66e253ab9b37e7c36b391e380941de219ff20dd48e6ce1a22d96192"
+      },
+      "A_ever_sepsis": {
+        "dtype": "float32",
+        "shape": [
+          4000
+        ],
+        "sha256": "f85f2c34eb2843d2aa5951ee6e8e76985655b2e3ae2cbdd76bdfd654ecf19997"
+      },
+      "A_record_id": {
+        "dtype": "int64",
+        "shape": [
+          4000
+        ],
+        "sha256": "505e2b7d01fe3b3c5e1f306e9d735d65be21e0bf9db837b8ec8ca75fd2ece39f"
+      },
+      "A_static_mask": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          5
+        ],
+        "sha256": "2402db6d89cc84964783189cb4fc8f25b750058053c29532b26b0f9d358c6688"
+      },
+      "A_mapped_length": {
+        "dtype": "int32",
+        "shape": [
+          4000
+        ],
+        "sha256": "d1791244ecdda09278f78cf4900293efffd73b9506ce6c8bd4b53362388c5546"
+      },
+      "B_values": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          48,
+          16
+        ],
+        "sha256": "1285728ff0e68dad6fc39e7ac9bcde52bd286bfb636c6315606737d255171435"
+      },
+      "B_mask": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          48,
+          16
+        ],
+        "sha256": "c3f5b7827ceb01dc7707fec72d231394cc6d3c2ec56c52b9c392b1b67427bb30"
+      },
+      "B_static": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          5
+        ],
+        "sha256": "6dc22cafa0d209162914a6804d967dd08d6410abe7cfad7045bf3e14b3047975"
+      },
+      "B_sepsis": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          48
+        ],
+        "sha256": "351a8054b23144894668c6a51d5dbba82f56523ef43cc45b6f4d7060a969c31a"
+      },
+      "B_length": {
+        "dtype": "int32",
+        "shape": [
+          4000
+        ],
+        "sha256": "1220d38a2d326c577ffb0cf9acbdb141013b8dd0defe6d9b382541f0c98ea211"
+      },
+      "B_ever_sepsis": {
+        "dtype": "float32",
+        "shape": [
+          4000
+        ],
+        "sha256": "f85f2c34eb2843d2aa5951ee6e8e76985655b2e3ae2cbdd76bdfd654ecf19997"
+      },
+      "B_record_id": {
+        "dtype": "int64",
+        "shape": [
+          4000
+        ],
+        "sha256": "47e1a655c07db9fb0b172cc104aa80f1b64df98a64bb4e1353c0337614966e11"
+      },
+      "B_static_mask": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          5
+        ],
+        "sha256": "174ef2bb4cbf17a9b45d1b924ceb16ef49b521998807260f460b1c7e332d7631"
+      },
+      "B_mapped_length": {
+        "dtype": "int32",
+        "shape": [
+          4000
+        ],
+        "sha256": "c6120918d2a9feb22d8d9cff6ef0f18b4365c8db0371347dda52563fb6ee2834"
+      },
+      "train_idx": {
+        "dtype": "int64",
+        "shape": [
+          3400
+        ],
+        "sha256": "d26843cdc259b327ce640df4d4968bd4656e8eafedf2ca767d1fd6a2f85d9283"
+      },
+      "val_idx": {
+        "dtype": "int64",
+        "shape": [
+          600
+        ],
+        "sha256": "07dfe7f7ed1772791c8a00bdd22bcf88f7263df31090c8bdeb8eec8fdf94650e"
+      },
+      "test_idx": {
+        "dtype": "int64",
+        "shape": [
+          4000
+        ],
+        "sha256": "f222201c5bedc56132a93b8d112ddc70423cf8ee83935a07c67745d221347c40"
+      },
+      "norm_mean": {
+        "dtype": "float32",
+        "shape": [
+          16
+        ],
+        "sha256": "712d0a300c2ea0ec6c900d356ee66af73dfc84edf81b9fee226d03d6b0483a7f"
+      },
+      "norm_std": {
+        "dtype": "float32",
+        "shape": [
+          16
+        ],
+        "sha256": "b270f7934747404f90c800c45287594098741d92dee8f691fa7e0040e7670ad8"
+      },
+      "norm_mean_within2012": {
+        "dtype": "float32",
+        "shape": [
+          16
+        ],
+        "sha256": "3ceffc3343ebb09c544171d3a19842858f736df6c874459cebf94944f1b686b1"
+      },
+      "norm_std_within2012": {
+        "dtype": "float32",
+        "shape": [
+          16
+        ],
+        "sha256": "5f753c0e9af27f88005d8e70168cd41f3728643fae659384a5fd38e4a1b6b1f2"
+      },
+      "norm_mean_transfer2019": {
+        "dtype": "float32",
+        "shape": [
+          16
+        ],
+        "sha256": "712d0a300c2ea0ec6c900d356ee66af73dfc84edf81b9fee226d03d6b0483a7f"
+      },
+      "norm_std_transfer2019": {
+        "dtype": "float32",
+        "shape": [
+          16
+        ],
+        "sha256": "b270f7934747404f90c800c45287594098741d92dee8f691fa7e0040e7670ad8"
+      },
+      "transfer_A_test_idx": {
+        "dtype": "int64",
+        "shape": [
+          4000
+        ],
+        "sha256": "f222201c5bedc56132a93b8d112ddc70423cf8ee83935a07c67745d221347c40"
+      },
+      "transfer_B_test_idx": {
+        "dtype": "int64",
+        "shape": [
+          4000
+        ],
+        "sha256": "f222201c5bedc56132a93b8d112ddc70423cf8ee83935a07c67745d221347c40"
+      },
+      "features": {
+        "dtype": "<U10",
+        "shape": [
+          16
+        ],
+        "sha256": "88ed068ad0853f1e8c43c86ddf5a755a99a427e09f6a60f5c63f61431fad780c"
+      },
+      "organ_names": {
+        "dtype": "<U14",
+        "shape": [
+          4
+        ],
+        "sha256": "92c5aa6efd0b37b2fee8f65f6a68b0e7bc1acaa91775c33a1b469e5e75015c6c"
+      },
+      "organ_slices": {
+        "dtype": "int64",
+        "shape": [
+          4,
+          2
+        ],
+        "sha256": "76653a81b70f6ddabaf0163c719317db1c7e0692c76a3c3c17970429323e8671"
+      },
+      "static_cols": {
+        "dtype": "<U11",
+        "shape": [
+          5
+        ],
+        "sha256": "fa4c7a240563ce7706a407ccd3650bc70ea17646930d48bf7f9b9b3308fdef9f"
+      },
+      "units": {
+        "dtype": "<U32",
+        "shape": [
+          16
+        ],
+        "sha256": "05770849ea82ba24061f27ffad8db4fae5e14695e7d712196d59fd8796a63c40"
+      },
+      "unit_flags": {
+        "dtype": "<U71",
+        "shape": [
+          16
+        ],
+        "sha256": "9a09d5b38495c416b2aa7f0c494ac914d819c0344dddd4111f4832ef07e8bd44"
+      },
+      "protocol": {
+        "dtype": "<U48",
+        "shape": [],
+        "sha256": "4766ac22fd5c51a7ab1802909c31b920c83faf324158e5f8b3acd9fad31118a6"
+      },
+      "sepsis_labels_available": {
+        "dtype": "bool",
+        "shape": [],
+        "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+      },
+      "seed": {
+        "dtype": "int64",
+        "shape": [],
+        "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+      },
+      "training_allowed": {
+        "dtype": "bool",
+        "shape": [],
+        "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+      },
+      "A_static2012": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          5
+        ],
+        "sha256": "9b8e25ceb2b3abc80b9904b1ade6867e4dfa742e73060cf529c3a59abe1071ea"
+      },
+      "B_static2012": {
+        "dtype": "float32",
+        "shape": [
+          4000,
+          5
+        ],
+        "sha256": "88bb72087f6fe69e1f187abd388bf5323b5de92b156068605f16cfdd6d5ffc21"
+      }
+    }
+  }
+}

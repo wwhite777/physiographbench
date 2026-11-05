@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "PhysioGraphBench: code, results and diagnostics for a matched-control benchmark of physiological graph priors in multi-organ ICU trajectory forecasting"
+authors:
+  - family-names: Jeong
+    given-names: Woncheol
+    affiliation: Sungkyunkwan University
+  - family-names: Oh
+    given-names: Hayoung
+    affiliation: Sungkyunkwan University
+version: 1.0.0
+date-released: 2026-11-05
+license: MIT
+doi: 10.5281/zenodo.23976172
+repository-code: https://github.com/wwhite777/physiographbench
