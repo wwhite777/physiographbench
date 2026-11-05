@@ -77,7 +77,28 @@ observed-entry denominators and distinguish pooled RMSE from mean stay RMSE.
 The original numeric CDE external fields remain archival diagnostics and are
 excluded from displayed external comparisons, which label the model diverged.
 
-## 3. Fetch open data and rebuild both cohorts
+## 3. Reconstruct the CinC-2012 table or retrain from open cohorts
+
+### Table reconstruction from shipped records
+
+The complete 88-run results are shipped in
+`results/clinical_v4_v1/cinc2012/cinc2012_results.json`. Reconstruct their table
+without data, checkpoints or training:
+
+```bash
+python3 tools/cinc2012/aggregate_cinc2012.py \
+  --from-summary results/clinical_v4_v1/cinc2012/cinc2012_results.json \
+  --out-table runs/tables/TABLE_CINC2012.md
+```
+
+This recomputes means and sample standard deviations from each model's four
+saved seed metrics and checks them against the archived summaries. The output
+reproduces the shipped `TABLE_CINC2012.md`. It does not regenerate predictions
+or independently rederive the original per-stay error sums. The historical
+`run_manifest.json` in the results directory retains original source, cohort,
+checkpoint and error-archive fingerprints. Its locators are provenance records.
+
+### Open data and cohort rebuilding for retraining
 
 The data sources and licences are listed in `README.md`. No credentials are
 needed for the specified open corpora. The first script lists and downloads the
@@ -143,16 +164,67 @@ partition. The transfer view uses the frozen 2019 statistics and is evaluation
 only; its overlapping training placeholders must not be used for training.
 Read `results/cinc2012_cohort_v1/COHORT_REPORT.md` for the static-variable mapping,
 measurement modality/units, eligibility and missing-label qualifications.
-Completed CinC-2012 transfer and within-corpus results are in
-`results/clinical_v4_v1/cinc2012/TABLE_CINC2012.md` and `cinc2012_results.json`
-in the same directory (88/88 runs). The numerical JSON retains all per-seed
-metrics; recomputing their means and sample standard deviations reproduces the
-table. `run_manifest.json` records the historical commands and original source,
-cohort, checkpoint and error-archive fingerprints. Its relative historical
-locators do not imply those files are bundled: the CinC-2012 training/evaluation
-drivers are not included in this staged update, so full re-execution of these
-88 runs is not supported by the commands in this document. No new training runs
-were performed for this release update.
+
+### CinC-2012 retraining and transfer evaluation
+
+`tools/cinc2012/` contains the within-corpus trainer, transfer evaluator, launcher
+and strict error-archive aggregator. `manifests/cinc2012_commands.json` maps all
+88 historical commands to repository-relative scripts, inputs and outputs.
+The frozen result JSONs remain unchanged. Enumerate the commands before fitting:
+
+```bash
+python3 tools/cinc2012/host_driver.py --dry-run
+python3 tools/cinc2012/host_driver.py --dry-run --device cpu --threads 1 \
+  --manifest runs/cinc2012_plan.json
+make cinc2012-smoke
+```
+
+Dry-run prints exactly 88 commands and needs neither cohorts nor checkpoints.
+The smoke needs the rebuilt within-2012 and reference 2019 cohorts. It performs
+one GRU fit on CPU with `--max-stays 64 --epochs 1`, using 32 training,
+8 validation and 24 set-b stays. Each invocation preserves outputs in a fresh
+directory under `runs/cinc2012-smoke/`. No checkpoints are shipped, so the
+transfer smoke is explicitly skipped in a clean distribution. If a source
+CinC-2019 checkpoint is present at a documented fit path, the target also runs
+one transfer evaluation with 32 stays from each 2012 set. A within-2012
+checkpoint is never used as a transfer source.
+
+For the full 88-run series, first create the 44 CinC-2019 source checkpoints
+using the clinical and learned-graph suites from section 5. These are substantial
+training prerequisites, separate from the 44 within-2012 fits:
+
+```bash
+python3 tools/run_experiments.py --suite clinical --device cpu --threads 1 --run
+python3 tools/run_experiments.py --suite learned_graphs --device cpu --threads 1 --run
+python3 tools/cinc2012/host_driver.py --run --device cpu --threads 1
+python3 tools/cinc2012/aggregate_cinc2012.py --root runs/cinc2012
+```
+
+The transfer evaluator reads v4 checkpoints and their run records from
+`runs/clinical/selected/MODEL/seedN/`, and graph-port `.pt`/`.json` pairs from
+`runs/learned_graphs/MODEL/cinc_MODEL_sN`. It verifies model/seed/configuration,
+checkpoint hash and the frozen 2019 training-cohort hash. The nine within-corpus
+models use the shipped 2019 selection in `results/v4/selection.json`; the two
+learned graphs keep their declared paper configurations. No selection is
+performed on the 2012 test sets. Full runs retain batch size 128, 35 epochs,
+patience 8 and minimum improvement 0.0001, with the original optimizer,
+schedule, losses and clipping. Within uses only 2012 A-train normalization and
+evaluates set-b after validation selection. Transfer uses 2019 A-train
+normalization, evaluates both 2012 sets and performs no fitting.
+
+The launcher defaults to the historical CUDA lanes and four threads, or accepts
+`--devices cuda:0,cuda:1` for the local machine. The explicit CPU command above
+uses one sequential lane. Before GPU execution, unset the `CUDA_VISIBLE_DEVICES`
+variable cleared in section 1, or select the intended visible GPUs and their
+lane indices. The launcher checks every required input and destination before
+launch, preserves existing outputs/logs and records child exit codes. All new
+runs, errors, checkpoints, summaries and tables go under `runs/cinc2012/`;
+use a fresh `--out-root runs/cinc2012_repeat` for another series. Strict
+aggregation requires all 88 full-scope runs and rederives each metric from its
+per-stay error archive. Pooled transfer sums squared errors and observed-entry
+counts across sets before taking the square root. `--allow-partial` is for
+labelled diagnostics only. The packaging check ran the CPU smoke; it did not
+repeat the full training series. See `tools/cinc2012/README.md` for details.
 
 ## 4. Regenerate simulator datasets from manifests
 
@@ -272,6 +344,9 @@ simulator regeneration and numerical preservation of frozen records. It did not
 repeat the complete training series or test remote download availability.
 Historical simulator seed aggregates support table reconstruction; recomputing
 patient statistics from predictions requires the locally rerun error artifacts.
-The inherited Figure 1 needs its stated release update. Public URL/DOI and final
-citation remain release placeholders. These limits do not convert pending
-2012 model results or unstable external CDE inference into measured comparisons.
+The CinC-2012 table reconstruction reproduces all shipped displays, while the
+new CPU smoke checks one within-corpus fit; the full 88-run series was not
+repeated during packaging. The README pins the published baseline commit and
+identifies the v1.0.1 update. The cited archive DOI belongs to v1.0.0. The
+CinC-2012 results remain the recorded 88-run evidence, and external CinC-2019
+CDE inference remains labelled diverged.

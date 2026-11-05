@@ -2,6 +2,12 @@
 
 # PhysioGraphBench: when do physiological graph priors help?
 
+**Version 1.0.1.** This update adds the CinC-2012 training/evaluation drivers to
+the published [v1.0.0 baseline](https://github.com/wwhite777/physiographbench/tree/v1.0.0),
+pinned at commit [d7b5491bde5d033643611848f69f7e6eabe1e2b7](https://github.com/wwhite777/physiographbench/tree/d7b5491bde5d033643611848f69f7e6eabe1e2b7).
+The frozen numerical results are unchanged. Use the versioned release archive
+for this update; the cited Zenodo DOI below archives the v1.0.0 baseline.
+
 **On hourly intensive care forecasting, tuned GRU-D outperforms the hand-specified organ graph; matched simulator controls attribute the earlier apparent graph gain to factorisation.**
 
 This is a benchmark release: the simulator, cohort builders, baselines, protocols,
@@ -99,6 +105,10 @@ From the repository root:
 make smoke
 make findings
 python3 tools/summarize_results.py --out-dir runs/tables --check
+python3 tools/cinc2012/host_driver.py --dry-run --device cpu --threads 1
+python3 tools/cinc2012/aggregate_cinc2012.py \
+  --from-summary results/clinical_v4_v1/cinc2012/cinc2012_results.json \
+  --out-table runs/tables/TABLE_CINC2012.md
 ```
 
 The complete download, cohort rebuild, simulator generation, experiment, table,
@@ -108,10 +118,19 @@ The v4 experiment outputs go to `runs/`, with generated-data and probe caches
 in ignored `data/` and `artifacts/` locations. `results/` holds the frozen records. `SHA256SUMS` checks the exact public distribution. Historical source and
 archive fingerprints are retained separately from distribution fingerprints.
 
+CinC-2012 table reconstruction uses the shipped per-seed records and requires
+no training. Its [drivers and 88-command manifest](tools/cinc2012/README.md)
+also support retraining and transfer evaluation after the cohorts and CinC-2019
+source checkpoints are rebuilt. `make cinc2012-smoke` runs one 64-stay,
+one-epoch CPU fit after cohort rebuilding; a clean distribution explicitly
+skips transfer smoke because weights are not shipped. The full prerequisites,
+CPU/GPU launch commands and aggregation are in [REPRODUCE.md section 3](REPRODUCE.md#3-reconstruct-the-cinc-2012-table-or-retrain-from-open-cohorts).
+
 | Directory | Contents |
 |---|---|
 | `src/` | Original organ model, clinical baselines, loader, cohort parser, simulator, and supporting legacy entry points |
 | `tools/` | Portable v4 protocol, cohort/replay utilities, statistics, coupling index, experiment plans, table/plot generation |
+| `tools/cinc2012/` | CinC-2012 within-corpus training, frozen-source transfer, 88-run launcher and table/error aggregation |
 | `sim/` | Matched edge controls, shared-history generation, monolithic controls, grid aggregators |
 | `baselines/` | Paper-based variable-graph and continuous-dose CRN adaptations |
 | `results/` | Frozen numerical evidence and machine-generated display tables |

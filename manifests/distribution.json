@@ -21,27 +21,27 @@
     "source_file": null,
     "source_kind": "new_release_file",
     "original_sha256": null,
-    "distributed_sha256": "a20acc4559eff46cf7e50949092d87a81e2d7ec5fab9139b1c1357eea6f0aef2",
+    "distributed_sha256": "1e0db4db9a146a1a2ad8c1171af4eb8cbef12df875f1c780e993a4fa73594e76",
     "original_bytes": null,
-    "distributed_bytes": 560,
+    "distributed_bytes": 652,
     "transformed": null
   },
   "README.md": {
     "source_file": null,
     "source_kind": "new_release_file",
     "original_sha256": null,
-    "distributed_sha256": "87ba1d3c5dffb31b23eb27af1b9508844dbe4e6325a686de4702a3f36bad4605",
+    "distributed_sha256": "7104d1b29c9e7418d8f7934ae6862cc7df12e1711e345352d377cb14964b3cf4",
     "original_bytes": null,
-    "distributed_bytes": 15036,
+    "distributed_bytes": 16759,
     "transformed": null
   },
   "REPRODUCE.md": {
     "source_file": null,
     "source_kind": "new_release_file",
     "original_sha256": null,
-    "distributed_sha256": "bf19ff7a3378f056bd2857c03054919d9b4f1943b4a9212c3db0ef675739a58e",
+    "distributed_sha256": "badd1876a5e93c3748543a7abc083cea4e5f22989d9580c634bf71582d8a9489",
     "original_bytes": null,
-    "distributed_bytes": 15662,
+    "distributed_bytes": 19643,
     "transformed": null
   },
   "baselines/METHODS.md": {
@@ -327,9 +327,9 @@
     "source_file": null,
     "source_kind": "new_release_file",
     "original_sha256": null,
-    "distributed_sha256": "91a7f15d36c49d20029a35068ef60bc1bb9431ad3c37b80c8ef155b42ae56503",
+    "distributed_sha256": "13a6b1a4d2c513ba4aa466deffa6a03e687d7d7b067989f6a8b2501fd2212ac5",
     "original_bytes": null,
-    "distributed_bytes": 5040,
+    "distributed_bytes": 6011,
     "transformed": null
   },
   "manifests/cohorts.json": {
@@ -2525,7 +2525,8 @@
     "original_sha256": null,
     "original_bytes": null,
     "distributed_sha256": "939ccafad0d31ca08f180044bba36697680f030902065ab57f437e6b80ee8698",
-    "distributed_bytes": 7749
+    "distributed_bytes": 7749,
+    "transformed": null
   },
   "diagnostics/renal_shared_input/RENAL_DIAGNOSIS.md": {
     "source_file": "RENAL_DIAGNOSIS.md",
@@ -2758,7 +2759,8 @@
     "original_sha256": null,
     "original_bytes": null,
     "distributed_sha256": "357b65a01095dde2cd9f8fb482943f1b61d797a9b4759fdd2e18faf84fe2800c",
-    "distributed_bytes": 5137
+    "distributed_bytes": 5137,
+    "transformed": null
   },
   "diagnostics/shared_input_edges/EDGE_CHECKS.json": {
     "source_file": "EDGE_CHECKS.json",
@@ -2775,7 +2777,8 @@
     "original_sha256": null,
     "original_bytes": null,
     "distributed_sha256": "f84bb16820f2f51a80f73ce40934165064fde86e02d1ca06dc842c4b2739f4fd",
-    "distributed_bytes": 6617
+    "distributed_bytes": 6617,
+    "transformed": null
   },
   "diagnostics/shared_input_edges/REPRODUCTION_NOTE.md": {
     "source_file": "REPRODUCTION_NOTE.md",
@@ -3278,6 +3281,97 @@
     "original_sha256": null,
     "original_bytes": null,
     "distributed_sha256": "c8670d050a40822203fda4a9316b7f7e058ab3b885431a572e7c70fc8ce63066",
-    "distributed_bytes": 5506
+    "distributed_bytes": 5506,
+    "transformed": null
+  },
+  "CITATION.cff": {
+    "source_file": null,
+    "source_kind": "new_release_file",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "49ebe54cd0bc9fa6931cacb0b79fd857228bccfa1eaa35d9143af75eeef90531",
+    "distributed_bytes": 575,
+    "transformed": null
+  },
+  "tools/cinc2012/cinc2012_transfer_eval.py": {
+    "source_file": "historical_sources/cinc2012/cinc2012_transfer_eval.py",
+    "source_kind": "copied_input",
+    "original_sha256": "90b339982823f98b2f9232e1309837b366828c9131764a6959b6e81b64413a20",
+    "original_bytes": 2708,
+    "distributed_sha256": "74ea286ad697ba95ec57a94dfbaa5b27d6d826cc1dc3af3170717505208100fb",
+    "distributed_bytes": 2775,
+    "transformed": true
+  },
+  "tools/cinc2012/smoke.py": {
+    "source_file": null,
+    "source_kind": "new_release_file",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "1fd86a8f4ab0cdf1781a1a50d83b21afee87b898c8fa04fef7cacdb57a9cf7da",
+    "distributed_bytes": 1644,
+    "transformed": null
+  },
+  "tools/cinc2012/host_driver.py": {
+    "source_file": "historical_sources/cinc2012/host_driver.py",
+    "source_kind": "copied_input",
+    "original_sha256": "7a5c942556d21e023a187c9e2563601b303f2c5a97f8ef52b64a944a33f6b2ac",
+    "original_bytes": 6699,
+    "distributed_sha256": "ce9603426f2be4cff19ee5f129e60f3ee3eef314932d21be1b7e56a5950a487b",
+    "distributed_bytes": 6802,
+    "transformed": true
+  },
+  "tools/cinc2012/cinc2012_common.py": {
+    "source_file": "historical_sources/cinc2012/cinc2012_common.py",
+    "source_kind": "copied_input",
+    "original_sha256": "c5315be99ac302cabbd23088ed02f2d90b7a39b5a08477dbc3c9b14b18ccc12a",
+    "original_bytes": 13247,
+    "distributed_sha256": "658c6e1227c02fe21721a8b101ae9e53af06753be0a3f23ead59b17cf2469a9f",
+    "distributed_bytes": 13132,
+    "transformed": true
+  },
+  "tools/cinc2012/cinc2012_within_runner.py": {
+    "source_file": "historical_sources/cinc2012/cinc2012_within_runner.py",
+    "source_kind": "copied_input",
+    "original_sha256": "6fff51ad3df19a67c4bb3e27fd95d4b69a82967f12cbca52edd7aa48ba5392b8",
+    "original_bytes": 8180,
+    "distributed_sha256": "aec5b7acdf520b1c668957b77eef0a37b0d1b54d400f724dab02adc9c6e29d56",
+    "distributed_bytes": 8147,
+    "transformed": true
+  },
+  "tools/cinc2012/aggregate_cinc2012.py": {
+    "source_file": "historical_sources/cinc2012/aggregate_cinc2012.py",
+    "source_kind": "copied_input",
+    "original_sha256": "ab644757f8f4c1acd20aa641236a73ac3ad807784eb6109d2fddb723ff665cec",
+    "original_bytes": 11929,
+    "distributed_sha256": "531f368cf238774e03986c7a6b27276d7da74506bb6a282e437c2aa8b036f626",
+    "distributed_bytes": 13747,
+    "transformed": true
+  },
+  "tools/cinc2012/README.md": {
+    "source_file": null,
+    "source_kind": "new_release_file",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "fbc17dfc128a0090789cc3615a3ab519bc2765ef896972a91530b761b0471ded",
+    "distributed_bytes": 5350,
+    "transformed": null
+  },
+  "tools/cinc2012/tests/test_protocol.py": {
+    "source_file": null,
+    "source_kind": "new_release_file",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "5f6f6c7ac07a813ad8f2e26f94db6c9bab556a43a709a3511155ce50c10ad6a6",
+    "distributed_bytes": 4442,
+    "transformed": null
+  },
+  "manifests/cinc2012_commands.json": {
+    "source_file": null,
+    "source_kind": "new_release_file",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "63d1ceeefbd14c1eed9c17519ef149a6f3028ffac51090e3b32bec1da63770b9",
+    "distributed_bytes": 71201,
+    "transformed": null
   }
 }

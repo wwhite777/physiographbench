@@ -69,3 +69,16 @@ independent scientific review or a repeat of the complete training series.
     cohort and inference only; they do not require patient data or fit models.
     Internal task labels inherited in comments, strings and one directory name
     become scientific descriptive labels, with references updated consistently.
+
+11. The CinC-2012 drivers now import the distributed clinical protocol and graph
+    adapters directly. Private input inventories become distribution-source and
+    cohort-hash checks; locally generated transfer checkpoints require matching
+    full-fit records, identities and cohort hashes. Repository-relative commands
+    in `cinc2012_commands.json` preserve all 88 historical jobs and their settings.
+    The launcher uses the current interpreter and configurable CPU/CUDA lanes;
+    outputs and regenerated tables use `runs/`. The training loops, data splits,
+    normalization, eligibility, validation selection and metric arithmetic remain
+    unchanged. The new data-free reconstruction mode rechecks seed summaries;
+    the CPU smoke fits one 64-stay, single-epoch within-corpus GRU and reports the
+    absent source-checkpoint prerequisite for transfer. Frozen results, including
+    numeric JSON leaves and original fingerprints, are copied without changes.
