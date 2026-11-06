@@ -1,0 +1,899 @@
+{
+  "schema_version": 1,
+  "smoke": false,
+  "config": {
+    "arm": "none",
+    "kappa": 1.0,
+    "seed": 2,
+    "dataset_seed": 0,
+    "epochs": 60,
+    "n_patients": 400,
+    "device": "cuda",
+    "threads": 1,
+    "C": 12,
+    "K": 24,
+    "lr": 0.002,
+    "batch_size": 128,
+    "d_model": 64,
+    "d_state": 32,
+    "n_layers": 2,
+    "control_gru_hidden": 96
+  },
+  "metrics": {
+    "organ_rmse": {
+      "cardiovascular": 7.493837872873525,
+      "renal": 0.24988929542165586,
+      "metabolic": 0.4911023238067704
+    },
+    "organ_nrmse_fixed": {
+      "cardiovascular": 0.053194967641112464,
+      "renal": 0.11676185777034641,
+      "metabolic": 0.11820259243877959
+    },
+    "organ_nrmse_per_kappa": {
+      "cardiovascular": 0.05404058129236652,
+      "renal": 0.12866492034232568,
+      "metabolic": 0.1330175877316669
+    },
+    "macro_nrmse_fixed": 0.09605313928341282,
+    "macro_nrmse_per_kappa": 0.10524102978878636
+  },
+  "n_params": 254086,
+  "edges": [],
+  "dataset_metadata": {
+    "schema_version": 1,
+    "regime": "E1",
+    "n_patients": 400,
+    "kappa": 1.0,
+    "seed": 0,
+    "horizon_h": 6.0,
+    "out_dt": 300.0,
+    "C": 12,
+    "K": 24,
+    "parameters": {
+      "source_tau_min": 60.0,
+      "source_sd": 1.0,
+      "source_loadings": [
+        12.0,
+        -3.0,
+        0.6,
+        0.3
+      ],
+      "reserve_tau_min": 30.0,
+      "reserve_initial_sd": 0.25,
+      "drive_weights": [
+        0.6,
+        0.25,
+        -0.15,
+        0.3
+      ],
+      "drive_centers": [
+        85.0,
+        5.0,
+        8.0,
+        0.0
+      ],
+      "drive_scales": [
+        15.0,
+        1.5,
+        4.0,
+        0.3
+      ],
+      "local_tau_min": 90.0,
+      "local_sd": [
+        0.08,
+        0.15
+      ],
+      "offset_sd": [
+        0.12,
+        0.25
+      ],
+      "target_centers": [
+        1.1,
+        3.2
+      ],
+      "target_loadings": [
+        0.45,
+        -1.0
+      ],
+      "target_lag_steps": [
+        6,
+        9
+      ],
+      "target_tau_min": [
+        10.0,
+        20.0
+      ],
+      "clean_bounds": [
+        [
+          0.05,
+          2.8
+        ],
+        [
+          0.1,
+          10.0
+        ]
+      ],
+      "noise_sd": [
+        0.08,
+        0.15
+      ]
+    },
+    "target_probabilities": [
+      0.08274778380622017,
+      0.0345577989267396
+    ],
+    "clinical_rates": {
+      "path": "data/cinc2019_cohort.npz",
+      "sha256": "d52d8131323fc7a3838ae4fe523c2edbc02d2daa781de1859e7d184897dfb51f",
+      "cohorts": {
+        "A_train": {
+          "n_patients": 14236,
+          "valid_hours": 505935,
+          "counts": {
+            "Creatinine": 33911,
+            "BUN": 41639,
+            "Lactate": 17484
+          },
+          "rates": {
+            "Creatinine": 0.06702639667150918,
+            "BUN": 0.08230108610789924,
+            "Lactate": 0.0345577989267396
+          },
+          "renal_union_count": 41865,
+          "renal_union_rate": 0.08274778380622017
+        },
+        "A_all": {
+          "n_patients": 20336,
+          "valid_hours": 722051,
+          "counts": {
+            "Creatinine": 48320,
+            "BUN": 59297,
+            "Lactate": 25199
+          },
+          "rates": {
+            "Creatinine": 0.06692048068626731,
+            "BUN": 0.0821230079315727,
+            "Lactate": 0.034899196871135144
+          },
+          "renal_union_count": 59594,
+          "renal_union_rate": 0.08253433621724782
+        },
+        "B_all": {
+          "n_patients": 20000,
+          "valid_hours": 695090,
+          "counts": {
+            "Creatinine": 38601,
+            "BUN": 38567,
+            "Lactate": 13053
+          },
+          "rates": {
+            "Creatinine": 0.055533815764864984,
+            "BUN": 0.05548490123581119,
+            "Lactate": 0.018778863168798284
+          },
+          "renal_union_count": 38606,
+          "renal_union_rate": 0.055541009077961126
+        }
+      }
+    },
+    "source_sha256": {
+      "src/cvsim_hemodynamics_simulator.py": "7cf88f7918b698a03e09b5efc5dfd2691fb44b2550df861f6ea7d54ef5868af0",
+      "sim/sim_policy_ext.py": "fcc48abf17728656c18bc4e57b23029f2887effefef191b799c3396cd964f5b7",
+      "sim/sim_policy_ext2.py": "ec7ea141a631e4d8e07a1a5b80ce9d6da8c57a2d1e22289250382f5e5f5de777",
+      "experiments/positive_control/sim_positive_control.py": "c6886108780814aa92a4c8ff9a65c1866406f2badff1ea32f25b313e9a39c436"
+    },
+    "clean_clipped_fraction": [
+      0.0,
+      0.0
+    ],
+    "realized_observation_fractions": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.08407534246575342,
+      0.03486301369863014
+    ],
+    "supervision": "Dense noisy synthetic labels; only context inputs are masked.",
+    "generation_seconds": 0.868602636270225
+  },
+  "dataset_path": "experiments/positive_control/artifacts/full/datasets/kappa_1.npz",
+  "dataset_sha256": "2b83c9f4039eb76053101e948db4bebb22bdfbf2d1afbd75daa23f90abb5fd04",
+  "reference_path": "experiments/positive_control/artifacts/full/datasets/kappa_1.npz",
+  "reference_sha256": "2b83c9f4039eb76053101e948db4bebb22bdfbf2d1afbd75daa23f90abb5fd04",
+  "reference_ranges": {
+    "cardiovascular": 140.87493996484375,
+    "renal": 2.1401620374450685,
+    "metabolic": 4.154750870300293
+  },
+  "normalization": {
+    "mean": [
+      86.08649444580078,
+      74.77449798583984,
+      4.76563024520874,
+      7.406367778778076,
+      1.1908042430877686,
+      2.9994611740112305
+    ],
+    "std": [
+      15.059904098510742,
+      8.533754348754883,
+      0.9316114783287048,
+      3.3214313983917236,
+      0.26859888434410095,
+      0.5515388250350952
+    ],
+    "scope": "Dense labels from training patients, all saved times"
+  },
+  "split": {
+    "train": [
+      157,
+      162,
+      355,
+      211,
+      11,
+      52,
+      125,
+      382,
+      118,
+      280,
+      89,
+      374,
+      261,
+      372,
+      307,
+      385,
+      341,
+      180,
+      387,
+      303,
+      183,
+      248,
+      126,
+      199,
+      194,
+      98,
+      119,
+      93,
+      391,
+      231,
+      256,
+      135,
+      197,
+      270,
+      71,
+      32,
+      154,
+      144,
+      23,
+      192,
+      279,
+      338,
+      258,
+      6,
+      288,
+      90,
+      112,
+      333,
+      352,
+      399,
+      283,
+      48,
+      222,
+      145,
+      209,
+      168,
+      108,
+      321,
+      104,
+      176,
+      210,
+      395,
+      12,
+      386,
+      380,
+      253,
+      300,
+      53,
+      29,
+      18,
+      243,
+      305,
+      175,
+      240,
+      148,
+      28,
+      226,
+      250,
+      301,
+      397,
+      347,
+      158,
+      86,
+      309,
+      361,
+      237,
+      349,
+      0,
+      354,
+      251,
+      31,
+      25,
+      42,
+      136,
+      56,
+      272,
+      113,
+      295,
+      82,
+      177,
+      297,
+      267,
+      266,
+      229,
+      147,
+      218,
+      276,
+      383,
+      299,
+      51,
+      342,
+      139,
+      81,
+      129,
+      212,
+      114,
+      206,
+      78,
+      153,
+      214,
+      375,
+      260,
+      330,
+      67,
+      292,
+      79,
+      54,
+      182,
+      393,
+      171,
+      130,
+      329,
+      245,
+      203,
+      196,
+      134,
+      40,
+      107,
+      235,
+      50,
+      334,
+      348,
+      247,
+      366,
+      26,
+      97,
+      351,
+      293,
+      259,
+      368,
+      216,
+      198,
+      315,
+      246,
+      61,
+      65,
+      166,
+      36,
+      310,
+      244,
+      5,
+      331,
+      238,
+      59,
+      70,
+      150,
+      174,
+      181,
+      45,
+      215,
+      127,
+      296,
+      376,
+      38,
+      277,
+      80,
+      265,
+      389,
+      302,
+      312,
+      74,
+      47,
+      15,
+      275,
+      22,
+      364,
+      170,
+      337,
+      165,
+      142,
+      201,
+      39,
+      271,
+      269,
+      17,
+      304,
+      10,
+      164,
+      319,
+      155,
+      186,
+      35,
+      179,
+      363,
+      55,
+      370,
+      390,
+      110,
+      360,
+      340,
+      357,
+      173,
+      116,
+      76,
+      123,
+      242,
+      326,
+      394,
+      184,
+      8,
+      365,
+      227,
+      151,
+      290,
+      204,
+      87,
+      140,
+      69,
+      323,
+      178,
+      100,
+      111,
+      146,
+      2,
+      138,
+      298,
+      92,
+      27,
+      33,
+      345,
+      161,
+      66,
+      291,
+      169,
+      318,
+      377,
+      143,
+      4,
+      14,
+      234,
+      172,
+      200,
+      191,
+      132,
+      75,
+      241,
+      324,
+      120,
+      141,
+      91,
+      263,
+      353,
+      373,
+      327,
+      332,
+      13,
+      94,
+      115,
+      384,
+      232,
+      223,
+      392,
+      336,
+      83,
+      362,
+      95,
+      379,
+      294,
+      236,
+      282
+    ],
+    "test": [
+      96,
+      230,
+      308,
+      325,
+      117,
+      1,
+      7,
+      306,
+      314,
+      131,
+      281,
+      220,
+      84,
+      225,
+      30,
+      284,
+      254,
+      371,
+      9,
+      133,
+      396,
+      249,
+      217,
+      44,
+      85,
+      19,
+      378,
+      49,
+      359,
+      274,
+      381,
+      322,
+      398,
+      156,
+      317,
+      205,
+      62,
+      252,
+      264,
+      88,
+      369,
+      63,
+      262,
+      163,
+      34,
+      285,
+      149,
+      255,
+      21,
+      137,
+      167,
+      189,
+      102,
+      72,
+      313,
+      3,
+      320,
+      358,
+      335,
+      187,
+      268,
+      160,
+      289,
+      343,
+      20,
+      73,
+      346,
+      68,
+      124,
+      101,
+      316,
+      41,
+      388,
+      311,
+      152,
+      219,
+      103,
+      43,
+      221,
+      239,
+      128,
+      188,
+      60,
+      190,
+      195,
+      233,
+      58,
+      202,
+      208,
+      64,
+      207,
+      106,
+      46,
+      16,
+      350,
+      24,
+      367,
+      77,
+      344,
+      57,
+      278,
+      257,
+      121,
+      185,
+      122,
+      109,
+      224,
+      159,
+      228,
+      273,
+      339,
+      105,
+      37,
+      213,
+      287,
+      286,
+      99,
+      356,
+      328,
+      193
+    ]
+  },
+  "curve": [
+    {
+      "epoch": 1,
+      "train_mse": 1.6011422872543335
+    },
+    {
+      "epoch": 2,
+      "train_mse": 0.9900788068771362
+    },
+    {
+      "epoch": 3,
+      "train_mse": 0.9107255935668945
+    },
+    {
+      "epoch": 4,
+      "train_mse": 0.7952944835027059
+    },
+    {
+      "epoch": 5,
+      "train_mse": 0.7369714776674906
+    },
+    {
+      "epoch": 6,
+      "train_mse": 0.6958418091138204
+    },
+    {
+      "epoch": 7,
+      "train_mse": 0.6439411242802938
+    },
+    {
+      "epoch": 8,
+      "train_mse": 0.623609185218811
+    },
+    {
+      "epoch": 9,
+      "train_mse": 0.5943527221679688
+    },
+    {
+      "epoch": 10,
+      "train_mse": 0.583527406056722
+    },
+    {
+      "epoch": 11,
+      "train_mse": 0.5772138436635336
+    },
+    {
+      "epoch": 12,
+      "train_mse": 0.5639433860778809
+    },
+    {
+      "epoch": 13,
+      "train_mse": 0.5539537866910299
+    },
+    {
+      "epoch": 14,
+      "train_mse": 0.5545102755228678
+    },
+    {
+      "epoch": 15,
+      "train_mse": 0.5481422940889994
+    },
+    {
+      "epoch": 16,
+      "train_mse": 0.5402459303538004
+    },
+    {
+      "epoch": 17,
+      "train_mse": 0.54564102490743
+    },
+    {
+      "epoch": 18,
+      "train_mse": 0.5328308045864105
+    },
+    {
+      "epoch": 19,
+      "train_mse": 0.5281827052434286
+    },
+    {
+      "epoch": 20,
+      "train_mse": 0.5174334545930227
+    },
+    {
+      "epoch": 21,
+      "train_mse": 0.5125554005304972
+    },
+    {
+      "epoch": 22,
+      "train_mse": 0.5075694024562836
+    },
+    {
+      "epoch": 23,
+      "train_mse": 0.5052333970864614
+    },
+    {
+      "epoch": 24,
+      "train_mse": 0.5031346480051676
+    },
+    {
+      "epoch": 25,
+      "train_mse": 0.4932573636372884
+    },
+    {
+      "epoch": 26,
+      "train_mse": 0.49062784512837726
+    },
+    {
+      "epoch": 27,
+      "train_mse": 0.47680272658665973
+    },
+    {
+      "epoch": 28,
+      "train_mse": 0.47444774707158405
+    },
+    {
+      "epoch": 29,
+      "train_mse": 0.47332245111465454
+    },
+    {
+      "epoch": 30,
+      "train_mse": 0.46877583861351013
+    },
+    {
+      "epoch": 31,
+      "train_mse": 0.46324541171391803
+    },
+    {
+      "epoch": 32,
+      "train_mse": 0.4608138899008433
+    },
+    {
+      "epoch": 33,
+      "train_mse": 0.45703257123629254
+    },
+    {
+      "epoch": 34,
+      "train_mse": 0.4616315960884094
+    },
+    {
+      "epoch": 35,
+      "train_mse": 0.4546590546766917
+    },
+    {
+      "epoch": 36,
+      "train_mse": 0.4514959653218587
+    },
+    {
+      "epoch": 37,
+      "train_mse": 0.44798940420150757
+    },
+    {
+      "epoch": 38,
+      "train_mse": 0.4438457489013672
+    },
+    {
+      "epoch": 39,
+      "train_mse": 0.4550410807132721
+    },
+    {
+      "epoch": 40,
+      "train_mse": 0.45416533946990967
+    },
+    {
+      "epoch": 41,
+      "train_mse": 0.43925753235816956
+    },
+    {
+      "epoch": 42,
+      "train_mse": 0.4512562354405721
+    },
+    {
+      "epoch": 43,
+      "train_mse": 0.4394290049870809
+    },
+    {
+      "epoch": 44,
+      "train_mse": 0.44323758284250897
+    },
+    {
+      "epoch": 45,
+      "train_mse": 0.4457998077074687
+    },
+    {
+      "epoch": 46,
+      "train_mse": 0.4337525963783264
+    },
+    {
+      "epoch": 47,
+      "train_mse": 0.434908668200175
+    },
+    {
+      "epoch": 48,
+      "train_mse": 0.43492655952771503
+    },
+    {
+      "epoch": 49,
+      "train_mse": 0.4292658070723216
+    },
+    {
+      "epoch": 50,
+      "train_mse": 0.4425533612569173
+    },
+    {
+      "epoch": 51,
+      "train_mse": 0.43406879901885986
+    },
+    {
+      "epoch": 52,
+      "train_mse": 0.43508101503054303
+    },
+    {
+      "epoch": 53,
+      "train_mse": 0.429515282313029
+    },
+    {
+      "epoch": 54,
+      "train_mse": 0.4278302292029063
+    },
+    {
+      "epoch": 55,
+      "train_mse": 0.4278315206368764
+    },
+    {
+      "epoch": 56,
+      "train_mse": 0.42671386400858563
+    },
+    {
+      "epoch": 57,
+      "train_mse": 0.4253997604052226
+    },
+    {
+      "epoch": 58,
+      "train_mse": 0.4293525516986847
+    },
+    {
+      "epoch": 59,
+      "train_mse": 0.41258199016253155
+    },
+    {
+      "epoch": 60,
+      "train_mse": 0.42017362515131634
+    }
+  ],
+  "timing": {
+    "train_seconds": 77.8166182404384,
+    "total_seconds": 80.11288239900023
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "torch": "2.6.0+cu124"
+  },
+  "source_sha256": {
+    "src/cvsim_hemodynamics_simulator.py": "7cf88f7918b698a03e09b5efc5dfd2691fb44b2550df861f6ea7d54ef5868af0",
+    "sim/sim_policy_ext.py": "fcc48abf17728656c18bc4e57b23029f2887effefef191b799c3396cd964f5b7",
+    "sim/sim_policy_ext2.py": "ec7ea141a631e4d8e07a1a5b80ce9d6da8c57a2d1e22289250382f5e5f5de777",
+    "experiments/positive_control/sim_positive_control.py": "c6886108780814aa92a4c8ff9a65c1866406f2badff1ea32f25b313e9a39c436",
+    "sim/sim_grid_runner_mono2.py": "74815489b16ba1fd2a9a11c70473c65a75e7d98183de3bc0575f07c61280082a",
+    "src/organ_graph_ssm_model.py": "3426f8aa61ddcac3740ca4a0d799c25a421d91950cf773c957b68513232ac615",
+    "src/cvsim_counterfactual_runner.py": "3ad387cb86f27be6449a2404a31efece64a197f6a17cacd0836ac2698e4b988c"
+  },
+  "caveats": [
+    "Dense synthetic target supervision; masked context only.",
+    "Frozen monolithic controls do not consume explicit masks.",
+    "Smoke metrics do not test the registered neural success criterion."
+  ]
+}

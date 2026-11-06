@@ -1,0 +1,1217 @@
+{
+  "check_count": 24,
+  "checks": [
+    {
+      "arm": "none",
+      "frozen_variant": "none",
+      "seed": 0,
+      "path": "results/v4/variants/physiograph_gru/none/seed0/run.json",
+      "sha256": "14cd812eea88ae995d39c9bb1d2e9f44783312db03ef1ad4d144aa10e17ed666",
+      "ordered_equality": true,
+      "edges": []
+    },
+    {
+      "arm": "none",
+      "frozen_variant": "none",
+      "seed": 1,
+      "path": "results/v4/variants/physiograph_gru/none/seed1/run.json",
+      "sha256": "2e2bc50e40be12729a8144b52d5b1bd96bec415496c568d9f2a9a57e86f93def",
+      "ordered_equality": true,
+      "edges": []
+    },
+    {
+      "arm": "none",
+      "frozen_variant": "none",
+      "seed": 2,
+      "path": "results/v4/variants/physiograph_gru/none/seed2/run.json",
+      "sha256": "b5dcf0d2ded55d1469f7b6732038effc2af99cfaee8fa02c9909b3c26765b6d6",
+      "ordered_equality": true,
+      "edges": []
+    },
+    {
+      "arm": "none",
+      "frozen_variant": "none",
+      "seed": 3,
+      "path": "results/v4/variants/physiograph_gru/none/seed3/run.json",
+      "sha256": "efbbae0285ccf2cca4dec68c29984c527b82caf61e134b3ba9d85992f7991514",
+      "ordered_equality": true,
+      "edges": []
+    },
+    {
+      "arm": "admissible",
+      "frozen_variant": "admissible",
+      "seed": 0,
+      "path": "results/v4/selected/physiograph_gru/seed0/run.json",
+      "sha256": "88ff086bee7e3b739408b2883080839ba3dd33cd399b50262befacc3156545b5",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "admissible",
+      "frozen_variant": "admissible",
+      "seed": 1,
+      "path": "results/v4/selected/physiograph_gru/seed1/run.json",
+      "sha256": "fa3d019d258a5e9d86bbba56816930024b5438fe6125afd8773ded8f41f7f6ee",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "admissible",
+      "frozen_variant": "admissible",
+      "seed": 2,
+      "path": "results/v4/selected/physiograph_gru/seed2/run.json",
+      "sha256": "dda62db67888c41f2c58336adc6d4324b3db8fa3ae0d288368f66b3dd249c58c",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "admissible",
+      "frozen_variant": "admissible",
+      "seed": 3,
+      "path": "results/v4/selected/physiograph_gru/seed3/run.json",
+      "sha256": "34c2b1af1bc8acdd063518b0607134bf125d6108d3a968dd54d8169205a2f3c0",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "arm": "dense",
+      "frozen_variant": "dense",
+      "seed": 0,
+      "path": "results/v4/variants/physiograph_gru/dense/seed0/run.json",
+      "sha256": "bf04c405124650b41c4bc1c4c0868e11520c2c6807e3bca52d0c1e2be3f8daf8",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "arm": "dense",
+      "frozen_variant": "dense",
+      "seed": 1,
+      "path": "results/v4/variants/physiograph_gru/dense/seed1/run.json",
+      "sha256": "f2a0f41f3289b2fd459c64177e7810fcb4aecc7dce2168c8fe6b992c0acad19e",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "arm": "dense",
+      "frozen_variant": "dense",
+      "seed": 2,
+      "path": "results/v4/variants/physiograph_gru/dense/seed2/run.json",
+      "sha256": "cf5e3f62a4dd0645808819d4769fe68ebf326470e360618ffd8fbfb2440628db",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "arm": "dense",
+      "frozen_variant": "dense",
+      "seed": 3,
+      "path": "results/v4/variants/physiograph_gru/dense/seed3/run.json",
+      "sha256": "979f93e0729b57ef00369efedddeee6704471c963d9443dd9590e467333f9629",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "arm": "reversed",
+      "frozen_variant": "reversed",
+      "seed": 0,
+      "path": "results/v4/variants/physiograph_gru/reversed/seed0/run.json",
+      "sha256": "a0084705ba5829b69a886a36bf8788daa6a7c260535e096ecd79fef2a3938af0",
+      "ordered_equality": true,
+      "edges": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "arm": "reversed",
+      "frozen_variant": "reversed",
+      "seed": 1,
+      "path": "results/v4/variants/physiograph_gru/reversed/seed1/run.json",
+      "sha256": "bdd865775b7de4fdac36cefac75f057464b3ba928bb75f4aaad96f3ae8ccc0c3",
+      "ordered_equality": true,
+      "edges": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "arm": "reversed",
+      "frozen_variant": "reversed",
+      "seed": 2,
+      "path": "results/v4/variants/physiograph_gru/reversed/seed2/run.json",
+      "sha256": "cbbc1d2a417bdf4b257a553d291534537fbc37fb124cb3c27a538da9a7e21908",
+      "ordered_equality": true,
+      "edges": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "arm": "reversed",
+      "frozen_variant": "reversed",
+      "seed": 3,
+      "path": "results/v4/variants/physiograph_gru/reversed/seed3/run.json",
+      "sha256": "17b8555de9cc099e1d65d0d30027a7f7034578c562fb6463741c2a5126914cfe",
+      "ordered_equality": true,
+      "edges": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "arm": "random_s0",
+      "frozen_variant": "random",
+      "seed": 0,
+      "path": "results/v4/variants/physiograph_gru/random/seed0/run.json",
+      "sha256": "40c44b3ceef121624bb90c310e53dd18bcae518cceb5c67334efb0cad6ebc4da",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "arm": "random_s0",
+      "frozen_variant": "random",
+      "seed": 1,
+      "path": "results/v4/variants/physiograph_gru/random/seed1/run.json",
+      "sha256": "a97fbf7fce33a4c2303dc11ffe4e916b9bb79d31bf6634ef8cd3672bc44dd547",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "arm": "random_s0",
+      "frozen_variant": "random",
+      "seed": 2,
+      "path": "results/v4/variants/physiograph_gru/random/seed2/run.json",
+      "sha256": "8f639bf2027c470463f21fc5a3d7120cc06ee725cad94d643026bbf7f945b839",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "arm": "random_s0",
+      "frozen_variant": "random",
+      "seed": 3,
+      "path": "results/v4/variants/physiograph_gru/random/seed3/run.json",
+      "sha256": "33a71a6422545aaded4a1dcdc813b4090edc80e0c9054417767482311815f6b3",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "arm": "misspecified-1",
+      "frozen_variant": "misspecified-1",
+      "seed": 0,
+      "path": "results/v4/variants/physiograph_gru/misspecified-1/seed0/run.json",
+      "sha256": "3f8025ace8d7e03bff0b93aa64be086df95cb9e05a73a973d16eab292fdec922",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "arm": "misspecified-1",
+      "frozen_variant": "misspecified-1",
+      "seed": 1,
+      "path": "results/v4/variants/physiograph_gru/misspecified-1/seed1/run.json",
+      "sha256": "f607a280f777d034caff776bf0d400b25d31979d94d2d110070634e4948f88e3",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "arm": "misspecified-1",
+      "frozen_variant": "misspecified-1",
+      "seed": 2,
+      "path": "results/v4/variants/physiograph_gru/misspecified-1/seed2/run.json",
+      "sha256": "520c6f68e89d25db6547bf94899e729a0aa441fba2bd2d372bd7fe0cf2fe4e0e",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "arm": "misspecified-1",
+      "frozen_variant": "misspecified-1",
+      "seed": 3,
+      "path": "results/v4/variants/physiograph_gru/misspecified-1/seed3/run.json",
+      "sha256": "10b9858daf7ea265c18b6717abedc866545ed274d81900c2c0895ddb217d8bfa",
+      "ordered_equality": true,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    }
+  ],
+  "random_draws": {
+    "random_s0": {
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "random_edge_seed": 0,
+      "admissible_intersection": 5,
+      "admissible_union": 11,
+      "jaccard_with_admissible": 0.45454545454545453
+    },
+    "random_s1": {
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "random_edge_seed": 1,
+      "admissible_intersection": 6,
+      "admissible_union": 10,
+      "jaccard_with_admissible": 0.6
+    },
+    "random_s2": {
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "random_edge_seed": 2,
+      "admissible_intersection": 5,
+      "admissible_union": 11,
+      "jaccard_with_admissible": 0.45454545454545453
+    }
+  },
+  "parameter_counts": {
+    "small": {
+      "none": {
+        "n_params": 355088,
+        "pmatch": null
+      },
+      "none_norm": {
+        "n_params": 355088,
+        "pmatch": null
+      },
+      "none_pmatch": {
+        "n_params": 423712,
+        "pmatch": {
+          "rule": "H=ceil(delta/(p+d+1)); b=delta-H*(p+d); quotient/remainder over context then feedback projections",
+          "projection_input": 37,
+          "recurrent_width": 64,
+          "added_parameters": 68624,
+          "total_hidden": 673,
+          "total_hidden_biases": 651,
+          "hidden_widths": [
+            85,
+            84,
+            84,
+            84,
+            84,
+            84,
+            84,
+            84
+          ],
+          "hidden_bias_counts": [
+            82,
+            82,
+            82,
+            81,
+            81,
+            81,
+            81,
+            81
+          ],
+          "base_n_params": 355088,
+          "admissible_n_params": 423712,
+          "achieved_n_params": 423712,
+          "exact": true
+        }
+      },
+      "admissible": {
+        "n_params": 423712,
+        "pmatch": null
+      },
+      "dense": {
+        "n_params": 458024,
+        "pmatch": null
+      },
+      "reversed": {
+        "n_params": 423712,
+        "pmatch": null
+      },
+      "random_s0": {
+        "n_params": 423712,
+        "pmatch": null
+      },
+      "random_s1": {
+        "n_params": 423712,
+        "pmatch": null
+      },
+      "random_s2": {
+        "n_params": 423712,
+        "pmatch": null
+      },
+      "misspecified-1": {
+        "n_params": 423712,
+        "pmatch": null
+      }
+    },
+    "large": {
+      "none": {
+        "n_params": 778384,
+        "pmatch": null
+      },
+      "none_norm": {
+        "n_params": 778384,
+        "pmatch": null
+      },
+      "none_pmatch": {
+        "n_params": 930464,
+        "pmatch": {
+          "rule": "H=ceil(delta/(p+d+1)); b=delta-H*(p+d); quotient/remainder over context then feedback projections",
+          "projection_input": 37,
+          "recurrent_width": 96,
+          "added_parameters": 152080,
+          "total_hidden": 1135,
+          "total_hidden_biases": 1125,
+          "hidden_widths": [
+            142,
+            142,
+            142,
+            142,
+            142,
+            142,
+            142,
+            141
+          ],
+          "hidden_bias_counts": [
+            141,
+            141,
+            141,
+            141,
+            141,
+            140,
+            140,
+            140
+          ],
+          "base_n_params": 778384,
+          "admissible_n_params": 930464,
+          "achieved_n_params": 930464,
+          "exact": true
+        }
+      },
+      "admissible": {
+        "n_params": 930464,
+        "pmatch": null
+      },
+      "dense": {
+        "n_params": 1006504,
+        "pmatch": null
+      },
+      "reversed": {
+        "n_params": 930464,
+        "pmatch": null
+      },
+      "random_s0": {
+        "n_params": 930464,
+        "pmatch": null
+      },
+      "random_s1": {
+        "n_params": 930464,
+        "pmatch": null
+      },
+      "random_s2": {
+        "n_params": 930464,
+        "pmatch": null
+      },
+      "misspecified-1": {
+        "n_params": 930464,
+        "pmatch": null
+      }
+    }
+  },
+  "none_norm_code": "return self.norm(hidden), hidden.new_zeros(hidden.shape[0], 0)",
+  "zero_message_sum": true
+}

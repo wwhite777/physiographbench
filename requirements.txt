@@ -5,3 +5,4 @@ torchcde==0.2.5
 torchdiffeq==0.2.5
 torchsde==0.2.6
 matplotlib==3.10.9
+pytest==9.2.0

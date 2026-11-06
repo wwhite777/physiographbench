@@ -8,8 +8,8 @@ authors:
   - family-names: Oh
     given-names: Hayoung
     affiliation: Sungkyunkwan University
-version: 1.0.0
-date-released: 2026-11-05
+version: 1.1.0
+date-released: 2026-11-06
 license: MIT
-doi: 10.5281/zenodo.23976172
+doi: 10.5281/zenodo.23976171
 repository-code: https://github.com/wwhite777/physiographbench

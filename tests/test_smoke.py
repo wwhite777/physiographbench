@@ -126,6 +126,8 @@ class Smoke(unittest.TestCase):
             np.savez_compressed(path,x=a+1)
             with self.assertRaises(ValueError): verify(path,expected)
 
+    @unittest.skipIf(__import__('os').environ.get('PHYSIOGRAPH_NO_TRAINING') == '1',
+                     'optimizer steps disabled for release verification')
     def test_selected_training_checkpoint_and_statistics_on_synthetic_cohort(self):
         with tempfile.TemporaryDirectory(dir=SCRATCH) as d:
             path=Path(d)/'cohort.npz';synthetic_cohort(path)

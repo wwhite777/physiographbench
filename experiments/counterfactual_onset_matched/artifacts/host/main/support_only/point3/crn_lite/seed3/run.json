@@ -1,0 +1,1714 @@
+{
+  "schema_version": 3,
+  "smoke": false,
+  "config": {
+    "family": "support_only",
+    "point": 3,
+    "confound": 0.0,
+    "sigma": 0.0,
+    "seed": 3,
+    "n_patients": 400,
+    "kappa": 1.0,
+    "out_dt": 300.0,
+    "C": 12,
+    "K": 24,
+    "cf_protocol": "onset_matched",
+    "model": "crn_lite",
+    "dataset_seed": 0,
+    "epochs": 60,
+    "lamb": 0.5,
+    "lr": 0.002,
+    "threads": 1,
+    "device": "cpu"
+  },
+  "n_params": 70471,
+  "metrics": {
+    "rmse_by_channel": {
+      "MAP": 7.381103984873223,
+      "HR": 3.9186054844596674,
+      "CO": 0.1301471939383509,
+      "CVP": 0.6382541189279912,
+      "UO": 0.1532174313903538,
+      "Lac": 0.7868008189001043
+    },
+    "direction_accuracy": {
+      "cell_definition": "patient x adjacent dose pair x scored post-switch time x channel",
+      "n_total_cells": 60480,
+      "n_selected_cells": 60480,
+      "exact": {
+        "all": {
+          "accuracy": 0.8863756613756614,
+          "n_correct": 53608,
+          "denominator": 60480
+        },
+        "post_effect": {
+          "accuracy": 0.8863756613756614,
+          "n_correct": 53608,
+          "denominator": 60480
+        },
+        "zero_effect": {
+          "accuracy": null,
+          "n_correct": 0,
+          "denominator": 0
+        }
+      },
+      "effect_tolerance": {
+        "all": {
+          "accuracy": 0.6645502645502646,
+          "n_correct": 40192,
+          "denominator": 60480
+        },
+        "post_effect": {
+          "accuracy": 0.6572385560104206,
+          "n_correct": 37086,
+          "denominator": 56427
+        },
+        "zero_effect": {
+          "accuracy": 0.766345916604984,
+          "n_correct": 3106,
+          "denominator": 4053
+        }
+      },
+      "tolerances": {
+        "MAP": 0.1,
+        "HR": 0.1,
+        "CO": 0.01,
+        "CVP": 0.05,
+        "UO": 0.01,
+        "Lac": 0.01
+      },
+      "tolerance_units": [
+        "mmHg",
+        "beats/min",
+        "L/min",
+        "mmHg",
+        "mL/min",
+        "mmol/L"
+      ],
+      "per_channel": {
+        "MAP": {
+          "exact_post_effect": {
+            "accuracy": 0.9987103174603175,
+            "n_correct": 10067,
+            "denominator": 10080
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.969047619047619,
+            "n_correct": 9768,
+            "denominator": 10080
+          },
+          "tolerance_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          }
+        },
+        "HR": {
+          "exact_post_effect": {
+            "accuracy": 1.0,
+            "n_correct": 10080,
+            "denominator": 10080
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.9134920634920635,
+            "n_correct": 9208,
+            "denominator": 10080
+          },
+          "tolerance_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          }
+        },
+        "CO": {
+          "exact_post_effect": {
+            "accuracy": 1.0,
+            "n_correct": 10080,
+            "denominator": 10080
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.8340277777777778,
+            "n_correct": 8407,
+            "denominator": 10080
+          },
+          "tolerance_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          }
+        },
+        "CVP": {
+          "exact_post_effect": {
+            "accuracy": 1.0,
+            "n_correct": 10080,
+            "denominator": 10080
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.6520606884057971,
+            "n_correct": 5759,
+            "denominator": 8832
+          },
+          "tolerance_zero_effect": {
+            "accuracy": 0.3525641025641026,
+            "n_correct": 440,
+            "denominator": 1248
+          }
+        },
+        "UO": {
+          "exact_post_effect": {
+            "accuracy": 0.9896825396825397,
+            "n_correct": 9976,
+            "denominator": 10080
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.3615549725733365,
+            "n_correct": 3032,
+            "denominator": 8386
+          },
+          "tolerance_zero_effect": {
+            "accuracy": 0.922077922077922,
+            "n_correct": 1562,
+            "denominator": 1694
+          }
+        },
+        "Lac": {
+          "exact_post_effect": {
+            "accuracy": 0.3298611111111111,
+            "n_correct": 3325,
+            "denominator": 10080
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.10168357676441075,
+            "n_correct": 912,
+            "denominator": 8969
+          },
+          "tolerance_zero_effect": {
+            "accuracy": 0.9936993699369937,
+            "n_correct": 1104,
+            "denominator": 1111
+          }
+        }
+      }
+    },
+    "support_restricted_direction_accuracy": {
+      "cell_definition": "patient x adjacent dose pair x scored post-switch time x channel",
+      "n_total_cells": 60480,
+      "n_selected_cells": 30240,
+      "exact": {
+        "all": {
+          "accuracy": 0.8852513227513228,
+          "n_correct": 26770,
+          "denominator": 30240
+        },
+        "post_effect": {
+          "accuracy": 0.8852513227513228,
+          "n_correct": 26770,
+          "denominator": 30240
+        },
+        "zero_effect": {
+          "accuracy": null,
+          "n_correct": 0,
+          "denominator": 0
+        }
+      },
+      "effect_tolerance": {
+        "all": {
+          "accuracy": 0.7719246031746032,
+          "n_correct": 23343,
+          "denominator": 30240
+        },
+        "post_effect": {
+          "accuracy": 0.7752540966604439,
+          "n_correct": 22425,
+          "denominator": 28926
+        },
+        "zero_effect": {
+          "accuracy": 0.6986301369863014,
+          "n_correct": 918,
+          "denominator": 1314
+        }
+      },
+      "tolerances": {
+        "MAP": 0.1,
+        "HR": 0.1,
+        "CO": 0.01,
+        "CVP": 0.05,
+        "UO": 0.01,
+        "Lac": 0.01
+      },
+      "tolerance_units": [
+        "mmHg",
+        "beats/min",
+        "L/min",
+        "mmHg",
+        "mL/min",
+        "mmol/L"
+      ],
+      "per_channel": {
+        "MAP": {
+          "exact_post_effect": {
+            "accuracy": 0.9990079365079365,
+            "n_correct": 5035,
+            "denominator": 5040
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.9978174603174603,
+            "n_correct": 5029,
+            "denominator": 5040
+          },
+          "tolerance_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          }
+        },
+        "HR": {
+          "exact_post_effect": {
+            "accuracy": 1.0,
+            "n_correct": 5040,
+            "denominator": 5040
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.9803571428571428,
+            "n_correct": 4941,
+            "denominator": 5040
+          },
+          "tolerance_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          }
+        },
+        "CO": {
+          "exact_post_effect": {
+            "accuracy": 1.0,
+            "n_correct": 5040,
+            "denominator": 5040
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.969047619047619,
+            "n_correct": 4884,
+            "denominator": 5040
+          },
+          "tolerance_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          }
+        },
+        "CVP": {
+          "exact_post_effect": {
+            "accuracy": 1.0,
+            "n_correct": 5040,
+            "denominator": 5040
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.863013698630137,
+            "n_correct": 4095,
+            "denominator": 4745
+          },
+          "tolerance_zero_effect": {
+            "accuracy": 0.10508474576271186,
+            "n_correct": 31,
+            "denominator": 295
+          }
+        },
+        "UO": {
+          "exact_post_effect": {
+            "accuracy": 0.9922619047619048,
+            "n_correct": 5001,
+            "denominator": 5040
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.6405790545125537,
+            "n_correct": 2832,
+            "denominator": 4421
+          },
+          "tolerance_zero_effect": {
+            "accuracy": 0.7980613893376414,
+            "n_correct": 494,
+            "denominator": 619
+          }
+        },
+        "Lac": {
+          "exact_post_effect": {
+            "accuracy": 0.3202380952380952,
+            "n_correct": 1614,
+            "denominator": 5040
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.13879310344827586,
+            "n_correct": 644,
+            "denominator": 4640
+          },
+          "tolerance_zero_effect": {
+            "accuracy": 0.9825,
+            "n_correct": 393,
+            "denominator": 400
+          }
+        }
+      }
+    }
+  },
+  "training_history": [
+    {
+      "epoch": 0,
+      "loss": 0.7562129361288888,
+      "factual_mse": 0.7301415630749294,
+      "auxiliary_mse_times_half": 0.026071353043828693
+    },
+    {
+      "epoch": 1,
+      "loss": 0.6790828262056623,
+      "factual_mse": 0.6654979075704303,
+      "auxiliary_mse_times_half": 0.013584932684898377
+    },
+    {
+      "epoch": 2,
+      "loss": 0.6068251694951738,
+      "factual_mse": 0.600379318850381,
+      "auxiliary_mse_times_half": 0.0064458471988993035
+    },
+    {
+      "epoch": 3,
+      "loss": 0.5982063957623073,
+      "factual_mse": 0.5839249815259661,
+      "auxiliary_mse_times_half": 0.014281400186674936
+    },
+    {
+      "epoch": 4,
+      "loss": 0.5541304928915841,
+      "factual_mse": 0.5402235167367118,
+      "auxiliary_mse_times_half": 0.013906969861792667
+    },
+    {
+      "epoch": 5,
+      "loss": 0.5345467567443848,
+      "factual_mse": 0.5280477498258863,
+      "auxiliary_mse_times_half": 0.006499016896954604
+    },
+    {
+      "epoch": 6,
+      "loss": 0.5133806305272238,
+      "factual_mse": 0.5050844899245671,
+      "auxiliary_mse_times_half": 0.008296131262821811
+    },
+    {
+      "epoch": 7,
+      "loss": 0.46860045535223827,
+      "factual_mse": 0.46287219524383544,
+      "auxiliary_mse_times_half": 0.0057282737323216025
+    },
+    {
+      "epoch": 8,
+      "loss": 0.4245199969836644,
+      "factual_mse": 0.41806480884552,
+      "auxiliary_mse_times_half": 0.006455194457833256
+    },
+    {
+      "epoch": 9,
+      "loss": 0.37089270779064726,
+      "factual_mse": 0.3638756002698626,
+      "auxiliary_mse_times_half": 0.0070170985800879345
+    },
+    {
+      "epoch": 10,
+      "loss": 0.31262566191809515,
+      "factual_mse": 0.3062234835965293,
+      "auxiliary_mse_times_half": 0.006402183284184762
+    },
+    {
+      "epoch": 11,
+      "loss": 0.29439896770886015,
+      "factual_mse": 0.288856931243624,
+      "auxiliary_mse_times_half": 0.005542046190904719
+    },
+    {
+      "epoch": 12,
+      "loss": 0.2687655355249132,
+      "factual_mse": 0.26328296916825433,
+      "auxiliary_mse_times_half": 0.005482563323208264
+    },
+    {
+      "epoch": 13,
+      "loss": 0.24593369024140493,
+      "factual_mse": 0.2406597580228533,
+      "auxiliary_mse_times_half": 0.005273923104895013
+    },
+    {
+      "epoch": 14,
+      "loss": 0.2445479622909001,
+      "factual_mse": 0.23907791801861356,
+      "auxiliary_mse_times_half": 0.005470040374036346
+    },
+    {
+      "epoch": 15,
+      "loss": 0.22227393005575452,
+      "factual_mse": 0.21651950606278011,
+      "auxiliary_mse_times_half": 0.0057544231547841
+    },
+    {
+      "epoch": 16,
+      "loss": 0.2207707860640117,
+      "factual_mse": 0.21531968244484492,
+      "auxiliary_mse_times_half": 0.005451103778822081
+    },
+    {
+      "epoch": 17,
+      "loss": 0.22005307248660497,
+      "factual_mse": 0.21479241379669733,
+      "auxiliary_mse_times_half": 0.005260655283927917
+    },
+    {
+      "epoch": 18,
+      "loss": 0.21044929453304836,
+      "factual_mse": 0.20528813089643205,
+      "auxiliary_mse_times_half": 0.005161164208714451
+    },
+    {
+      "epoch": 19,
+      "loss": 0.2080999399934496,
+      "factual_mse": 0.2028334894350597,
+      "auxiliary_mse_times_half": 0.005266446646835123
+    },
+    {
+      "epoch": 20,
+      "loss": 0.20521633625030516,
+      "factual_mse": 0.1998241718326296,
+      "auxiliary_mse_times_half": 0.005392166985464948
+    },
+    {
+      "epoch": 21,
+      "loss": 0.20006697263036455,
+      "factual_mse": 0.19482922681740353,
+      "auxiliary_mse_times_half": 0.005237741222871201
+    },
+    {
+      "epoch": 22,
+      "loss": 0.1988201435123171,
+      "factual_mse": 0.19367523619106838,
+      "auxiliary_mse_times_half": 0.005144907228116479
+    },
+    {
+      "epoch": 23,
+      "loss": 0.196751412323543,
+      "factual_mse": 0.1916245575462069,
+      "auxiliary_mse_times_half": 0.005126850134027856
+    },
+    {
+      "epoch": 24,
+      "loss": 0.19253127489771163,
+      "factual_mse": 0.18734266417367118,
+      "auxiliary_mse_times_half": 0.005188614449330739
+    },
+    {
+      "epoch": 25,
+      "loss": 0.1890919429915292,
+      "factual_mse": 0.1838807199682508,
+      "auxiliary_mse_times_half": 0.0052112233026751454
+    },
+    {
+      "epoch": 26,
+      "loss": 0.18643086808068413,
+      "factual_mse": 0.18130506106785366,
+      "auxiliary_mse_times_half": 0.005125803034752607
+    },
+    {
+      "epoch": 27,
+      "loss": 0.18252227987561906,
+      "factual_mse": 0.17744457125663757,
+      "auxiliary_mse_times_half": 0.005077711319816964
+    },
+    {
+      "epoch": 28,
+      "loss": 0.17894827510629382,
+      "factual_mse": 0.17385457626410894,
+      "auxiliary_mse_times_half": 0.00509369857609272
+    },
+    {
+      "epoch": 29,
+      "loss": 0.1747577177626746,
+      "factual_mse": 0.1696307850735528,
+      "auxiliary_mse_times_half": 0.005126929602452687
+    },
+    {
+      "epoch": 30,
+      "loss": 0.16996929730687824,
+      "factual_mse": 0.16485085444790976,
+      "auxiliary_mse_times_half": 0.005118439339899591
+    },
+    {
+      "epoch": 31,
+      "loss": 0.1660736083984375,
+      "factual_mse": 0.1609908504145486,
+      "auxiliary_mse_times_half": 0.005082757132393974
+    },
+    {
+      "epoch": 32,
+      "loss": 0.16267047311578478,
+      "factual_mse": 0.15758345808301652,
+      "auxiliary_mse_times_half": 0.0050870167357581
+    },
+    {
+      "epoch": 33,
+      "loss": 0.1602236964872905,
+      "factual_mse": 0.15510004843984332,
+      "auxiliary_mse_times_half": 0.005123650096356869
+    },
+    {
+      "epoch": 34,
+      "loss": 0.1583951907498496,
+      "factual_mse": 0.1532924784081323,
+      "auxiliary_mse_times_half": 0.005102713113384587
+    },
+    {
+      "epoch": 35,
+      "loss": 0.15662408343383244,
+      "factual_mse": 0.15157627505915505,
+      "auxiliary_mse_times_half": 0.005047810283888663
+    },
+    {
+      "epoch": 36,
+      "loss": 0.15509387084415982,
+      "factual_mse": 0.15005900348935808,
+      "auxiliary_mse_times_half": 0.0050348655520273105
+    },
+    {
+      "epoch": 37,
+      "loss": 0.15353107792990547,
+      "factual_mse": 0.14846491771084921,
+      "auxiliary_mse_times_half": 0.005066157079168729
+    },
+    {
+      "epoch": 38,
+      "loss": 0.15179888010025025,
+      "factual_mse": 0.14672682796205794,
+      "auxiliary_mse_times_half": 0.005072056734934449
+    },
+    {
+      "epoch": 39,
+      "loss": 0.1502870282956532,
+      "factual_mse": 0.14522217022521156,
+      "auxiliary_mse_times_half": 0.00506486211504255
+    },
+    {
+      "epoch": 40,
+      "loss": 0.14912360097680774,
+      "factual_mse": 0.14408146419695445,
+      "auxiliary_mse_times_half": 0.0050421328416892465
+    },
+    {
+      "epoch": 41,
+      "loss": 0.1481916246669633,
+      "factual_mse": 0.14315889669316156,
+      "auxiliary_mse_times_half": 0.005032727647838848
+    },
+    {
+      "epoch": 42,
+      "loss": 0.14710511224610465,
+      "factual_mse": 0.14208067655563356,
+      "auxiliary_mse_times_half": 0.0050244353711605075
+    },
+    {
+      "epoch": 43,
+      "loss": 0.14606226980686188,
+      "factual_mse": 0.14105875534670695,
+      "auxiliary_mse_times_half": 0.0050035117659717795
+    },
+    {
+      "epoch": 44,
+      "loss": 0.14504833136286055,
+      "factual_mse": 0.14008583043302808,
+      "auxiliary_mse_times_half": 0.004962499951943755
+    },
+    {
+      "epoch": 45,
+      "loss": 0.1442383546914373,
+      "factual_mse": 0.13931600941079003,
+      "auxiliary_mse_times_half": 0.004922340657295925
+    },
+    {
+      "epoch": 46,
+      "loss": 0.14351336466414588,
+      "factual_mse": 0.13863861901419502,
+      "auxiliary_mse_times_half": 0.004874746315181255
+    },
+    {
+      "epoch": 47,
+      "loss": 0.14277847728558948,
+      "factual_mse": 0.13793620147875377,
+      "auxiliary_mse_times_half": 0.004842272187982287
+    },
+    {
+      "epoch": 48,
+      "loss": 0.14206598039184298,
+      "factual_mse": 0.13724452342305865,
+      "auxiliary_mse_times_half": 0.004821456562993782
+    },
+    {
+      "epoch": 49,
+      "loss": 0.1412699778165136,
+      "factual_mse": 0.13647489696741105,
+      "auxiliary_mse_times_half": 0.004795080124001418
+    },
+    {
+      "epoch": 50,
+      "loss": 0.1405360296368599,
+      "factual_mse": 0.13577229848929814,
+      "auxiliary_mse_times_half": 0.004763729052085962
+    },
+    {
+      "epoch": 51,
+      "loss": 0.13976297804287502,
+      "factual_mse": 0.13504062741994857,
+      "auxiliary_mse_times_half": 0.004722346431974854
+    },
+    {
+      "epoch": 52,
+      "loss": 0.13904327814068113,
+      "factual_mse": 0.1343536240713937,
+      "auxiliary_mse_times_half": 0.004689653989459787
+    },
+    {
+      "epoch": 53,
+      "loss": 0.13836524614265988,
+      "factual_mse": 0.13372630178928374,
+      "auxiliary_mse_times_half": 0.004638943774625659
+    },
+    {
+      "epoch": 54,
+      "loss": 0.13768291409526554,
+      "factual_mse": 0.13308476550238474,
+      "auxiliary_mse_times_half": 0.0045981501428676505
+    },
+    {
+      "epoch": 55,
+      "loss": 0.13698049038648605,
+      "factual_mse": 0.13239804165703908,
+      "auxiliary_mse_times_half": 0.004582454044637935
+    },
+    {
+      "epoch": 56,
+      "loss": 0.13626160621643066,
+      "factual_mse": 0.13169507852622442,
+      "auxiliary_mse_times_half": 0.0045665308833122255
+    },
+    {
+      "epoch": 57,
+      "loss": 0.13556976190635137,
+      "factual_mse": 0.1310337735073907,
+      "auxiliary_mse_times_half": 0.004535992130903261
+    },
+    {
+      "epoch": 58,
+      "loss": 0.1348422190972737,
+      "factual_mse": 0.13036091242517744,
+      "auxiliary_mse_times_half": 0.004481309652328491
+    },
+    {
+      "epoch": 59,
+      "loss": 0.1340460104601724,
+      "factual_mse": 0.12960914309535707,
+      "auxiliary_mse_times_half": 0.00443686846244548
+    }
+  ],
+  "finite": true,
+  "history_checks": {
+    "protocol": "onset_matched",
+    "switch_s": 4320.0,
+    "n_pre_switch_samples": 15,
+    "history_identical": true,
+    "n_treated_alternative_samples_before_switch": 0,
+    "n_treated_alternative_samples_before_factual_onset": 0,
+    "first_scored_min": 75.0,
+    "n_scored_times": 21
+  },
+  "balancing_target": {
+    "quantity": "assigned eventual factual dose",
+    "distribution": {
+      "all": {
+        "n": 400,
+        "n_unique": 265,
+        "min": 0.0625,
+        "max": 0.4375,
+        "mean": 0.25000000005587936,
+        "std": 0.10906814215811864,
+        "quantiles": [
+          0.0625,
+          0.07954545319080353,
+          0.15607377886772156,
+          0.25,
+          0.34392622113227844,
+          0.4204545319080353,
+          0.4375
+        ],
+        "histogram_counts": [
+          0,
+          42,
+          52,
+          53,
+          52,
+          54,
+          53,
+          52,
+          42,
+          0
+        ],
+        "histogram_edges": [
+          0.0,
+          0.05,
+          0.1,
+          0.15000000000000002,
+          0.2,
+          0.25,
+          0.30000000000000004,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5
+        ]
+      },
+      "train": {
+        "n": 280,
+        "n_unique": 209,
+        "min": 0.0625,
+        "max": 0.4375,
+        "mean": 0.25118816196918486,
+        "std": 0.10537672490786278,
+        "quantiles": [
+          0.0625,
+          0.0880585677921772,
+          0.1583806797862053,
+          0.25,
+          0.34392622113227844,
+          0.41762110143899916,
+          0.4375
+        ],
+        "histogram_counts": [
+          0,
+          23,
+          40,
+          34,
+          42,
+          42,
+          34,
+          38,
+          27,
+          0
+        ],
+        "histogram_edges": [
+          0.0,
+          0.05,
+          0.1,
+          0.15000000000000002,
+          0.2,
+          0.25,
+          0.30000000000000004,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5
+        ]
+      },
+      "test": {
+        "n": 120,
+        "n_unique": 107,
+        "min": 0.0625,
+        "max": 0.4375,
+        "mean": 0.24722762225816647,
+        "std": 0.11718344157061139,
+        "quantiles": [
+          0.0625,
+          0.07101952247321605,
+          0.14582621678709984,
+          0.24289772659540176,
+          0.34446022659540176,
+          0.42614064663648604,
+          0.4375
+        ],
+        "histogram_counts": [
+          0,
+          19,
+          12,
+          19,
+          10,
+          12,
+          19,
+          14,
+          15,
+          0
+        ],
+        "histogram_edges": [
+          0.0,
+          0.05,
+          0.1,
+          0.15000000000000002,
+          0.2,
+          0.25,
+          0.30000000000000004,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5
+        ]
+      }
+    },
+    "used_as_input": false,
+    "auxiliary_multiplier": 0.5
+  },
+  "support": {
+    "severity_cutpoints": [
+      0.4466419517993927,
+      0.6863279938697815
+    ],
+    "supported_dose_ranges": [
+      [
+        0.08125000149011612,
+        0.41874998807907104
+      ],
+      [
+        0.08125000149011612,
+        0.41874998807907104
+      ],
+      [
+        0.08125000037252902,
+        0.4187499925494194
+      ]
+    ],
+    "supported_grid": [
+      [
+        false,
+        false,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        true,
+        true,
+        true
+      ]
+    ],
+    "n_supported_tercile_dose_cells": 9,
+    "n_tercile_dose_cells": 15,
+    "fraction_grid_supported_by_tercile": [
+      0.6,
+      0.6,
+      0.6
+    ],
+    "all_terciles_full_support": false
+  },
+  "dataset": {
+    "path": "experiments/counterfactual_onset_matched/artifacts/datasets/3e1dd8a1ab47cca42d55.npz",
+    "sha256": "88708047105d43ce78838ebe7994603ec8bc600bfdb0aefd2ba5b17829719f01",
+    "metadata": {
+      "schema_version": 3,
+      "family": "support_only",
+      "point": 3,
+      "confound": 0.0,
+      "sigma": 0.0,
+      "seed": 0,
+      "n_patients": 400,
+      "kappa": 1.0,
+      "out_dt": 300.0,
+      "C": 12,
+      "K": 24,
+      "horizon_h": 6.0,
+      "cf_protocol": "onset_matched",
+      "switch_s": 4320.0,
+      "factual_dose_onset_s": 4320.0,
+      "integration_dt": 0.5,
+      "warmup_s": 180.0,
+      "score_indices": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "policy": {
+        "family": "support_only",
+        "point": 3,
+        "width": 0.75,
+        "rank_target": 0.3,
+        "score_coefficient": 1.9185245037078857,
+        "policy_version": "E3-affine-support-fixed-tercile-multisets-v1",
+        "statistics": {
+          "spearman": 0.300003923493954,
+          "pearson": 0.3053972971021207,
+          "severity_cutpoints": [
+            0.4466419517993927,
+            0.6863279938697815
+          ],
+          "terciles": [
+            {
+              "tercile": 0,
+              "n": 133,
+              "q05": 0.08125000149011612,
+              "q95": 0.41874998807907104,
+              "width_05_95": 0.3374999865889549,
+              "min": 0.0625,
+              "max": 0.4375,
+              "supported_grid": [
+                false,
+                false,
+                true,
+                true,
+                true
+              ],
+              "distribution": {
+                "n": 133,
+                "n_unique": 133,
+                "min": 0.0625,
+                "max": 0.4375,
+                "mean": 0.25,
+                "std": 0.10907019235718343,
+                "quantiles": [
+                  0.0625,
+                  0.08125000149011612,
+                  0.15625,
+                  0.25,
+                  0.34375,
+                  0.41874998807907104,
+                  0.4375
+                ],
+                "histogram_counts": [
+                  0,
+                  14,
+                  17,
+                  18,
+                  17,
+                  18,
+                  18,
+                  17,
+                  14,
+                  0
+                ],
+                "histogram_edges": [
+                  0.0,
+                  0.05,
+                  0.1,
+                  0.15000000000000002,
+                  0.2,
+                  0.25,
+                  0.30000000000000004,
+                  0.35000000000000003,
+                  0.4,
+                  0.45,
+                  0.5
+                ]
+              }
+            },
+            {
+              "tercile": 1,
+              "n": 133,
+              "q05": 0.08125000149011612,
+              "q95": 0.41874998807907104,
+              "width_05_95": 0.3374999865889549,
+              "min": 0.0625,
+              "max": 0.4375,
+              "supported_grid": [
+                false,
+                false,
+                true,
+                true,
+                true
+              ],
+              "distribution": {
+                "n": 133,
+                "n_unique": 133,
+                "min": 0.0625,
+                "max": 0.4375,
+                "mean": 0.25,
+                "std": 0.10907019235718345,
+                "quantiles": [
+                  0.0625,
+                  0.08125000149011612,
+                  0.15625,
+                  0.25,
+                  0.34375,
+                  0.41874998807907104,
+                  0.4375
+                ],
+                "histogram_counts": [
+                  0,
+                  14,
+                  17,
+                  18,
+                  17,
+                  18,
+                  18,
+                  17,
+                  14,
+                  0
+                ],
+                "histogram_edges": [
+                  0.0,
+                  0.05,
+                  0.1,
+                  0.15000000000000002,
+                  0.2,
+                  0.25,
+                  0.30000000000000004,
+                  0.35000000000000003,
+                  0.4,
+                  0.45,
+                  0.5
+                ]
+              }
+            },
+            {
+              "tercile": 2,
+              "n": 134,
+              "q05": 0.08125000037252902,
+              "q95": 0.4187499925494194,
+              "width_05_95": 0.3374999921768904,
+              "min": 0.0625,
+              "max": 0.4375,
+              "supported_grid": [
+                false,
+                false,
+                true,
+                true,
+                true
+              ],
+              "distribution": {
+                "n": 134,
+                "n_unique": 134,
+                "min": 0.0625,
+                "max": 0.4375,
+                "mean": 0.25000000016680407,
+                "std": 0.10906407224578918,
+                "quantiles": [
+                  0.0625,
+                  0.08125000037252902,
+                  0.1562500037252903,
+                  0.25,
+                  0.34375,
+                  0.4187499925494194,
+                  0.4375
+                ],
+                "histogram_counts": [
+                  0,
+                  14,
+                  18,
+                  17,
+                  18,
+                  18,
+                  17,
+                  18,
+                  14,
+                  0
+                ],
+                "histogram_edges": [
+                  0.0,
+                  0.05,
+                  0.1,
+                  0.15000000000000002,
+                  0.2,
+                  0.25,
+                  0.30000000000000004,
+                  0.35000000000000003,
+                  0.4,
+                  0.45,
+                  0.5
+                ]
+              }
+            }
+          ],
+          "support_fraction": 0.6,
+          "target_distribution": {
+            "n": 400,
+            "n_unique": 265,
+            "min": 0.0625,
+            "max": 0.4375,
+            "mean": 0.25000000005587936,
+            "std": 0.10906814215811864,
+            "quantiles": [
+              0.0625,
+              0.07954545319080353,
+              0.15607377886772156,
+              0.25,
+              0.34392622113227844,
+              0.4204545319080353,
+              0.4375
+            ],
+            "histogram_counts": [
+              0,
+              42,
+              52,
+              53,
+              52,
+              54,
+              53,
+              52,
+              42,
+              0
+            ],
+            "histogram_edges": [
+              0.0,
+              0.05,
+              0.1,
+              0.15000000000000002,
+              0.2,
+              0.25,
+              0.30000000000000004,
+              0.35000000000000003,
+              0.4,
+              0.45,
+              0.5
+            ]
+          }
+        }
+      },
+      "scoring": "Strictly post-switch samples inside the C:C+K rollout; pre-switch samples excluded.",
+      "boundary_note": "Frozen RK4: the whole step ending at switch uses the factual schedule, including its endpoint stage; all branches share that state (historical_experiment convention).",
+      "code_sha256": {
+        "experiments/counterfactual_onset_matched/sim_policy_ext3.py": "21f001f0164b1900193ed085db86fb5d95b5c61a7d26753fd4f1abdf01b6c629",
+        "sim/sim_policy_ext2.py": "ec7ea141a631e4d8e07a1a5b80ce9d6da8c57a2d1e22289250382f5e5f5de777",
+        "sim/sim_policy_ext.py": "fcc48abf17728656c18bc4e57b23029f2887effefef191b799c3396cd964f5b7",
+        "src/cvsim_hemodynamics_simulator.py": "7cf88f7918b698a03e09b5efc5dfd2691fb44b2550df861f6ea7d54ef5868af0"
+      },
+      "history_checks": {
+        "protocol": "onset_matched",
+        "switch_s": 4320.0,
+        "n_pre_switch_samples": 15,
+        "history_identical": true,
+        "n_treated_alternative_samples_before_switch": 0,
+        "n_treated_alternative_samples_before_factual_onset": 0,
+        "first_scored_min": 75.0,
+        "n_scored_times": 21
+      }
+    },
+    "train_indices": [
+      42,
+      126,
+      365,
+      271,
+      296,
+      297,
+      273,
+      58,
+      244,
+      391,
+      94,
+      105,
+      32,
+      227,
+      338,
+      155,
+      390,
+      298,
+      206,
+      20,
+      275,
+      145,
+      130,
+      65,
+      28,
+      12,
+      343,
+      258,
+      84,
+      150,
+      218,
+      319,
+      167,
+      322,
+      229,
+      233,
+      177,
+      310,
+      108,
+      102,
+      368,
+      86,
+      238,
+      111,
+      190,
+      307,
+      133,
+      228,
+      283,
+      347,
+      331,
+      211,
+      309,
+      7,
+      395,
+      288,
+      287,
+      121,
+      146,
+      198,
+      75,
+      124,
+      104,
+      312,
+      24,
+      376,
+      46,
+      294,
+      370,
+      151,
+      72,
+      264,
+      323,
+      187,
+      192,
+      188,
+      51,
+      253,
+      100,
+      183,
+      301,
+      83,
+      321,
+      22,
+      226,
+      16,
+      225,
+      141,
+      173,
+      119,
+      43,
+      356,
+      293,
+      63,
+      383,
+      23,
+      237,
+      120,
+      348,
+      243,
+      39,
+      374,
+      352,
+      169,
+      11,
+      34,
+      106,
+      80,
+      277,
+      260,
+      397,
+      53,
+      232,
+      281,
+      164,
+      77,
+      327,
+      96,
+      131,
+      212,
+      158,
+      49,
+      21,
+      318,
+      316,
+      26,
+      87,
+      137,
+      27,
+      333,
+      380,
+      234,
+      13,
+      1,
+      50,
+      118,
+      194,
+      262,
+      221,
+      210,
+      64,
+      340,
+      364,
+      208,
+      52,
+      45,
+      276,
+      62,
+      6,
+      286,
+      371,
+      91,
+      170,
+      223,
+      60,
+      329,
+      216,
+      165,
+      207,
+      396,
+      153,
+      134,
+      135,
+      117,
+      71,
+      204,
+      300,
+      152,
+      369,
+      386,
+      88,
+      176,
+      320,
+      171,
+      156,
+      215,
+      19,
+      230,
+      180,
+      372,
+      399,
+      388,
+      181,
+      349,
+      98,
+      387,
+      240,
+      219,
+      129,
+      377,
+      196,
+      162,
+      351,
+      313,
+      142,
+      324,
+      166,
+      107,
+      345,
+      222,
+      274,
+      214,
+      328,
+      123,
+      326,
+      314,
+      61,
+      257,
+      266,
+      251,
+      325,
+      35,
+      85,
+      363,
+      290,
+      128,
+      189,
+      36,
+      246,
+      354,
+      353,
+      172,
+      202,
+      299,
+      93,
+      99,
+      0,
+      200,
+      37,
+      25,
+      235,
+      114,
+      217,
+      112,
+      291,
+      182,
+      33,
+      103,
+      304,
+      278,
+      335,
+      366,
+      245,
+      224,
+      18,
+      337,
+      247,
+      143,
+      92,
+      280,
+      220,
+      268,
+      209,
+      161,
+      284,
+      179,
+      267,
+      252,
+      5,
+      132,
+      186,
+      357,
+      82,
+      89,
+      379,
+      116,
+      174,
+      67,
+      241,
+      236,
+      74,
+      113,
+      139,
+      279,
+      381,
+      81,
+      136,
+      122,
+      115,
+      339
+    ],
+    "test_indices": [
+      41,
+      48,
+      163,
+      138,
+      69,
+      394,
+      393,
+      205,
+      201,
+      56,
+      302,
+      362,
+      9,
+      17,
+      31,
+      341,
+      168,
+      30,
+      55,
+      2,
+      101,
+      15,
+      140,
+      159,
+      360,
+      110,
+      178,
+      334,
+      68,
+      197,
+      254,
+      3,
+      259,
+      66,
+      384,
+      373,
+      239,
+      191,
+      346,
+      256,
+      367,
+      355,
+      78,
+      342,
+      175,
+      203,
+      378,
+      90,
+      242,
+      44,
+      154,
+      4,
+      47,
+      285,
+      195,
+      125,
+      305,
+      389,
+      249,
+      95,
+      10,
+      398,
+      382,
+      213,
+      361,
+      38,
+      375,
+      184,
+      76,
+      311,
+      350,
+      295,
+      358,
+      127,
+      308,
+      14,
+      231,
+      265,
+      29,
+      317,
+      359,
+      250,
+      385,
+      109,
+      332,
+      185,
+      193,
+      315,
+      269,
+      40,
+      149,
+      148,
+      344,
+      79,
+      160,
+      73,
+      392,
+      330,
+      97,
+      303,
+      336,
+      272,
+      157,
+      8,
+      255,
+      306,
+      70,
+      289,
+      282,
+      59,
+      263,
+      144,
+      270,
+      57,
+      292,
+      199,
+      54,
+      261,
+      147,
+      248
+    ]
+  },
+  "normalization": {
+    "mean": [
+      84.48177337646484,
+      75.21783447265625,
+      4.742137908935547,
+      7.4843854904174805,
+      1.390961766242981,
+      2.1346731185913086
+    ],
+    "std": [
+      10.668025970458984,
+      8.197157859802246,
+      0.7412682175636292,
+      3.3392860889434814,
+      0.2569023370742798,
+      1.396000623703003
+    ],
+    "scope": "Factual training patients, all times; unchanged BASE_SIM loader"
+  },
+  "code_sha256": {
+    "experiments/counterfactual_onset_matched/sim_grid_runner3.py": "81d423992cf15baee99bddf0a32197f00e7d6aafcf08ef726851ae52c857e931",
+    "src/cvsim_counterfactual_runner.py": "3ad387cb86f27be6449a2404a31efece64a197f6a17cacd0836ac2698e4b988c",
+    "src/organ_graph_ssm_model.py": "3426f8aa61ddcac3740ca4a0d799c25a421d91950cf773c957b68513232ac615",
+    "sim/sim_grid_runner.py": "b66d61b4fb18f7be97bc893ae9400d1fad7039d75a779e859ec3589e05e4dd07"
+  },
+  "artifacts": {
+    "experiments/counterfactual_onset_matched/artifacts/host/main/support_only/point3/crn_lite/seed3/model.pt": "d603dd340bdc54a0996bd6f06f0c85ad5ee788fb6648c33e5c879fab715e3b4a",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/support_only/point3/crn_lite/seed3/predictions.npz": "3720396277c0e7e194b46c28e4848fa5984e55856dbf5b0746b7c29564feebea"
+  },
+  "timing": {
+    "data_seconds": 0.14877582620829344,
+    "training_seconds": 4.989599818363786,
+    "total_seconds": 5.26491775456816
+  },
+  "notes": [
+    "All predictions use only factual context and the specified alternative plan.",
+    "Full rollout includes the untreated prefix; scores use strictly post-switch samples.",
+    "CRN-lite MSE balancing probes conditional mean assignment signal; it does not prove independence or identification.",
+    "Continuous-dose CRN keeps historical_experiment adaptation, stage split, loss and dropout; lambda=0 retains the same full architecture.",
+    "Physical-unit RMSE is reported; no new fixed-range NRMSE denominator is introduced."
+  ]
+}

@@ -12,3 +12,10 @@ data/*
 *.npz
 *.psv
 *.part
+
+# Round-4 experiment records are part of the release (added at release v1.1.0): un-ignore them under experiments/ and analysis/.
+!experiments/*/artifacts/
+!experiments/*/artifacts/**
+!experiments/*/*.npz
+!experiments/**/*.npz
+!analysis/**

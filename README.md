@@ -194,7 +194,7 @@ differ while every scientific array is checked against frozen payload hashes.
 
 ## Citation
 
-Code and results: https://github.com/wwhite777/physiographbench — archived at Zenodo, DOI 10.5281/zenodo.23976172.
+Code and results: https://github.com/wwhite777/physiographbench — archived at Zenodo, DOI 10.5281/zenodo.23976171.
 
 ```bibtex
 @software{jeong2026physiographbench,
@@ -202,9 +202,28 @@ Code and results: https://github.com/wwhite777/physiographbench — archived at 
   title     = {PhysioGraphBench: code, results and diagnostics for a matched-control benchmark of physiological graph priors in multi-organ ICU trajectory forecasting},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.23976172},
+  doi       = {10.5281/zenodo.23976171},
   url       = {https://github.com/wwhite777/physiographbench}
 }
 ```
 
 Software is distributed under the [MIT licence](LICENSE).
+
+
+## Round-4 experiments
+
+- [experiments/positive_control/](experiments/positive_control/): registered delayed-drive positive control, 96 fits and three synthetic datasets.
+- [experiments/shared_input_primary/](experiments/shared_input_primary/): shared-input selection, graph/capacity arms and longer training budgets, 70 fits.
+- [experiments/counterfactual_onset_matched/](experiments/counterfactual_onset_matched/): onset-matched support/dependence families, CRN diagnostics and matched controls, 188 records.
+- [experiments/learned_graph_validation/](experiments/learned_graph_validation/): GraFITi P12 reproduction attempt and 24 fixed-graph fits.
+- [analysis/paired_statistics/](analysis/paired_statistics/): 641 four-seed paired contrasts, multiplicity families, bootstrap summaries and stated missing-prediction limitations.
+
+Recorded compute and coverage are in [docs/COMPUTE.md](docs/COMPUTE.md).
+The source/result distribution is version **1.1.0**. No model training is needed
+to inspect these records or enumerate any run plan. Per-folder READMEs give
+rerun prerequisites and expected numbers. These additions retain their stated
+scientific and provenance qualifications.
+
+For verification without optimizer steps, set `PHYSIOGRAPH_NO_TRAINING=1` before
+`make smoke` or the experiment test suites. The inherited synthetic fitting test
+and the three optional experiment fitting tests then report explicit skips.

@@ -1,0 +1,2553 @@
+{
+  "schema_version": 3,
+  "smoke": false,
+  "config": {
+    "family": "legacy",
+    "point": 0,
+    "confound": 0.0,
+    "sigma": 0.0,
+    "seed": 2,
+    "n_patients": 400,
+    "kappa": 1.0,
+    "out_dt": 300.0,
+    "C": 12,
+    "K": 24,
+    "cf_protocol": "onset_matched",
+    "model": "crn_continuous",
+    "dataset_seed": 0,
+    "epochs": 120,
+    "lamb": 0.25,
+    "lr": 0.002,
+    "threads": 1,
+    "device": "cpu"
+  },
+  "n_params": 139808,
+  "metrics": {
+    "rmse_by_channel": {
+      "MAP": 10.239299419682089,
+      "HR": 5.91439093217694,
+      "CO": 0.5654369421582559,
+      "CVP": 1.2589672398780924,
+      "UO": 0.23929704788719422,
+      "Lac": 1.1954204231669212
+    },
+    "direction_accuracy": {
+      "cell_definition": "patient x adjacent dose pair x scored post-switch time x channel",
+      "n_total_cells": 60480,
+      "n_selected_cells": 60480,
+      "exact": {
+        "all": {
+          "accuracy": 0.7736937830687831,
+          "n_correct": 46793,
+          "denominator": 60480
+        },
+        "post_effect": {
+          "accuracy": 0.7736937830687831,
+          "n_correct": 46793,
+          "denominator": 60480
+        },
+        "zero_effect": {
+          "accuracy": null,
+          "n_correct": 0,
+          "denominator": 0
+        }
+      },
+      "effect_tolerance": {
+        "all": {
+          "accuracy": 0.6869378306878307,
+          "n_correct": 41546,
+          "denominator": 60480
+        },
+        "post_effect": {
+          "accuracy": 0.7009974931192259,
+          "n_correct": 39987,
+          "denominator": 57043
+        },
+        "zero_effect": {
+          "accuracy": 0.45359324992726213,
+          "n_correct": 1559,
+          "denominator": 3437
+        }
+      },
+      "tolerances": {
+        "MAP": 0.1,
+        "HR": 0.1,
+        "CO": 0.01,
+        "CVP": 0.05,
+        "UO": 0.01,
+        "Lac": 0.01
+      },
+      "tolerance_units": [
+        "mmHg",
+        "beats/min",
+        "L/min",
+        "mmHg",
+        "mL/min",
+        "mmol/L"
+      ],
+      "per_channel": {
+        "MAP": {
+          "exact_post_effect": {
+            "accuracy": 0.8790674603174603,
+            "n_correct": 8861,
+            "denominator": 10080
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.8583333333333333,
+            "n_correct": 8652,
+            "denominator": 10080
+          },
+          "tolerance_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          }
+        },
+        "HR": {
+          "exact_post_effect": {
+            "accuracy": 0.9168650793650793,
+            "n_correct": 9242,
+            "denominator": 10080
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.8948412698412699,
+            "n_correct": 9020,
+            "denominator": 10080
+          },
+          "tolerance_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          }
+        },
+        "CO": {
+          "exact_post_effect": {
+            "accuracy": 0.7137896825396826,
+            "n_correct": 7195,
+            "denominator": 10080
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.645436507936508,
+            "n_correct": 6506,
+            "denominator": 10080
+          },
+          "tolerance_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          }
+        },
+        "CVP": {
+          "exact_post_effect": {
+            "accuracy": 0.7748015873015873,
+            "n_correct": 7810,
+            "denominator": 10080
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.7311920672558742,
+            "n_correct": 6784,
+            "denominator": 9278
+          },
+          "tolerance_zero_effect": {
+            "accuracy": 0.16209476309226933,
+            "n_correct": 130,
+            "denominator": 802
+          }
+        },
+        "UO": {
+          "exact_post_effect": {
+            "accuracy": 0.879265873015873,
+            "n_correct": 8863,
+            "denominator": 10080
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.5578400094529127,
+            "n_correct": 4721,
+            "denominator": 8463
+          },
+          "tolerance_zero_effect": {
+            "accuracy": 0.8305504019789735,
+            "n_correct": 1343,
+            "denominator": 1617
+          }
+        },
+        "Lac": {
+          "exact_post_effect": {
+            "accuracy": 0.4783730158730159,
+            "n_correct": 4822,
+            "denominator": 10080
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.4749503420878393,
+            "n_correct": 4304,
+            "denominator": 9062
+          },
+          "tolerance_zero_effect": {
+            "accuracy": 0.08447937131630648,
+            "n_correct": 86,
+            "denominator": 1018
+          }
+        }
+      }
+    },
+    "support_restricted_direction_accuracy": {
+      "cell_definition": "patient x adjacent dose pair x scored post-switch time x channel",
+      "n_total_cells": 60480,
+      "n_selected_cells": 45360,
+      "exact": {
+        "all": {
+          "accuracy": 0.7920194003527337,
+          "n_correct": 35926,
+          "denominator": 45360
+        },
+        "post_effect": {
+          "accuracy": 0.7920194003527337,
+          "n_correct": 35926,
+          "denominator": 45360
+        },
+        "zero_effect": {
+          "accuracy": null,
+          "n_correct": 0,
+          "denominator": 0
+        }
+      },
+      "effect_tolerance": {
+        "all": {
+          "accuracy": 0.7174603174603175,
+          "n_correct": 32544,
+          "denominator": 45360
+        },
+        "post_effect": {
+          "accuracy": 0.7330835815338794,
+          "n_correct": 31505,
+          "denominator": 42976
+        },
+        "zero_effect": {
+          "accuracy": 0.4358221476510067,
+          "n_correct": 1039,
+          "denominator": 2384
+        }
+      },
+      "tolerances": {
+        "MAP": 0.1,
+        "HR": 0.1,
+        "CO": 0.01,
+        "CVP": 0.05,
+        "UO": 0.01,
+        "Lac": 0.01
+      },
+      "tolerance_units": [
+        "mmHg",
+        "beats/min",
+        "L/min",
+        "mmHg",
+        "mL/min",
+        "mmol/L"
+      ],
+      "per_channel": {
+        "MAP": {
+          "exact_post_effect": {
+            "accuracy": 0.9264550264550264,
+            "n_correct": 7004,
+            "denominator": 7560
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.9121693121693122,
+            "n_correct": 6896,
+            "denominator": 7560
+          },
+          "tolerance_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          }
+        },
+        "HR": {
+          "exact_post_effect": {
+            "accuracy": 0.9197089947089947,
+            "n_correct": 6953,
+            "denominator": 7560
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.9005291005291005,
+            "n_correct": 6808,
+            "denominator": 7560
+          },
+          "tolerance_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          }
+        },
+        "CO": {
+          "exact_post_effect": {
+            "accuracy": 0.790079365079365,
+            "n_correct": 5973,
+            "denominator": 7560
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.7391534391534391,
+            "n_correct": 5588,
+            "denominator": 7560
+          },
+          "tolerance_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          }
+        },
+        "CVP": {
+          "exact_post_effect": {
+            "accuracy": 0.8074074074074075,
+            "n_correct": 6104,
+            "denominator": 7560
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.7686524822695036,
+            "n_correct": 5419,
+            "denominator": 7050
+          },
+          "tolerance_zero_effect": {
+            "accuracy": 0.12549019607843137,
+            "n_correct": 64,
+            "denominator": 510
+          }
+        },
+        "UO": {
+          "exact_post_effect": {
+            "accuracy": 0.9203703703703704,
+            "n_correct": 6958,
+            "denominator": 7560
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.6619740340997966,
+            "n_correct": 4232,
+            "denominator": 6393
+          },
+          "tolerance_zero_effect": {
+            "accuracy": 0.7994858611825193,
+            "n_correct": 933,
+            "denominator": 1167
+          }
+        },
+        "Lac": {
+          "exact_post_effect": {
+            "accuracy": 0.3880952380952381,
+            "n_correct": 2934,
+            "denominator": 7560
+          },
+          "exact_zero_effect": {
+            "accuracy": null,
+            "n_correct": 0,
+            "denominator": 0
+          },
+          "tolerance_post_effect": {
+            "accuracy": 0.3738508682328907,
+            "n_correct": 2562,
+            "denominator": 6853
+          },
+          "tolerance_zero_effect": {
+            "accuracy": 0.0594059405940594,
+            "n_correct": 42,
+            "denominator": 707
+          }
+        }
+      }
+    }
+  },
+  "training_history": [
+    {
+      "stage": "encoder",
+      "epoch": 0,
+      "coefficient": 0.2499773010656488,
+      "loss": 591.3971522739955,
+      "outcome_sse_per_trajectory": 424.7529593331473,
+      "treatment_ce_sum_per_trajectory": 166.64420558384487,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 1,
+      "coefficient": 0.24999999896942315,
+      "loss": 521.9699026925223,
+      "outcome_sse_per_trajectory": 358.28001796177455,
+      "treatment_ce_sum_per_trajectory": 163.68987775530135,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 2,
+      "coefficient": 0.24999999999995326,
+      "loss": 394.2250034877232,
+      "outcome_sse_per_trajectory": 233.71406293596542,
+      "treatment_ce_sum_per_trajectory": 160.51094185965403,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 3,
+      "coefficient": 0.25,
+      "loss": 350.20221644810266,
+      "outcome_sse_per_trajectory": 193.0192644391741,
+      "treatment_ce_sum_per_trajectory": 157.18294372558594,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 4,
+      "coefficient": 0.25,
+      "loss": 344.7847917829241,
+      "outcome_sse_per_trajectory": 189.60208740234376,
+      "treatment_ce_sum_per_trajectory": 155.1827183314732,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 5,
+      "coefficient": 0.25,
+      "loss": 270.7960780552455,
+      "outcome_sse_per_trajectory": 117.2590325491769,
+      "treatment_ce_sum_per_trajectory": 153.53704964773996,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 6,
+      "coefficient": 0.25,
+      "loss": 251.49610334123884,
+      "outcome_sse_per_trajectory": 99.5449722290039,
+      "treatment_ce_sum_per_trajectory": 151.95112827845983,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 7,
+      "coefficient": 0.25,
+      "loss": 233.21497366768972,
+      "outcome_sse_per_trajectory": 82.2447516305106,
+      "treatment_ce_sum_per_trajectory": 150.97022487095424,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 8,
+      "coefficient": 0.25,
+      "loss": 216.5083439418248,
+      "outcome_sse_per_trajectory": 66.00202941894531,
+      "treatment_ce_sum_per_trajectory": 150.50631103515624,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 9,
+      "coefficient": 0.25,
+      "loss": 201.62099086216517,
+      "outcome_sse_per_trajectory": 51.69953918457031,
+      "treatment_ce_sum_per_trajectory": 149.92145342145648,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 10,
+      "coefficient": 0.25,
+      "loss": 194.6520786830357,
+      "outcome_sse_per_trajectory": 45.37359455653599,
+      "treatment_ce_sum_per_trajectory": 149.27848205566406,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 11,
+      "coefficient": 0.25,
+      "loss": 190.74706464494977,
+      "outcome_sse_per_trajectory": 42.12271815708706,
+      "treatment_ce_sum_per_trajectory": 148.6243464878627,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 12,
+      "coefficient": 0.25,
+      "loss": 182.4738337925502,
+      "outcome_sse_per_trajectory": 34.260387202671595,
+      "treatment_ce_sum_per_trajectory": 148.2134469168527,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 13,
+      "coefficient": 0.25,
+      "loss": 175.83123779296875,
+      "outcome_sse_per_trajectory": 28.18537221636091,
+      "treatment_ce_sum_per_trajectory": 147.64586574009488,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 14,
+      "coefficient": 0.25,
+      "loss": 170.15868225097657,
+      "outcome_sse_per_trajectory": 22.978347832815988,
+      "treatment_ce_sum_per_trajectory": 147.18033142089843,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 15,
+      "coefficient": 0.25,
+      "loss": 165.70847996303013,
+      "outcome_sse_per_trajectory": 19.321130425589427,
+      "treatment_ce_sum_per_trajectory": 146.3873508998326,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 16,
+      "coefficient": 0.25,
+      "loss": 165.22364632742745,
+      "outcome_sse_per_trajectory": 19.260292761666435,
+      "treatment_ce_sum_per_trajectory": 145.9633540562221,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 17,
+      "coefficient": 0.25,
+      "loss": 162.21470729282925,
+      "outcome_sse_per_trajectory": 16.249782943725585,
+      "treatment_ce_sum_per_trajectory": 145.96492701939175,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 18,
+      "coefficient": 0.25,
+      "loss": 160.7711465018136,
+      "outcome_sse_per_trajectory": 15.066410963875907,
+      "treatment_ce_sum_per_trajectory": 145.70473937988282,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 19,
+      "coefficient": 0.25,
+      "loss": 159.52964608328682,
+      "outcome_sse_per_trajectory": 14.211404555184501,
+      "treatment_ce_sum_per_trajectory": 145.31824428013394,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 20,
+      "coefficient": 0.25,
+      "loss": 157.46642543247768,
+      "outcome_sse_per_trajectory": 12.617681775774274,
+      "treatment_ce_sum_per_trajectory": 144.84873962402344,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 21,
+      "coefficient": 0.25,
+      "loss": 155.17298017229353,
+      "outcome_sse_per_trajectory": 11.014535713195801,
+      "treatment_ce_sum_per_trajectory": 144.15844508579798,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 22,
+      "coefficient": 0.25,
+      "loss": 154.27283543178012,
+      "outcome_sse_per_trajectory": 10.651437568664551,
+      "treatment_ce_sum_per_trajectory": 143.62139500209264,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 23,
+      "coefficient": 0.25,
+      "loss": 152.9139657156808,
+      "outcome_sse_per_trajectory": 9.9492370060512,
+      "treatment_ce_sum_per_trajectory": 142.96472647530692,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 24,
+      "coefficient": 0.25,
+      "loss": 151.97458626883372,
+      "outcome_sse_per_trajectory": 9.328857231140137,
+      "treatment_ce_sum_per_trajectory": 142.6457305908203,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 25,
+      "coefficient": 0.25,
+      "loss": 151.8562469482422,
+      "outcome_sse_per_trajectory": 8.964209270477294,
+      "treatment_ce_sum_per_trajectory": 142.89203796386718,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 26,
+      "coefficient": 0.25,
+      "loss": 151.67202671595982,
+      "outcome_sse_per_trajectory": 8.550617980957032,
+      "treatment_ce_sum_per_trajectory": 143.12140415736607,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 27,
+      "coefficient": 0.25,
+      "loss": 152.48804931640626,
+      "outcome_sse_per_trajectory": 8.451544625418526,
+      "treatment_ce_sum_per_trajectory": 144.03650599888394,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 28,
+      "coefficient": 0.25,
+      "loss": 153.0387712751116,
+      "outcome_sse_per_trajectory": 8.361221803937639,
+      "treatment_ce_sum_per_trajectory": 144.67754734584264,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 29,
+      "coefficient": 0.25,
+      "loss": 154.3044969831194,
+      "outcome_sse_per_trajectory": 8.491586044856481,
+      "treatment_ce_sum_per_trajectory": 145.81291024344307,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 30,
+      "coefficient": 0.25,
+      "loss": 155.42618756975446,
+      "outcome_sse_per_trajectory": 8.578579929896764,
+      "treatment_ce_sum_per_trajectory": 146.8476087297712,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 31,
+      "coefficient": 0.25,
+      "loss": 155.92191336495534,
+      "outcome_sse_per_trajectory": 8.366762011391776,
+      "treatment_ce_sum_per_trajectory": 147.5551470075335,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 32,
+      "coefficient": 0.25,
+      "loss": 156.70070234026227,
+      "outcome_sse_per_trajectory": 8.238122299739294,
+      "treatment_ce_sum_per_trajectory": 148.46258501325335,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 33,
+      "coefficient": 0.25,
+      "loss": 157.09278913225447,
+      "outcome_sse_per_trajectory": 7.89195032119751,
+      "treatment_ce_sum_per_trajectory": 149.20084184919085,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 34,
+      "coefficient": 0.25,
+      "loss": 157.6424320765904,
+      "outcome_sse_per_trajectory": 7.920291423797607,
+      "treatment_ce_sum_per_trajectory": 149.72214137486048,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 35,
+      "coefficient": 0.25,
+      "loss": 158.11793212890626,
+      "outcome_sse_per_trajectory": 7.995053890773228,
+      "treatment_ce_sum_per_trajectory": 150.1228737967355,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 36,
+      "coefficient": 0.25,
+      "loss": 158.06817539760044,
+      "outcome_sse_per_trajectory": 7.803119972773961,
+      "treatment_ce_sum_per_trajectory": 150.26505475725446,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 37,
+      "coefficient": 0.25,
+      "loss": 157.7893859863281,
+      "outcome_sse_per_trajectory": 7.658801637377057,
+      "treatment_ce_sum_per_trajectory": 150.13058515276228,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 38,
+      "coefficient": 0.25,
+      "loss": 157.58551461356026,
+      "outcome_sse_per_trajectory": 7.5100249017987935,
+      "treatment_ce_sum_per_trajectory": 150.0754852294922,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 39,
+      "coefficient": 0.25,
+      "loss": 157.43182111467635,
+      "outcome_sse_per_trajectory": 7.480482605525426,
+      "treatment_ce_sum_per_trajectory": 149.9513397216797,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 40,
+      "coefficient": 0.25,
+      "loss": 157.2224910191127,
+      "outcome_sse_per_trajectory": 7.470693111419678,
+      "treatment_ce_sum_per_trajectory": 149.75179661342077,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 41,
+      "coefficient": 0.25,
+      "loss": 156.86180332728796,
+      "outcome_sse_per_trajectory": 7.128696986607143,
+      "treatment_ce_sum_per_trajectory": 149.73310154506137,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 42,
+      "coefficient": 0.25,
+      "loss": 156.4744833809989,
+      "outcome_sse_per_trajectory": 6.859442152295794,
+      "treatment_ce_sum_per_trajectory": 149.6150373186384,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 43,
+      "coefficient": 0.25,
+      "loss": 156.48063572474888,
+      "outcome_sse_per_trajectory": 6.8961833953857425,
+      "treatment_ce_sum_per_trajectory": 149.5844499860491,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 44,
+      "coefficient": 0.25,
+      "loss": 156.06422729492186,
+      "outcome_sse_per_trajectory": 6.718188217708042,
+      "treatment_ce_sum_per_trajectory": 149.34603751046316,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 45,
+      "coefficient": 0.25,
+      "loss": 155.87130301339286,
+      "outcome_sse_per_trajectory": 6.73166834967477,
+      "treatment_ce_sum_per_trajectory": 149.13963492257255,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 46,
+      "coefficient": 0.25,
+      "loss": 155.43181457519532,
+      "outcome_sse_per_trajectory": 6.60059952054705,
+      "treatment_ce_sum_per_trajectory": 148.83121119907923,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 47,
+      "coefficient": 0.25,
+      "loss": 154.8127445765904,
+      "outcome_sse_per_trajectory": 6.483441911424909,
+      "treatment_ce_sum_per_trajectory": 148.3292999267578,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 48,
+      "coefficient": 0.25,
+      "loss": 154.55464957101003,
+      "outcome_sse_per_trajectory": 6.509065519060408,
+      "treatment_ce_sum_per_trajectory": 148.0455814906529,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 49,
+      "coefficient": 0.25,
+      "loss": 153.91647033691407,
+      "outcome_sse_per_trajectory": 6.4947718892778665,
+      "treatment_ce_sum_per_trajectory": 147.42169625418526,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 50,
+      "coefficient": 0.25,
+      "loss": 153.58260934012276,
+      "outcome_sse_per_trajectory": 6.404581410544259,
+      "treatment_ce_sum_per_trajectory": 147.1780299595424,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 51,
+      "coefficient": 0.25,
+      "loss": 153.33442818777903,
+      "outcome_sse_per_trajectory": 6.476435456957136,
+      "treatment_ce_sum_per_trajectory": 146.85799516950334,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 52,
+      "coefficient": 0.25,
+      "loss": 153.13079180036272,
+      "outcome_sse_per_trajectory": 6.343571649278913,
+      "treatment_ce_sum_per_trajectory": 146.78721705845425,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 53,
+      "coefficient": 0.25,
+      "loss": 152.7735334123884,
+      "outcome_sse_per_trajectory": 6.266161836896624,
+      "treatment_ce_sum_per_trajectory": 146.5073699951172,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 54,
+      "coefficient": 0.25,
+      "loss": 152.68438284737724,
+      "outcome_sse_per_trajectory": 6.230549117497035,
+      "treatment_ce_sum_per_trajectory": 146.4538325718471,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 55,
+      "coefficient": 0.25,
+      "loss": 152.9851034981864,
+      "outcome_sse_per_trajectory": 6.470163386208671,
+      "treatment_ce_sum_per_trajectory": 146.5149431501116,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 56,
+      "coefficient": 0.25,
+      "loss": 153.14334150041853,
+      "outcome_sse_per_trajectory": 6.482768140520368,
+      "treatment_ce_sum_per_trajectory": 146.6605734688895,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 57,
+      "coefficient": 0.25,
+      "loss": 153.27106192452567,
+      "outcome_sse_per_trajectory": 6.19846100125994,
+      "treatment_ce_sum_per_trajectory": 147.07260001046316,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 58,
+      "coefficient": 0.25,
+      "loss": 153.63398960658483,
+      "outcome_sse_per_trajectory": 6.021689360482352,
+      "treatment_ce_sum_per_trajectory": 147.612300327846,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "encoder",
+      "epoch": 59,
+      "coefficient": 0.25,
+      "loss": 154.4536560058594,
+      "outcome_sse_per_trajectory": 6.046919427599225,
+      "treatment_ce_sum_per_trajectory": 148.406733921596,
+      "n_examples": 280,
+      "teacher_forcing": false
+    },
+    {
+      "stage": "decoder",
+      "epoch": 0,
+      "coefficient": 0.2499773010656488,
+      "loss": 72.12467495442827,
+      "outcome_sse_per_trajectory": 19.844422555525867,
+      "treatment_ce_sum_per_trajectory": 52.28025227983213,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 1,
+      "coefficient": 0.24999999896942315,
+      "loss": 55.16244691898802,
+      "outcome_sse_per_trajectory": 2.004007599722192,
+      "treatment_ce_sum_per_trajectory": 53.158439035665886,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 2,
+      "coefficient": 0.24999999999995326,
+      "loss": 54.292531454458874,
+      "outcome_sse_per_trajectory": 1.8773024602812163,
+      "treatment_ce_sum_per_trajectory": 52.41522888317053,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 3,
+      "coefficient": 0.25,
+      "loss": 55.02553650213748,
+      "outcome_sse_per_trajectory": 1.962526355748969,
+      "treatment_ce_sum_per_trajectory": 53.06301013957655,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 4,
+      "coefficient": 0.25,
+      "loss": 54.37151902090356,
+      "outcome_sse_per_trajectory": 1.912596740806068,
+      "treatment_ce_sum_per_trajectory": 52.45892233667846,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 5,
+      "coefficient": 0.25,
+      "loss": 53.14907609144383,
+      "outcome_sse_per_trajectory": 1.7444811310086932,
+      "treatment_ce_sum_per_trajectory": 51.40459495744622,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 6,
+      "coefficient": 0.25,
+      "loss": 53.03321819917106,
+      "outcome_sse_per_trajectory": 1.686401218714589,
+      "treatment_ce_sum_per_trajectory": 51.346816989909804,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 7,
+      "coefficient": 0.25,
+      "loss": 58.4079326262627,
+      "outcome_sse_per_trajectory": 2.949357133008996,
+      "treatment_ce_sum_per_trajectory": 55.45857577977306,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 8,
+      "coefficient": 0.25,
+      "loss": 54.07545668487994,
+      "outcome_sse_per_trajectory": 1.9416371104321049,
+      "treatment_ce_sum_per_trajectory": 52.13381947998403,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 9,
+      "coefficient": 0.25,
+      "loss": 54.94687737334226,
+      "outcome_sse_per_trajectory": 2.08076628943574,
+      "treatment_ce_sum_per_trajectory": 52.86611113478769,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 10,
+      "coefficient": 0.25,
+      "loss": 53.336970241980374,
+      "outcome_sse_per_trajectory": 1.8131031265064161,
+      "treatment_ce_sum_per_trajectory": 51.52386735298891,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 11,
+      "coefficient": 0.25,
+      "loss": 53.72033834652025,
+      "outcome_sse_per_trajectory": 1.8371075270127277,
+      "treatment_ce_sum_per_trajectory": 51.88323086663516,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 12,
+      "coefficient": 0.25,
+      "loss": 53.53692919672752,
+      "outcome_sse_per_trajectory": 1.7896504530753756,
+      "treatment_ce_sum_per_trajectory": 51.74727863055971,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 13,
+      "coefficient": 0.25,
+      "loss": 54.73033497757536,
+      "outcome_sse_per_trajectory": 1.965811477249635,
+      "treatment_ce_sum_per_trajectory": 52.76452364240374,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 14,
+      "coefficient": 0.25,
+      "loss": 53.611032226829415,
+      "outcome_sse_per_trajectory": 1.8086862837955486,
+      "treatment_ce_sum_per_trajectory": 51.802345865321925,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 15,
+      "coefficient": 0.25,
+      "loss": 53.66021595724123,
+      "outcome_sse_per_trajectory": 1.8522493005841536,
+      "treatment_ce_sum_per_trajectory": 51.807966493656615,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 16,
+      "coefficient": 0.25,
+      "loss": 53.70495834350586,
+      "outcome_sse_per_trajectory": 1.843133790638982,
+      "treatment_ce_sum_per_trajectory": 51.86182451164757,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 17,
+      "coefficient": 0.25,
+      "loss": 53.231160042098246,
+      "outcome_sse_per_trajectory": 1.768553370567522,
+      "treatment_ce_sum_per_trajectory": 51.462606635802686,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 18,
+      "coefficient": 0.25,
+      "loss": 54.523772881955516,
+      "outcome_sse_per_trajectory": 1.951541989468277,
+      "treatment_ce_sum_per_trajectory": 52.57223109253641,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 19,
+      "coefficient": 0.25,
+      "loss": 55.04869093380586,
+      "outcome_sse_per_trajectory": 2.1258898780922846,
+      "treatment_ce_sum_per_trajectory": 52.92280092600831,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 20,
+      "coefficient": 0.25,
+      "loss": 53.53653294866356,
+      "outcome_sse_per_trajectory": 1.8574397322040257,
+      "treatment_ce_sum_per_trajectory": 51.67909326136286,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 21,
+      "coefficient": 0.25,
+      "loss": 55.41266562681504,
+      "outcome_sse_per_trajectory": 2.180842681042307,
+      "treatment_ce_sum_per_trajectory": 53.2318229185944,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 22,
+      "coefficient": 0.25,
+      "loss": 53.74577913423321,
+      "outcome_sse_per_trajectory": 1.902796228703535,
+      "treatment_ce_sum_per_trajectory": 51.842982814332835,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 23,
+      "coefficient": 0.25,
+      "loss": 53.70095122534749,
+      "outcome_sse_per_trajectory": 1.8893217416963495,
+      "treatment_ce_sum_per_trajectory": 51.811629332606365,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 24,
+      "coefficient": 0.25,
+      "loss": 53.23131548155848,
+      "outcome_sse_per_trajectory": 1.7667906315611681,
+      "treatment_ce_sum_per_trajectory": 51.46452481684115,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 25,
+      "coefficient": 0.25,
+      "loss": 54.283380404992286,
+      "outcome_sse_per_trajectory": 1.9195226747162488,
+      "treatment_ce_sum_per_trajectory": 52.36385773194427,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 26,
+      "coefficient": 0.25,
+      "loss": 54.076785898903715,
+      "outcome_sse_per_trajectory": 1.934690946462203,
+      "treatment_ce_sum_per_trajectory": 52.14209501972699,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 27,
+      "coefficient": 0.25,
+      "loss": 54.2825138169892,
+      "outcome_sse_per_trajectory": 1.9585217722650867,
+      "treatment_ce_sum_per_trajectory": 52.323992030196564,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 28,
+      "coefficient": 0.25,
+      "loss": 53.88670855152364,
+      "outcome_sse_per_trajectory": 1.7893209704852313,
+      "treatment_ce_sum_per_trajectory": 52.09738749289999,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 29,
+      "coefficient": 0.25,
+      "loss": 54.43482073681,
+      "outcome_sse_per_trajectory": 1.9458866116604374,
+      "treatment_ce_sum_per_trajectory": 52.48893391022529,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 30,
+      "coefficient": 0.25,
+      "loss": 54.15109781426521,
+      "outcome_sse_per_trajectory": 1.9837786712034797,
+      "treatment_ce_sum_per_trajectory": 52.167319137083894,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 31,
+      "coefficient": 0.25,
+      "loss": 54.045742473101825,
+      "outcome_sse_per_trajectory": 1.8967378778985915,
+      "treatment_ce_sum_per_trajectory": 52.14900454640736,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 32,
+      "coefficient": 0.25,
+      "loss": 53.317193561253674,
+      "outcome_sse_per_trajectory": 1.8315103822129808,
+      "treatment_ce_sum_per_trajectory": 51.48568330770331,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 33,
+      "coefficient": 0.25,
+      "loss": 54.28819542042368,
+      "outcome_sse_per_trajectory": 1.9625832632053697,
+      "treatment_ce_sum_per_trajectory": 52.32561225779897,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 34,
+      "coefficient": 0.25,
+      "loss": 53.80559083810701,
+      "outcome_sse_per_trajectory": 1.835768231706091,
+      "treatment_ce_sum_per_trajectory": 51.969822570533864,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 35,
+      "coefficient": 0.25,
+      "loss": 53.82564146303227,
+      "outcome_sse_per_trajectory": 1.8095399639696839,
+      "treatment_ce_sum_per_trajectory": 52.016101418987304,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 36,
+      "coefficient": 0.25,
+      "loss": 53.720610666970124,
+      "outcome_sse_per_trajectory": 1.865466173327699,
+      "treatment_ce_sum_per_trajectory": 51.85514445179753,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 37,
+      "coefficient": 0.25,
+      "loss": 53.58752675181575,
+      "outcome_sse_per_trajectory": 1.8392914787325845,
+      "treatment_ce_sum_per_trajectory": 51.748235494541355,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 38,
+      "coefficient": 0.25,
+      "loss": 53.48847775028329,
+      "outcome_sse_per_trajectory": 1.88617351145508,
+      "treatment_ce_sum_per_trajectory": 51.60230421060724,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 39,
+      "coefficient": 0.25,
+      "loss": 53.899151135325084,
+      "outcome_sse_per_trajectory": 1.9250097014813659,
+      "treatment_ce_sum_per_trajectory": 51.974141488478416,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 40,
+      "coefficient": 0.25,
+      "loss": 54.382828953245294,
+      "outcome_sse_per_trajectory": 1.9768568090377674,
+      "treatment_ce_sum_per_trajectory": 52.405972100972434,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 41,
+      "coefficient": 0.25,
+      "loss": 53.764959785750584,
+      "outcome_sse_per_trajectory": 1.8850443149099545,
+      "treatment_ce_sum_per_trajectory": 51.879915552167084,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 42,
+      "coefficient": 0.25,
+      "loss": 54.0124020078787,
+      "outcome_sse_per_trajectory": 1.9531493268277138,
+      "treatment_ce_sum_per_trajectory": 52.05925255600287,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 43,
+      "coefficient": 0.25,
+      "loss": 54.46403996103359,
+      "outcome_sse_per_trajectory": 1.9727526727292697,
+      "treatment_ce_sum_per_trajectory": 52.49128728482883,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 44,
+      "coefficient": 0.25,
+      "loss": 54.304511801494456,
+      "outcome_sse_per_trajectory": 1.9750576515587008,
+      "treatment_ce_sum_per_trajectory": 52.329454107256744,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 45,
+      "coefficient": 0.25,
+      "loss": 53.76435364703743,
+      "outcome_sse_per_trajectory": 1.8328469436300738,
+      "treatment_ce_sum_per_trajectory": 51.93150672801382,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 46,
+      "coefficient": 0.25,
+      "loss": 54.44090462064604,
+      "outcome_sse_per_trajectory": 2.000633206520414,
+      "treatment_ce_sum_per_trajectory": 52.44027140759171,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 47,
+      "coefficient": 0.25,
+      "loss": 54.150916841912895,
+      "outcome_sse_per_trajectory": 1.8827142035648357,
+      "treatment_ce_sum_per_trajectory": 52.26820277667254,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 48,
+      "coefficient": 0.25,
+      "loss": 54.81371714199945,
+      "outcome_sse_per_trajectory": 2.0666229397492923,
+      "treatment_ce_sum_per_trajectory": 52.74709415936262,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 49,
+      "coefficient": 0.25,
+      "loss": 54.58202504639028,
+      "outcome_sse_per_trajectory": 2.005102973637706,
+      "treatment_ce_sum_per_trajectory": 52.57692196014671,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 50,
+      "coefficient": 0.25,
+      "loss": 54.25673514051966,
+      "outcome_sse_per_trajectory": 2.0127633301926773,
+      "treatment_ce_sum_per_trajectory": 52.243971606107216,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 51,
+      "coefficient": 0.25,
+      "loss": 53.850491918002206,
+      "outcome_sse_per_trajectory": 1.9603232841797542,
+      "treatment_ce_sum_per_trajectory": 51.89016864209412,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 52,
+      "coefficient": 0.25,
+      "loss": 53.38781780988065,
+      "outcome_sse_per_trajectory": 1.8788073620365242,
+      "treatment_ce_sum_per_trajectory": 51.509010319390036,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 53,
+      "coefficient": 0.25,
+      "loss": 54.144825290869,
+      "outcome_sse_per_trajectory": 1.9610081613585135,
+      "treatment_ce_sum_per_trajectory": 52.18381702656649,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 54,
+      "coefficient": 0.25,
+      "loss": 54.60433649001942,
+      "outcome_sse_per_trajectory": 2.0536108701639204,
+      "treatment_ce_sum_per_trajectory": 52.550725564317176,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 55,
+      "coefficient": 0.25,
+      "loss": 53.64575164172114,
+      "outcome_sse_per_trajectory": 1.9646925865039881,
+      "treatment_ce_sum_per_trajectory": 51.6810590271352,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 56,
+      "coefficient": 0.25,
+      "loss": 53.5826898602633,
+      "outcome_sse_per_trajectory": 1.9416722605596826,
+      "treatment_ce_sum_per_trajectory": 51.64101767136821,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 57,
+      "coefficient": 0.25,
+      "loss": 53.527737142045716,
+      "outcome_sse_per_trajectory": 1.83301704965597,
+      "treatment_ce_sum_per_trajectory": 51.69472018316953,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 58,
+      "coefficient": 0.25,
+      "loss": 53.82172079280931,
+      "outcome_sse_per_trajectory": 1.919842361291713,
+      "treatment_ce_sum_per_trajectory": 51.90187858603786,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    },
+    {
+      "stage": "decoder",
+      "epoch": 59,
+      "coefficient": 0.25,
+      "loss": 53.390182379452895,
+      "outcome_sse_per_trajectory": 1.8796824919586625,
+      "treatment_ce_sum_per_trajectory": 51.51049974847466,
+      "n_examples": 13720,
+      "teacher_forcing": true
+    }
+  ],
+  "finite": true,
+  "history_checks": {
+    "protocol": "onset_matched",
+    "switch_s": 4320.0,
+    "n_pre_switch_samples": 15,
+    "history_identical": true,
+    "n_treated_alternative_samples_before_switch": 0,
+    "n_treated_alternative_samples_before_factual_onset": 0,
+    "first_scored_min": 75.0,
+    "n_scored_times": 21
+  },
+  "balancing_target": {
+    "quantity": "assigned eventual factual dose",
+    "distribution": {
+      "all": {
+        "n": 400,
+        "n_unique": 400,
+        "min": 0.00012423434236552566,
+        "max": 0.49975067377090454,
+        "mean": 0.24935534682252183,
+        "std": 0.1485130517439786,
+        "quantiles": [
+          0.00012423434236552566,
+          0.018802131526172165,
+          0.12045067735016346,
+          0.25093473494052887,
+          0.37404972314834595,
+          0.4809814557433128,
+          0.49975067377090454
+        ],
+        "histogram_counts": [
+          43,
+          47,
+          32,
+          43,
+          35,
+          34,
+          42,
+          43,
+          38,
+          43
+        ],
+        "histogram_edges": [
+          0.0,
+          0.05,
+          0.1,
+          0.15000000000000002,
+          0.2,
+          0.25,
+          0.30000000000000004,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5
+        ]
+      },
+      "train": {
+        "n": 280,
+        "n_unique": 280,
+        "min": 0.00012423434236552566,
+        "max": 0.49605000019073486,
+        "mean": 0.23864142265639593,
+        "std": 0.1464852814121636,
+        "quantiles": [
+          0.00012423434236552566,
+          0.01941324658691883,
+          0.10562241822481155,
+          0.22832728922367096,
+          0.3706137388944626,
+          0.46993518024683,
+          0.49605000019073486
+        ],
+        "histogram_counts": [
+          31,
+          35,
+          28,
+          32,
+          23,
+          26,
+          24,
+          27,
+          29,
+          25
+        ],
+        "histogram_edges": [
+          0.0,
+          0.05,
+          0.1,
+          0.15000000000000002,
+          0.2,
+          0.25,
+          0.30000000000000004,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5
+        ]
+      },
+      "test": {
+        "n": 120,
+        "n_unique": 120,
+        "min": 0.0007016577874310315,
+        "max": 0.49975067377090454,
+        "mean": 0.2743545032101489,
+        "std": 0.15019688304882778,
+        "quantiles": [
+          0.0007016577874310315,
+          0.01688363119028509,
+          0.16139251366257668,
+          0.3064873218536377,
+          0.3866785615682602,
+          0.49183294326066973,
+          0.49975067377090454
+        ],
+        "histogram_counts": [
+          12,
+          12,
+          4,
+          11,
+          12,
+          8,
+          18,
+          16,
+          9,
+          18
+        ],
+        "histogram_edges": [
+          0.0,
+          0.05,
+          0.1,
+          0.15000000000000002,
+          0.2,
+          0.25,
+          0.30000000000000004,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5
+        ]
+      }
+    },
+    "used_as_input": false,
+    "auxiliary_multiplier": null
+  },
+  "support": {
+    "severity_cutpoints": [
+      0.4466419517993927,
+      0.6863279938697815
+    ],
+    "supported_dose_ranges": [
+      [
+        0.022988704964518547,
+        0.4810364365577698
+      ],
+      [
+        0.03560256212949753,
+        0.4769880175590515
+      ],
+      [
+        0.00803940931800753,
+        0.48188069909811015
+      ]
+    ],
+    "supported_grid": [
+      [
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        true,
+        true,
+        true,
+        true
+      ]
+    ],
+    "n_supported_tercile_dose_cells": 12,
+    "n_tercile_dose_cells": 15,
+    "fraction_grid_supported_by_tercile": [
+      0.8,
+      0.8,
+      0.8
+    ],
+    "all_terciles_full_support": false
+  },
+  "dataset": {
+    "path": "experiments/counterfactual_onset_matched/artifacts/datasets/8a62e1e4df590c00c9bd.npz",
+    "sha256": "f640b2a41740145e9b7127d03de2c0444db006148656ab0d393c9d0889635c0e",
+    "metadata": {
+      "schema_version": 3,
+      "family": "legacy",
+      "point": 0,
+      "confound": 0.0,
+      "sigma": 0.0,
+      "seed": 0,
+      "n_patients": 400,
+      "kappa": 1.0,
+      "out_dt": 300.0,
+      "C": 12,
+      "K": 24,
+      "horizon_h": 6.0,
+      "cf_protocol": "onset_matched",
+      "switch_s": 4320.0,
+      "factual_dose_onset_s": 4320.0,
+      "integration_dt": 0.5,
+      "warmup_s": 180.0,
+      "score_indices": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "policy": {
+        "family": "legacy",
+        "confound": 0.0,
+        "sigma": 0.0,
+        "equation": "clip(c*0.5*severity + (1-c)*Uniform(0,0.5) + Normal(0,sigma),0,0.5)",
+        "statistics": {
+          "spearman": 0.03127632047700298,
+          "pearson": 0.0315847190957673,
+          "severity_cutpoints": [
+            0.4466419517993927,
+            0.6863279938697815
+          ],
+          "terciles": [
+            {
+              "tercile": 0,
+              "n": 133,
+              "q05": 0.022988704964518547,
+              "q95": 0.4810364365577698,
+              "width_05_95": 0.45804773159325124,
+              "min": 0.0007898092735558748,
+              "max": 0.49825194478034973,
+              "supported_grid": [
+                false,
+                true,
+                true,
+                true,
+                true
+              ],
+              "distribution": {
+                "n": 133,
+                "n_unique": 133,
+                "min": 0.0007898092735558748,
+                "max": 0.49825194478034973,
+                "mean": 0.25167891044428753,
+                "std": 0.1445808443378851,
+                "quantiles": [
+                  0.0007898092735558748,
+                  0.022988704964518547,
+                  0.13585950434207916,
+                  0.2528570890426636,
+                  0.37290847301483154,
+                  0.4810364365577698,
+                  0.49825194478034973
+                ],
+                "histogram_counts": [
+                  13,
+                  18,
+                  5,
+                  16,
+                  14,
+                  11,
+                  17,
+                  13,
+                  12,
+                  14
+                ],
+                "histogram_edges": [
+                  0.0,
+                  0.05,
+                  0.1,
+                  0.15000000000000002,
+                  0.2,
+                  0.25,
+                  0.30000000000000004,
+                  0.35000000000000003,
+                  0.4,
+                  0.45,
+                  0.5
+                ]
+              }
+            },
+            {
+              "tercile": 1,
+              "n": 133,
+              "q05": 0.03560256212949753,
+              "q95": 0.4769880175590515,
+              "width_05_95": 0.441385455429554,
+              "min": 0.00012423434236552566,
+              "max": 0.498604953289032,
+              "supported_grid": [
+                false,
+                true,
+                true,
+                true,
+                true
+              ],
+              "distribution": {
+                "n": 133,
+                "n_unique": 133,
+                "min": 0.00012423434236552566,
+                "max": 0.498604953289032,
+                "mean": 0.23830362522869136,
+                "std": 0.1477889622537116,
+                "quantiles": [
+                  0.00012423434236552566,
+                  0.03560256212949753,
+                  0.10826414823532104,
+                  0.22131773829460144,
+                  0.35821041464805603,
+                  0.4769880175590515,
+                  0.498604953289032
+                ],
+                "histogram_counts": [
+                  13,
+                  18,
+                  15,
+                  16,
+                  11,
+                  11,
+                  11,
+                  13,
+                  9,
+                  16
+                ],
+                "histogram_edges": [
+                  0.0,
+                  0.05,
+                  0.1,
+                  0.15000000000000002,
+                  0.2,
+                  0.25,
+                  0.30000000000000004,
+                  0.35000000000000003,
+                  0.4,
+                  0.45,
+                  0.5
+                ]
+              }
+            },
+            {
+              "tercile": 2,
+              "n": 134,
+              "q05": 0.00803940931800753,
+              "q95": 0.48188069909811015,
+              "width_05_95": 0.47384128978010265,
+              "min": 0.0007016577874310315,
+              "max": 0.49975067377090454,
+              "supported_grid": [
+                false,
+                true,
+                true,
+                true,
+                true
+              ],
+              "distribution": {
+                "n": 134,
+                "n_unique": 134,
+                "min": 0.0007016577874310315,
+                "max": 0.49975067377090454,
+                "mean": 0.25801836928733235,
+                "std": 0.152352696491474,
+                "quantiles": [
+                  0.0007016577874310315,
+                  0.00803940931800753,
+                  0.12500072829425335,
+                  0.2817408889532089,
+                  0.3810983896255493,
+                  0.48188069909811015,
+                  0.49975067377090454
+                ],
+                "histogram_counts": [
+                  17,
+                  11,
+                  12,
+                  11,
+                  10,
+                  12,
+                  14,
+                  17,
+                  17,
+                  13
+                ],
+                "histogram_edges": [
+                  0.0,
+                  0.05,
+                  0.1,
+                  0.15000000000000002,
+                  0.2,
+                  0.25,
+                  0.30000000000000004,
+                  0.35000000000000003,
+                  0.4,
+                  0.45,
+                  0.5
+                ]
+              }
+            }
+          ],
+          "support_fraction": 0.8,
+          "target_distribution": {
+            "n": 400,
+            "n_unique": 400,
+            "min": 0.00012423434236552566,
+            "max": 0.49975067377090454,
+            "mean": 0.24935534682252183,
+            "std": 0.1485130517439786,
+            "quantiles": [
+              0.00012423434236552566,
+              0.018802131526172165,
+              0.12045067735016346,
+              0.25093473494052887,
+              0.37404972314834595,
+              0.4809814557433128,
+              0.49975067377090454
+            ],
+            "histogram_counts": [
+              43,
+              47,
+              32,
+              43,
+              35,
+              34,
+              42,
+              43,
+              38,
+              43
+            ],
+            "histogram_edges": [
+              0.0,
+              0.05,
+              0.1,
+              0.15000000000000002,
+              0.2,
+              0.25,
+              0.30000000000000004,
+              0.35000000000000003,
+              0.4,
+              0.45,
+              0.5
+            ]
+          }
+        }
+      },
+      "scoring": "Strictly post-switch samples inside the C:C+K rollout; pre-switch samples excluded.",
+      "boundary_note": "Frozen RK4: the whole step ending at switch uses the factual schedule, including its endpoint stage; all branches share that state (historical_experiment convention).",
+      "code_sha256": {
+        "experiments/counterfactual_onset_matched/sim_policy_ext3.py": "21f001f0164b1900193ed085db86fb5d95b5c61a7d26753fd4f1abdf01b6c629",
+        "sim/sim_policy_ext2.py": "ec7ea141a631e4d8e07a1a5b80ce9d6da8c57a2d1e22289250382f5e5f5de777",
+        "sim/sim_policy_ext.py": "fcc48abf17728656c18bc4e57b23029f2887effefef191b799c3396cd964f5b7",
+        "src/cvsim_hemodynamics_simulator.py": "7cf88f7918b698a03e09b5efc5dfd2691fb44b2550df861f6ea7d54ef5868af0"
+      },
+      "history_checks": {
+        "protocol": "onset_matched",
+        "switch_s": 4320.0,
+        "n_pre_switch_samples": 15,
+        "history_identical": true,
+        "n_treated_alternative_samples_before_switch": 0,
+        "n_treated_alternative_samples_before_factual_onset": 0,
+        "first_scored_min": 75.0,
+        "n_scored_times": 21
+      }
+    },
+    "train_indices": [
+      157,
+      162,
+      355,
+      211,
+      11,
+      52,
+      125,
+      382,
+      118,
+      280,
+      89,
+      374,
+      261,
+      372,
+      307,
+      385,
+      341,
+      180,
+      387,
+      303,
+      183,
+      248,
+      126,
+      199,
+      194,
+      98,
+      119,
+      93,
+      391,
+      231,
+      256,
+      135,
+      197,
+      270,
+      71,
+      32,
+      154,
+      144,
+      23,
+      192,
+      279,
+      338,
+      258,
+      6,
+      288,
+      90,
+      112,
+      333,
+      352,
+      399,
+      283,
+      48,
+      222,
+      145,
+      209,
+      168,
+      108,
+      321,
+      104,
+      176,
+      210,
+      395,
+      12,
+      386,
+      380,
+      253,
+      300,
+      53,
+      29,
+      18,
+      243,
+      305,
+      175,
+      240,
+      148,
+      28,
+      226,
+      250,
+      301,
+      397,
+      347,
+      158,
+      86,
+      309,
+      361,
+      237,
+      349,
+      0,
+      354,
+      251,
+      31,
+      25,
+      42,
+      136,
+      56,
+      272,
+      113,
+      295,
+      82,
+      177,
+      297,
+      267,
+      266,
+      229,
+      147,
+      218,
+      276,
+      383,
+      299,
+      51,
+      342,
+      139,
+      81,
+      129,
+      212,
+      114,
+      206,
+      78,
+      153,
+      214,
+      375,
+      260,
+      330,
+      67,
+      292,
+      79,
+      54,
+      182,
+      393,
+      171,
+      130,
+      329,
+      245,
+      203,
+      196,
+      134,
+      40,
+      107,
+      235,
+      50,
+      334,
+      348,
+      247,
+      366,
+      26,
+      97,
+      351,
+      293,
+      259,
+      368,
+      216,
+      198,
+      315,
+      246,
+      61,
+      65,
+      166,
+      36,
+      310,
+      244,
+      5,
+      331,
+      238,
+      59,
+      70,
+      150,
+      174,
+      181,
+      45,
+      215,
+      127,
+      296,
+      376,
+      38,
+      277,
+      80,
+      265,
+      389,
+      302,
+      312,
+      74,
+      47,
+      15,
+      275,
+      22,
+      364,
+      170,
+      337,
+      165,
+      142,
+      201,
+      39,
+      271,
+      269,
+      17,
+      304,
+      10,
+      164,
+      319,
+      155,
+      186,
+      35,
+      179,
+      363,
+      55,
+      370,
+      390,
+      110,
+      360,
+      340,
+      357,
+      173,
+      116,
+      76,
+      123,
+      242,
+      326,
+      394,
+      184,
+      8,
+      365,
+      227,
+      151,
+      290,
+      204,
+      87,
+      140,
+      69,
+      323,
+      178,
+      100,
+      111,
+      146,
+      2,
+      138,
+      298,
+      92,
+      27,
+      33,
+      345,
+      161,
+      66,
+      291,
+      169,
+      318,
+      377,
+      143,
+      4,
+      14,
+      234,
+      172,
+      200,
+      191,
+      132,
+      75,
+      241,
+      324,
+      120,
+      141,
+      91,
+      263,
+      353,
+      373,
+      327,
+      332,
+      13,
+      94,
+      115,
+      384,
+      232,
+      223,
+      392,
+      336,
+      83,
+      362,
+      95,
+      379,
+      294,
+      236,
+      282
+    ],
+    "test_indices": [
+      96,
+      230,
+      308,
+      325,
+      117,
+      1,
+      7,
+      306,
+      314,
+      131,
+      281,
+      220,
+      84,
+      225,
+      30,
+      284,
+      254,
+      371,
+      9,
+      133,
+      396,
+      249,
+      217,
+      44,
+      85,
+      19,
+      378,
+      49,
+      359,
+      274,
+      381,
+      322,
+      398,
+      156,
+      317,
+      205,
+      62,
+      252,
+      264,
+      88,
+      369,
+      63,
+      262,
+      163,
+      34,
+      285,
+      149,
+      255,
+      21,
+      137,
+      167,
+      189,
+      102,
+      72,
+      313,
+      3,
+      320,
+      358,
+      335,
+      187,
+      268,
+      160,
+      289,
+      343,
+      20,
+      73,
+      346,
+      68,
+      124,
+      101,
+      316,
+      41,
+      388,
+      311,
+      152,
+      219,
+      103,
+      43,
+      221,
+      239,
+      128,
+      188,
+      60,
+      190,
+      195,
+      233,
+      58,
+      202,
+      208,
+      64,
+      207,
+      106,
+      46,
+      16,
+      350,
+      24,
+      367,
+      77,
+      344,
+      57,
+      278,
+      257,
+      121,
+      185,
+      122,
+      109,
+      224,
+      159,
+      228,
+      273,
+      339,
+      105,
+      37,
+      213,
+      287,
+      286,
+      99,
+      356,
+      328,
+      193
+    ]
+  },
+  "normalization": {
+    "mean": [
+      84.77824401855469,
+      75.30191802978516,
+      4.758962631225586,
+      7.439136505126953,
+      1.3943800926208496,
+      2.1142985820770264
+    ],
+    "std": [
+      10.601568222045898,
+      8.390108108520508,
+      0.7228438854217529,
+      3.2833728790283203,
+      0.2537924349308014,
+      1.3984776735305786
+    ],
+    "scope": "Factual training patients, all times; unchanged BASE_SIM loader"
+  },
+  "code_sha256": {
+    "experiments/counterfactual_onset_matched/sim_grid_runner3.py": "81d423992cf15baee99bddf0a32197f00e7d6aafcf08ef726851ae52c857e931",
+    "src/cvsim_counterfactual_runner.py": "3ad387cb86f27be6449a2404a31efece64a197f6a17cacd0836ac2698e4b988c",
+    "src/organ_graph_ssm_model.py": "3426f8aa61ddcac3740ca4a0d799c25a421d91950cf773c957b68513232ac615",
+    "sim/sim_grid_runner.py": "b66d61b4fb18f7be97bc893ae9400d1fad7039d75a779e859ec3589e05e4dd07",
+    "baselines/crn_full_v2.py": "d93bfec3ff78a1a47e74e1bb79835693fd365b18f60d96987bf6706567820537"
+  },
+  "artifacts": {
+    "experiments/counterfactual_onset_matched/artifacts/host/crn_diagnostic/lambda0.25/epochs120/seed2/model.pt": "70238e3ab761908a4c7770654ef677f32142be6705a288b2d99a9d78ebe68efa",
+    "experiments/counterfactual_onset_matched/artifacts/host/crn_diagnostic/lambda0.25/epochs120/seed2/predictions.npz": "da1e6c125f894bd9b1513e0f7862e980bcbec3669f127eaa9067dded1c8e2a0f"
+  },
+  "timing": {
+    "data_seconds": 0.191704080440104,
+    "training_seconds": 202.0864892359823,
+    "total_seconds": 202.38956901058555
+  },
+  "notes": [
+    "All predictions use only factual context and the specified alternative plan.",
+    "Full rollout includes the untreated prefix; scores use strictly post-switch samples.",
+    "CRN-lite MSE balancing probes conditional mean assignment signal; it does not prove independence or identification.",
+    "Continuous-dose CRN keeps historical_experiment adaptation, stage split, loss and dropout; lambda=0 retains the same full architecture.",
+    "Physical-unit RMSE is reported; no new fixed-range NRMSE denominator is introduced."
+  ]
+}

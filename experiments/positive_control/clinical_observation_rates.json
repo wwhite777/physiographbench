@@ -1,0 +1,54 @@
+{
+  "path": "data/cinc2019_cohort.npz",
+  "sha256": "d52d8131323fc7a3838ae4fe523c2edbc02d2daa781de1859e7d184897dfb51f",
+  "cohorts": {
+    "A_train": {
+      "n_patients": 14236,
+      "valid_hours": 505935,
+      "counts": {
+        "Creatinine": 33911,
+        "BUN": 41639,
+        "Lactate": 17484
+      },
+      "rates": {
+        "Creatinine": 0.06702639667150918,
+        "BUN": 0.08230108610789924,
+        "Lactate": 0.0345577989267396
+      },
+      "renal_union_count": 41865,
+      "renal_union_rate": 0.08274778380622017
+    },
+    "A_all": {
+      "n_patients": 20336,
+      "valid_hours": 722051,
+      "counts": {
+        "Creatinine": 48320,
+        "BUN": 59297,
+        "Lactate": 25199
+      },
+      "rates": {
+        "Creatinine": 0.06692048068626731,
+        "BUN": 0.0821230079315727,
+        "Lactate": 0.034899196871135144
+      },
+      "renal_union_count": 59594,
+      "renal_union_rate": 0.08253433621724782
+    },
+    "B_all": {
+      "n_patients": 20000,
+      "valid_hours": 695090,
+      "counts": {
+        "Creatinine": 38601,
+        "BUN": 38567,
+        "Lactate": 13053
+      },
+      "rates": {
+        "Creatinine": 0.055533815764864984,
+        "BUN": 0.05548490123581119,
+        "Lactate": 0.018778863168798284
+      },
+      "renal_union_count": 38606,
+      "renal_union_rate": 0.055541009077961126
+    }
+  }
+}

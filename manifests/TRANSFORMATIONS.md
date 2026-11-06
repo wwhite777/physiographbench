@@ -82,3 +82,57 @@ independent scientific review or a repeat of the complete training series.
     the CPU smoke fits one 64-stay, single-epoch within-corpus GRU and reports the
     absent source-checkpoint prerequisite for transfer. Frozen results, including
     numeric JSON leaves and original fingerprints, are copied without changes.
+
+12. Round-4 experiment distribution adds the positive control, shared-input
+    primary/budget experiments, onset-matched counterfactuals, learned-graph
+    validation, paired-statistics records and measured compute accounting.
+    Copied JSON keeps every numeric, Boolean and null token byte-identical in
+    its original traversal order. Only string tokens are relocated/reworded;
+    original fingerprints are historical and remain unchanged, except each
+    positive-control dataset manifest's output fingerprint, which identifies
+    its distributed archive. Both archive fingerprints remain in this inventory.
+    Historical private root prefixes become repository-relative paths. Selected
+    experiment sources map to their experiments/ or analysis/ directory;
+    simulator dependencies map to sim/, graph adapters to baselines/, clinical
+    diagnostics to diagnostics/ and existing aggregate tables to results/.
+    Unbundled provenance is retained as a historical locator and does not imply
+    that those files ship. No original result or scientific number is replaced.
+
+    The three positive-control NPZ archives replace only metadata_json.npy.
+    All other uncompressed NPY members, including dtype, shape and payload,
+    remain byte-identical. The embedded metadata changes only JSON strings.
+    The clinical observation-rate snapshot is extracted from the original
+    κ=1 metadata and lets the synthetic generator operate without patient data.
+    The registered design fingerprint and its pre-result UTC timestamp remain
+    original; the sanitized design has a separate distributed fingerprint.
+
+    Python entry points add the common release bootstrap and use the existing
+    src/, sim/, tools/ and baselines/ modules. The shared-input runner loads the
+    prior edge diagnostic with its own helper to preserve correct module-local
+    paths, then restores the primary runner's helper. Source integrity checks
+    use distributed code fingerprints while run records preserve original ones.
+    Training, model construction, graph draws, split, selection and scoring
+    equations are retained. Launchers default to fresh runs/ output directories,
+    accept --dry-run, resolve from the repository root and preserve preflight
+    refusal of existing outputs. A separately named matched-control group lists
+    the four addendum Control-GRU fits; the default counterfactual plan stays
+    at 184 fits. The E5 planners print a portable python3 command. No training
+    or external data access occurs merely to enumerate plans.
+
+    Paired-statistics --verify recomputes saved paired t arithmetic and MDD
+    power without checking unavailable historical bytes. --dry-run inventories
+    prerequisites. Full historical recomputation is explicit through
+    --source-root and requires the omitted original error/prediction inputs.
+    --check-original-inputs checks original fingerprints only when those bytes
+    are supplied. The public counterfactual artifact verifier checks the 188
+    complete, finite run records and the command plans; it does not pretend to
+    inspect omitted private smoke or prediction archives. The original
+    scientific missing-array and dataset-hash qualifications remain in place.
+
+    New test path assertions use the release layout and frozen edge-check
+    records where full clinical run records are optional. The inherited smoke
+    fitting test and three experiment fitting tests gain an environment guard:
+    PHYSIOGRAPH_NO_TRAINING=1 reports explicit skips. All other scientific test
+    assertions are retained. pytest is added to the pinned verification
+    requirements. Package READMEs, notes, the release section and citation
+    version/date are documentation additions; the MIT license is unchanged.

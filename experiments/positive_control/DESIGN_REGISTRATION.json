@@ -1,0 +1,6 @@
+{
+  "design_sha256": "2da026b680606b650e05638e4cb9ce1686feb6d35a8d181ee662a65fed0a09e6",
+  "design_written_utc": "2026-11-05T13:32:20.210412+00:00",
+  "implementation_written_utc": "2026-11-05T13:35:10.127874+00:00",
+  "status": "Design written before implementation and before any E1 result; no held-out tuning authorized."
+}
