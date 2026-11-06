@@ -1,6 +1,7 @@
 # PhysioGraphBench v1.1.2 wording correction
 
-Version 1.1.2 changes documentation only. Code, results, tests, records and the
+Version 1.1.2 changes documentation only and is archived as
+[10.5281/zenodo.23996559](https://doi.org/10.5281/zenodo.23996559). Code, results, tests, records and the
 leaderboard are byte-identical to v1.1.1, and v1.1.1 preserves the v1.1.0 code
 and results. The concept DOI is
 [10.5281/zenodo.23976171](https://doi.org/10.5281/zenodo.23976171); the selected

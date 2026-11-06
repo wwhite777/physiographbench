@@ -14,7 +14,8 @@ links its saved metrics, paired intervals, assumptions and rerun prerequisites.
 The concept DOI is [10.5281/zenodo.23976171](https://doi.org/10.5281/zenodo.23976171);
 the v1.1.0 record is [10.5281/zenodo.23992302](https://doi.org/10.5281/zenodo.23992302).
 The selected per-seed checkpoints are in a separate Zenodo record,
-[10.5281/zenodo.23993257](https://doi.org/10.5281/zenodo.23993257); this update does not assert a new archival record of the code.
+[10.5281/zenodo.23993257](https://doi.org/10.5281/zenodo.23993257); version 1.1.2 of the code is archived as
+[10.5281/zenodo.23996559](https://doi.org/10.5281/zenodo.23996559).
 
 ## 1. Environment and distribution integrity
 
