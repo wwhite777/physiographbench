@@ -1,4 +1,4 @@
-# Reproduce PhysioGraphBench v1.1.2 and its v5 findings
+# Reproduce PhysioGraphBench v1.2.0 and its v5 findings
 
 Run commands below from the repository root. The software is a benchmark and
 includes both supported findings and negative controls. No raw data, trained

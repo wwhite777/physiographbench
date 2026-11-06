@@ -1,0 +1,1365 @@
+{
+  "method": "Counts of distributed rows; eligibility length>=24; observed target entries at hours 12..23 only. No inference, fitting, or raw-data linkage.",
+  "inputs": {
+    "data/cinc2019_cohort.npz": {
+      "sha256": "d52d8131323fc7a3838ae4fe523c2edbc02d2daa781de1859e7d184897dfb51f"
+    },
+    "data/cinc2012/cinc2012_cohort.npz": {
+      "sha256": "f3de48a075d671a92aeae6c254063dbfe036f9d8760d0a3a1423fdb1942550b8"
+    }
+  },
+  "cohorts": [
+    {
+      "name": "CinC-2019 A",
+      "n": 20336,
+      "n_eligible": 15837,
+      "n_ineligible": 4499,
+      "groups": {
+        "Age <18": {
+          "n": 0,
+          "denominator": 20336,
+          "n_eligible": 0,
+          "eligible_denominator": 15837,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            },
+            "pulmonary": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            },
+            "renal": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            },
+            "metabolic": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            }
+          }
+        },
+        "Age 18--44": {
+          "n": 3001,
+          "denominator": 20336,
+          "n_eligible": 2240,
+          "eligible_denominator": 15837,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 82925,
+              "possible": 107520,
+              "fraction": 0.7712518601190477
+            },
+            "pulmonary": {
+              "observed": 52066,
+              "possible": 107520,
+              "fraction": 0.4842447916666667
+            },
+            "renal": {
+              "observed": 6090,
+              "possible": 80640,
+              "fraction": 0.07552083333333333
+            },
+            "metabolic": {
+              "observed": 15042,
+              "possible": 134400,
+              "fraction": 0.11191964285714286
+            }
+          }
+        },
+        "Age 45--64": {
+          "n": 7315,
+          "denominator": 20336,
+          "n_eligible": 5602,
+          "eligible_denominator": 15837,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 219106,
+              "possible": 268896,
+              "fraction": 0.8148354754254433
+            },
+            "pulmonary": {
+              "observed": 134898,
+              "possible": 268896,
+              "fraction": 0.5016735094609068
+            },
+            "renal": {
+              "observed": 15171,
+              "possible": 201672,
+              "fraction": 0.07522610972271808
+            },
+            "metabolic": {
+              "observed": 41752,
+              "possible": 336120,
+              "fraction": 0.12421754135427823
+            }
+          }
+        },
+        "Age 65--79": {
+          "n": 6975,
+          "denominator": 20336,
+          "n_eligible": 5519,
+          "eligible_denominator": 15837,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 220753,
+              "possible": 264912,
+              "fraction": 0.8333069094642749
+            },
+            "pulmonary": {
+              "observed": 136701,
+              "possible": 264912,
+              "fraction": 0.5160241891647037
+            },
+            "renal": {
+              "observed": 14953,
+              "possible": 198684,
+              "fraction": 0.07526021219625133
+            },
+            "metabolic": {
+              "observed": 44613,
+              "possible": 331140,
+              "fraction": 0.13472549374886755
+            }
+          }
+        },
+        "Age >=80": {
+          "n": 3045,
+          "denominator": 20336,
+          "n_eligible": 2476,
+          "eligible_denominator": 15837,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 96935,
+              "possible": 118848,
+              "fraction": 0.8156216343564889
+            },
+            "pulmonary": {
+              "observed": 60404,
+              "possible": 118848,
+              "fraction": 0.5082458266020463
+            },
+            "renal": {
+              "observed": 6330,
+              "possible": 89136,
+              "fraction": 0.07101507808292945
+            },
+            "metabolic": {
+              "observed": 18249,
+              "possible": 148560,
+              "fraction": 0.12283925686591277
+            }
+          }
+        },
+        "Age unavailable": {
+          "n": 0,
+          "denominator": 20336,
+          "n_eligible": 0,
+          "eligible_denominator": 15837,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            },
+            "pulmonary": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            },
+            "renal": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            },
+            "metabolic": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            }
+          }
+        },
+        "Female-coded (0)": {
+          "n": 8502,
+          "denominator": 20336,
+          "n_eligible": 6730,
+          "eligible_denominator": 15837,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 260512,
+              "possible": 323040,
+              "fraction": 0.8064388311045072
+            },
+            "pulmonary": {
+              "observed": 162917,
+              "possible": 323040,
+              "fraction": 0.5043245418524022
+            },
+            "renal": {
+              "observed": 17880,
+              "possible": 242280,
+              "fraction": 0.07379891035165924
+            },
+            "metabolic": {
+              "observed": 48990,
+              "possible": 403800,
+              "fraction": 0.1213224368499257
+            }
+          }
+        },
+        "Male-coded (1)": {
+          "n": 11834,
+          "denominator": 20336,
+          "n_eligible": 9107,
+          "eligible_denominator": 15837,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 359207,
+              "possible": 437136,
+              "fraction": 0.8217282493320157
+            },
+            "pulmonary": {
+              "observed": 221152,
+              "possible": 437136,
+              "fraction": 0.5059112038358772
+            },
+            "renal": {
+              "observed": 24664,
+              "possible": 327852,
+              "fraction": 0.07522906677403218
+            },
+            "metabolic": {
+              "observed": 70666,
+              "possible": 546420,
+              "fraction": 0.12932542732696461
+            }
+          }
+        },
+        "Unit1 indicator =1": {
+          "n": 5344,
+          "denominator": 20336,
+          "n_eligible": 4113,
+          "eligible_denominator": 15837,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 143840,
+              "possible": 197424,
+              "fraction": 0.7285841640327417
+            },
+            "pulmonary": {
+              "observed": 94498,
+              "possible": 197424,
+              "fraction": 0.4786550773968717
+            },
+            "renal": {
+              "observed": 9448,
+              "possible": 148068,
+              "fraction": 0.06380852040954156
+            },
+            "metabolic": {
+              "observed": 23222,
+              "possible": 246780,
+              "fraction": 0.09410000810438447
+            }
+          }
+        },
+        "Unit2 indicator =1": {
+          "n": 5470,
+          "denominator": 20336,
+          "n_eligible": 4147,
+          "eligible_denominator": 15837,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 184250,
+              "possible": 199056,
+              "fraction": 0.9256189213085765
+            },
+            "pulmonary": {
+              "observed": 109355,
+              "possible": 199056,
+              "fraction": 0.5493680170404308
+            },
+            "renal": {
+              "observed": 13572,
+              "possible": 149292,
+              "fraction": 0.09090909090909091
+            },
+            "metabolic": {
+              "observed": 46846,
+              "possible": 248820,
+              "fraction": 0.18827264689333656
+            }
+          }
+        }
+      },
+      "static_fields": [
+        "Age",
+        "Gender",
+        "Unit1",
+        "Unit2",
+        "HospAdmTime"
+      ],
+      "caveat": "Sex code 0 also represents imputed missing values; original sex missingness and full ICU type are not available. Unit fields are indicators, not mutually exclusive categories."
+    },
+    {
+      "name": "CinC-2019 B",
+      "n": 20000,
+      "n_eligible": 14824,
+      "n_ineligible": 5176,
+      "groups": {
+        "Age <18": {
+          "n": 22,
+          "denominator": 20000,
+          "n_eligible": 15,
+          "eligible_denominator": 14824,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 633,
+              "possible": 720,
+              "fraction": 0.8791666666666667
+            },
+            "pulmonary": {
+              "observed": 303,
+              "possible": 720,
+              "fraction": 0.42083333333333334
+            },
+            "renal": {
+              "observed": 51,
+              "possible": 540,
+              "fraction": 0.09444444444444444
+            },
+            "metabolic": {
+              "observed": 135,
+              "possible": 900,
+              "fraction": 0.15
+            }
+          }
+        },
+        "Age 18--44": {
+          "n": 3365,
+          "denominator": 20000,
+          "n_eligible": 2371,
+          "eligible_denominator": 14824,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 99350,
+              "possible": 113808,
+              "fraction": 0.8729614789821454
+            },
+            "pulmonary": {
+              "observed": 48296,
+              "possible": 113808,
+              "fraction": 0.42436384085477297
+            },
+            "renal": {
+              "observed": 4685,
+              "possible": 85356,
+              "fraction": 0.05488776418763766
+            },
+            "metabolic": {
+              "observed": 16383,
+              "possible": 142260,
+              "fraction": 0.11516237874314635
+            }
+          }
+        },
+        "Age 45--64": {
+          "n": 7709,
+          "denominator": 20000,
+          "n_eligible": 5635,
+          "eligible_denominator": 14824,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 236851,
+              "possible": 270480,
+              "fraction": 0.8756691807157646
+            },
+            "pulmonary": {
+              "observed": 115668,
+              "possible": 270480,
+              "fraction": 0.42763975155279504
+            },
+            "renal": {
+              "observed": 10289,
+              "possible": 202860,
+              "fraction": 0.05071970817312432
+            },
+            "metabolic": {
+              "observed": 43103,
+              "possible": 338100,
+              "fraction": 0.12748595090209996
+            }
+          }
+        },
+        "Age 65--79": {
+          "n": 6582,
+          "denominator": 20000,
+          "n_eligible": 4992,
+          "eligible_denominator": 14824,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 214064,
+              "possible": 239616,
+              "fraction": 0.8933627136752137
+            },
+            "pulmonary": {
+              "observed": 104291,
+              "possible": 239616,
+              "fraction": 0.43524222088675213
+            },
+            "renal": {
+              "observed": 9055,
+              "possible": 179712,
+              "fraction": 0.05038617343304843
+            },
+            "metabolic": {
+              "observed": 40683,
+              "possible": 299520,
+              "fraction": 0.13582732371794873
+            }
+          }
+        },
+        "Age >=80": {
+          "n": 2322,
+          "denominator": 20000,
+          "n_eligible": 1811,
+          "eligible_denominator": 14824,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 77720,
+              "possible": 86928,
+              "fraction": 0.8940732560279772
+            },
+            "pulmonary": {
+              "observed": 37620,
+              "possible": 86928,
+              "fraction": 0.43277194919933737
+            },
+            "renal": {
+              "observed": 3126,
+              "possible": 65196,
+              "fraction": 0.04794772685440825
+            },
+            "metabolic": {
+              "observed": 12155,
+              "possible": 108660,
+              "fraction": 0.11186269096263575
+            }
+          }
+        },
+        "Age unavailable": {
+          "n": 0,
+          "denominator": 20000,
+          "n_eligible": 0,
+          "eligible_denominator": 14824,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            },
+            "pulmonary": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            },
+            "renal": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            },
+            "metabolic": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            }
+          }
+        },
+        "Female-coded (0)": {
+          "n": 9268,
+          "denominator": 20000,
+          "n_eligible": 6810,
+          "eligible_denominator": 14824,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 287989,
+              "possible": 326880,
+              "fraction": 0.8810236172295643
+            },
+            "pulmonary": {
+              "observed": 140355,
+              "possible": 326880,
+              "fraction": 0.42937775330396477
+            },
+            "renal": {
+              "observed": 12270,
+              "possible": 245160,
+              "fraction": 0.05004894762604014
+            },
+            "metabolic": {
+              "observed": 48973,
+              "possible": 408600,
+              "fraction": 0.1198556045031816
+            }
+          }
+        },
+        "Male-coded (1)": {
+          "n": 10732,
+          "denominator": 20000,
+          "n_eligible": 8014,
+          "eligible_denominator": 14824,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 340629,
+              "possible": 384672,
+              "fraction": 0.8855050536561018
+            },
+            "pulmonary": {
+              "observed": 165823,
+              "possible": 384672,
+              "fraction": 0.4310763455619333
+            },
+            "renal": {
+              "observed": 14936,
+              "possible": 288504,
+              "fraction": 0.051770512713861856
+            },
+            "metabolic": {
+              "observed": 63486,
+              "possible": 480840,
+              "fraction": 0.13203144497130023
+            }
+          }
+        },
+        "Unit1 indicator =1": {
+          "n": 6923,
+          "denominator": 20000,
+          "n_eligible": 5232,
+          "eligible_denominator": 14824,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 226327,
+              "possible": 251136,
+              "fraction": 0.9012128886340469
+            },
+            "pulmonary": {
+              "observed": 108981,
+              "possible": 251136,
+              "fraction": 0.43395212155963303
+            },
+            "renal": {
+              "observed": 10289,
+              "possible": 188352,
+              "fraction": 0.054626444104655114
+            },
+            "metabolic": {
+              "observed": 30144,
+              "possible": 313920,
+              "fraction": 0.09602446483180428
+            }
+          }
+        },
+        "Unit2 indicator =1": {
+          "n": 6982,
+          "denominator": 20000,
+          "n_eligible": 5302,
+          "eligible_denominator": 14824,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 233410,
+              "possible": 254496,
+              "fraction": 0.9171460455174149
+            },
+            "pulmonary": {
+              "observed": 115797,
+              "possible": 254496,
+              "fraction": 0.4550051867219917
+            },
+            "renal": {
+              "observed": 11250,
+              "possible": 190872,
+              "fraction": 0.05894002263296869
+            },
+            "metabolic": {
+              "observed": 58590,
+              "possible": 318120,
+              "fraction": 0.18417578272350058
+            }
+          }
+        }
+      },
+      "static_fields": [
+        "Age",
+        "Gender",
+        "Unit1",
+        "Unit2",
+        "HospAdmTime"
+      ],
+      "caveat": "Sex code 0 also represents imputed missing values; original sex missingness and full ICU type are not available. Unit fields are indicators, not mutually exclusive categories."
+    },
+    {
+      "name": "CinC-2012 set-a",
+      "n": 4000,
+      "n_eligible": 3989,
+      "n_ineligible": 11,
+      "groups": {
+        "Age <18": {
+          "n": 6,
+          "denominator": 4000,
+          "n_eligible": 6,
+          "eligible_denominator": 3989,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 255,
+              "possible": 288,
+              "fraction": 0.8854166666666666
+            },
+            "pulmonary": {
+              "observed": 32,
+              "possible": 288,
+              "fraction": 0.1111111111111111
+            },
+            "renal": {
+              "observed": 9,
+              "possible": 216,
+              "fraction": 0.041666666666666664
+            },
+            "metabolic": {
+              "observed": 38,
+              "possible": 360,
+              "fraction": 0.10555555555555556
+            }
+          }
+        },
+        "Age 18--44": {
+          "n": 566,
+          "denominator": 4000,
+          "n_eligible": 561,
+          "eligible_denominator": 3989,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 23725,
+              "possible": 26928,
+              "fraction": 0.8810531788472965
+            },
+            "pulmonary": {
+              "observed": 3728,
+              "possible": 26928,
+              "fraction": 0.1384432560903149
+            },
+            "renal": {
+              "observed": 1527,
+              "possible": 20196,
+              "fraction": 0.07560903149138443
+            },
+            "metabolic": {
+              "observed": 3935,
+              "possible": 33660,
+              "fraction": 0.11690433749257279
+            }
+          }
+        },
+        "Age 45--64": {
+          "n": 1247,
+          "denominator": 4000,
+          "n_eligible": 1244,
+          "eligible_denominator": 3989,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 54202,
+              "possible": 59712,
+              "fraction": 0.9077237406216506
+            },
+            "pulmonary": {
+              "observed": 8112,
+              "possible": 59712,
+              "fraction": 0.13585209003215434
+            },
+            "renal": {
+              "observed": 3148,
+              "possible": 44784,
+              "fraction": 0.07029296177206144
+            },
+            "metabolic": {
+              "observed": 9413,
+              "possible": 74640,
+              "fraction": 0.12611200428724545
+            }
+          }
+        },
+        "Age 65--79": {
+          "n": 1301,
+          "denominator": 4000,
+          "n_eligible": 1300,
+          "eligible_denominator": 3989,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 57786,
+              "possible": 62400,
+              "fraction": 0.9260576923076923
+            },
+            "pulmonary": {
+              "observed": 9070,
+              "possible": 62400,
+              "fraction": 0.1453525641025641
+            },
+            "renal": {
+              "observed": 3261,
+              "possible": 46800,
+              "fraction": 0.06967948717948717
+            },
+            "metabolic": {
+              "observed": 10776,
+              "possible": 78000,
+              "fraction": 0.13815384615384615
+            }
+          }
+        },
+        "Age >=80": {
+          "n": 880,
+          "denominator": 4000,
+          "n_eligible": 878,
+          "eligible_denominator": 3989,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 38666,
+              "possible": 42144,
+              "fraction": 0.9174734244495064
+            },
+            "pulmonary": {
+              "observed": 6324,
+              "possible": 42144,
+              "fraction": 0.15005694760820046
+            },
+            "renal": {
+              "observed": 2047,
+              "possible": 31608,
+              "fraction": 0.06476208554796255
+            },
+            "metabolic": {
+              "observed": 6292,
+              "possible": 52680,
+              "fraction": 0.11943811693242218
+            }
+          }
+        },
+        "Age unavailable": {
+          "n": 0,
+          "denominator": 4000,
+          "n_eligible": 0,
+          "eligible_denominator": 3989,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            },
+            "pulmonary": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            },
+            "renal": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            },
+            "metabolic": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            }
+          }
+        },
+        "Female-coded (0)": {
+          "n": 1751,
+          "denominator": 4000,
+          "n_eligible": 1749,
+          "eligible_denominator": 3989,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 76580,
+              "possible": 83952,
+              "fraction": 0.9121879169048981
+            },
+            "pulmonary": {
+              "observed": 12106,
+              "possible": 83952,
+              "fraction": 0.14420144844673147
+            },
+            "renal": {
+              "observed": 4307,
+              "possible": 62964,
+              "fraction": 0.06840416746077123
+            },
+            "metabolic": {
+              "observed": 12877,
+              "possible": 104940,
+              "fraction": 0.12270821421764817
+            }
+          }
+        },
+        "Male-coded (1)": {
+          "n": 2246,
+          "denominator": 4000,
+          "n_eligible": 2237,
+          "eligible_denominator": 3989,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 97963,
+              "possible": 107376,
+              "fraction": 0.9123360900014901
+            },
+            "pulmonary": {
+              "observed": 15138,
+              "possible": 107376,
+              "fraction": 0.14098122485471615
+            },
+            "renal": {
+              "observed": 5676,
+              "possible": 80532,
+              "fraction": 0.07048129935926091
+            },
+            "metabolic": {
+              "observed": 17554,
+              "possible": 134220,
+              "fraction": 0.13078527790195202
+            }
+          }
+        },
+        "Sex unavailable": {
+          "n": 3,
+          "denominator": 4000,
+          "n_eligible": 3,
+          "eligible_denominator": 3989,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 91,
+              "possible": 144,
+              "fraction": 0.6319444444444444
+            },
+            "pulmonary": {
+              "observed": 22,
+              "possible": 144,
+              "fraction": 0.1527777777777778
+            },
+            "renal": {
+              "observed": 9,
+              "possible": 108,
+              "fraction": 0.08333333333333333
+            },
+            "metabolic": {
+              "observed": 23,
+              "possible": 180,
+              "fraction": 0.12777777777777777
+            }
+          }
+        },
+        "ICU type 1": {
+          "n": 577,
+          "denominator": 4000,
+          "n_eligible": 575,
+          "eligible_denominator": 3989,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 23891,
+              "possible": 27600,
+              "fraction": 0.8656159420289855
+            },
+            "pulmonary": {
+              "observed": 3916,
+              "possible": 27600,
+              "fraction": 0.1418840579710145
+            },
+            "renal": {
+              "observed": 1491,
+              "possible": 20700,
+              "fraction": 0.07202898550724637
+            },
+            "metabolic": {
+              "observed": 3503,
+              "possible": 34500,
+              "fraction": 0.10153623188405797
+            }
+          }
+        },
+        "ICU type 2": {
+          "n": 874,
+          "denominator": 4000,
+          "n_eligible": 874,
+          "eligible_denominator": 3989,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 40228,
+              "possible": 41952,
+              "fraction": 0.958905415713196
+            },
+            "pulmonary": {
+              "observed": 5903,
+              "possible": 41952,
+              "fraction": 0.14070842868039665
+            },
+            "renal": {
+              "observed": 2278,
+              "possible": 31464,
+              "fraction": 0.07240020340706839
+            },
+            "metabolic": {
+              "observed": 10188,
+              "possible": 52440,
+              "fraction": 0.194279176201373
+            }
+          }
+        },
+        "ICU type 3": {
+          "n": 1481,
+          "denominator": 4000,
+          "n_eligible": 1475,
+          "eligible_denominator": 3989,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 63219,
+              "possible": 70800,
+              "fraction": 0.8929237288135593
+            },
+            "pulmonary": {
+              "observed": 10112,
+              "possible": 70800,
+              "fraction": 0.14282485875706213
+            },
+            "renal": {
+              "observed": 3767,
+              "possible": 53100,
+              "fraction": 0.07094161958568738
+            },
+            "metabolic": {
+              "observed": 9180,
+              "possible": 88500,
+              "fraction": 0.10372881355932204
+            }
+          }
+        },
+        "ICU type 4": {
+          "n": 1068,
+          "denominator": 4000,
+          "n_eligible": 1065,
+          "eligible_denominator": 3989,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 47296,
+              "possible": 51120,
+              "fraction": 0.9251956181533646
+            },
+            "pulmonary": {
+              "observed": 7335,
+              "possible": 51120,
+              "fraction": 0.14348591549295775
+            },
+            "renal": {
+              "observed": 2456,
+              "possible": 38340,
+              "fraction": 0.0640584246218049
+            },
+            "metabolic": {
+              "observed": 7583,
+              "possible": 63900,
+              "fraction": 0.1186697965571205
+            }
+          }
+        }
+      },
+      "static_fields": [
+        "Age",
+        "Gender",
+        "Height",
+        "Weight",
+        "ICUType"
+      ],
+      "caveat": "Original static masks distinguish unavailable descriptors; ICU types 1/2/3/4 mean coronary/cardiac surgery recovery/medical/surgical."
+    },
+    {
+      "name": "CinC-2012 set-b",
+      "n": 4000,
+      "n_eligible": 3993,
+      "n_ineligible": 7,
+      "groups": {
+        "Age <18": {
+          "n": 8,
+          "denominator": 4000,
+          "n_eligible": 8,
+          "eligible_denominator": 3993,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 360,
+              "possible": 384,
+              "fraction": 0.9375
+            },
+            "pulmonary": {
+              "observed": 41,
+              "possible": 384,
+              "fraction": 0.10677083333333333
+            },
+            "renal": {
+              "observed": 21,
+              "possible": 288,
+              "fraction": 0.07291666666666667
+            },
+            "metabolic": {
+              "observed": 70,
+              "possible": 480,
+              "fraction": 0.14583333333333334
+            }
+          }
+        },
+        "Age 18--44": {
+          "n": 526,
+          "denominator": 4000,
+          "n_eligible": 524,
+          "eligible_denominator": 3993,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 22607,
+              "possible": 25152,
+              "fraction": 0.898815203562341
+            },
+            "pulmonary": {
+              "observed": 3501,
+              "possible": 25152,
+              "fraction": 0.13919370229007633
+            },
+            "renal": {
+              "observed": 1302,
+              "possible": 18864,
+              "fraction": 0.06902035623409669
+            },
+            "metabolic": {
+              "observed": 3596,
+              "possible": 31440,
+              "fraction": 0.1143765903307888
+            }
+          }
+        },
+        "Age 45--64": {
+          "n": 1265,
+          "denominator": 4000,
+          "n_eligible": 1261,
+          "eligible_denominator": 3993,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 55091,
+              "possible": 60528,
+              "fraction": 0.9101738038593709
+            },
+            "pulmonary": {
+              "observed": 8241,
+              "possible": 60528,
+              "fraction": 0.1361518636003172
+            },
+            "renal": {
+              "observed": 3224,
+              "possible": 45396,
+              "fraction": 0.07101947308132875
+            },
+            "metabolic": {
+              "observed": 9406,
+              "possible": 75660,
+              "fraction": 0.12431932328839546
+            }
+          }
+        },
+        "Age 65--79": {
+          "n": 1328,
+          "denominator": 4000,
+          "n_eligible": 1327,
+          "eligible_denominator": 3993,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 58230,
+              "possible": 63696,
+              "fraction": 0.9141861341371514
+            },
+            "pulmonary": {
+              "observed": 9066,
+              "possible": 63696,
+              "fraction": 0.14233232856066316
+            },
+            "renal": {
+              "observed": 3318,
+              "possible": 47772,
+              "fraction": 0.06945491082642552
+            },
+            "metabolic": {
+              "observed": 10785,
+              "possible": 79620,
+              "fraction": 0.1354559155990957
+            }
+          }
+        },
+        "Age >=80": {
+          "n": 873,
+          "denominator": 4000,
+          "n_eligible": 873,
+          "eligible_denominator": 3993,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 38433,
+              "possible": 41904,
+              "fraction": 0.9171678121420389
+            },
+            "pulmonary": {
+              "observed": 6388,
+              "possible": 41904,
+              "fraction": 0.15244368079419626
+            },
+            "renal": {
+              "observed": 2155,
+              "possible": 31428,
+              "fraction": 0.06856942853506427
+            },
+            "metabolic": {
+              "observed": 6320,
+              "possible": 52380,
+              "fraction": 0.12065673921344025
+            }
+          }
+        },
+        "Age unavailable": {
+          "n": 0,
+          "denominator": 4000,
+          "n_eligible": 0,
+          "eligible_denominator": 3993,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            },
+            "pulmonary": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            },
+            "renal": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            },
+            "metabolic": {
+              "observed": 0,
+              "possible": 0,
+              "fraction": null
+            }
+          }
+        },
+        "Female-coded (0)": {
+          "n": 1742,
+          "denominator": 4000,
+          "n_eligible": 1741,
+          "eligible_denominator": 3993,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 76052,
+              "possible": 83568,
+              "fraction": 0.9100612674708022
+            },
+            "pulmonary": {
+              "observed": 12126,
+              "possible": 83568,
+              "fraction": 0.14510338885697874
+            },
+            "renal": {
+              "observed": 4341,
+              "possible": 62676,
+              "fraction": 0.0692609611334482
+            },
+            "metabolic": {
+              "observed": 12431,
+              "possible": 104460,
+              "fraction": 0.11900248899100134
+            }
+          }
+        },
+        "Male-coded (1)": {
+          "n": 2253,
+          "denominator": 4000,
+          "n_eligible": 2247,
+          "eligible_denominator": 3993,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 98440,
+              "possible": 107856,
+              "fraction": 0.9126984126984127
+            },
+            "pulmonary": {
+              "observed": 15083,
+              "possible": 107856,
+              "fraction": 0.13984386589526776
+            },
+            "renal": {
+              "observed": 5679,
+              "possible": 80892,
+              "fraction": 0.07020471740097908
+            },
+            "metabolic": {
+              "observed": 17718,
+              "possible": 134820,
+              "fraction": 0.13141967067200713
+            }
+          }
+        },
+        "Sex unavailable": {
+          "n": 5,
+          "denominator": 4000,
+          "n_eligible": 5,
+          "eligible_denominator": 3993,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 229,
+              "possible": 240,
+              "fraction": 0.9541666666666667
+            },
+            "pulmonary": {
+              "observed": 28,
+              "possible": 240,
+              "fraction": 0.11666666666666667
+            },
+            "renal": {
+              "observed": 0,
+              "possible": 180,
+              "fraction": 0.0
+            },
+            "metabolic": {
+              "observed": 28,
+              "possible": 300,
+              "fraction": 0.09333333333333334
+            }
+          }
+        },
+        "ICU type 1": {
+          "n": 590,
+          "denominator": 4000,
+          "n_eligible": 587,
+          "eligible_denominator": 3993,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 24450,
+              "possible": 28176,
+              "fraction": 0.8677597955706985
+            },
+            "pulmonary": {
+              "observed": 4293,
+              "possible": 28176,
+              "fraction": 0.15236371379897784
+            },
+            "renal": {
+              "observed": 1547,
+              "possible": 21132,
+              "fraction": 0.07320651145182662
+            },
+            "metabolic": {
+              "observed": 3592,
+              "possible": 35220,
+              "fraction": 0.10198750709823963
+            }
+          }
+        },
+        "ICU type 2": {
+          "n": 782,
+          "denominator": 4000,
+          "n_eligible": 780,
+          "eligible_denominator": 3993,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 35731,
+              "possible": 37440,
+              "fraction": 0.9543536324786325
+            },
+            "pulmonary": {
+              "observed": 5132,
+              "possible": 37440,
+              "fraction": 0.13707264957264959
+            },
+            "renal": {
+              "observed": 2084,
+              "possible": 28080,
+              "fraction": 0.07421652421652422
+            },
+            "metabolic": {
+              "observed": 9201,
+              "possible": 46800,
+              "fraction": 0.1966025641025641
+            }
+          }
+        },
+        "ICU type 3": {
+          "n": 1436,
+          "denominator": 4000,
+          "n_eligible": 1434,
+          "eligible_denominator": 3993,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 61613,
+              "possible": 68832,
+              "fraction": 0.8951214551371455
+            },
+            "pulmonary": {
+              "observed": 9471,
+              "possible": 68832,
+              "fraction": 0.13759588563458858
+            },
+            "renal": {
+              "observed": 3644,
+              "possible": 51624,
+              "fraction": 0.07058732372539904
+            },
+            "metabolic": {
+              "observed": 8894,
+              "possible": 86040,
+              "fraction": 0.10337052533705253
+            }
+          }
+        },
+        "ICU type 4": {
+          "n": 1192,
+          "denominator": 4000,
+          "n_eligible": 1192,
+          "eligible_denominator": 3993,
+          "observed_target_coverage": {
+            "cardiovascular": {
+              "observed": 52927,
+              "possible": 57216,
+              "fraction": 0.9250384507829977
+            },
+            "pulmonary": {
+              "observed": 8341,
+              "possible": 57216,
+              "fraction": 0.14578090044742728
+            },
+            "renal": {
+              "observed": 2745,
+              "possible": 42912,
+              "fraction": 0.06396812080536912
+            },
+            "metabolic": {
+              "observed": 8490,
+              "possible": 71520,
+              "fraction": 0.11870805369127517
+            }
+          }
+        }
+      },
+      "static_fields": [
+        "Age",
+        "Gender",
+        "Height",
+        "Weight",
+        "ICUType"
+      ],
+      "caveat": "Original static masks distinguish unavailable descriptors; ICU types 1/2/3/4 mean coronary/cardiac surgery recovery/medical/surgical."
+    }
+  ]
+}

@@ -109,6 +109,29 @@ Scope and interpretation:
 - The frozen counterfactual export has 432 fits: 384 shared-history fits and 48 legacy-protocol disclosure fits. The separate continuous-dose CRN grid and λ/budget diagnostics add 72 and 40 fits. E3 contains the new onset-matched sweeps/diagnostics and is counted separately.
 - Arithmetic uses unrounded record values. Display rounding occurs only here. `compute_accounting_v2.json` retains individual source paths, fields, source SHA-256 digests, timing components, device provenance and aggregate formulas.
 
-Suggested Datasets & Benchmarks compute statement:
+Suggested compute statement:
 
 > Across the available records for the reported experiment families, we recorded 113.11 GPU job-hours and 16.17 CPU job-hours for 1509 fits and 45 fixed-checkpoint evaluation jobs. Additional recorded checkpoint audit replays used 0.23 CPU job-hours. GPU jobs used CUDA devices on the accounting host, which reports NVIDIA L40S GPUs; the host CPU is an Intel Xeon Silver 4510. These totals sum measured job wall times and exclude unrecorded inference and development/data-preparation work. All 70 planned E2/E4 fits are included; the other experiment families retain their original source snapshot.
+
+## Release 1.2.0: four additional E3 re-fits
+
+The 1,509-fit snapshot and its totals above are preserved. The four
+current-archive E3 replacements are additional executions outside that
+snapshot: **100.6 CPU job-seconds** (0.027953510 CPU job-hours),
+summed from each replacement record’s `/timing/total_seconds`. They add
+four fits, giving 1,513 recorded fit executions when combined with the
+snapshot; the effective main E3 grid still has 160 records. Superseded
+fits remain counted in the historical snapshot and are not subtracted.
+
+| Replacement record under `experiments/counterfactual_onset_matched/artifacts/host/main_rerun/` | `/timing/total_seconds` |
+|---|---:|
+| `dependence_only/point4/crn_lite/seed3/run.json` | 3.957248413003981 |
+| `support_only/point1/crn_lite/seed3/run.json` | 4.325057482346892 |
+| `support_only/point1/physiograph/seed1/run.json` | 47.15915957465768 |
+| `support_only/point2/physiograph_gru/seed0/run.json` | 45.19117112737149 |
+| **Sum** | **100.63263659738004** |
+
+Each timer includes data loading/setup, training and final scoring without
+a separate inference timer. The re-fits used CPU and two threads; job
+wall time is not multiplied by thread count. Packaging performed no fits.
+These additions do not make the measured snapshot a lifetime-compute total.

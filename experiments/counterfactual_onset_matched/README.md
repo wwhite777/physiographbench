@@ -18,7 +18,9 @@ The default core plan prints **184 commands: 160 main fits and 24 continuous-dos
 CRN diagnostics**. Omit `--dry-run` to execute into a fresh `runs/host/` directory.
 The additional `--group matched-control` plan prints four Control-GRU fits on
 the identical randomised-dose archive used by the diagnostics. The released
-records contain **188 runs: 160 main + 24 CRN + 4 matched controls**.
+effective reading contains **188 runs: 160 main + 24 CRN + 4 matched controls**.
+Release 1.2.0 retains **192 physical records**: the original 188 plus four
+replacement main-grid records. The superseded originals remain as provenance.
 
 Each main family has five points, four models and four training/split seeds.
 Models fit for 60 epochs; the CRN diagnostic sweeps λ = 0, 0.25, 1 at 60 and 120
@@ -40,7 +42,9 @@ summary JSON files for every run, paired interval, physical-unit error and
 qualification. The historical audit records **four dataset-hash discrepancies
 across three training archives**. Earlier training arrays were unavailable.
 Matching saved predictions and test truth does not establish identical historical
-training arrays; that provenance qualification remains unresolved.
+training arrays. The [current-archive rerun addendum](artifacts/host/E3_READING_RERUN_ADDENDUM.md)
+resolves archive identity prospectively for the effective 160-record main grid;
+it does not recover or certify the unavailable historical training arrays.
 No prediction archives or checkpoints are distributed.
 
 ## v5 policy findings and boundaries
@@ -76,3 +80,51 @@ intervention. Its pre-switch target caps exact-sign accuracy at 0.965, missing
 predicted trajectories prevent exact post-effect rescoring, and legacy CRN-lite's
 context-dose balancing target is identically zero. Those qualifications do not
 apply as a claim that the repaired target is constant or onset-mismatched.
+
+## Release 1.2.0: effective main-grid records
+
+The four 60-epoch CPU re-fits below replace only the effective reading of the
+corresponding original records. Paths are relative to `artifacts/host/`; each
+directory contains only `run.json` in this distribution.
+
+| Replacement | Superseded original retained |
+|---|---|
+| `main_rerun/dependence_only/point4/crn_lite/seed3/run.json` | `main/dependence_only/point4/crn_lite/seed3/run.json` |
+| `main_rerun/support_only/point1/crn_lite/seed3/run.json` | `main/support_only/point1/crn_lite/seed3/run.json` |
+| `main_rerun/support_only/point1/physiograph/seed1/run.json` | `main/support_only/point1/physiograph/seed1/run.json` |
+| `main_rerun/support_only/point2/physiograph_gru/seed0/run.json` | `main/support_only/point2/physiograph_gru/seed0/run.json` |
+
+The [effective inventory](artifacts/host/E3_EFFECTIVE_INVENTORY.json) selects
+156 original records and four replacements, with distributed file hashes,
+archive-identity metadata and the four retained superseded originals.
+Use this selection instead of recursively aggregating both `main/` and
+`main_rerun/`. The [rerun summary](artifacts/host/e3_summary_rerun.json)
+preserves full-precision values and original source fingerprints; those
+historical fingerprints differ from the sanitized public-file hashes.
+
+The main scientific interpretation is unchanged: broader measured support
+is associated with much better direction recovery at fixed measured rank
+dependence; increasing dependence over the tested modest range gives a
+smaller descriptive decline with wide seed uncertainty; repaired CRN-lite
+has no consistent exact-direction advantage over Control-GRU. The effective
+records underlie the recomputed main aggregates, paired contrasts and family
+trends in the rerun summary, including the support/dependence conclusions above.
+Two narrower numerical statements change: 15/16 shared-anchor pairs retain
+exact RMSE equality, and the support point-1 state-space-model-minus-Control
+heart-rate RMSE interval now excludes zero on the positive side. All 16
+anchor direction scores and target distributions remain identical. The
+addendum gives every affected table before and after.
+
+Original fits used one CPU thread; the replacements used two. Changes
+combine archive replacement and thread-count variation, whose contributions
+are not isolated. The unchanged randomized-dose matched-control results
+remain in the earlier addendum. No causal-identification or independent
+scientific-review pass follows from the archive reconciliation.
+
+The unchanged `verify_artifacts.py` expects the historical 188-record view.
+For an effective-view check, copy the experiment folder to scratch, omit
+the four superseded originals there, and run that verifier: the 156
+originals, four replacements and 28 diagnostics give its expected 188.
+The release tree itself retains all 192 physical records. Policy verification
+uses `--no-legacy`; protocol regeneration requires unbundled archives and
+is separate from inspecting these saved replacement records.

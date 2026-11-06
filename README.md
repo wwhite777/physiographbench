@@ -2,8 +2,10 @@
 
 # PhysioGraphBench: when do physiological graph priors help?
 
-**Version 1.1.2 — documentation synchronization with the v5 findings.** This
-update preserves the code, results and tests in v1.1.0 (source commit
+**Version 1.2.0 — four replacement E3 records and cohort composition.**
+This release adds the current-archive E3 rerun evidence and aggregate cohort
+companion; see [the 1.2.0 note](docs/RELEASE_V1_2_0.md). Existing code, tests
+and original result records retain their earlier bytes (v1.1.0 source commit
 [e7e290742b3756fb03462ffde8a3d3ecc4bf5584](https://github.com/wwhite777/physiographbench/tree/e7e290742b3756fb03462ffde8a3d3ecc4bf5584)).
 The concept DOI is [10.5281/zenodo.23976171](https://doi.org/10.5281/zenodo.23976171);
 the v1.1.0 record is [10.5281/zenodo.23992302](https://doi.org/10.5281/zenodo.23992302).
@@ -146,7 +148,7 @@ CRN adaptation. The state-space model (SSM) uses a different recurrence from GRU
 | What explains the renal deficit? | The post-hoc fixed-configuration diagnostic gives all nodes all inputs: renal RMSE changes 0.846332 → 0.712003 on A and 1.067043 → 0.939610 on B, improving in 4/4 paired seeds on each cohort and crossing below persistence. This supports an input-partition finding with projection-capacity qualifications. In the retuned primary series every edge set raises mean renal RMSE (A none 0.698 → 0.728–0.741), while all arm means beat renal persistence. | [Renal diagnostic](diagnostics/renal_shared_input/SHARED_INPUT_READING.md), [primary renal results](experiments/shared_input_primary/artifacts/host/E2_E4_READING.md) |
 | What does the historical simulator comparison show? | At κ = 1: capacity-matched monolithic GRU 0.0389 → organ architecture without edges 0.0364 → admissible edges 0.0377. These complete implementations differ in readout, state layout and normalization; the means do not isolate factorisation. Admissible edges have higher observed error at five of six κ values and nearly equal means at κ = 0.75: paired difference −0.00000813 [−0.00097537, +0.00095912], two negative and two positive seeds. At κ = 1 the admissible-minus-none gap is +0.0012 [−0.0006, +0.0031]. | [Matched controls](results/sim_grids_v1/h3_grid_with_controls.json), [paired contrasts](analysis/paired_statistics/PAIRED_STATS_v5.md) |
 | Can the benchmark detect a prescribed-edge benefit? | Registered positive-control **PASS**: with a hidden cardiovascular perfusion-reserve drive, transport delays and sparse/noisy renal and metabolic observations, comparator minus admissible macro-NRMSE at κ = 1 is +0.0160 [+0.0142, +0.0179] for none, +0.0167 [+0.0142, +0.0192] for reversed and +0.0117 [+0.0027, +0.0208] for random, positive in 4/4 seeds each and non-decreasing over κ = 0, 0.5, 1. Oracle gains are 21% renal / 29% metabolic. The full-input monolithic GRU is descriptively similar (0.0798 vs 0.0800); this shows recovery of missing cross-organ information, without establishing superiority over full-input forecasting. Scope: one generated population, four training/split seeds and artificial drive/delays; no clinical edge benefit is claimed. | [Registered regime and results](experiments/positive_control/) |
-| When are onset-matched counterfactual directions recovered? | At fixed severity–dose Spearman correlation 0.300, widening within-tercile dose support raises post-effect accuracy: Control-GRU 0.347 → 0.909, CRN-lite 0.342 → 0.909, organ GRU 0.310 → 0.897 and organ state-space model 0.355 → 0.890. Paired endpoint gains +0.54 to +0.59 have 95% CIs excluding zero, in 4/4 seeds. At fixed within-tercile support, dependence reaches only 0–0.30: Control-GRU changes 0.991 → 0.909 (−0.083 [−0.179, +0.013]) and organ GRU 0.964 → 0.897 (−0.067 [−0.135, +0.000]); both intervals include zero. | [Onset-matched policies](experiments/counterfactual_onset_matched/artifacts/host/E3_READING.md) |
+| When are onset-matched counterfactual directions recovered? | At fixed severity–dose Spearman correlation 0.300, widening within-tercile dose support raises post-effect accuracy: Control-GRU 0.347 → 0.909, CRN-lite 0.342 → 0.909, organ GRU 0.310 → 0.897 and organ state-space model 0.355 → 0.890. Paired endpoint gains +0.54 to +0.59 have 95% CIs excluding zero, in 4/4 seeds. At fixed within-tercile support, dependence reaches only 0–0.30: Control-GRU changes 0.991 → 0.909 (−0.083 [−0.179, +0.013]) and organ GRU 0.964 → 0.897 (−0.067 [−0.135, +0.000]); both intervals include zero. | [Onset-matched policies](experiments/counterfactual_onset_matched/artifacts/host/E3_READING.md), [current-archive rerun addendum](experiments/counterfactual_onset_matched/artifacts/host/E3_READING_RERUN_ADDENDUM.md) |
 | Does treatment balancing rescue direction recovery? | Repaired counterfactual recurrent network (CRN)-lite uses a varying eventual-dose target; every paired post-effect interval versus Control-GRU includes zero. The continuous-dose CRN trails its matched Control-GRU on the identical onset-matched randomised-dose set in all six λ/epoch arms and 4/4 seeds (paired accuracy CIs below zero). This is a failed estimator in this matched synthetic task. The older CRN-lite target is constant zero, and the older continuous-dose diagnostic mismatches treatment onset; those historical diagnostics cannot establish balancing success or attribute failure solely to the estimator. | [Main reading](experiments/counterfactual_onset_matched/artifacts/host/E3_READING.md), [matched-control addendum](experiments/counterfactual_onset_matched/artifacts/host/E3_READING_ADDENDUM.md), [legacy CRN sweep](results/learned_graph_baselines_v1/crn_v2_lambda_sweep/) |
 | Does GraFITi reproduce its published protocol? | The 37-variable PhysioNet-2012 protocol (12,000 records, 36 h observation → next three recorded steps, pooled observed-cell mean squared error) reaches test MSE 0.3027 versus published 0.286 ± 0.001: +0.0167 (+5.8%). One seed, 44,744 parameters and best epoch 84 reach the regime without matching published precision. Split/fold, optimizer and preprocessing differences are recorded without attributing the gap. | [Protocol and reading](experiments/learned_graph_validation/) |
 | Does learned topology explain the learned models' advantage? | Replacing learned adjacency with physiological, random or complete graphs leaves GraFITi A-test RMSE nearly unchanged (0.7482–0.7483 vs 0.7483 learned); t-PatchGNN rises by +0.0025 to +0.0046 from 0.7492. These four-seed ablations limit topology attribution; the external implementation advantage cannot be assigned to a specific learned graph. | [Adjacency reading and paired intervals](experiments/learned_graph_validation/artifacts/E5_READING.md) |
@@ -183,6 +185,10 @@ state–dose support would be needed. Missing legacy predicted trajectories
 prevent exact post-effect rescoring of those records.
 
 ## Data and licences
+
+The [cohort-composition companion](docs/COHORT_COMPOSITION.json) provides
+aggregate age, sex, care-unit and observed-target counts and denominators
+for all four cohorts, including eligibility and missing descriptors.
 
 | Resource | Access | Data licence | Reproduction |
 |---|---|---|---|
@@ -314,8 +320,10 @@ positivity or adequate state–dose support.
 The counterfactual provenance audit records four dataset-hash discrepancies
 across three historical training archives. Earlier training arrays were
 unavailable. Matching saved predictions and test truth does not establish that
-historical training arrays were identical. The discrepancies remain unresolved;
-the onset-matched score checks do not certify historical training provenance.
+historical training arrays were identical. Release 1.2.0 supplies four
+current-archive replacements and a reconciled 160-record effective inventory.
+This resolves current archive identity prospectively; historical training
+provenance is not retroactively certified.
 
 Two lineage disclosures affect interpretation of the earlier results.
 The earlier counterfactual targets received treatment since warm-up and did not
@@ -375,13 +383,13 @@ Software is distributed under the [MIT licence](LICENSE).
 
 - [experiments/positive_control/](experiments/positive_control/): registered delayed-drive positive control, 96 fits and three synthetic datasets.
 - [experiments/shared_input_primary/](experiments/shared_input_primary/): shared-input selection, graph/capacity arms and longer training budgets, 70 fits.
-- [experiments/counterfactual_onset_matched/](experiments/counterfactual_onset_matched/): onset-matched support/dependence families, CRN diagnostics and matched controls, 188 records.
+- [experiments/counterfactual_onset_matched/](experiments/counterfactual_onset_matched/): onset-matched support/dependence families, CRN diagnostics and matched controls, 188 effective records plus four superseded originals (192 retained).
 - [experiments/learned_graph_validation/](experiments/learned_graph_validation/): GraFITi P12 reproduction attempt and 24 fixed-graph fits.
 - [analysis/paired_statistics/](analysis/paired_statistics/): 641 four-seed paired contrasts, multiplicity families, bootstrap summaries and stated missing-prediction limitations.
 
 Recorded compute and coverage are in [docs/COMPUTE.md](docs/COMPUTE.md).
-The documentation update is version **1.1.2**, built on the unchanged **1.1.0**
-source/result distribution. No model training is needed
+Version **1.2.0** adds the four E3 replacements and cohort companion to the
+earlier **1.1.0** source/result distribution and **1.1.2** documentation. No model training is needed
 to inspect these records or enumerate any run plan. Per-folder READMEs give
 rerun prerequisites and expected numbers. These additions retain their stated
 scientific and provenance qualifications.
