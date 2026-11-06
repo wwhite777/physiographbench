@@ -2,10 +2,11 @@
 
 # PhysioGraphBench: when do physiological graph priors help?
 
-**Version 1.2.0 — four replacement E3 records and cohort composition.**
-This release adds the current-archive E3 rerun evidence and aggregate cohort
-companion; see [the 1.2.0 note](docs/RELEASE_V1_2_0.md). Existing code, tests
-and original result records retain their earlier bytes (v1.1.0 source commit
+**Version 1.2.1 — E3 artifact verifier fix ([release note](docs/RELEASE_V1_2_1.md)).**
+Version 1.2.0 added the current-archive E3 rerun evidence and aggregate cohort
+companion; see [the 1.2.0 note](docs/RELEASE_V1_2_0.md). Apart from the E3
+artifact verifier and its regression test, existing code, tests and original
+result records retain their earlier bytes (v1.1.0 source commit
 [e7e290742b3756fb03462ffde8a3d3ecc4bf5584](https://github.com/wwhite777/physiographbench/tree/e7e290742b3756fb03462ffde8a3d3ecc4bf5584)).
 The concept DOI is [10.5281/zenodo.23976171](https://doi.org/10.5281/zenodo.23976171);
 the v1.1.0 record is [10.5281/zenodo.23992302](https://doi.org/10.5281/zenodo.23992302).
@@ -388,8 +389,9 @@ Software is distributed under the [MIT licence](LICENSE).
 - [analysis/paired_statistics/](analysis/paired_statistics/): 641 four-seed paired contrasts, multiplicity families, bootstrap summaries and stated missing-prediction limitations.
 
 Recorded compute and coverage are in [docs/COMPUTE.md](docs/COMPUTE.md).
-Version **1.2.0** adds the four E3 replacements and cohort companion to the
-earlier **1.1.0** source/result distribution and **1.1.2** documentation. No model training is needed
+Version **1.2.1** fixes E3 artifact verification on the full release tree;
+the four E3 replacements and cohort companion added in **1.2.0** to the earlier
+**1.1.0** source/result distribution and **1.1.2** documentation are unchanged. No model training is needed
 to inspect these records or enumerate any run plan. Per-folder READMEs give
 rerun prerequisites and expected numbers. These additions retain their stated
 scientific and provenance qualifications.

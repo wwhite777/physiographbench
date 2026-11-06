@@ -121,10 +121,18 @@ are not isolated. The unchanged randomized-dose matched-control results
 remain in the earlier addendum. No causal-identification or independent
 scientific-review pass follows from the archive reconciliation.
 
-The unchanged `verify_artifacts.py` expects the historical 188-record view.
-For an effective-view check, copy the experiment folder to scratch, omit
-the four superseded originals there, and run that verifier: the 156
-originals, four replacements and 28 diagnostics give its expected 188.
-The release tree itself retains all 192 physical records. Policy verification
-uses `--no-legacy`; protocol regeneration requires unbundled archives and
-is separate from inspecting these saved replacement records.
+Run the artifact verifier directly on the release tree from the repository root:
+
+```bash
+python3 -B experiments/counterfactual_onset_matched/verify_artifacts.py
+```
+
+It checks the exact paths and SHA-256 hashes of all **192 physical records**:
+**188 effective records** (160 main-grid records and 28 diagnostics/matched
+controls) plus **four superseded originals**. Main-grid and superseded hashes
+come from the effective inventory; the 28 unchanged diagnostic/matched-control
+hashes come from the root `SHA256SUMS`. Missing, unlisted or changed records
+fail verification. It also checks finite/non-smoke status on every physical
+record and the existing dry-run plan counts, then prints the three record counts.
+Policy verification uses `--no-legacy`; protocol regeneration requires
+unbundled archives and is separate from inspecting these saved replacement records.
