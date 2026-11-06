@@ -1,4 +1,4 @@
-# Reproduce PhysioGraphBench v1.1.1 and its v5 findings
+# Reproduce PhysioGraphBench v1.1.2 and its v5 findings
 
 Run commands below from the repository root. The software is a benchmark and
 includes both supported findings and negative controls. No raw data, trained
@@ -418,7 +418,7 @@ Historical simulator seed aggregates support table reconstruction; recomputing
 patient statistics from predictions requires the locally rerun error artifacts.
 The CinC-2012 table reconstruction reproduces all shipped displays, while the
 new CPU smoke checks one within-corpus fit; the full 88-run series was not
-repeated during packaging. The README identifies the v1.1.1 documentation
+repeated during packaging. The README identifies the v1.1.2 documentation
 update, the v1.1.0 source commit and archive record, and the concept DOI.
 The CinC-2012 results remain the recorded 88-run partitioned-input evidence.
 External CinC-2019 CDE checkpoint replay remains unresolved, and its finite

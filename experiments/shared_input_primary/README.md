@@ -53,11 +53,15 @@ while all arm means beat renal persistence. These are not equivalence tests.
 Report longer budgets separately from the 35-epoch primary table. At 70 epochs,
 none reaches **0.7496 / 0.8070**, and its gap versus same-cap GRU-D falls to
 **+0.0007 [−0.0030, +0.0044] / −0.0026 [−0.0088, +0.0036]**. Narrowing is
-**0.0095 / 0.0055**, in 4/4 seeds: the remaining gap is largely a training
-budget effect for none. Admissible edges do not close it (**+0.0088 / +0.0053**
+**0.0095 / 0.0055** (from +0.0101 / +0.0029 at 35 epochs), in 4/4 seeds. It has
+two parts: none improves (A 0.7559 → 0.7496, B 0.8088 → 0.8070) and same-cap
+GRU-D worsens (A 0.7458 → 0.7489, B 0.8059 → 0.8096); on B the GRU-D change is
+the larger part. Cap, cosine schedule and early stopping change together, so
+this is a sensitivity to those choices, not an isolated attribution to
+training duration. Admissible edges do not close the gap (**+0.0088 / +0.0053**
 at 70; **+0.0120 / +0.0126** at 105). Both organ models worsen at 105, when
-validation early stopping fires in 4/4 seeds. Cap changes also alter the cosine
-schedule, so longer training does not guarantee lower error.
+validation early stopping fires in 4/4 seeds; a longer cap does not guarantee
+lower error.
 
 The earlier [renal input diagnostic](../../diagnostics/renal_shared_input/)
 and [fixed-configuration edge diagnostic](../../diagnostics/shared_input_edges/)

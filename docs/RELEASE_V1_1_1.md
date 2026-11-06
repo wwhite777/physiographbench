@@ -49,7 +49,7 @@ covers every current distribution file except itself. The historical
 `manifests/distribution.json` remains unchanged: hashes and sizes for edited
 Markdown and the overview PNG identify v1.1.0 bytes. Its original fingerprints
 are not replaced. `manifests/readme_trace.json` remains a v1.1.0 record; `CITATION.cff` states
-version 1.1.1 with the unchanged concept DOI; this README and these notes state
+version 1.1.1 (1.1.2 after the wording correction in RELEASE_V1_1_2.md) with the unchanged concept DOI; this README and these notes state
 the current documentation version and claim sources.
 
 The legacy table generator and plotting tool reconstruct frozen v4 displays.

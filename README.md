@@ -2,14 +2,16 @@
 
 # PhysioGraphBench: when do physiological graph priors help?
 
-**Version 1.1.1 — documentation synchronization with the v5 findings.** This
+**Version 1.1.2 — documentation synchronization with the v5 findings.** This
 update preserves the code, results and tests in v1.1.0 (source commit
 [e7e290742b3756fb03462ffde8a3d3ecc4bf5584](https://github.com/wwhite777/physiographbench/tree/e7e290742b3756fb03462ffde8a3d3ecc4bf5584)).
 The concept DOI is [10.5281/zenodo.23976171](https://doi.org/10.5281/zenodo.23976171);
 the v1.1.0 record is [10.5281/zenodo.23992302](https://doi.org/10.5281/zenodo.23992302).
 The selected per-seed checkpoints (140 fits) are archived in a separate Zenodo
 checkpoints record, [10.5281/zenodo.23993257](https://doi.org/10.5281/zenodo.23993257), described below.
-No v1.1.1 archival record of the code is asserted by this update.
+No v1.1.1 or v1.1.2 archival record of the code is asserted by this update.
+Version 1.1.2 corrects one budget-control interpretation; see
+[the 1.1.2 note](docs/RELEASE_V1_1_2.md).
 
 **At the 35-epoch cap, the shared-input no-edge organ model trails GRU-D;
 a 70-epoch budget largely closes that gap. Prescribed edges show no consistent
@@ -97,12 +99,16 @@ The budget control is a separate series, compared with GRU-D at the same cap:
 | PhysioGraph-GRU shared, no edges | 0.7496 | 0.8070 | +0.0007 [−0.0030, +0.0044] | −0.0026 [−0.0088, +0.0036] |
 | PhysioGraph-GRU shared, admissible edges | see budget records | see budget records | +0.0088 | +0.0053 |
 
-The no-edge deficit narrows by 0.0095 on A and 0.0055 on B, in 4/4 seeds;
-both 70-epoch intervals include zero. The remaining gap is largely a training
-budget effect for the no-edge model. The admissible-edge model does not close
-it, and both organ models worsen at 105 epochs (validation early stopping in
-4/4 seeds). Changing the cap also changes the cosine learning-rate schedule;
-longer training does not guarantee lower error. Full paired intervals for all
+From the 35-epoch to the 70-epoch cap, the no-edge deficit versus GRU-D moves
+from +0.0101 to +0.0007 on A and from +0.0029 to −0.0026 on B; it narrows in
+4/4 seeds, and both 70-epoch intervals include zero. The narrowing has two
+parts: the no-edge model improves (A 0.7559 → 0.7496, B 0.8088 → 0.8070) and
+GRU-D worsens (A 0.7458 → 0.7489, B 0.8059 → 0.8096); on B the GRU-D change is
+the larger part. The cap, the cosine learning-rate schedule and early stopping
+change together, so this is a sensitivity to those training choices, not an
+isolated attribution to training duration. The admissible-edge model does not
+close the gap, and both organ models worsen at 105 epochs (validation early
+stopping in 4/4 seeds); a longer cap does not guarantee lower error. Full paired intervals for all
 budget arms are in the [budget reading](experiments/shared_input_primary/artifacts/host/E2_E4_READING.md).
 
 On CinC-2012, the retained historical experiments use the partitioned-input
@@ -372,7 +378,7 @@ Software is distributed under the [MIT licence](LICENSE).
 - [analysis/paired_statistics/](analysis/paired_statistics/): 641 four-seed paired contrasts, multiplicity families, bootstrap summaries and stated missing-prediction limitations.
 
 Recorded compute and coverage are in [docs/COMPUTE.md](docs/COMPUTE.md).
-The documentation update is version **1.1.1**, built on the unchanged **1.1.0**
+The documentation update is version **1.1.2**, built on the unchanged **1.1.0**
 source/result distribution. No model training is needed
 to inspect these records or enumerate any run plan. Per-folder READMEs give
 rerun prerequisites and expected numbers. These additions retain their stated
