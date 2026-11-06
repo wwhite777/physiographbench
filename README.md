@@ -13,7 +13,8 @@ the v1.1.0 record is [10.5281/zenodo.23992302](https://doi.org/10.5281/zenodo.23
 The selected per-seed checkpoints (140 fits) are archived in a separate Zenodo
 checkpoints record, [10.5281/zenodo.23993257](https://doi.org/10.5281/zenodo.23993257), described below.
 Version 1.1.2 of the code is archived as [10.5281/zenodo.23996559](https://doi.org/10.5281/zenodo.23996559);
-version 1.1.1 has no separate archival record.
+version 1.1.1 has no separate archival record. The current release, 1.2.1, is archived as
+[10.5281/zenodo.23998329](https://doi.org/10.5281/zenodo.23998329); version 1.2.0 has no separate archival record.
 Version 1.1.2 corrects one budget-control interpretation; see
 [the 1.1.2 note](docs/RELEASE_V1_1_2.md).
 
@@ -364,6 +365,7 @@ Code and results: [PhysioGraphBench](https://github.com/wwhite777/physiographben
 Concept DOI: [10.5281/zenodo.23976171](https://doi.org/10.5281/zenodo.23976171).
 The v1.1.0 record is [10.5281/zenodo.23992302](https://doi.org/10.5281/zenodo.23992302).
 The v1.1.2 record is [10.5281/zenodo.23996559](https://doi.org/10.5281/zenodo.23996559).
+The v1.2.1 record is [10.5281/zenodo.23998329](https://doi.org/10.5281/zenodo.23998329).
 The checkpoints record (140 selected per-seed fits, v1.1.0) is [10.5281/zenodo.23993257](https://doi.org/10.5281/zenodo.23993257).
 
 ```bibtex
