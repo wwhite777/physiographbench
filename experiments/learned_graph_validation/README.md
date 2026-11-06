@@ -36,3 +36,21 @@ A-test RMSE mean is **0.748258**. Checkpoints and inference recovery arrays
 are excluded; the frozen aggregate values and recovery qualifications remain.
 Set `PHYSIOGRAPH_NO_TRAINING=1` to skip the one optimizer-step test when checking
 the rest of the suite without training.
+
+## v5 interpretation
+
+Rounded to the v5 reported precision, the GraFITi attempt is **0.3027 versus
+0.286 ± 0.001**, a **+0.0167 (+5.8%)** MSE gap. It uses one seed, **44,744
+parameters**, best epoch **84**, 12,000 source records and pooled observed-cell
+MSE. It reaches the published regime without matching the published precision;
+split/fold convention, optimizer and preprocessing differences are candidate
+explanations, without an attributed cause.
+
+On CinC-2019, fixed physiological, random or complete adjacency leaves GraFITi
+A-test pooled RMSE nearly unchanged (**0.7482–0.7483 versus 0.7483** learned).
+For t-PatchGNN, the fixed graphs increase A-test error by **+0.0025**
+(physiological) to **+0.0046** (random/complete) relative to **0.7492** learned.
+These four-seed paired ablations limit topology attribution. They do not isolate
+all sparse-observation encoding effects or establish that a specific learned
+topology explains the external implementation advantage. Exact paired intervals
+for both cohorts remain in [E5_READING.md](artifacts/E5_READING.md).

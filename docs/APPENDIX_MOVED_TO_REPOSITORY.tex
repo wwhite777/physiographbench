@@ -1,0 +1,3419 @@
+% Historical appendix content retained for reference.
+% This is a content fragment, not a standalone typesetting project.
+% Current interpretation and corrections are described in README_APPENDIX.md.
+\appendix
+
+\section{Detailed results and implementation diagnostics}\label{app:diagnostics}
+The following tables retain detail that is needed to inspect the aggregate comparisons. Per-organ entries pool observed target cells inside each organ. They are descriptive breakdowns, not independent replications of a headline test. The tuning table reports every learning-rate/width configuration, parameter count, validation score and completed epoch count from the clinical grid. These are executed configuration records; the source-default parameter configurations in Appendix~\ref{app:spec} do not replace them.
+
+The primary clinical capacity comparison should be read with those counts: the selected GRU-med is larger than PhysioGraph-GRU, so this pair is a capacity control, not an equal-parameter comparison. The simulator's monolithic capacity-matched control is explicitly recorded separately. The graph variants also allocate different edge-module parameter counts. The matched simulator no-edge intervention is defined in Section~\ref{sec:sim} and keeps the organ recurrences.
+
+The per-stay sampling analysis and headline pooled metric address different populations of contributions. The former gives each stay equal weight, excludes zero-target stays, and resamples aligned stay pairs conditional on a checkpoint pair. The latter weights observed entries equally. Neither the seed standard deviations nor the conditional bootstrap intervals incorporate all sources of cohort, site and optimization uncertainty at once.
+
+\subsection{Extended related work}\label{app:extendedrelated}
+Physiome-ODE supplies biological ordinary differential equation forecasting tasks~\cite{klotergens2025physiomeode}; our simulator instead tests specified organ messages and shared-history treatment switches. Yet Another ICU Benchmark (YAIB) provides a flexible multicentre clinical benchmark framework~\cite{vandewater2024yaib}, whereas we fix a multi-organ forecasting estimand and controls. HiRID-ICU-Benchmark evaluates high-resolution ICU tasks~\cite{yeche2021hirid}; our hourly challenge-corpus protocol addresses a different observation regime. APN offers a strong irregular-series baseline~\cite{apn2026}; it is relevant future coverage and is not evaluated here. Beyond MSE motivates examining evaluation choices~\cite{li2026beyondmse}, complementing our separation of pooled error, stay-level inference and direction accuracy. MissHyper studies missingness-guided hypergraph forecasting~\cite{ma2026misshyper}; our imposed organ graph encodes a different prior and our results do not evaluate that method.
+Our contributions are:
+\begin{enumerate}[leftmargin=*]
+\item A benchmark combining two open ICU corpora, a controllable simulator, an exact specification and an audit protocol with matched controls. Both corpora reproduce the recurrent-baseline advantage over the organ-graph model and the lowest pooled errors of learned variable graphs under their stated protocols.
+\item Clinical capacity controls and matched simulator comparisons assessing physiological edges, the organ-factorised architecture and recurrent capacity, together with per-stay uncertainty and a fixed-cohort horizon analysis. The clinical GRU and GRU-D use about half the parameters of PhysioGraph-GRU; the selected GRU-med is larger and is not parameter matched.
+\item Shared-history counterfactual evaluation with dose-support diagnostics and randomised-dose controls, documenting direction recovery across assignment policies while retaining the limitation that treatment-start support and additional structural assumptions are needed for the earlier switch.
+\item Audited learned variable-graph baselines, whose external errors qualify any broad negative interpretation about graph representations.
+\item A reproducibility package with byte-identical cohort replay, run manifests, per-seed checkpoints and a recorded environment. The artifact is public at \url{https://github.com/wwhite777/physiographbench} with an archived copy at Zenodo (DOI \texttt{10.5281/zenodo.23976172}).
+\end{enumerate}
+
+Clinical time-series benchmarks must specify cohort construction, missingness and scoring as carefully as architectures. Existing ICU resources and task suites illustrate the value of explicit preprocessing and evaluation definitions~\cite{harutyunyan2019,johnson2023,pollard2018}; our experiments use the open challenge corpora rather than claiming results on those other datasets. CinC-2019 supplies the cross-hospital forecasting split~\cite{reyna2020}. We add a second-corpus protocol, a source-level specification and a raw-file replay record so that a reported ordering can be inspected independently of prose descriptions.
+
+Irregular-series models address different aspects of observation timing and missingness. GRU-D learns decay of inputs and hidden state~\cite{che2018}; Ordinary differential equation (ODE) recurrences and neural controlled differential equations (CDEs) offer continuous-time hidden dynamics~\cite{rubanova2019,kidger2020}. Graph approaches include spatiotemporal message passing~\cite{yu2018}, the variable-level time-adaptive graphs of t-PatchGNN~\cite{tpatchgnn2024}, and GraFITi's graph representation of sparse time-series observations~\cite{grafiti2024}. They motivate distinguishing an imposed organ-level edge hypothesis from a learned representation. Our result concerns the audited implementations and observation grid, rather than a ranking of model families across their original benchmarks.
+
+State-space sequence models offer structured recurrent updates with several different parameterizations~\cite{gu2022,smith2023,orvieto2023,gu2023}. PhysioGraph's diagonal node uses a Linear Recurrent Unit (LRU)-style update; it is not an implementation claim for every cited state-space architecture. Physiology-inspired simulation ranges from cardiovascular reductions~\cite{heldt2010} to broader organ-agent proposals~\cite{chang2025}. A controllable generator can expose architectural confounds even when its organ interactions are specified, but this does not establish clinical validity.
+
+Sequential counterfactual predictors include recurrent marginal structural networks~\cite{lim2018}, the Counterfactual Recurrent Network (CRN)~\cite{bica2020}, recurrent g-computation~\cite{li2021}, and the Causal Transformer~\cite{melnychuk2022}. Adversarial representation learning supplies the gradient-reversal idea~\cite{ganin2016}. Our benchmark evaluates a named surrogate and a continuous-dose CRN adaptation, and uses shared-history targets plus assignment-support diagnostics to describe estimator performance and dose coverage; the surrogate's auxiliary target is constant zero, and the randomised-dose control does not by itself resolve the treatment-start mismatch. It does not test treatment benefit in patients.
+
+\paragraph{Additional context and interpretation details.}\label{app:interpretationdetail}
+PhysioGraphBench asks whether prescribed physiological edges improve multi-organ forecasting when the surrounding comparisons are controlled. In the measured regimes, they give no consistent improvement: the admissible simulator graph is worse at five of six coupling settings and tied at $\kappa=0.75$. The organ-factorised architecture has lower observed simulator error than a capacity-matched monolithic model, with the architecture-attribution qualifications in Section~\ref{sec:sim}. Meanwhile, the audited learned variable-graph models give the lowest observed external clinical errors under their stated settings. Assignment noise restores shared-history direction recovery under the joint-change and support qualifications in Section~\ref{sec:cfresults}. Randomised-dose predictive controls also need treatment-start support and structural assumptions before they can distinguish estimator limitations from temporal extrapolation. The benchmark's specification, retained failures and reproduction records make those distinctions inspectable. CinC-2012 reproduces both model orderings under transfer and within-corpus protocols. 
+
+Clinical time-series resources and task suites motivate explicit cohort, missingness and scoring definitions~\cite{harutyunyan2019,johnson2023,pollard2018}; CinC-2019 supplies our cross-hospital split~\cite{reyna2020}. GRU-D addresses missingness through learned decay~\cite{che2018}, while ordinary differential equation (ODE) recurrences and neural controlled differential equations (CDEs) model continuous-time hidden dynamics~\cite{rubanova2019,kidger2020}. Spatiotemporal message passing~\cite{yu2018}, t-PatchGNN~\cite{tpatchgnn2024} and GraFITi~\cite{grafiti2024} motivate distinguishing imposed organ edges from learned variable-level representations. State-space models provide alternative recurrent parameterizations~\cite{gu2022,smith2023,orvieto2023,gu2023}; PhysioGraph uses a diagonal Linear Recurrent Unit (LRU)-style node rather than implementing every cited architecture.
+
+Physiological simulators range from cardiovascular reductions~\cite{heldt2010} to organ-agent proposals~\cite{chang2025}. Controlled simulation can expose architecture confounds without establishing clinical validity. Sequential counterfactual methods include recurrent marginal structural networks~\cite{lim2018}, the Counterfactual Recurrent Network (CRN)~\cite{bica2020}, recurrent g-computation~\cite{li2021} and the Causal Transformer~\cite{melnychuk2022}; gradient reversal comes from adversarial representation learning~\cite{ganin2016}. Our surrogate and continuous-dose CRN adaptation are evaluated with shared histories and support diagnostics, without claiming patient treatment benefit. Appendix~\ref{app:diagnostics} preserves the extended related-work discussion and its qualifications.
+
+The prescribed physiological edge sets give no consistent forecasting improvement under the stated controls: the clinical variants have no consistent ordering, and the prescribed physiological simulator graph is worse at five of six coupling settings and tied at $\kappa=0.75$. The organ-factorised architecture has lower observed simulator error than the monolithic controls, without isolating factorisation as its cause. This is compatible with the strong external performance of the audited learned variable-graph implementations; an imposed organ hypothesis and a learned graph representation are different inductive biases. The counterfactual policy grid describes recovery under the joint assignment changes explained in Section~\ref{sec:cfresults}. These findings motivate a benchmark that can falsify an attractive structural explanation and preserve the resulting null results.
+
+The ridge predictive coupling index is $+0.0033$ on A-validation, with a stay-bootstrap interval of $[0.0023,\allowbreak 0.0043]$. On B it is $-0.0557$ with interval $[-0.1352,\allowbreak -0.0002]$; one stay drives the negative B mean through pulmonary$\rightarrow$\allowbreak{}cardiovascular and pulmonary$\rightarrow$\allowbreak{}metabolic cells. Excluding that stay from all saved squared-error contributions gives a mean of $-0.000386$ without refitting; this post-hoc sensitivity check has no new uncertainty interval (Appendix~\ref{app:ridgeinfluence}). A GRU probe gives $-0.0048$ on A-validation and $-0.0063$ on B, so the small positive internal gain is ridge-specific. Coupled hourly simulator settings score $0.17$--$0.21$, decreasing with $\kappa$. Different sampling, missingness, organ coverage and nonphysiological long-horizon states preclude numerical calibration to $\kappa$.
+
+On a fixed cohort of stays at least $48$ hours long, the external PhysioGraph-GRU minus GRU-D gap at $C=12$ is $+0.026$, $+0.021$ and $+0.019$ for $K=6$, $12$ and $24$: it narrows and never closes. Appendix~\ref{app:diagnostics} preserves the full horizon explanation, model table, per-organ errors and convergence diagnostics.
+
+Both model orderings reproduce on CinC-2012 (Table~\ref{tab:cinc2012}, Figure~\ref{fig:cinc2012}): GRU-D beats PhysioGraph-GRU by $0.026$ pooled RMSE in transfer and $0.055$ within corpus, and learned graphs have the lowest pooled errors. The recurrent-versus-organ transfer margin is larger than on CinC-2019 B ($0.026$ versus $0.012$); the best learned graph\textquotesingle s transfer margin over the best recurrent model is smaller ($0.006$ versus $0.013$). Within-corpus organ models are the least seed-stable, and GRU-large is the best recurrent model without retuning. Appendix~\ref{app:diagnostics} preserves all comparator, stability and modality details.
+
+The clinical GRU and GRU-D have about half the parameters of PhysioGraph-GRU, while GRU-med has $2{,}586{,}896$ parameters and is not parameter matched; the explicit capacity match is on the simulator.
+
+The post-hoc control makes organ-partitioned input, rather than the edge set, the leading explanation for the organ model's renal deficit, subject to the projection-capacity caveat; the benchmark's organ-model results should be read with this limitation in mind.
+
+Optimization, forecast-boundary handling and missingness representation (including the absence of explicit elapsed-time inputs) remain untested explanations, while recurrent-state/coupling handling is unchanged and the separate CinC-2012 seed behavior remains undiagnosed. Public artifact identifiers and funding/contact completion remain incomplete.
+
+\subsection{Additional clinical variant and paired-statistics explanation}
+Table~\ref{tab:headline} answers the title question for recorded clinical trajectories. GRU-D has pooled masked RMSE $0.7458\pm0.0005$ internally and $0.8059\pm0.0009$ externally, compared with $0.7702\pm0.0022$ and $0.8177\pm0.0010$ for PhysioGraph-GRU. The pooled gaps are $+0.0244$ on A and $+0.0118$ on B, with positive signs denoting higher error for the organ-graph model. The plain GRU ($444{,}944$ parameters) gives $0.7489/0.8059$ on A/B and, like GRU-D ($449{,}568$), beats PhysioGraph-GRU ($912{,}032$) with about half its parameters. On this CinC-2019 primary cohort, the wider GRU-med and GRU-large controls do not improve on GRU-D; the wider models are as good or better on CinC-2012 and the common long-stay cohort. GRU-med remains within $0.002$ of GRU-D on both evaluations. Thus the organ-graph model loses to smaller recurrent baselines, and extra recurrent capacity does not close that gap. The selected GRU-med is not parameter matched; The detailed tables report the actual counts.
+
+The rounded B means range from $0.8177$ to $0.8202$ for GRU nodes and $0.8210$ to $0.8286$ for SSM nodes, with sample standard deviations $0.0010$--$0.0030$ and $0.0019$--$0.0052$, respectively.
+
+
+Paired stay-level comparisons agree in direction. The mean stay-RMSE gaps (PhysioGraph-GRU minus GRU-D) are $0.0198\pm0.0022$ on A and $0.0115\pm0.0007$ on B across seeds. Section~\ref{sec:clinicalresults} reports conditional stay-bootstrap intervals and per-seed signed-rank tests, distinct from pooled RMSE and training variation. Zero-target stays are excluded.
+
+
+\paragraph{Exact paired clinical tests.}\label{app:pairedexact}
+Paired mean stay-RMSE gaps are $0.0198\pm0.0022$ on A and $0.0115\pm0.0007$ on B. For seeds $0,1,2,3$, Wilcoxon signed-rank $p$-values for PhysioGraph-GRU versus GRU-D are respectively $(4.98\!\times\!10^{-39},\allowbreak 2.49\!\times\!10^{-37},\allowbreak 3.58\!\times\!10^{-47},\allowbreak 2.98\!\times\!10^{-52})$ on $2{,}367$ evaluable A stays and $(9.16\!\times\!10^{-75},\allowbreak 2.08\!\times\!10^{-73},\allowbreak 1.00\!\times\!10^{-67},\allowbreak 5.65\!\times\!10^{-67})$ on $14{,}820$ B stays. Every within-seed/split Holm-adjusted value is below $10^{-35}$. Seed-zero paired stay-bootstrap $95\%$ intervals are $[0.0152,0.0210]$ on A and $[0.0106,0.0130]$ on B. These exclude zero-target stays and condition on fitted checkpoint pairs; they do not estimate pooled-gap or refitting uncertainty.
+
+\paragraph{Variant-range precision.}\label{app:variantprecision}
+The GRU-node spans from unrounded means are $0.002364/0.002524$ on A/B; SSM spans are $0.006672/0.007517$, at most $0.008$. Subtracting the displayed four-decimal table cells instead gives $0.0023/0.0025$ and $0.0066/0.0076$.
+
+\paragraph{Complete shared-input numeric account.}
+After the main results had been analysed, a post-hoc exploratory one-factor control kept the selected no-edge PhysioGraph-GRU configuration and four paired seeds without retuning, giving every organ node all $16$ dynamic variables and masks at both context and forecast steps.
+Renal RMSE decreased in every pair: the four-seed mean changed from $0.846332$ to $0.712003$ on A (shared minus partitioned $-0.134330$; paired range $[-0.219515,-0.082365]$) and from $1.067043$ to $0.939610$ on B ($-0.127433$; $[-0.206632,-0.076684]$), changing from above frozen persistence ($0.762487/0.977049$ on A/B) in every partitioned seed to below it in every shared seed.
+All-organ pooled RMSE also decreased in every pair: $0.772360$ to $0.757969$ on A (mean $-0.014391$; paired range $[-0.019779,-0.010918]$) and $0.818781$ to $0.810142$ on B ($-0.008639$; $[-0.014570,-0.005884]$), although B cardiovascular error rose in two of four pairs.
+These four-seed diagnostics have no significance test and do not propose a model for this paper; widening projections increases capacity ($759952$ to $778384$ parameters), so input access is not separated from that change (Appendix~\ref{app:sharedinput}).
+
+
+\paragraph{CRN comparison units and precision.}\label{app:crncomparisonunits}
+Across the $24$ shared-history policy settings ($24\times2$ compared model entries within the $96$ four-model/policy entries), CRN-lite's four-seed mean cellwise direction accuracy stays within $0.01$ of Control-GRU: the maximum policy-mean difference is $0.0096$ at $(c,\sigma)=(0.5,0.08)$ (displayed as $0.010$ at three decimals), whereas the maximum individual seed-pair difference is $0.0129$.
+
+\subsection{Extended numerical diagnoses and capacity controls}
+\paragraph{Simulator architecture decomposition.}\label{app:decompositiondetail}
+At $\kappa=1$, the capacity-matched monolithic GRU has macro-NRMSE $0.0389$, the factorised no-edge model $0.0364$, and the model with physiological edges $0.0377$. The corresponding parameter counts are $254{,}472$, $254{,}086$ and $271{,}242$. The organ-factorised architecture has lower observed error, subject to the normalization and architecture-attribution qualifications in Section~\ref{sec:sim}. Both steps are smaller than one seed standard deviation. At $\kappa=1$, the observed edge ordering is dense $0.0362$, reversed $0.0364$, none $0.0364$, random $0.0366$, misspecified $0.0370$, and admissible $0.0377$; all means lie within one seed standard deviation of each other. Normalization-induced rescaling when messages enter an organ state is a candidate explanation, not a mechanism tested here. The smaller monolithic control is also included to make the capacity comparison inspectable. This decomposition explains why a comparison between an organ-graph architecture and a different monolithic architecture cannot isolate an edge benefit. Its scope is this generator, training protocol and finite grid; it does not identify an optimal architecture for arbitrary physiological systems. At $\kappa=1$, capacity-matched-monolithic minus no-edge paired differences for seeds $0$--$3$ are $(0.003038,0.001617,0.002041,0.003282)$; physiological-edge minus no-edge differences are $(0.001443,-0.000363,0.002453,0.001381)$. Four seeds allow no significance claim. Urine output is a memoryless logistic function of pressure and lactate a one-state ODE driven by pressure and sepsis, with neither feeding back to circulation; the edge information may be largely recoverable from organ history and dose. This limits the generality of the simulator null.
+
+
+The two learned variable-graph implementations yield internal errors close to tuned GRU-D: t-PatchGNN $0.7492\pm0.0016$ and GraFITi $0.7483\pm0.0003$. Their external errors, $0.7939\pm0.0009$ and $0.7932\pm0.0001$, are the lowest observed among the compared models. These results separate the negative result for an imposed organ-edge set from a claim against learned graph representations. Both are paper-based reimplementations with declared adapter choices and paper settings, without the clinical grid search; their ordering is descriptive under that asymmetry. It does not isolate learned adjacency from all their other architectural differences.
+
+The ridge coupling probe forecasts each organ\textquotesingle s next observed hour from its own $12$-hour history, then adds one source organ. The index $1-\mathrm{RMSE}(\text{own+source})/\mathrm{RMSE}(\text{own})$ measures predictive error reduction. It uses hourly rolling histories and $1{,}000$ whole-stay bootstrap resamples, accounting for multiple windows per stay. A-validation also selects ridge regularization; intervals condition on the fitted probes. The following detailed results retain the full diagnostic protocol. This index does not estimate a causal physiological edge.
+
+\paragraph{Neural CDE exclusion diagnosis.}\label{app:ncdediagnosis}
+In the primary Table~\ref{tab:headline} series, the records apply the label ``diverged'' to unstable external re-inference; they do not specify a quantitative error threshold or a threshold-defined number of failed seeds. All saved primary pooled errors are finite: $2.3447$, $8.2100$, $1.0146$ and $2.2142$ for seeds $0$--$3$ (mean $3.4459\pm3.2320$), each with zero non-finite predictions. CPU re-inference disagrees for seeds $1$ and $2$ and gives a different aggregate ($3.49\pm3.33$ rather than $3.45\pm3.23$); this is the recorded operational reason for excluding the primary B series, not a non-finite-prediction rule. The saved and re-inferred values therefore do not establish exact reproducibility for this baseline. The frozen-checkpoint full-B probe gives RMSE $3.061958$ with zero non-finite predictions and maximum per-window RMSE $326.516357$; its targeted subset also shows large finite errors and gradients. The default spline parameter grid and an explicit $[0,1]$ grid have different numerical integration resolutions at the same step size, so that comparison neither proves a training cause nor supplies a corrected baseline. Historical training losses and gradients were not saved. The separately fitted common-long-stay horizon series has five finite external designs, which remain printed. The hourly simulator extension can reach nonphysiological states and has only builder-level verification.
+
+
+The ridge index has a small positive internal mean, $+0.0033$ ($[0.0023,\allowbreak 0.0043]$), but B is $-0.0557$ ($[-0.1352,\allowbreak -0.0002]$), driven by one stay in pulmonary$\rightarrow$\allowbreak{}cardiovascular and pulmonary$\rightarrow$\allowbreak{}metabolic; see the deletion diagnostic in Appendix~\ref{app:ridgeinfluence}. The GRU probe is negative on A-validation/B ($-0.0048/-0.0063$). The coupled hourly simulator range $0.17$--$0.21$ decreases with $\kappa$, and is undefined at zero coupling. Differences in sampling, missingness and organs and nonphysiological late simulator states preclude numerical calibration to $\kappa$. These probes measure recorded predictability rather than physiological coupling.
+
+
+On the primary CinC-2019 task only, GRU-med ($2{,}586{,}896$ parameters; $0.7475/0.8068$) and GRU-large ($6{,}498{,}320$; $0.7533/0.8104$) do not improve on GRU-D.
+
+
+\subsection{Extended direction-figure explanation}
+\paragraph{CRN comparison and treatment timing.}\label{app:crnmaincomparison}
+Across the $24$ shared-history policy settings for the two compared models, CRN-lite's four-seed mean cellwise direction accuracy stays within $0.01$ of Control-GRU: the maximum mean difference is $0.0096$ at $(c,\sigma)=(0.5,0.08)$, rounding to $0.010$ (Appendix~\ref{app:crncomparisonunits}). CRN-lite's gradient-reversal target is mean context vasopressor dose, exactly zero for every patient in all $24$ cells; its target therefore supplies no test of balancing against varying treatment amounts (Appendix~\ref{app:crnzerotarget}). At the randomised-dose $(c,\sigma)=(0,0)$ predictive control, the separate continuous-dose CRN adaptation has cell accuracy $0.74$--$0.79$ across the evaluated balancing weights and the $120$-epoch arm, below the unadjusted GRU ($0.9397$). Context samples occupy minutes $0$--$55$, factual treatment starts at minute $72$, and counterfactual alternatives switch at minute $60$; no factual training trajectory is treated during minutes $60$--$72$. Dose randomisation alone does not identify the earlier-start intervention. An identification argument needs a structural assumption such as a stationary controlled transition law with adequate state--dose support; such support is not established here. The lower accuracy is an observed limitation of this fitted estimator and evaluation protocol; these comparisons cannot separate estimator limitations from temporal extrapolation or attribute severity-driven failures uniquely to non-identification. Appendix~\ref{app:diagnostics} retains the full explanation and sweep.
+
+
+
+Here UO denotes urine output and Lac denotes lactate. At $(c,\sigma)=(1,0.15)$, PhysioGraph-SSM MAP/UO accuracies are $0.602821/0.719423$, and PhysioGraph-GRU MAP/UO are $0.863802/0.757791$. Thus the $0.60$--$0.76$ description concerns the weak organ-model channels, not the complete organ-model range. At $(1,0.25)$ the exact MAP/UO range across models is $0.927365$--$0.958268$; $0.93$ is its rounded lower end, not an exact lower bound. The maximum near $0.958$ also reflects the pre-switch first target sample: under the nonzero-predicted-difference condition in Appendix~\ref{app:directionscoring}, $2400/69120$ unavoidable zero-sign mismatches cap cellwise accuracy at $0.965278$. Channel and cellwise denominators differ.
+
+Shared-history counterfactual direction recovery over severity-driven assignment strength $c$ and assignment-noise standard deviation $\sigma$. Each model panel reports mean cellwise sign agreement across four training seeds; each run scores $69{,}120$ patient/dose-pair/time/channel cells. Text reports the mean count of correct population-average signs for mean arterial pressure, urine output and lactate, out of three. Support markers flag incomplete coverage of the dose grid by severity-tercile dose quantiles; support-restricted accuracy is undefined when no comparison is supported. The historical-target strips use $\sigma=0.03$, outside the main noise grid, so they do not isolate a paired protocol effect. They document the earlier history mismatch and are excluded from current conclusions. These are simulator diagnostics, not treatment-effect validation on clinical data.
+
+
+\subsection{Complete matched-control tables}
+At zero coupling their macro-NRMSE values are $0.0213\pm0.0018$ versus $0.0203\pm0.0012$; at full coupling they are $0.0377\pm0.0044$ versus $0.0364\pm0.0035$. These values compare physiological edges with no edges, respectively.
+
+Table~\ref{tab:variants} is in the main text; Table~\ref{tab:decomposition} retains the architecture decomposition across all coupling settings here, as referenced in Section~\ref{sec:couplingresults}.
+\begin{table}[tbp]
+\centering
+\caption{Three-way architecture/edge decomposition on identical simulated data. Macro-NRMSE uses fixed reference ranges across coupling settings; entries are mean $\pm$ sample standard deviation across four seeds. The architecture-attribution qualification is in Section~\ref{sec:sim}.}\label{tab:decomposition}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{ccccc}
+\toprule
+$\kappa$ 
+& Monolithic 
+& Capacity matched 
+& No edges 
+& Physiol. edges 
+\\
+\midrule
+0 
+& $0.0211\pm0.0015$ 
+& $0.0208\pm0.0010$ 
+& $0.0203\pm0.0012$ 
+& $0.0213\pm0.0018$ 
+\\
+0.1 
+& $0.0229\pm0.0011$ 
+& $0.0232\pm0.0010$ 
+& $0.0219\pm0.0013$ 
+& $0.0224\pm0.0020$ 
+\\
+0.25 
+& $0.0256\pm0.0012$ 
+& $0.0258\pm0.0016$ 
+& $0.0246\pm0.0016$ 
+& $0.0252\pm0.0025$ 
+\\
+0.5 
+& $0.0300\pm0.0021$ 
+& $0.0299\pm0.0020$ 
+& $0.0287\pm0.0022$ 
+& $0.0295\pm0.0030$ 
+\\
+0.75 
+& $0.0347\pm0.0027$ 
+& $0.0344\pm0.0029$ 
+& $0.0327\pm0.0035$ 
+& $0.0327\pm0.0033$ 
+\\
+1 
+& $0.0397\pm0.0032$ 
+& $0.0389\pm0.0034$ 
+& $0.0364\pm0.0035$ 
+& $0.0377\pm0.0044$ 
+\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+Table~\ref{tab:perorgan} gives the organ-specific primary-task errors.
+Tables~\ref{tab:grid0}, \ref{tab:grid18} and~\ref{tab:grid36} give the complete executed tuning grid in order.
+Tables~\ref{tab:horizon0}, \ref{tab:horizon18} and~\ref{tab:horizon36} give every fixed-cohort horizon score, including finite Neural CDE values.
+
+
+\subsection{CinC-2012 comparison figure}
+Transfer uses $3{,}989/4{,}000$ eligible/retained set-a stays and $3{,}993/4{,}000$ set-b stays, pooled $7{,}982/8{,}000$. Within-corpus uses $3{,}390/3{,}400$ training, $599/600$ validation and $3{,}993/4{,}000$ set-b stays. All eligible stays are used; eligibility requires at least $24$ hours. Transfer pooling combines squared errors and observed-entry counts before taking the square root.
+
+Both CinC-2019 model orderings reproduce on CinC-2012 (Table~\ref{tab:cinc2012}): GRU-D beats PhysioGraph-GRU by $0.026$ pooled RMSE in transfer ($0.8273$ versus $0.8529$) and $0.055$ within corpus ($0.7684$ versus $0.8239$), and the learned variable graphs have the lowest pooled errors on both protocols. The recurrent-versus-organ transfer margin is larger than on CinC-2019 B ($0.026$ versus $0.012$), whereas the best learned graph's margin over the best recurrent model is smaller ($0.006$ versus $0.013$). Figure~\ref{fig:cinc2012} displays both protocols. The GRU, GRU-med, GRU-large, GraphGRU and ODE-RNN baselines also beat the organ-graph model on both protocols, while t-PatchGNN and GraFITi give transfer pooled errors $0.8142/0.8192$ and within-corpus errors $0.7460/0.7335$. Within corpus, the organ-graph models are the least seed-stable ($0.0152/0.0352$ standard deviations for GRU/SSM nodes), and GRU-large is the best recurrent model under configurations selected on CinC-2019, without retuning here. Neural CDE is finite but has the highest error on both CinC-2012 protocols, unlike its divergence on CinC-2019 B. The corpus overlaps CinC-2019 A's hospital system, arterial SaO2 substitutes for pulse-oximetry O2Sat, and set-a/set-b are not asserted to represent different hospitals.
+
+Figure~\ref{fig:cinc2012} shows transfer and within-corpus errors with the denominators in Table~\ref{tab:cinc2012}; the corpus is not an independent-hospital replication.
+\IfFileExists{figures/F9_cinc2012.pdf}{
+\begin{figure}[htbp]
+\centering\includegraphics[width=\textwidth,height=7.7in,keepaspectratio]{figures/F9_cinc2012.pdf}
+\caption{CinC-2012 transfer and within-corpus forecasting. Table~\ref{tab:cinc2012} gives the seed means and sample standard deviations; this appendix subsection gives the eligible-stay denominators.}\label{fig:cinc2012}
+\Description{CinC-2012 errors under frozen CinC-2019 transfer and within-corpus training.}
+\end{figure}
+}{}
+
+\subsection{Forecast and coupling-index plots at their designed size}
+Figure~\ref{fig:forecast} displays primary clinical means and matched variants. Figure~\ref{fig:index} displays the ridge probe, including its B influence limitation and the separate simulator diagnostic.
+\begin{figure}[htbp]
+\centering\includegraphics[width=\textwidth,height=7.4in,keepaspectratio]{figures/F2_forecasting.pdf}
+\caption{\captionForecast}\label{fig:forecast}
+\Description{Internal and external forecast error comparisons, with seed variation and the external Neural CDE exclusion.}
+\end{figure}
+\clearpage
+\begin{figure}[htbp]
+\centering\figasset{F5_coupling_index}{3.33in}{2.1in}
+\caption{Predictive coupling diagnostics: directed ridge indices on A-validation and B, and the separate hourly simulator comparison. Confidence intervals resample stays. An undefined zero-coupling index is absent, rather than plotted as zero. The B mean ($-0.0557$) is driven by single stays in two cells; the GRU probe is negative on both cohorts. The simulator extension is a diagnostic and has no numerical calibration interpretation.}\label{fig:index}
+\Description{Clinical directed predictive indices and the separate hourly simulator diagnostic.}
+\end{figure}
+\clearpage
+
+\subsection{Extended cohort, model, audit and result details}
+PhysioGraphBench combines recorded intensive care unit (ICU) measurements with a controlled generator. CinC-2019 is the PhysioNet/Computing in Cardiology early-sepsis corpus~\cite{reyna2020}. Its A and B collections contain $20{,}336$ and $20{,}000$ stays. The frozen preprocessing keeps up to $48$ hourly rows per stay; replay from all $40{,}336$ public raw files reproduces the cohort archive byte for byte with zero exclusions. The saved A partition has $14{,}236$ training, $3{,}050$ validation and $3{,}050$ test stays; B is held out for external evaluation. A stay is a record, and unique-person independence across admissions is not verified. Splitting, fitting normalization, and model selection use A alone.
+
+The dynamic schema groups $16$ variables into cardiovascular, pulmonary, renal and metabolic systems, with five static (time-invariant) patient covariates. An observation mask records whether each value is present. Dynamic values are standardized using observed A-training entries; missing values become normalized zero with their mask retained. There is no dataset-level interpolation or forward fill. Frequently recorded bedside measurements therefore receive more weight in the pooled metric than sparse laboratory measurements. The following detailed results retain the feature-group description; Appendix~\ref{app:spec} gives the exact schema, units and observation rates.
+
+The clinical baselines are last-observation persistence, a monolithic GRU, larger GRU capacity controls, GRU-D with learned missingness decay~\cite{che2018}, an ordinary differential equation recurrent neural network (ODE-RNN)~\cite{rubanova2019}, a neural controlled differential equation (CDE) encoder~\cite{kidger2020}, and feature-attention GraphGRU. These are evaluated implementations, not assertions that every detail matches an original paper. In particular, GRU-D uses missing-run counts on the hourly grid and a full affine input-decay map; GraphGRU is a local dense feature-attention implementation. The continuous-time encoders operate on the supplied grid with recurrent decoders. This common input construction limits conclusions about handling raw irregular event times.
+
+
+t-PatchGNN learns time-adaptive variable relationships after transforming observations into patches~\cite{tpatchgnn2024}. GraFITi represents time-series observations and queries as graph edges~\cite{grafiti2024}. Both are paper-based reimplementations integrated with the frozen loader and metric; adapter deviations are recorded, including pooling and patch conventions for t-PatchGNN and an activation choice for GraFITi. They use paper settings without a hyperparameter grid. Simulator baselines additionally include a treatment-conditioned monolithic Control-GRU, its capacity-matched version, CRN-lite, and a continuous-dose adaptation of the Counterfactual Recurrent Network (CRN)~\cite{bica2020}. CRN-lite adds a gradient-reversal treatment head to a GRU and is explicitly a surrogate. The separate CRN adapter uses a two-stage recurrent encoder--decoder with observed-outcome inputs in training and predicted-outcome feedback at evaluation; it is not interchangeable with CRN-lite.
+
+
+The dynamic schema has $16$ variables grouped as cardiovascular (heart rate and arterial pressures), pulmonary (oxygen saturation, respiratory rate, inspired oxygen and carbon-dioxide pressure), renal (creatinine, blood urea nitrogen and potassium), and metabolic (lactate, glucose, bicarbonate, white-blood-cell count and temperature). Five static covariates describe age, recorded gender, unit indicators and hospital-admission time. Appendix~\ref{app:spec} gives their exact order, units and observation rates. An observation mask is one when a value is recorded and zero when it is missing or padded. Each dynamic variable is standardized using its observed A-training mean and standard deviation; missing values are then set to normalized zero with their mask retained. There is no dataset-level interpolation or forward fill. Frequently observed bedside measurements consequently contribute more entries to the pooled forecasting metric than laboratory measurements.
+
+
+CinC-2012 provides a second open corpus with $4{,}000$ stays in set-a and $4{,}000$ in set-b, mapped to the same dynamic groups on an hourly $48$-hour grid. For within-corpus training, set-a supplies $3{,}400/600$ train/validation records and set-b supplies $4{,}000$ test records; eligibility for the primary window leaves $3{,}390/599/3{,}993$. Transfer uses the frozen CinC-2019 normalization. Set-a and set-b are not asserted to be different hospitals, and this corpus shares hospital-system provenance with CinC-2019 A, so it is not evidence from an additional independent hospital. Arterial oxygen saturation is the mapped substitute for the oxygen-saturation channel. The source licence is ODC-By 1.0. Model results appear in Section~\ref{sec:cinc2012results}.
+
+
+PhysioGraph projects each organ's values, masks, static covariates and available controls into an organ-specific state. Node recurrences use either a gated recurrent unit (GRU) or a diagonal state-space model (SSM), a recurrent linear latent-state update with learned stable poles. Allowed directed edges carry gated learned messages between organ outputs; an organ-specific readout produces the next measurement vector, which is fed back for autoregressive prediction. The SSM's pole constraint does not bound the whole nonlinear coupled forecast. The clinical admissible graph is an imposed hypothesis about communication paths, rather than a physiological dependency estimate. Appendix~\ref{app:spec} gives the exact message equations, edge lists and no-edge behavior. Clinical variants inherit the selected settings without separate retuning.
+
+
+For each recurrent/organ clinical architecture, validation selection evaluates learning rates $\{0.0005,\allowbreak 0.001,\allowbreak 0.002\}$ crossed with small/large model-specific widths using training seed zero, then runs seeds $\{0,1,2,3\}$ at the selected configuration. The epoch cap is $35$, with common Adam optimization, cosine scheduling, gradient clipping and validation early stopping. Selection uses A-validation pooled masked RMSE, with a lexical configuration tie break; B is never selected on. Equal budget means equal grid size and epoch cap, not equal parameter count or runtime. The learned-graph runs have the same loader and metric but no grid, so tuning parity is not claimed for them. The detailed tables report the complete grid and recorded parameter counts.
+
+
+To measure available cross-organ predictive information, the ridge coupling probe forecasts a target organ's next observed hour from its own preceding history, then adds one source organ. Its directed index is $1-\mathrm{RMSE}(\text{own+source})/\mathrm{RMSE}(\text{own})$; positive values indicate lower prediction error. Rolling $12$-hour histories have hourly stride, and ridge regularization is selected on A-validation. Unlike the primary forecasting task, this diagnostic has multiple windows per stay; $1{,}000$ bootstrap resamples therefore resample whole stays. Its interval conditions on the fitted probes, and A-validation's simultaneous role in selection and assessment limits its interpretation. It is a predictive diagnostic, not an estimate of a causal physiological edge.
+
+
+The paired per-stay analysis gives the same direction under a different estimand. Averaging within each stay before comparing models, the PhysioGraph-GRU minus GRU-D gap is $0.0198\pm0.0022$ on A and $0.0115\pm0.0007$ on B across training seeds. For the saved seed-zero pair, the stay-bootstrap $95\%$ intervals are $[0.0152,0.0210]$ internally and $[0.0106,0.0130]$ externally. These intervals describe sampling stays with the fitted models held fixed; they are not confidence intervals for the pooled gaps above or for training variability. The analysis excludes stays with no observed targets, rather than counting their errors as zero.
+
+
+The ridge predictive coupling index (Section~\ref{sec:audit}) is small and positive internally: $+0.0033$ ($[0.0023,\allowbreak 0.0043]$) on A-validation. B is $-0.0557$ ($[-0.1352,\allowbreak -0.0002]$), driven by single stays in two cells, and the GRU probe gives $-0.0048/-0.0063$ on A-validation/B. This is a probe of recorded next-hour predictability, not a measurement of physiological interaction strength. Every coupled hourly simulator setting instead has an index in the $0.17$--$0.21$ range on the same definition. The hourly extension has different observation patterns and organ coverage and reaches nonphysiological states over its longer horizon; its index is undefined at zero coupling because urine output is constant. We therefore report the contrast without assigning CinC-2019 a numerical simulator coupling value. Figure~\ref{fig:index} shows both sides of the comparison.
+
+
+Holding the evaluated cohort fixed to stays of at least $48$ hours prevents a horizon effect from being confounded with changing eligibility. At context $C=12$, the external PhysioGraph-GRU minus GRU-D pooled gap is $+0.026$, $+0.021$ and $+0.019$ at horizons $K=6$, $12$ and $24$, respectively. It narrows slightly and never closes in this experiment. Appendix~\ref{app:diagnostics} gives every audited model and context/horizon combination, together with per-organ errors and convergence pointers. These controlled comparisons replace an earlier horizon statement that changed the context and cohort together.
+
+\begin{table*}[tbp]
+\centering
+\caption{Per-organ pooled masked RMSE at the primary horizon, mean $\pm$ sample standard deviation across training seeds. Within each organ the observed entries are pooled before taking a square root; averaging these columns does not recover Table~\ref{tab:headline}.}\label{tab:perorgan}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llcccc}
+\toprule
+Model 
+& Split 
+& Cardiovascular 
+& Pulmonary 
+& Renal 
+& Metabolic 
+\\
+\midrule
+Persistence 
+& A 
+& $0.8273\pm0.0000$ 
+& $0.9620\pm0.0000$ 
+& $0.7625\pm0.0000$ 
+& $0.8610\pm0.0000$ 
+\\
+Persistence 
+& B 
+& $0.9147\pm0.0000$ 
+& $0.9892\pm0.0000$ 
+& $0.9770\pm0.0000$ 
+& $0.8579\pm0.0000$ 
+\\
+GRU-D 
+& A 
+& $0.6970\pm0.0005$ 
+& $0.8184\pm0.0014$ 
+& $0.6941\pm0.0021$ 
+& $0.7631\pm0.0016$ 
+\\
+GRU-D 
+& B 
+& $0.7976\pm0.0007$ 
+& $0.8186\pm0.0014$ 
+& $0.9097\pm0.0038$ 
+& $0.7900\pm0.0044$ 
+\\
+GRU-med 
+& A 
+& $0.6961\pm0.0004$ 
+& $0.8170\pm0.0007$ 
+& $0.7208\pm0.0014$ 
+& $0.7790\pm0.0017$ 
+\\
+GRU-med 
+& B 
+& $0.7954\pm0.0005$ 
+& $0.8159\pm0.0005$ 
+& $0.9493\pm0.0019$ 
+& $0.8079\pm0.0039$ 
+\\
+GRU 
+& A 
+& $0.6966\pm0.0002$ 
+& $0.8197\pm0.0012$ 
+& $0.7145\pm0.0043$ 
+& $0.7822\pm0.0037$ 
+\\
+GRU 
+& B 
+& $0.7939\pm0.0009$ 
+& $0.8161\pm0.0006$ 
+& $0.9424\pm0.0029$ 
+& $0.8083\pm0.0030$ 
+\\
+GRU-large 
+& A 
+& $0.7044\pm0.0033$ 
+& $0.8221\pm0.0019$ 
+& $0.7155\pm0.0070$ 
+& $0.7795\pm0.0053$ 
+\\
+GRU-large 
+& B 
+& $0.8014\pm0.0062$ 
+& $0.8200\pm0.0023$ 
+& $0.9344\pm0.0077$ 
+& $0.8016\pm0.0082$ 
+\\
+GraphGRU 
+& A 
+& $0.6996\pm0.0014$ 
+& $0.8271\pm0.0029$ 
+& $0.7252\pm0.0090$ 
+& $0.7967\pm0.0051$ 
+\\
+GraphGRU 
+& B 
+& $0.8003\pm0.0031$ 
+& $0.8188\pm0.0008$ 
+& $0.9594\pm0.0141$ 
+& $0.8176\pm0.0064$ 
+\\
+ODE-RNN 
+& A 
+& $0.7045\pm0.0024$ 
+& $0.8264\pm0.0054$ 
+& $0.7477\pm0.0069$ 
+& $0.8078\pm0.0069$ 
+\\
+ODE-RNN 
+& B 
+& $0.8050\pm0.0042$ 
+& $0.8217\pm0.0015$ 
+& $0.9733\pm0.0037$ 
+& $0.8242\pm0.0053$ 
+\\
+PhysioGraph-GRU 
+& A 
+& $0.6989\pm0.0012$ 
+& $0.8422\pm0.0007$ 
+& $0.8134\pm0.0401$ 
+& $0.8579\pm0.0017$ 
+\\
+PhysioGraph-GRU 
+& B 
+& $0.8001\pm0.0006$ 
+& $0.8174\pm0.0004$ 
+& $1.0234\pm0.0280$ 
+& $0.8585\pm0.0027$ 
+\\
+PhysioGraph-SSM 
+& A 
+& $0.7060\pm0.0048$ 
+& $0.8439\pm0.0018$ 
+& $0.9397\pm0.0032$ 
+& $0.8622\pm0.0032$ 
+\\
+PhysioGraph-SSM 
+& B 
+& $0.8085\pm0.0080$ 
+& $0.8199\pm0.0017$ 
+& $1.1410\pm0.0024$ 
+& $0.8716\pm0.0028$ 
+\\
+Neural CDE 
+& A 
+& $0.7501\pm0.0047$ 
+& $0.8724\pm0.0089$ 
+& $0.8299\pm0.0096$ 
+& $0.8790\pm0.0233$ 
+\\
+Neural CDE 
+& B 
+& diverged 
+& diverged 
+& diverged 
+& diverged 
+\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\clearpage
+\begin{table*}[tbp]
+\centering
+\caption{Complete clinical tuning grid (continued where applicable). Configuration selection uses A-validation at grid seed zero; the selected configuration is then evaluated across the recorded training seeds. Width labels denote model-specific sizes, not an equal parameter count.}\label{tab:grid0}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lllrcc}
+\toprule
+Model 
+& Learning rate 
+& Width 
+& Parameters 
+& Val. RMSE 
+& Epochs 
+\\
+\midrule
+GRU 
+& 0.0005 
+& small 
+& 124176 
+& 0.77568 
+& 35 
+\\
+GRU 
+& 0.0005 
+& large 
+& 444944 
+& 0.76661 
+& 35 
+\\
+GRU 
+& 0.001 
+& small 
+& 124176 
+& 0.76642 
+& 35 
+\\
+GRU 
+& 0.001 
+& large 
+& 444944 
+& 0.75662 
+& 35 
+\\
+GRU 
+& 0.002 
+& small 
+& 124176 
+& 0.75910 
+& 35 
+\\
+GRU 
+& 0.002 
+& large 
+& 444944 
+& 0.75771 
+& 28 
+\\
+GRU-med 
+& 0.0005 
+& small 
+& 679056 
+& 0.76505 
+& 35 
+\\
+GRU-med 
+& 0.0005 
+& large 
+& 2586896 
+& 0.75558 
+& 35 
+\\
+GRU-med 
+& 0.001 
+& small 
+& 679056 
+& 0.75570 
+& 35 
+\\
+GRU-med 
+& 0.001 
+& large 
+& 2586896 
+& 0.75794 
+& 23 
+\\
+GRU-med 
+& 0.002 
+& small 
+& 679056 
+& 0.75904 
+& 32 
+\\
+GRU-med 
+& 0.002 
+& large 
+& 2586896 
+& 0.75663 
+& 21 
+\\
+GRU-large 
+& 0.0005 
+& small 
+& 1676304 
+& 0.75749 
+& 35 
+\\
+GRU-large 
+& 0.0005 
+& large 
+& 6498320 
+& 0.75580 
+& 33 
+\\
+GRU-large 
+& 0.001 
+& small 
+& 1676304 
+& 0.75770 
+& 28 
+\\
+GRU-large 
+& 0.001 
+& large 
+& 6498320 
+& 0.75744 
+& 22 
+\\
+GRU-large 
+& 0.002 
+& small 
+& 1676304 
+& 0.75842 
+& 26 
+\\
+GRU-large 
+& 0.002 
+& large 
+& 6498320 
+& 0.75498 
+& 22 
+\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\clearpage
+\begin{table*}[tbp]
+\centering
+\caption{Complete clinical tuning grid (continued where applicable). Configuration selection uses A-validation at grid seed zero; the selected configuration is then evaluated across the recorded training seeds. Width labels denote model-specific sizes, not an equal parameter count.}\label{tab:grid18}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lllrcc}
+\toprule
+Model 
+& Learning rate 
+& Width 
+& Parameters 
+& Val. RMSE 
+& Epochs 
+\\
+\midrule
+GRU-D 
+& 0.0005 
+& small 
+& 126624 
+& 0.76085 
+& 35 
+\\
+GRU-D 
+& 0.0005 
+& large 
+& 449568 
+& 0.75258 
+& 35 
+\\
+GRU-D 
+& 0.001 
+& small 
+& 126624 
+& 0.75505 
+& 35 
+\\
+GRU-D 
+& 0.001 
+& large 
+& 449568 
+& 0.75500 
+& 23 
+\\
+GRU-D 
+& 0.002 
+& small 
+& 126624 
+& 0.75357 
+& 34 
+\\
+GRU-D 
+& 0.002 
+& large 
+& 449568 
+& 0.75510 
+& 22 
+\\
+Neural CDE 
+& 0.0005 
+& small 
+& 625808 
+& 0.86233 
+& 17 
+\\
+Neural CDE 
+& 0.0005 
+& large 
+& 2464016 
+& 0.85854 
+& 17 
+\\
+Neural CDE 
+& 0.001 
+& small 
+& 625808 
+& 0.84076 
+& 14 
+\\
+Neural CDE 
+& 0.001 
+& large 
+& 2464016 
+& 0.83167 
+& 18 
+\\
+Neural CDE 
+& 0.002 
+& small 
+& 625808 
+& 0.81595 
+& 28 
+\\
+Neural CDE 
+& 0.002 
+& large 
+& 2464016 
+& 0.82144 
+& 31 
+\\
+ODE-RNN 
+& 0.0005 
+& small 
+& 157200 
+& 0.77290 
+& 35 
+\\
+ODE-RNN 
+& 0.0005 
+& large 
+& 576528 
+& 0.75890 
+& 35 
+\\
+ODE-RNN 
+& 0.001 
+& small 
+& 157200 
+& 0.76264 
+& 35 
+\\
+ODE-RNN 
+& 0.001 
+& large 
+& 576528 
+& 0.75925 
+& 33 
+\\
+ODE-RNN 
+& 0.002 
+& small 
+& 157200 
+& 0.75801 
+& 33 
+\\
+ODE-RNN 
+& 0.002 
+& large 
+& 576528 
+& 0.76287 
+& 28 
+\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\clearpage
+\begin{table*}[tbp]
+\centering
+\caption{Complete clinical tuning grid (continued where applicable). Configuration selection uses A-validation at grid seed zero; the selected configuration is then evaluated across the recorded training seeds. Width labels denote model-specific sizes, not an equal parameter count.}\label{tab:grid36}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lllrcc}
+\toprule
+Model 
+& Learning rate 
+& Width 
+& Parameters 
+& Val. RMSE 
+& Epochs 
+\\
+\midrule
+GraphGRU 
+& 0.0005 
+& small 
+& 211056 
+& 0.76879 
+& 35 
+\\
+GraphGRU 
+& 0.0005 
+& large 
+& 617840 
+& 0.76230 
+& 27 
+\\
+GraphGRU 
+& 0.001 
+& small 
+& 211056 
+& 0.76763 
+& 23 
+\\
+GraphGRU 
+& 0.001 
+& large 
+& 617840 
+& 0.76384 
+& 18 
+\\
+GraphGRU 
+& 0.002 
+& small 
+& 211056 
+& 0.77361 
+& 20 
+\\
+GraphGRU 
+& 0.002 
+& large 
+& 617840 
+& 0.76969 
+& 18 
+\\
+PhysioGraph-SSM 
+& 0.0005 
+& small 
+& 343584 
+& 0.80392 
+& 35 
+\\
+PhysioGraph-SSM 
+& 0.0005 
+& large 
+& 687008 
+& 0.80040 
+& 35 
+\\
+PhysioGraph-SSM 
+& 0.001 
+& small 
+& 343584 
+& 0.79110 
+& 35 
+\\
+PhysioGraph-SSM 
+& 0.001 
+& large 
+& 687008 
+& 0.79269 
+& 35 
+\\
+PhysioGraph-SSM 
+& 0.002 
+& small 
+& 343584 
+& 0.79235 
+& 35 
+\\
+PhysioGraph-SSM 
+& 0.002 
+& large 
+& 687008 
+& 0.79928 
+& 35 
+\\
+PhysioGraph-GRU 
+& 0.0005 
+& small 
+& 411424 
+& 0.78222 
+& 35 
+\\
+PhysioGraph-GRU 
+& 0.0005 
+& large 
+& 912032 
+& 0.78133 
+& 35 
+\\
+PhysioGraph-GRU 
+& 0.001 
+& small 
+& 411424 
+& 0.78184 
+& 35 
+\\
+PhysioGraph-GRU 
+& 0.001 
+& large 
+& 912032 
+& 0.78331 
+& 35 
+\\
+PhysioGraph-GRU 
+& 0.002 
+& small 
+& 411424 
+& 0.79639 
+& 35 
+\\
+PhysioGraph-GRU 
+& 0.002 
+& large 
+& 912032 
+& 0.79808 
+& 35 
+\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\clearpage
+\begin{table*}[tbp]
+\centering
+\caption{Horizon sensitivity on the common at-least-$48$-hour cohort (continued where applicable). Values are pooled masked RMSE, mean $\pm$ sample standard deviation; the separately fitted Neural CDE horizon series has finite external values.}\label{tab:horizon0}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llcc}
+\toprule
+$C/K$ (h) 
+& Model 
+& A 
+& B 
+\\
+\midrule
+12/6 
+& GRU-D 
+& $0.7076\pm0.0013$ 
+& $0.7703\pm0.0010$ 
+\\
+12/6 
+& GRU-med 
+& $0.7143\pm0.0007$ 
+& $0.7706\pm0.0005$ 
+\\
+12/6 
+& GRU 
+& $0.7141\pm0.0005$ 
+& $0.7716\pm0.0010$ 
+\\
+12/6 
+& GRU-large 
+& $0.7217\pm0.0020$ 
+& $0.7798\pm0.0021$ 
+\\
+12/6 
+& GraphGRU 
+& $0.7147\pm0.0029$ 
+& $0.7723\pm0.0028$ 
+\\
+12/6 
+& ODE-RNN 
+& $0.7266\pm0.0014$ 
+& $0.7816\pm0.0006$ 
+\\
+12/6 
+& PhysioGraph-GRU 
+& $0.7509\pm0.0026$ 
+& $0.7961\pm0.0019$ 
+\\
+12/6 
+& PhysioGraph-SSM 
+& $0.7787\pm0.0083$ 
+& $0.8406\pm0.0099$ 
+\\
+12/6 
+& Neural CDE 
+& $0.8541\pm0.0052$ 
+& $0.8664\pm0.0048$ 
+\\
+12/12 
+& GRU-D 
+& $0.7507\pm0.0011$ 
+& $0.8273\pm0.0008$ 
+\\
+12/12 
+& GRU-med 
+& $0.7537\pm0.0007$ 
+& $0.8236\pm0.0004$ 
+\\
+12/12 
+& GRU 
+& $0.7540\pm0.0007$ 
+& $0.8249\pm0.0007$ 
+\\
+12/12 
+& GRU-large 
+& $0.7607\pm0.0012$ 
+& $0.8300\pm0.0021$ 
+\\
+12/12 
+& GraphGRU 
+& $0.7536\pm0.0021$ 
+& $0.8261\pm0.0015$ 
+\\
+12/12 
+& ODE-RNN 
+& $0.7638\pm0.0020$ 
+& $0.8336\pm0.0015$ 
+\\
+12/12 
+& PhysioGraph-GRU 
+& $0.7844\pm0.0041$ 
+& $0.8487\pm0.0050$ 
+\\
+12/12 
+& PhysioGraph-SSM 
+& $0.8181\pm0.0085$ 
+& $0.8942\pm0.0087$ 
+\\
+12/12 
+& Neural CDE 
+& $0.8673\pm0.0077$ 
+& $0.9058\pm0.0063$ 
+\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\clearpage
+\begin{table*}[tbp]
+\centering
+\caption{Horizon sensitivity on the common at-least-$48$-hour cohort (continued where applicable). Values are pooled masked RMSE, mean $\pm$ sample standard deviation; the separately fitted Neural CDE horizon series has finite external values.}\label{tab:horizon18}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llcc}
+\toprule
+$C/K$ (h) 
+& Model 
+& A 
+& B 
+\\
+\midrule
+12/24 
+& GRU-D 
+& $0.8034\pm0.0007$ 
+& $0.8682\pm0.0003$ 
+\\
+12/24 
+& GRU-med 
+& $0.8048\pm0.0004$ 
+& $0.8634\pm0.0005$ 
+\\
+12/24 
+& GRU 
+& $0.8056\pm0.0014$ 
+& $0.8655\pm0.0008$ 
+\\
+12/24 
+& GRU-large 
+& $0.8088\pm0.0036$ 
+& $0.8685\pm0.0026$ 
+\\
+12/24 
+& GraphGRU 
+& $0.8051\pm0.0024$ 
+& $0.8659\pm0.0018$ 
+\\
+12/24 
+& ODE-RNN 
+& $0.8156\pm0.0019$ 
+& $0.8748\pm0.0010$ 
+\\
+12/24 
+& PhysioGraph-GRU 
+& $0.8306\pm0.0051$ 
+& $0.8872\pm0.0073$ 
+\\
+12/24 
+& PhysioGraph-SSM 
+& $0.8584\pm0.0044$ 
+& $0.9258\pm0.0047$ 
+\\
+12/24 
+& Neural CDE 
+& $0.8979\pm0.0069$ 
+& $0.9340\pm0.0073$ 
+\\
+24/12 
+& GRU-D 
+& $0.7566\pm0.0017$ 
+& $0.8072\pm0.0016$ 
+\\
+24/12 
+& GRU-med 
+& $0.7586\pm0.0004$ 
+& $0.8030\pm0.0005$ 
+\\
+24/12 
+& GRU 
+& $0.7594\pm0.0011$ 
+& $0.8038\pm0.0003$ 
+\\
+24/12 
+& GRU-large 
+& $0.7635\pm0.0029$ 
+& $0.8054\pm0.0037$ 
+\\
+24/12 
+& GraphGRU 
+& $0.7597\pm0.0020$ 
+& $0.8034\pm0.0017$ 
+\\
+24/12 
+& ODE-RNN 
+& $0.7735\pm0.0033$ 
+& $0.8153\pm0.0015$ 
+\\
+24/12 
+& PhysioGraph-GRU 
+& $0.7908\pm0.0017$ 
+& $0.8310\pm0.0040$ 
+\\
+24/12 
+& PhysioGraph-SSM 
+& $0.8218\pm0.0042$ 
+& $0.8742\pm0.0049$ 
+\\
+24/12 
+& Neural CDE 
+& $0.8804\pm0.0071$ 
+& $0.8934\pm0.0081$ 
+\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\clearpage
+\begin{table*}[tbp]
+\centering
+\caption{Horizon sensitivity on the common at-least-$48$-hour cohort (continued where applicable). Values are pooled masked RMSE, mean $\pm$ sample standard deviation; the separately fitted Neural CDE horizon series has finite external values.}\label{tab:horizon36}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llcc}
+\toprule
+$C/K$ (h) 
+& Model 
+& A 
+& B 
+\\
+\midrule
+24/24 
+& GRU-D 
+& $0.8037\pm0.0022$ 
+& $0.8517\pm0.0024$ 
+\\
+24/24 
+& GRU-med 
+& $0.8073\pm0.0004$ 
+& $0.8461\pm0.0002$ 
+\\
+24/24 
+& GRU 
+& $0.8082\pm0.0011$ 
+& $0.8471\pm0.0012$ 
+\\
+24/24 
+& GRU-large 
+& $0.8101\pm0.0012$ 
+& $0.8478\pm0.0033$ 
+\\
+24/24 
+& GraphGRU 
+& $0.8064\pm0.0021$ 
+& $0.8460\pm0.0013$ 
+\\
+24/24 
+& ODE-RNN 
+& $0.8197\pm0.0013$ 
+& $0.8565\pm0.0015$ 
+\\
+24/24 
+& PhysioGraph-GRU 
+& $0.8326\pm0.0015$ 
+& $0.8700\pm0.0028$ 
+\\
+24/24 
+& PhysioGraph-SSM 
+& $0.8660\pm0.0098$ 
+& $0.9133\pm0.0102$ 
+\\
+24/24 
+& Neural CDE 
+& $0.9118\pm0.0015$ 
+& $0.9217\pm0.0034$ 
+\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\clearpage
+\clearpage
+\subsection{Horizon and convergence diagnostics}
+Figure~\ref{fig:horizon} shows fixed-context horizon gaps, Figure~\ref{fig:convergence} shows selected-run convergence, and Figure~\ref{fig:perorgan} shows the organ-specific errors, including the renal deficit.
+The horizon tables use a common cohort with at least $48$ retained hours: $728$ A-test and $4{,}611$ B stays before task-specific zero-target exclusions. Each context/horizon pair keeps the saved clinical settings; the horizon scores are not drawn from the larger primary cohort. External Neural CDE results are printed for all five finite common-cohort horizon designs; exclusion applies separately to the primary Table~\ref{tab:headline} B series.
+
+\begin{figure}[htbp]
+\centering\figasset{F6_horizons}{\textwidth}{2.65in}
+\caption{Horizon sensitivity at fixed context on the common cohort. Gap signs compare PhysioGraph-GRU with GRU-D; the full model scores are in the accompanying horizon tables.}\label{fig:horizon}
+\Description{External forecast gaps by horizon at fixed context and fixed eligible cohort.}
+\end{figure}
+\begin{figure}[htbp]
+\centering\figasset{F7_convergence}{\textwidth}{2.65in}
+\caption{Convergence diagnostics of the selected clinical runs. The run manifest retains per-run curve paths, epoch caps, validation-selected checkpoints and actual completed epochs; these curves assess optimization behavior rather than establishing cross-cohort superiority.}\label{fig:convergence}
+\Description{Recorded clinical training and validation curves for selected configurations.}
+\end{figure}
+\clearpage
+\begin{figure}[htbp]
+\centering\figasset{F8_per_organ}{\textwidth}{3.1in}
+\caption{Per-organ clinical errors. Each organ uses its own observed-entry pool in A-training standard-deviation units; sparsely recorded laboratories should be inspected alongside the observation-rate tables in Appendix~\ref{app:spec}.}\label{fig:perorgan}
+\Description{Forecast error broken down by organ group and clinical evaluation cohort.}
+\end{figure}
+\subsection{Adapter and counterfactual diagnostics}
+The evaluated learned-graph models are adapters integrated with the frozen loader and metric; no comparison with original-repository runs is supplied, so paper-level equivalence is not established. The CinC-2012 rankings are descriptive: the paired stay inference reported here covers the primary CinC-2019 comparison, not a significance claim for every CinC-2012 pair.
+
+CRN-lite's four-seed mean cellwise direction accuracy remains within $0.01$ of Control-GRU across the $24$ assignment settings within the $96$ shared-history model/policy entries, but its context-dose auxiliary target is constant zero, so the comparison supplies no evidence about the value of a varying treatment-balancing target. The separate continuous-dose CRN adaptation also does not improve direction recovery. Across the evaluated balancing-weight sweep and the extended $120$-epoch arm, its cellwise accuracy at the randomised-dose $(c,\sigma)=(0,0)$ control remains $0.74$--$0.79$, below the unadjusted GRU reference; this control retains the fixed minute-$72$ factual onset and does not establish identification of a minute-$60$ switch. It has poorer direction recovery in a setting where the eventual dose amount is assigned independently of severity, while treatment start time remains fixed and differs from the evaluated intervention start. Its poorer recovery under severity-driven assignment cannot establish non-identification or a general failure of adversarial balancing: lower predictive accuracy is already visible in the randomised-dose control, and that control also requires extrapolation to an earlier treatment start. The adapter discussion states the architectural and protocol distinctions between the surrogate and the adapted encoder--decoder.
+
+The supplied t-PatchGNN equation audit admits the defining components while recording numerical and protocol deviations, including patch-content/presence handling, affine offsets, standard transformer-layer conventions and the pooled observed-cell loss. The GraFITi audit records a successful repaired implementation and the activation choice used when a scalar-output rectifier had prevented learning. These records establish the identity of the evaluated adapters; they are not claims of identical training to the original papers.
+
+CRN-lite applies a gradient-reversal regression head to the encoder summary with mean context dose as its target; that target is exactly zero in every current policy cell, and the implementation neither tests balancing against varying assigned doses nor implements the full sequential CRN procedure. The separate continuous-dose CRN adaptation retains the encoder--decoder treatment-adversarial design, outcome inputs under teacher forcing and autoregressive outcome feedback during evaluation. The separate adaptation's balancing sweep uses $\lambda\in\{0,0.25,1\}$ at $60$ epochs and an extended $120$-epoch arm with $\lambda=0$ at the randomised-dose $(0,0)$ control; identification of the earlier switch additionally requires a structural transition or known-mechanism assumption. The four-seed means are $0.7455$ ($\lambda=0$, $60$ epochs), $0.7935$ ($\lambda=0$, $120$), $0.7809$ ($\lambda=0.25$, $60$), and $0.7441$ ($\lambda=1$, $60$), versus $0.9397$ for the unadjusted GRU. These fitted-estimator comparisons cannot establish failure of identification or of the original CRN method, because poor recovery is observed under randomised eventual dose and the evaluated earlier treatment start still lacks factual support. The underlying direction predictions and sweep summaries are retained with the run manifests.
+
+
+\label{app:directionscoring}Cellwise scoring uses exact NumPy sign equality with no tolerance band: zero is a third sign and matches only zero. In the shared-history grid, the true exact-zero adjacent-dose fraction is $2400/69120=0.034722$ in every aggregate cell: the first target sample is the pre-switch state and five of six channels have zero adjacent-dose differences there. For continuously valued predictions with nonzero differences in those cells, this imposes a cellwise ceiling of $1-2400/69120=0.965278$; reported channel maxima near $0.958$ should be read with this scoring convention (the cellwise and channel denominators differ). Counts below a nonzero numerical threshold were not computed, so exact sign accuracy does not measure robustness to nearly zero effects. The cellwise direction score in the counterfactual grid covers six physiological channels and four adjacent pairs from the five-dose grid, unlike the three-channel population-sign summary. A correct population-average direction can coexist with individual cell errors. Empirical severity-tercile support is also a coarsened diagnostic: conclusions about available comparisons are restricted to its explicitly measured dose intervals. When that denominator is empty, the restricted accuracy remains undefined.
+
+
+\clearpage
+\subsection{Complete simulator controls and balancing-weight sweep}
+Table~\ref{tab:simall} reports every simulator edge control omitted from the architecture decomposition, alongside no edges. Table~\ref{tab:crnsweep} reports the complete continuous-dose CRN balancing-weight sweep, including the extended-epoch arm and the unadjusted reference. These are fitted-model comparisons, not claims about clinical treatment effects.
+\begin{table}[tbp]
+\centering
+\caption{Complete simulator edge controls: fixed-reference macro-NRMSE, mean $\pm$ sample standard deviation over four seeds. The spread combines split and fitting variation. The no-edge and architecture-attribution controls are defined in Section~\ref{sec:sim}.}\label{tab:simall}
+\small
+\begin{tabular}{cccccc}
+\toprule
+$\kappa$ & No edges & Dense & Reversed & Random & Misspecified \\
+\midrule
+0 & $0.0203\pm0.0012$ & $0.0206\pm0.0011$ & $0.0204\pm0.0009$ & $0.0203\pm0.0016$ & $0.0209\pm0.0012$ \\ 
+0.1 & $0.0219\pm0.0013$ & $0.0227\pm0.0018$ & $0.0220\pm0.0014$ & $0.0222\pm0.0028$ & $0.0229\pm0.0024$ \\ 
+0.25 & $0.0246\pm0.0016$ & $0.0244\pm0.0015$ & $0.0247\pm0.0021$ & $0.0245\pm0.0025$ & $0.0248\pm0.0027$ \\ 
+0.5 & $0.0287\pm0.0022$ & $0.0284\pm0.0025$ & $0.0281\pm0.0024$ & $0.0283\pm0.0036$ & $0.0287\pm0.0034$ \\ 
+0.75 & $0.0327\pm0.0035$ & $0.0325\pm0.0035$ & $0.0330\pm0.0026$ & $0.0319\pm0.0037$ & $0.0330\pm0.0048$ \\ 
+1 & $0.0364\pm0.0035$ & $0.0362\pm0.0043$ & $0.0364\pm0.0031$ & $0.0366\pm0.0050$ & $0.0370\pm0.0049$ \\ 
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[tbp]
+\centering
+\caption{Continuous-dose CRN sweep ($n=4$ seeds per row). $c$, $\sigma$ and $\lambda$ are assignment strength, dose-noise standard deviation and balancing weight; ep is the epoch cap. Population signs are out of three; cell accuracy and macro-NRMSE are mean $\pm$ sample standard deviation. At $(c,\sigma)=(0,0)$ the unadjusted GRU reference has cell accuracy $0.940$ and macro-NRMSE $0.0675$; at $(0,0.25)$ these are $0.940/0.0682$ and at $(1,0.25)$ $0.830/0.0707$. These reference accuracies describe the randomised-dose predictive comparison, not a universal recovery claim.}\label{tab:crnsweep}
+\small
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$c$ & $\sigma$ & $\lambda$ & ep & Signs & Cell accuracy & MAP & UO & Lac & Macro-NRMSE \\
+\midrule
+0.0 & 0.0 & 0.0 & 60 & 2.00 & $0.746\pm0.046$ & 0.83 & 0.84 & 0.07 & $0.0761\pm0.0084$ \\ 
+0.0 & 0.0 & 0.0 & 120 & 2.50 & $0.794\pm0.025$ & 0.89 & 0.89 & 0.33 & $0.0774\pm0.0122$ \\ 
+0.0 & 0.0 & 0.25 & 60 & 2.00 & $0.781\pm0.047$ & 0.90 & 0.91 & 0.19 & $0.0839\pm0.0094$ \\ 
+0.0 & 0.0 & 1.0 & 60 & 2.00 & $0.744\pm0.016$ & 0.84 & 0.86 & 0.44 & $0.0975\pm0.0107$ \\ 
+0.0 & 0.25 & 0.0 & 60 & 2.00 & $0.773\pm0.013$ & 0.88 & 0.88 & 0.15 & $0.0769\pm0.0062$ \\ 
+0.0 & 0.25 & 0.25 & 60 & 2.25 & $0.800\pm0.023$ & 0.92 & 0.91 & 0.38 & $0.0854\pm0.0038$ \\ 
+0.0 & 0.25 & 1.0 & 60 & 2.50 & $0.779\pm0.019$ & 0.91 & 0.91 & 0.41 & $0.0908\pm0.0033$ \\ 
+1.0 & 0.25 & 0.0 & 60 & 2.00 & $0.774\pm0.011$ & 0.90 & 0.89 & 0.04 & $0.0770\pm0.0072$ \\ 
+1.0 & 0.25 & 0.25 & 60 & 2.00 & $0.769\pm0.032$ & 0.90 & 0.91 & 0.15 & $0.0805\pm0.0051$ \\ 
+1.0 & 0.25 & 1.0 & 60 & 2.00 & $0.716\pm0.064$ & 0.86 & 0.87 & 0.22 & $0.0903\pm0.0181$ \\ 
+\bottomrule
+\end{tabular}
+\end{table}
+\paragraph{Simulator split identity.}
+For each seed, NumPy's patient permutation puts the initial $\lfloor0.7N\rfloor=280$ patients in training and the remaining $120$ in testing, with no validation set. Split and fitting seeds coincide. The run files store ordered index lists, not a separate split-hash field. The accompanying \path{SIM_SPLITS.json} hashes the compact JSON encoding of each ordered train/test list with SHA-256. These hashes preserve the distinction between the generated-archive identity and the evaluated subset; all variants share the same indices within seed. The standard deviations combine split and fitting variation.
+
+
+\subsection{Shared-input diagnostic (post-hoc)}\label{app:sharedinput}
+Table~\ref{tab:sharedinput} records the eight post-hoc fits at the selected no-edge PhysioGraph-GRU configuration without retuning: paired seeds $0$--$3$, learning rate $0.000500$, model/state widths $96/48$, two layers, $12$-hour context and forecast, validation-selected checkpoints, and all runs complete at $35$ epochs with none excluded.
+Both arms keep static inputs, organ-specific heads and boundary/mask rules; shared input widens context and forecast projections to all $16$ values and masks (feedback carries all organs' preceding predictions), adding $18432$ parameters, so this is neither a parameter-matched control nor a significance test, and it does not replace the frozen admissible-edge results or diagnose CinC-2012 seed behavior.
+
+\begin{table}[tbp]
+\centering
+\caption{Shared-input diagnostic (post-hoc). RMSE@$12$ pools observed targets over the forecast horizon in A-train standard deviations; seed means average per-run RMSEs. A is A-test and B the external hospital. The deterministic persistence row supplies only the frozen renal reference and is not an independent fit.}\label{tab:sharedinput}
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Input mode & Seed & Parameters & A renal & B renal & A pooled & B pooled \\
+\midrule
+Partitioned & 0 & 759952 & 0.796462 & 1.018164 & 0.770099 & 0.817404 \\ 
+Partitioned & 1 & 759952 & 0.932439 & 1.148013 & 0.776766 & 0.822623 \\ 
+Partitioned & 2 & 759952 & 0.851380 & 1.081114 & 0.773010 & 0.818208 \\ 
+Partitioned & 3 & 759952 & 0.805048 & 1.020880 & 0.769565 & 0.816888 \\ 
+Shared & 0 & 778384 & 0.714097 & 0.941480 & 0.756991 & 0.811263 \\ 
+Shared & 1 & 778384 & 0.712924 & 0.941381 & 0.756987 & 0.808053 \\ 
+Shared & 2 & 778384 & 0.715663 & 0.944142 & 0.759251 & 0.810247 \\ 
+Shared & 3 & 778384 & 0.705326 & 0.931436 & 0.758646 & 0.811004 \\ 
+Persistence (frozen) & --- & --- & 0.762487 & 0.977049 & --- & --- \\ 
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Shared-input edge ablation (post-hoc).}\label{app:sharedinputedges}
+Following the input control in Table~\ref{tab:sharedinput}, Table~\ref{tab:sharedinputedges} reports all $24$ fits from the six frozen edge sets with four paired seeds, run after the round-2 reviews requested this diagnostic. Every organ node receives all $16$ variables and masks; the fixed configuration was selected on the partitioned backbone and reused without retuning. All runs completed $35$ epochs, with none excluded. This is a separate post-hoc series, not a ranking against the primary baselines. The no-edge sample standard deviations are $0.001158$ on A and $0.001458$ on B; the mean-gap comparison in Section~\ref{sec:clinicalresults} uses these descriptive scales, not a significance threshold. Reversed's B gap is $1.000518$ times the no-edge standard deviation at full precision, just outside one; rounded table entries must not determine that classification. No variant is lowest on both cohorts; random edges have the lowest mean pooled error on A and none on B, while every edge set raises renal RMSE in $4/4$ paired seeds on both cohorts. Parameters are $778384$ for none, $930464$ for admissible/reversed/random/misspecified-1, and $1006504$ for dense, so structure is not separated from message capacity; the admissible graph is not distinguished from random, reversed, dense or misspecified edges. There are only four seeds and no significance test.
+
+\begin{table}[tbp]
+\centering
+\caption{Shared-input edge ablation (post-hoc). Pooled RMSE is the four-seed mean $\pm$ sample standard deviation in A-train standard deviations; A is A-test and B the external hospital. Paired differences are variant minus none; sign counts are negative / exact zero / positive over the four paired seeds. Renal entries are four-seed means of per-run renal RMSE; organ RMSEs use their own observed-entry denominators and are not averaged to obtain pooled RMSE.}\label{tab:sharedinputedges}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{llrrrr}
+\toprule
+Variant & Cohort & Pooled mean $\pm$ sd & Paired mean difference & Signs ($-/0/+$) & Renal mean \\
+\midrule
+none & A & $0.757969\pm0.001158$ & $+0.000000$ & $0/4/0$ & $0.712003$ \\ 
+ & B & $0.810142\pm0.001458$ & $+0.000000$ & $0/4/0$ & $0.939610$ \\ 
+\addlinespace
+admissible & A & $0.756250\pm0.000776$ & $-0.001719$ & $4/0/0$ & $0.733760$ \\ 
+ & B & $0.810503\pm0.001128$ & $+0.000361$ & $2/0/2$ & $0.963704$ \\ 
+\addlinespace
+dense & A & $0.755280\pm0.000942$ & $-0.002689$ & $4/0/0$ & $0.741113$ \\ 
+ & B & $0.810723\pm0.001458$ & $+0.000581$ & $2/0/2$ & $0.975568$ \\ 
+\addlinespace
+reversed & A & $0.755865\pm0.000642$ & $-0.002104$ & $4/0/0$ & $0.751162$ \\ 
+ & B & $0.811600\pm0.000584$ & $+0.001459$ & $1/0/3$ & $0.984656$ \\ 
+\addlinespace
+random & A & $0.754535\pm0.000928$ & $-0.003434$ & $4/0/0$ & $0.741738$ \\ 
+ & B & $0.810466\pm0.000876$ & $+0.000324$ & $2/0/2$ & $0.974497$ \\ 
+\addlinespace
+misspecified-1 & A & $0.756032\pm0.001100$ & $-0.001937$ & $3/0/1$ & $0.742192$ \\ 
+ & B & $0.810617\pm0.000924$ & $+0.000475$ & $2/0/2$ & $0.972963$ \\ 
+\bottomrule
+\end{tabular}
+\end{table}
+The shared-input no-edge seeds $0$--$3$ reproduce the renal diagnostic's shared arm (Table~\ref{tab:sharedinput}) exactly on recorded pooled and organ RMSEs: maximum absolute difference $\max|\Delta|=0$ on A and B. This is a determinism check for the recorded metrics, not a comparison of checkpoint tensors or per-stay error archives.
+
+\paragraph{Shared-input edge diagnostic summary.}\label{app:sharedinputedgesummary}
+Requested in the round-2 reviews, this post-hoc diagnostic ran the six frozen edge sets on the shared-input backbone (all $16$ variables and masks per node), with four paired seeds at the fixed configuration tuned on the partitioned backbone, without retuning (Appendix~\ref{app:sharedinput}, Tables~\ref{tab:sharedinput} and~\ref{tab:sharedinputedges}). By four-seed mean pooled RMSE, ascending order is random $<$ dense $<$ reversed $<$ misspecified-1 $<$ admissible $<$ none on A and none $<$ random $<$ admissible $<$ misspecified-1 $<$ dense $<$ reversed on B; no variant is lowest on both cohorts. Paired differences (variant minus none) average $-0.001719$ to $-0.003434$ on A, with $4/4$ negative pairs except misspecified-1 ($3/4$), placing all edge means approximately $1.5$--$3.0$ no-edge seed standard deviations below none; on B the means are $+0.000324$ to $+0.001459$, with $2/4$ positive pairs except reversed ($3/4$), within one no-edge standard deviation except reversed ($1.000518$), while every edge set raises renal RMSE in $4/4$ paired seeds on both cohorts. The admissible graph is not distinguished from random, reversed, dense or misspecified edges; four seeds and no significance test limit inference, and differing parameter counts mean structure is not separated from message capacity.
+
+
+
+\clearpage
+\section{Current benchmark specification}\label{app:spec}
+\noindent\textbf{Scope.} This appendix specifies the current benchmark. Equations, constants, feature tables and repository-relative source citations document the shared implementation; current run records determine executed configurations, seeds and metrics. Where an earlier source default differs from an executed setting, the setting is stated explicitly. Earlier target and inference conventions are confined to the final subsection, \emph{Changes from the earlier version}.
+
+\medskip
+
+
+Source citations use \texttt{filename:line} or a line range. Core Python sources are under \texttt{src/}, and corpus arrays under \texttt{data/}. The specification derivation records full Secure Hash Algorithm 256-bit (SHA-256) digests, unrounded measurements and integer observation counts with denominators; \texttt{spec\_facts.py} reproduces the static tables. Current clinical, simulator and cohort manifests supplement those source-level facts with executed commands, settings, hashes and environment records.
+
+\subsection{Cohort}\label{app:cohortschema}
+
+
+The clinical source is the PhysioNet/Computing in Cardiology 2019 early-sepsis corpus, abbreviated CinC-2019, containing intensive care unit (ICU) stays. Its \texttt{training\_\allowbreak{}setA} and \texttt{training\_\allowbreak{}setB} directories are treated as internal hospital A and external hospital B. The preprocessor visits sorted \texttt{.\allowbreak{}psv} files, parses pipe-separated hourly rows, rejects files that raise an operating-system read error or contain fewer than \texttt{MIN\_\allowbreak{}LOS =\allowbreak{} 8} rows, and retains at most \texttt{T\_\allowbreak{}MAX =\allowbreak{} 48} hours. The default \texttt{max\_\allowbreak{}patients =\allowbreak{} 0} imposes no file-count cap. Thus the implemented inclusion rule is every successfully parsed stay meeting the minimum length, not unconditional inclusion of every file. The replay record accounts for every one of the $40{,}336$ public raw files, proves zero exclusions and reproduces the frozen archive byte for byte; Appendix~\ref{app:manifests} gives its digest and access requirements. [Sources: \texttt{cinc2019\_\allowbreak{}cohort\_\allowbreak{}preprocessor.\allowbreak{}py:\allowbreak{}3–\allowbreak{}15,\allowbreak{}41–\allowbreak{}43,\allowbreak{}51–\allowbreak{}64,\allowbreak{}84–\allowbreak{}103,\allowbreak{}124,\allowbreak{}129–\allowbreak{}144,\allowbreak{}150–\allowbreak{}159}; counts: \texttt{cinc2019\_\allowbreak{}cohort.\allowbreak{}npz}, \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}74–\allowbreak{}87,\allowbreak{}100–\allowbreak{}135}.]
+
+CinC-2019 is distributed under CC BY 4.0. Parsing performs no source-unit conversion. The table below declares the units of the distributed numerical values; source documentation differs for FiO2 and lactate, as explained after the feature definitions. CinC-2012 is distributed under ODC-By 1.0 and is accessed through the versioned PhysioNet page in Section~\ref{sec:cohorts}. [Sources: \path{cinc2012_cohort_v1/LINEAGE.md}; Section~\ref{sec:cohorts}; \texttt{cinc2019\_\allowbreak{}cohort\_\allowbreak{}preprocessor.\allowbreak{}py:\allowbreak{}25–\allowbreak{}41,\allowbreak{}62–\allowbreak{}70,\allowbreak{}157–\allowbreak{}159}.]
+
+The schema groups $16$ variables into cardiovascular, pulmonary, renal and metabolic systems, with five static patient covariates. Observed training entries define normalization; missing values become normalized zero with a retained observation mask. Appendix~\ref{app:spec} gives the exact schema, units and observation rates.
+
+
+The sixteen variables are ordered by four organ groups. Here HR denotes heart rate; SBP, MAP and DBP denote systolic, mean and diastolic arterial blood pressure; O2Sat denotes oxygen saturation; Resp denotes respiratory rate; FiO2 denotes fraction of inspired oxygen; PaCO2 denotes arterial carbon-dioxide partial pressure; BUN denotes blood urea nitrogen; HCO3 denotes bicarbonate; and WBC denotes white-blood-cell count. These expansions explain the feature labels; the code stores the literal labels and grouping below. The remaining labels name creatinine, potassium, lactate, glucose and temperature. [Feature/group source: \texttt{cinc2019\_\allowbreak{}cohort\_\allowbreak{}preprocessor.\allowbreak{}py:\allowbreak{}25–\allowbreak{}39}; stored labels: \texttt{cinc2019\_\allowbreak{}cohort.\allowbreak{}npz:\allowbreak{}features,\allowbreak{}organ\_\allowbreak{}names,\allowbreak{}organ\_\allowbreak{}slices}.]
+
+\noindent\textbf{Units.} The CinC-2019 data description lists O2Sat and FiO2 in percent and lactate in mg/dL. Distributed FiO2 values are fractions and lactate values are on the mmol/L scale; the benchmark preserves those values without rescaling. The mapped CinC-2012 cohort retains the same numerical conventions. In each CinC-2012 hour, SysABP/MAP/DiasABP map to SBP/MAP/DBP by averaging available invasive readings; NISysABP/NIMAP/NIDiasABP are used only if that hour has no invasive value. Invasive and noninvasive readings are never pooled within an hour. [Source: \texttt{cinc2012\_cohort\_preprocessor.py:31--36,80--122,325}.]
+
+
+
+\begin{center}
+\small
+\sbox0{
+\begin{tabular}{llll}
+\toprule
+Feature index 
+& Variable 
+& Organ group 
+& Clinical measurement unit 
+\\
+
+\midrule
+0 
+& HR 
+& cardiovascular 
+& beats/min 
+\\
+
+1 
+& SBP 
+& cardiovascular 
+& mmHg 
+\\
+
+2 
+& MAP 
+& cardiovascular 
+& mmHg 
+\\
+
+3 
+& DBP 
+& cardiovascular 
+& mmHg 
+\\
+
+4 
+& O2Sat 
+& pulmonary 
+& percent 
+\\
+
+5 
+& Resp 
+& pulmonary 
+& breaths/min 
+\\
+
+6 
+& FiO2 
+& pulmonary 
+& fraction 
+\\
+
+7 
+& PaCO2 
+& pulmonary 
+& mmHg 
+\\
+
+8 
+& Creatinine 
+& renal 
+& mg/dL 
+\\
+
+9 
+& BUN 
+& renal 
+& mg/dL 
+\\
+
+10 
+& Potassium 
+& renal 
+& mmol/L 
+\\
+
+11 
+& Lactate 
+& metabolic 
+& mmol/L 
+\\
+
+12 
+& Glucose 
+& metabolic 
+& mg/dL 
+\\
+
+13 
+& HCO3 
+& metabolic 
+& mmol/L 
+\\
+
+14 
+& WBC 
+& metabolic 
+& $10^3$/\ensuremath{\mu}L 
+\\
+
+15 
+& Temp 
+& metabolic 
+& $^{\circ}$C 
+\\
+
+\bottomrule
+\end{tabular}}
+\ifdim\wd0>\textwidth\resizebox{\textwidth}{!}{\usebox0}\else\usebox0\fi
+\end{center}
+
+
+Source: \texttt{cinc2019\_\allowbreak{}cohort\_\allowbreak{}preprocessor.\allowbreak{}py:\allowbreak{}25–\allowbreak{}39}; indices and order also stored in \texttt{cinc2019\_\allowbreak{}cohort.\allowbreak{}npz:\allowbreak{}features,\allowbreak{}organ\_\allowbreak{}slices}.
+
+Each row is used as one hourly position in the provided grid; the preprocessor does not reconstruct timestamps or re-bin observations. For a retained length \(\ell_i\), entries after \(\ell_i\) are padding, with zero mask. Before replacing missing values, it constructs a floating-point mask \(m_{itv}=1\) exactly where the parsed value is not \texttt{NaN} (not-a-number), and zero otherwise. \texttt{NaN} values, including padding, become zero in the archive through \texttt{np.\allowbreak{}nan\_\allowbreak{}to\_\allowbreak{}num}. This function's default handling of infinities is not customized. All frozen values are finite and all masked-out archive values are zero, as checked by the derivation script. There is no forward fill, interpolation, clipping of clinical outliers or source-unit conversion in this path. Model-specific gated recurrent unit (GRU) input/hidden decay, called GRU-D, and the persistence reference are separate operations described in B.6. [Sources: \texttt{cinc2019\_\allowbreak{}cohort\_\allowbreak{}preprocessor.\allowbreak{}py:\allowbreak{}62–\allowbreak{}70}; \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}102–\allowbreak{}109}; \texttt{clinical\_\allowbreak{}timeseries\_\allowbreak{}baselines.\allowbreak{}py:\allowbreak{}79–\allowbreak{}94}; \texttt{physiograph\_\allowbreak{}training\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}49–\allowbreak{}62}.]
+
+The static covariates are \texttt{Age}, \texttt{Gender}, \texttt{Unit1}, \texttt{Unit2} and \texttt{HospAdmTime}, in that order. They are read from the initial retained row; missing static values become zero. Their arrays have five columns, and the loader passes them without a further normalization step. The sepsis label sequence is stored separately, with missing labels replaced by zero. The prevalence below means at least one positive label during the retained, at-most-48-hour record; it does not measure sepsis occurring after that truncation. Neither the label nor hospital identity is used as a forecast input by the supplied model forward methods. [Sources: \texttt{cinc2019\_\allowbreak{}cohort\_\allowbreak{}preprocessor.\allowbreak{}py:\allowbreak{}41,\allowbreak{}72–\allowbreak{}81,\allowbreak{}95–\allowbreak{}102}; \texttt{physiograph\_\allowbreak{}data\_\allowbreak{}loader.\allowbreak{}py:\allowbreak{}33–\allowbreak{}44}; \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}282–\allowbreak{}285}; \texttt{clinical\_\allowbreak{}timeseries\_\allowbreak{}baselines.\allowbreak{}py:\allowbreak{}45–\allowbreak{}49,\allowbreak{}79–\allowbreak{}94,\allowbreak{}111–\allowbreak{}122,\allowbreak{}153–\allowbreak{}164,\allowbreak{}182–\allowbreak{}192}; prevalence derivation: \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}100–\allowbreak{}111,\allowbreak{}124–\allowbreak{}135}.]
+
+\begin{center}
+\small
+\sbox0{
+\begin{tabular}{lllll}
+\toprule
+Split 
+& Stays 
+& Retained stay-hours 
+& Sepsis-positive retained records 
+& Sepsis prevalence (\%) 
+\\
+
+\midrule
+A-train 
+& 14236 
+& 505935 
+& 798 
+& 5.6055 
+\\
+
+A-val 
+& 3050 
+& 108013 
+& 160 
+& 5.2459 
+\\
+
+A-test 
+& 3050 
+& 108103 
+& 176 
+& 5.7705 
+\\
+
+B 
+& 20000 
+& 695090 
+& 743 
+& 3.7150 
+\\
+
+\bottomrule
+\end{tabular}}
+\ifdim\wd0>\textwidth\resizebox{\textwidth}{!}{\usebox0}\else\usebox0\fi
+\end{center}
+
+
+Source: \texttt{cinc2019\_\allowbreak{}cohort.\allowbreak{}npz:\allowbreak{}A\_\allowbreak{}length,\allowbreak{}B\_\allowbreak{}length,\allowbreak{}train\_\allowbreak{}idx,\allowbreak{}val\_\allowbreak{}idx,\allowbreak{}test\_\allowbreak{}idx,\allowbreak{}A\_\allowbreak{}sepsis,\allowbreak{}B\_\allowbreak{}sepsis}; derivation \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}100–\allowbreak{}135}. Hospital A has 20336 saved stays and B has 20000 (\texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}74–\allowbreak{}87,\allowbreak{}100–\allowbreak{}103}).
+
+To split A, the preprocessor calls \texttt{np.\allowbreak{}random.\allowbreak{}default\_\allowbreak{}rng(seed).\allowbreak{}permutation(nA)} with default \texttt{seed =\allowbreak{} 0}. It assigns the initial \texttt{int(0.\allowbreak{}15*nA)} indices to test, the next \texttt{int(val\_\allowbreak{}frac*nA)} to validation, and all remaining indices to training; default \texttt{val\_\allowbreak{}frac =\allowbreak{} 0.\allowbreak{}15}. There is no label stratification. B is held out in full. Repeating this default procedure reproduces every saved train, validation and test index exactly, and the three saved arrays partition A without repeated indices. The archive contains no cross-stay person identifier, so the verified unit is an ICU stay record, not a demonstrated unique individual across admissions. [Sources: \texttt{cinc2019\_\allowbreak{}cohort\_\allowbreak{}preprocessor.\allowbreak{}py:\allowbreak{}126–\allowbreak{}127,\allowbreak{}139–\allowbreak{}146}; \texttt{physiograph\_\allowbreak{}data\_\allowbreak{}loader.\allowbreak{}py:\allowbreak{}65–\allowbreak{}70}; exact replay and partition check: \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}78–\allowbreak{}87}.]
+
+For each variable \(v\), the stored \texttt{norm\_\allowbreak{}mean} \(\mu_v\) and \texttt{norm\_\allowbreak{}std} \(s_v\) are fitted only to observed entries of A-train over all retained hours, before applying any forecasting-window eligibility filter. With \(\mathcal O_v\) this set of entries, the implemented arithmetic for more than ten observations is
+
+\[
+\mu_v=\frac{1}{|\mathcal O_v|}\sum_{x\in\mathcal O_v}x,
+\qquad s_v=\sqrt{\frac{1}{|\mathcal O_v|}\sum_{x\in\mathcal O_v}(x-\mu_v)^2}+10^{-6},
+\qquad z_{itv}=\left(\frac{x_{itv}-\mu_v}{s_v}\right)m_{itv}.
+\]
+
+
+Code: \texttt{cinc2019\_\allowbreak{}cohort\_\allowbreak{}preprocessor.\allowbreak{}py:\allowbreak{}107–\allowbreak{}117,\allowbreak{}146}; \texttt{physiograph\_\allowbreak{}data\_\allowbreak{}loader.\allowbreak{}py:\allowbreak{}25,\allowbreak{}30–\allowbreak{}31}. The standard deviation is the population standard deviation (\texttt{ddof=\allowbreak{}0}); the additive \(10^{-6}\) has the variable's original numerical scale. For at most ten observed entries the initialized mean and standard deviation remain zero and one, respectively. Calculations and saved statistics use float32 arrays. Recomputing the statistics from the frozen A-train arrays matches both saved arrays bit for bit. Missing dynamic inputs and missing targets are therefore zero after normalization and re-masking, not forward-filled or interpolated. [Sources: same code; exact check: \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}88–\allowbreak{}98}.]
+
+\begin{center}
+\small
+\sbox0{
+\begin{tabular}{lll}
+\toprule
+Variable 
+& norm\_mean 
+& norm\_std 
+\\
+
+\midrule
+HR 
+& 84.669647 
+& 16.880396 
+\\
+
+SBP 
+& 120.38959 
+& 21.223722 
+\\
+
+MAP 
+& 78.500954 
+& 14.90675 
+\\
+
+DBP 
+& 59.749687 
+& 12.432422 
+\\
+
+O2Sat 
+& 97.287247 
+& 2.8924127 
+\\
+
+Resp 
+& 18.624098 
+& 5.3190956 
+\\
+
+FiO2 
+& 0.52981859 
+& 0.18773127 
+\\
+
+PaCO2 
+& 40.994156 
+& 8.8775454 
+\\
+
+Creatinine 
+& 1.3991138 
+& 1.5298975 
+\\
+
+BUN 
+& 23.87718 
+& 19.974033 
+\\
+
+Potassium 
+& 4.1685743 
+& 0.63964748 
+\\
+
+Lactate 
+& 2.461628 
+& 2.1931283 
+\\
+
+Glucose 
+& 133.90251 
+& 51.70155 
+\\
+
+HCO3 
+& 24.004087 
+& 4.3796988 
+\\
+
+WBC 
+& 11.990666 
+& 6.8821988 
+\\
+
+Temp 
+& 37.014122 
+& 0.77661926 
+\\
+
+\bottomrule
+\end{tabular}}
+\ifdim\wd0>\textwidth\resizebox{\textwidth}{!}{\usebox0}\else\usebox0\fi
+\end{center}
+
+
+Source: \texttt{cinc2019\_\allowbreak{}cohort.\allowbreak{}npz:\allowbreak{}norm\_\allowbreak{}mean,\allowbreak{}norm\_\allowbreak{}std,\allowbreak{}features}; readout \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}88–\allowbreak{}98,\allowbreak{}155–\allowbreak{}161}. Display rounding does not replace the unrounded JSON values.
+
+For a variable \(v\) and split \(S\), the full-record observation rate counts only retained, non-padding hours:
+
+\[
+\rho_{S,v}=\frac{\sum_{i\in S}\sum_{t=0}^{\ell_i-1}m_{itv}}{\sum_{i\in S}\ell_i}.
+\]
+
+
+Code: counting implementation \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}53–\allowbreak{}68,\allowbreak{}102–\allowbreak{}104,\allowbreak{}130}; input mask and length construction \texttt{cinc2019\_\allowbreak{}cohort\_\allowbreak{}preprocessor.\allowbreak{}py:\allowbreak{}63–\allowbreak{}70,\allowbreak{}100}. Rates are not averaged across stays. The next table reports percentages; exact integer numerators and denominators remain in \texttt{SPEC\_\allowbreak{}FACTS.\allowbreak{}json}. [Source: \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}53–\allowbreak{}68,\allowbreak{}124–\allowbreak{}135}.]
+
+Full retained-stay observation rates (\%)
+
+\begin{center}
+\small
+\sbox0{
+\begin{tabular}{lllll}
+\toprule
+Variable 
+& A-train 
+& A-val 
+& A-test 
+& B 
+\\
+
+\midrule
+HR 
+& 92.0630 
+& 92.2445 
+& 92.2583 
+& 87.4969 
+\\
+
+SBP 
+& 84.5713 
+& 85.3879 
+& 85.2724 
+& 85.6821 
+\\
+
+MAP 
+& 89.5496 
+& 89.7725 
+& 89.5387 
+& 84.7989 
+\\
+
+DBP 
+& 50.7081 
+& 50.5671 
+& 51.3843 
+& 85.6554 
+\\
+
+O2Sat 
+& 87.6514 
+& 88.1209 
+& 87.7940 
+& 85.4789 
+\\
+
+Resp 
+& 89.9863 
+& 90.2373 
+& 90.1187 
+& 78.5543 
+\\
+
+FiO2 
+& 13.4482 
+& 14.0492 
+& 14.0126 
+& 2.2285 
+\\
+
+PaCO2 
+& 8.7074 
+& 9.0378 
+& 9.0331 
+& 2.2216 
+\\
+
+Creatinine 
+& 6.7026 
+& 6.6548 
+& 6.6797 
+& 5.5534 
+\\
+
+BUN 
+& 8.2301 
+& 8.1120 
+& 8.2292 
+& 5.5485 
+\\
+
+Potassium 
+& 10.9243 
+& 10.9172 
+& 11.0284 
+& 7.7035 
+\\
+
+Lactate 
+& 3.4558 
+& 3.5218 
+& 3.6178 
+& 1.8779 
+\\
+
+Glucose 
+& 12.3698 
+& 12.9327 
+& 12.5602 
+& 22.0943 
+\\
+
+HCO3 
+& 8.1125 
+& 7.9666 
+& 8.1293 
+& 0.1890 
+\\
+
+WBC 
+& 7.5808 
+& 7.5278 
+& 7.6557 
+& 5.2976 
+\\
+
+Temp 
+& 34.0050 
+& 34.0542 
+& 33.9787 
+& 33.7270 
+\\
+
+\bottomrule
+\end{tabular}}
+\ifdim\wd0>\textwidth\resizebox{\textwidth}{!}{\usebox0}\else\usebox0\fi
+\end{center}
+
+
+Source: \texttt{cinc2019\_\allowbreak{}cohort.\allowbreak{}npz:\allowbreak{}A\_\allowbreak{}mask,\allowbreak{}B\_\allowbreak{}mask,\allowbreak{}A\_\allowbreak{}length,\allowbreak{}B\_\allowbreak{}length,\allowbreak{}train\_\allowbreak{}idx,\allowbreak{}val\_\allowbreak{}idx,\allowbreak{}test\_\allowbreak{}idx}; counting arithmetic \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}53–\allowbreak{}68,\allowbreak{}100–\allowbreak{}134}.
+
+For the primary context/horizon pair \((C,K)=(12,12)\), the following rates restrict to stays eligible for the full first 24 hours, and use denominators \texttt{12 * eligible\_\allowbreak{}stays} separately for context hours 0–11 and target hours 12–23. Eligibility and the single-window construction are defined in B.2. The JSON also includes the combined hours 0–23 region and separate context, target and combined regions for every eligibility pair in B.2; no padding is included. [Sources: \texttt{physiograph\_\allowbreak{}data\_\allowbreak{}loader.\allowbreak{}py:\allowbreak{}20–\allowbreak{}37}; \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}60–\allowbreak{}68,\allowbreak{}113–\allowbreak{}134}.]
+
+Eligible 24-hour records: context hours 0–11 observation rates (\%)
+
+\begin{center}
+\small
+\sbox0{
+\begin{tabular}{lllll}
+\toprule
+Variable 
+& A-train 
+& A-val 
+& A-test 
+& B 
+\\
+
+\midrule
+HR 
+& 90.7141 
+& 90.6492 
+& 90.8643 
+& 84.8225 
+\\
+
+SBP 
+& 84.6424 
+& 85.4492 
+& 85.2231 
+& 83.5228 
+\\
+
+MAP 
+& 89.0343 
+& 89.0192 
+& 88.8901 
+& 82.7740 
+\\
+
+DBP 
+& 51.0051 
+& 50.8555 
+& 51.2106 
+& 83.4958 
+\\
+
+O2Sat 
+& 87.8333 
+& 88.0263 
+& 87.7499 
+& 83.3727 
+\\
+
+Resp 
+& 88.7986 
+& 88.7481 
+& 88.9077 
+& 75.6116 
+\\
+
+FiO2 
+& 18.7286 
+& 19.3177 
+& 19.3834 
+& 4.1408 
+\\
+
+PaCO2 
+& 13.8106 
+& 14.4416 
+& 14.4390 
+& 4.1920 
+\\
+
+Creatinine 
+& 8.5413 
+& 8.5763 
+& 8.4706 
+& 7.0696 
+\\
+
+BUN 
+& 10.5649 
+& 10.5126 
+& 10.5434 
+& 7.0629 
+\\
+
+Potassium 
+& 14.2632 
+& 14.2938 
+& 14.7030 
+& 10.5898 
+\\
+
+Lactate 
+& 5.8818 
+& 5.9780 
+& 6.1233 
+& 3.6394 
+\\
+
+Glucose 
+& 16.9767 
+& 18.0468 
+& 17.5500 
+& 24.1635 
+\\
+
+HCO3 
+& 10.4831 
+& 10.4175 
+& 10.5258 
+& 0.2839 
+\\
+
+WBC 
+& 9.9201 
+& 9.7698 
+& 10.0084 
+& 6.8183 
+\\
+
+Temp 
+& 37.1435 
+& 37.7482 
+& 37.8449 
+& 33.5992 
+\\
+
+\bottomrule
+\end{tabular}}
+\ifdim\wd0>\textwidth\resizebox{\textwidth}{!}{\usebox0}\else\usebox0\fi
+\end{center}
+
+
+Source: \texttt{cinc2019\_\allowbreak{}cohort.\allowbreak{}npz:\allowbreak{}A\_\allowbreak{}mask,\allowbreak{}B\_\allowbreak{}mask,\allowbreak{}A\_\allowbreak{}length,\allowbreak{}B\_\allowbreak{}length,\allowbreak{}train\_\allowbreak{}idx,\allowbreak{}val\_\allowbreak{}idx,\allowbreak{}test\_\allowbreak{}idx}; counting arithmetic \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}53–\allowbreak{}68,\allowbreak{}100–\allowbreak{}134}.
+
+Eligible 24-hour records: target hours 12–23 observation rates (\%)
+
+\begin{center}
+\small
+\sbox0{
+\begin{tabular}{lllll}
+\toprule
+Variable 
+& A-train 
+& A-val 
+& A-test 
+& B 
+\\
+
+\midrule
+HR 
+& 93.8359 
+& 93.6558 
+& 93.9436 
+& 89.9802 
+\\
+
+SBP 
+& 87.0706 
+& 87.6884 
+& 87.7991 
+& 88.0964 
+\\
+
+MAP 
+& 91.3424 
+& 91.1808 
+& 91.1458 
+& 87.2330 
+\\
+
+DBP 
+& 53.7050 
+& 53.6016 
+& 53.8183 
+& 88.0689 
+\\
+
+O2Sat 
+& 89.4959 
+& 89.4346 
+& 89.4285 
+& 87.9818 
+\\
+
+Resp 
+& 91.6974 
+& 91.3815 
+& 91.8778 
+& 80.4703 
+\\
+
+FiO2 
+& 12.8738 
+& 13.4735 
+& 13.5170 
+& 1.8219 
+\\
+
+PaCO2 
+& 7.7689 
+& 8.2101 
+& 8.0800 
+& 1.8444 
+\\
+
+Creatinine 
+& 5.7745 
+& 5.7633 
+& 5.7538 
+& 4.4404 
+\\
+
+BUN 
+& 7.0333 
+& 6.9603 
+& 7.0559 
+& 4.4354 
+\\
+
+Potassium 
+& 9.5771 
+& 9.7592 
+& 9.4876 
+& 6.4181 
+\\
+
+Lactate 
+& 3.0317 
+& 3.0806 
+& 3.3502 
+& 1.5380 
+\\
+
+Glucose 
+& 11.2757 
+& 11.9701 
+& 11.3598 
+& 22.3258 
+\\
+
+HCO3 
+& 6.8907 
+& 6.8300 
+& 6.9644 
+& 0.2473 
+\\
+
+WBC 
+& 6.2661 
+& 6.3231 
+& 6.3872 
+& 4.2083 
+\\
+
+Temp 
+& 35.3044 
+& 35.1113 
+& 35.4554 
+& 34.8995 
+\\
+
+\bottomrule
+\end{tabular}}
+\ifdim\wd0>\textwidth\resizebox{\textwidth}{!}{\usebox0}\else\usebox0\fi
+\end{center}
+
+
+Source: \texttt{cinc2019\_\allowbreak{}cohort.\allowbreak{}npz:\allowbreak{}A\_\allowbreak{}mask,\allowbreak{}B\_\allowbreak{}mask,\allowbreak{}A\_\allowbreak{}length,\allowbreak{}B\_\allowbreak{}length,\allowbreak{}train\_\allowbreak{}idx,\allowbreak{}val\_\allowbreak{}idx,\allowbreak{}test\_\allowbreak{}idx}; counting arithmetic \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}53–\allowbreak{}68,\allowbreak{}100–\allowbreak{}134}.
+
+\subsection{Forecasting protocol}
+
+
+A forecasting window is one ordered pair consisting of the initial \(C\) hours of a stay and the immediately following \(K\) target hours. A stay is eligible exactly when its saved length is at least \(C+K\). \texttt{ForecastWindows} stores each eligible row index once, reports the number of such indices as its length, and fixes the start of \texttt{\_\allowbreak{}\_\allowbreak{}getitem\_\allowbreak{}\_\allowbreak{}} at hour zero. Each eligible stay therefore contributes exactly one window; an ineligible stay contributes none. There are no sliding starts and no overlapping windows within a stay in a given task. The same stay can recur across separately defined horizon experiments. [Source: \texttt{physiograph\_\allowbreak{}data\_\allowbreak{}loader.\allowbreak{}py:\allowbreak{}17–\allowbreak{}37}.]
+
+\[
+\mathcal I_{C,K}=\{i:\ell_i\ge C+K\},\qquad
+X_i^{\rm ctx}=z_{i,0:C,:},\quad M_i^{\rm ctx}=m_{i,0:C,:},\qquad
+Y_i=z_{i,C:C+K,:},\quad M_i^{\rm tgt}=m_{i,C:C+K,:}.
+\]
+
+
+Code: \texttt{physiograph\_\allowbreak{}data\_\allowbreak{}loader.\allowbreak{}py:\allowbreak{}20–\allowbreak{}21,\allowbreak{}33–\allowbreak{}37}. The slice endpoints are exclusive; \(C\), \(K\) and \(\ell_i\) are measured in hourly rows. The re-derived window counts are:
+
+\begin{center}
+\small
+\sbox0{
+\begin{tabular}{llllll}
+\toprule
+Context C (h) 
+& Target K (h) 
+& A-train 
+& A-val 
+& A-test 
+& B 
+\\
+
+\midrule
+12 
+& 6 
+& 13009 
+& 2768 
+& 2791 
+& 17844 
+\\
+
+12 
+& 12 
+& 11102 
+& 2367 
+& 2368 
+& 14824 
+\\
+
+12 
+& 24 
+& 8581 
+& 1830 
+& 1821 
+& 11839 
+\\
+
+24 
+& 12 
+& 8581 
+& 1830 
+& 1821 
+& 11839 
+\\
+
+24 
+& 24 
+& 3495 
+& 704 
+& 728 
+& 4611 
+\\
+
+\bottomrule
+\end{tabular}}
+\ifdim\wd0>\textwidth\resizebox{\textwidth}{!}{\usebox0}\else\usebox0\fi
+\end{center}
+
+
+Source: \texttt{cinc2019\_\allowbreak{}cohort.\allowbreak{}npz:\allowbreak{}A\_\allowbreak{}length,\allowbreak{}B\_\allowbreak{}length,\allowbreak{}train\_\allowbreak{}idx,\allowbreak{}val\_\allowbreak{}idx,\allowbreak{}test\_\allowbreak{}idx}; eligibility \texttt{physiograph\_\allowbreak{}data\_\allowbreak{}loader.\allowbreak{}py:\allowbreak{}20–\allowbreak{}28}; derivation \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}113–\allowbreak{}123,\allowbreak{}136–\allowbreak{}137}. Each entry is both an eligible-stay count and a window count.
+
+The primary task is $(C,K)=(12,12)$ hours. Current horizon runs evaluate $(12,6)$, $(12,12)$, $(12,24)$, $(24,12)$ and $(24,24)$ on one common cohort with at least $48$ retained hours. The eligibility table above describes all records satisfying each individual pair, whereas the horizon tables use the smaller common cohort. Executed context/horizon settings are recorded in \path{clinical_v4_v1/horizon_table_v4.json}; they are not inferred from runner defaults. [Sources: \path{clinical_v4_v1/horizon_table_v4.json}; \texttt{physiograph\_\allowbreak{}training\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}74–\allowbreak{}75,\allowbreak{}127}; \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}41,\allowbreak{}113–\allowbreak{}123}.]
+
+Root mean squared error (RMSE) takes the square root of mean squared prediction error. In \texttt{masked\_\allowbreak{}metrics}, for a reported horizon \(H\), the squared errors of \textbf{all observed entries across stays, target hours below \(H\), and variables are pooled before the square root}. Let \(\widehat Y\) be the prediction and \(M\) the target mask:
+
+\[
+\operatorname{RMSE}@H=
+\sqrt{\frac{\sum_i\sum_{k=0}^{\min(H,K)-1}\sum_v
+ M_{ikv}(\widehat Y_{ikv}-Y_{ikv})^2}
+ {\max\!\left(\sum_i\sum_{k=0}^{\min(H,K)-1}\sum_v M_{ikv},1\right)}}.
+\]
+
+
+Code: \texttt{physiograph\_\allowbreak{}data\_\allowbreak{}loader.\allowbreak{}py:\allowbreak{}85–\allowbreak{}90}; complete-split batch concatenation: \texttt{physiograph\_\allowbreak{}training\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}68–\allowbreak{}75}. It is not an unweighted average of variable-wise or stay-wise RMSEs. The \texttt{min(H,\allowbreak{}K)} reflects Python slicing if the requested horizon exceeds the available tensor length. Values are already standardized with A-train statistics, so this metric is dimensionless and is also called normalized RMSE in the code. Mean absolute error uses the same pool with absolute rather than squared errors. The organ-specific RMSE restricts the feature sum to that organ and uses the longest reported horizon, with the same clamped denominator. Frequently observed variables contribute more terms to the aggregate. [Sources: \texttt{physiograph\_\allowbreak{}data\_\allowbreak{}loader.\allowbreak{}py:\allowbreak{}77–\allowbreak{}99}.]
+
+\subsection{Simulator}
+
+
+The simulator is a four-compartment mean-circulation reduction with systemic arterial, systemic venous, pulmonary arterial and pulmonary venous compartments. It is the supplied custom implementation described as following the CVSim tradition, not a claim that a full external CVSim implementation is reproduced. Time \(t\) is in seconds, pressure in millimetres of mercury (mmHg), volume in millilitres (mL), flow in mL/s, compliance in mL/mmHg, resistance in mmHg·s/mL and heart rate in beats/min. The actual integrated state contains compartment volumes \texttt{V\_\allowbreak{}sa}, \texttt{V\_\allowbreak{}sv}, \texttt{V\_\allowbreak{}pa}, \texttt{V\_\allowbreak{}pv}; baroreflex effectors \texttt{e\_\allowbreak{}hr}, \texttt{e\_\allowbreak{}r}, \texttt{e\_\allowbreak{}cont}, \texttt{e\_\allowbreak{}ven}; and lactate \texttt{Lac} in mmol/L. The class's \texttt{STATE} name tuple omits lactate, but both the right-hand side and initial-state array contain it. The effectors have units beats/min, dimensionless, dimensionless and mL, respectively. [Sources: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}1–\allowbreak{}8,\allowbreak{}26–\allowbreak{}27,\allowbreak{}58–\allowbreak{}76,\allowbreak{}122,\allowbreak{}136–\allowbreak{}139,\allowbreak{}183,\allowbreak{}196}.]
+
+The following table gives every nominal \texttt{Hemodynamics} field. Parameters overridden for individual patients are identified below; nominal values should not be confused with per-patient constants. Units of lactate production and clearance follow directly from the implemented derivative. [Sources: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}32–\allowbreak{}77,\allowbreak{}178–\allowbreak{}183,\allowbreak{}274–\allowbreak{}289}.]
+
+\begin{center}
+\small
+\sbox0{
+\begin{tabular}{lll}
+\toprule
+Code variable 
+& Nominal value 
+& Unit or meaning 
+\\
+
+\midrule
+\texttt{C\_\allowbreak{}sa}, \texttt{C\_\allowbreak{}sv}, \texttt{C\_\allowbreak{}pa}, \texttt{C\_\allowbreak{}pv} 
+& 1.6, 100.0, 4.3, 10.0 
+& mL/mmHg 
+\\
+
+\texttt{V0\_\allowbreak{}sa}, \texttt{V0\_\allowbreak{}sv}, \texttt{V0\_\allowbreak{}pa}, \texttt{V0\_\allowbreak{}pv} 
+& 100.0, 2900.0, 50.0, 150.0 
+& mL; unstressed volumes 
+\\
+
+\texttt{R\_\allowbreak{}sys}, \texttt{R\_\allowbreak{}pul} 
+& 1.0, 0.12 
+& mmHg·s/mL 
+\\
+
+\texttt{SVmax\_\allowbreak{}l}, \texttt{SVmax\_\allowbreak{}r} 
+& 105.0, 105.0 
+& mL per beat 
+\\
+
+\texttt{k\_\allowbreak{}l}, \texttt{k\_\allowbreak{}r} 
+& 6.0, 3.0 
+& mmHg; filling-pressure half-saturation 
+\\
+
+\texttt{cont\_\allowbreak{}l}, \texttt{cont\_\allowbreak{}r} 
+& 1.0, 1.0 
+& dimensionless contractility 
+\\
+
+\texttt{HR} 
+& 70.0 
+& beats/min 
+\\
+
+\texttt{V\_\allowbreak{}total} 
+& 5000.0 
+& mL 
+\\
+
+\texttt{UO\_\allowbreak{}max} 
+& 1.6 
+& mL/min 
+\\
+
+\texttt{MAP\_\allowbreak{}renal}, \texttt{uo\_\allowbreak{}scale} 
+& 65.0, 8.0 
+& mmHg 
+\\
+
+\texttt{lac\_\allowbreak{}base} 
+& 1.0 
+& mmol/L; initial lactate only 
+\\
+
+\texttt{k\_\allowbreak{}lac\_\allowbreak{}prod} 
+& 0.0011 
+& mmol/(L·s) 
+\\
+
+\texttt{k\_\allowbreak{}lac\_\allowbreak{}clear} 
+& 0.0003 
+& s⁻¹ 
+\\
+
+\texttt{MAP\_\allowbreak{}lac\_\allowbreak{}crit}, \texttt{lac\_\allowbreak{}scale} 
+& 65.0, 10.0 
+& mmHg 
+\\
+
+\texttt{complexity} 
+& 1.0 
+& dimensionless coupling control, denoted κ 
+\\
+
+\texttt{MAP\_\allowbreak{}set} 
+& 90.0 
+& mmHg 
+\\
+
+\texttt{tau\_\allowbreak{}baro} 
+& 12.0 
+& s 
+\\
+
+\texttt{g\_\allowbreak{}hr} 
+& 0.55 
+& (beats/min)/mmHg 
+\\
+
+\texttt{g\_\allowbreak{}r} 
+& 0.018 
+& mmHg⁻¹ 
+\\
+
+\texttt{g\_\allowbreak{}cont} 
+& 0.010 
+& mmHg⁻¹ 
+\\
+
+\texttt{g\_\allowbreak{}ven} 
+& 9.0 
+& mL/mmHg 
+\\
+
+\texttt{baro\_\allowbreak{}on} 
+& \texttt{True} 
+& baroreflex enabled 
+\\
+
+\bottomrule
+\end{tabular}}
+\ifdim\wd0>\textwidth\resizebox{\textwidth}{!}{\usebox0}\else\usebox0\fi
+\end{center}
+
+
+Drug dose \(a(t)\), supplied by \texttt{sch.\allowbreak{}vaso}, is in micrograms/(kg·min), and fluid rate \(f(t)\), supplied by \texttt{sch.\allowbreak{}fluid}, is in mL/s. Sepsis \(s(t)\), supplied by \texttt{sch.\allowbreak{}sepsis}, is dimensionless. Schedules use right-continuous piecewise-constant values (\texttt{searchsorted(.\allowbreak{}.\allowbreak{}.\allowbreak{},\allowbreak{} side=\allowbreak{}"right") - 1}, with the initial value used before the initial knot). The declared drug/disease gains are as follows. [Sources: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}83–\allowbreak{}116,\allowbreak{}138–\allowbreak{}139}.]
+
+\begin{center}
+\small
+\sbox0{
+\begin{tabular}{lll}
+\toprule
+Code constant 
+& Value 
+& Unit or meaning 
+\\
+
+\midrule
+\texttt{G\_\allowbreak{}VASO\_\allowbreak{}R} 
+& 0.95 
+& inverse dose; fractional resistance response 
+\\
+
+\texttt{G\_\allowbreak{}VASO\_\allowbreak{}CONT} 
+& 0.30 
+& inverse dose; fractional contractility response 
+\\
+
+\texttt{G\_\allowbreak{}VASO\_\allowbreak{}VEN} 
+& 180.0 
+& mL per dose; declared but not used in the state or observation update 
+\\
+
+\texttt{G\_\allowbreak{}SEP\_\allowbreak{}R} 
+& 0.55 
+& dimensionless resistance reduction per unit sepsis 
+\\
+
+\texttt{G\_\allowbreak{}SEP\_\allowbreak{}LEAK} 
+& 0.10 
+& mL/s per unit sepsis 
+\\
+
+\texttt{G\_\allowbreak{}SEP\_\allowbreak{}CONT} 
+& 0.35 
+& dimensionless contractility reduction per unit sepsis 
+\\
+
+\texttt{MMHG\_\allowbreak{}PER\_\allowbreak{}S\_\allowbreak{}TO\_\allowbreak{}PER\_\allowbreak{}MIN} 
+& 60.0 
+& numerical seconds/min conversion used for cardiac output, despite the constant's name 
+\\
+
+\bottomrule
+\end{tabular}}
+\ifdim\wd0>\textwidth\resizebox{\textwidth}{!}{\usebox0}\else\usebox0\fi
+\end{center}
+
+
+The pressure reconstruction, with \texttt{p.\allowbreak{}} indicating a patient's fixed parameter, is
+
+\[
+P_{\rm sa}=\frac{V_{\rm sa}-p.V0_{\rm sa}}{p.C_{\rm sa}},\quad
+P_{\rm sv}=\frac{V_{\rm sv}-(p.V0_{\rm sv}-e_{\rm ven})}{p.C_{\rm sv}},\quad
+P_{\rm pa}=\frac{V_{\rm pa}-p.V0_{\rm pa}}{p.C_{\rm pa}},\quad
+P_{\rm pv}=\frac{V_{\rm pv}-p.V0_{\rm pv}}{p.C_{\rm pv}}.
+\]
+
+
+Code: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}128–\allowbreak{}134}. All four pressures are in mmHg; only the filling pressures used below are clipped at zero.
+
+Effective systemic resistance, contractility and heart rate are
+
+\[
+\begin{aligned}
+R_{\rm sys}^{\rm eff}&=\max\{p.R_{\rm sys}(1+0.95a)(1-0.55s)(1+e_r),\;0.05\;\mathrm{mmHg\,s/mL}\},\\
+\mathrm{cont}_{l}^{\rm eff}&=p.\mathrm{cont}_l(1+0.30a)(1-0.35s)(1+e_{\rm cont}),\\
+\mathrm{cont}_{r}^{\rm eff}&=p.\mathrm{cont}_r(1+0.30a)(1-0.35s)(1+e_{\rm cont}),\\
+\mathrm{HR}^{\rm eff}&=\operatorname{clip}(p.\mathrm{HR}+e_{\rm hr},35,180)\;\mathrm{beats/min},\qquad
+\mathrm{hr\_hz}=\mathrm{HR}^{\rm eff}/(60\;\mathrm{s/min}).
+\end{aligned}
+\]
+
+
+Code: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}110–\allowbreak{}116,\allowbreak{}145–\allowbreak{}151}. The numeric factors 0.95 and 0.30 are \texttt{G\_\allowbreak{}VASO\_\allowbreak{}R} and \texttt{G\_\allowbreak{}VASO\_\allowbreak{}CONT}, with inverse-dose units; 0.55 and 0.35 are \texttt{G\_\allowbreak{}SEP\_\allowbreak{}R} and \texttt{G\_\allowbreak{}SEP\_\allowbreak{}CONT}. The clipping bounds act on the numerical heart rate in beats/min. There is no direct \texttt{G\_\allowbreak{}VASO\_\allowbreak{}VEN * a} term in \texttt{e\_\allowbreak{}ven}.
+
+The Frank–Starling terms are saturating stroke-volume responses to positive filling pressure; multiplying stroke volume by heart rate gives left and right cardiac output (CO). With \(P_{\rm pv}^{+}=\max(P_{\rm pv},0\;\mathrm{mmHg})\) and \(P_{\rm sv}^{+}=\max(P_{\rm sv},0\;\mathrm{mmHg})\), the code computes
+
+\[
+\begin{aligned}
+\mathrm{SV}_l&=p.\mathrm{SVmax}_l\frac{P_{\rm pv}^{+}}{P_{\rm pv}^{+}+p.k_l}\,\mathrm{cont}_l^{\rm eff},&
+\mathrm{SV}_r&=p.\mathrm{SVmax}_r\frac{P_{\rm sv}^{+}}{P_{\rm sv}^{+}+p.k_r}\,\mathrm{cont}_r^{\rm eff},\\
+\mathrm{CO}_l&=\mathrm{hr\_hz}\,\mathrm{SV}_l,&
+\mathrm{CO}_r&=\mathrm{hr\_hz}\,\mathrm{SV}_r,\\
+Q_{\rm sys}&=(P_{\rm sa}-P_{\rm sv})/R_{\rm sys}^{\rm eff},&
+Q_{\rm pul}&=(P_{\rm pa}-P_{\rm pv})/p.R_{\rm pul}.
+\end{aligned}
+\]
+
+
+Code: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}142–\allowbreak{}160}. Stroke volumes are in mL per beat; cardiac outputs and compartment flows are in mL/s. Flow differences are not clipped to be nonnegative.
+
+The volume derivatives, including infusion and capillary leak, are
+
+\[
+\begin{aligned}
+\dot V_{\rm sa}&=\mathrm{CO}_l-Q_{\rm sys},\\
+\dot V_{\rm sv}&=Q_{\rm sys}-\mathrm{CO}_r+f-(0.10\;\mathrm{mL/s})s,\\
+\dot V_{\rm pa}&=\mathrm{CO}_r-Q_{\rm pul},\\
+\dot V_{\rm pv}&=Q_{\rm pul}-\mathrm{CO}_l.
+\end{aligned}
+\]
+
+
+Code: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}161–\allowbreak{}166}, with \texttt{G\_\allowbreak{}SEP\_\allowbreak{}LEAK =\allowbreak{} 0.\allowbreak{}10}. All derivatives have units mL/s. Before numerical clipping, total volume changes only by fluid minus leak. Urine output is an observable and does not drain the venous volume in this implementation.
+
+The baroreflex is negative feedback driven by the mean arterial pressure error \texttt{err}. Its four effectors relax with the same time constant:
+
+\[
+\begin{aligned}
+\mathrm{err}&=p.\mathrm{MAP\_set}-P_{\rm sa},\\
+\dot e_{\rm hr}&=(p.g_{\rm hr}\,\mathrm{err}-e_{\rm hr})/(12\;\mathrm{s}),&
+\dot e_r&=(p.g_r\,\mathrm{err}-e_r)/(12\;\mathrm{s}),\\
+\dot e_{\rm cont}&=(p.g_{\rm cont}\,\mathrm{err}-e_{\rm cont})/(12\;\mathrm{s}),&
+\dot e_{\rm ven}&=(p.g_{\rm ven}\,\mathrm{err}-e_{\rm ven})/(12\;\mathrm{s}).
+\end{aligned}
+\]
+
+
+Code: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}70–\allowbreak{}77,\allowbreak{}168–\allowbreak{}176}. The denominator is \texttt{p.\allowbreak{}tau\_\allowbreak{}baro}, nominally 12 s and not changed by \texttt{sample\_\allowbreak{}patient}; the other gains and their units are in the parameter table. When \texttt{baro\_\allowbreak{}on} is false all four derivatives are zero. \texttt{e\_\allowbreak{}ven} affects systemic venous pressure through the unstressed-volume shift above.
+
+The cardiovascular-to-metabolic coupling uses a smooth indicator of hypoperfusion, meaning inadequate pressure-driven perfusion:
+
+\[
+\begin{aligned}
+\mathrm{hypoperf}&=\left[1+\exp\!\left(\frac{P_{\rm sa}-65\;\mathrm{mmHg}}{10\;\mathrm{mmHg}}\right)\right]^{-1},\\
+\dot{\mathrm{Lac}}&=(0.0011\;\mathrm{mmol/(L\,s)})\,[s+1.5\kappa\,\mathrm{hypoperf}]
+ -(0.0003\;\mathrm{s}^{-1})\,\mathrm{Lac}.
+\end{aligned}
+\]
+
+
+Code: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}62–\allowbreak{}69,\allowbreak{}178–\allowbreak{}183}. Here κ is \texttt{p.\allowbreak{}complexity}; 65 is \texttt{MAP\_\allowbreak{}lac\_\allowbreak{}crit}, 10 is \texttt{lac\_\allowbreak{}scale}, 0.0011 is \texttt{k\_\allowbreak{}lac\_\allowbreak{}prod}, 0.0003 is \texttt{k\_\allowbreak{}lac\_\allowbreak{}clear}, and 1.5 is a dimensionless literal coupling multiplier. \texttt{lac\_\allowbreak{}base} initializes lactate; it is not added as a basal production term. Setting κ to zero removes the explicit pressure term but retains the shared sepsis driver, so it does not establish unconditional independence between organs.
+
+The renal observable couples MAP to urine output (UO) through a logistic response:
+
+\[
+\mathrm{uo\_full}=\left[1+\exp\!\left(-\frac{P_{\rm sa}-65\;\mathrm{mmHg}}{8\;\mathrm{mmHg}}\right)\right]^{-1},\qquad
+\mathrm{UO}=(1.6\;\mathrm{mL/min})[(1-\kappa)\,0.7+\kappa\,\mathrm{uo\_full}].
+\]
+
+
+Code: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}58–\allowbreak{}61,\allowbreak{}249–\allowbreak{}253}. The constants are \texttt{MAP\_\allowbreak{}renal =\allowbreak{} 65}, \texttt{uo\_\allowbreak{}scale =\allowbreak{} 8}, \texttt{UO\_\allowbreak{}max =\allowbreak{} 1.\allowbreak{}6}, and the dimensionless literal 0.7. Thus κ scales a mixture between constant UO and the pressure response; it does not multiply all cardiovascular interactions or the direct sepsis term. \texttt{coupling} is passed to \texttt{sample\_\allowbreak{}patient} as \texttt{complexity}, while the separate \texttt{confound} control affects dose assignment only. [Source: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}274–\allowbreak{}277,\allowbreak{}300–\allowbreak{}301,\allowbreak{}315–\allowbreak{}326}.]
+
+The initial state distributes the stressed blood volume in proportion to compartment compliance. With \(j\) ranging over \texttt{sa}, \texttt{sv}, \texttt{pa}, \texttt{pv},
+
+\[
+\begin{aligned}
+V_{\rm unstressed}&=\sum_j p.V0_j,&
+V_{\rm stressed}&=\max(p.V_{\rm total}-V_{\rm unstressed},200\;\mathrm{mL}),\\
+C_{\rm sum}&=\sum_j p.C_j,&
+V_j(0)&=p.V0_j+V_{\rm stressed}\,p.C_j/C_{\rm sum},\\
+e_{\rm hr}(0)&=e_r(0)=e_{\rm cont}(0)=e_{\rm ven}(0)=0,&
+\mathrm{Lac}(0)&=p.\mathrm{lac\_base}=1.0\;\mathrm{mmol/L}.
+\end{aligned}
+\]
+
+
+Code: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}63,\allowbreak{}185–\allowbreak{}196}. The zero effectors have the respective units defined above. The dataset writer samples \texttt{V\_\allowbreak{}total} directly; it does not call \texttt{calibrate\_\allowbreak{}volume}. The separate self-test's bisection calibration therefore does not establish a calibrated MAP or cardiac output for every frozen patient. [Sources: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}256–\allowbreak{}268,\allowbreak{}315–\allowbreak{}331,\allowbreak{}366–\allowbreak{}374}.]
+
+Let \(F(t,y)\) denote the full right-hand side above and \(\Delta t\) the integration step. The integrator is classical fourth-order Runge–Kutta (RK4), followed by component-wise floors:
+
+\[
+\begin{aligned}
+k_1&=F(t,y),\quad k_2=F(t+\Delta t/2,y+\Delta t\,k_1/2),\\
+k_3&=F(t+\Delta t/2,y+\Delta t\,k_2/2),\quad k_4=F(t+\Delta t,y+\Delta t\,k_3),\\
+y^{+}&=y+\frac{\Delta t}{6}(k_1+2k_2+2k_3+k_4),\\
+y^{+}_{0:4}&\leftarrow\max(y^{+}_{0:4},1.0\;\mathrm{mL}),\qquad
+y^{+}_{8}\leftarrow\max(y^{+}_{8},0.05\;\mathrm{mmol/L}).
+\end{aligned}
+\]
+
+
+Code: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}229–\allowbreak{}238}. The writer explicitly uses \texttt{dt =\allowbreak{} 0.\allowbreak{}5} s, a 180 s warm-up and default \texttt{out\_\allowbreak{}dt =\allowbreak{} 300} s, whereas the general \texttt{simulate} defaults are 0.05 s, 120 s and 60 s, respectively. Warm-up holds the schedule's time-zero vasopressor and sepsis values fixed, forces fluid to zero, and runs \texttt{int(warmup\_\allowbreak{}s/\allowbreak{}dt)} steps. Main integration uses \texttt{int(horizon\_\allowbreak{}s/\allowbreak{}dt)} steps and records the initial point plus each stride \texttt{max(1,\allowbreak{}int(round(out\_\allowbreak{}dt/\allowbreak{}dt)))}. The writer's default horizon is six hours; frozen \texttt{t\_\allowbreak{}min} arrays confirm samples from zero to 360 minutes at five-minute intervals, including both endpoints. [Sources: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}198–\allowbreak{}227,\allowbreak{}300–\allowbreak{}310,\allowbreak{}331,\allowbreak{}338}; frozen time arrays: \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}193–\allowbreak{}218}.]
+
+The observation map adds no measurement noise or observation mask. It returns time in minutes, MAP, HR, left cardiac output, central venous pressure (CVP), UO, lactate, sepsis and vasopressor dose:
+
+\[
+\begin{aligned}
+t_{\min}&=t/(60\;\mathrm{s/min}),\qquad \mathrm{MAP}=P_{\rm sa},\qquad \mathrm{CVP}=P_{\rm sv},\\
+\mathrm{HR}_{\rm obs}&=\operatorname{clip}(p.\mathrm{HR}+e_{\rm hr},35,180)\;\mathrm{beats/min},\\
+\mathrm{SV}_{l,\rm obs}&=p.\mathrm{SVmax}_l\frac{\max(P_{\rm pv},0)}{\max(P_{\rm pv},0)+p.k_l}
+ p.\mathrm{cont}_l(1+0.30a)(1-0.35s)(1+e_{\rm cont}),\\
+\mathrm{CO}_{\rm obs}&=\frac{\mathrm{HR}_{\rm obs}}{60}\,\mathrm{SV}_{l,\rm obs}\,
+ \frac{\underbrace{60.0}_{\mathrm{MMHG\_PER\_S\_TO\_PER\_MIN}}}{1000.0}\quad\mathrm{L/min}.
+\end{aligned}
+\]
+
+
+Code: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}29,\allowbreak{}226–\allowbreak{}227,\allowbreak{}240–\allowbreak{}253}. In the CO conversion, the initial 60 converts beats/min to beats/s, the named 60 converts mL/s to mL/min and 1000 converts mL to L. The zero filling-pressure floor is in mmHg. UO and lactate use the equations above without added noise. The writer stores only the six physiological channels plus factual vasopressor and sepsis; it drops the other possible internal state variables. Random patient sampling and dose noise are the stochastic components, rather than stochastic observation errors. [Sources: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}274–\allowbreak{}289,\allowbreak{}318–\allowbreak{}326,\allowbreak{}339–\allowbreak{}358}.]
+
+Patient parameters are sampled independently using a NumPy random generator, with the following uniform distributions; all unlisted fields retain their nominal values. The severity draw and onset draw follow the parameter draws in the same generator stream. [Sources: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}274–\allowbreak{}297,\allowbreak{}309,\allowbreak{}315–\allowbreak{}319}.]
+
+\begin{center}
+\small
+\sbox0{
+\begin{tabular}{lll}
+\toprule
+Code variable 
+& Sampling distribution 
+& Unit 
+\\
+
+\midrule
+\texttt{R\_\allowbreak{}sys} 
+& Uniform(0.80, 1.30) 
+& mmHg·s/mL 
+\\
+
+\texttt{SVmax\_\allowbreak{}l}, \texttt{SVmax\_\allowbreak{}r} 
+& Uniform(90, 120), independently 
+& mL per beat 
+\\
+
+\texttt{cont\_\allowbreak{}l}, \texttt{cont\_\allowbreak{}r} 
+& Uniform(0.80, 1.15), independently 
+& dimensionless 
+\\
+
+\texttt{HR} 
+& Uniform(60, 85) 
+& beats/min 
+\\
+
+\texttt{MAP\_\allowbreak{}set} 
+& Uniform(85, 95) 
+& mmHg 
+\\
+
+\texttt{g\_\allowbreak{}hr} 
+& Uniform(0.4, 0.7) 
+& (beats/min)/mmHg 
+\\
+
+\texttt{C\_\allowbreak{}sa} 
+& Uniform(1.3, 1.9) 
+& mL/mmHg 
+\\
+
+\texttt{V\_\allowbreak{}total} 
+& Uniform(4200, 5200) 
+& mL 
+\\
+
+\texttt{sev} 
+& Uniform(0.2, 0.9) 
+& dimensionless 
+\\
+
+\texttt{onset} 
+& Uniform(0, \texttt{horizon\_\allowbreak{}s * 0.\allowbreak{}25}) 
+& s 
+\\
+
+\bottomrule
+\end{tabular}}
+\ifdim\wd0>\textwidth\resizebox{\textwidth}{!}{\usebox0}\else\usebox0\fi
+\end{center}
+
+
+Although its helper docstring calls the sepsis course a ramp, the implemented schedule is a step. If \(H_s\) is the horizon in seconds and \(o\) is \texttt{onset}, the knots are \((0,o,o+1800,H_s)\), with values \((0,0,\mathrm{sev},\mathrm{sev})\); piecewise-constant lookup gives
+
+\[
+s(t)=\begin{cases}0,&t<o+1800\;\mathrm{s},\\ \mathrm{sev},&t\ge o+1800\;\mathrm{s}.\end{cases}
+\]
+
+
+Code: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}100–\allowbreak{}107,\allowbreak{}292–\allowbreak{}297,\allowbreak{}318–\allowbreak{}319}. This is a delayed severity step, not a linear interpolation between knots. With $o\sim\mathrm{Uniform}(0,5400\,\mathrm{s})$, $P(o+1800>3300)=(5400-1500)/5400=13/18=72.22\%$: onset follows the last context sample (minute $55$) in this fraction of patients in expectation. Onset-related proxies can occur during the context only in the complementary $5/18=27.78\%$; this distributional calculation is not a measured per-file patient fraction.\label{app:onsetfraction} The writer sets no fluid schedule, so fluid rate remains the zero default throughout dataset generation. [Sources: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}95–\allowbreak{}96,\allowbreak{}327–\allowbreak{}338}.]
+
+\subsection{Treatment policy and simulated evaluation}\label{app:sharedhistoryprotocol}
+
+
+For counterfactual evaluation, all alternatives replay the factual warm-up and entire observed history, then switch at forecast origin $t_C$ to the chosen constant future dose. A counterfactual is thus a trajectory under a stated future control sequence conditional on shared factual history. The factual arm retains its original delayed dosing schedule; it need not be one of the constant-dose alternatives. Replaying the complete factual future schedule through the same machinery gives the factual-replay check. Appendix~\ref{app:spec} specifies this current protocol and discloses the earlier alternative-dose-from-warm-up correction separately.
+
+
+Macro normalized RMSE (macro-NRMSE) computes a pooled RMSE within each organ, divides by that organ's numerical range from the fixed reference, and averages across the three organs. The ranges remain fixed across the coupling sweep so that a shrinking target range cannot manufacture a coupling trend. The cardiovascular group mixes physical units, making this a numerical comparison index rather than an error in a single clinical unit. Cellwise direction accuracy compares the signs of predicted and true changes for adjacent dose pairs over patients, forecast steps and channels. The separate population-sign count compares the highest-dose and lowest-dose average response for mean arterial pressure, urine output and lactate; it is out of three and is not a patient-level accuracy.
+
+
+The confounding control \(c\) is the writer argument \texttt{confound}; it interpolates between random dosing and severity-driven dosing. For each patient it draws \texttt{random\_\allowbreak{}dose} \(u\) and Gaussian noise \(\epsilon\), then clips the factual dose:
+
+\[
+\begin{aligned}
+u&\sim\operatorname{Uniform}(0,0.5)\;\mathrm{\mu g/(kg\,min)},\qquad
+\epsilon\sim\mathcal N(0,\sigma^2),\\
+\mathrm{fdose}&=\operatorname{clip}\!\left[c(0.5\;\mathrm{\mu g/(kg\,min)})\,\mathrm{sev}+(1-c)u+\epsilon,
+ 0,0.5\;\mathrm{\mu g/(kg\,min)}\right],\\
+a_{\rm factual}(t)&=\begin{cases}0,&t<0.2H_s,\\ \mathrm{fdose},&t\ge0.2H_s,\end{cases}\\
+a_{{\rm cf},d}(t)&=\begin{cases}a_{\rm factual}(t),&t<t_C,\\d,&t\ge t_C,\end{cases}\quad t_C=C\,\mathrm{out\_dt},\\
+d&\in\{0,0.05,0.10,0.20,0.40\}\;\mathrm{\mu g/(kg\,min)}.
+\end{aligned}
+\]
+
+
+
+Code: \texttt{cvsim\_hemodynamics\_simulator.py:311,322--338}. Micrograms/(kg\,$\cdot$\,min) are the norepinephrine-equivalent dose units. The assignment-strength control $c$ and coupling control $\kappa$ are dimensionless and lie in $[0,1]$, whereas dose and $\sigma$ retain micrograms/(kg minute). Setting $\sigma=0$ removes only additive Gaussian noise: $(1-c)u$ remains when $c<1$, and severity-driven assignment is deterministic only at $c=1,\sigma=0$. The earlier source generator fixes $\sigma=0.03$ and administers the alternative dose throughout warm-up and the generated course; the current wrapper varies $\sigma$ and preserves factual warm-up and history until $t_C$. The current generator replays the factual warm-up and observed history identically for each alternative, then switches at $t_C=3600$ s to a constant grid dose. The factual schedule begins at $4320$ s and therefore need not belong to that constant-dose family. On the five-minute output grid, the context occupies minutes $0$--$55$, the first forecast is at minute $60$, and the first saved factual on-treatment control is at minute $75$ for patients with positive eventual dose; no factual training sample is treated during minutes $60$--$72$, so randomising eventual dose does not alone identify this earlier-start target. Replaying its complete future schedule yields identical factual trajectories, and alternatives are identical before $t_C$, both with maximum absolute difference zero. [Source: shared-history generator manifests and factual-replay report in \path{sim_grids_v1/LINEAGE.md}.]
+
+The current estimand is the forecast under a stated future control sequence given shared factual history, as in Section~\ref{sec:sim}. Stationarity in the required structural assumption means that the same state-and-control transition rule applies at earlier and later times once necessary disease and time effects are represented. Reusing recurrent weights alone does not establish it: patient-specific simulator parameters and the hidden time-varying sepsis schedule are not observed state inputs, and adequate state--dose support has not been proved. It is distinct from exposing a patient to the alternative dose before the observed history. The earlier mismatch and retained comparison arrays are described only in the final subsection.
+
+The stored factual channel order is \texttt{[MAP,\allowbreak{} HR,\allowbreak{} CO,\allowbreak{} CVP,\allowbreak{} UO,\allowbreak{} Lac,\allowbreak{} vaso,\allowbreak{} sepsis]}; the stored counterfactual order is \texttt{[MAP,\allowbreak{} HR,\allowbreak{} CO,\allowbreak{} CVP,\allowbreak{} UO,\allowbreak{} Lac]}. Models receive only the initial six factual physiological channels, their all-one masks where applicable, context vasopressor dose, future vasopressor dose, and an all-zero one-dimensional static vector for PhysioGraph. Control-GRU and the counterfactual recurrent network surrogate CRN-lite consume the six observations and the vasopressor directly. Neither the saved scalar \texttt{severity} nor the time-varying factual \texttt{sepsis} channel is passed as an input. Severity may influence observed physiology, so withholding the severity field does not imply that its physiological proxies are absent. The simulated forecasting task receives the actual future factual treatment schedule; counterfactual evaluation replaces it with each constant grid dose. Fluid is supported by the general simulator but is not a channel or active treatment in these dataset/runner combinations. The separate one-organ \texttt{build\_\allowbreak{}model("cvsim")} helper advertises two controls, whereas this experiment uses \texttt{build\_\allowbreak{}pg} with one control and three organs. [Sources: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}339–\allowbreak{}358}; \texttt{cvsim\_\allowbreak{}counterfactual\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}30–\allowbreak{}46,\allowbreak{}67–\allowbreak{}96,\allowbreak{}102–\allowbreak{}123,\allowbreak{}130–\allowbreak{}142,\allowbreak{}174–\allowbreak{}182,\allowbreak{}222–\allowbreak{}230}; alternate helper: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}326–\allowbreak{}330}.]
+
+The real cohort has no treatment trajectory columns in the selected input schema. Its dynamic features are the sixteen measurements in B.1, and PhysioGraph is built with \texttt{n\_\allowbreak{}control =\allowbreak{} 0}; clinical treatment effects and real-data counterfactual accuracy are therefore not evaluated by this pipeline. [Sources: \texttt{cinc2019\_\allowbreak{}cohort\_\allowbreak{}preprocessor.\allowbreak{}py:\allowbreak{}9–\allowbreak{}11,\allowbreak{}25–\allowbreak{}41}; \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}321–\allowbreak{}325}.]
+
+Current grids use $400$ generated patients per setting. The $c=1$ severity--dose correlations are $1.00$, $0.80$, $0.58$ and $0.37$ for $\sigma=0$, $0.08$, $0.15$ and $0.25$. Assignment noise jointly changes support and severity--dose dependence. Severity-tercile dose quantiles are descriptive and cannot establish conditional positivity given full history. Current settings and per-cell quantiles are recorded in \path{sim_grids_v1/overlap_table.csv}; earlier reference-array tables appear only in the final subsection.
+
+For simulated data, \texttt{load\_\allowbreak{}cvsim} permutes patient rows with a seed-specific NumPy generator, uses \texttt{int(0.\allowbreak{}7*N)} for training and the rest for testing, and creates no validation set. It fits feature-wise means and population standard deviations plus \(10^{-6}\) using all factual time points of training patients, and applies these statistics to model inputs and targets. Controls remain in their original dose units. Predictions are converted back to raw feature scales before scoring. [Sources: \texttt{cvsim\_\allowbreak{}counterfactual\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}111–\allowbreak{}127,\allowbreak{}130–\allowbreak{}142,\allowbreak{}167–\allowbreak{}185}.]
+
+Normalized RMSE is abbreviated NRMSE. The counterfactual organ groups are cardiovascular \texttt{[MAP,\allowbreak{}HR,\allowbreak{}CO,\allowbreak{}CVP]}, renal \texttt{[UO]} and metabolic \texttt{[Lac]}. For organ \(o\), dose index \(d\), test patient \(i\) and target step \(k\), its error is pooled before the square root across all doses, patients, target steps and channels in that organ. The per-cell diagnostic range uses the maximum minus minimum across all saved times, doses and test patients of all channels in that organ. Current headline coupling scores instead keep reference ranges fixed across $\kappa$:
+
+\[
+\begin{aligned}
+\mathrm{RMSE}_o&=\sqrt{\frac{\sum_{d,i,k,v\in o}(\widehat x_{dikv}-x^{\rm cf}_{di,C+k,v})^2}
+ {\max(\#\{d,i,k,v\in o\},1)}},\\
+\mathrm{range}_o&=\max_{i,d,t,v\in o}x^{\rm cf}_{idtv}-\min_{i,d,t,v\in o}x^{\rm cf}_{idtv}+10^{-6},\\
+\mathrm{NRMSE}_o&=\mathrm{RMSE}_o/\mathrm{range}_o,\qquad
+\mathrm{macro\_nrmse}=\tfrac13\sum_{o\in\{\mathrm{cardiovascular,renal,metabolic}\}}\mathrm{NRMSE}_o.
+\end{aligned}
+\]
+
+
+Code: \texttt{cvsim\_\allowbreak{}counterfactual\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}25–\allowbreak{}27,\allowbreak{}171–\allowbreak{}197,\allowbreak{}208}. The additive \(10^{-6}\) is applied to the numerical range; channels within the cardiovascular group have different physical units and are combined without feature-wise range scaling at this scoring stage. Thus its mixed-channel RMSE/range is a numerical index, not an error in one physical unit. Macro averaging gives each organ equal weight. A per-cell denominator would change with coupling and approach epsilon for constant UO at zero coupling. The current fixed-reference score avoids that changing denominator: the reference contains all patients and times at $\kappa=1$, separately for factual and counterfactual tasks. The per-cell score remains a labelled diagnostic. The code also returns a raw-scale RMSE for each dose and \texttt{overall\_\allowbreak{}rmse} as the arithmetic mean of those per-dose RMSEs, a different aggregation. [Sources: \texttt{cvsim\_\allowbreak{}counterfactual\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}185,\allowbreak{}192–\allowbreak{}208}; zero-coupling UO: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}251–\allowbreak{}252}.]
+
+For factual simulated forecasting, each organ's error is pooled over target patients, steps and channels, and its current headline denominator is the fixed factual reference range plus \(10^{-6}\). Its macro score is again the mean of three organ scores. This factual denominator differs from the all-dose counterfactual denominator. [Source: \texttt{cvsim\_\allowbreak{}counterfactual\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}216–\allowbreak{}236}.]
+
+Direction correctness is one Boolean per named channel, obtained by comparing the sign of the difference between the highest-dose and lowest-dose \textbf{population-and-target-time average} predictions with the corresponding true difference:
+
+\[
+\mathrm{correct}_v=\mathbf1\!\left[
+ \operatorname{sign}(\overline{\widehat x}_{d_{\max},v}-\overline{\widehat x}_{d_{\min},v})
+ =\operatorname{sign}(\overline{x^{\rm cf}}_{d_{\max},v}-\overline{x^{\rm cf}}_{d_{\min},v})\right],
+\quad v\in\{\mathrm{MAP,UO,Lac}\}.
+\]
+
+
+Code: \texttt{cvsim\_\allowbreak{}counterfactual\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}170,\allowbreak{}185–\allowbreak{}188,\allowbreak{}198–\allowbreak{}213}. This produces a count out of three; it is neither a fitted dose-response slope nor a patient-, dose-pair- or time-specific accuracy. Equal zero signs count as correct under \texttt{np.\allowbreak{}sign} equality.
+
+\subsection{PhysioGraph model and graph variants}
+
+
+PhysioGraph has an organ-specific input projection, a stack of recurrent organ nodes and graph-coupling layers, and an organ-specific linear readout. In clinical forecasting the four organ feature dimensions are \texttt{(4,\allowbreak{}4,\allowbreak{}3,\allowbreak{}5)}, there are five static features and zero controls. The runner defaults use latent width \texttt{d\_\allowbreak{}model =\allowbreak{} 96}, state width \texttt{d\_\allowbreak{}state =\allowbreak{} 48} for the diagonal state-space backbone, and \texttt{n\_\allowbreak{}layers =\allowbreak{} 2}. These runner values override the smaller model-builder defaults. The simulated experiment instead uses organ dimensions \texttt{(4,\allowbreak{}1,\allowbreak{}1)}, one zero-valued static input, one vasopressor control, widths 64 and 32, two layers and cardiovascular-to-renal and cardiovascular-to-metabolic edges. [Sources: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}43–\allowbreak{}61,\allowbreak{}185–\allowbreak{}206,\allowbreak{}321–\allowbreak{}330}; \texttt{physiograph\_\allowbreak{}training\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}31–\allowbreak{}40,\allowbreak{}130–\allowbreak{}132}; \texttt{cvsim\_\allowbreak{}counterfactual\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}102–\allowbreak{}108,\allowbreak{}130–\allowbreak{}142}.]
+
+Below, \(i\) indexes an organ, \(\ell\) a layer and \(t\) a context or rollout step. \([\cdot,\cdot]\) denotes concatenation; \texttt{Linear} includes its learned bias; \texttt{LN} denotes layer normalization; \texttt{Drop} denotes dropout; GELU is the Gaussian error linear unit activation; and \texttt{GRUCell} is the gated recurrent unit primitive called by the code. Learned latent coordinates have no prescribed physical units. No expansion of library-internal GRU, normalization, activation or solver defaults is claimed without a locked library version. The common node output transformation is
+
+\[
+\mathcal N_i^\ell(q)=\operatorname{LN}_{2,i}^\ell\!\left[
+ w+W_{2,i}^\ell\operatorname{Drop}_{0.1}\!\left(\operatorname{GELU}(W_{1,i}^\ell w+b_{1,i}^\ell)\right)+b_{2,i}^\ell\right],
+\qquad w=\operatorname{LN}_{1,i}^\ell(\operatorname{Drop}_{0.1}(q)).
+\]
+
+
+Code: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}52,\allowbreak{}71–\allowbreak{}87,\allowbreak{}100–\allowbreak{}103,\allowbreak{}124–\allowbreak{}138}. The feed-forward hidden width is twice \texttt{d\_\allowbreak{}model}; the literal dropout probability is 0.1 under the supplied configuration, and dropout is disabled in evaluation by \texttt{model.\allowbreak{}eval()}. [Evaluation sources: \texttt{physiograph\_\allowbreak{}training\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}65–\allowbreak{}67}; \texttt{cvsim\_\allowbreak{}counterfactual\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}164–\allowbreak{}166,\allowbreak{}216–\allowbreak{}219}.]
+
+For a diagonal state-space model (SSM), specifically the code's Linear Recurrent Unit (LRU)-style node, the complex pole's real and imaginary components are
+
+\[
+\lambda_r=\exp[-\exp(\nu)]\cos\theta,\qquad
+\lambda_i=\exp[-\exp(\nu)]\sin\theta.
+\]
+
+
+Code: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}89–\allowbreak{}91}. Each state coordinate has its own learned \(\nu\) and \(\theta\). Given node input \(u\) and prior real/imaginary state \((x_r,x_i)\),
+
+\[
+\begin{aligned}
+x_r^+&=\lambda_r\odot x_r-\lambda_i\odot x_i+uB_{\rm re},\\
+x_i^+&=\lambda_r\odot x_i+\lambda_i\odot x_r+uB_{\rm im},\\
+q&=x_r^+ C_{\rm re}-x_i^+ C_{\rm im}+uD,\qquad y=\mathcal N_i^\ell(q).
+\end{aligned}
+\]
+
+
+Code: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}93–\allowbreak{}103}. Here \(\odot\) is element-wise multiplication. State vectors initialize to zero. The code initializes \texttt{nu =\allowbreak{} log(0.\allowbreak{}9*Uniform(0,\allowbreak{}1)+0.\allowbreak{}05)}, \texttt{theta =\allowbreak{} 6.\allowbreak{}283*Uniform(0,\allowbreak{}1)}, each \texttt{B\_\allowbreak{}re}, \texttt{B\_\allowbreak{}im}, and \texttt{D} entry from a standard Gaussian divided by the square root of input width, and each \texttt{C\_\allowbreak{}re}, \texttt{C\_\allowbreak{}im} entry from a standard Gaussian divided by the square root of state width. These constants are dimensionless; poles have magnitude strictly below one for finite parameters. That pole constraint alone does not bound the entire nonlinear coupled rollout. [Sources: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}75–\allowbreak{}81,\allowbreak{}89–\allowbreak{}91,\allowbreak{}105–\allowbreak{}116}.]
+
+For the GRU organ backbone, hidden width equals \texttt{d\_\allowbreak{}model}; the \texttt{d\_\allowbreak{}state} argument does not determine its size. It returns the GRU's raw hidden vector as recurrent state and a separately transformed vector as node output:
+
+\[
+h^+=\operatorname{GRUCell}_i^\ell(u,h),\qquad y=\mathcal N_i^\ell(h^+),\qquad h(0)=0.
+\]
+
+
+Code: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}124–\allowbreak{}150}. The returned state is not replaced by the post-normalization output. This distinction also holds for the SSM's real and imaginary states.
+
+For each organ's context step, its local normalized values and mask are concatenated with the static covariates and, where present, controls, then projected:
+
+\[
+u_{i,t}^{0}=\mathrm{in\_proj}_i\,[z_{i,t},m_{i,t},s_{\rm static},a_t],\qquad
+(\widetilde h_{i,t}^{\ell},x_{i,t}^{\ell})=
+ \mathrm{Node}_i^\ell(u_{i,t}^{\ell-1},x_{i,t-1}^{\ell}).
+\]
+
+
+Code: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}193–\allowbreak{}201,\allowbreak{}209–\allowbreak{}234}. The control term is omitted when \texttt{n\_\allowbreak{}control =\allowbreak{} 0}; the static vector is broadcast at every context time. Context nodes are scanned independently over their input sequences, then coupling is applied at each time and supplied to the next layer. Thus coupling does not overwrite the recurrent state of the same layer; its effect reaches subsequent layers and the decoder. [Source: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}229–\allowbreak{}243}.]
+
+The full clinical admissible directed edge list, in code order, is cardiovascular→renal, cardiovascular→pulmonary, cardiovascular→metabolic, pulmonary→cardiovascular, pulmonary→metabolic, metabolic→cardiovascular, renal→metabolic and renal→cardiovascular. These are specified hypotheses about allowed message paths, rather than edges discovered from the data. The order of organ indices is cardiovascular 0, pulmonary 1, renal 2 and metabolic 3. [Source: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}29–\allowbreak{}40}.]
+
+For every allowed edge \(e=(s,d)\), a separate learned linear function produces a scalar sigmoid gate and a separate learned linear message is passed through a hyperbolic tangent. All messages in a layer use the pre-coupling states:
+
+\[
+\begin{aligned}
+g_{e,t}^\ell&=\sigma\!\left(w_{e}^{\ell\top}[\widetilde h_{s,t}^\ell,\widetilde h_{d,t}^\ell]+b_{g,e}^\ell\right),\\
+m_{e,t}^\ell&=g_{e,t}^\ell\tanh(W_e^\ell\widetilde h_{s,t}^\ell+b_{m,e}^\ell),\\
+h_{i,t}^\ell&=\operatorname{LN}_{\rm graph}^\ell\!\left(\widetilde h_{i,t}^\ell+
+ \sum_{e:\operatorname{dst}(e)=i}m_{e,t}^\ell\right),\qquad
+u_{i,t}^{\ell}=h_{i,t}^{\ell}.
+\end{aligned}
+\]
+
+
+Code: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}156–\allowbreak{}182,\allowbreak{}235–\allowbreak{}243}. The sigmoid \(\sigma\) maps a real scalar to the interval zero to one. Gates depend on the current patient and time and are recomputed at every context or forecast step; they are not one fixed scalar per patient. There is no softmax competition between edges and no division by incoming degree. The graph layer's layer-normalization parameters are shared across organ positions. \texttt{edge\_\allowbreak{}gates} averages the final layer's context gates over time for each patient. For the matched simulator variants, a zero message sum still passes through coupling layer normalization; the matched wrapper is \texttt{sim\_grid\_runner.py:34--48,71--88}. The clinical source empty-edge branch returns its input directly, while still allocating normalization parameters. These distinct implementation conventions must not be conflated. [Sources: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}166–\allowbreak{}182,\allowbreak{}238–\allowbreak{}243,\allowbreak{}287–\allowbreak{}293}.]
+
+At rollout start, \texttt{y\_\allowbreak{}prev} is the last normalized context row, including any zero placeholders for missing measurements; it is not the last observed value carried forward. For future step \(k\), the previous prediction, an all-one local mask, statics and the supplied future control enter a separate \texttt{step\_\allowbreak{}proj}. The saved node states are updated through each layer and its coupler, and each organ is decoded linearly:
+
+\[
+\begin{aligned}
+\widehat y_{-1}&=z_{C-1},\qquad
+u_{i,k}^{0}=\mathrm{step\_proj}_i[\widehat y_{i,k-1},\mathbf1,s_{\rm static},a_{C+k}],\\
+(\widetilde h_{i,k}^{\ell},x_{i,k}^{\ell})&=\mathrm{Node}_i^\ell(u_{i,k}^{\ell-1},x_{i,k-1}^{\ell}),\qquad
+u_{i,k}^{\ell}=\mathrm{Coupler}^\ell(\widetilde H_k^\ell)_i,\\
+\widehat y_{i,k}&=\mathrm{dec}_i(u_{i,k}^{L}).
+\end{aligned}
+\]
+
+
+Code: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}245–\allowbreak{}280}. Controls are omitted for CinC. \(L\) is the number of recurrent/coupling layers, and \(\widetilde H\) stacks organ outputs. Readouts are concatenated in feature order and fed back for the next step; the model does not teacher-force observed targets during these training rollouts. The final coupled context output itself is not used as the initial prediction; the retained recurrent states seed the subsequent steps. [Sources: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}249–\allowbreak{}279}; training call: \texttt{physiograph\_\allowbreak{}training\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}90–\allowbreak{}97}.]
+
+Graph variants change the allowed edges: \texttt{none} removes all edges; \texttt{full} includes every ordered pair of different organs; \texttt{reversed} flips each admissible edge; and \texttt{random} samples an equally sparse directed graph without replacement using \texttt{np.\allowbreak{}random.\allowbreak{}default\_\allowbreak{}rng(0)}. For \texttt{random}, the candidate order is \texttt{(i,\allowbreak{}j)} for \texttt{i} then \texttt{j} from zero to three with \texttt{i !=\allowbreak{} j}, and the sampled candidate indices are sorted before constructing the edge tuple. Its resulting edges are \texttt{(0,\allowbreak{}1),\allowbreak{}(0,\allowbreak{}3),\allowbreak{}(1,\allowbreak{}0),\allowbreak{}(1,\allowbreak{}2),\allowbreak{}(2,\allowbreak{}0),\allowbreak{}(2,\allowbreak{}3),\allowbreak{}(3,\allowbreak{}1),\allowbreak{}(3,\allowbreak{}2)}. This clinical random graph is fixed across model-training seeds. In the matched three-organ simulator, the random graph instead uses the run seed to select two directed edges; therefore its cross-seed spread also includes the random edge draw. [Source: \texttt{sim\_grid\_runner.py:51--69}.] A further \texttt{shuffled} option applies the fixed label permutation \texttt{[2,\allowbreak{}0,\allowbreak{}3,\allowbreak{}1]} to both endpoints of the admissible edges. Reversal is not disjoint from the original graph because several original pairs already occur in both directions. [Sources: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}296–\allowbreak{}318}; exact random draw: \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}287–\allowbreak{}310}.]
+
+Parameter counts below sum all allocated parameter elements, as the runner does. They include biases, both normalization stages, all real and imaginary SSM matrices and the graph normalization allocated even for an empty graph. The tables below enumerate allocated source-default configurations analytically. Executed configurations and runtime parameter counts are recorded in the clinical tuning and simulator run files; the selected values are reported in the result tables. For audit, a biased linear map with input/output widths \(a,b\) has \texttt{a*b+b} parameters, a GRU/GRUCell with input width \(a\) and hidden width \(d\) has \texttt{3*d*a+3*d*d+6*d}, and a layer normalization has \texttt{2*d}. Summing the source's allocations gives the following node and coupler counts:
+
+\[
+P_{\rm LRU}(d,n)=2n+4dn+5d^2+7d,\qquad
+P_{\rm GRUNode}(d)=10d^2+13d,\qquad
+P_{\rm coupler}(d,E)=E(d^2+3d+1)+2d.
+\]
+
+
+Code allocations: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}71–\allowbreak{}87,\allowbreak{}124–\allowbreak{}132,\allowbreak{}156–\allowbreak{}166}; arithmetic: \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}239–\allowbreak{}259}. Here \(n\) is SSM state width and \(E\) is the edge count; all counts are dimensionless integers. Input and step projections are distinct parameter sets; readouts are biased linear maps. [Sources: \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}193–\allowbreak{}206}; counting rule \texttt{physiograph\_\allowbreak{}training\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}82–\allowbreak{}83} and \texttt{cvsim\_\allowbreak{}counterfactual\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}274}.]
+
+\begin{center}
+\small
+\sbox0{
+\begin{tabular}{lll}
+\toprule
+Task 
+& Runner model name 
+& Allocated parameter elements 
+\\
+
+\midrule
+Clinical 
+& gru 
+& 124176 
+\\
+
+Clinical 
+& gru\_med 
+& 679056 
+\\
+
+Clinical 
+& gru\_large 
+& 1676304 
+\\
+
+Clinical 
+& grud 
+& 126624 
+\\
+
+Clinical 
+& ncde 
+& 625808 
+\\
+
+Clinical 
+& odernn 
+& 157200 
+\\
+
+Clinical 
+& graphgru 
+& 211056 
+\\
+
+Clinical 
+& persistence 
+& 0 
+\\
+
+Clinical 
+& physiograph 
+& 687008 
+\\
+
+Clinical 
+& physiograph\_gru 
+& 912032 
+\\
+
+Simulated 
+& control\_gru 
+& 61062 
+\\
+
+Simulated 
+& crn\_lite 
+& 70471 
+\\
+
+Simulated 
+& physiograph 
+& 195594 
+\\
+
+Simulated 
+& physiograph\_gru 
+& 271242 
+\\
+
+\bottomrule
+\end{tabular}}
+\ifdim\wd0>\textwidth\resizebox{\textwidth}{!}{\usebox0}\else\usebox0\fi
+\end{center}
+
+
+Source: module allocations and runner sizes cited in \texttt{SPEC\_\allowbreak{}FACTS.\allowbreak{}json:\allowbreak{}parameters.\allowbreak{}source}; arithmetic \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}239–\allowbreak{}286}. Clinical counts use \texttt{(d\_\allowbreak{}model,\allowbreak{}d\_\allowbreak{}state,\allowbreak{}layers)=\allowbreak{}(96,\allowbreak{}48,\allowbreak{}2)} and default baseline hidden width 128; simulated counts use \texttt{(64,\allowbreak{}32,\allowbreak{}2)} and hidden width 96 for Control-GRU and CRN-lite. These source-default counts are separate from the executed configuration counts in Appendix~\ref{app:diagnostics}.
+
+\begin{center}
+\small
+\sbox0{
+\begin{tabular}{lll}
+\toprule
+Clinical edge variant 
+& SSM backbone parameters 
+& GRU backbone parameters 
+\\
+
+\midrule
+none 
+& 534928 
+& 759952 
+\\
+
+admissible 
+& 687008 
+& 912032 
+\\
+
+full 
+& 763048 
+& 988072 
+\\
+
+reversed 
+& 687008 
+& 912032 
+\\
+
+random 
+& 687008 
+& 912032 
+\\
+
+shuffled 
+& 687008 
+& 912032 
+\\
+
+\bottomrule
+\end{tabular}}
+\ifdim\wd0>\textwidth\resizebox{\textwidth}{!}{\usebox0}\else\usebox0\fi
+\end{center}
+
+
+Source: edge resolution \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}296–\allowbreak{}318}, allocations \texttt{organ\_\allowbreak{}graph\_\allowbreak{}ssm\_\allowbreak{}model.\allowbreak{}py:\allowbreak{}156–\allowbreak{}166,\allowbreak{}193–\allowbreak{}206}; arithmetic \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}247–\allowbreak{}280}. The parameter reduction with no edges is part of this variant, so it is not a parameter-matched intervention.
+
+\subsection{Baselines}
+
+
+For the clinical baselines, \(z_t\), \(m_t\) and \(s_{\rm static}\) denote the normalized feature vector, its mask and the static vector. Except for persistence, they share an autoregressive decoder: if \(h_{-1}\) is the encoder's final state, the decoder starts at \(y_{-1}=z_{C-1}\) and uses
+
+\[
+h_k=\operatorname{GRUCell}_{\rm dec}([y_{k-1},s_{\rm static}],h_{k-1}),\qquad
+y_k=W_{\rm out}h_k+b_{\rm out}.
+\]
+
+
+Code: \texttt{clinical\_\allowbreak{}timeseries\_\allowbreak{}baselines.\allowbreak{}py:\allowbreak{}27–\allowbreak{}42,\allowbreak{}58–\allowbreak{}61,\allowbreak{}94,\allowbreak{}121–\allowbreak{}122,\allowbreak{}164,\allowbreak{}191–\allowbreak{}192}. The initial decoder state is the encoder output; indices are relabelled here so the initial predicted output has index zero. Forecasts are fed back without target teacher forcing. The runner supplies hidden width 128 to all default clinical baselines, overriding the 96-wide class defaults for the neural controlled differential equation (CDE) encoder, the ordinary differential equation recurrent neural network (ODE-RNN), and the feature-attention GraphGRU; GRU-med and GRU-large use widths 320 and 512. [Sources: \texttt{clinical\_\allowbreak{}timeseries\_\allowbreak{}baselines.\allowbreak{}py:\allowbreak{}103,\allowbreak{}142,\allowbreak{}173,\allowbreak{}204–\allowbreak{}207}; \texttt{physiograph\_\allowbreak{}training\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}31–\allowbreak{}40,\allowbreak{}130}.]
+
+\textbf{GRU.} A single-layer gated recurrent unit encodes the sequence \texttt{[z\_\allowbreak{}t * m\_\allowbreak{}t,\allowbreak{} m\_\allowbreak{}t,\allowbreak{} static]}, with the final hidden vector seeding the shared decoder. It has no learned decay, organ grouping or explicit clinical control input. Missing values have already been re-masked to zero. Its defining encoder operation is
+
+\[
+x_t=[z_t\odot m_t,m_t,s_{\rm static}],\qquad
+h_t=\operatorname{GRUCell}_{\rm enc}(x_t,h_{t-1}),\qquad h_{-1}=0.
+\]
+
+
+Code: \texttt{clinical\_\allowbreak{}timeseries\_\allowbreak{}baselines.\allowbreak{}py:\allowbreak{}45–\allowbreak{}61}. This equation expresses the single-layer \texttt{nn.\allowbreak{}GRU} sequence call as its step primitive; the library handles its gate arithmetic and zero initial state. GRU-med and GRU-large change hidden width only. [Source: \texttt{physiograph\_\allowbreak{}training\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}36–\allowbreak{}39}.]
+
+\textbf{GRU-D.} This implementation is a missingness-aware GRU with exponential input and hidden decay. It starts with hidden state zero, \texttt{last =\allowbreak{} z\_\allowbreak{}0} and a zero vector of missing-run lengths. At each hourly row, observed variables reset their run length to zero; unobserved variables increment it by one. A learned affine map of the entire missing-run vector is used for each decay, followed by a rectified linear unit (ReLU) and a negative exponential. Let \(l_t\) be the last-value vector, \(\delta_t\) the missing-run vector and \(\gamma_x,\gamma_h\) the decays:
+
+\[
+\begin{aligned}
+\delta_t&=\operatorname{where}(m_t>0,0,\delta_{t-1}+1),\qquad
+\gamma_x=\exp[-\operatorname{ReLU}(W_x\delta_t+b_x)],\\
+\gamma_h&=\exp[-\operatorname{ReLU}(W_h\delta_t+b_h)],\qquad
+l_t=\operatorname{where}(m_t>0,z_t,l_{t-1}),\\
+\widehat z_t&=m_t\odot z_t+(1-m_t)\odot(\gamma_x\odot l_t),\\
+h_t&=\operatorname{GRUCell}([\widehat z_t,m_t,s_{\rm static}],\gamma_h\odot h_{t-1}).
+\end{aligned}
+\]
+
+
+Code: \texttt{clinical\_\allowbreak{}timeseries\_\allowbreak{}baselines.\allowbreak{}py:\allowbreak{}70–\allowbreak{}94}. The literal increment one is one hourly row. Input decay tends toward zero, the normalized dynamic mean. The input-decay matrix is a full \texttt{Linear(F,\allowbreak{}F)}, not a constrained feature-wise diagonal map; elapsed time is represented by the missing-run count rather than retained irregular timestamps. There is no separately learned empirical-mean vector, and the decoder starts from the last raw normalized row rather than the decayed imputation. These implementation choices define the evaluated GRU-D variant and should accompany a citation to the original method. [Source: same code; original-method naming in \texttt{clinical\_\allowbreak{}timeseries\_\allowbreak{}baselines.\allowbreak{}py:\allowbreak{}5,\allowbreak{}67–\allowbreak{}68}.]
+
+\textbf{Neural CDE.} A neural controlled differential equation (CDE) encoder constructs a natural cubic spline from \texttt{[linspace(0,\allowbreak{}1,\allowbreak{}C),\allowbreak{} z*m,\allowbreak{} m]}. The explicit time channel has normalized units; the library's spline interpolation parameter and interval are used for integration. Statics enter the shared decoder but are not part of the CDE path. If \(X\) is this spline and \(q\) its interpolation parameter, the defining operation is
+
+\[
+Z(q_0)=W_0X(q_0)+b_0,\qquad
+Z(q_1)=Z(q_0)+\int_{q_0}^{q_1} f_\theta(Z(q))\,dX(q),\qquad
+f_\theta(Z)=\operatorname{reshape}_{d\times(1+2F)}\!\left[W_2\tanh(W_1Z+b_1)+b_2\right].
+\]
+
+
+Code: \texttt{clinical\_\allowbreak{}timeseries\_\allowbreak{}baselines.\allowbreak{}py:\allowbreak{}103–\allowbreak{}122,\allowbreak{}128–\allowbreak{}136}. The encoder uses \texttt{torchcde.\allowbreak{}natural\_\allowbreak{}cubic\_\allowbreak{}coeffs}, \texttt{CubicSpline}, and \texttt{cdeint} with \texttt{method=\allowbreak{}"rk4"} and numerical step size \texttt{1.\allowbreak{}0/\allowbreak{}max(C-1,\allowbreak{}1)} over \texttt{X.\allowbreak{}interval}. The source does not pass an explicit irregular clinical time vector to the spline. It initializes with an affine projection of the spline at the interval start, and the final state seeds the same discrete GRU decoder as the other baselines. This is a CDE encoder with a recurrent decoder, rather than a continuous-time generative decoder. Missing dynamic values enter as zero alongside masks; cubic interpolation is applied to this assembled path, not as a clinical data-loader imputation. If \texttt{torchcde} is unavailable the builder raises an error. The current environment record supplies dependency versions. Primary-series external instability is diagnosed in Appendix~\ref{app:diagnostics}; the common-cohort horizon series is finite. [Sources: \texttt{clinical\_\allowbreak{}timeseries\_\allowbreak{}baselines.\allowbreak{}py:\allowbreak{}15–\allowbreak{}19,\allowbreak{}111–\allowbreak{}122,\allowbreak{}204–\allowbreak{}207}; external diagnosis \path{clinical_v4_v1/ncde_diagnosis.md}.]
+
+\textbf{ODE-RNN.} An ordinary differential equation recurrent neural network propagates a hidden state through a learned autonomous flow, then assimilates each hourly row with a GRUCell. The vector field has two affine maps and a hyperbolic tangent:
+
+\[
+\dot h=W_2\tanh(W_1h+b_1)+b_2,\qquad
+\widetilde h_t=\operatorname{ODESolve}(h_{t-1},[0,1]),\qquad
+h_t=\operatorname{GRUCell}([z_t\odot m_t,m_t,s_{\rm static}],\widetilde h_t).
+\]
+
+
+Code: \texttt{clinical\_\allowbreak{}timeseries\_\allowbreak{}baselines.\allowbreak{}py:\allowbreak{}142–\allowbreak{}164}. Hidden state starts at zero, and a flow over the numerical interval \texttt{[0,\allowbreak{}1]} is performed before every row, including the initial row. If \texttt{torchdiffeq} is present the solver is \texttt{odeint(.\allowbreak{}.\allowbreak{}.\allowbreak{},\allowbreak{}method=\allowbreak{}"rk4")}; otherwise it silently substitutes one explicit Euler step \texttt{h + flow(h)}. The implementation therefore uses unit-spaced flow intervals rather than raw irregular clinical timestamps, and the current environment records the installed solver packages used by the runs. The final hidden state seeds the shared decoder. [Sources: \texttt{clinical\_\allowbreak{}timeseries\_\allowbreak{}baselines.\allowbreak{}py:\allowbreak{}20–\allowbreak{}24,\allowbreak{}153–\allowbreak{}164}.]
+
+\textbf{GraphGRU.} This is the supplied feature-attention graph baseline, not a direct implementation claim for the cited spatiotemporal graph-convolution literature. Each measurement is a feature node, shared affine embedding maps \texttt{[value,\allowbreak{}mask]} to width \texttt{d\_\allowbreak{}node =\allowbreak{} 16}, and biased query, key and value maps generate dense attention, including self-attention:
+
+\[
+e_{t,v}=W_e[z_{t,v},m_{t,v}]+b_e,\quad
+A_{t,vw}=\operatorname{softmax}_{w}\!\left(\frac{Q(e_{t,v})^\top K(e_{t,w})}{\sqrt{16}}\right),\quad
+e'_{t,v}=e_{t,v}+\sum_w A_{t,vw}V(e_{t,w}),\qquad
+h_t=\operatorname{GRUCell}([\operatorname{vec}(e'_t),s_{\rm static}],h_{t-1}).
+\]
+
+
+Code: \texttt{clinical\_\allowbreak{}timeseries\_\allowbreak{}baselines.\allowbreak{}py:\allowbreak{}170–\allowbreak{}192}. Attention is recomputed for each time and patient. The feature graph has no organ admissibility mask and no missing-feature exclusion in its softmax; masks instead enter the node embeddings. The recurrent encoder's final state seeds the shared decoder. [Source: same code.]
+
+\textbf{Persistence.} This non-trained reference initializes a last-value vector at normalized zero, updates each coordinate only on observed context entries and repeats the resulting vector for all target steps. A variable never observed during context remains at normalized zero. Its precise rule is
+
+\[
+l_{-1}=0,\qquad l_t=\operatorname{where}(m_t>0,z_t,l_{t-1}),\qquad
+\widehat y_k=l_{C-1}\quad\text{for every target step }k.
+\]
+
+
+Code: \texttt{physiograph\_\allowbreak{}training\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}49–\allowbreak{}62,\allowbreak{}150}. This is baseline-specific carry-forward; it is not used to fill the dataset for other models.
+
+\textbf{Control-GRU.} For simulated experiments only, an encoder GRU reads \texttt{[six observations,\allowbreak{} vasopressor]}, and a separate decoder GRUCell reads \texttt{[previous predicted observations,\allowbreak{} next prescribed vasopressor]}. Hidden width is 96 for Control-GRU and 201 for its capacity-matched version; the output is a biased linear map to the six observations. Its defining operations are
+
+\[
+h_{-1}=\operatorname{GRU}_{\rm enc}([z_{0:C},a_{0:C}])_{\rm final},\qquad
+h_k=\operatorname{GRUCell}_{\rm dec}([y_{k-1},a_{C+k}],h_{k-1}),\qquad
+y_k=W_oh_k+b_o,\quad y_{-1}=z_{C-1}.
+\]
+
+
+Code: \texttt{cvsim\_\allowbreak{}counterfactual\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}30–\allowbreak{}49,\allowbreak{}253–\allowbreak{}260}. The initial decoder recurrence begins with the encoder's final state; decoder indices in the display are relabelled from zero as above. This baseline does not use static covariates, masks or an adjustment loss. Six observations are explicitly passed to the constructor by the runner, overriding the class's four-observation default.
+
+\textbf{CRN-lite.} The implemented counterfactual recurrent network surrogate uses the same observation/control encoder and autoregressive decoder as Control-GRU, with a treatment-regression head on the encoder's final state. It stores that state before decoding and applies gradient reversal only between that state and the treatment head, not to decoder states or predicted outcomes. With \(R_\lambda\) denoting identity in the forward pass and multiplication by \(-\lambda\) on the backward gradient, its treatment objective is
+
+\[
+\begin{aligned}
+\overline a_i&=\operatorname{mean}_{t<C}a_{it}=0\quad\text{in all current cells},\qquad
+\widehat a_i=W_2\operatorname{ReLU}(W_1R_{0.5}(h_{i,C-1})+b_1)+b_2,\\
+\mathcal L_{\rm aux}&=0.5\,\operatorname{mean}_i(\widehat a_i-\overline a_i)^2,\qquad
+\mathcal L=\operatorname{mean}_{i,k,v}(\widehat z_{ikv}-z_{ikv})^2+\mathcal L_{\rm aux},\\
+R_\lambda(h)&=h\quad\text{forward},\qquad
+\nabla_h R_\lambda=-\lambda I\quad\text{backward},\qquad \lambda=0.5.
+\end{aligned}
+\]
+
+
+Code: \texttt{cvsim\_\allowbreak{}counterfactual\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}52–\allowbreak{}64,\allowbreak{}73–\allowbreak{}96,\allowbreak{}145–\allowbreak{}157}. The head's target is the average context vasopressor dose rather than the saved eventual \texttt{factual\_dose}; in every current policy cell the entire context precedes factual onset, so this average is exactly zero for every patient, and the head's target contains no variation in eventual dose. There are two distinct balancing factors: reversal strength \texttt{lamb =\allowbreak{} 0.\allowbreak{}5} and an explicit auxiliary-loss multiplier 0.5. Consequently the encoder receives the negative of 0.25 times the gradient of the unweighted mean treatment squared error, while the head minimizes 0.5 times that error. No treatment objective is attached to every recurrent step, no separate balanced decoder is trained, and no inverse-probability weighting or full sequential CRN training procedure is implemented in this runner. This is an explicitly named surrogate; its failure does not demonstrate failure of the original CRN method, identify lack of overlap or validate removal of hidden confounding. [Sources: \texttt{cvsim\_\allowbreak{}counterfactual\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}67–\allowbreak{}99,\allowbreak{}145–\allowbreak{}160,\allowbreak{}253–\allowbreak{}274}; the evaluated policy scores in \path{sim_grids_v1/h5_grid.json}; Section~\ref{sec:models}.]
+
+\paragraph{Measured constant target and its consequence.}\label{app:crnzerotarget}
+Here the auxiliary objective reduces to half the mean squared head output: the head minimizes error against zero, while gradient reversal sends the opposite, scaled gradient to the encoder. A constant-zero head attains zero auxiliary loss for any representation, although gradients can remain nonzero before that solution is reached; these runs therefore do not test treatment balancing against a varying dose target. No claim is made that training reached the constant-zero-head solution.
+
+The measured field is \texttt{factual.astype(float32)[:, :12, 6:7].mean(axis=1)}, in raw vasopressor micrograms/(kg minute). For each policy the patient-by-time-by-control context shape is $(400,12,1)$, with all $4800$ entries exactly zero, not averages of cancelling nonzero entries. The following table measures all $400$ patients per cell; the target minimum, maximum, mean and exact-zero fraction are also unchanged in every saved training/test subset over four seeds. Context samples are at minutes $0,5,\ldots,55$; factual onset at minute $72$ lies between output indices $14$ and $15$, making index $15$ (minute $75$) the first recorded treatment for positive eventual dose. Counterfactual switching is at minute $60$ (index $12$), with target times $60,65,\ldots,175$. The factual controls at the first three target times are zero. This timing is shared across all $24$ policies; target variance is also exactly zero in every cell.
+
+\begin{center}\small
+\begin{tabular}{rrrrrrrrr}
+\toprule
+$c$ & $\sigma$ & Patients & Min & Max & Mean & Zero fraction & Constant & Zero entries\\
+\midrule
+0 & 0 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0 & 0.08 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0 & 0.15 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0 & 0.25 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.1 & 0 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.1 & 0.08 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.1 & 0.15 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.1 & 0.25 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.25 & 0 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.25 & 0.08 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.25 & 0.15 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.25 & 0.25 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.5 & 0 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.5 & 0.08 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.5 & 0.15 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.5 & 0.25 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.75 & 0 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.75 & 0.08 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.75 & 0.15 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+0.75 & 0.25 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+1 & 0 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+1 & 0.08 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+1 & 0.15 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+1 & 0.25 & 400 & 0 & 0 & 0 & 1 & 0 & 4800/4800 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Training protocol}\label{app:trainingprotocol}
+
+
+For clinical forecasting, the objective is masked mean squared error (MSE), pooling observed target entries within each training batch. The runner uses Adam with a validation-selected initial learning rate from $\{0.0005,0.001,0.002\}$, weight decay \texttt{1e-5}, batch size 128, gradient-norm clipping at 1.0 and a cosine-annealing scheduler with its period set to the requested epoch cap. It advances the scheduler once after each epoch. Training batches are shuffled, validation and test batches are not, and incomplete final batches are retained. The current $35$-epoch cap and completed epoch counts are verified by the v4 run records; context and horizon are $12$ for the primary task. The reusable source default is not the executed epoch cap. [Sources: \texttt{physiograph\_\allowbreak{}training\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}43–\allowbreak{}45,\allowbreak{}78–\allowbreak{}99,\allowbreak{}123–\allowbreak{}145}; \texttt{physiograph\_\allowbreak{}data\_\allowbreak{}loader.\allowbreak{}py:\allowbreak{}60–\allowbreak{}70}; executed run records \path{clinical_v4_v1/tuning_grid.json}.]
+
+At each epoch the clinical runner evaluates A-validation's pooled \texttt{RMSE@K}. A checkpoint is considered improved only when the new value is less than \texttt{best\_\allowbreak{}val - 1e-4}; an improvement resets patience to zero and saves a CPU copy of all state arrays. Otherwise patience increments. Eight consecutive non-improving epochs terminate training, and the saved best state is restored before test evaluation. This selects a checkpoint within each configuration. The v4 driver separately crosses three learning rates with two model-specific widths at seed zero, selects A-validation pooled RMSE with a lexical tie break, then runs four selected seeds. Learned graphs use paper settings without a grid, so tuning parity is not claimed for them. [Sources: \texttt{physiograph\_\allowbreak{}training\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}87–\allowbreak{}119,\allowbreak{}155–\allowbreak{}172}; executed selection record \path{clinical_v4_v1/tuning_grid.json}.]
+
+Before each clinical model's training, \texttt{seed\_\allowbreak{}all(seed)} sets NumPy, PyTorch and CUDA seeds. The cohort split itself is fixed by the saved indices, and any low-data subsampling uses a separate fixed NumPy seed zero, permuting A-train indices before selecting \texttt{max(8,\allowbreak{}int(len(train)*train\_\allowbreak{}frac))}; the eligibility filter is subsequently applied. The current headline and graph-ablation series both contain completed runs for seeds $0,1,2,3$, with per-seed checkpoints and run records. Seeding alone does not supply a software/hardware determinism guarantee. [Sources: \texttt{physiograph\_\allowbreak{}training\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}27–\allowbreak{}28,\allowbreak{}78–\allowbreak{}79,\allowbreak{}132–\allowbreak{}140}; \texttt{physiograph\_\allowbreak{}data\_\allowbreak{}loader.\allowbreak{}py:\allowbreak{}47–\allowbreak{}63}; \path{clinical_v4_v1/tuning_grid.json}.]
+
+The matched simulator variants use a common $60$-epoch budget and four seeds on the same generated archive at each grid setting. Each seed drives a patient permutation with $70/30$ train/test allocation and no validation set; the same split is paired across variants within that seed. Displayed simulator standard deviations combine split and fitting variation. Run files record the per-seed split indices; the split manifest records their hashes (Appendix~\ref{app:diagnostics}). Counterfactual policy evaluation crosses $c\in\{0,0.1,0.25,0.5,0.75,1\}$ with $\sigma\in\{0,0.08,0.15,0.25\}$ at full coupling. Shared-history runs supply the conclusions; historical-target runs are a labelled diagnostic comparison. All simulator sets carry generation settings and hashes in manifests, and all current model results retain run-level provenance.
+
+
+Simulated training differs materially from clinical training. The default is 60 epochs of Adam at \texttt{lr =\allowbreak{} 2e-3}, with no weight decay argument, no scheduler, no validation checkpoint selection and no early stopping. Batches of up to 128 patients follow the saved training permutation in fixed order each epoch. Loss is the unmasked mean squared error over all target entries; CRN-lite adds the auxiliary term in B.6. Gradient norms are clipped at 1.0. The default simulated context has 12 samples and target 24 samples, corresponding to five-minute steps in the frozen arrays, rather than 12 and 24 clinical hours. The initial twelve samples are at minutes 0–55; the next twenty-four are at minutes 60–175. For these context indices, CRN-lite's auxiliary target is constant zero, and the first three forecast-time factual controls, at minutes $60$, $65$ and $70$, are also zero because factual dosing starts at minute $72$. The matched grid initializes a common dense organ model within each seed, then selects edge modules, preserving shared parameter values and post-initialization random-generator state across variants. Each seed also determines the $70/30$ patient permutation; there is no validation set. Run files save train/test indices, and \path{SIM_SPLITS.json} supplies their hashes. Across-seed simulator standard deviations therefore combine split and fitting variation. [Sources: \texttt{cvsim\_\allowbreak{}counterfactual\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}118–\allowbreak{}123,\allowbreak{}130–\allowbreak{}160,\allowbreak{}239–\allowbreak{}264}; time arrays in \texttt{SPEC\_\allowbreak{}FACTS.\allowbreak{}json:\allowbreak{}simulation}, measured by \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}217–\allowbreak{}218}.]
+
+The current environment and per-run manifests record Python, NumPy, PyTorch, SciPy and the installed CDE/ODE solver packages; Appendix~\ref{app:manifests} gives the statistical environment. Commands, configurations, checkpoint identities, curve paths and source hashes are attached to the current runs. Exact recovery of the overwritten earlier checkpoint pair remains unavailable, as disclosed in Section~\ref{sec:disclosures}. [Sources: \texttt{clinical\_\allowbreak{}timeseries\_\allowbreak{}baselines.\allowbreak{}py:\allowbreak{}11–\allowbreak{}24}; \texttt{physiograph\_\allowbreak{}seed\_\allowbreak{}stats.\allowbreak{}py:\allowbreak{}17–\allowbreak{}19}; \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}314–\allowbreak{}318}; permitted input schema in \texttt{SPEC\_\allowbreak{}FACTS.\allowbreak{}json:\allowbreak{}input\_\allowbreak{}manifest}.]
+
+\subsection{Statistics and statistical units}
+
+
+Current seed aggregates use arithmetic means and sample standard deviations ($\mathrm{ddof}=1$) over the recorded seeds $0,1,2,3$. Clinical splits remain fixed across seeds; simulator patient splits vary with the run seed and are paired across variants within seed. Seed spread describes fitting variation and, in simulation, split variation. It is not a stay-sampling interval. At $\kappa=1$ the paired architecture differences are printed in Appendix~\ref{app:decompositiondetail}; four seeds allow no significance claim. [Source: \texttt{physiograph\_\allowbreak{}seed\_\allowbreak{}stats.\allowbreak{}py:\allowbreak{}25–\allowbreak{}51}; result files are not among the permitted inputs.]
+
+For the window analysis, each checkpoint produces one masked MSE per eligible A-test stay:
+
+\[
+e_i^{(a)}=\frac{\sum_{k,v}M_{ikv}(\widehat Y^{(a)}_{ikv}-Y_{ikv})^2}{\max(\sum_{k,v}M_{ikv},1)},\qquad
+d_i=\sqrt{e_i^{(a)}}-\sqrt{e_i^{(b)}}.
+\]
+
+
+Current paired analyses align stays by saved identity and exclude records with no observed targets. Signed-rank tests use per-stay RMSE differences, with Holm adjustment within each checkpoint/split family. They do not substitute the earlier MSE-based signed ranks. Source arithmetic for the displayed per-stay MSE/RMSE definitions: \texttt{physiograph\_seed\_stats.py:54--76}; executed tests: \path{clinical_v4_v1/stats_v4.json}.
+
+The bootstrap samples stay indices with replacement using \texttt{np.\allowbreak{}random.\allowbreak{}default\_\allowbreak{}rng(0)}, takes the mean of the paired per-stay RMSE differences for each resample, and reports a 95\% confidence interval (CI) using the 2.5th and 97.5th percentiles from the default 2000 resamples:
+
+\[
+I^{(b)}_1,\ldots,I^{(b)}_n\stackrel{\rm iid}{\sim}\operatorname{Uniform}\{0,\ldots,n-1\},\qquad
+\overline d^{(b)}=\frac1n\sum_{j=1}^n d_{I_j^{(b)}},\qquad
+\mathrm{CI}_{95\%}=[Q_{0.025}(\overline d^{(b)}),Q_{0.975}(\overline d^{(b)})].
+\]
+
+
+Code: \texttt{physiograph\_\allowbreak{}seed\_\allowbreak{}stats.\allowbreak{}py:\allowbreak{}66,\allowbreak{}78–\allowbreak{}85}. Here “iid” means independent and identically distributed resampling draws, and \(Q\) denotes the empirical percentile. This resampling holds the two trained checkpoints fixed; it does not retrain either model. Its statistical unit is the stay/window, so it describes stay sampling variation conditional on those fitted models rather than seed variation. At \((12,12)\), A has $2{,}368$ eligible records and $2{,}367$ evaluable records after one zero-target exclusion; B has $14{,}824$ eligible and $14{,}820$ evaluable records. No within-stay clustering adjustment is necessary for repeated windows in this construction, because there are no repeated windows within that task; unique-person independence across admissions remains unverified because identifiers were not preserved. [Sources: \texttt{physiograph\_\allowbreak{}data\_\allowbreak{}loader.\allowbreak{}py:\allowbreak{}20–\allowbreak{}37}; count \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}136}; resampling \texttt{physiograph\_\allowbreak{}seed\_\allowbreak{}stats.\allowbreak{}py:\allowbreak{}73–\allowbreak{}85}.]
+
+Finally, the window-statistics routine reports \texttt{rmse\_\allowbreak{}a =\allowbreak{} sqrt(mean(ea))} and similarly for model b, an equal-stay-weight summary. This differs from the main forecasting metric, whose observed entries are pooled before the square root. The confidence interval targets the mean of individual-window RMSE differences, also a different estimand from a difference of the headline pooled-entry RMSEs. These summaries must retain their aggregation labels. Current signed-rank results include within-checkpoint/split Holm adjustment. Whole-stay resampling does not resolve unknown person-level clustering across admissions, and the inference does not include refitting uncertainty. [Sources: \texttt{physiograph\_\allowbreak{}seed\_\allowbreak{}stats.\allowbreak{}py:\allowbreak{}76–\allowbreak{}85,\allowbreak{}101–\allowbreak{}114}; headline pooling \texttt{physiograph\_\allowbreak{}data\_\allowbreak{}loader.\allowbreak{}py:\allowbreak{}85–\allowbreak{}90}.]
+\clearpage
+\subsection{Changes from the earlier version}
+A checkpoint-lineage gap also affects the earlier results: an earlier per-window interval used a checkpoint pair later overwritten by the model-name-based saving scheme. That exact historical interval cannot be reproduced from the surviving checkpoints. The current clinical series replaces those numbers, saves per-seed checkpoints and records the rerun waiver, commands and environment in its manifest. Earlier assertions that no graph is best, sparse edges are markedly more stable, the external gap nearly closes at the longest horizon, or physiological edges explain the simulator gain are withdrawn. Matched controls, corrected metric labels and common-cohort horizon results support the statements reported here instead. The admissible simulator graph gives no consistent improvement: worse at five of six coupling settings and tied at $\kappa=0.75$. The low-assignment-strength statement of complete population-direction recovery applies to the $\sigma=0$ row, which removes Gaussian assignment noise while retaining the uniform random-dose component whenever $c<1$. Appendix~\ref{app:spec} is the current specification, with a separate account of changes from the earlier version.
+
+The current protocol was designed after inspecting earlier reported results. We identified that its alternative-dose targets had received treatment since warm-up, whereas prediction used a factual context with a different treatment history. Current targets share factual history and change only the prescribed future sequence. A replay of the factual future schedule is the appropriate consistency check; a constant-dose arm need not reproduce a factual schedule with delayed onset. The previously omitted Gaussian policy-noise term is explicit in Equation~\ref{eq:policy}. Historical severity--dose correlations are file specific: approximately $0.96$ for the $140$-patient strongest-policy file and $0.88$ for the $180$-patient main file. They are not interchangeable descriptions of all generated data.
+
+Earlier alternative-dose targets applied treatment since warm-up, so they did not share the factual context; current targets switch only at the forecast origin. Earlier no-edge source defaults bypassed coupling normalization; the matched simulator wrapper retains it. Earlier inference used population seed standard deviations and signed ranks of per-stay MSE; current results use sample standard deviations, RMSE signed ranks, Holm adjustment and zero-target exclusions. Separate raw-file replay resolved the earlier archive-only exclusion uncertainty, and current run manifests verify the $35$-epoch clinical cap, four ablation seeds and environment. The earlier overwritten-checkpoint interval cannot be recovered. The reference-array and tercile tables below are retained solely to explain file-specific historical correlations ($0.96$ and $0.88$), not to supply current results. Original file:line citations are retained for the equations and arithmetic they describe.
+\begin{center}
+\small
+\sbox0{
+\begin{tabular}{lllllll}
+\toprule
+Frozen file 
+& Patients 
+& Steps 
+& Factual channels 
+& CF channels 
+& Runner train/test 
+& corr(severity,dose) 
+\\
+
+\midrule
+cvsim\_counterfactual.npz 
+& 180 
+& 73 
+& 8 
+& 6 
+& 125/55 
+& 0.883701 
+\\
+
+cvsim\_cf\_c00.npz 
+& 140 
+& 73 
+& 8 
+& 6 
+& 98/42 
+& -0.001178 
+\\
+
+cvsim\_cf\_c05.npz 
+& 140 
+& 73 
+& 8 
+& 6 
+& 98/42 
+& 0.531760 
+\\
+
+cvsim\_cf\_c10.npz 
+& 140 
+& 73 
+& 8 
+& 6 
+& 98/42 
+& 0.963773 
+\\
+
+cvsim\_cpl00.npz 
+& 140 
+& 73 
+& 8 
+& 6 
+& 98/42 
+& 0.963773 
+\\
+
+cvsim\_cpl05.npz 
+& 140 
+& 73 
+& 8 
+& 6 
+& 98/42 
+& 0.963773 
+\\
+
+cvsim\_cpl10.npz 
+& 140 
+& 73 
+& 8 
+& 6 
+& 98/42 
+& 0.963773 
+\\
+
+\bottomrule
+\end{tabular}}
+\ifdim\wd0>\textwidth\resizebox{\textwidth}{!}{\usebox0}\else\usebox0\fi
+\end{center}
+
+
+Source: each named archive’s \texttt{factual}, \texttt{counterfactual}, \texttt{severity}, \texttt{factual\_\allowbreak{}dose}; \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}190–\allowbreak{}234}. The train/test columns apply the runner’s \texttt{int(0.\allowbreak{}7*N)} rule (\texttt{cvsim\_\allowbreak{}counterfactual\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}118–\allowbreak{}123}); in particular floating-point multiplication followed by \texttt{int} yields 125 training and 55 test rows for N=180 in this runtime, rather than assuming an exact 126/54 partition.
+
+The following retained reference arrays use the earlier target convention and do not enter current grid conclusions. They contain $73$ time points, factual arrays of shape (patients, $73$, $8$) and alternative-dose arrays of shape (patients, $5$, $73$, $6$). Their filenames do not identify complete generation settings. Replayed severity/dose draws match three named policy files; the main $180$-patient file has unrecovered generation settings, and the strongest-policy/coupling pair is byte-identical. The tables retain their original values and source-citation ranges. Current $400$-patient sets instead carry complete generation manifests.
+
+Factual-dose quantiles by empirical severity tercile, in micrograms/(kg·min). Terciles use NumPy linear quantiles at one-third and two-thirds; low is below the lower cut, middle is at or above the lower and below the upper cut, and high is at or above the upper cut. Exact cut values and all quantiles are in the JSON.
+
+\begin{center}
+\small
+\sbox0{
+\begin{tabular}{llllllllll}
+\toprule
+File 
+& Severity tercile 
+& N 
+& Min 
+& 5th 
+& 25th 
+& Median 
+& 75th 
+& 95th 
+& Max 
+\\
+
+\midrule
+cvsim\_counterfactual.npz 
+& low 
+& 60 
+& 0.03082 
+& 0.06758 
+& 0.12144 
+& 0.16082 
+& 0.20271 
+& 0.26153 
+& 0.31052 
+\\
+
+cvsim\_counterfactual.npz 
+& middle 
+& 60 
+& 0.13846 
+& 0.18274 
+& 0.23349 
+& 0.26911 
+& 0.32215 
+& 0.37172 
+& 0.39807 
+\\
+
+cvsim\_counterfactual.npz 
+& high 
+& 60 
+& 0.24526 
+& 0.26492 
+& 0.33214 
+& 0.38276 
+& 0.42493 
+& 0.47558 
+& 0.50000 
+\\
+
+cvsim\_cf\_c00.npz 
+& low 
+& 47 
+& 0.00000 
+& 0.03088 
+& 0.13167 
+& 0.24098 
+& 0.40567 
+& 0.48638 
+& 0.50000 
+\\
+
+cvsim\_cf\_c00.npz 
+& middle 
+& 46 
+& 0.00000 
+& 0.03241 
+& 0.11800 
+& 0.21782 
+& 0.33656 
+& 0.49497 
+& 0.50000 
+\\
+
+cvsim\_cf\_c00.npz 
+& high 
+& 47 
+& 0.00000 
+& 0.01483 
+& 0.14130 
+& 0.29990 
+& 0.39665 
+& 0.47046 
+& 0.50000 
+\\
+
+cvsim\_cf\_c05.npz 
+& low 
+& 47 
+& 0.05086 
+& 0.08566 
+& 0.14354 
+& 0.22115 
+& 0.28074 
+& 0.33788 
+& 0.35847 
+\\
+
+cvsim\_cf\_c05.npz 
+& middle 
+& 46 
+& 0.09453 
+& 0.14045 
+& 0.20117 
+& 0.25279 
+& 0.30797 
+& 0.39801 
+& 0.41969 
+\\
+
+cvsim\_cf\_c05.npz 
+& high 
+& 47 
+& 0.17272 
+& 0.19691 
+& 0.27395 
+& 0.35260 
+& 0.39765 
+& 0.44553 
+& 0.47501 
+\\
+
+cvsim\_cf\_c10.npz 
+& low 
+& 47 
+& 0.08638 
+& 0.09279 
+& 0.12669 
+& 0.15213 
+& 0.19209 
+& 0.22691 
+& 0.24656 
+\\
+
+cvsim\_cf\_c10.npz 
+& middle 
+& 46 
+& 0.17399 
+& 0.19865 
+& 0.25808 
+& 0.28544 
+& 0.31566 
+& 0.34798 
+& 0.36931 
+\\
+
+cvsim\_cf\_c10.npz 
+& high 
+& 47 
+& 0.32110 
+& 0.34076 
+& 0.36429 
+& 0.39005 
+& 0.41922 
+& 0.46977 
+& 0.50000 
+\\
+
+cvsim\_cpl00.npz 
+& low 
+& 47 
+& 0.08638 
+& 0.09279 
+& 0.12669 
+& 0.15213 
+& 0.19209 
+& 0.22691 
+& 0.24656 
+\\
+
+cvsim\_cpl00.npz 
+& middle 
+& 46 
+& 0.17399 
+& 0.19865 
+& 0.25808 
+& 0.28544 
+& 0.31566 
+& 0.34798 
+& 0.36931 
+\\
+
+cvsim\_cpl00.npz 
+& high 
+& 47 
+& 0.32110 
+& 0.34076 
+& 0.36429 
+& 0.39005 
+& 0.41922 
+& 0.46977 
+& 0.50000 
+\\
+
+cvsim\_cpl05.npz 
+& low 
+& 47 
+& 0.08638 
+& 0.09279 
+& 0.12669 
+& 0.15213 
+& 0.19209 
+& 0.22691 
+& 0.24656 
+\\
+
+cvsim\_cpl05.npz 
+& middle 
+& 46 
+& 0.17399 
+& 0.19865 
+& 0.25808 
+& 0.28544 
+& 0.31566 
+& 0.34798 
+& 0.36931 
+\\
+
+cvsim\_cpl05.npz 
+& high 
+& 47 
+& 0.32110 
+& 0.34076 
+& 0.36429 
+& 0.39005 
+& 0.41922 
+& 0.46977 
+& 0.50000 
+\\
+
+cvsim\_cpl10.npz 
+& low 
+& 47 
+& 0.08638 
+& 0.09279 
+& 0.12669 
+& 0.15213 
+& 0.19209 
+& 0.22691 
+& 0.24656 
+\\
+
+cvsim\_cpl10.npz 
+& middle 
+& 46 
+& 0.17399 
+& 0.19865 
+& 0.25808 
+& 0.28544 
+& 0.31566 
+& 0.34798 
+& 0.36931 
+\\
+
+cvsim\_cpl10.npz 
+& high 
+& 47 
+& 0.32110 
+& 0.34076 
+& 0.36429 
+& 0.39005 
+& 0.41922 
+& 0.46977 
+& 0.50000 
+\\
+
+\bottomrule
+\end{tabular}}
+\ifdim\wd0>\textwidth\resizebox{\textwidth}{!}{\usebox0}\else\usebox0\fi
+\end{center}
+
+
+Source: each named archive’s \texttt{severity,\allowbreak{}factual\_\allowbreak{}dose}; \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}198–\allowbreak{}228}. The last three files share their factual assignment arrays; repeated quantiles do not imply independent policy draws.
+
+For the earlier fixed-$\sigma=0.03$ source generator only, the empirical severity-dose correlation and tercile distributions describe assignment in the saved sample. They do not prove a failure of conditional overlap, meaning availability of relevant doses conditional on the observed history. In particular, the Gaussian assignment noise has nonzero standard deviation even at \texttt{confound =\allowbreak{} 1}, and the code contains no mathematical test of positivity. Finite samples, a nearly deterministic mean policy, omitted severity and estimator limitations must be distinguished. [Sources: \texttt{cvsim\_\allowbreak{}hemodynamics\_\allowbreak{}simulator.\allowbreak{}py:\allowbreak{}322–\allowbreak{}326}; \texttt{cvsim\_\allowbreak{}counterfactual\_\allowbreak{}runner.\allowbreak{}py:\allowbreak{}111–\allowbreak{}123,\allowbreak{}164–\allowbreak{}213}; conditional distribution calculations \texttt{spec\_\allowbreak{}facts.\allowbreak{}py:\allowbreak{}198–\allowbreak{}228}.]
+
+
+\subsection{Training-budget and influence sensitivity details}\label{app:budgetcurves}
+The executed grid has six configurations per model: three learning rates by two widths. Both organ node types complete all six runs at the $35$-epoch cap, hence $12/12$ organ configurations in total, not twelve GRU-node configurations. Among the $42$ baseline configurations, early-stop counts are GRU $1/6$, GRU-med $3/6$, GRU-large $5/6$, GRU-D $3/6$, Neural CDE $6/6$, ODE-RNN $3/6$, and GraphGRU $5/6$, summing to $26/42$. Equal budget means the same grid and cap; it does not establish convergence or exclude an advantage from longer training.
+
+For every organ grid run, the table reports A-validation pooled RMSE at epoch $27$ and $35$. Improvement is the former minus the latter, covering the final eight training updates (epochs $28$--$35$); it is an endpoint change, not a convergence guarantee or the early-stop minimum-delta statistic. All values are computed from the saved curve CSVs referenced by \path{clinical_v4_v1/tuning_grid.json}. Positive entries mean lower error at the cap.
+
+\begin{center}\small
+\begin{tabular}{lllrrr}
+\toprule
+Node & Learning rate & Width & Epoch 27 & Epoch 35 & Improvement\\
+\midrule
+SSM & 0.0005 & small & 0.806099 & 0.804023 & 0.002076 \\
+SSM & 0.0005 & large & 0.803852 & 0.800480 & 0.003372 \\
+SSM & 0.001 & small & 0.793694 & 0.791135 & 0.002560 \\
+SSM & 0.001 & large & 0.795764 & 0.792693 & 0.003070 \\
+SSM & 0.002 & small & 0.799478 & 0.792352 & 0.007126 \\
+SSM & 0.002 & large & 0.801174 & 0.799278 & 0.001896 \\
+GRU & 0.0005 & small & 0.784983 & 0.782220 & 0.002762 \\
+GRU & 0.0005 & large & 0.785181 & 0.781329 & 0.003852 \\
+GRU & 0.001 & small & 0.785011 & 0.781840 & 0.003171 \\
+GRU & 0.001 & large & 0.790717 & 0.783315 & 0.007402 \\
+GRU & 0.002 & small & 0.799333 & 0.796311 & 0.003022 \\
+GRU & 0.002 & large & 0.807182 & 0.798051 & 0.009131 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The eight selected primary-task organ runs also reach epoch $35$. Their endpoint changes use the same definition and retain each seed separately; they do not establish that a longer budget would improve the final selected model.
+
+\begin{center}\small
+\begin{tabular}{llrrr}
+\toprule
+Node & Seed & Epoch 27 & Epoch 35 & Improvement\\
+\midrule
+SSM & 0 & 0.793694 & 0.791135 & 0.002560 \\
+SSM & 1 & 0.798102 & 0.795122 & 0.002980 \\
+SSM & 2 & 0.794802 & 0.792995 & 0.001807 \\
+SSM & 3 & 0.803618 & 0.798069 & 0.005549 \\
+GRU & 0 & 0.785181 & 0.781329 & 0.003852 \\
+GRU & 1 & 0.785501 & 0.781843 & 0.003657 \\
+GRU & 2 & 0.788923 & 0.785097 & 0.003825 \\
+GRU & 3 & 0.791925 & 0.784260 & 0.007666 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{One-stay influence on the external ridge probe.}\label{app:ridgeinfluence}
+The documented influential cells are pulmonary$\rightarrow$\allowbreak{}cardiovascular and pulmonary$\rightarrow$\allowbreak{}metabolic. In the saved per-stay ridge contributions, the same stay maximizes the positive added-minus-own squared-error increase in both cells and accounts for $98.44\%$ and $98.59\%$ of those positive increases, respectively. Removing that one stay from every own and own-plus-source sum changes the mean of the twelve off-diagonal B indices from $-0.0557059$ to $-0.000386464$. The original pooling is reproduced from those sums before deletion. Counts are removed with the stay, and each cell is recomputed as $1-\sqrt{\mathrm{SSE}_{\rm own+source}/\mathrm{SSE}_{\rm own}}$, whose common target-count denominator cancels. This post-hoc diagnostic conditions on the fitted probes and selects the stay using its influence; it is not a refit, an unbiased population estimate, or a new bootstrap interval. The untrimmed result and its original interval remain reported.
+
+
+\paragraph{Stratified signed excess renal squared error.}\label{app:renalstrata}
+The stratification uses zero, one to three, and at least four observed renal context entries among $12\times3$ possible entries. Model sums of squared errors are averaged across seeds before subtracting a comparator. Fractions divide a stratum's signed excess by the total signed excess; negative strata can offset other strata, so fractions can exceed $100\%$. On B, the zero-context fractions relative to persistence are $1.46\%$ for PhysioGraph-GRU and $-4.98\%$ for PhysioGraph-SSM, leaving $98.54\%$ and $104.98\%$ in stays with at least one observation. The at-least-four stratum contributes $53.41\%/50.72\%$ (GRU/SSM) of B excess over persistence and $45.88\%/47.95\%$ over GRU-D; on A the corresponding values are $89.52\%/76.58\%$ over persistence and $69.86\%/70.92\%$ over GRU-D. These decompose squared error, not RMSE, and do not identify a causal effect of missingness.
+
+
+\subsection{Complete overview caption and benchmark use}\label{app:overviewcaption}
+Benchmark and audit overview. Computing in Cardiology (CinC) 2019 supplies internal hospital A and external hospital B; CinC-2012 is the second open corpus. Its panel-1 line reports within-corpus set-b pooled root mean squared error at a 12-hour forecast horizon (RMSE@12): a gated recurrent unit with decay (GRU-D) 0.7684 < PhysioGraph-GRU 0.8239 (full-precision difference +0.05541764). B in this line denotes CinC-2012 set-b, not a second hospital. CinC-2012 uses the same four-organ grouping. CinC-2012 cohort and protocol qualifications are given in Figure 9. The controllable simulator has cardiovascular, renal and metabolic systems: κ changes selected inter-organ coupling terms, c controls severity-driven dosing, and σ is assignment-noise standard deviation. The audit uses validation-selected equal-count learning-rate × width grids, matched edge and capacity controls, 4 training seeds, shared-history counterfactual targets, and empirical treatment-support diagnostics. At κ = 1, fixed-range macro normalized root mean squared error (macro-NRMSE) is 0.0389 for the capacity-matched monolithic GRU, 0.0364 for the organ-factorised architecture without edges, and 0.0377 after adding physiological edges. Both decomposition steps are smaller than one seed standard deviation (sd) across four seeds; these four seeds allow no significance claim. Descriptively, the simulator gain tracks the implemented organ-factorised architecture rather than the edge set. The architecture-attribution and no-edge implementation qualifications are specified in Section~\ref{sec:sim}. External pooled root mean squared error at a 12-hour horizon (RMSE@12) is 0.8059 for GRU-D, 0.7939 for t-PatchGNN and 0.7932 for GraFITi. At c = 1, Control-GRU recovers an average of 0/3 population directions at σ = 0 and 2.25/3 at σ = 0.25, across seeds. Over the same change in assignment noise, severity–dose correlation falls from 1.00 to 0.37. The assignment comparison has the joint-change qualification in Section~\ref{sec:cfresults}. The mini-plots show these point estimates, without uncertainty intervals; see the forecasting, coupling and direction figures for the full comparisons. A: 2,368 stays, 174,879 observed target entries; B: 14,824 stays, 1,074,461 observed target entries. Stays with no observed targets (1 on A, 4 on B) contribute no error terms. Simulator forecasting: 192 fits; counterfactual evaluation: 384 shared-history and 48 legacy fits, with 69,120 direction cells and 3 population directions per run. κ = 0 retains the common sepsis course; it does not make the organs independent. No performance-ranking markers are used.
+
+
+\paragraph{Benchmark use and governance.}
+The staged software, including simulator code, uses the MIT licence; clinical data remain under the source corpora's CC BY 4.0 (CinC-2019) and ODC-By 1.0 (CinC-2012) terms. The staged release does not declare a separate CC BY 4.0 licence for generated simulator sets, so no additional data licence is asserted here. Release identifiers and version information are recorded in the repository README and citation metadata. To add a method, a contributor registers its name and constructor in the runner's model registry, follows the same values/masks/static/target interface and saved-run schema, and runs the unchanged split, selection and scoring protocol; registration alone is not a validated comparison. The archived environment and per-run runtime records define the tested compute context rather than a uniform runtime allocation. Release documentation and issue handling are the authors' responsibility. The benchmark uses de-identified public data for secondary analysis under PhysioNet and the applicable corpus terms, without re-identification. It supplies no clinical decision recommendation or fairness validation across patient subgroups.
+
+
+\section{Manifests and reproduction}\label{app:manifests}
+\subsection{Cohort replay and data rights}
+The replay record identifies every public CinC-2019 raw file, its inclusion verdict, retained length and raw-byte digest. The unchanged preprocessor reproduces the frozen archive byte for byte, not merely within a numerical tolerance. The frozen and replayed SHA-256 digest is
+\begin{quote}\small\path{d52d8131323fc7a3838ae4fe523c2edbc02d2daa781de1859e7d184897dfb51f}.\end{quote}
+The cohort-replay report and exclusion manifest are the authoritative file accounting; the original specification's inability to recover identities from the archive alone is resolved by this separate replay. Reproduction requires access to the public raw corpora under their source terms, and does not grant a new licence over those data.
+
+
+The replay entry point is the cohort preprocessor with public training sets available under its data root. The recorded command supplies no patient cap, the stored split seed and validation fraction. The release maps recorded execution paths to the extracted project root and scrubs user and host names from distributed manifests, while retaining original source and data hashes as provenance. CinC-2012 has separate within-corpus and frozen-normalization transfer archives, a cohort manifest and a preprocessing report. Cohort validation is complete; a separate numerical verification recomputed all $44/44$ CinC-2012 main-table cells with agreement.
+
+\subsection{Clinical runs and environment}
+\path{clinical_v4_v1/run_manifest_with_waiver.json} records the full clinical rerun and the historical-headline waiver. The tuning grid, configuration selection, variant table, horizon table and per-organ table reference the per-run JSONs and hashes. Each fitted model has its own seed-specific checkpoint; recorded curve paths identify the convergence CSVs. A table reader should use the pooled block of the summary for the headline metric and the mean-stay block only for paired stay inference. Neural CDE's primary-series external diagnosis is an exclusion record, not a usable external estimate; its separate horizon series is finite.
+
+The recorded statistical environment includes Python $3.10.12$, NumPy $2.2.6$, PyTorch \texttt{2.6.0+cu124}, and SciPy $1.15.3$, with the CDE/ODE solver packages present. The manifest supplies runtime/source details per run, while the environment freeze is the dependency record for reproduction. These versions describe the recorded experiments; the release checks use the documented local environment. An exact recovery of the overwritten historical training environment is not claimed.
+
+
+\subsection{Simulator and adapter manifests}
+The simulator aggregates point back to generated-data manifests containing commands, generator settings, seeds, source digests and output digests. Shared-history counterfactual data are distinct from the labelled historical-target diagnostic sets. The coupling aggregate includes both monolithic controls; the policy aggregate retains all-cell and restricted direction scores with missing restricted denominators explicit. Adapter equation maps and verification records accompany t-PatchGNN, GraFITi and the CRN adaptation. The separate hourly simulator extension is identified as exploratory evidence and is not a calibrated physiological reference.

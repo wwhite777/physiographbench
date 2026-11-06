@@ -1,0 +1,249 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PhysioGraph clinical leaderboard record, version 1",
+  "description": "One decoded CSV row per method, seed, protocol, configuration and evaluation split. Parse configuration and denominator as JSON, numeric columns as numbers, and empty nullable cells as null.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task",
+    "series",
+    "corpus",
+    "split",
+    "method",
+    "seed",
+    "protocol",
+    "configuration",
+    "checkpoint_id",
+    "checkpoint_sha256",
+    "checkpoint_status",
+    "metric",
+    "value",
+    "comparison_status",
+    "denominator",
+    "run_record_path",
+    "run_record_sha256",
+    "original_run_record_path",
+    "original_run_record_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "task": {
+      "const": "multivariate_forecasting"
+    },
+    "series": {
+      "enum": [
+        "clinical_selected",
+        "clinical_persistence",
+        "clinical_learned_graph",
+        "shared_input_primary",
+        "training_budget",
+        "cinc2012_transfer",
+        "cinc2012_within"
+      ]
+    },
+    "corpus": {
+      "enum": [
+        "CinC-2019",
+        "CinC-2012"
+      ]
+    },
+    "split": {
+      "enum": [
+        "A",
+        "B",
+        "testA",
+        "testB",
+        "pooled"
+      ]
+    },
+    "method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "seed": {
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "protocol": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[^#]+(?:#/.*)?$",
+      "description": "Repository-relative protocol implementation or documentation."
+    },
+    "configuration": {
+      "type": "object",
+      "minProperties": 1,
+      "description": "Recorded model/training settings; transferred configurations identify their public source. JSON-encoded in CSV."
+    },
+    "checkpoint_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[^#]+(?:#/.*)?$",
+      "description": "Recorded identifier of a weight file, which is excluded from this distribution. Null when unavailable or inapplicable."
+    },
+    "checkpoint_sha256": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "Weight-file digest, never a run-record digest. Null when unavailable or inapplicable."
+    },
+    "checkpoint_status": {
+      "enum": [
+        "recorded_not_bundled",
+        "source_2019_record_not_bundled",
+        "not_recorded_in_summary",
+        "not_applicable"
+      ]
+    },
+    "metric": {
+      "const": "pooled_RMSE@12"
+    },
+    "value": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Saved pooled RMSE in normalized units. An excluded row remains archival and cannot enter a confirmed comparison."
+    },
+    "comparison_status": {
+      "enum": [
+        "recorded",
+        "excluded_unresolved_replay"
+      ]
+    },
+    "denominator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "observed_target_entries",
+        "stays",
+        "zero_target_stays",
+        "source"
+      ],
+      "properties": {
+        "observed_target_entries": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "stays": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Eligible stays, including stays with zero observed targets."
+        },
+        "zero_target_stays": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[^#]+(?:#/.*)?$",
+          "description": "Public JSON record containing the denominator. Learned adapters use the identical fixed-cohort persistence record."
+        }
+      }
+    },
+    "run_record_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[^#]+(?:#/.*)?$",
+      "description": "Public file and JSON Pointer to this exact seed/split metric block."
+    },
+    "run_record_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "SHA-256 of the complete distributed file before the JSON Pointer fragment."
+    },
+    "original_run_record_path": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[^#]+(?:#/.*)?$",
+      "description": "Historical run identifier when available; it may refer to an unbundled original record."
+    },
+    "original_run_record_sha256": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "Historical run-file digest when explicitly preserved. This is not a checkpoint digest."
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "corpus": {
+            "const": "CinC-2019"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "split": {
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "split": {
+            "enum": [
+              "testA",
+              "testB",
+              "pooled"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "checkpoint_status": {
+            "enum": [
+              "not_applicable",
+              "not_recorded_in_summary"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "checkpoint_id": {
+            "type": "null"
+          },
+          "checkpoint_sha256": {
+            "type": "null"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "checkpoint_id": {
+            "type": "string"
+          },
+          "checkpoint_sha256": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ]
+}

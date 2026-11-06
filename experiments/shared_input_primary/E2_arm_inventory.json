@@ -1,0 +1,2083 @@
+{
+  "description": "Shared-input primary arms: one entry per arm and training seed. Directed edges are source-to-target organ indices.",
+  "organ_order": [
+    "cardiovascular",
+    "pulmonary",
+    "renal",
+    "metabolic"
+  ],
+  "selection_source": {
+    "path": "experiments/shared_input_primary/artifacts/host/selection_shared.json",
+    "sha256": "9d7684688946093e2859ad141d2bfeca13754a79ee0d7dd13b8013191adfb061"
+  },
+  "arms": [
+    {
+      "arm": "none",
+      "seed": 0,
+      "edges": [],
+      "n_params": 778384,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.0,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "out_degree": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "arm": "none",
+      "seed": 1,
+      "edges": [],
+      "n_params": 778384,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.0,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "out_degree": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "arm": "none",
+      "seed": 2,
+      "edges": [],
+      "n_params": 778384,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.0,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "out_degree": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "arm": "none",
+      "seed": 3,
+      "edges": [],
+      "n_params": 778384,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.0,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "out_degree": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "arm": "none_norm",
+      "seed": 0,
+      "edges": [],
+      "n_params": 778384,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.0,
+      "coupling_normalisation": "retained with zero message sum",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "out_degree": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "arm": "none_norm",
+      "seed": 1,
+      "edges": [],
+      "n_params": 778384,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.0,
+      "coupling_normalisation": "retained with zero message sum",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "out_degree": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "arm": "none_norm",
+      "seed": 2,
+      "edges": [],
+      "n_params": 778384,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.0,
+      "coupling_normalisation": "retained with zero message sum",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "out_degree": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "arm": "none_norm",
+      "seed": 3,
+      "edges": [],
+      "n_params": 778384,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.0,
+      "coupling_normalisation": "retained with zero message sum",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "out_degree": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "arm": "none_pmatch",
+      "seed": 0,
+      "edges": [],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.0,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "out_degree": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "arm": "none_pmatch",
+      "seed": 1,
+      "edges": [],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.0,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "out_degree": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "arm": "none_pmatch",
+      "seed": 2,
+      "edges": [],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.0,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "out_degree": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "arm": "none_pmatch",
+      "seed": 3,
+      "edges": [],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.0,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "out_degree": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "arm": "admissible",
+      "seed": 0,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 1.0,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        1,
+        1,
+        3
+      ],
+      "out_degree": [
+        3,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "arm": "admissible",
+      "seed": 1,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 1.0,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        1,
+        1,
+        3
+      ],
+      "out_degree": [
+        3,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "arm": "admissible",
+      "seed": 2,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 1.0,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        1,
+        1,
+        3
+      ],
+      "out_degree": [
+        3,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "arm": "admissible",
+      "seed": 3,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 1.0,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        1,
+        1,
+        3
+      ],
+      "out_degree": [
+        3,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "arm": "dense",
+      "seed": 0,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 1006504,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.666667,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "out_degree": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "arm": "dense",
+      "seed": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 1006504,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.666667,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "out_degree": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "arm": "dense",
+      "seed": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 1006504,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.666667,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "out_degree": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "arm": "dense",
+      "seed": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 1006504,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.666667,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "out_degree": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "arm": "reversed",
+      "seed": 0,
+      "edges": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.6,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        2,
+        2,
+        1
+      ],
+      "out_degree": [
+        3,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "arm": "reversed",
+      "seed": 1,
+      "edges": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.6,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        2,
+        2,
+        1
+      ],
+      "out_degree": [
+        3,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "arm": "reversed",
+      "seed": 2,
+      "edges": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.6,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        2,
+        2,
+        1
+      ],
+      "out_degree": [
+        3,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "arm": "reversed",
+      "seed": 3,
+      "edges": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.6,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        2,
+        2,
+        1
+      ],
+      "out_degree": [
+        3,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "arm": "random_s0",
+      "seed": 0,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": 0,
+      "jaccard_with_admissible": 0.454545,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "out_degree": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "arm": "random_s0",
+      "seed": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": 0,
+      "jaccard_with_admissible": 0.454545,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "out_degree": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "arm": "random_s0",
+      "seed": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": 0,
+      "jaccard_with_admissible": 0.454545,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "out_degree": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "arm": "random_s0",
+      "seed": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": 0,
+      "jaccard_with_admissible": 0.454545,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "out_degree": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "arm": "random_s1",
+      "seed": 0,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": 1,
+      "jaccard_with_admissible": 0.6,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "out_degree": [
+        3,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "arm": "random_s1",
+      "seed": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": 1,
+      "jaccard_with_admissible": 0.6,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "out_degree": [
+        3,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "arm": "random_s1",
+      "seed": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": 1,
+      "jaccard_with_admissible": 0.6,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "out_degree": [
+        3,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "arm": "random_s1",
+      "seed": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": 1,
+      "jaccard_with_admissible": 0.6,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "out_degree": [
+        3,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "arm": "random_s2",
+      "seed": 0,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": 2,
+      "jaccard_with_admissible": 0.454545,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        1,
+        2,
+        3,
+        2
+      ],
+      "out_degree": [
+        3,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "arm": "random_s2",
+      "seed": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": 2,
+      "jaccard_with_admissible": 0.454545,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        1,
+        2,
+        3,
+        2
+      ],
+      "out_degree": [
+        3,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "arm": "random_s2",
+      "seed": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": 2,
+      "jaccard_with_admissible": 0.454545,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        1,
+        2,
+        3,
+        2
+      ],
+      "out_degree": [
+        3,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "arm": "random_s2",
+      "seed": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": 2,
+      "jaccard_with_admissible": 0.454545,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        1,
+        2,
+        3,
+        2
+      ],
+      "out_degree": [
+        3,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "arm": "misspecified-1",
+      "seed": 0,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.777778,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        1,
+        1,
+        3
+      ],
+      "out_degree": [
+        2,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "arm": "misspecified-1",
+      "seed": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.777778,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        1,
+        1,
+        3
+      ],
+      "out_degree": [
+        2,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "arm": "misspecified-1",
+      "seed": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.777778,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        1,
+        1,
+        3
+      ],
+      "out_degree": [
+        2,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "arm": "misspecified-1",
+      "seed": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "n_params": 930464,
+      "random_edge_seed": null,
+      "jaccard_with_admissible": 0.777778,
+      "coupling_normalisation": "frozen OrganGraphCoupling (empty edges bypass LayerNorm)",
+      "sizes": {
+        "d_hidden": 256,
+        "d_model": 96,
+        "d_state": 48,
+        "n_layers": 2
+      },
+      "in_degree": [
+        3,
+        1,
+        1,
+        3
+      ],
+      "out_degree": [
+        2,
+        3,
+        2,
+        1
+      ]
+    }
+  ]
+}

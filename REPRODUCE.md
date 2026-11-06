@@ -1,10 +1,20 @@
-# Reproduce the v4 artifact
+# Reproduce PhysioGraphBench v1.1.1 and its v5 findings
 
 Run commands below from the repository root. The software is a benchmark and
 includes both supported findings and negative controls. No raw data, trained
 weights, paper files, or upstream source checkouts are required in the
 initial distribution. Downloading the open inputs and training models create
 local data and checkpoints under ignored directories.
+
+This documentation update preserves the v1.1.0 source and result records. The
+primary v5 clinical comparison is the retuned shared-input series under
+`experiments/shared_input_primary/`, not the historical partitioned-input v4
+series reconstructed by the legacy table generator. Each experiment README
+links its saved metrics, paired intervals, assumptions and rerun prerequisites.
+The concept DOI is [10.5281/zenodo.23976171](https://doi.org/10.5281/zenodo.23976171);
+the v1.1.0 record is [10.5281/zenodo.23992302](https://doi.org/10.5281/zenodo.23992302).
+The selected per-seed checkpoints are in a separate Zenodo record,
+[10.5281/zenodo.23993257](https://doi.org/10.5281/zenodo.23993257); this update does not assert a new archival record of the code.
 
 ## 1. Environment and distribution integrity
 
@@ -46,13 +56,18 @@ It does not estimate scientific model rankings. All scratch uses `TMPDIR`.
 ## 2. Rebuild published display numbers without data or training
 
 ```bash
-make findings
-python3 tools/summarize_results.py --out-dir runs/tables --check
+python3 tools/summarize_results.py --out-dir runs/tables
+python3 -c "import json; assert json.load(open('runs/tables/findings.json')) == json.load(open('results/findings.json'))"
 python3 tools/plot_results.py --out-dir runs/figures
 ```
 
-The summary command recreates `findings.json`, the README clinical table and eight
-CSV tables: clinical, variants, organs, horizons, simulator forecast, simulator
+The JSON assertion checks the regenerated values against frozen v4 findings.
+The legacy `make findings` target invokes summarizer `--check`, which additionally
+requires the historical README table verbatim; use the export-and-compare route
+above for this updated README. No verifier code is changed in this update.
+
+The legacy summary command recreates the historical v4 `findings.json`, its
+partitioned-input clinical display and eight CSV tables: clinical, variants, organs, horizons, simulator forecast, simulator
 policy, CRN, and coupling index. It computes clinical mean/sample standard
 deviation from the four per-seed run values, computes horizon gaps from the
 archived runs, and extracts the archived paired estimates and simulator/coupling
@@ -60,22 +75,34 @@ statistics. It does not re-infer checkpoints or recreate patient bootstrap
 samples from aggregate means. Seed-level simulator means and uncertainty are
 frozen evidence; rerunning section 5 regenerates the underlying seed results.
 
-`results/tables/` contains the distributed display tables; `results/findings.json`
-contains the derived README values. The plot command draws clinical comparisons,
+`results/tables/` contains the historical distributed display tables;
+`results/findings.json` contains their derived v4 values. These files remain
+unchanged and do not regenerate the current README's v5 primary table. The plot command draws clinical comparisons,
 matched simulator controls, counterfactual direction heatmaps, horizon gaps and
 the hourly coupling curve directly from frozen data. Undefined hourly means at
 zero coupling are omitted and labelled. `figures/F1_overview.png` is the supplied
-v4 overview, including the CinC-2012 comparison; this plotting command does not
-generate that conceptual figure.
+v5 pipeline figure, rendered from the supplied PDF at 150 dpi; this plotting
+command does not generate that conceptual figure. Legacy data plots remain
+historical displays; their older labels do not override the current README's
+qualified interpretations.
 
-The records in `results/v4/` are the numerical authority for clinical analyses.
+The records in `results/v4/` are the numerical authority for the historical
+partitioned-input clinical analyses. The primary v5 selection and all 35-epoch
+shared-input arms are in `experiments/shared_input_primary/artifacts/host/`;
+its `E2_E4_READING.md` and `e2_e4_summary.json` also hold the separate budget
+control. The paired-statistics records in `analysis/paired_statistics/` retain
+their stated estimands, multiplicity families and missing-array limitations.
 `results/sim_grids_v1/` holds matched simulator summaries;
 `results/learned_graph_baselines_v1/` holds graph-port and CRN runs;
 `results/coupling_index_v1/` holds the empirical and simulator index.
 The per-organ, ablation, horizon and paired-statistics records preserve
 observed-entry denominators and distinguish pooled RMSE from mean stay RMSE.
 The original numeric CDE external fields remain archival diagnostics and are
-excluded from displayed external comparisons, which label the model diverged.
+excluded from confirmed external rankings because checkpoint replay is
+unresolved. The saved external scores are finite (3.4459 ± 3.2320); CPU replay
+disagrees and there is no recorded divergence threshold. Historical generated
+displays and the frozen diagnostic keep their original labels; they are not a
+repaired CDE comparison.
 
 ## 3. Reconstruct the CinC-2012 table or retrain from open cohorts
 
@@ -101,7 +128,7 @@ checkpoint and error-archive fingerprints. Its locators are provenance records.
 ### Open data and cohort rebuilding for retraining
 
 The data sources and licences are listed in `README.md`. No credentials are
-needed for the specified open corpora. The first script lists and downloads the
+needed for the specified open corpora. The CinC-2019 fetcher lists and downloads the
 CinC-2019 public S3 training sets, retaining its retry and nonempty-file skip
 logic; do not treat its console counts alone as a content-integrity check. The
 cohort archive hashes below are the end-to-end check.
@@ -189,7 +216,7 @@ CinC-2019 checkpoint is present at a documented fit path, the target also runs
 one transfer evaluation with 32 stays from each 2012 set. A within-2012
 checkpoint is never used as a transfer source.
 
-For the full 88-run series, first create the 44 CinC-2019 source checkpoints
+For the full 88-run series, create the 44 CinC-2019 source checkpoints
 using the clinical and learned-graph suites from section 5. These are substantial
 training prerequisites, separate from the 44 within-2012 fits:
 
@@ -234,7 +261,7 @@ python3 tools/replay_simulators.py --group all --run
 python3 tools/replay_simulators.py --group all --verify-only
 ```
 
-The first command prints the exact per-dataset sequence. The second regenerates
+The command without `--run` prints the exact per-dataset sequence. The second regenerates
 missing files from `generation_args` and checks every scientific array. Existing
 files are checked and never accepted just because their names match. The third
 requires all outputs and checks them again without generation. For a selected
@@ -269,7 +296,7 @@ shape and the SHA-256 of every C-order payload except `metadata_json`. An array
 hash failure is an error and stops the command. The simulator's scientific
 arrays remain exactly reproducible in the recorded numerical environment.
 
-## 5. Rerun every registered experiment
+## 5. Rerun the distributed experiment suites
 
 A full rerun is substantial CPU work. The staging smoke is deliberately small;
 the archived results are already included for inspecting and regenerating the
@@ -278,7 +305,7 @@ change fitted scores, so model-training results do not carry a byte-identity
 promise. Match the recorded settings, report the new environment and compare
 estimates at their stated uncertainty.
 
-First enumerate the complete sequence without training:
+Enumerate the historical suite sequence without training:
 
 ```bash
 mkdir -p runs
@@ -311,7 +338,7 @@ experiments remain CPU routes. The CPU plan uses the current interpreter.
 | `sim_forecast` | 144 matched edge-set fits, 24 monolithic width-96 fits and 24 width-201 capacity-matched monolithic fits; then both control aggregations. Corresponds to the matched forecast grid. |
 | `sim_policy` | 384 shared-history and 48 historical-target fits; four models, four seeds, six severity-dependence values and four assignment-noise values in the shared grid. Corresponds to the 108-cell policy summary and overlap table. |
 | `learned_graphs` | Four t-PatchGNN and four GraFITi fits using their accepted ports, common loader and validation selection. No architecture tuning grid. |
-| `crn` | 72 full-adaptation policy fits, 36 balancing-weight fits and four longer zero-weight positive controls. The zero-weight sweep explicitly keeps the full CRN architecture. |
+| `crn` | 72 full-adaptation policy fits, 36 balancing-weight fits and four longer zero-weight randomised-dose controls. These legacy controls retain the minute-60 counterfactual / minute-72 factual onset mismatch; randomising eventual dose alone does not identify the earlier-start intervention. The zero-weight sweep keeps the full CRN architecture. |
 | `coupling` | Frozen ridge/GRU probe definitions on the clinical and five-minute simulator data, then the separate hourly simulator ridge calibration. |
 
 The clinical learning rates are 0.0005, 0.001 and 0.002; widths and capacity aliases
@@ -329,24 +356,72 @@ exception remains in `results/v4/run_manifest_with_waiver.json`. This packaging
 change does not rerun that historical pair or change validation selection,
 model equations, losses, epoch budgets or scientific evidence.
 
+### v5 primary, sensitivity and repaired-policy experiments
+
+The historical launcher above does not include the additional v5 suites. Their
+plans can be enumerated without fitting or accessing data:
+
+```bash
+bash experiments/shared_input_primary/run_host_e2.sh --dry-run
+bash experiments/positive_control/run_host_e1.sh --dry-run
+bash experiments/counterfactual_onset_matched/run_host_e3.sh --dry-run
+bash experiments/counterfactual_onset_matched/run_host_e3.sh --dry-run --group matched-control
+bash experiments/learned_graph_validation/run_host_e5.sh --dry-run
+python3 -B experiments/learned_graph_validation/grafiti_p12_reproduce.py --dry-run
+```
+
+| Suite | Expected saved result and interpretation |
+|---|---|
+| [Shared-input primary and budgets](experiments/shared_input_primary/README.md) | 70 commands: six A-validation grid cells, 40 arm fits, 24 budget fits. At 35 epochs, shared none is 0.7559 / 0.8088 A/B; minus GRU-D +0.0101 [+0.0072, +0.0130] / +0.0029 [+0.0003, +0.0056], 95% paired t CIs over four seeds. No primary edge set is consistently better than none. At 70 epochs, none is 0.7496 / 0.8070 and its same-cap deficits are +0.0007 [−0.0030, +0.0044] / −0.0026 [−0.0088, +0.0036]. Keep this budget series separate from the 35-epoch table; the admissible model does not close its gap, and both organ models worsen at 105 epochs. |
+| [Registered positive control](experiments/positive_control/README.md) | Three dataset generations and 96 fits. Registered PASS: at κ = 1, none/reversed/random minus admissible macro-NRMSE gaps are +0.0160 [+0.0142, +0.0179], +0.0167 [+0.0142, +0.0192] and +0.0117 [+0.0027, +0.0208], positive in 4/4 seeds each. One generated population, four training/split seeds, artificial drive/delays; no clinical edge benefit or superiority over a full-input monolithic GRU is established. |
+| [Onset-matched policies](experiments/counterfactual_onset_matched/README.md) | 184 core commands plus four matched Control-GRU fits; 188 saved records. Alternative and factual treatment begin at minute 72; score 60,480 post-effect cells. Widening support at fixed Spearman 0.300 improves all models (+0.54 to +0.59 endpoint gains, paired CIs excluding zero); dependence-only spans only 0–0.30 at fixed tercile support. Repaired CRN-lite has no consistent gain; continuous-dose CRN trails the matched Control-GRU in all six λ/epoch arms and 4/4 seeds on the same randomised-dose archive. |
+| [Learned-graph validation](experiments/learned_graph_validation/README.md) | 24 adjacency fits plus one published-protocol GraFITi attempt. Test MSE 0.3027 versus published 0.286 ± 0.001 (+0.0167, 5.8%); published precision is not reproduced. Fixed adjacency leaves GraFITi A-test RMSE nearly unchanged (0.7482–0.7483); t-PatchGNN increases by +0.0025 to +0.0046 from 0.7492. |
+
+Use each linked README's execution flag and fresh output directory after
+preparing its inputs. The primary shared-input series was selected separately
+on A-validation; neither the post-hoc renal diagnostic nor the fixed-configuration
+shared-input edge diagnostic is a primary-table ranking. They retain four-seed,
+capacity and input-access qualifications. Table reconstruction reads saved
+numbers; it is distinct from checkpoint inference and a new model fit.
+
+Counterfactual qualifications remain material: the separate dependence family
+cannot test severe deterministic dependence beyond rank correlation 0.30.
+Four historical dataset-hash discrepancies affect three training archives;
+matching saved predictions and test truth does not recover the unavailable
+earlier training arrays or establish their identity. Legacy c × σ cells jointly
+vary support and dependence, retain an onset mismatch and a pre-switch scoring
+boundary, and cannot be exactly rescored without missing predicted trajectories.
+The legacy CRN-lite auxiliary target is identically zero, so its agreement with
+Control-GRU does not test balancing against varying dose.
+
 ## 6. Distribution lineage and limits
 
-`SHA256SUMS` covers every distributed file except itself. `manifests/distribution.json`
-records each copied source's original SHA-256, the distributed SHA-256, and file
-sizes. `manifests/TRANSFORMATIONS.md` explains path/import/provenance edits;
-`manifests/readme_trace.json` maps README numerical claims to result files.
+`SHA256SUMS` covers every current distributed file except itself.
+`manifests/distribution.json` records original and distributed hashes and sizes
+for the v1.1.0 distribution; it is preserved unchanged in this documentation-only
+update. Its entries for edited Markdown and the overview PNG describe v1.1.0
+bytes. `manifests/readme_trace.json` likewise maps the historical v4 README
+claims, rather than the current primary table. Current claim sources are linked
+in the README and experiment folders. [Release notes](docs/RELEASE_V1_1_1.md)
+explain this scope; use `SHA256SUMS` for current distribution integrity.
+`manifests/TRANSFORMATIONS.md` preserves the earlier path/import/provenance edits.
 The core organ model, clinical-baseline module and base simulator are copied
 byte for byte. Original scientific JSON/CSV numbers are unchanged; only descriptive
 strings, private paths and JSON formatting are transformed for distribution.
 
-The build verified CPU smoke tests, complete cohort bytes, selected full-size
-simulator regeneration and numerical preservation of frozen records. It did not
+The earlier artifact build verified CPU smoke tests, complete cohort bytes,
+selected full-size simulator regeneration and numerical preservation of frozen
+records. This documentation update checks scope, exclusions and current file
+hashes without repeating those computational checks. The earlier build did not
 repeat the complete training series or test remote download availability.
 Historical simulator seed aggregates support table reconstruction; recomputing
 patient statistics from predictions requires the locally rerun error artifacts.
 The CinC-2012 table reconstruction reproduces all shipped displays, while the
 new CPU smoke checks one within-corpus fit; the full 88-run series was not
-repeated during packaging. The README pins the published baseline commit and
-identifies the v1.0.1 update. The cited archive DOI belongs to v1.0.0. The
-CinC-2012 results remain the recorded 88-run evidence, and external CinC-2019
-CDE inference remains labelled diverged.
+repeated during packaging. The README identifies the v1.1.1 documentation
+update, the v1.1.0 source commit and archive record, and the concept DOI.
+The CinC-2012 results remain the recorded 88-run partitioned-input evidence.
+External CinC-2019 CDE checkpoint replay remains unresolved, and its finite
+saved errors remain outside confirmed rankings. No new training, repaired
+checkpoint replay, historical training-array recovery or archival deposit is
+claimed by this documentation update.

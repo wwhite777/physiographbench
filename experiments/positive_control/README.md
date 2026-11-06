@@ -52,3 +52,25 @@ The full 96-fit inventory, nine paired comparison cells, fixed ranges and
 limitations are in [E1_READING.md](artifacts/full/E1_READING.md) and
 [e1_summary.json](artifacts/full/e1_summary.json). This artificial positive
 control does not establish clinical benefit or revise the original regime's null.
+
+## v5 result and scope
+
+The registered decision is **PASS**. At κ = 1, comparator minus admissible
+macro-NRMSE (mean of range-normalized organ errors) is **+0.0160
+[+0.0142, +0.0179]** for no edges, **+0.0167 [+0.0142, +0.0192]** for
+reversed edges and **+0.0117 [+0.0027, +0.0208]** for random edges (95%
+paired t intervals, 4/4 positive seeds each). All three mean gaps are
+non-decreasing across κ = 0, 0.5, 1. At κ = 0, they are **−0.0046 /
+−0.0042 / −0.0036**, with no positive seeds. The oracle supplies a separate
+qualification: source history reduces ridge error by about 21% renal / 29%
+metabolic at κ = 1.
+
+The full-input monolithic GRU and admissible organ model have nearly equal
+observed macro-NRMSE (**0.0798 vs 0.0800**). Correct edges restore information
+missing from organ-partitioned input; superiority over the full-input model is
+not established. Scope is **one generated population, four training/split seeds,
+and the regime's artificial drive and transport delays**. Missingness uses
+measured CinC-2019 rates on renal/metabolic context channels, with dense
+cardiovascular observations; the targets remain synthetic. No clinical edge
+benefit is claimed. This positive control is distinct from the historical
+randomised-dose CRN diagnostic, which retains a treatment-onset mismatch.
