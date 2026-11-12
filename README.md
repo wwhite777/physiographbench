@@ -2,25 +2,25 @@
 
 # PhysioGraphBench: when do physiological graph priors help?
 
-**Version 1.2.1 — E3 artifact verifier fix ([release note](docs/RELEASE_V1_2_1.md)).**
-Version 1.2.0 added the current-archive E3 rerun evidence and aggregate cohort
-companion; see [the 1.2.0 note](docs/RELEASE_V1_2_0.md). Apart from the E3
-artifact verifier and its regression test, existing code, tests and original
-result records retain their earlier bytes (v1.1.0 source commit
-[e7e290742b3756fb03462ffde8a3d3ecc4bf5584](https://github.com/wwhite777/physiographbench/tree/e7e290742b3756fb03462ffde8a3d3ecc4bf5584)).
+**Version 1.3.0 — input-access regime controls and validation-selected clinical
+extensions ([release note](docs/RELEASE_V1_3_0.md)).**
+Earlier [1.2.1](docs/RELEASE_V1_2_1.md) and [1.2.0](docs/RELEASE_V1_2_0.md)
+notes retain the E3 verifier correction and current-archive rerun provenance.
 The concept DOI is [10.5281/zenodo.23976171](https://doi.org/10.5281/zenodo.23976171);
 the v1.1.0 record is [10.5281/zenodo.23992302](https://doi.org/10.5281/zenodo.23992302).
 The selected per-seed checkpoints (140 fits) are archived in a separate Zenodo
 checkpoints record, [10.5281/zenodo.23993257](https://doi.org/10.5281/zenodo.23993257), described below.
 Version 1.1.2 of the code is archived as [10.5281/zenodo.23996559](https://doi.org/10.5281/zenodo.23996559);
-version 1.1.1 has no separate archival record. The current release, 1.2.1, is archived as
+version 1.1.1 has no separate archival record. Version 1.2.1 is archived as
 [10.5281/zenodo.23998329](https://doi.org/10.5281/zenodo.23998329); version 1.2.0 has no separate archival record.
 Version 1.1.2 corrects one budget-control interpretation; see
 [the 1.1.2 note](docs/RELEASE_V1_1_2.md).
 
-**At the 35-epoch cap, the shared-input no-edge organ model trails GRU-D;
-a 70-epoch budget largely closes that gap. Prescribed edges show no consistent
-clinical benefit, while a registered synthetic sensitivity regime detects one.**
+**In this generated sensitivity regime, prescribed edges help when they are
+the only route to information an organ node lacks; with shared inputs they add
+nothing measurable. At validation-selected clinical caps, the organ model
+trails GRU-D and shows no edge benefit. The CinC-2012 edge contrast is not
+established.**
 
 This benchmark release supplies the simulator, cohort builders, baselines,
 protocols and frozen results for evaluating physiological graph priors. It
@@ -32,9 +32,39 @@ Figure 1 summarizes the v5 pipeline, clinical forecasting and separate simulated
 intervention experiments. The clinical models use four organ groups; the
 simulator uses three. Zero simulator coupling retains a shared sepsis course.
 
+## Results added in 1.3.0
+
+Root mean squared error (RMSE) is pooled over observed target entries. Normalized
+RMSE (NRMSE) in the synthetic experiment averages organ errors divided by fixed
+reference ranges. Differences below are the named arm minus its reference;
+negative favors the named arm. Intervals are pointwise 95% paired Student-t
+confidence intervals (CIs) over seeds, conditional on the fixed cohorts or one
+generated population. They do not measure hospital or patient sampling uncertainty.
+
+| Experiment | Result and scope |
+|---|---|
+| Input access × prescribed edges, synthetic κ = 1, ten split/initialization seeds | Partitioned admissible − none macro-NRMSE is −0.0169 [−0.0191, −0.0146], lower in 10/10 seeds. Reversed edges give +0.0010 [+0.0003, +0.0016]; random edges give −0.0024 [−0.0054, +0.0006]. Shared admissible − shared none is +0.0006 [−0.0007, +0.0018]; shared none − monolithic full-input GRU is +0.0010 [−0.0006, +0.0026]. Both fixed mean-based 0.0040 gate conditions pass. This is one generated population, dataset seed 0. |
+| PhysioNet/Computing in Cardiology Challenge 2019, ten training seeds | A-validation on the original four seeds selects caps 105/70/35 for shared none/admissible/GRU-D. Admissible − none RMSE is +0.0007 [−0.0018, +0.0032] on internal A and +0.0037 [+0.0012, +0.0061] on external B. None − GRU-D is +0.0094 [+0.0074, +0.0115] A and +0.0052 [+0.0027, +0.0078] B. There is no edge benefit at the selected caps; edges are worse at longer matched caps in the four-seed sensitivity, and the organ model trails GRU-D. |
+| PhysioNet/Computing in Cardiology Challenge 2012, four seeds | Within-corpus set-b RMSE is 0.8228 ± 0.0099 for shared none@105 and 0.7919 ± 0.0243 for admissible@70, versus GRU-D 0.7684. Admissible − none is −0.0309 [−0.0685, +0.0066]; none − GRU-D is +0.0544 [+0.0371, +0.0716] and admissible − GRU-D +0.0234 [−0.0138, +0.0607]. The organ model trails GRU-D in mean within-corpus error; wide intervals and high seed variance leave the edge contrast unestablished. Transfer of selected 2019 checkpoints gives pooled RMSE 0.8320/0.8336/0.8273 for none/admissible/GRU-D, with admissible − none +0.0016 [−0.0034, +0.0067]. |
+
+The cap and cosine schedule vary jointly, so selected-cap comparisons describe
+selected family procedures. The original outcomes were already available when
+caps were selected; no prospective blinding is asserted. A CI containing zero
+and the synthetic mean-based gate do not establish equivalence. The synthetic
+monolithic GRU omits explicit masks, while shared projections add parameters.
+No clinical benefit or universal necessity claim follows.
+
+See the [cap-selection analysis](analysis/cap_selection/),
+[clinical seed extension](experiments/shared_input_primary/#ten-seed-selected-cap-extension),
+[CinC-2012 shared-input experiment](tools/cinc2012/shared_input/), and
+[synthetic input-access extension](experiments/positive_control/#input-access-extension).
+[Release 1.3.0](docs/RELEASE_V1_3_0.md) lists reproduction commands and exact coverage.
+The earlier four-seed tables below remain historical comparisons at their stated
+caps; they do not replace the validation-selected results above.
+
 ## Leaderboard and record contract
 
-The [clinical leaderboard](leaderboard/LEADERBOARD.csv) contains 400 seed/split
+The [clinical leaderboard](leaderboard/LEADERBOARD.csv) contains 476 seed/split
 records covering the selected clinical models, learned graphs, shared-input
 primary arms, longer-budget controls and CinC-2012 within/transfer protocols.
 The [record contract](leaderboard/RECORD_SCHEMA.json) specifies configurations,
@@ -46,7 +76,7 @@ arms, budget controls and the earlier fixed-configuration diagnostics, seeds
 [10.5281/zenodo.23993257](https://doi.org/10.5281/zenodo.23993257), with a manifest keyed by
 series, arm and seed, a loading script and its own README.
 [Build and comparison instructions](leaderboard/README.md) explain canonical
-seeds 0–3, pooled RMSE@12, fixed splits and exclusion labels. Also included are
+seeds 0–3 and selected-cap seeds 0–9, pooled RMSE@12, fixed splits and exclusion labels. Also included are
 the [shared-input arm inventory](experiments/shared_input_primary/E2_arm_inventory.json)
 and the [preserved scientific appendix](docs/README_APPENDIX.md).
 
@@ -287,7 +317,7 @@ simulator or locate the clinical data on a causal coupling scale.
 
 The clinical forecasting protocol contains no real treatment variables or
 interventions; treatment-direction claims are confined to simulated outcomes.
-Each reported comparison uses four seeds. Seed standard deviations summarize
+Historical comparisons below use four seeds; the 1.3.0 selected-cap clinical and κ = 1 input-access comparisons use ten. Seed standard deviations summarize
 that limited set of runs and do not establish broad robustness. Paired intervals
 measure seed/split variation conditional on the observed cohort; they do not
 supply independent patient-population replication. Neural CDE external
@@ -310,7 +340,7 @@ arterial pressure (MAP), and lactate has a one-state pressure/sepsis-driven
 ordinary differential equation without feedback into circulation. Much edge
 information is recoverable from each organ's own history. The registered
 positive control tests one artificial hidden-state/transport-delay regime with
-four training/split seeds; it does not establish general simulator sensitivity
+four training/split seeds in the original grid, extended to ten for selected κ = 1 arms in 1.3.0; it does not establish general simulator sensitivity
 or clinical edge benefit.
 
 The separate dependence-only family reaches rank correlations only from 0 to

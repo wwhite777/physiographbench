@@ -72,3 +72,33 @@ primary series; they are not ranked against its baseline table.
 The test suite includes optional fitting checks. `PHYSIOGRAPH_NO_TRAINING=1`
 skips those two tests explicitly; the remaining checks cover model inputs,
 initialization, graphs, selection, pooling and launcher guards without fitting.
+
+## Ten-seed selected-cap extension
+
+Version 1.3.0 holds the original four-seed A-validation cap choices fixed:
+none=105, admissible=70, GRU-D=35. Seeds 4–9 add 18 fits; together with the
+original records they supply ten paired seeds for each selected family.
+Admissible − none is +0.0007 [−0.0018, +0.0032] A and +0.0037 [+0.0012,
++0.0061] B. None − GRU-D is +0.0094 [+0.0074, +0.0115] A and +0.0052
+[+0.0027, +0.0078] B. There is no edge benefit at the selected caps, and the
+organ model trails GRU-D. The four-seed matched-cap sensitivities remain above.
+Caps and cosine schedules differ jointly; these are selected-procedure contrasts.
+Intervals conditional on fixed cohorts do not establish equivalence.
+
+```bash
+python3 -B experiments/shared_input_primary/read_n2.py
+python3 -B experiments/shared_input_primary/n2_host.py --dry-run
+```
+
+Rebuild and verify the 2019 cohort, and generate the original four-seed series
+with `run_host_e2.sh --execute` before an extension training run. The new planner
+prints 18 commands and `--execute` runs them sequentially. Each writes under
+`experiments/shared_input_primary/runs/ten_seed/FAMILY/seedN/`; use the existing
+35/70/105 primary launcher for seeds 0–3. Full training follows the original
+family-specific optimizer, batch, stopping and cosine period. A small CPU smoke
+requires explicit `--smoke` on `n2_train.py` and stays outside the frozen results.
+
+Only `run.json` is distributed for new fits. `read_n2.py` checks all selected-cap
+record hashes, identities and stopping fields before printing four/ten-seed paired
+intervals, sign counts and minimum detectable differences at 80% power. It does
+not claim to replay the omitted new weights, CSV curves or per-stay error arrays.

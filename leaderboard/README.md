@@ -36,13 +36,13 @@ The schema applies to the resulting objects, rather than untyped CSV strings.
 | Persistence, recorded under each canonical seed | 4 | 8 |
 | Learned graphs: t-PatchGNN and GraFITi | 8 | 16 |
 | Shared-input primary: all ten arms | 40 | 80 |
-| Longer budget: none, admissible and GRU-D at 70/105 epochs | 24 | 48 |
-| CinC-2012 transfer: set-a, set-b and their pooled union | 44 | 132 |
-| CinC-2012 within-corpus: set-b | 44 | 44 |
-| Total | 200 | 400 |
+| Budget and selected-cap extension: original 70/105 cells plus ten-seed none@105, admissible@70 and GRU-D@35 | 46 evaluations of source runs | 92 |
+| CinC-2012 transfer, including shared none/admissible | 52 | 156 |
+| CinC-2012 within-corpus: set-b, including shared none/admissible | 52 | 52 |
+| Total unique source identities (4 GRU-D fits occur in two series) | 234 | 476 |
 
-There are **400 shipped seed/split metric records and 400 CSV data rows**.
-The 200 source run identities include four copies of deterministic persistence;
+There are **476 shipped seed/split metric records and 476 CSV data rows**.
+The 234 source run identities include four copies of deterministic persistence;
 those copies do not represent four fitted models. Multiple splits from a fit are
 separate evaluation records. Embedded seed records are counted individually,
 not as one record per JSON container file. The six shared-input tuning runs
@@ -149,3 +149,15 @@ hyperparameters on set-b or pool the within and transfer protocols.
    differences when making a matched contrast. Preserve exclusion flags.
    A lower mean alone does not establish significance, and four training seeds
    do not represent four independent patient populations.
+
+## 1.3.0 seed coverage
+
+The CSV columns, nested record structure, schema version and metric remain the
+same. The seed enum extends from 0–3 to 0–9 to admit the six new seeds. Only
+selected-cap `training_budget` groups none@105, admissible@70 and GRU-D@35
+require seeds 0–9; other groups require 0–3. Original GRU-D@35 fits appear in
+both `clinical_selected` and the selected-cap `training_budget` group, so these
+are two evaluations of one fit, never additional independent training replicates.
+The row contract retains the original series names. CinC-2012 shared arms have
+explicit `physiograph_gru_shared:ARM` method names and recorded cap/schedule.
+No new weights are included in the earlier 140-checkpoint archive.

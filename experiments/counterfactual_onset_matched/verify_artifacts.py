@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import subprocess
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).absolute().parent
 RELEASE_ROOT = ROOT.parents[1]
 
 

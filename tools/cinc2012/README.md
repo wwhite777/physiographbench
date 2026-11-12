@@ -99,3 +99,10 @@ The hospital-system overlap, SaO2 substitution and static/unit qualifications
 in `results/cinc2012_cohort_v1/COHORT_REPORT.md` remain applicable. Training may
 vary across environments; matching the settings does not promise identical
 fitted scores or checkpoint bytes.
+
+## Shared-input extension in 1.3.0
+
+The additional [shared-input experiment](shared_input/) has 8 within-corpus fits
+and 8 transfer evaluations at the frozen 105/70 epoch caps. Its separate reader
+requires all 16 records and compares them with the archived baseline rows.
+The original 88-run launcher and table remain the historical baseline protocol.

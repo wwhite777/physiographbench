@@ -2,11 +2,12 @@
 import copy
 import hashlib
 import json
+import os
 from pathlib import Path
 import sys
 import unittest
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(os.environ.get('PHYSIOGRAPH_ROOT', Path(__file__).absolute().parents[1]))
 sys.path.insert(0, str(ROOT))
 from leaderboard import build_leaderboard as board
 
@@ -17,8 +18,8 @@ class Leaderboard(unittest.TestCase):
         cls.rows, cls.source_count = board.build_records(ROOT)
 
     def test_complete_reported_inventory_and_exact_csv(self):
-        self.assertEqual(self.source_count, 200)
-        self.assertEqual(len(self.rows), 400)
+        self.assertEqual(self.source_count, 234)
+        self.assertEqual(len(self.rows), 476)
         self.assertEqual(board.read_csv(ROOT / "leaderboard/LEADERBOARD.csv"), self.rows)
         self.assertEqual((ROOT / "leaderboard/LEADERBOARD.csv").read_bytes(),
                          board.csv_text(self.rows).encode("utf-8"))
@@ -72,7 +73,7 @@ class Leaderboard(unittest.TestCase):
         for row in self.rows:
             if row["series"] == "cinc2012_transfer":
                 groups.setdefault((row["method"], row["seed"]), {})[row["split"]] = row
-        self.assertEqual(len(groups), 44)
+        self.assertEqual(len(groups), 52)
         for key, rows in groups.items():
             with self.subTest(model_seed=key):
                 count = sum(rows[s]["denominator"]["observed_target_entries"] for s in ["testA", "testB"])
@@ -108,7 +109,7 @@ class Leaderboard(unittest.TestCase):
         validator = Draft202012Validator(schema)
         for row in self.rows:
             validator.validate(row)
-        for field, value in [("seed", 4), ("metric", "mean_stay_RMSE"),
+        for field, value in [("seed", 10), ("metric", "mean_stay_RMSE"),
                              ("run_record_path", "../outside.json"),
                              ("run_record_sha256", "invalid"), ("value", -1)]:
             row = copy.deepcopy(self.rows[0])

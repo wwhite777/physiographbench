@@ -3,10 +3,11 @@ from pathlib import Path
 import csv
 import hashlib
 import json
+import os
 import statistics
 import unittest
 
-HERE = Path(__file__).resolve().parents[1]
+HERE = Path(os.environ.get('PHYSIOGRAPH_ROOT', Path(__file__).absolute().parents[3])) / 'diagnostics/renal_shared_input'
 ROOT = HERE.parents[1]
 
 

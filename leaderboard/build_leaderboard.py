@@ -7,9 +7,10 @@ import hashlib
 import io
 import json
 import math
+import os
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(os.environ.get('PHYSIOGRAPH_ROOT', Path(__file__).absolute().parents[1]))
 SEEDS = {0, 1, 2, 3}
 FIELDS = [
     "schema_version", "task", "series", "corpus", "split", "method", "seed",
@@ -40,8 +41,8 @@ def pointer(*parts):
 
 def resolve(root, location, documents=None):
     path, _, fragment = location.partition("#")
-    target = (root / path).resolve()
-    if not target.is_relative_to(root.resolve()):
+    target = root / path
+    if Path(path).is_absolute() or ".." in Path(path).parts:
         raise ValueError("Record path must stay inside the repository")
     if documents is None:
         obj = load(root, path)
@@ -149,7 +150,7 @@ def build_records(root=ROOT):
 
     for stage, series in [("arms", "shared_input_primary"), ("budget", "training_budget")]:
         paths = sorted((root / SHARED / stage).rglob("run.json"))
-        if len(paths) != {"arms": 40, "budget": 24}[stage]:
+        if len(paths) != {"arms": 40, "budget": 42}[stage]:
             raise ValueError(f"Incomplete shared-input stage: {stage}")
         for path in paths:
             rel = path.relative_to(root).as_posix()
@@ -157,9 +158,33 @@ def build_records(root=ROOT):
             if run["scope"] != "full" or run["status"] != "complete":
                 raise ValueError(f"Incomplete or small-scope record: {rel}")
             for split in ["A", "B"]:
-                add(series, "CinC-2019", split, run["model"] + ":" + run["arm"], run["seed"],
+                add(series, "CinC-2019", split, run["model"] + ":" + run.get("arm", "grud"), run["seed"],
                     configuration(run), checkpoint(run), rel + pointer(split), rel,
                     original_path=rel)
+
+    for seed, run in sorted(clinical['grud'].items()):
+        base = TUNING + pointer('selected_runs', 'grud', seed)
+        for split in ('A', 'B'):
+            add('training_budget', 'CinC-2019', split, 'grud:grud', seed,
+                configuration(run), checkpoint(run), base + '/' + split, base,
+                original_path=f'runs/clinical/selected/grud/seed{seed}/run.json')
+
+    for protocol in ('within', 'transfer'):
+        for arm, cap in (('none', 105), ('admissible', 70)):
+            for seed in range(4):
+                rel = f'results/clinical_v4_v1/cinc2012/shared_input/{protocol}/{arm}/seed{seed}/run.json'
+                run = load(root, rel)
+                if (run['status'], run['scope'], run['seed'], run['arm'], run['protocol'], run['selected_epochs_cap']) != ('complete', 'full', seed, arm, protocol, cap):
+                    raise ValueError(f'Invalid shared CinC-2012 identity: {rel}')
+                config = configuration(run)
+                config.update(training_performed=protocol == 'within', normalization='set_a_training' if protocol == 'within' else 'frozen_2019')
+                identity = checkpoint(run)
+                if protocol == 'transfer': identity = (identity[0], identity[1], 'source_2019_record_not_bundled')
+                expected_splits = {'testB'} if protocol == 'within' else {'testA','testB','pooled'}
+                if set(run['results']) != expected_splits: raise ValueError('Incomplete shared CinC-2012 splits')
+                for split in sorted(expected_splits):
+                    add('cinc2012_' + protocol, 'CinC-2012', split, 'physiograph_gru_shared:' + arm,
+                        seed, config, identity, rel + pointer('results',split), rel, original_path=rel)
 
     summary = load(root, CINC2012)
     inputs = {entry["path"]: entry for entry in summary["inputs"]}
@@ -221,8 +246,12 @@ def validate_records(rows):
         if row["value"] is None or not math.isfinite(row["value"]) or row["value"] < 0:
             raise ValueError("Expected a finite archived RMSE")
     for group, seeds in groups.items():
-        if seeds != SEEDS:
-            raise ValueError(f"Expected seeds 0–3 for {group}: {seeds}")
+        series, method, split, cap = group
+        ten_seed = series == 'training_budget' and (method, cap) in {
+            ('physiograph_gru_shared:none', 105), ('physiograph_gru_shared:admissible', 70), ('grud:grud', 35)}
+        expected = set(range(10)) if ten_seed else SEEDS
+        if seeds != expected:
+            raise ValueError(f"Expected seeds {sorted(expected)} for {group}: {seeds}")
 
 
 def csv_text(rows):

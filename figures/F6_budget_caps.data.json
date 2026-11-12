@@ -1,0 +1,4745 @@
+{
+  "figure": "F6_budget_caps",
+  "caption": "Test pooled observed-entry root mean squared error (RMSE) at the 12-hour horizon versus training cap, in cohort-A training standard-deviation units. Lines show the arithmetic mean of four per-run pooled RMSEs; whiskers are pointwise 95% Student t intervals over the four training seeds (3 degrees of freedom), not intervals for pairwise model differences. Outer rings mark each family's cap selected by minimum mean cohort-A validation RMSE across the four seeds (exact ties choose the smaller cap): Shared no edges, 105 epochs, Shared admissible, 70 epochs, GRU-D, 35 epochs. The cap also sets the cosine learning-rate schedule period; these cap-specific fits do not isolate training duration. Checkpoints within each fit are validation-selected. A/B test scores do not enter cap selection, but were already available before the retrospective selection analysis. Intervals describe training-seed variation conditional on fixed cohorts, do not estimate patient or hospital sampling uncertainty, and are unadjusted for multiple comparisons.",
+  "panels": [
+    {
+      "cohort": "A",
+      "series": [
+        {
+          "family": "none",
+          "label": "Shared no edges",
+          "points": [
+            {
+              "cap": 35,
+              "mean": 0.755928958468929,
+              "ci95": [
+                0.7533619544448051,
+                0.758495962493053
+              ],
+              "value_ids": {
+                "cap": "v0003",
+                "mean": "v0004",
+                "ci95_low": "v0021",
+                "ci95_high": "v0022"
+              },
+              "run_metric_value_ids": [
+                "v0006",
+                "v0009",
+                "v0012",
+                "v0015"
+              ]
+            },
+            {
+              "cap": 70,
+              "mean": 0.749557356230643,
+              "ci95": [
+                0.7456696168039728,
+                0.7534450956573132
+              ],
+              "value_ids": {
+                "cap": "v0023",
+                "mean": "v0024",
+                "ci95_low": "v0041",
+                "ci95_high": "v0042"
+              },
+              "run_metric_value_ids": [
+                "v0026",
+                "v0029",
+                "v0032",
+                "v0035"
+              ]
+            },
+            {
+              "cap": 105,
+              "mean": 0.7557790811977247,
+              "ci95": [
+                0.7535131270048782,
+                0.7580450353905713
+              ],
+              "value_ids": {
+                "cap": "v0043",
+                "mean": "v0044",
+                "ci95_low": "v0061",
+                "ci95_high": "v0062"
+              },
+              "run_metric_value_ids": [
+                "v0046",
+                "v0049",
+                "v0052",
+                "v0055"
+              ]
+            }
+          ],
+          "selected_cap": 105,
+          "selected_cap_value_id": "v0081",
+          "selected_mean_value_id": "v0044"
+        },
+        {
+          "family": "admissible",
+          "label": "Shared admissible",
+          "points": [
+            {
+              "cap": 35,
+              "mean": 0.7550702431050378,
+              "ci95": [
+                0.750787218503117,
+                0.7593532677069585
+              ],
+              "value_ids": {
+                "cap": "v0083",
+                "mean": "v0084",
+                "ci95_low": "v0101",
+                "ci95_high": "v0102"
+              },
+              "run_metric_value_ids": [
+                "v0086",
+                "v0089",
+                "v0092",
+                "v0095"
+              ]
+            },
+            {
+              "cap": 70,
+              "mean": 0.7576714487976404,
+              "ci95": [
+                0.7538902957229731,
+                0.7614526018723077
+              ],
+              "value_ids": {
+                "cap": "v0103",
+                "mean": "v0104",
+                "ci95_low": "v0121",
+                "ci95_high": "v0122"
+              },
+              "run_metric_value_ids": [
+                "v0106",
+                "v0109",
+                "v0112",
+                "v0115"
+              ]
+            },
+            {
+              "cap": 105,
+              "mean": 0.7611713869554907,
+              "ci95": [
+                0.7587324020898578,
+                0.7636103718211236
+              ],
+              "value_ids": {
+                "cap": "v0123",
+                "mean": "v0124",
+                "ci95_low": "v0141",
+                "ci95_high": "v0142"
+              },
+              "run_metric_value_ids": [
+                "v0126",
+                "v0129",
+                "v0132",
+                "v0135"
+              ]
+            }
+          ],
+          "selected_cap": 70,
+          "selected_cap_value_id": "v0161",
+          "selected_mean_value_id": "v0104"
+        },
+        {
+          "family": "grud",
+          "label": "GRU-D",
+          "points": [
+            {
+              "cap": 35,
+              "mean": 0.7458106416294337,
+              "ci95": [
+                0.7450325777954485,
+                0.7465887054634188
+              ],
+              "value_ids": {
+                "cap": "v0163",
+                "mean": "v0164",
+                "ci95_low": "v0181",
+                "ci95_high": "v0182"
+              },
+              "run_metric_value_ids": [
+                "v0166",
+                "v0169",
+                "v0172",
+                "v0175"
+              ]
+            },
+            {
+              "cap": 70,
+              "mean": 0.7488931710773651,
+              "ci95": [
+                0.7471087186105614,
+                0.7506776235441688
+              ],
+              "value_ids": {
+                "cap": "v0183",
+                "mean": "v0184",
+                "ci95_low": "v0201",
+                "ci95_high": "v0202"
+              },
+              "run_metric_value_ids": [
+                "v0186",
+                "v0189",
+                "v0192",
+                "v0195"
+              ]
+            },
+            {
+              "cap": 105,
+              "mean": 0.7491382190250284,
+              "ci95": [
+                0.7477638157512736,
+                0.7505126222987832
+              ],
+              "value_ids": {
+                "cap": "v0203",
+                "mean": "v0204",
+                "ci95_low": "v0221",
+                "ci95_high": "v0222"
+              },
+              "run_metric_value_ids": [
+                "v0206",
+                "v0209",
+                "v0212",
+                "v0215"
+              ]
+            }
+          ],
+          "selected_cap": 35,
+          "selected_cap_value_id": "v0241",
+          "selected_mean_value_id": "v0164"
+        }
+      ]
+    },
+    {
+      "cohort": "B",
+      "series": [
+        {
+          "family": "none",
+          "label": "Shared no edges",
+          "points": [
+            {
+              "cap": 35,
+              "mean": 0.8088169758569075,
+              "ci95": [
+                0.8057494324327369,
+                0.8118845192810781
+              ],
+              "value_ids": {
+                "cap": "v0003",
+                "mean": "v0243",
+                "ci95_low": "v0256",
+                "ci95_high": "v0257"
+              },
+              "run_metric_value_ids": [
+                "v0245",
+                "v0247",
+                "v0249",
+                "v0251"
+              ]
+            },
+            {
+              "cap": 70,
+              "mean": 0.8069653512965764,
+              "ci95": [
+                0.8046232327211279,
+                0.809307469872025
+              ],
+              "value_ids": {
+                "cap": "v0023",
+                "mean": "v0258",
+                "ci95_low": "v0271",
+                "ci95_high": "v0272"
+              },
+              "run_metric_value_ids": [
+                "v0260",
+                "v0262",
+                "v0264",
+                "v0266"
+              ]
+            },
+            {
+              "cap": 105,
+              "mean": 0.8125106964052033,
+              "ci95": [
+                0.8066821427436305,
+                0.8183392500667762
+              ],
+              "value_ids": {
+                "cap": "v0043",
+                "mean": "v0273",
+                "ci95_low": "v0286",
+                "ci95_high": "v0287"
+              },
+              "run_metric_value_ids": [
+                "v0275",
+                "v0277",
+                "v0279",
+                "v0281"
+              ]
+            }
+          ],
+          "selected_cap": 105,
+          "selected_cap_value_id": "v0081",
+          "selected_mean_value_id": "v0273"
+        },
+        {
+          "family": "admissible",
+          "label": "Shared admissible",
+          "points": [
+            {
+              "cap": 35,
+              "mean": 0.8092680733348993,
+              "ci95": [
+                0.8066837696245577,
+                0.8118523770452408
+              ],
+              "value_ids": {
+                "cap": "v0083",
+                "mean": "v0291",
+                "ci95_low": "v0304",
+                "ci95_high": "v0305"
+              },
+              "run_metric_value_ids": [
+                "v0293",
+                "v0295",
+                "v0297",
+                "v0299"
+              ]
+            },
+            {
+              "cap": 70,
+              "mean": 0.814906538115746,
+              "ci95": [
+                0.8137904822100902,
+                0.8160225940214018
+              ],
+              "value_ids": {
+                "cap": "v0103",
+                "mean": "v0306",
+                "ci95_low": "v0319",
+                "ci95_high": "v0320"
+              },
+              "run_metric_value_ids": [
+                "v0308",
+                "v0310",
+                "v0312",
+                "v0314"
+              ]
+            },
+            {
+              "cap": 105,
+              "mean": 0.8194909121333985,
+              "ci95": [
+                0.8155238278208944,
+                0.8234579964459027
+              ],
+              "value_ids": {
+                "cap": "v0123",
+                "mean": "v0321",
+                "ci95_low": "v0334",
+                "ci95_high": "v0335"
+              },
+              "run_metric_value_ids": [
+                "v0323",
+                "v0325",
+                "v0327",
+                "v0329"
+              ]
+            }
+          ],
+          "selected_cap": 70,
+          "selected_cap_value_id": "v0161",
+          "selected_mean_value_id": "v0306"
+        },
+        {
+          "family": "grud",
+          "label": "GRU-D",
+          "points": [
+            {
+              "cap": 35,
+              "mean": 0.8058743660917214,
+              "ci95": [
+                0.8044652883172032,
+                0.8072834438662395
+              ],
+              "value_ids": {
+                "cap": "v0163",
+                "mean": "v0339",
+                "ci95_low": "v0352",
+                "ci95_high": "v0353"
+              },
+              "run_metric_value_ids": [
+                "v0341",
+                "v0343",
+                "v0345",
+                "v0347"
+              ]
+            },
+            {
+              "cap": 70,
+              "mean": 0.809563117860111,
+              "ci95": [
+                0.8046346105252621,
+                0.81449162519496
+              ],
+              "value_ids": {
+                "cap": "v0183",
+                "mean": "v0354",
+                "ci95_low": "v0367",
+                "ci95_high": "v0368"
+              },
+              "run_metric_value_ids": [
+                "v0356",
+                "v0358",
+                "v0360",
+                "v0362"
+              ]
+            },
+            {
+              "cap": 105,
+              "mean": 0.8068669163940508,
+              "ci95": [
+                0.8022421342010766,
+                0.8114916985870251
+              ],
+              "value_ids": {
+                "cap": "v0203",
+                "mean": "v0369",
+                "ci95_low": "v0382",
+                "ci95_high": "v0383"
+              },
+              "run_metric_value_ids": [
+                "v0371",
+                "v0373",
+                "v0375",
+                "v0377"
+              ]
+            }
+          ],
+          "selected_cap": 35,
+          "selected_cap_value_id": "v0241",
+          "selected_mean_value_id": "v0339"
+        }
+      ]
+    }
+  ],
+  "x_label": "Training cap (epochs)",
+  "y_label": "Test pooled RMSE",
+  "schema_version": 1,
+  "task": "tools",
+  "kit_version": 6,
+  "values": {
+    "v0001": {
+      "value": 4,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/power_designs/4/n_pairs",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0002": {
+      "value": 3.182446305284263,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/power_designs/4/critical_t",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0003": {
+      "value": 35,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/0/cap",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0004": {
+      "value": 0.755928958468929,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/0/metrics/A/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0005": {
+      "value": 0.0016132269190915068,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/0/metrics/A/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0006": {
+      "value": 0.7552225903802708,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "2dfb99c297d50deaba329e94b01ac9942cf056b761c2d6cd76b589214d7f0ca9"
+    },
+    "v0007": {
+      "value": 0.7552225903802708,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/0/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0008": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "2dfb99c297d50deaba329e94b01ac9942cf056b761c2d6cd76b589214d7f0ca9"
+    },
+    "v0009": {
+      "value": 0.7542261506407636,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "b5ad49c08ab213659b50aaee3b3fa31bce1e1508131f5152cc1bf9fcdad6ff7c"
+    },
+    "v0010": {
+      "value": 0.7542261506407636,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/1/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0011": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "b5ad49c08ab213659b50aaee3b3fa31bce1e1508131f5152cc1bf9fcdad6ff7c"
+    },
+    "v0012": {
+      "value": 0.7580015696418941,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "0f66445178a1793d7779a18ca9167ecf65ba466422b8e4973c1be2834ea5f462"
+    },
+    "v0013": {
+      "value": 0.7580015696418941,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/2/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0014": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "0f66445178a1793d7779a18ca9167ecf65ba466422b8e4973c1be2834ea5f462"
+    },
+    "v0015": {
+      "value": 0.7562655232127875,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "f0a954c1a8a6f96031ac2b4f99e61f006058a3ab05aa064b184492de321c41ae"
+    },
+    "v0016": {
+      "value": 0.7562655232127875,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/3/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0017": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "f0a954c1a8a6f96031ac2b4f99e61f006058a3ab05aa064b184492de321c41ae"
+    },
+    "v0018": {
+      "value": 0.755928958468929,
+      "operation": "mean",
+      "inputs": [
+        "v0006",
+        "v0009",
+        "v0012",
+        "v0015"
+      ]
+    },
+    "v0019": {
+      "value": 0.0016132269190915068,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0006",
+        "v0009",
+        "v0012",
+        "v0015"
+      ]
+    },
+    "v0020": {
+      "value": 0.00256700402412394,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0005",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0021": {
+      "value": 0.7533619544448051,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0004",
+        "v0020"
+      ]
+    },
+    "v0022": {
+      "value": 0.758495962493053,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0004",
+        "v0020"
+      ]
+    },
+    "v0023": {
+      "value": 70,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/1/cap",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0024": {
+      "value": 0.749557356230643,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/1/metrics/A/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0025": {
+      "value": 0.002443239604837858,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/1/metrics/A/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0026": {
+      "value": 0.7508460593429198,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "6eedf32e4c8e1d55f368a330a8435d5c971aec70f6491e71d23622a9f7f2da31"
+    },
+    "v0027": {
+      "value": 0.7508460593429198,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/4/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0028": {
+      "value": 70,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "6eedf32e4c8e1d55f368a330a8435d5c971aec70f6491e71d23622a9f7f2da31"
+    },
+    "v0029": {
+      "value": 0.7461522148048176,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "d6c0787a3b08e5e568f2cf0a7ca1917bec91c8ee9327284a4a1f2f6d6a30ce11"
+    },
+    "v0030": {
+      "value": 0.7461522148048176,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/5/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0031": {
+      "value": 70,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "d6c0787a3b08e5e568f2cf0a7ca1917bec91c8ee9327284a4a1f2f6d6a30ce11"
+    },
+    "v0032": {
+      "value": 0.749517199338208,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "b96b0db6142edffe7b92a07ab462c3daee7b7fa6c5d42aca438ab0d38d1c43de"
+    },
+    "v0033": {
+      "value": 0.749517199338208,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/6/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0034": {
+      "value": 70,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "b96b0db6142edffe7b92a07ab462c3daee7b7fa6c5d42aca438ab0d38d1c43de"
+    },
+    "v0035": {
+      "value": 0.7517139514366264,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "d7a4dc6d77e99e841988d4c805f80658d288eb636bc18cd645963833872c4b1d"
+    },
+    "v0036": {
+      "value": 0.7517139514366264,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/7/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0037": {
+      "value": 70,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "d7a4dc6d77e99e841988d4c805f80658d288eb636bc18cd645963833872c4b1d"
+    },
+    "v0038": {
+      "value": 0.749557356230643,
+      "operation": "mean",
+      "inputs": [
+        "v0026",
+        "v0029",
+        "v0032",
+        "v0035"
+      ]
+    },
+    "v0039": {
+      "value": 0.002443239604837858,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0026",
+        "v0029",
+        "v0032",
+        "v0035"
+      ]
+    },
+    "v0040": {
+      "value": 0.0038877394266702116,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0025",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0041": {
+      "value": 0.7456696168039728,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0024",
+        "v0040"
+      ]
+    },
+    "v0042": {
+      "value": 0.7534450956573132,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0024",
+        "v0040"
+      ]
+    },
+    "v0043": {
+      "value": 105,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/2/cap",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0044": {
+      "value": 0.7557790811977247,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/2/metrics/A/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0045": {
+      "value": 0.0014240329454006143,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/2/metrics/A/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0046": {
+      "value": 0.754317314819534,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "d9ae57d39dcba5e588df3029509b2116b45743d0c3cbe3aa37eb42a375937149"
+    },
+    "v0047": {
+      "value": 0.754317314819534,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/8/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0048": {
+      "value": 105,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "d9ae57d39dcba5e588df3029509b2116b45743d0c3cbe3aa37eb42a375937149"
+    },
+    "v0049": {
+      "value": 0.7548442257879343,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "dc08491097cf39ddbf4a1df886fbe5d6efd78d1284a89c6eeec177061770cb3b"
+    },
+    "v0050": {
+      "value": 0.7548442257879343,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/9/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0051": {
+      "value": 105,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "dc08491097cf39ddbf4a1df886fbe5d6efd78d1284a89c6eeec177061770cb3b"
+    },
+    "v0052": {
+      "value": 0.7566603779675636,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "c90952b1da353dca8d0d7392efd223d2bf5b9c94ebb2d3af0856682feb8d87cd"
+    },
+    "v0053": {
+      "value": 0.7566603779675636,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/10/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0054": {
+      "value": 105,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "c90952b1da353dca8d0d7392efd223d2bf5b9c94ebb2d3af0856682feb8d87cd"
+    },
+    "v0055": {
+      "value": 0.7572944062158669,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "e6f9fee90cd3c51546f8929f68c4601175661349beac8db25e831f96464ed709"
+    },
+    "v0056": {
+      "value": 0.7572944062158669,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/11/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0057": {
+      "value": 105,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "e6f9fee90cd3c51546f8929f68c4601175661349beac8db25e831f96464ed709"
+    },
+    "v0058": {
+      "value": 0.7557790811977247,
+      "operation": "mean",
+      "inputs": [
+        "v0046",
+        "v0049",
+        "v0052",
+        "v0055"
+      ]
+    },
+    "v0059": {
+      "value": 0.0014240329454006143,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0046",
+        "v0049",
+        "v0052",
+        "v0055"
+      ]
+    },
+    "v0060": {
+      "value": 0.002265954192846626,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0045",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0061": {
+      "value": 0.7535131270048782,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0044",
+        "v0060"
+      ]
+    },
+    "v0062": {
+      "value": 0.7580450353905713,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0044",
+        "v0060"
+      ]
+    },
+    "v0063": {
+      "value": 0.7667267887229279,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed0/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "2dfb99c297d50deaba329e94b01ac9942cf056b761c2d6cd76b589214d7f0ca9"
+    },
+    "v0064": {
+      "value": 0.7658826651036899,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed1/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "b5ad49c08ab213659b50aaee3b3fa31bce1e1508131f5152cc1bf9fcdad6ff7c"
+    },
+    "v0065": {
+      "value": 0.7699770748621659,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed2/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "0f66445178a1793d7779a18ca9167ecf65ba466422b8e4973c1be2834ea5f462"
+    },
+    "v0066": {
+      "value": 0.7681393417321679,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed3/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "f0a954c1a8a6f96031ac2b4f99e61f006058a3ab05aa064b184492de321c41ae"
+    },
+    "v0067": {
+      "value": 0.7676814676052379,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/cap_selection/0/candidates/0/mean_A_validation_RMSE",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0068": {
+      "value": 0.7676814676052379,
+      "operation": "mean",
+      "inputs": [
+        "v0063",
+        "v0064",
+        "v0065",
+        "v0066"
+      ]
+    },
+    "v0069": {
+      "value": 0.7592679617900628,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed0/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "6eedf32e4c8e1d55f368a330a8435d5c971aec70f6491e71d23622a9f7f2da31"
+    },
+    "v0070": {
+      "value": 0.7564177918206716,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed1/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "d6c0787a3b08e5e568f2cf0a7ca1917bec91c8ee9327284a4a1f2f6d6a30ce11"
+    },
+    "v0071": {
+      "value": 0.7605504370826806,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed2/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "b96b0db6142edffe7b92a07ab462c3daee7b7fa6c5d42aca438ab0d38d1c43de"
+    },
+    "v0072": {
+      "value": 0.7600862223635343,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed3/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "d7a4dc6d77e99e841988d4c805f80658d288eb636bc18cd645963833872c4b1d"
+    },
+    "v0073": {
+      "value": 0.7590806032642372,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/cap_selection/0/candidates/1/mean_A_validation_RMSE",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0074": {
+      "value": 0.7590806032642372,
+      "operation": "mean",
+      "inputs": [
+        "v0069",
+        "v0070",
+        "v0071",
+        "v0072"
+      ]
+    },
+    "v0075": {
+      "value": 0.7571053269375847,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed0/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "d9ae57d39dcba5e588df3029509b2116b45743d0c3cbe3aa37eb42a375937149"
+    },
+    "v0076": {
+      "value": 0.7597727053212728,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed1/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "dc08491097cf39ddbf4a1df886fbe5d6efd78d1284a89c6eeec177061770cb3b"
+    },
+    "v0077": {
+      "value": 0.7582242395960069,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed2/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "c90952b1da353dca8d0d7392efd223d2bf5b9c94ebb2d3af0856682feb8d87cd"
+    },
+    "v0078": {
+      "value": 0.7604050461341386,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed3/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "e6f9fee90cd3c51546f8929f68c4601175661349beac8db25e831f96464ed709"
+    },
+    "v0079": {
+      "value": 0.7588768294972508,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/cap_selection/0/candidates/2/mean_A_validation_RMSE",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0080": {
+      "value": 0.7588768294972508,
+      "operation": "mean",
+      "inputs": [
+        "v0075",
+        "v0076",
+        "v0077",
+        "v0078"
+      ]
+    },
+    "v0081": {
+      "value": 105,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/selected_caps/none",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0082": {
+      "value": 105,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/cap_selection/0/selected_cap",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0083": {
+      "value": 35,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/3/cap",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0084": {
+      "value": 0.7550702431050378,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/3/metrics/A/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0085": {
+      "value": 0.002691655532292254,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/3/metrics/A/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0086": {
+      "value": 0.7573980215059473,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "f1c3a9eab3870248d353d8bc396fb4c4b02b98995f5282dcf293cae7265a510e"
+    },
+    "v0087": {
+      "value": 0.7573980215059473,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/12/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0088": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "f1c3a9eab3870248d353d8bc396fb4c4b02b98995f5282dcf293cae7265a510e"
+    },
+    "v0089": {
+      "value": 0.7557596675656255,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "4486891f9144febd229d1e48222bdbf90227ca782dcead27e5b9bd9cc746d70b"
+    },
+    "v0090": {
+      "value": 0.7557596675656255,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/13/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0091": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "4486891f9144febd229d1e48222bdbf90227ca782dcead27e5b9bd9cc746d70b"
+    },
+    "v0092": {
+      "value": 0.7559375008440682,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "554849d6bd845c99aa4439e9bfeb2ceec4cdf0a51548bb992d1a2025273f925f"
+    },
+    "v0093": {
+      "value": 0.7559375008440682,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/14/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0094": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "554849d6bd845c99aa4439e9bfeb2ceec4cdf0a51548bb992d1a2025273f925f"
+    },
+    "v0095": {
+      "value": 0.75118578250451,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "e5325b4ecdb16f6254e1866dc58631483d79d64adea87eea446b48a5c7a32eff"
+    },
+    "v0096": {
+      "value": 0.75118578250451,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/15/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0097": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "e5325b4ecdb16f6254e1866dc58631483d79d64adea87eea446b48a5c7a32eff"
+    },
+    "v0098": {
+      "value": 0.7550702431050378,
+      "operation": "mean",
+      "inputs": [
+        "v0086",
+        "v0089",
+        "v0092",
+        "v0095"
+      ]
+    },
+    "v0099": {
+      "value": 0.002691655532292254,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0086",
+        "v0089",
+        "v0092",
+        "v0095"
+      ]
+    },
+    "v0100": {
+      "value": 0.0042830246019207145,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0085",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0101": {
+      "value": 0.750787218503117,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0084",
+        "v0100"
+      ]
+    },
+    "v0102": {
+      "value": 0.7593532677069585,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0084",
+        "v0100"
+      ]
+    },
+    "v0103": {
+      "value": 70,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/4/cap",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0104": {
+      "value": 0.7576714487976404,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/4/metrics/A/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0105": {
+      "value": 0.0023762556926028096,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/4/metrics/A/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0106": {
+      "value": 0.7561345840374196,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "a45cb6333d30fb6ea934a74b9b30229fc291715170254a82b03c1a715c9a75e0"
+    },
+    "v0107": {
+      "value": 0.7561345840374196,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/16/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0108": {
+      "value": 70,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "a45cb6333d30fb6ea934a74b9b30229fc291715170254a82b03c1a715c9a75e0"
+    },
+    "v0109": {
+      "value": 0.7611365485389284,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "d0c2354397fe12310349353538f36b5d40bc304d92507a819691ad0dede43dc5"
+    },
+    "v0110": {
+      "value": 0.7611365485389284,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/17/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0111": {
+      "value": 70,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "d0c2354397fe12310349353538f36b5d40bc304d92507a819691ad0dede43dc5"
+    },
+    "v0112": {
+      "value": 0.7561107331297322,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "1767baafdebbc09b3c05c010426949ddd57be27e106c0e13b1df097b15b2e8a8"
+    },
+    "v0113": {
+      "value": 0.7561107331297322,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/18/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0114": {
+      "value": 70,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "1767baafdebbc09b3c05c010426949ddd57be27e106c0e13b1df097b15b2e8a8"
+    },
+    "v0115": {
+      "value": 0.7573039294844814,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "be793a33b527f499b84a5baf7bc32732d9ecd842c15cd03b3cd19aa8e8708a7c"
+    },
+    "v0116": {
+      "value": 0.7573039294844814,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/19/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0117": {
+      "value": 70,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "be793a33b527f499b84a5baf7bc32732d9ecd842c15cd03b3cd19aa8e8708a7c"
+    },
+    "v0118": {
+      "value": 0.7576714487976404,
+      "operation": "mean",
+      "inputs": [
+        "v0106",
+        "v0109",
+        "v0112",
+        "v0115"
+      ]
+    },
+    "v0119": {
+      "value": 0.0023762556926028096,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0106",
+        "v0109",
+        "v0112",
+        "v0115"
+      ]
+    },
+    "v0120": {
+      "value": 0.0037811530746672544,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0105",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0121": {
+      "value": 0.7538902957229731,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0104",
+        "v0120"
+      ]
+    },
+    "v0122": {
+      "value": 0.7614526018723077,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0104",
+        "v0120"
+      ]
+    },
+    "v0123": {
+      "value": 105,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/5/cap",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0124": {
+      "value": 0.7611713869554907,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/5/metrics/A/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0125": {
+      "value": 0.001532773616059502,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/5/metrics/A/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0126": {
+      "value": 0.7634703286122477,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "7b0fbc84988069beeb9ea35288408b1708c0db43a3497f9566278d3c4a0b6d8a"
+    },
+    "v0127": {
+      "value": 0.7634703286122477,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/20/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0128": {
+      "value": 105,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "7b0fbc84988069beeb9ea35288408b1708c0db43a3497f9566278d3c4a0b6d8a"
+    },
+    "v0129": {
+      "value": 0.7604197142741786,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "837fded20b15b85dad2535d58bee041dd9c0524e868b66521cbd7a58f8a0d4cd"
+    },
+    "v0130": {
+      "value": 0.7604197142741786,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/21/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0131": {
+      "value": 105,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "837fded20b15b85dad2535d58bee041dd9c0524e868b66521cbd7a58f8a0d4cd"
+    },
+    "v0132": {
+      "value": 0.7603751729186831,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "dba14d39c287c2fde8d13e5aed52e76ad26bd8f793db5aadd503a4b66972f0a1"
+    },
+    "v0133": {
+      "value": 0.7603751729186831,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/22/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0134": {
+      "value": 105,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "dba14d39c287c2fde8d13e5aed52e76ad26bd8f793db5aadd503a4b66972f0a1"
+    },
+    "v0135": {
+      "value": 0.7604203320168536,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "fa62c201557aec1f9b04ed09af8ea561f33b39f9df944a0a4f0f583caa3418ac"
+    },
+    "v0136": {
+      "value": 0.7604203320168536,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/23/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0137": {
+      "value": 105,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "fa62c201557aec1f9b04ed09af8ea561f33b39f9df944a0a4f0f583caa3418ac"
+    },
+    "v0138": {
+      "value": 0.7611713869554907,
+      "operation": "mean",
+      "inputs": [
+        "v0126",
+        "v0129",
+        "v0132",
+        "v0135"
+      ]
+    },
+    "v0139": {
+      "value": 0.001532773616059502,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0126",
+        "v0129",
+        "v0132",
+        "v0135"
+      ]
+    },
+    "v0140": {
+      "value": 0.002438984865632881,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0125",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0141": {
+      "value": 0.7587324020898578,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0124",
+        "v0140"
+      ]
+    },
+    "v0142": {
+      "value": 0.7636103718211236,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0124",
+        "v0140"
+      ]
+    },
+    "v0143": {
+      "value": 0.7692507279421982,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed0/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "f1c3a9eab3870248d353d8bc396fb4c4b02b98995f5282dcf293cae7265a510e"
+    },
+    "v0144": {
+      "value": 0.7682043603806724,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed1/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "4486891f9144febd229d1e48222bdbf90227ca782dcead27e5b9bd9cc746d70b"
+    },
+    "v0145": {
+      "value": 0.7673985905660912,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed2/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "554849d6bd845c99aa4439e9bfeb2ceec4cdf0a51548bb992d1a2025273f925f"
+    },
+    "v0146": {
+      "value": 0.7621092754216744,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed3/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "e5325b4ecdb16f6254e1866dc58631483d79d64adea87eea446b48a5c7a32eff"
+    },
+    "v0147": {
+      "value": 0.766740738577659,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/cap_selection/1/candidates/0/mean_A_validation_RMSE",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0148": {
+      "value": 0.766740738577659,
+      "operation": "mean",
+      "inputs": [
+        "v0143",
+        "v0144",
+        "v0145",
+        "v0146"
+      ]
+    },
+    "v0149": {
+      "value": 0.7626875799670761,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed0/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "a45cb6333d30fb6ea934a74b9b30229fc291715170254a82b03c1a715c9a75e0"
+    },
+    "v0150": {
+      "value": 0.7680928419163627,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed1/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "d0c2354397fe12310349353538f36b5d40bc304d92507a819691ad0dede43dc5"
+    },
+    "v0151": {
+      "value": 0.7649993956726376,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed2/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "1767baafdebbc09b3c05c010426949ddd57be27e106c0e13b1df097b15b2e8a8"
+    },
+    "v0152": {
+      "value": 0.7637229235712195,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed3/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "be793a33b527f499b84a5baf7bc32732d9ecd842c15cd03b3cd19aa8e8708a7c"
+    },
+    "v0153": {
+      "value": 0.764875685281824,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/cap_selection/1/candidates/1/mean_A_validation_RMSE",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0154": {
+      "value": 0.764875685281824,
+      "operation": "mean",
+      "inputs": [
+        "v0149",
+        "v0150",
+        "v0151",
+        "v0152"
+      ]
+    },
+    "v0155": {
+      "value": 0.7697211699430063,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed0/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "7b0fbc84988069beeb9ea35288408b1708c0db43a3497f9566278d3c4a0b6d8a"
+    },
+    "v0156": {
+      "value": 0.7665358142330612,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed1/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "837fded20b15b85dad2535d58bee041dd9c0524e868b66521cbd7a58f8a0d4cd"
+    },
+    "v0157": {
+      "value": 0.7691175847908356,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed2/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "dba14d39c287c2fde8d13e5aed52e76ad26bd8f793db5aadd503a4b66972f0a1"
+    },
+    "v0158": {
+      "value": 0.7679651198453828,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed3/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "fa62c201557aec1f9b04ed09af8ea561f33b39f9df944a0a4f0f583caa3418ac"
+    },
+    "v0159": {
+      "value": 0.7683349222030715,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/cap_selection/1/candidates/2/mean_A_validation_RMSE",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0160": {
+      "value": 0.7683349222030715,
+      "operation": "mean",
+      "inputs": [
+        "v0155",
+        "v0156",
+        "v0157",
+        "v0158"
+      ]
+    },
+    "v0161": {
+      "value": 70,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/selected_caps/admissible",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0162": {
+      "value": 70,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/cap_selection/1/selected_cap",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0163": {
+      "value": 35,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/6/cap",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0164": {
+      "value": 0.7458106416294337,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/6/metrics/A/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0165": {
+      "value": 0.0004889721675386561,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/6/metrics/A/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0166": {
+      "value": 0.7455281127760213,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/0",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0167": {
+      "value": 0.7455281127760213,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/24/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0168": {
+      "value": 35,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/0",
+      "source_field": "/epochs_budget",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0169": {
+      "value": 0.7464094678169695,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/1",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0170": {
+      "value": 0.7464094678169695,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/25/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0171": {
+      "value": 35,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/1",
+      "source_field": "/epochs_budget",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0172": {
+      "value": 0.7459907561618236,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/2",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0173": {
+      "value": 0.7459907561618236,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/26/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0174": {
+      "value": 35,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/2",
+      "source_field": "/epochs_budget",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0175": {
+      "value": 0.7453142297629205,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/3",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0176": {
+      "value": 0.7453142297629205,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/27/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0177": {
+      "value": 35,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/3",
+      "source_field": "/epochs_budget",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0178": {
+      "value": 0.7458106416294337,
+      "operation": "mean",
+      "inputs": [
+        "v0166",
+        "v0169",
+        "v0172",
+        "v0175"
+      ]
+    },
+    "v0179": {
+      "value": 0.0004889721675386561,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0166",
+        "v0169",
+        "v0172",
+        "v0175"
+      ]
+    },
+    "v0180": {
+      "value": 0.0007780638339851168,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0165",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0181": {
+      "value": 0.7450325777954485,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0164",
+        "v0180"
+      ]
+    },
+    "v0182": {
+      "value": 0.7465887054634188,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0164",
+        "v0180"
+      ]
+    },
+    "v0183": {
+      "value": 70,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/7/cap",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0184": {
+      "value": 0.7488931710773651,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/7/metrics/A/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0185": {
+      "value": 0.0011214344536407573,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/7/metrics/A/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0186": {
+      "value": 0.7479477122658654,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "94ccc30df5e8e3820b5f19a41eaadcfb0dc5662c573128bcd0404ea8d3509d81"
+    },
+    "v0187": {
+      "value": 0.7479477122658654,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/28/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0188": {
+      "value": 70,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "94ccc30df5e8e3820b5f19a41eaadcfb0dc5662c573128bcd0404ea8d3509d81"
+    },
+    "v0189": {
+      "value": 0.7480061506253626,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "3ffb453e02a8ed23a1c31de201dc4f50a5540d870fbf2550bb75a91a4d56135c"
+    },
+    "v0190": {
+      "value": 0.7480061506253626,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/29/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0191": {
+      "value": 70,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "3ffb453e02a8ed23a1c31de201dc4f50a5540d870fbf2550bb75a91a4d56135c"
+    },
+    "v0192": {
+      "value": 0.7502639202961117,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "6d12cd877c35ab7069d46b2d5c8a2def4910e1c6e3ed9cdfc20440120e5c09bd"
+    },
+    "v0193": {
+      "value": 0.7502639202961117,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/30/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0194": {
+      "value": 70,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "6d12cd877c35ab7069d46b2d5c8a2def4910e1c6e3ed9cdfc20440120e5c09bd"
+    },
+    "v0195": {
+      "value": 0.7493549011221209,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "43837ec51aa1bce4868f2ea3fb398bf8bf75f23b973290ddca7d6b04f76bf91d"
+    },
+    "v0196": {
+      "value": 0.7493549011221209,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/31/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0197": {
+      "value": 70,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "43837ec51aa1bce4868f2ea3fb398bf8bf75f23b973290ddca7d6b04f76bf91d"
+    },
+    "v0198": {
+      "value": 0.7488931710773651,
+      "operation": "mean",
+      "inputs": [
+        "v0186",
+        "v0189",
+        "v0192",
+        "v0195"
+      ]
+    },
+    "v0199": {
+      "value": 0.0011214344536407573,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0186",
+        "v0189",
+        "v0192",
+        "v0195"
+      ]
+    },
+    "v0200": {
+      "value": 0.0017844524668037519,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0185",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0201": {
+      "value": 0.7471087186105614,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0184",
+        "v0200"
+      ]
+    },
+    "v0202": {
+      "value": 0.7506776235441688,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0184",
+        "v0200"
+      ]
+    },
+    "v0203": {
+      "value": 105,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/8/cap",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0204": {
+      "value": 0.7491382190250284,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/8/metrics/A/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0205": {
+      "value": 0.0008637401180800417,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/8/metrics/A/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0206": {
+      "value": 0.7488132945896633,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "703aff708b163e831541b8b94d049f4047a6420b196af17bd185a361e09e222f"
+    },
+    "v0207": {
+      "value": 0.7488132945896633,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/32/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0208": {
+      "value": 105,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "703aff708b163e831541b8b94d049f4047a6420b196af17bd185a361e09e222f"
+    },
+    "v0209": {
+      "value": 0.7484870102914599,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "054b826bb1ac1da113b115e0ea97b9ac53e8a8e64b79e4a14aaf3f3d9d7069c3"
+    },
+    "v0210": {
+      "value": 0.7484870102914599,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/33/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0211": {
+      "value": 105,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "054b826bb1ac1da113b115e0ea97b9ac53e8a8e64b79e4a14aaf3f3d9d7069c3"
+    },
+    "v0212": {
+      "value": 0.7504111659473887,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "ed80b5ad4e8e64f6f05f0cee319ce5b2e11ede1adb48abe99130724b0ae4c080"
+    },
+    "v0213": {
+      "value": 0.7504111659473887,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/34/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0214": {
+      "value": 105,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "ed80b5ad4e8e64f6f05f0cee319ce5b2e11ede1adb48abe99130724b0ae4c080"
+    },
+    "v0215": {
+      "value": 0.7488414052716019,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "5c9aa48e4e787ba75078167a30ad66125751dfa6c2d7ccc74f966136e72b1a45"
+    },
+    "v0216": {
+      "value": 0.7488414052716019,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/35/metrics/A/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0217": {
+      "value": 105,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "5c9aa48e4e787ba75078167a30ad66125751dfa6c2d7ccc74f966136e72b1a45"
+    },
+    "v0218": {
+      "value": 0.7491382190250284,
+      "operation": "mean",
+      "inputs": [
+        "v0206",
+        "v0209",
+        "v0212",
+        "v0215"
+      ]
+    },
+    "v0219": {
+      "value": 0.0008637401180800417,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0206",
+        "v0209",
+        "v0212",
+        "v0215"
+      ]
+    },
+    "v0220": {
+      "value": 0.0013744032737548109,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0205",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0221": {
+      "value": 0.7477638157512736,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0204",
+        "v0220"
+      ]
+    },
+    "v0222": {
+      "value": 0.7505126222987832,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0204",
+        "v0220"
+      ]
+    },
+    "v0223": {
+      "value": 0.7525840344980832,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/0",
+      "source_field": "/validation_RMSE",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0224": {
+      "value": 0.7525902934165579,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/1",
+      "source_field": "/validation_RMSE",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0225": {
+      "value": 0.7509565451295508,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/2",
+      "source_field": "/validation_RMSE",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0226": {
+      "value": 0.7533641246817808,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/3",
+      "source_field": "/validation_RMSE",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0227": {
+      "value": 0.7523737494314932,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/cap_selection/2/candidates/0/mean_A_validation_RMSE",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0228": {
+      "value": 0.7523737494314932,
+      "operation": "mean",
+      "inputs": [
+        "v0223",
+        "v0224",
+        "v0225",
+        "v0226"
+      ]
+    },
+    "v0229": {
+      "value": 0.7543097232211219,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed0/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "94ccc30df5e8e3820b5f19a41eaadcfb0dc5662c573128bcd0404ea8d3509d81"
+    },
+    "v0230": {
+      "value": 0.7549446925708768,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed1/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "3ffb453e02a8ed23a1c31de201dc4f50a5540d870fbf2550bb75a91a4d56135c"
+    },
+    "v0231": {
+      "value": 0.7540230706190951,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed2/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "6d12cd877c35ab7069d46b2d5c8a2def4910e1c6e3ed9cdfc20440120e5c09bd"
+    },
+    "v0232": {
+      "value": 0.7555135574011773,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed3/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "43837ec51aa1bce4868f2ea3fb398bf8bf75f23b973290ddca7d6b04f76bf91d"
+    },
+    "v0233": {
+      "value": 0.7546977609530678,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/cap_selection/2/candidates/1/mean_A_validation_RMSE",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0234": {
+      "value": 0.7546977609530678,
+      "operation": "mean",
+      "inputs": [
+        "v0229",
+        "v0230",
+        "v0231",
+        "v0232"
+      ]
+    },
+    "v0235": {
+      "value": 0.7566716965456226,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed0/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "703aff708b163e831541b8b94d049f4047a6420b196af17bd185a361e09e222f"
+    },
+    "v0236": {
+      "value": 0.7551958415774821,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed1/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "054b826bb1ac1da113b115e0ea97b9ac53e8a8e64b79e4a14aaf3f3d9d7069c3"
+    },
+    "v0237": {
+      "value": 0.7544114688935665,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed2/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "ed80b5ad4e8e64f6f05f0cee319ce5b2e11ede1adb48abe99130724b0ae4c080"
+    },
+    "v0238": {
+      "value": 0.7564875630240295,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed3/run.json",
+      "source_field": "/A_validation/pooled_masked_RMSE",
+      "source_sha256": "5c9aa48e4e787ba75078167a30ad66125751dfa6c2d7ccc74f966136e72b1a45"
+    },
+    "v0239": {
+      "value": 0.7556916425101752,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/cap_selection/2/candidates/2/mean_A_validation_RMSE",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0240": {
+      "value": 0.7556916425101752,
+      "operation": "mean",
+      "inputs": [
+        "v0235",
+        "v0236",
+        "v0237",
+        "v0238"
+      ]
+    },
+    "v0241": {
+      "value": 35,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/selected_caps/grud",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0242": {
+      "value": 35,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/cap_selection/2/selected_cap",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0243": {
+      "value": 0.8088169758569075,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/0/metrics/B/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0244": {
+      "value": 0.0019277895869457887,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/0/metrics/B/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0245": {
+      "value": 0.808853251217315,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "2dfb99c297d50deaba329e94b01ac9942cf056b761c2d6cd76b589214d7f0ca9"
+    },
+    "v0246": {
+      "value": 0.808853251217315,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/0/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0247": {
+      "value": 0.806078983827865,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "b5ad49c08ab213659b50aaee3b3fa31bce1e1508131f5152cc1bf9fcdad6ff7c"
+    },
+    "v0248": {
+      "value": 0.806078983827865,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/1/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0249": {
+      "value": 0.810139857924978,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "0f66445178a1793d7779a18ca9167ecf65ba466422b8e4973c1be2834ea5f462"
+    },
+    "v0250": {
+      "value": 0.810139857924978,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/2/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0251": {
+      "value": 0.8101958104574722,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "f0a954c1a8a6f96031ac2b4f99e61f006058a3ab05aa064b184492de321c41ae"
+    },
+    "v0252": {
+      "value": 0.8101958104574722,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/3/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0253": {
+      "value": 0.8088169758569075,
+      "operation": "mean",
+      "inputs": [
+        "v0245",
+        "v0247",
+        "v0249",
+        "v0251"
+      ]
+    },
+    "v0254": {
+      "value": 0.0019277895869457887,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0245",
+        "v0247",
+        "v0249",
+        "v0251"
+      ]
+    },
+    "v0255": {
+      "value": 0.00306754342417055,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0244",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0256": {
+      "value": 0.8057494324327369,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0243",
+        "v0255"
+      ]
+    },
+    "v0257": {
+      "value": 0.8118845192810781,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0243",
+        "v0255"
+      ]
+    },
+    "v0258": {
+      "value": 0.8069653512965764,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/1/metrics/B/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0259": {
+      "value": 0.0014718982510778579,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/1/metrics/B/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0260": {
+      "value": 0.8082694161771099,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "6eedf32e4c8e1d55f368a330a8435d5c971aec70f6491e71d23622a9f7f2da31"
+    },
+    "v0261": {
+      "value": 0.8082694161771099,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/4/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0262": {
+      "value": 0.8049120171865878,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "d6c0787a3b08e5e568f2cf0a7ca1917bec91c8ee9327284a4a1f2f6d6a30ce11"
+    },
+    "v0263": {
+      "value": 0.8049120171865878,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/5/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0264": {
+      "value": 0.8077285634554251,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "b96b0db6142edffe7b92a07ab462c3daee7b7fa6c5d42aca438ab0d38d1c43de"
+    },
+    "v0265": {
+      "value": 0.8077285634554251,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/6/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0266": {
+      "value": 0.8069514083671829,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "d7a4dc6d77e99e841988d4c805f80658d288eb636bc18cd645963833872c4b1d"
+    },
+    "v0267": {
+      "value": 0.8069514083671829,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/7/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0268": {
+      "value": 0.8069653512965764,
+      "operation": "mean",
+      "inputs": [
+        "v0260",
+        "v0262",
+        "v0264",
+        "v0266"
+      ]
+    },
+    "v0269": {
+      "value": 0.0014718982510778579,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0260",
+        "v0262",
+        "v0264",
+        "v0266"
+      ]
+    },
+    "v0270": {
+      "value": 0.0023421185754485484,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0259",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0271": {
+      "value": 0.8046232327211279,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0258",
+        "v0270"
+      ]
+    },
+    "v0272": {
+      "value": 0.809307469872025,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0258",
+        "v0270"
+      ]
+    },
+    "v0273": {
+      "value": 0.8125106964052033,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/2/metrics/B/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0274": {
+      "value": 0.0036629391998821105,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/2/metrics/B/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0275": {
+      "value": 0.8153727515791469,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "d9ae57d39dcba5e588df3029509b2116b45743d0c3cbe3aa37eb42a375937149"
+    },
+    "v0276": {
+      "value": 0.8153727515791469,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/8/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0277": {
+      "value": 0.8072787682482063,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "dc08491097cf39ddbf4a1df886fbe5d6efd78d1284a89c6eeec177061770cb3b"
+    },
+    "v0278": {
+      "value": 0.8072787682482063,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/9/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0279": {
+      "value": 0.8146648567381414,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "c90952b1da353dca8d0d7392efd223d2bf5b9c94ebb2d3af0856682feb8d87cd"
+    },
+    "v0280": {
+      "value": 0.8146648567381414,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/10/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0281": {
+      "value": 0.8127264090553191,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "e6f9fee90cd3c51546f8929f68c4601175661349beac8db25e831f96464ed709"
+    },
+    "v0282": {
+      "value": 0.8127264090553191,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/11/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0283": {
+      "value": 0.8125106964052033,
+      "operation": "mean",
+      "inputs": [
+        "v0275",
+        "v0277",
+        "v0279",
+        "v0281"
+      ]
+    },
+    "v0284": {
+      "value": 0.0036629391998821105,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0275",
+        "v0277",
+        "v0279",
+        "v0281"
+      ]
+    },
+    "v0285": {
+      "value": 0.005828553661572858,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0274",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0286": {
+      "value": 0.8066821427436305,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0273",
+        "v0285"
+      ]
+    },
+    "v0287": {
+      "value": 0.8183392500667762,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0273",
+        "v0285"
+      ]
+    },
+    "v0288": {
+      "value": 0.7676814676052379,
+      "operation": "mean",
+      "inputs": [
+        "v0063",
+        "v0064",
+        "v0065",
+        "v0066"
+      ]
+    },
+    "v0289": {
+      "value": 0.7590806032642372,
+      "operation": "mean",
+      "inputs": [
+        "v0069",
+        "v0070",
+        "v0071",
+        "v0072"
+      ]
+    },
+    "v0290": {
+      "value": 0.7588768294972508,
+      "operation": "mean",
+      "inputs": [
+        "v0075",
+        "v0076",
+        "v0077",
+        "v0078"
+      ]
+    },
+    "v0291": {
+      "value": 0.8092680733348993,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/3/metrics/B/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0292": {
+      "value": 0.0016240988613385014,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/3/metrics/B/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0293": {
+      "value": 0.8111635814652787,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "f1c3a9eab3870248d353d8bc396fb4c4b02b98995f5282dcf293cae7265a510e"
+    },
+    "v0294": {
+      "value": 0.8111635814652787,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/12/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0295": {
+      "value": 0.8094953067793018,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "4486891f9144febd229d1e48222bdbf90227ca782dcead27e5b9bd9cc746d70b"
+    },
+    "v0296": {
+      "value": 0.8094953067793018,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/13/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0297": {
+      "value": 0.8092105674106648,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "554849d6bd845c99aa4439e9bfeb2ceec4cdf0a51548bb992d1a2025273f925f"
+    },
+    "v0298": {
+      "value": 0.8092105674106648,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/14/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0299": {
+      "value": 0.807202837684352,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "e5325b4ecdb16f6254e1866dc58631483d79d64adea87eea446b48a5c7a32eff"
+    },
+    "v0300": {
+      "value": 0.807202837684352,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/15/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0301": {
+      "value": 0.8092680733348993,
+      "operation": "mean",
+      "inputs": [
+        "v0293",
+        "v0295",
+        "v0297",
+        "v0299"
+      ]
+    },
+    "v0302": {
+      "value": 0.0016240988613385014,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0293",
+        "v0295",
+        "v0297",
+        "v0299"
+      ]
+    },
+    "v0303": {
+      "value": 0.002584303710341546,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0292",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0304": {
+      "value": 0.8066837696245577,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0291",
+        "v0303"
+      ]
+    },
+    "v0305": {
+      "value": 0.8118523770452408,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0291",
+        "v0303"
+      ]
+    },
+    "v0306": {
+      "value": 0.814906538115746,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/4/metrics/B/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0307": {
+      "value": 0.0007013823949222251,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/4/metrics/B/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0308": {
+      "value": 0.8140693150639563,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "a45cb6333d30fb6ea934a74b9b30229fc291715170254a82b03c1a715c9a75e0"
+    },
+    "v0309": {
+      "value": 0.8140693150639563,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/16/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0310": {
+      "value": 0.8149630039831606,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "d0c2354397fe12310349353538f36b5d40bc304d92507a819691ad0dede43dc5"
+    },
+    "v0311": {
+      "value": 0.8149630039831606,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/17/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0312": {
+      "value": 0.8157800782071307,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "1767baafdebbc09b3c05c010426949ddd57be27e106c0e13b1df097b15b2e8a8"
+    },
+    "v0313": {
+      "value": 0.8157800782071307,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/18/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0314": {
+      "value": 0.8148137552087364,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "be793a33b527f499b84a5baf7bc32732d9ecd842c15cd03b3cd19aa8e8708a7c"
+    },
+    "v0315": {
+      "value": 0.8148137552087364,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/19/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0316": {
+      "value": 0.814906538115746,
+      "operation": "mean",
+      "inputs": [
+        "v0308",
+        "v0310",
+        "v0312",
+        "v0314"
+      ]
+    },
+    "v0317": {
+      "value": 0.0007013823949222251,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0308",
+        "v0310",
+        "v0312",
+        "v0314"
+      ]
+    },
+    "v0318": {
+      "value": 0.0011160559056558315,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0307",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0319": {
+      "value": 0.8137904822100902,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0306",
+        "v0318"
+      ]
+    },
+    "v0320": {
+      "value": 0.8160225940214018,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0306",
+        "v0318"
+      ]
+    },
+    "v0321": {
+      "value": 0.8194909121333985,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/5/metrics/B/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0322": {
+      "value": 0.002493103689395803,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/5/metrics/B/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0323": {
+      "value": 0.8227495789606999,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "7b0fbc84988069beeb9ea35288408b1708c0db43a3497f9566278d3c4a0b6d8a"
+    },
+    "v0324": {
+      "value": 0.8227495789606999,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/20/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0325": {
+      "value": 0.8184517929731013,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "837fded20b15b85dad2535d58bee041dd9c0524e868b66521cbd7a58f8a0d4cd"
+    },
+    "v0326": {
+      "value": 0.8184517929731013,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/21/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0327": {
+      "value": 0.8168836697735938,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "dba14d39c287c2fde8d13e5aed52e76ad26bd8f793db5aadd503a4b66972f0a1"
+    },
+    "v0328": {
+      "value": 0.8168836697735938,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/22/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0329": {
+      "value": 0.8198786068261993,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "fa62c201557aec1f9b04ed09af8ea561f33b39f9df944a0a4f0f583caa3418ac"
+    },
+    "v0330": {
+      "value": 0.8198786068261993,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/23/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0331": {
+      "value": 0.8194909121333985,
+      "operation": "mean",
+      "inputs": [
+        "v0323",
+        "v0325",
+        "v0327",
+        "v0329"
+      ]
+    },
+    "v0332": {
+      "value": 0.002493103689395803,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0323",
+        "v0325",
+        "v0327",
+        "v0329"
+      ]
+    },
+    "v0333": {
+      "value": 0.003967084312504119,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0322",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0334": {
+      "value": 0.8155238278208944,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0321",
+        "v0333"
+      ]
+    },
+    "v0335": {
+      "value": 0.8234579964459027,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0321",
+        "v0333"
+      ]
+    },
+    "v0336": {
+      "value": 0.766740738577659,
+      "operation": "mean",
+      "inputs": [
+        "v0143",
+        "v0144",
+        "v0145",
+        "v0146"
+      ]
+    },
+    "v0337": {
+      "value": 0.764875685281824,
+      "operation": "mean",
+      "inputs": [
+        "v0149",
+        "v0150",
+        "v0151",
+        "v0152"
+      ]
+    },
+    "v0338": {
+      "value": 0.7683349222030715,
+      "operation": "mean",
+      "inputs": [
+        "v0155",
+        "v0156",
+        "v0157",
+        "v0158"
+      ]
+    },
+    "v0339": {
+      "value": 0.8058743660917214,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/6/metrics/B/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0340": {
+      "value": 0.0008855312167740016,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/6/metrics/B/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0341": {
+      "value": 0.8053672741694667,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/0",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0342": {
+      "value": 0.8053672741694667,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/24/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0343": {
+      "value": 0.8054077414689201,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/1",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0344": {
+      "value": 0.8054077414689201,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/25/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0345": {
+      "value": 0.805523503081135,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/2",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0346": {
+      "value": 0.805523503081135,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/26/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0347": {
+      "value": 0.8071989456473637,
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/3",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    "v0348": {
+      "value": 0.8071989456473637,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/27/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0349": {
+      "value": 0.8058743660917214,
+      "operation": "mean",
+      "inputs": [
+        "v0341",
+        "v0343",
+        "v0345",
+        "v0347"
+      ]
+    },
+    "v0350": {
+      "value": 0.0008855312167740016,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0341",
+        "v0343",
+        "v0345",
+        "v0347"
+      ]
+    },
+    "v0351": {
+      "value": 0.0014090777745181496,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0340",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0352": {
+      "value": 0.8044652883172032,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0339",
+        "v0351"
+      ]
+    },
+    "v0353": {
+      "value": 0.8072834438662395,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0339",
+        "v0351"
+      ]
+    },
+    "v0354": {
+      "value": 0.809563117860111,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/7/metrics/B/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0355": {
+      "value": 0.003097307456006703,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/7/metrics/B/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0356": {
+      "value": 0.8060015298779915,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "94ccc30df5e8e3820b5f19a41eaadcfb0dc5662c573128bcd0404ea8d3509d81"
+    },
+    "v0357": {
+      "value": 0.8060015298779915,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/28/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0358": {
+      "value": 0.8097127398395523,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "3ffb453e02a8ed23a1c31de201dc4f50a5540d870fbf2550bb75a91a4d56135c"
+    },
+    "v0359": {
+      "value": 0.8097127398395523,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/29/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0360": {
+      "value": 0.809005046010273,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "6d12cd877c35ab7069d46b2d5c8a2def4910e1c6e3ed9cdfc20440120e5c09bd"
+    },
+    "v0361": {
+      "value": 0.809005046010273,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/30/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0362": {
+      "value": 0.8135331557126273,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "43837ec51aa1bce4868f2ea3fb398bf8bf75f23b973290ddca7d6b04f76bf91d"
+    },
+    "v0363": {
+      "value": 0.8135331557126273,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/31/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0364": {
+      "value": 0.809563117860111,
+      "operation": "mean",
+      "inputs": [
+        "v0356",
+        "v0358",
+        "v0360",
+        "v0362"
+      ]
+    },
+    "v0365": {
+      "value": 0.003097307456006703,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0356",
+        "v0358",
+        "v0360",
+        "v0362"
+      ]
+    },
+    "v0366": {
+      "value": 0.004928507334848966,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0355",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0367": {
+      "value": 0.8046346105252621,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0354",
+        "v0366"
+      ]
+    },
+    "v0368": {
+      "value": 0.81449162519496,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0354",
+        "v0366"
+      ]
+    },
+    "v0369": {
+      "value": 0.8068669163940508,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/8/metrics/B/mean",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0370": {
+      "value": 0.0029064321904159365,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/family_cap_summaries/8/metrics/B/sample_sd",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0371": {
+      "value": 0.8033299986912925,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "703aff708b163e831541b8b94d049f4047a6420b196af17bd185a361e09e222f"
+    },
+    "v0372": {
+      "value": 0.8033299986912925,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/32/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0373": {
+      "value": 0.8103867346100448,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "054b826bb1ac1da113b115e0ea97b9ac53e8a8e64b79e4a14aaf3f3d9d7069c3"
+    },
+    "v0374": {
+      "value": 0.8103867346100448,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/33/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0375": {
+      "value": 0.8073460991826527,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "ed80b5ad4e8e64f6f05f0cee319ce5b2e11ede1adb48abe99130724b0ae4c080"
+    },
+    "v0376": {
+      "value": 0.8073460991826527,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/34/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0377": {
+      "value": 0.8064048330922131,
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "5c9aa48e4e787ba75078167a30ad66125751dfa6c2d7ccc74f966136e72b1a45"
+    },
+    "v0378": {
+      "value": 0.8064048330922131,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/run_records/35/metrics/B/value",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0379": {
+      "value": 0.8068669163940508,
+      "operation": "mean",
+      "inputs": [
+        "v0371",
+        "v0373",
+        "v0375",
+        "v0377"
+      ]
+    },
+    "v0380": {
+      "value": 0.0029064321904159365,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0371",
+        "v0373",
+        "v0375",
+        "v0377"
+      ]
+    },
+    "v0381": {
+      "value": 0.0046247821929742226,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0370",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0382": {
+      "value": 0.8022421342010766,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0369",
+        "v0381"
+      ]
+    },
+    "v0383": {
+      "value": 0.8114916985870251,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0369",
+        "v0381"
+      ]
+    },
+    "v0384": {
+      "value": 0.7523737494314932,
+      "operation": "mean",
+      "inputs": [
+        "v0223",
+        "v0224",
+        "v0225",
+        "v0226"
+      ]
+    },
+    "v0385": {
+      "value": 0.7546977609530678,
+      "operation": "mean",
+      "inputs": [
+        "v0229",
+        "v0230",
+        "v0231",
+        "v0232"
+      ]
+    },
+    "v0386": {
+      "value": 0.7556916425101752,
+      "operation": "mean",
+      "inputs": [
+        "v0235",
+        "v0236",
+        "v0237",
+        "v0238"
+      ]
+    }
+  },
+  "exact_crosschecks": [
+    {
+      "left": "v0006",
+      "right": "v0007",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0008",
+      "right": "v0003",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0009",
+      "right": "v0010",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0012",
+      "right": "v0013",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0014",
+      "right": "v0003",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0015",
+      "right": "v0016",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0017",
+      "right": "v0003",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0004",
+      "right": "v0018",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0005",
+      "right": "v0019",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0026",
+      "right": "v0027",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0028",
+      "right": "v0023",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0029",
+      "right": "v0030",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0031",
+      "right": "v0023",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0032",
+      "right": "v0033",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0034",
+      "right": "v0023",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0035",
+      "right": "v0036",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0037",
+      "right": "v0023",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0024",
+      "right": "v0038",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0025",
+      "right": "v0039",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0046",
+      "right": "v0047",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0048",
+      "right": "v0043",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0049",
+      "right": "v0050",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0051",
+      "right": "v0043",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0052",
+      "right": "v0053",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0054",
+      "right": "v0043",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0055",
+      "right": "v0056",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0057",
+      "right": "v0043",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0044",
+      "right": "v0058",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0045",
+      "right": "v0059",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0067",
+      "right": "v0068",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0073",
+      "right": "v0074",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0079",
+      "right": "v0080",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0081",
+      "right": "v0082",
+      "reason": "Selected cap agrees across historical-experiment records",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0086",
+      "right": "v0087",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0088",
+      "right": "v0083",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0089",
+      "right": "v0090",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0091",
+      "right": "v0083",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0092",
+      "right": "v0093",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0094",
+      "right": "v0083",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0095",
+      "right": "v0096",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0097",
+      "right": "v0083",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0084",
+      "right": "v0098",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0085",
+      "right": "v0099",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0106",
+      "right": "v0107",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0108",
+      "right": "v0103",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0109",
+      "right": "v0110",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0111",
+      "right": "v0103",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0112",
+      "right": "v0113",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0114",
+      "right": "v0103",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0115",
+      "right": "v0116",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0117",
+      "right": "v0103",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0104",
+      "right": "v0118",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0105",
+      "right": "v0119",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0126",
+      "right": "v0127",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0128",
+      "right": "v0123",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0129",
+      "right": "v0130",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0131",
+      "right": "v0123",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0132",
+      "right": "v0133",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0134",
+      "right": "v0123",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0135",
+      "right": "v0136",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0137",
+      "right": "v0123",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0124",
+      "right": "v0138",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0125",
+      "right": "v0139",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0147",
+      "right": "v0148",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0153",
+      "right": "v0154",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0159",
+      "right": "v0160",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0161",
+      "right": "v0162",
+      "reason": "Selected cap agrees across historical-experiment records",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0166",
+      "right": "v0167",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0168",
+      "right": "v0163",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0169",
+      "right": "v0170",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0171",
+      "right": "v0163",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0172",
+      "right": "v0173",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0174",
+      "right": "v0163",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0175",
+      "right": "v0176",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0177",
+      "right": "v0163",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0164",
+      "right": "v0178",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0165",
+      "right": "v0179",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0186",
+      "right": "v0187",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0188",
+      "right": "v0183",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0189",
+      "right": "v0190",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0191",
+      "right": "v0183",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0192",
+      "right": "v0193",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0194",
+      "right": "v0183",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0195",
+      "right": "v0196",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0197",
+      "right": "v0183",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0184",
+      "right": "v0198",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0185",
+      "right": "v0199",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0206",
+      "right": "v0207",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0208",
+      "right": "v0203",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0209",
+      "right": "v0210",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0211",
+      "right": "v0203",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0212",
+      "right": "v0213",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0214",
+      "right": "v0203",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0215",
+      "right": "v0216",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0217",
+      "right": "v0203",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0204",
+      "right": "v0218",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0205",
+      "right": "v0219",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0227",
+      "right": "v0228",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0233",
+      "right": "v0234",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0239",
+      "right": "v0240",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0241",
+      "right": "v0242",
+      "reason": "Selected cap agrees across historical-experiment records",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0245",
+      "right": "v0246",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0008",
+      "right": "v0003",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0247",
+      "right": "v0248",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0249",
+      "right": "v0250",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0014",
+      "right": "v0003",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0251",
+      "right": "v0252",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0017",
+      "right": "v0003",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0243",
+      "right": "v0253",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0244",
+      "right": "v0254",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0260",
+      "right": "v0261",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0028",
+      "right": "v0023",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0262",
+      "right": "v0263",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0031",
+      "right": "v0023",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0264",
+      "right": "v0265",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0034",
+      "right": "v0023",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0266",
+      "right": "v0267",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0037",
+      "right": "v0023",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0258",
+      "right": "v0268",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0259",
+      "right": "v0269",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0275",
+      "right": "v0276",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0048",
+      "right": "v0043",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0277",
+      "right": "v0278",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0051",
+      "right": "v0043",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0279",
+      "right": "v0280",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0054",
+      "right": "v0043",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0281",
+      "right": "v0282",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0057",
+      "right": "v0043",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0273",
+      "right": "v0283",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0274",
+      "right": "v0284",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0067",
+      "right": "v0288",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0073",
+      "right": "v0289",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0079",
+      "right": "v0290",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0081",
+      "right": "v0082",
+      "reason": "Selected cap agrees across historical-experiment records",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0293",
+      "right": "v0294",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0088",
+      "right": "v0083",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0295",
+      "right": "v0296",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0091",
+      "right": "v0083",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0297",
+      "right": "v0298",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0094",
+      "right": "v0083",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0299",
+      "right": "v0300",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0097",
+      "right": "v0083",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0291",
+      "right": "v0301",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0292",
+      "right": "v0302",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0308",
+      "right": "v0309",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0108",
+      "right": "v0103",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0310",
+      "right": "v0311",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0111",
+      "right": "v0103",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0312",
+      "right": "v0313",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0114",
+      "right": "v0103",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0314",
+      "right": "v0315",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0117",
+      "right": "v0103",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0306",
+      "right": "v0316",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0307",
+      "right": "v0317",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0323",
+      "right": "v0324",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0128",
+      "right": "v0123",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0325",
+      "right": "v0326",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0131",
+      "right": "v0123",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0327",
+      "right": "v0328",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0134",
+      "right": "v0123",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0329",
+      "right": "v0330",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0137",
+      "right": "v0123",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0321",
+      "right": "v0331",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0322",
+      "right": "v0332",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0147",
+      "right": "v0336",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0153",
+      "right": "v0337",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0159",
+      "right": "v0338",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0161",
+      "right": "v0162",
+      "reason": "Selected cap agrees across historical-experiment records",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0341",
+      "right": "v0342",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0168",
+      "right": "v0163",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0343",
+      "right": "v0344",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0171",
+      "right": "v0163",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0345",
+      "right": "v0346",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0174",
+      "right": "v0163",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0347",
+      "right": "v0348",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0177",
+      "right": "v0163",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0339",
+      "right": "v0349",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0340",
+      "right": "v0350",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0356",
+      "right": "v0357",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0188",
+      "right": "v0183",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0358",
+      "right": "v0359",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0191",
+      "right": "v0183",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0360",
+      "right": "v0361",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0194",
+      "right": "v0183",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0362",
+      "right": "v0363",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0197",
+      "right": "v0183",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0354",
+      "right": "v0364",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0355",
+      "right": "v0365",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0371",
+      "right": "v0372",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0208",
+      "right": "v0203",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0373",
+      "right": "v0374",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0211",
+      "right": "v0203",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0375",
+      "right": "v0376",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0214",
+      "right": "v0203",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0377",
+      "right": "v0378",
+      "reason": "historical-experiment metric equals raw run field at full precision",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0217",
+      "right": "v0203",
+      "reason": "Plotted cap equals the original run budget",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0369",
+      "right": "v0379",
+      "reason": "historical-experiment mean recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0370",
+      "right": "v0380",
+      "reason": "historical-experiment sample SD recomputed from all four original run fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0227",
+      "right": "v0384",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0233",
+      "right": "v0385",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0239",
+      "right": "v0386",
+      "reason": "Cap selection replays the four original A-validation fields",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0241",
+      "right": "v0242",
+      "reason": "Selected cap agrees across historical-experiment records",
+      "comparison": "exact equality; no rounding or tolerance"
+    }
+  ],
+  "provenance_format": "value_ids link each plotted numeric coordinate to values. Direct nodes give an repository-relative source_file, JSON Pointer source_field, source_sha256 and unrounded value. Arithmetic nodes give their operation and input value IDs; they are necessary because the original historical-experiment summary rounds aggregate statistics. Layout coordinates, ticks, padding and categorical row positions are display settings, not observations.",
+  "methods": {
+    "confidence": 0.95,
+    "n_seeds": 4,
+    "df": 3,
+    "critical_t": 3.182446305284263,
+    "interval_formula": "mean +/- critical_t * sample_sd / sqrt(n_seeds)",
+    "sample_sd": "ddof=1",
+    "font_family": "DejaVu Sans",
+    "pdf_fonttype": 42
+  },
+  "layout": {
+    "column_width_inches": 3.33,
+    "height_inches": 2.95,
+    "minimum_font_pt": 7.0,
+    "clipped_text": [],
+    "overlapping_text": [],
+    "text": [
+      {
+        "text": "35",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.5714205290611029,
+          0.53075,
+          0.6951705290611028,
+          0.63075
+        ]
+      },
+      {
+        "text": "70",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          1.0282183884297522,
+          0.53075,
+          1.151968388429752,
+          0.63075
+        ]
+      },
+      {
+        "text": "105",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          1.4543912477984013,
+          0.53075,
+          1.6393912477984014,
+          0.63075
+        ]
+      },
+      {
+        "text": "0.744",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.19405,
+          0.725594166567098,
+          0.4703,
+          0.825594166567098
+        ]
+      },
+      {
+        "text": "0.750",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.1928,
+          1.1263542398539812,
+          0.4703,
+          1.2263542398539813
+        ]
+      },
+      {
+        "text": "0.756",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.1928,
+          1.5271143131408553,
+          0.4703,
+          1.6271143131408552
+        ]
+      },
+      {
+        "text": "0.762",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.1928,
+          1.9278743864277386,
+          0.4703,
+          2.0278743864277384
+        ]
+      },
+      {
+        "text": "(a) Cohort A",
+        "font_pt": 8.0,
+        "bounds_inches": [
+          0.7519683884297521,
+          2.3200833333333337,
+          1.4282183884297521,
+          2.4200833333333334
+        ]
+      },
+      {
+        "text": "35",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          2.1541337522015986,
+          0.53075,
+          2.2778837522015984,
+          0.63075
+        ]
+      },
+      {
+        "text": "70",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          2.6109316115702477,
+          0.53075,
+          2.734681611570248,
+          0.63075
+        ]
+      },
+      {
+        "text": "105",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          3.037104470938897,
+          0.53075,
+          3.2221044709388966,
+          0.63075
+        ]
+      },
+      {
+        "text": "0.800",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          1.7780132231404957,
+          0.6634255823251988,
+          2.053013223140496,
+          0.7634255823251987
+        ]
+      },
+      {
+        "text": "0.808",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          1.7780132231404957,
+          1.1313294559660243,
+          2.053013223140496,
+          1.2313294559660244
+        ]
+      },
+      {
+        "text": "0.816",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          1.7780132231404957,
+          1.5992333296068408,
+          2.053013223140496,
+          1.699233329606841
+        ]
+      },
+      {
+        "text": "0.824",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          1.7767632231404957,
+          2.0671372032476576,
+          2.053013223140496,
+          2.1671372032476572
+        ]
+      },
+      {
+        "text": "(b) Cohort B",
+        "font_pt": 8.0,
+        "bounds_inches": [
+          2.3340566115702477,
+          2.3200833333333337,
+          3.011556611570248,
+          2.4200833333333334
+        ]
+      },
+      {
+        "text": "Test pooled RMSE",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.03324999999999998,
+          1.045,
+          0.13325000000000004,
+          1.905
+        ]
+      },
+      {
+        "text": "Training cap (epochs)",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          1.3398,
+          0.30450000000000005,
+          2.3898,
+          0.4045
+        ]
+      },
+      {
+        "text": "Outer ring: validation-selected cap",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.815,
+          0.044899999999999995,
+          2.515,
+          0.14489999999999997
+        ]
+      },
+      {
+        "text": "Shared no edges",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.9947916666666665,
+          2.7772499999999996,
+          1.8147916666666666,
+          2.8772499999999996
+        ]
+      },
+      {
+        "text": "Shared admissible",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.9947916666666665,
+          2.6383611111111107,
+          1.8922916666666665,
+          2.7383611111111104
+        ]
+      },
+      {
+        "text": "GRU-D",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          2.2422916666666666,
+          2.7772499999999996,
+          2.5685416666666665,
+          2.8772499999999996
+        ]
+      }
+    ]
+  },
+  "artist_checks": [
+    {
+      "cohort": "A",
+      "family": "none",
+      "x_y_ci_and_selected_marker_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "A",
+      "family": "admissible",
+      "x_y_ci_and_selected_marker_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "A",
+      "family": "grud",
+      "x_y_ci_and_selected_marker_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "B",
+      "family": "none",
+      "x_y_ci_and_selected_marker_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "B",
+      "family": "admissible",
+      "x_y_ci_and_selected_marker_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "B",
+      "family": "grud",
+      "x_y_ci_and_selected_marker_equal_saved_values_exactly": true
+    }
+  ],
+  "input_note": "historical-experiment shared_edges contrasts use historical historical-experiment runs and are not plotted. historical-experiment supplies the MDD planning multiplier only; historical-experiment supplies current historical-experiment MDDs.",
+  "style_reference": "DejaVu Sans; 7-point minimum; 3.33-inch vector PDFs",
+  "source_catalog": [
+    {
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed0/run.json",
+      "sha256": "f1c3a9eab3870248d353d8bc396fb4c4b02b98995f5282dcf293cae7265a510e"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed1/run.json",
+      "sha256": "4486891f9144febd229d1e48222bdbf90227ca782dcead27e5b9bd9cc746d70b"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed2/run.json",
+      "sha256": "554849d6bd845c99aa4439e9bfeb2ceec4cdf0a51548bb992d1a2025273f925f"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed3/run.json",
+      "sha256": "e5325b4ecdb16f6254e1866dc58631483d79d64adea87eea446b48a5c7a32eff"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed0/run.json",
+      "sha256": "2dfb99c297d50deaba329e94b01ac9942cf056b761c2d6cd76b589214d7f0ca9"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed1/run.json",
+      "sha256": "b5ad49c08ab213659b50aaee3b3fa31bce1e1508131f5152cc1bf9fcdad6ff7c"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed2/run.json",
+      "sha256": "0f66445178a1793d7779a18ca9167ecf65ba466422b8e4973c1be2834ea5f462"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed3/run.json",
+      "sha256": "f0a954c1a8a6f96031ac2b4f99e61f006058a3ab05aa064b184492de321c41ae"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed0/run.json",
+      "sha256": "7b0fbc84988069beeb9ea35288408b1708c0db43a3497f9566278d3c4a0b6d8a"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed1/run.json",
+      "sha256": "837fded20b15b85dad2535d58bee041dd9c0524e868b66521cbd7a58f8a0d4cd"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed2/run.json",
+      "sha256": "dba14d39c287c2fde8d13e5aed52e76ad26bd8f793db5aadd503a4b66972f0a1"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed3/run.json",
+      "sha256": "fa62c201557aec1f9b04ed09af8ea561f33b39f9df944a0a4f0f583caa3418ac"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed0/run.json",
+      "sha256": "a45cb6333d30fb6ea934a74b9b30229fc291715170254a82b03c1a715c9a75e0"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed1/run.json",
+      "sha256": "d0c2354397fe12310349353538f36b5d40bc304d92507a819691ad0dede43dc5"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed2/run.json",
+      "sha256": "1767baafdebbc09b3c05c010426949ddd57be27e106c0e13b1df097b15b2e8a8"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed3/run.json",
+      "sha256": "be793a33b527f499b84a5baf7bc32732d9ecd842c15cd03b3cd19aa8e8708a7c"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed0/run.json",
+      "sha256": "703aff708b163e831541b8b94d049f4047a6420b196af17bd185a361e09e222f"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed1/run.json",
+      "sha256": "054b826bb1ac1da113b115e0ea97b9ac53e8a8e64b79e4a14aaf3f3d9d7069c3"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed2/run.json",
+      "sha256": "ed80b5ad4e8e64f6f05f0cee319ce5b2e11ede1adb48abe99130724b0ae4c080"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed3/run.json",
+      "sha256": "5c9aa48e4e787ba75078167a30ad66125751dfa6c2d7ccc74f966136e72b1a45"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed0/run.json",
+      "sha256": "94ccc30df5e8e3820b5f19a41eaadcfb0dc5662c573128bcd0404ea8d3509d81"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed1/run.json",
+      "sha256": "3ffb453e02a8ed23a1c31de201dc4f50a5540d870fbf2550bb75a91a4d56135c"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed2/run.json",
+      "sha256": "6d12cd877c35ab7069d46b2d5c8a2def4910e1c6e3ed9cdfc20440120e5c09bd"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed3/run.json",
+      "sha256": "43837ec51aa1bce4868f2ea3fb398bf8bf75f23b973290ddca7d6b04f76bf91d"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed0/run.json",
+      "sha256": "d9ae57d39dcba5e588df3029509b2116b45743d0c3cbe3aa37eb42a375937149"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed1/run.json",
+      "sha256": "dc08491097cf39ddbf4a1df886fbe5d6efd78d1284a89c6eeec177061770cb3b"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed2/run.json",
+      "sha256": "c90952b1da353dca8d0d7392efd223d2bf5b9c94ebb2d3af0856682feb8d87cd"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed3/run.json",
+      "sha256": "e6f9fee90cd3c51546f8929f68c4601175661349beac8db25e831f96464ed709"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed0/run.json",
+      "sha256": "6eedf32e4c8e1d55f368a330a8435d5c971aec70f6491e71d23622a9f7f2da31"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed1/run.json",
+      "sha256": "d6c0787a3b08e5e568f2cf0a7ca1917bec91c8ee9327284a4a1f2f6d6a30ce11"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed2/run.json",
+      "sha256": "b96b0db6142edffe7b92a07ab462c3daee7b7fa6c5d42aca438ab0d38d1c43de"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed3/run.json",
+      "sha256": "d7a4dc6d77e99e841988d4c805f80658d288eb636bc18cd645963833872c4b1d"
+    },
+    {
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/0",
+      "sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    {
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/1",
+      "sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    {
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/2",
+      "sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    },
+    {
+      "source_file": "results/v4/tuning_grid.json#/selected_runs/grud/3",
+      "sha256": "7bf801c12a1acd172b985e72757eec311cd189c907792e4907bbba0a63879e27"
+    }
+  ]
+}

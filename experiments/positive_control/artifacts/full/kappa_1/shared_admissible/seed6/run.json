@@ -1,0 +1,927 @@
+{
+  "schema_version": 1,
+  "smoke": false,
+  "config": {
+    "arm": "shared_admissible",
+    "kappa": 1.0,
+    "seed": 6,
+    "dataset_seed": 0,
+    "epochs": 60,
+    "n_patients": 400,
+    "device": "cuda",
+    "threads": 1,
+    "C": 12,
+    "K": 24,
+    "lr": 0.002,
+    "batch_size": 128,
+    "d_model": 64,
+    "d_state": 32,
+    "n_layers": 2,
+    "control_gru_hidden": 96
+  },
+  "metrics": {
+    "organ_rmse": {
+      "cardiovascular": 7.3049210407496155,
+      "renal": 0.22316666762633283,
+      "metabolic": 0.3958310898948374
+    },
+    "organ_nrmse_fixed": {
+      "cardiovascular": 0.051853942529257555,
+      "renal": 0.10427559396051611,
+      "metabolic": 0.0952719193645004
+    },
+    "organ_nrmse_per_kappa": {
+      "cardiovascular": 0.052737162237202144,
+      "renal": 0.10427559396051611,
+      "metabolic": 0.1006143148687562
+    },
+    "macro_nrmse_fixed": 0.08380048528475803,
+    "macro_nrmse_per_kappa": 0.08587569035549149
+  },
+  "n_params": 274314,
+  "edges": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ]
+  ],
+  "dataset_metadata": {
+    "schema_version": 1,
+    "regime": "E1",
+    "n_patients": 400,
+    "kappa": 1.0,
+    "seed": 0,
+    "horizon_h": 6.0,
+    "out_dt": 300.0,
+    "C": 12,
+    "K": 24,
+    "parameters": {
+      "source_tau_min": 60.0,
+      "source_sd": 1.0,
+      "source_loadings": [
+        12.0,
+        -3.0,
+        0.6,
+        0.3
+      ],
+      "reserve_tau_min": 30.0,
+      "reserve_initial_sd": 0.25,
+      "drive_weights": [
+        0.6,
+        0.25,
+        -0.15,
+        0.3
+      ],
+      "drive_centers": [
+        85.0,
+        5.0,
+        8.0,
+        0.0
+      ],
+      "drive_scales": [
+        15.0,
+        1.5,
+        4.0,
+        0.3
+      ],
+      "local_tau_min": 90.0,
+      "local_sd": [
+        0.08,
+        0.15
+      ],
+      "offset_sd": [
+        0.12,
+        0.25
+      ],
+      "target_centers": [
+        1.1,
+        3.2
+      ],
+      "target_loadings": [
+        0.45,
+        -1.0
+      ],
+      "target_lag_steps": [
+        6,
+        9
+      ],
+      "target_tau_min": [
+        10.0,
+        20.0
+      ],
+      "clean_bounds": [
+        [
+          0.05,
+          2.8
+        ],
+        [
+          0.1,
+          10.0
+        ]
+      ],
+      "noise_sd": [
+        0.08,
+        0.15
+      ]
+    },
+    "target_probabilities": [
+      0.08274778380622017,
+      0.0345577989267396
+    ],
+    "clinical_rates": {
+      "path": "data/cinc2019_cohort.npz",
+      "sha256": "d52d8131323fc7a3838ae4fe523c2edbc02d2daa781de1859e7d184897dfb51f",
+      "cohorts": {
+        "A_train": {
+          "n_patients": 14236,
+          "valid_hours": 505935,
+          "counts": {
+            "Creatinine": 33911,
+            "BUN": 41639,
+            "Lactate": 17484
+          },
+          "rates": {
+            "Creatinine": 0.06702639667150918,
+            "BUN": 0.08230108610789924,
+            "Lactate": 0.0345577989267396
+          },
+          "renal_union_count": 41865,
+          "renal_union_rate": 0.08274778380622017
+        },
+        "A_all": {
+          "n_patients": 20336,
+          "valid_hours": 722051,
+          "counts": {
+            "Creatinine": 48320,
+            "BUN": 59297,
+            "Lactate": 25199
+          },
+          "rates": {
+            "Creatinine": 0.06692048068626731,
+            "BUN": 0.0821230079315727,
+            "Lactate": 0.034899196871135144
+          },
+          "renal_union_count": 59594,
+          "renal_union_rate": 0.08253433621724782
+        },
+        "B_all": {
+          "n_patients": 20000,
+          "valid_hours": 695090,
+          "counts": {
+            "Creatinine": 38601,
+            "BUN": 38567,
+            "Lactate": 13053
+          },
+          "rates": {
+            "Creatinine": 0.055533815764864984,
+            "BUN": 0.05548490123581119,
+            "Lactate": 0.018778863168798284
+          },
+          "renal_union_count": 38606,
+          "renal_union_rate": 0.055541009077961126
+        }
+      }
+    },
+    "source_sha256": {
+      "src/cvsim_hemodynamics_simulator.py": "7cf88f7918b698a03e09b5efc5dfd2691fb44b2550df861f6ea7d54ef5868af0",
+      "collaboration/evidence/historical-experiment/sim_policy_ext.py": "fcc48abf17728656c18bc4e57b23029f2887effefef191b799c3396cd964f5b7",
+      "collaboration/evidence/historical-experiment/sim_policy_ext2.py": "ec7ea141a631e4d8e07a1a5b80ce9d6da8c57a2d1e22289250382f5e5f5de777",
+      "experiments/positive_control/sim_positive_control.py": "c6886108780814aa92a4c8ff9a65c1866406f2badff1ea32f25b313e9a39c436"
+    },
+    "clean_clipped_fraction": [
+      0.0,
+      0.0
+    ],
+    "realized_observation_fractions": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.08407534246575342,
+      0.03486301369863014
+    ],
+    "supervision": "Dense noisy synthetic labels; only context inputs are masked.",
+    "generation_seconds": 0.868602636270225
+  },
+  "dataset_path": "experiments/positive_control/artifacts/full/datasets/kappa_1.npz",
+  "dataset_sha256": "2b83c9f4039eb76053101e948db4bebb22bdfbf2d1afbd75daa23f90abb5fd04",
+  "reference_path": "experiments/positive_control/artifacts/full/datasets/kappa_1.npz",
+  "reference_sha256": "2b83c9f4039eb76053101e948db4bebb22bdfbf2d1afbd75daa23f90abb5fd04",
+  "reference_ranges": {
+    "cardiovascular": 140.87493996484375,
+    "renal": 2.1401620374450685,
+    "metabolic": 4.154750870300293
+  },
+  "normalization": {
+    "mean": [
+      85.31904602050781,
+      74.92787170410156,
+      4.733935356140137,
+      7.331173419952393,
+      1.1913520097732544,
+      3.0032434463500977
+    ],
+    "std": [
+      15.08332633972168,
+      8.517719268798828,
+      0.9541834592819214,
+      3.290278911590576,
+      0.2646459937095642,
+      0.5457598567008972
+    ],
+    "scope": "Dense labels from training patients, all saved times"
+  },
+  "split": {
+    "train": [
+      25,
+      119,
+      106,
+      73,
+      195,
+      240,
+      246,
+      311,
+      227,
+      284,
+      392,
+      294,
+      67,
+      276,
+      329,
+      86,
+      257,
+      124,
+      196,
+      155,
+      29,
+      236,
+      200,
+      331,
+      343,
+      388,
+      218,
+      292,
+      253,
+      206,
+      353,
+      108,
+      375,
+      197,
+      136,
+      316,
+      235,
+      308,
+      112,
+      84,
+      397,
+      88,
+      350,
+      355,
+      81,
+      211,
+      99,
+      159,
+      220,
+      51,
+      138,
+      74,
+      47,
+      214,
+      260,
+      298,
+      271,
+      18,
+      56,
+      334,
+      373,
+      132,
+      68,
+      173,
+      6,
+      171,
+      57,
+      69,
+      342,
+      287,
+      118,
+      241,
+      247,
+      290,
+      192,
+      182,
+      215,
+      303,
+      46,
+      19,
+      222,
+      78,
+      1,
+      386,
+      95,
+      389,
+      94,
+      351,
+      191,
+      114,
+      277,
+      122,
+      183,
+      238,
+      133,
+      23,
+      75,
+      105,
+      326,
+      163,
+      278,
+      148,
+      344,
+      286,
+      212,
+      135,
+      115,
+      367,
+      5,
+      295,
+      399,
+      382,
+      82,
+      12,
+      202,
+      263,
+      250,
+      226,
+      366,
+      189,
+      248,
+      184,
+      262,
+      123,
+      383,
+      296,
+      10,
+      390,
+      102,
+      393,
+      233,
+      76,
+      347,
+      167,
+      125,
+      141,
+      107,
+      341,
+      158,
+      66,
+      299,
+      313,
+      175,
+      109,
+      384,
+      103,
+      43,
+      150,
+      152,
+      137,
+      142,
+      340,
+      139,
+      209,
+      369,
+      50,
+      198,
+      90,
+      213,
+      274,
+      293,
+      27,
+      165,
+      315,
+      318,
+      333,
+      379,
+      242,
+      143,
+      345,
+      199,
+      395,
+      354,
+      13,
+      359,
+      3,
+      208,
+      258,
+      161,
+      147,
+      275,
+      117,
+      162,
+      52,
+      225,
+      210,
+      26,
+      385,
+      16,
+      380,
+      255,
+      256,
+      317,
+      34,
+      230,
+      368,
+      14,
+      327,
+      160,
+      58,
+      30,
+      322,
+      17,
+      120,
+      336,
+      4,
+      251,
+      153,
+      31,
+      376,
+      186,
+      370,
+      337,
+      77,
+      104,
+      267,
+      363,
+      80,
+      314,
+      128,
+      285,
+      70,
+      283,
+      394,
+      321,
+      176,
+      36,
+      190,
+      291,
+      48,
+      356,
+      129,
+      358,
+      273,
+      232,
+      335,
+      361,
+      244,
+      319,
+      154,
+      49,
+      310,
+      97,
+      59,
+      281,
+      221,
+      187,
+      144,
+      245,
+      304,
+      83,
+      8,
+      40,
+      320,
+      168,
+      261,
+      11,
+      193,
+      63,
+      28,
+      203,
+      64,
+      178,
+      312,
+      381,
+      131,
+      330,
+      91,
+      362,
+      243,
+      89,
+      166,
+      71,
+      15,
+      324,
+      259,
+      332,
+      87,
+      387,
+      53
+    ],
+    "test": [
+      301,
+      307,
+      224,
+      272,
+      113,
+      44,
+      156,
+      172,
+      7,
+      372,
+      309,
+      174,
+      116,
+      134,
+      228,
+      85,
+      185,
+      151,
+      229,
+      179,
+      305,
+      93,
+      378,
+      9,
+      130,
+      54,
+      145,
+      98,
+      265,
+      306,
+      164,
+      92,
+      146,
+      188,
+      252,
+      2,
+      219,
+      72,
+      339,
+      325,
+      346,
+      180,
+      149,
+      32,
+      37,
+      280,
+      338,
+      269,
+      45,
+      396,
+      279,
+      300,
+      349,
+      79,
+      62,
+      282,
+      65,
+      177,
+      33,
+      111,
+      328,
+      264,
+      194,
+      364,
+      216,
+      207,
+      266,
+      39,
+      35,
+      22,
+      96,
+      157,
+      297,
+      249,
+      239,
+      42,
+      237,
+      38,
+      377,
+      61,
+      302,
+      289,
+      170,
+      55,
+      110,
+      270,
+      371,
+      398,
+      0,
+      323,
+      140,
+      352,
+      181,
+      268,
+      100,
+      101,
+      360,
+      205,
+      348,
+      217,
+      231,
+      20,
+      127,
+      21,
+      24,
+      126,
+      374,
+      121,
+      41,
+      201,
+      60,
+      234,
+      169,
+      365,
+      288,
+      357,
+      204,
+      391,
+      223,
+      254
+    ]
+  },
+  "curve": [
+    {
+      "epoch": 1,
+      "train_mse": 1.2946252822875977
+    },
+    {
+      "epoch": 2,
+      "train_mse": 1.0073073506355286
+    },
+    {
+      "epoch": 3,
+      "train_mse": 0.8995211521784464
+    },
+    {
+      "epoch": 4,
+      "train_mse": 0.8207467397054037
+    },
+    {
+      "epoch": 5,
+      "train_mse": 0.7516694863637289
+    },
+    {
+      "epoch": 6,
+      "train_mse": 0.7070226470629374
+    },
+    {
+      "epoch": 7,
+      "train_mse": 0.6537913084030151
+    },
+    {
+      "epoch": 8,
+      "train_mse": 0.6021507183710734
+    },
+    {
+      "epoch": 9,
+      "train_mse": 0.542965034643809
+    },
+    {
+      "epoch": 10,
+      "train_mse": 0.5105745494365692
+    },
+    {
+      "epoch": 11,
+      "train_mse": 0.48102737466494244
+    },
+    {
+      "epoch": 12,
+      "train_mse": 0.45379725098609924
+    },
+    {
+      "epoch": 13,
+      "train_mse": 0.4455341597398122
+    },
+    {
+      "epoch": 14,
+      "train_mse": 0.427749107281367
+    },
+    {
+      "epoch": 15,
+      "train_mse": 0.41782092054684955
+    },
+    {
+      "epoch": 16,
+      "train_mse": 0.4061114390691121
+    },
+    {
+      "epoch": 17,
+      "train_mse": 0.40314386288324994
+    },
+    {
+      "epoch": 18,
+      "train_mse": 0.3902894953886668
+    },
+    {
+      "epoch": 19,
+      "train_mse": 0.3818405667940776
+    },
+    {
+      "epoch": 20,
+      "train_mse": 0.36608564853668213
+    },
+    {
+      "epoch": 21,
+      "train_mse": 0.36527007818222046
+    },
+    {
+      "epoch": 22,
+      "train_mse": 0.3611730436484019
+    },
+    {
+      "epoch": 23,
+      "train_mse": 0.35470345616340637
+    },
+    {
+      "epoch": 24,
+      "train_mse": 0.3462568124135335
+    },
+    {
+      "epoch": 25,
+      "train_mse": 0.3437895178794861
+    },
+    {
+      "epoch": 26,
+      "train_mse": 0.34119022885958356
+    },
+    {
+      "epoch": 27,
+      "train_mse": 0.33843184510866803
+    },
+    {
+      "epoch": 28,
+      "train_mse": 0.3294425308704376
+    },
+    {
+      "epoch": 29,
+      "train_mse": 0.3250983655452728
+    },
+    {
+      "epoch": 30,
+      "train_mse": 0.33259497086207074
+    },
+    {
+      "epoch": 31,
+      "train_mse": 0.3224491576353709
+    },
+    {
+      "epoch": 32,
+      "train_mse": 0.3211083958546321
+    },
+    {
+      "epoch": 33,
+      "train_mse": 0.32804282506306964
+    },
+    {
+      "epoch": 34,
+      "train_mse": 0.31371645629405975
+    },
+    {
+      "epoch": 35,
+      "train_mse": 0.3080458144346873
+    },
+    {
+      "epoch": 36,
+      "train_mse": 0.3098233739535014
+    },
+    {
+      "epoch": 37,
+      "train_mse": 0.29685719311237335
+    },
+    {
+      "epoch": 38,
+      "train_mse": 0.29460888107617694
+    },
+    {
+      "epoch": 39,
+      "train_mse": 0.29231788714726764
+    },
+    {
+      "epoch": 40,
+      "train_mse": 0.2877740114927292
+    },
+    {
+      "epoch": 41,
+      "train_mse": 0.2892046223084132
+    },
+    {
+      "epoch": 42,
+      "train_mse": 0.284819354613622
+    },
+    {
+      "epoch": 43,
+      "train_mse": 0.278739129503568
+    },
+    {
+      "epoch": 44,
+      "train_mse": 0.2762515991926193
+    },
+    {
+      "epoch": 45,
+      "train_mse": 0.269185612599055
+    },
+    {
+      "epoch": 46,
+      "train_mse": 0.2708802769581477
+    },
+    {
+      "epoch": 47,
+      "train_mse": 0.2679777592420578
+    },
+    {
+      "epoch": 48,
+      "train_mse": 0.2738606184720993
+    },
+    {
+      "epoch": 49,
+      "train_mse": 0.2654317518075307
+    },
+    {
+      "epoch": 50,
+      "train_mse": 0.2646923363208771
+    },
+    {
+      "epoch": 51,
+      "train_mse": 0.26752936840057373
+    },
+    {
+      "epoch": 52,
+      "train_mse": 0.26343745986620587
+    },
+    {
+      "epoch": 53,
+      "train_mse": 0.2690638353427251
+    },
+    {
+      "epoch": 54,
+      "train_mse": 0.262874240676562
+    },
+    {
+      "epoch": 55,
+      "train_mse": 0.255079060792923
+    },
+    {
+      "epoch": 56,
+      "train_mse": 0.2560711254676183
+    },
+    {
+      "epoch": 57,
+      "train_mse": 0.24729222555955252
+    },
+    {
+      "epoch": 58,
+      "train_mse": 0.2558998068173726
+    },
+    {
+      "epoch": 59,
+      "train_mse": 0.2616937259833018
+    },
+    {
+      "epoch": 60,
+      "train_mse": 0.24436127146085104
+    }
+  ],
+  "timing": {
+    "train_seconds": 97.98516207560897,
+    "total_seconds": 99.24727755226195
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "torch": "2.6.0+cu124"
+  },
+  "source_sha256": {
+    "src/cvsim_hemodynamics_simulator.py": "7cf88f7918b698a03e09b5efc5dfd2691fb44b2550df861f6ea7d54ef5868af0",
+    "collaboration/evidence/historical-experiment/sim_policy_ext.py": "fcc48abf17728656c18bc4e57b23029f2887effefef191b799c3396cd964f5b7",
+    "collaboration/evidence/historical-experiment/sim_policy_ext2.py": "ec7ea141a631e4d8e07a1a5b80ce9d6da8c57a2d1e22289250382f5e5f5de777",
+    "experiments/positive_control/sim_positive_control.py": "c6886108780814aa92a4c8ff9a65c1866406f2badff1ea32f25b313e9a39c436",
+    "sim/sim_grid_runner_mono2.py": "74815489b16ba1fd2a9a11c70473c65a75e7d98183de3bc0575f07c61280082a",
+    "src/organ_graph_ssm_model.py": "3426f8aa61ddcac3740ca4a0d799c25a421d91950cf773c957b68513232ac615",
+    "src/cvsim_counterfactual_runner.py": "3ad387cb86f27be6449a2404a31efece64a197f6a17cacd0836ac2698e4b988c"
+  },
+  "e1b_source_sha256": {
+    "experiments/positive_control/shared_input_regime.py": "37e3e1d94217ba0e9090c2fa43d6a7efb1be00427ca15eebe8f3dd75673548bc",
+    "experiments/positive_control/e1b_protocol.py": "96688f030a15d30f29c0a4ac86969bec67859ceb847fdcc12882723ff5fa9b1f",
+    "experiments/positive_control/run_host_e1b.sh": "61ca56be5eb8040f2c7742dd4036ead3c68cf0f77281fac8c78d2a550219ba75"
+  },
+  "input_access": "shared",
+  "projection_input_widths": [
+    14,
+    14,
+    14
+  ],
+  "step_projection_input_widths": [
+    14,
+    14,
+    14
+  ],
+  "smoke_population_indices": null,
+  "cublas_workspace_config": ":4096:8",
+  "caveats": [
+    "Dense synthetic target supervision; masked context only.",
+    "Frozen monolithic controls do not consume explicit masks.",
+    "Smoke uses an in-memory population prefix; its scores are not evidence.",
+    "Shared inputs include predicted feedback in forecast, as in clinical E2."
+  ]
+}

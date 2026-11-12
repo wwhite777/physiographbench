@@ -74,3 +74,37 @@ measured CinC-2019 rates on renal/metabolic context channels, with dense
 cardiovascular observations; the targets remain synthetic. No clinical edge
 benefit is claimed. This positive control is distinct from the historical
 randomised-dose CRN diagnostic, which retains a treatment-onset mismatch.
+
+## Input-access extension
+
+Version 1.3.0 adds 66 records beside the original 96. Shared none/admissible
+use seeds 0–3 at κ=0/0.5/1; κ=1 additionally has seeds 4–9 for partitioned
+none/admissible/reversed/random, full-input Control-GRU, and both shared arms.
+The extension uses `seedN/run.json`, beside the original `seedN.json` records.
+No synthetic datasets are duplicated. Dense, misspecified and capacity-matched
+Control-GRU retain only seeds 0–3.
+
+```bash
+python3 -B experiments/positive_control/read_e1b.py
+bash experiments/positive_control/run_host_e1b.sh --dry-run
+```
+
+The reader checks all 162 scalar records before evaluating the fixed mean-based
+0.0040 rule. The first condition is mean(shared none − shared admissible)<0.0040;
+the second is abs(mean(shared none − Control-GRU))≤0.0040. Neither condition
+uses confidence intervals or implies equivalence. Both pass for ten seeds and
+also for seeds 0–3. At κ=1 partitioned admissible − none is −0.01688
+[−0.01914, −0.01462]; shared admissible − none is +0.00056 [−0.00066,
++0.00178]. In this regime, prescribed edges help when they are the only route
+to information a node lacks; with shared inputs they add nothing measurable.
+
+Scope is one generated 400-patient population (dataset seed 0), with uncertainty
+over split/initialization seeds. Shared nodes receive all values and masks in
+context and forecast feedback, adding 3,072 projection parameters. The monolithic
+GRU receives all values and controls but omits explicit masks. The comparison
+cannot isolate all architectural mechanisms or establish clinical benefit.
+`--execute` on the launcher runs the 66-cell plan into a fresh `runs/extension/`
+folder. CPU smoke is explicit through `shared_input_regime.py run-cell --smoke`;
+use `--help` for its one-epoch/population limits. Saved-record validation checks
+configuration, completion, scores and distributed bytes; it does not replay
+unavailable predictions or numerical training.

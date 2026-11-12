@@ -1,0 +1,564 @@
+{
+  "task": "tools",
+  "status": "PASS",
+  "verified_utc": "2026-11-12T09:28:45.510998+00:00",
+  "script": {
+    "file": "tools/make_figures_v6.py",
+    "sha256": "8325d946d0b729d699611d2ae3b6e1b8d7dd44ca369dc513ff9c368ca16fb71c"
+  },
+  "runtime": {
+    "python": "3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0]",
+    "executable": "python3",
+    "numpy": "2.2.6",
+    "matplotlib": "3.10.9",
+    "pdf_reader": "1.27.1",
+    "backend": "Agg"
+  },
+  "pinned_inputs": [
+    {
+      "file": "experiments/shared_input_primary/artifacts/host/e2_e4_summary.json",
+      "sha256": "44efc785edca7f477eb471fc1c63d5a1e1451c0e344d09d2aa689ab8583522f9"
+    },
+    {
+      "file": "analysis/paired_statistics/paired_stats_v5.json",
+      "sha256": "5aa45d3c50da96f75d435520979a09f0bd451635f8557e5d07cb04a662828bdc"
+    },
+    {
+      "file": "analysis/cap_selection/cap_reanalysis.json",
+      "sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    }
+  ],
+  "figures": {
+    "F5_forest_arms": {
+      "status": "PASS",
+      "values": {
+        "status": "PASS",
+        "direct_source_fields_exact": 134,
+        "arithmetic_nodes_replayed_exactly": 168,
+        "crosschecks_exact": 152,
+        "plotted_numeric_coordinates_exact": 60,
+        "source_files_rehashed": 43,
+        "comparison": "Full-precision Python/JSON numeric equality, no tolerance or rounding"
+      },
+      "layout": {
+        "column_width_inches": 3.33,
+        "height_inches": 3.55,
+        "minimum_font_pt": 7.0,
+        "clipped_text": [],
+        "overlapping_text": [],
+        "text": [
+          {
+            "text": "\u22120.01",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              1.0333961855606697,
+              0.47727777777777797,
+              1.3283961855606696,
+              0.577277777777778
+            ]
+          },
+          {
+            "text": "0",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              1.559378846153846,
+              0.47727777777777797,
+              1.620628846153846,
+              0.577277777777778
+            ]
+          },
+          {
+            "text": "0.01",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              1.8922365067470224,
+              0.47727777777777797,
+              2.1059865067470223,
+              0.577277777777778
+            ]
+          },
+          {
+            "text": "Admissible",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.5506555555555555,
+              3.0229048913043477,
+              1.0794055555555555,
+              3.122904891304348
+            ]
+          },
+          {
+            "text": "Dense",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.7694055555555555,
+              2.741220108695652,
+              1.0794055555555555,
+              2.841220108695652
+            ]
+          },
+          {
+            "text": "Reversed",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.6244055555555554,
+              2.4595353260869564,
+              1.0794055555555555,
+              2.5595353260869564
+            ]
+          },
+          {
+            "text": "Random draw 1",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.31065555555555546,
+              2.177850543478261,
+              1.0794055555555555,
+              2.2778505434782605
+            ]
+          },
+          {
+            "text": "Random draw 2",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.3094055555555555,
+              1.8961657608695652,
+              1.0794055555555555,
+              1.996165760869565
+            ]
+          },
+          {
+            "text": "Random draw 3",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.31065555555555546,
+              1.6144809782608698,
+              1.0794055555555555,
+              1.7144809782608699
+            ]
+          },
+          {
+            "text": "Misspecified",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.4781555555555555,
+              1.332796195652174,
+              1.0794055555555555,
+              1.4327961956521742
+            ]
+          },
+          {
+            "text": "No edges\n(normalised)",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.4606555555555555,
+              0.9851114130434786,
+              1.0794055555555555,
+              1.2011114130434786
+            ]
+          },
+          {
+            "text": "No edges\n(parameter-matched)",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.02690555555555548,
+              0.7034266304347829,
+              1.0794055555555555,
+              0.9194266304347829
+            ]
+          },
+          {
+            "text": "(a) Cohort A",
+            "font_pt": 8.0,
+            "bounds_inches": [
+              1.2518788461538461,
+              3.343222222222222,
+              1.928128846153846,
+              3.443222222222222
+            ]
+          },
+          {
+            "text": "\u22120.01",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              2.2156884932529772,
+              0.47727777777777797,
+              2.510688493252977,
+              0.577277777777778
+            ]
+          },
+          {
+            "text": "0",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              2.7416711538461533,
+              0.47727777777777797,
+              2.802921153846153,
+              0.577277777777778
+            ]
+          },
+          {
+            "text": "0.01",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              3.0745288144393292,
+              0.47727777777777797,
+              3.2882788144393293,
+              0.577277777777778
+            ]
+          },
+          {
+            "text": "(b) Cohort B",
+            "font_pt": 8.0,
+            "bounds_inches": [
+              2.433546153846154,
+              3.343222222222222,
+              3.111046153846154,
+              3.443222222222222
+            ]
+          },
+          {
+            "text": "arm minus no edges (pooled RMSE);\nnegative is better",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.77625,
+              0.16690000000000002,
+              2.55375,
+              0.38689999999999997
+            ]
+          },
+          {
+            "text": "Shading: \u00b1 minimum detectable difference",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.609375,
+              0.029699999999999997,
+              2.720625,
+              0.12969999999999998
+            ]
+          }
+        ]
+      },
+      "pdf": {
+        "one_page": true,
+        "raster_image_objects": 0,
+        "fonts": [
+          [
+            15,
+            "ttf",
+            "Type0",
+            "BMQQDV+DejaVuSans",
+            "F1",
+            "Identity-H",
+            0
+          ]
+        ],
+        "all_fonts_embedded_truetype": true,
+        "minimum_extracted_font_pt": 7.0,
+        "page_points": [
+          239.75999450683594,
+          255.60000610351562
+        ]
+      },
+      "artist_coordinates_exact": true,
+      "artifacts": [
+        {
+          "file": "F5_forest_arms.pdf",
+          "sha256": "f0d5876dcfa8c1ed481f6da969a7cf654cad7b1e80136ff66c9324a775a794bb",
+          "bytes": 17200
+        },
+        {
+          "file": "F5_forest_arms.png",
+          "sha256": "bc8bfbcdec983bb2f6d3df3b4094ed6a3ee281e37b27a8aa3f5d0101be4e0016",
+          "bytes": 102882
+        },
+        {
+          "file": "F5_forest_arms.data.json",
+          "sha256": "993464446fb38d845408de7d6531e9dbd2b38e7a01db35ad8ea92e381afd606b",
+          "bytes": 132459
+        }
+      ]
+    },
+    "F6_budget_caps": {
+      "status": "PASS",
+      "values": {
+        "status": "PASS",
+        "direct_source_fields_exact": 278,
+        "arithmetic_nodes_replayed_exactly": 108,
+        "crosschecks_exact": 204,
+        "plotted_numeric_coordinates_exact": 84,
+        "source_files_rehashed": 37,
+        "comparison": "Full-precision Python/JSON numeric equality, no tolerance or rounding"
+      },
+      "layout": {
+        "column_width_inches": 3.33,
+        "height_inches": 2.95,
+        "minimum_font_pt": 7.0,
+        "clipped_text": [],
+        "overlapping_text": [],
+        "text": [
+          {
+            "text": "35",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.5714205290611029,
+              0.53075,
+              0.6951705290611028,
+              0.63075
+            ]
+          },
+          {
+            "text": "70",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              1.0282183884297522,
+              0.53075,
+              1.151968388429752,
+              0.63075
+            ]
+          },
+          {
+            "text": "105",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              1.4543912477984013,
+              0.53075,
+              1.6393912477984014,
+              0.63075
+            ]
+          },
+          {
+            "text": "0.744",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.19405,
+              0.725594166567098,
+              0.4703,
+              0.825594166567098
+            ]
+          },
+          {
+            "text": "0.750",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.1928,
+              1.1263542398539812,
+              0.4703,
+              1.2263542398539813
+            ]
+          },
+          {
+            "text": "0.756",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.1928,
+              1.5271143131408553,
+              0.4703,
+              1.6271143131408552
+            ]
+          },
+          {
+            "text": "0.762",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.1928,
+              1.9278743864277386,
+              0.4703,
+              2.0278743864277384
+            ]
+          },
+          {
+            "text": "(a) Cohort A",
+            "font_pt": 8.0,
+            "bounds_inches": [
+              0.7519683884297521,
+              2.3200833333333337,
+              1.4282183884297521,
+              2.4200833333333334
+            ]
+          },
+          {
+            "text": "35",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              2.1541337522015986,
+              0.53075,
+              2.2778837522015984,
+              0.63075
+            ]
+          },
+          {
+            "text": "70",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              2.6109316115702477,
+              0.53075,
+              2.734681611570248,
+              0.63075
+            ]
+          },
+          {
+            "text": "105",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              3.037104470938897,
+              0.53075,
+              3.2221044709388966,
+              0.63075
+            ]
+          },
+          {
+            "text": "0.800",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              1.7780132231404957,
+              0.6634255823251988,
+              2.053013223140496,
+              0.7634255823251987
+            ]
+          },
+          {
+            "text": "0.808",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              1.7780132231404957,
+              1.1313294559660243,
+              2.053013223140496,
+              1.2313294559660244
+            ]
+          },
+          {
+            "text": "0.816",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              1.7780132231404957,
+              1.5992333296068408,
+              2.053013223140496,
+              1.699233329606841
+            ]
+          },
+          {
+            "text": "0.824",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              1.7767632231404957,
+              2.0671372032476576,
+              2.053013223140496,
+              2.1671372032476572
+            ]
+          },
+          {
+            "text": "(b) Cohort B",
+            "font_pt": 8.0,
+            "bounds_inches": [
+              2.3340566115702477,
+              2.3200833333333337,
+              3.011556611570248,
+              2.4200833333333334
+            ]
+          },
+          {
+            "text": "Test pooled RMSE",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.03324999999999998,
+              1.045,
+              0.13325000000000004,
+              1.905
+            ]
+          },
+          {
+            "text": "Training cap (epochs)",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              1.3398,
+              0.30450000000000005,
+              2.3898,
+              0.4045
+            ]
+          },
+          {
+            "text": "Outer ring: validation-selected cap",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.815,
+              0.044899999999999995,
+              2.515,
+              0.14489999999999997
+            ]
+          },
+          {
+            "text": "Shared no edges",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.9947916666666665,
+              2.7772499999999996,
+              1.8147916666666666,
+              2.8772499999999996
+            ]
+          },
+          {
+            "text": "Shared admissible",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              0.9947916666666665,
+              2.6383611111111107,
+              1.8922916666666665,
+              2.7383611111111104
+            ]
+          },
+          {
+            "text": "GRU-D",
+            "font_pt": 7.0,
+            "bounds_inches": [
+              2.2422916666666666,
+              2.7772499999999996,
+              2.5685416666666665,
+              2.8772499999999996
+            ]
+          }
+        ]
+      },
+      "pdf": {
+        "one_page": true,
+        "raster_image_objects": 0,
+        "fonts": [
+          [
+            21,
+            "ttf",
+            "Type0",
+            "BMQQDV+DejaVuSans",
+            "F1",
+            "Identity-H",
+            0
+          ]
+        ],
+        "all_fonts_embedded_truetype": true,
+        "minimum_extracted_font_pt": 7.0,
+        "page_points": [
+          239.75999450683594,
+          212.39999389648438
+        ]
+      },
+      "artist_coordinates_exact": true,
+      "artifacts": [
+        {
+          "file": "F6_budget_caps.pdf",
+          "sha256": "f8822fb2a71d5fd51f699c4e49a631b95f8f3a9043c0455b2337162366ca181d",
+          "bytes": 17099
+        },
+        {
+          "file": "F6_budget_caps.png",
+          "sha256": "74521ee1e78efa9632ca9959019b2bf0ad426e018582c4d1a26f9da1a7c51e20",
+          "bytes": 106665
+        },
+        {
+          "file": "F6_budget_caps.data.json",
+          "sha256": "6c64af5aa48fc856e35d0d92aaafed0898563919e467516f2f99cb4b54c4cba9",
+          "bytes": 164944
+        }
+      ]
+    }
+  },
+  "verification_scope": "Author reproducibility and artifact checks; not an independent scientific review."
+}

@@ -1,0 +1,4394 @@
+{
+  "figure": "F5_forest_arms",
+  "caption": "Shared-input edge arms at the 35-epoch configuration. Points show each arm minus the raw no-edges reference in pooled observed-entry root mean squared error (RMSE) at the 12-hour horizon, in cohort-A training standard-deviation units; negative is better. Whiskers are pointwise 95% paired Student t intervals over four matched training seeds (3 degrees of freedom). Shading is plus/minus the admissible-minus-none minimum detectable difference (MDD), using exact two-sided noncentral-t inversion at 80% power and alpha=0.05 with the observed four-pair standard deviation. MDD is a planning sensitivity estimate, not an equivalence margin. Intervals describe training-seed variation conditional on the fixed cohorts, do not estimate patient or hospital sampling uncertainty, and are unadjusted for multiple contrasts. Raw no edges bypasses coupling normalisation; the normalised and parameter-matched no-edges controls change different aspects of the model. Random draws 1-3 map to random_s0, random_s1 and random_s2; Misspecified maps to misspecified-1.",
+  "panels": [
+    {
+      "cohort": "A",
+      "rows": [
+        {
+          "arm": "admissible",
+          "label": "Admissible",
+          "mean": -0.0008587153638912881,
+          "ci95": [
+            -0.006231205062631046,
+            0.00451377433484847
+          ],
+          "value_ids": {
+            "mean": "v0024",
+            "ci95_low": "v0027",
+            "ci95_high": "v0028"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0005",
+              "reference_value_id": "v0007",
+              "difference_value_id": "v0008"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0010",
+              "reference_value_id": "v0012",
+              "difference_value_id": "v0013"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0015",
+              "reference_value_id": "v0017",
+              "difference_value_id": "v0018"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0020",
+              "reference_value_id": "v0022",
+              "difference_value_id": "v0023"
+            }
+          ]
+        },
+        {
+          "arm": "dense",
+          "label": "Dense",
+          "mean": -0.00038601368517787726,
+          "ci95": [
+            -0.002699758930767458,
+            0.0019277315604117034
+          ],
+          "value_ids": {
+            "mean": "v0041",
+            "ci95_low": "v0044",
+            "ci95_high": "v0045"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0030",
+              "reference_value_id": "v0007",
+              "difference_value_id": "v0031"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0033",
+              "reference_value_id": "v0012",
+              "difference_value_id": "v0034"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0036",
+              "reference_value_id": "v0017",
+              "difference_value_id": "v0037"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0039",
+              "reference_value_id": "v0022",
+              "difference_value_id": "v0040"
+            }
+          ]
+        },
+        {
+          "arm": "reversed",
+          "label": "Reversed",
+          "mean": -0.002103455843044638,
+          "ci95": [
+            -0.006260571291107404,
+            0.002053659605018128
+          ],
+          "value_ids": {
+            "mean": "v0058",
+            "ci95_low": "v0061",
+            "ci95_high": "v0062"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0047",
+              "reference_value_id": "v0007",
+              "difference_value_id": "v0048"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0050",
+              "reference_value_id": "v0012",
+              "difference_value_id": "v0051"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0053",
+              "reference_value_id": "v0017",
+              "difference_value_id": "v0054"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0056",
+              "reference_value_id": "v0022",
+              "difference_value_id": "v0057"
+            }
+          ]
+        },
+        {
+          "arm": "random_s0",
+          "label": "Random draw 1",
+          "mean": -0.002779548021244277,
+          "ci95": [
+            -0.006927506074032446,
+            0.001368410031543892
+          ],
+          "value_ids": {
+            "mean": "v0075",
+            "ci95_low": "v0078",
+            "ci95_high": "v0079"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0064",
+              "reference_value_id": "v0007",
+              "difference_value_id": "v0065"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0067",
+              "reference_value_id": "v0012",
+              "difference_value_id": "v0068"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0070",
+              "reference_value_id": "v0017",
+              "difference_value_id": "v0071"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0073",
+              "reference_value_id": "v0022",
+              "difference_value_id": "v0074"
+            }
+          ]
+        },
+        {
+          "arm": "random_s1",
+          "label": "Random draw 2",
+          "mean": -6.338213143691762e-06,
+          "ci95": [
+            -0.004855341441213837,
+            0.004842665014926454
+          ],
+          "value_ids": {
+            "mean": "v0092",
+            "ci95_low": "v0095",
+            "ci95_high": "v0096"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0081",
+              "reference_value_id": "v0007",
+              "difference_value_id": "v0082"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0084",
+              "reference_value_id": "v0012",
+              "difference_value_id": "v0085"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0087",
+              "reference_value_id": "v0017",
+              "difference_value_id": "v0088"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0090",
+              "reference_value_id": "v0022",
+              "difference_value_id": "v0091"
+            }
+          ]
+        },
+        {
+          "arm": "random_s2",
+          "label": "Random draw 3",
+          "mean": -0.00263784477251805,
+          "ci95": [
+            -0.009627963506384962,
+            0.004352273961348862
+          ],
+          "value_ids": {
+            "mean": "v0109",
+            "ci95_low": "v0112",
+            "ci95_high": "v0113"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0098",
+              "reference_value_id": "v0007",
+              "difference_value_id": "v0099"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0101",
+              "reference_value_id": "v0012",
+              "difference_value_id": "v0102"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0104",
+              "reference_value_id": "v0017",
+              "difference_value_id": "v0105"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0107",
+              "reference_value_id": "v0022",
+              "difference_value_id": "v0108"
+            }
+          ]
+        },
+        {
+          "arm": "misspecified-1",
+          "label": "Misspecified",
+          "mean": -0.0015797687001674332,
+          "ci95": [
+            -0.004718524695510311,
+            0.0015589872951754448
+          ],
+          "value_ids": {
+            "mean": "v0126",
+            "ci95_low": "v0129",
+            "ci95_high": "v0130"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0115",
+              "reference_value_id": "v0007",
+              "difference_value_id": "v0116"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0118",
+              "reference_value_id": "v0012",
+              "difference_value_id": "v0119"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0121",
+              "reference_value_id": "v0017",
+              "difference_value_id": "v0122"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0124",
+              "reference_value_id": "v0022",
+              "difference_value_id": "v0125"
+            }
+          ]
+        },
+        {
+          "arm": "none_norm",
+          "label": "No edges\n(normalised)",
+          "mean": 0.0025608376819971357,
+          "ci95": [
+            0.0007852174107349985,
+            0.004336457953259273
+          ],
+          "value_ids": {
+            "mean": "v0143",
+            "ci95_low": "v0146",
+            "ci95_high": "v0147"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0132",
+              "reference_value_id": "v0007",
+              "difference_value_id": "v0133"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0135",
+              "reference_value_id": "v0012",
+              "difference_value_id": "v0136"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0138",
+              "reference_value_id": "v0017",
+              "difference_value_id": "v0139"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0141",
+              "reference_value_id": "v0022",
+              "difference_value_id": "v0142"
+            }
+          ]
+        },
+        {
+          "arm": "none_pmatch",
+          "label": "No edges\n(parameter-matched)",
+          "mean": 0.00042201088475424253,
+          "ci95": [
+            -0.002987245566989796,
+            0.0038312673364982812
+          ],
+          "value_ids": {
+            "mean": "v0160",
+            "ci95_low": "v0163",
+            "ci95_high": "v0164"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0149",
+              "reference_value_id": "v0007",
+              "difference_value_id": "v0150"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0152",
+              "reference_value_id": "v0012",
+              "difference_value_id": "v0153"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0155",
+              "reference_value_id": "v0017",
+              "difference_value_id": "v0156"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0158",
+              "reference_value_id": "v0022",
+              "difference_value_id": "v0159"
+            }
+          ]
+        }
+      ],
+      "mdd": 0.007184652829561654,
+      "mdd_band": [
+        -0.007184652829561654,
+        0.007184652829561654
+      ],
+      "mdd_value_ids": [
+        "v0169",
+        "v0168"
+      ],
+      "zero": 0.0,
+      "zero_value_id": "v0173"
+    },
+    {
+      "cohort": "B",
+      "rows": [
+        {
+          "arm": "admissible",
+          "label": "Admissible",
+          "mean": 0.00045109747799174094,
+          "ci95": [
+            -0.004234813766034531,
+            0.005137008722018013
+          ],
+          "value_ids": {
+            "mean": "v0186",
+            "ci95_low": "v0189",
+            "ci95_high": "v0190"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0174",
+              "reference_value_id": "v0175",
+              "difference_value_id": "v0176"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0177",
+              "reference_value_id": "v0178",
+              "difference_value_id": "v0179"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0180",
+              "reference_value_id": "v0181",
+              "difference_value_id": "v0182"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0183",
+              "reference_value_id": "v0184",
+              "difference_value_id": "v0185"
+            }
+          ]
+        },
+        {
+          "arm": "dense",
+          "label": "Dense",
+          "mean": 0.002081374946836023,
+          "ci95": [
+            1.4017879131451513e-06,
+            0.004161348105758901
+          ],
+          "value_ids": {
+            "mean": "v0199",
+            "ci95_low": "v0202",
+            "ci95_high": "v0203"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0191",
+              "reference_value_id": "v0175",
+              "difference_value_id": "v0192"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0193",
+              "reference_value_id": "v0178",
+              "difference_value_id": "v0194"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0195",
+              "reference_value_id": "v0181",
+              "difference_value_id": "v0196"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0197",
+              "reference_value_id": "v0184",
+              "difference_value_id": "v0198"
+            }
+          ]
+        },
+        {
+          "arm": "reversed",
+          "label": "Reversed",
+          "mean": 0.0012369592724179868,
+          "ci95": [
+            -0.0019851568948026066,
+            0.004459075439638581
+          ],
+          "value_ids": {
+            "mean": "v0212",
+            "ci95_low": "v0215",
+            "ci95_high": "v0216"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0204",
+              "reference_value_id": "v0175",
+              "difference_value_id": "v0205"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0206",
+              "reference_value_id": "v0178",
+              "difference_value_id": "v0207"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0208",
+              "reference_value_id": "v0181",
+              "difference_value_id": "v0209"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0210",
+              "reference_value_id": "v0184",
+              "difference_value_id": "v0211"
+            }
+          ]
+        },
+        {
+          "arm": "random_s0",
+          "label": "Random draw 1",
+          "mean": 0.00036328859215750686,
+          "ci95": [
+            -0.004591515515454413,
+            0.005318092699769426
+          ],
+          "value_ids": {
+            "mean": "v0225",
+            "ci95_low": "v0228",
+            "ci95_high": "v0229"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0217",
+              "reference_value_id": "v0175",
+              "difference_value_id": "v0218"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0219",
+              "reference_value_id": "v0178",
+              "difference_value_id": "v0220"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0221",
+              "reference_value_id": "v0181",
+              "difference_value_id": "v0222"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0223",
+              "reference_value_id": "v0184",
+              "difference_value_id": "v0224"
+            }
+          ]
+        },
+        {
+          "arm": "random_s1",
+          "label": "Random draw 2",
+          "mean": 0.0018981582608406655,
+          "ci95": [
+            -0.0024122608553908565,
+            0.0062085773770721876
+          ],
+          "value_ids": {
+            "mean": "v0238",
+            "ci95_low": "v0241",
+            "ci95_high": "v0242"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0230",
+              "reference_value_id": "v0175",
+              "difference_value_id": "v0231"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0232",
+              "reference_value_id": "v0178",
+              "difference_value_id": "v0233"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0234",
+              "reference_value_id": "v0181",
+              "difference_value_id": "v0235"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0236",
+              "reference_value_id": "v0184",
+              "difference_value_id": "v0237"
+            }
+          ]
+        },
+        {
+          "arm": "random_s2",
+          "label": "Random draw 3",
+          "mean": 0.00011825436356391328,
+          "ci95": [
+            -0.00588686607988921,
+            0.0061233748070170365
+          ],
+          "value_ids": {
+            "mean": "v0251",
+            "ci95_low": "v0254",
+            "ci95_high": "v0255"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0243",
+              "reference_value_id": "v0175",
+              "difference_value_id": "v0244"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0245",
+              "reference_value_id": "v0178",
+              "difference_value_id": "v0246"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0247",
+              "reference_value_id": "v0181",
+              "difference_value_id": "v0248"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0249",
+              "reference_value_id": "v0184",
+              "difference_value_id": "v0250"
+            }
+          ]
+        },
+        {
+          "arm": "misspecified-1",
+          "label": "Misspecified",
+          "mean": 0.000518310289478241,
+          "ci95": [
+            -0.004230886689823561,
+            0.005267507268780043
+          ],
+          "value_ids": {
+            "mean": "v0264",
+            "ci95_low": "v0267",
+            "ci95_high": "v0268"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0256",
+              "reference_value_id": "v0175",
+              "difference_value_id": "v0257"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0258",
+              "reference_value_id": "v0178",
+              "difference_value_id": "v0259"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0260",
+              "reference_value_id": "v0181",
+              "difference_value_id": "v0261"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0262",
+              "reference_value_id": "v0184",
+              "difference_value_id": "v0263"
+            }
+          ]
+        },
+        {
+          "arm": "none_norm",
+          "label": "No edges\n(normalised)",
+          "mean": 0.0007496613137031316,
+          "ci95": [
+            -0.001009624398748517,
+            0.0025089470261547803
+          ],
+          "value_ids": {
+            "mean": "v0277",
+            "ci95_low": "v0280",
+            "ci95_high": "v0281"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0269",
+              "reference_value_id": "v0175",
+              "difference_value_id": "v0270"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0271",
+              "reference_value_id": "v0178",
+              "difference_value_id": "v0272"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0273",
+              "reference_value_id": "v0181",
+              "difference_value_id": "v0274"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0275",
+              "reference_value_id": "v0184",
+              "difference_value_id": "v0276"
+            }
+          ]
+        },
+        {
+          "arm": "none_pmatch",
+          "label": "No edges\n(parameter-matched)",
+          "mean": -0.00030361158042110925,
+          "ci95": [
+            -0.0026375724011463765,
+            0.002030349240304158
+          ],
+          "value_ids": {
+            "mean": "v0290",
+            "ci95_low": "v0293",
+            "ci95_high": "v0294"
+          },
+          "seed_pairs": [
+            {
+              "seed": 0,
+              "arm_value_id": "v0282",
+              "reference_value_id": "v0175",
+              "difference_value_id": "v0283"
+            },
+            {
+              "seed": 1,
+              "arm_value_id": "v0284",
+              "reference_value_id": "v0178",
+              "difference_value_id": "v0285"
+            },
+            {
+              "seed": 2,
+              "arm_value_id": "v0286",
+              "reference_value_id": "v0181",
+              "difference_value_id": "v0287"
+            },
+            {
+              "seed": 3,
+              "arm_value_id": "v0288",
+              "reference_value_id": "v0184",
+              "difference_value_id": "v0289"
+            }
+          ]
+        }
+      ],
+      "mdd": 0.0062664886051555235,
+      "mdd_band": [
+        -0.0062664886051555235,
+        0.0062664886051555235
+      ],
+      "mdd_value_ids": [
+        "v0299",
+        "v0298"
+      ],
+      "zero": 0.0,
+      "zero_value_id": "v0302"
+    }
+  ],
+  "configuration_cap": 35,
+  "configuration_cap_value_id": "v0003",
+  "x_label": "arm minus no edges (pooled RMSE); negative is better",
+  "schema_version": 1,
+  "task": "tools",
+  "kit_version": 6,
+  "values": {
+    "v0001": {
+      "value": 4,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/power_designs/4/n_pairs",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0002": {
+      "value": 3.182446305284263,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/power_designs/4/critical_t",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0003": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/e2_e4_summary.json",
+      "source_field": "/selection/record/epochs_budget",
+      "source_sha256": "44efc785edca7f477eb471fc1c63d5a1e1451c0e344d09d2aa689ab8583522f9"
+    },
+    "v0004": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "f1c3a9eab3870248d353d8bc396fb4c4b02b98995f5282dcf293cae7265a510e"
+    },
+    "v0005": {
+      "value": 0.7573980215059473,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "f1c3a9eab3870248d353d8bc396fb4c4b02b98995f5282dcf293cae7265a510e"
+    },
+    "v0006": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "2dfb99c297d50deaba329e94b01ac9942cf056b761c2d6cd76b589214d7f0ca9"
+    },
+    "v0007": {
+      "value": 0.7552225903802708,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "2dfb99c297d50deaba329e94b01ac9942cf056b761c2d6cd76b589214d7f0ca9"
+    },
+    "v0008": {
+      "value": 0.002175431125676419,
+      "operation": "subtract",
+      "inputs": [
+        "v0005",
+        "v0007"
+      ]
+    },
+    "v0009": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "4486891f9144febd229d1e48222bdbf90227ca782dcead27e5b9bd9cc746d70b"
+    },
+    "v0010": {
+      "value": 0.7557596675656255,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "4486891f9144febd229d1e48222bdbf90227ca782dcead27e5b9bd9cc746d70b"
+    },
+    "v0011": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "b5ad49c08ab213659b50aaee3b3fa31bce1e1508131f5152cc1bf9fcdad6ff7c"
+    },
+    "v0012": {
+      "value": 0.7542261506407636,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "b5ad49c08ab213659b50aaee3b3fa31bce1e1508131f5152cc1bf9fcdad6ff7c"
+    },
+    "v0013": {
+      "value": 0.0015335169248619218,
+      "operation": "subtract",
+      "inputs": [
+        "v0010",
+        "v0012"
+      ]
+    },
+    "v0014": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "554849d6bd845c99aa4439e9bfeb2ceec4cdf0a51548bb992d1a2025273f925f"
+    },
+    "v0015": {
+      "value": 0.7559375008440682,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "554849d6bd845c99aa4439e9bfeb2ceec4cdf0a51548bb992d1a2025273f925f"
+    },
+    "v0016": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "0f66445178a1793d7779a18ca9167ecf65ba466422b8e4973c1be2834ea5f462"
+    },
+    "v0017": {
+      "value": 0.7580015696418941,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "0f66445178a1793d7779a18ca9167ecf65ba466422b8e4973c1be2834ea5f462"
+    },
+    "v0018": {
+      "value": -0.0020640687978259464,
+      "operation": "subtract",
+      "inputs": [
+        "v0015",
+        "v0017"
+      ]
+    },
+    "v0019": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "e5325b4ecdb16f6254e1866dc58631483d79d64adea87eea446b48a5c7a32eff"
+    },
+    "v0020": {
+      "value": 0.75118578250451,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "e5325b4ecdb16f6254e1866dc58631483d79d64adea87eea446b48a5c7a32eff"
+    },
+    "v0021": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "f0a954c1a8a6f96031ac2b4f99e61f006058a3ab05aa064b184492de321c41ae"
+    },
+    "v0022": {
+      "value": 0.7562655232127875,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "f0a954c1a8a6f96031ac2b4f99e61f006058a3ab05aa064b184492de321c41ae"
+    },
+    "v0023": {
+      "value": -0.005079740708277547,
+      "operation": "subtract",
+      "inputs": [
+        "v0020",
+        "v0022"
+      ]
+    },
+    "v0024": {
+      "value": -0.0008587153638912881,
+      "operation": "mean",
+      "inputs": [
+        "v0008",
+        "v0013",
+        "v0018",
+        "v0023"
+      ]
+    },
+    "v0025": {
+      "value": 0.003376327003424415,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0008",
+        "v0013",
+        "v0018",
+        "v0023"
+      ]
+    },
+    "v0026": {
+      "value": 0.005372489698739758,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0025",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0027": {
+      "value": -0.006231205062631046,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0024",
+        "v0026"
+      ]
+    },
+    "v0028": {
+      "value": 0.00451377433484847,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0024",
+        "v0026"
+      ]
+    },
+    "v0029": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "fd00fd86f19fbec3714e8a8d7c3580496b746f8325dfc9de83f667a63bee6313"
+    },
+    "v0030": {
+      "value": 0.7561014846890558,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "fd00fd86f19fbec3714e8a8d7c3580496b746f8325dfc9de83f667a63bee6313"
+    },
+    "v0031": {
+      "value": 0.000878894308784961,
+      "operation": "subtract",
+      "inputs": [
+        "v0030",
+        "v0007"
+      ]
+    },
+    "v0032": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "9715c274d10627e0ec17c05d4e8daf2a5e3e29061534761366c8ac78faf78470"
+    },
+    "v0033": {
+      "value": 0.755051744806933,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "9715c274d10627e0ec17c05d4e8daf2a5e3e29061534761366c8ac78faf78470"
+    },
+    "v0034": {
+      "value": 0.0008255941661694521,
+      "operation": "subtract",
+      "inputs": [
+        "v0033",
+        "v0012"
+      ]
+    },
+    "v0035": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "7e5cf0941ad237600614f5d27acc455f8f60f679f664e996761e28712e367cd5"
+    },
+    "v0036": {
+      "value": 0.7567000845480383,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "7e5cf0941ad237600614f5d27acc455f8f60f679f664e996761e28712e367cd5"
+    },
+    "v0037": {
+      "value": -0.0013014850938558586,
+      "operation": "subtract",
+      "inputs": [
+        "v0036",
+        "v0017"
+      ]
+    },
+    "v0038": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "061d43fdb126dbd833b002476104c969fc0c43b1d806618cd922dba0117b9996"
+    },
+    "v0039": {
+      "value": 0.7543184650909774,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "061d43fdb126dbd833b002476104c969fc0c43b1d806618cd922dba0117b9996"
+    },
+    "v0040": {
+      "value": -0.0019470581218100635,
+      "operation": "subtract",
+      "inputs": [
+        "v0039",
+        "v0022"
+      ]
+    },
+    "v0041": {
+      "value": -0.00038601368517787726,
+      "operation": "mean",
+      "inputs": [
+        "v0031",
+        "v0034",
+        "v0037",
+        "v0040"
+      ]
+    },
+    "v0042": {
+      "value": 0.0014540671066454408,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0031",
+        "v0034",
+        "v0037",
+        "v0040"
+      ]
+    },
+    "v0043": {
+      "value": 0.0023137452455895807,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0042",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0044": {
+      "value": -0.002699758930767458,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0041",
+        "v0043"
+      ]
+    },
+    "v0045": {
+      "value": 0.0019277315604117034,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0041",
+        "v0043"
+      ]
+    },
+    "v0046": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "be50405c5c131de4e40efd3ca5e1f568e7d387a4c635c0bd73e620de67a90547"
+    },
+    "v0047": {
+      "value": 0.755957399504162,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "be50405c5c131de4e40efd3ca5e1f568e7d387a4c635c0bd73e620de67a90547"
+    },
+    "v0048": {
+      "value": 0.0007348091238911225,
+      "operation": "subtract",
+      "inputs": [
+        "v0047",
+        "v0007"
+      ]
+    },
+    "v0049": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "3b7cd665db8222afb214159c16314c0bcc449c058310d81bf1d54d07773521ac"
+    },
+    "v0050": {
+      "value": 0.7537237270844321,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "3b7cd665db8222afb214159c16314c0bcc449c058310d81bf1d54d07773521ac"
+    },
+    "v0051": {
+      "value": -0.000502423556331455,
+      "operation": "subtract",
+      "inputs": [
+        "v0050",
+        "v0012"
+      ]
+    },
+    "v0052": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "51ec62f8cf187b762a14e3240ee8e66a5df99485924b538f03bc1a4ca98c06a6"
+    },
+    "v0053": {
+      "value": 0.7536385953322626,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "51ec62f8cf187b762a14e3240ee8e66a5df99485924b538f03bc1a4ca98c06a6"
+    },
+    "v0054": {
+      "value": -0.0043629743096315066,
+      "operation": "subtract",
+      "inputs": [
+        "v0053",
+        "v0017"
+      ]
+    },
+    "v0055": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "6aeeafffd9d23df455be8c135e8397ca10f27d27ce51bd73cfd1635f716b2de6"
+    },
+    "v0056": {
+      "value": 0.7519822885826808,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "6aeeafffd9d23df455be8c135e8397ca10f27d27ce51bd73cfd1635f716b2de6"
+    },
+    "v0057": {
+      "value": -0.004283234630106714,
+      "operation": "subtract",
+      "inputs": [
+        "v0056",
+        "v0022"
+      ]
+    },
+    "v0058": {
+      "value": -0.002103455843044638,
+      "operation": "mean",
+      "inputs": [
+        "v0048",
+        "v0051",
+        "v0054",
+        "v0057"
+      ]
+    },
+    "v0059": {
+      "value": 0.0026125282561155062,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0048",
+        "v0051",
+        "v0054",
+        "v0057"
+      ]
+    },
+    "v0060": {
+      "value": 0.004157115448062766,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0059",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0061": {
+      "value": -0.006260571291107404,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0058",
+        "v0060"
+      ]
+    },
+    "v0062": {
+      "value": 0.002053659605018128,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0058",
+        "v0060"
+      ]
+    },
+    "v0063": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "e928fb767f8420b90c105c2b0ec25c4bd3cf343b0d6229a125a3fd19364da334"
+    },
+    "v0064": {
+      "value": 0.7537048186822392,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "e928fb767f8420b90c105c2b0ec25c4bd3cf343b0d6229a125a3fd19364da334"
+    },
+    "v0065": {
+      "value": -0.001517771698031689,
+      "operation": "subtract",
+      "inputs": [
+        "v0064",
+        "v0007"
+      ]
+    },
+    "v0066": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "94cf15db4ce04c75b9d7863a90d6446798d3329d0e6e2a8fe1032ac22d5a4cae"
+    },
+    "v0067": {
+      "value": 0.7544415832299312,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "94cf15db4ce04c75b9d7863a90d6446798d3329d0e6e2a8fe1032ac22d5a4cae"
+    },
+    "v0068": {
+      "value": 0.00021543258916756347,
+      "operation": "subtract",
+      "inputs": [
+        "v0067",
+        "v0012"
+      ]
+    },
+    "v0069": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "dffc706ca6b3e1c2dbce18728dd2ecd3a2d5c5dc8ca55293cf248609424a5de3"
+    },
+    "v0070": {
+      "value": 0.7524756531832457,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "dffc706ca6b3e1c2dbce18728dd2ecd3a2d5c5dc8ca55293cf248609424a5de3"
+    },
+    "v0071": {
+      "value": -0.005525916458648417,
+      "operation": "subtract",
+      "inputs": [
+        "v0070",
+        "v0017"
+      ]
+    },
+    "v0072": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "d7e7be1c3e648c6ff6a92feba968399e1a582f4123f679dd3946a1afbd26b4e1"
+    },
+    "v0073": {
+      "value": 0.7519755866953229,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "d7e7be1c3e648c6ff6a92feba968399e1a582f4123f679dd3946a1afbd26b4e1"
+    },
+    "v0074": {
+      "value": -0.004289936517464565,
+      "operation": "subtract",
+      "inputs": [
+        "v0073",
+        "v0022"
+      ]
+    },
+    "v0075": {
+      "value": -0.002779548021244277,
+      "operation": "mean",
+      "inputs": [
+        "v0065",
+        "v0068",
+        "v0071",
+        "v0074"
+      ]
+    },
+    "v0076": {
+      "value": 0.0026067733151699884,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0065",
+        "v0068",
+        "v0071",
+        "v0074"
+      ]
+    },
+    "v0077": {
+      "value": 0.004147958052788169,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0076",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0078": {
+      "value": -0.006927506074032446,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0075",
+        "v0077"
+      ]
+    },
+    "v0079": {
+      "value": 0.001368410031543892,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0075",
+        "v0077"
+      ]
+    },
+    "v0080": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "a67498383314601223cbbc82d2acd087eb1c981d1d7b68653328002e574a0130"
+    },
+    "v0081": {
+      "value": 0.7569537837562493,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "a67498383314601223cbbc82d2acd087eb1c981d1d7b68653328002e574a0130"
+    },
+    "v0082": {
+      "value": 0.0017311933759784903,
+      "operation": "subtract",
+      "inputs": [
+        "v0081",
+        "v0007"
+      ]
+    },
+    "v0083": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "be7f0678715f009f44866aa87696e2f19a5c6ed175a05dec00966d7ad7a0d162"
+    },
+    "v0084": {
+      "value": 0.7571261986245879,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "be7f0678715f009f44866aa87696e2f19a5c6ed175a05dec00966d7ad7a0d162"
+    },
+    "v0085": {
+      "value": 0.002900047983824261,
+      "operation": "subtract",
+      "inputs": [
+        "v0084",
+        "v0012"
+      ]
+    },
+    "v0086": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "fe6e0eedaddf793655325f0d315bf2aa1663e0c67d913bb4ed37e57507af1075"
+    },
+    "v0087": {
+      "value": 0.7573480592066163,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "fe6e0eedaddf793655325f0d315bf2aa1663e0c67d913bb4ed37e57507af1075"
+    },
+    "v0088": {
+      "value": -0.0006535104352778376,
+      "operation": "subtract",
+      "inputs": [
+        "v0087",
+        "v0017"
+      ]
+    },
+    "v0089": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "2b7cbb4f2751e5ff4736c9b8f055b5db62740244b704608a5fb89dc612e0cef2"
+    },
+    "v0090": {
+      "value": 0.7522624394356878,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "2b7cbb4f2751e5ff4736c9b8f055b5db62740244b704608a5fb89dc612e0cef2"
+    },
+    "v0091": {
+      "value": -0.004003083777099681,
+      "operation": "subtract",
+      "inputs": [
+        "v0090",
+        "v0022"
+      ]
+    },
+    "v0092": {
+      "value": -6.338213143691762e-06,
+      "operation": "mean",
+      "inputs": [
+        "v0082",
+        "v0085",
+        "v0088",
+        "v0091"
+      ]
+    },
+    "v0093": {
+      "value": 0.003047343309465215,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0082",
+        "v0085",
+        "v0088",
+        "v0091"
+      ]
+    },
+    "v0094": {
+      "value": 0.004849003228070145,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0093",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0095": {
+      "value": -0.004855341441213837,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0092",
+        "v0094"
+      ]
+    },
+    "v0096": {
+      "value": 0.004842665014926454,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0092",
+        "v0094"
+      ]
+    },
+    "v0097": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "e30e52da29926a8aebf106ddae0977506b6001074ded0ddabb7a32ba63e6ea71"
+    },
+    "v0098": {
+      "value": 0.7533966940698166,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "e30e52da29926a8aebf106ddae0977506b6001074ded0ddabb7a32ba63e6ea71"
+    },
+    "v0099": {
+      "value": -0.001825896310454267,
+      "operation": "subtract",
+      "inputs": [
+        "v0098",
+        "v0007"
+      ]
+    },
+    "v0100": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "8795bbb76d990ae05193e932ff5f73ebabb18a864cee72a383cf3083e834bdc4"
+    },
+    "v0101": {
+      "value": 0.7568624151257876,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "8795bbb76d990ae05193e932ff5f73ebabb18a864cee72a383cf3083e834bdc4"
+    },
+    "v0102": {
+      "value": 0.0026362644850239647,
+      "operation": "subtract",
+      "inputs": [
+        "v0101",
+        "v0012"
+      ]
+    },
+    "v0103": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "a0ddc710e8b61a20293b95e6e9a9ee42f85250ad722e58bb40f47474ede0c82e"
+    },
+    "v0104": {
+      "value": 0.7546549780642138,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "a0ddc710e8b61a20293b95e6e9a9ee42f85250ad722e58bb40f47474ede0c82e"
+    },
+    "v0105": {
+      "value": -0.003346591577680358,
+      "operation": "subtract",
+      "inputs": [
+        "v0104",
+        "v0017"
+      ]
+    },
+    "v0106": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "24f96591f0eb3e4e59bea3f4edec9f1af9ea3523649c45b57d29516bc06623f8"
+    },
+    "v0107": {
+      "value": 0.748250367525826,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "24f96591f0eb3e4e59bea3f4edec9f1af9ea3523649c45b57d29516bc06623f8"
+    },
+    "v0108": {
+      "value": -0.00801515568696154,
+      "operation": "subtract",
+      "inputs": [
+        "v0107",
+        "v0022"
+      ]
+    },
+    "v0109": {
+      "value": -0.00263784477251805,
+      "operation": "mean",
+      "inputs": [
+        "v0099",
+        "v0102",
+        "v0105",
+        "v0108"
+      ]
+    },
+    "v0110": {
+      "value": 0.004392921710735691,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0099",
+        "v0102",
+        "v0105",
+        "v0108"
+      ]
+    },
+    "v0111": {
+      "value": 0.006990118733866912,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0110",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0112": {
+      "value": -0.009627963506384962,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0109",
+        "v0111"
+      ]
+    },
+    "v0113": {
+      "value": 0.004352273961348862,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0109",
+        "v0111"
+      ]
+    },
+    "v0114": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "397af9043b6b0f4b993013b0e55694f97e1131f0f34932151004a6fc29ebdfe8"
+    },
+    "v0115": {
+      "value": 0.7556657165105027,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "397af9043b6b0f4b993013b0e55694f97e1131f0f34932151004a6fc29ebdfe8"
+    },
+    "v0116": {
+      "value": 0.00044312613023189673,
+      "operation": "subtract",
+      "inputs": [
+        "v0115",
+        "v0007"
+      ]
+    },
+    "v0117": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "7cbdf43a769e2347d07cb33d675153bccbf3c88a5e47cb9b95d462040cb4eba0"
+    },
+    "v0118": {
+      "value": 0.754004744291162,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "7cbdf43a769e2347d07cb33d675153bccbf3c88a5e47cb9b95d462040cb4eba0"
+    },
+    "v0119": {
+      "value": -0.00022140634960154948,
+      "operation": "subtract",
+      "inputs": [
+        "v0118",
+        "v0012"
+      ]
+    },
+    "v0120": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "26640de8b5ac4485ef3f006b64b7363a894c26db1d077bfe093477dcedb70207"
+    },
+    "v0121": {
+      "value": 0.7548288327718463,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "26640de8b5ac4485ef3f006b64b7363a894c26db1d077bfe093477dcedb70207"
+    },
+    "v0122": {
+      "value": -0.003172736870047821,
+      "operation": "subtract",
+      "inputs": [
+        "v0121",
+        "v0017"
+      ]
+    },
+    "v0123": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "3aeeb23f9a6bdaafe0cfc345438bd73db82fd37b04fbebe1eff90e79bfe7030f"
+    },
+    "v0124": {
+      "value": 0.7528974655015352,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "3aeeb23f9a6bdaafe0cfc345438bd73db82fd37b04fbebe1eff90e79bfe7030f"
+    },
+    "v0125": {
+      "value": -0.003368057711252259,
+      "operation": "subtract",
+      "inputs": [
+        "v0124",
+        "v0022"
+      ]
+    },
+    "v0126": {
+      "value": -0.0015797687001674332,
+      "operation": "mean",
+      "inputs": [
+        "v0116",
+        "v0119",
+        "v0122",
+        "v0125"
+      ]
+    },
+    "v0127": {
+      "value": 0.0019725429397700507,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0116",
+        "v0119",
+        "v0122",
+        "v0125"
+      ]
+    },
+    "v0128": {
+      "value": 0.003138755995342878,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0127",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0129": {
+      "value": -0.004718524695510311,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0126",
+        "v0128"
+      ]
+    },
+    "v0130": {
+      "value": 0.0015589872951754448,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0126",
+        "v0128"
+      ]
+    },
+    "v0131": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "bb8f2e4ba8bec3173d67a7b2a0dbc7e39082cea82416bf5b8d5ba96db669ad7c"
+    },
+    "v0132": {
+      "value": 0.7591394270038773,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "bb8f2e4ba8bec3173d67a7b2a0dbc7e39082cea82416bf5b8d5ba96db669ad7c"
+    },
+    "v0133": {
+      "value": 0.003916836623606423,
+      "operation": "subtract",
+      "inputs": [
+        "v0132",
+        "v0007"
+      ]
+    },
+    "v0134": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "9e72c2c28ddc36a18b8a5c671abad1b57f02dae8040d6cb0f93bac636b75abe5"
+    },
+    "v0135": {
+      "value": 0.7570448881391003,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "9e72c2c28ddc36a18b8a5c671abad1b57f02dae8040d6cb0f93bac636b75abe5"
+    },
+    "v0136": {
+      "value": 0.002818737498336721,
+      "operation": "subtract",
+      "inputs": [
+        "v0135",
+        "v0012"
+      ]
+    },
+    "v0137": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "bbc709361eba738b19c419fe367760d2f78b14a715ac60f02183ca209e720da5"
+    },
+    "v0138": {
+      "value": 0.7602692723470801,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "bbc709361eba738b19c419fe367760d2f78b14a715ac60f02183ca209e720da5"
+    },
+    "v0139": {
+      "value": 0.0022677027051859477,
+      "operation": "subtract",
+      "inputs": [
+        "v0138",
+        "v0017"
+      ]
+    },
+    "v0140": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "ebd1a5b98a1d4f9770d57dc358e1cbdbc7a9fb05a322776944b58aa5bb27804d"
+    },
+    "v0141": {
+      "value": 0.757505597113647,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "ebd1a5b98a1d4f9770d57dc358e1cbdbc7a9fb05a322776944b58aa5bb27804d"
+    },
+    "v0142": {
+      "value": 0.0012400739008594508,
+      "operation": "subtract",
+      "inputs": [
+        "v0141",
+        "v0022"
+      ]
+    },
+    "v0143": {
+      "value": 0.0025608376819971357,
+      "operation": "mean",
+      "inputs": [
+        "v0133",
+        "v0136",
+        "v0139",
+        "v0142"
+      ]
+    },
+    "v0144": {
+      "value": 0.0011158838836110606,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0133",
+        "v0136",
+        "v0139",
+        "v0142"
+      ]
+    },
+    "v0145": {
+      "value": 0.0017756202712621372,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0144",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0146": {
+      "value": 0.0007852174107349985,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0143",
+        "v0145"
+      ]
+    },
+    "v0147": {
+      "value": 0.004336457953259273,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0143",
+        "v0145"
+      ]
+    },
+    "v0148": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed0/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "bf4e9d6bfe56c4c66dfa91a2ba8dcba91300b03bd49017ec0f2262d23dcf8f87"
+    },
+    "v0149": {
+      "value": 0.756771026262139,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed0/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "bf4e9d6bfe56c4c66dfa91a2ba8dcba91300b03bd49017ec0f2262d23dcf8f87"
+    },
+    "v0150": {
+      "value": 0.0015484358818681487,
+      "operation": "subtract",
+      "inputs": [
+        "v0149",
+        "v0007"
+      ]
+    },
+    "v0151": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed1/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "fa579d6bff19efaaa12140bad49d76d1e1c7de36e7511b9b40bcb8a542617989"
+    },
+    "v0152": {
+      "value": 0.7565907444534831,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed1/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "fa579d6bff19efaaa12140bad49d76d1e1c7de36e7511b9b40bcb8a542617989"
+    },
+    "v0153": {
+      "value": 0.0023645938127194732,
+      "operation": "subtract",
+      "inputs": [
+        "v0152",
+        "v0012"
+      ]
+    },
+    "v0154": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed2/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "f73519280ee8edd756e948cbb204a8b7bafa49a1f0c72c14e2b8957b1c80213f"
+    },
+    "v0155": {
+      "value": 0.755471412324606,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed2/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "f73519280ee8edd756e948cbb204a8b7bafa49a1f0c72c14e2b8957b1c80213f"
+    },
+    "v0156": {
+      "value": -0.0025301573172881175,
+      "operation": "subtract",
+      "inputs": [
+        "v0155",
+        "v0017"
+      ]
+    },
+    "v0157": {
+      "value": 35,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed3/run.json",
+      "source_field": "/epochs_budget",
+      "source_sha256": "f30e35885124695c2b4d000c323df96267b05bfb532424331e5cd64e78aeb168"
+    },
+    "v0158": {
+      "value": 0.756570694374505,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed3/run.json",
+      "source_field": "/A/pooled_masked_RMSE",
+      "source_sha256": "f30e35885124695c2b4d000c323df96267b05bfb532424331e5cd64e78aeb168"
+    },
+    "v0159": {
+      "value": 0.0003051711617174657,
+      "operation": "subtract",
+      "inputs": [
+        "v0158",
+        "v0022"
+      ]
+    },
+    "v0160": {
+      "value": 0.00042201088475424253,
+      "operation": "mean",
+      "inputs": [
+        "v0150",
+        "v0153",
+        "v0156",
+        "v0159"
+      ]
+    },
+    "v0161": {
+      "value": 0.0021425382392678055,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0150",
+        "v0153",
+        "v0156",
+        "v0159"
+      ]
+    },
+    "v0162": {
+      "value": 0.0034092564517440387,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0161",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0163": {
+      "value": -0.002987245566989796,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0160",
+        "v0162"
+      ]
+    },
+    "v0164": {
+      "value": 0.0038312673364982812,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0160",
+        "v0162"
+      ]
+    },
+    "v0165": {
+      "value": -0.0008587153638912881,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/paired_contrasts/0/mean_difference",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0166": {
+      "value": -0.006231205062631046,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/paired_contrasts/0/ci95_paired_t/0",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0167": {
+      "value": 0.00451377433484847,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/paired_contrasts/0/ci95_paired_t/1",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0168": {
+      "value": 0.007184652829561654,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/paired_contrasts/0/mdd_80pct_alpha05_n4",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0169": {
+      "value": -0.007184652829561654,
+      "operation": "negative",
+      "inputs": [
+        "v0168"
+      ]
+    },
+    "v0170": {
+      "value": 2.1279493432581242,
+      "source_file": "analysis/paired_statistics/paired_stats_v5.json",
+      "source_field": "/methods/mdd_multiplier",
+      "source_sha256": "5aa45d3c50da96f75d435520979a09f0bd451635f8557e5d07cb04a662828bdc"
+    },
+    "v0171": {
+      "value": 0.003376327003424415,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/paired_contrasts/0/paired_sd_sample",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0172": {
+      "value": 0.007184652829561654,
+      "operation": "multiply",
+      "inputs": [
+        "v0170",
+        "v0171"
+      ]
+    },
+    "v0173": {
+      "value": 0.0,
+      "operation": "subtract",
+      "inputs": [
+        "v0168",
+        "v0168"
+      ]
+    },
+    "v0174": {
+      "value": 0.8111635814652787,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "f1c3a9eab3870248d353d8bc396fb4c4b02b98995f5282dcf293cae7265a510e"
+    },
+    "v0175": {
+      "value": 0.808853251217315,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "2dfb99c297d50deaba329e94b01ac9942cf056b761c2d6cd76b589214d7f0ca9"
+    },
+    "v0176": {
+      "value": 0.0023103302479636767,
+      "operation": "subtract",
+      "inputs": [
+        "v0174",
+        "v0175"
+      ]
+    },
+    "v0177": {
+      "value": 0.8094953067793018,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "4486891f9144febd229d1e48222bdbf90227ca782dcead27e5b9bd9cc746d70b"
+    },
+    "v0178": {
+      "value": 0.806078983827865,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "b5ad49c08ab213659b50aaee3b3fa31bce1e1508131f5152cc1bf9fcdad6ff7c"
+    },
+    "v0179": {
+      "value": 0.00341632295143679,
+      "operation": "subtract",
+      "inputs": [
+        "v0177",
+        "v0178"
+      ]
+    },
+    "v0180": {
+      "value": 0.8092105674106648,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "554849d6bd845c99aa4439e9bfeb2ceec4cdf0a51548bb992d1a2025273f925f"
+    },
+    "v0181": {
+      "value": 0.810139857924978,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "0f66445178a1793d7779a18ca9167ecf65ba466422b8e4973c1be2834ea5f462"
+    },
+    "v0182": {
+      "value": -0.0009292905143132302,
+      "operation": "subtract",
+      "inputs": [
+        "v0180",
+        "v0181"
+      ]
+    },
+    "v0183": {
+      "value": 0.807202837684352,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "e5325b4ecdb16f6254e1866dc58631483d79d64adea87eea446b48a5c7a32eff"
+    },
+    "v0184": {
+      "value": 0.8101958104574722,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "f0a954c1a8a6f96031ac2b4f99e61f006058a3ab05aa064b184492de321c41ae"
+    },
+    "v0185": {
+      "value": -0.0029929727731202727,
+      "operation": "subtract",
+      "inputs": [
+        "v0183",
+        "v0184"
+      ]
+    },
+    "v0186": {
+      "value": 0.00045109747799174094,
+      "operation": "mean",
+      "inputs": [
+        "v0176",
+        "v0179",
+        "v0182",
+        "v0185"
+      ]
+    },
+    "v0187": {
+      "value": 0.0029448485815742405,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0176",
+        "v0179",
+        "v0182",
+        "v0185"
+      ]
+    },
+    "v0188": {
+      "value": 0.004685911244026272,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0187",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0189": {
+      "value": -0.004234813766034531,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0186",
+        "v0188"
+      ]
+    },
+    "v0190": {
+      "value": 0.005137008722018013,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0186",
+        "v0188"
+      ]
+    },
+    "v0191": {
+      "value": 0.8112129884921401,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "fd00fd86f19fbec3714e8a8d7c3580496b746f8325dfc9de83f667a63bee6313"
+    },
+    "v0192": {
+      "value": 0.00235973727482508,
+      "operation": "subtract",
+      "inputs": [
+        "v0191",
+        "v0175"
+      ]
+    },
+    "v0193": {
+      "value": 0.8093673153206149,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "9715c274d10627e0ec17c05d4e8daf2a5e3e29061534761366c8ac78faf78470"
+    },
+    "v0194": {
+      "value": 0.003288331492749874,
+      "operation": "subtract",
+      "inputs": [
+        "v0193",
+        "v0178"
+      ]
+    },
+    "v0195": {
+      "value": 0.8125940635201133,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "7e5cf0941ad237600614f5d27acc455f8f60f679f664e996761e28712e367cd5"
+    },
+    "v0196": {
+      "value": 0.002454205595135317,
+      "operation": "subtract",
+      "inputs": [
+        "v0195",
+        "v0181"
+      ]
+    },
+    "v0197": {
+      "value": 0.8104190358821061,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "061d43fdb126dbd833b002476104c969fc0c43b1d806618cd922dba0117b9996"
+    },
+    "v0198": {
+      "value": 0.00022322542463382167,
+      "operation": "subtract",
+      "inputs": [
+        "v0197",
+        "v0184"
+      ]
+    },
+    "v0199": {
+      "value": 0.002081374946836023,
+      "operation": "mean",
+      "inputs": [
+        "v0192",
+        "v0194",
+        "v0196",
+        "v0198"
+      ]
+    },
+    "v0200": {
+      "value": 0.0013071536543879506,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0192",
+        "v0194",
+        "v0196",
+        "v0198"
+      ]
+    },
+    "v0201": {
+      "value": 0.002079973158922878,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0200",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0202": {
+      "value": 1.4017879131451513e-06,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0199",
+        "v0201"
+      ]
+    },
+    "v0203": {
+      "value": 0.004161348105758901,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0199",
+        "v0201"
+      ]
+    },
+    "v0204": {
+      "value": 0.8103583416035911,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "be50405c5c131de4e40efd3ca5e1f568e7d387a4c635c0bd73e620de67a90547"
+    },
+    "v0205": {
+      "value": 0.001505090386276109,
+      "operation": "subtract",
+      "inputs": [
+        "v0204",
+        "v0175"
+      ]
+    },
+    "v0206": {
+      "value": 0.8100049064989382,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "3b7cd665db8222afb214159c16314c0bcc449c058310d81bf1d54d07773521ac"
+    },
+    "v0207": {
+      "value": 0.003925922671073168,
+      "operation": "subtract",
+      "inputs": [
+        "v0206",
+        "v0178"
+      ]
+    },
+    "v0208": {
+      "value": 0.8104579158958697,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "51ec62f8cf187b762a14e3240ee8e66a5df99485924b538f03bc1a4ca98c06a6"
+    },
+    "v0209": {
+      "value": 0.0003180579708916831,
+      "operation": "subtract",
+      "inputs": [
+        "v0208",
+        "v0181"
+      ]
+    },
+    "v0210": {
+      "value": 0.8093945765189032,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "6aeeafffd9d23df455be8c135e8397ca10f27d27ce51bd73cfd1635f716b2de6"
+    },
+    "v0211": {
+      "value": -0.0008012339385690126,
+      "operation": "subtract",
+      "inputs": [
+        "v0210",
+        "v0184"
+      ]
+    },
+    "v0212": {
+      "value": 0.0012369592724179868,
+      "operation": "mean",
+      "inputs": [
+        "v0205",
+        "v0207",
+        "v0209",
+        "v0211"
+      ]
+    },
+    "v0213": {
+      "value": 0.0020249304202684965,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0205",
+        "v0207",
+        "v0209",
+        "v0211"
+      ]
+    },
+    "v0214": {
+      "value": 0.0032221161672205934,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0213",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0215": {
+      "value": -0.0019851568948026066,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0212",
+        "v0214"
+      ]
+    },
+    "v0216": {
+      "value": 0.004459075439638581,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0212",
+        "v0214"
+      ]
+    },
+    "v0217": {
+      "value": 0.808870627311699,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "e928fb767f8420b90c105c2b0ec25c4bd3cf343b0d6229a125a3fd19364da334"
+    },
+    "v0218": {
+      "value": 1.7376094384013996e-05,
+      "operation": "subtract",
+      "inputs": [
+        "v0217",
+        "v0175"
+      ]
+    },
+    "v0219": {
+      "value": 0.8107180314878415,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "94cf15db4ce04c75b9d7863a90d6446798d3329d0e6e2a8fe1032ac22d5a4cae"
+    },
+    "v0220": {
+      "value": 0.00463904765997647,
+      "operation": "subtract",
+      "inputs": [
+        "v0219",
+        "v0178"
+      ]
+    },
+    "v0221": {
+      "value": 0.809755651022929,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "dffc706ca6b3e1c2dbce18728dd2ecd3a2d5c5dc8ca55293cf248609424a5de3"
+    },
+    "v0222": {
+      "value": -0.0003842069020489891,
+      "operation": "subtract",
+      "inputs": [
+        "v0221",
+        "v0181"
+      ]
+    },
+    "v0223": {
+      "value": 0.8073767479737908,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "d7e7be1c3e648c6ff6a92feba968399e1a582f4123f679dd3946a1afbd26b4e1"
+    },
+    "v0224": {
+      "value": -0.002819062483681467,
+      "operation": "subtract",
+      "inputs": [
+        "v0223",
+        "v0184"
+      ]
+    },
+    "v0225": {
+      "value": 0.00036328859215750686,
+      "operation": "mean",
+      "inputs": [
+        "v0218",
+        "v0220",
+        "v0222",
+        "v0224"
+      ]
+    },
+    "v0226": {
+      "value": 0.003113833593600471,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0218",
+        "v0220",
+        "v0222",
+        "v0224"
+      ]
+    },
+    "v0227": {
+      "value": 0.0049548041076119195,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0226",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0228": {
+      "value": -0.004591515515454413,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0225",
+        "v0227"
+      ]
+    },
+    "v0229": {
+      "value": 0.005318092699769426,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0225",
+        "v0227"
+      ]
+    },
+    "v0230": {
+      "value": 0.8107903220910189,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "a67498383314601223cbbc82d2acd087eb1c981d1d7b68653328002e574a0130"
+    },
+    "v0231": {
+      "value": 0.0019370708737038722,
+      "operation": "subtract",
+      "inputs": [
+        "v0230",
+        "v0175"
+      ]
+    },
+    "v0232": {
+      "value": 0.811205518571993,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "be7f0678715f009f44866aa87696e2f19a5c6ed175a05dec00966d7ad7a0d162"
+    },
+    "v0233": {
+      "value": 0.005126534744127942,
+      "operation": "subtract",
+      "inputs": [
+        "v0232",
+        "v0178"
+      ]
+    },
+    "v0234": {
+      "value": 0.8121724832258346,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "fe6e0eedaddf793655325f0d315bf2aa1663e0c67d913bb4ed37e57507af1075"
+    },
+    "v0235": {
+      "value": 0.002032625300856572,
+      "operation": "subtract",
+      "inputs": [
+        "v0234",
+        "v0181"
+      ]
+    },
+    "v0236": {
+      "value": 0.8086922125821465,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "2b7cbb4f2751e5ff4736c9b8f055b5db62740244b704608a5fb89dc612e0cef2"
+    },
+    "v0237": {
+      "value": -0.001503597875325724,
+      "operation": "subtract",
+      "inputs": [
+        "v0236",
+        "v0184"
+      ]
+    },
+    "v0238": {
+      "value": 0.0018981582608406655,
+      "operation": "mean",
+      "inputs": [
+        "v0231",
+        "v0233",
+        "v0235",
+        "v0237"
+      ]
+    },
+    "v0239": {
+      "value": 0.002708871542671012,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0231",
+        "v0233",
+        "v0235",
+        "v0237"
+      ]
+    },
+    "v0240": {
+      "value": 0.004310419116231522,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0239",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0241": {
+      "value": -0.0024122608553908565,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0238",
+        "v0240"
+      ]
+    },
+    "v0242": {
+      "value": 0.0062085773770721876,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0238",
+        "v0240"
+      ]
+    },
+    "v0243": {
+      "value": 0.8097728551098263,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "e30e52da29926a8aebf106ddae0977506b6001074ded0ddabb7a32ba63e6ea71"
+    },
+    "v0244": {
+      "value": 0.0009196038925113337,
+      "operation": "subtract",
+      "inputs": [
+        "v0243",
+        "v0175"
+      ]
+    },
+    "v0245": {
+      "value": 0.8109548354528453,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "8795bbb76d990ae05193e932ff5f73ebabb18a864cee72a383cf3083e834bdc4"
+    },
+    "v0246": {
+      "value": 0.004875851624980276,
+      "operation": "subtract",
+      "inputs": [
+        "v0245",
+        "v0178"
+      ]
+    },
+    "v0247": {
+      "value": 0.808892706494138,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "a0ddc710e8b61a20293b95e6e9a9ee42f85250ad722e58bb40f47474ede0c82e"
+    },
+    "v0248": {
+      "value": -0.0012471514308399767,
+      "operation": "subtract",
+      "inputs": [
+        "v0247",
+        "v0181"
+      ]
+    },
+    "v0249": {
+      "value": 0.8061205238250763,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "24f96591f0eb3e4e59bea3f4edec9f1af9ea3523649c45b57d29516bc06623f8"
+    },
+    "v0250": {
+      "value": -0.00407528663239598,
+      "operation": "subtract",
+      "inputs": [
+        "v0249",
+        "v0184"
+      ]
+    },
+    "v0251": {
+      "value": 0.00011825436356391328,
+      "operation": "mean",
+      "inputs": [
+        "v0244",
+        "v0246",
+        "v0248",
+        "v0250"
+      ]
+    },
+    "v0252": {
+      "value": 0.003773902128989248,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0244",
+        "v0246",
+        "v0248",
+        "v0250"
+      ]
+    },
+    "v0253": {
+      "value": 0.006005120443453123,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0252",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0254": {
+      "value": -0.00588686607988921,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0251",
+        "v0253"
+      ]
+    },
+    "v0255": {
+      "value": 0.0061233748070170365,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0251",
+        "v0253"
+      ]
+    },
+    "v0256": {
+      "value": 0.8098582362649498,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "397af9043b6b0f4b993013b0e55694f97e1131f0f34932151004a6fc29ebdfe8"
+    },
+    "v0257": {
+      "value": 0.0010049850476347988,
+      "operation": "subtract",
+      "inputs": [
+        "v0256",
+        "v0175"
+      ]
+    },
+    "v0258": {
+      "value": 0.8102316806680743,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "7cbdf43a769e2347d07cb33d675153bccbf3c88a5e47cb9b95d462040cb4eba0"
+    },
+    "v0259": {
+      "value": 0.004152696840209247,
+      "operation": "subtract",
+      "inputs": [
+        "v0258",
+        "v0178"
+      ]
+    },
+    "v0260": {
+      "value": 0.8101446806364423,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "26640de8b5ac4485ef3f006b64b7363a894c26db1d077bfe093477dcedb70207"
+    },
+    "v0261": {
+      "value": 4.822711464291807e-06,
+      "operation": "subtract",
+      "inputs": [
+        "v0260",
+        "v0181"
+      ]
+    },
+    "v0262": {
+      "value": 0.8071065470160769,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "3aeeb23f9a6bdaafe0cfc345438bd73db82fd37b04fbebe1eff90e79bfe7030f"
+    },
+    "v0263": {
+      "value": -0.0030892634413953735,
+      "operation": "subtract",
+      "inputs": [
+        "v0262",
+        "v0184"
+      ]
+    },
+    "v0264": {
+      "value": 0.000518310289478241,
+      "operation": "mean",
+      "inputs": [
+        "v0257",
+        "v0259",
+        "v0261",
+        "v0263"
+      ]
+    },
+    "v0265": {
+      "value": 0.002984620335253445,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0257",
+        "v0259",
+        "v0261",
+        "v0263"
+      ]
+    },
+    "v0266": {
+      "value": 0.004749196979301802,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0265",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0267": {
+      "value": -0.004230886689823561,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0264",
+        "v0266"
+      ]
+    },
+    "v0268": {
+      "value": 0.005267507268780043,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0264",
+        "v0266"
+      ]
+    },
+    "v0269": {
+      "value": 0.8110492457022781,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "bb8f2e4ba8bec3173d67a7b2a0dbc7e39082cea82416bf5b8d5ba96db669ad7c"
+    },
+    "v0270": {
+      "value": 0.002195994484963104,
+      "operation": "subtract",
+      "inputs": [
+        "v0269",
+        "v0175"
+      ]
+    },
+    "v0271": {
+      "value": 0.805617435047464,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "9e72c2c28ddc36a18b8a5c671abad1b57f02dae8040d6cb0f93bac636b75abe5"
+    },
+    "v0272": {
+      "value": -0.0004615487804010554,
+      "operation": "subtract",
+      "inputs": [
+        "v0271",
+        "v0178"
+      ]
+    },
+    "v0273": {
+      "value": 0.810972738251207,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "bbc709361eba738b19c419fe367760d2f78b14a715ac60f02183ca209e720da5"
+    },
+    "v0274": {
+      "value": 0.0008328803262289686,
+      "operation": "subtract",
+      "inputs": [
+        "v0273",
+        "v0181"
+      ]
+    },
+    "v0275": {
+      "value": 0.8106271296814938,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "ebd1a5b98a1d4f9770d57dc358e1cbdbc7a9fb05a322776944b58aa5bb27804d"
+    },
+    "v0276": {
+      "value": 0.00043131922402150913,
+      "operation": "subtract",
+      "inputs": [
+        "v0275",
+        "v0184"
+      ]
+    },
+    "v0277": {
+      "value": 0.0007496613137031316,
+      "operation": "mean",
+      "inputs": [
+        "v0270",
+        "v0272",
+        "v0274",
+        "v0276"
+      ]
+    },
+    "v0278": {
+      "value": 0.0011056184731415323,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0270",
+        "v0272",
+        "v0274",
+        "v0276"
+      ]
+    },
+    "v0279": {
+      "value": 0.0017592857124516486,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0278",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0280": {
+      "value": -0.001009624398748517,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0277",
+        "v0279"
+      ]
+    },
+    "v0281": {
+      "value": 0.0025089470261547803,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0277",
+        "v0279"
+      ]
+    },
+    "v0282": {
+      "value": 0.8088834882913518,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed0/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "bf4e9d6bfe56c4c66dfa91a2ba8dcba91300b03bd49017ec0f2262d23dcf8f87"
+    },
+    "v0283": {
+      "value": 3.0237074036820744e-05,
+      "operation": "subtract",
+      "inputs": [
+        "v0282",
+        "v0175"
+      ]
+    },
+    "v0284": {
+      "value": 0.8075858492274188,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed1/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "fa579d6bff19efaaa12140bad49d76d1e1c7de36e7511b9b40bcb8a542617989"
+    },
+    "v0285": {
+      "value": 0.0015068653995538028,
+      "operation": "subtract",
+      "inputs": [
+        "v0284",
+        "v0178"
+      ]
+    },
+    "v0286": {
+      "value": 0.8081452506963474,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed2/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "f73519280ee8edd756e948cbb204a8b7bafa49a1f0c72c14e2b8957b1c80213f"
+    },
+    "v0287": {
+      "value": -0.0019946072286306515,
+      "operation": "subtract",
+      "inputs": [
+        "v0286",
+        "v0181"
+      ]
+    },
+    "v0288": {
+      "value": 0.8094388688908278,
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed3/run.json",
+      "source_field": "/B/pooled_masked_RMSE",
+      "source_sha256": "f30e35885124695c2b4d000c323df96267b05bfb532424331e5cd64e78aeb168"
+    },
+    "v0289": {
+      "value": -0.000756941566644409,
+      "operation": "subtract",
+      "inputs": [
+        "v0288",
+        "v0184"
+      ]
+    },
+    "v0290": {
+      "value": -0.00030361158042110925,
+      "operation": "mean",
+      "inputs": [
+        "v0283",
+        "v0285",
+        "v0287",
+        "v0289"
+      ]
+    },
+    "v0291": {
+      "value": 0.0014667715316043913,
+      "operation": "sample_sd",
+      "inputs": [
+        "v0283",
+        "v0285",
+        "v0287",
+        "v0289"
+      ]
+    },
+    "v0292": {
+      "value": 0.002333960820725267,
+      "operation": "t_half_width",
+      "inputs": [
+        "v0291",
+        "v0002",
+        "v0001"
+      ]
+    },
+    "v0293": {
+      "value": -0.0026375724011463765,
+      "operation": "lower_bound",
+      "inputs": [
+        "v0290",
+        "v0292"
+      ]
+    },
+    "v0294": {
+      "value": 0.002030349240304158,
+      "operation": "upper_bound",
+      "inputs": [
+        "v0290",
+        "v0292"
+      ]
+    },
+    "v0295": {
+      "value": 0.00045109747799174094,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/paired_contrasts/1/mean_difference",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0296": {
+      "value": -0.004234813766034531,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/paired_contrasts/1/ci95_paired_t/0",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0297": {
+      "value": 0.005137008722018013,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/paired_contrasts/1/ci95_paired_t/1",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0298": {
+      "value": 0.0062664886051555235,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/paired_contrasts/1/mdd_80pct_alpha05_n4",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0299": {
+      "value": -0.0062664886051555235,
+      "operation": "negative",
+      "inputs": [
+        "v0298"
+      ]
+    },
+    "v0300": {
+      "value": 0.0029448485815742405,
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "source_field": "/paired_contrasts/1/paired_sd_sample",
+      "source_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    "v0301": {
+      "value": 0.0062664886051555235,
+      "operation": "multiply",
+      "inputs": [
+        "v0170",
+        "v0300"
+      ]
+    },
+    "v0302": {
+      "value": 0.0,
+      "operation": "subtract",
+      "inputs": [
+        "v0298",
+        "v0298"
+      ]
+    }
+  },
+  "exact_crosschecks": [
+    {
+      "left": "v0004",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0009",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0014",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0019",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0029",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0032",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0035",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0038",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0046",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0049",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0052",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0055",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0063",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0066",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0069",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0072",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0080",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0083",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0086",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0089",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0097",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0100",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0103",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0106",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0114",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0117",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0120",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0123",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0131",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0134",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0137",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0140",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0148",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0151",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0154",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0157",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0024",
+      "right": "v0165",
+      "reason": "historical-experiment admissible contrast matches full-precision historical-experiment field",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0027",
+      "right": "v0166",
+      "reason": "historical-experiment admissible contrast matches full-precision historical-experiment field",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0028",
+      "right": "v0167",
+      "reason": "historical-experiment admissible contrast matches full-precision historical-experiment field",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0168",
+      "right": "v0172",
+      "reason": "historical-experiment planning multiplier applied to current historical-experiment paired SD",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0004",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0009",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0014",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0019",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0029",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0032",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0035",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0038",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0046",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0049",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0052",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0055",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0063",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0066",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0069",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0072",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0080",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0083",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0086",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0089",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0097",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0100",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0103",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0106",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0114",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0117",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0120",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0123",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0131",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0134",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0137",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0140",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0148",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0006",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0151",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0011",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0154",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0016",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0157",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0021",
+      "right": "v0003",
+      "reason": "All forest arms use the primary 35-epoch cap",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0186",
+      "right": "v0295",
+      "reason": "historical-experiment admissible contrast matches full-precision historical-experiment field",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0189",
+      "right": "v0296",
+      "reason": "historical-experiment admissible contrast matches full-precision historical-experiment field",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0190",
+      "right": "v0297",
+      "reason": "historical-experiment admissible contrast matches full-precision historical-experiment field",
+      "comparison": "exact equality; no rounding or tolerance"
+    },
+    {
+      "left": "v0298",
+      "right": "v0301",
+      "reason": "historical-experiment planning multiplier applied to current historical-experiment paired SD",
+      "comparison": "exact equality; no rounding or tolerance"
+    }
+  ],
+  "provenance_format": "value_ids link each plotted numeric coordinate to values. Direct nodes give an repository-relative source_file, JSON Pointer source_field, source_sha256 and unrounded value. Arithmetic nodes give their operation and input value IDs; they are necessary because the original historical-experiment summary rounds aggregate statistics. Layout coordinates, ticks, padding and categorical row positions are display settings, not observations.",
+  "methods": {
+    "confidence": 0.95,
+    "n_seeds": 4,
+    "df": 3,
+    "critical_t": 3.182446305284263,
+    "interval_formula": "mean +/- critical_t * sample_sd / sqrt(n_seeds)",
+    "sample_sd": "ddof=1",
+    "font_family": "DejaVu Sans",
+    "pdf_fonttype": 42
+  },
+  "layout": {
+    "column_width_inches": 3.33,
+    "height_inches": 3.55,
+    "minimum_font_pt": 7.0,
+    "clipped_text": [],
+    "overlapping_text": [],
+    "text": [
+      {
+        "text": "\u22120.01",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          1.0333961855606697,
+          0.47727777777777797,
+          1.3283961855606696,
+          0.577277777777778
+        ]
+      },
+      {
+        "text": "0",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          1.559378846153846,
+          0.47727777777777797,
+          1.620628846153846,
+          0.577277777777778
+        ]
+      },
+      {
+        "text": "0.01",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          1.8922365067470224,
+          0.47727777777777797,
+          2.1059865067470223,
+          0.577277777777778
+        ]
+      },
+      {
+        "text": "Admissible",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.5506555555555555,
+          3.0229048913043477,
+          1.0794055555555555,
+          3.122904891304348
+        ]
+      },
+      {
+        "text": "Dense",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.7694055555555555,
+          2.741220108695652,
+          1.0794055555555555,
+          2.841220108695652
+        ]
+      },
+      {
+        "text": "Reversed",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.6244055555555554,
+          2.4595353260869564,
+          1.0794055555555555,
+          2.5595353260869564
+        ]
+      },
+      {
+        "text": "Random draw 1",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.31065555555555546,
+          2.177850543478261,
+          1.0794055555555555,
+          2.2778505434782605
+        ]
+      },
+      {
+        "text": "Random draw 2",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.3094055555555555,
+          1.8961657608695652,
+          1.0794055555555555,
+          1.996165760869565
+        ]
+      },
+      {
+        "text": "Random draw 3",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.31065555555555546,
+          1.6144809782608698,
+          1.0794055555555555,
+          1.7144809782608699
+        ]
+      },
+      {
+        "text": "Misspecified",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.4781555555555555,
+          1.332796195652174,
+          1.0794055555555555,
+          1.4327961956521742
+        ]
+      },
+      {
+        "text": "No edges\n(normalised)",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.4606555555555555,
+          0.9851114130434786,
+          1.0794055555555555,
+          1.2011114130434786
+        ]
+      },
+      {
+        "text": "No edges\n(parameter-matched)",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.02690555555555548,
+          0.7034266304347829,
+          1.0794055555555555,
+          0.9194266304347829
+        ]
+      },
+      {
+        "text": "(a) Cohort A",
+        "font_pt": 8.0,
+        "bounds_inches": [
+          1.2518788461538461,
+          3.343222222222222,
+          1.928128846153846,
+          3.443222222222222
+        ]
+      },
+      {
+        "text": "\u22120.01",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          2.2156884932529772,
+          0.47727777777777797,
+          2.510688493252977,
+          0.577277777777778
+        ]
+      },
+      {
+        "text": "0",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          2.7416711538461533,
+          0.47727777777777797,
+          2.802921153846153,
+          0.577277777777778
+        ]
+      },
+      {
+        "text": "0.01",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          3.0745288144393292,
+          0.47727777777777797,
+          3.2882788144393293,
+          0.577277777777778
+        ]
+      },
+      {
+        "text": "(b) Cohort B",
+        "font_pt": 8.0,
+        "bounds_inches": [
+          2.433546153846154,
+          3.343222222222222,
+          3.111046153846154,
+          3.443222222222222
+        ]
+      },
+      {
+        "text": "arm minus no edges (pooled RMSE);\nnegative is better",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.77625,
+          0.16690000000000002,
+          2.55375,
+          0.38689999999999997
+        ]
+      },
+      {
+        "text": "Shading: \u00b1 minimum detectable difference",
+        "font_pt": 7.0,
+        "bounds_inches": [
+          0.609375,
+          0.029699999999999997,
+          2.720625,
+          0.12969999999999998
+        ]
+      }
+    ]
+  },
+  "artist_checks": [
+    {
+      "cohort": "A",
+      "arm": "admissible",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "A",
+      "arm": "dense",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "A",
+      "arm": "reversed",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "A",
+      "arm": "random_s0",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "A",
+      "arm": "random_s1",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "A",
+      "arm": "random_s2",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "A",
+      "arm": "misspecified-1",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "A",
+      "arm": "none_norm",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "A",
+      "arm": "none_pmatch",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "B",
+      "arm": "admissible",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "B",
+      "arm": "dense",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "B",
+      "arm": "reversed",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "B",
+      "arm": "random_s0",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "B",
+      "arm": "random_s1",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "B",
+      "arm": "random_s2",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "B",
+      "arm": "misspecified-1",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "B",
+      "arm": "none_norm",
+      "mean_and_ci_equal_saved_values_exactly": true
+    },
+    {
+      "cohort": "B",
+      "arm": "none_pmatch",
+      "mean_and_ci_equal_saved_values_exactly": true
+    }
+  ],
+  "input_note": "historical-experiment shared_edges contrasts use historical historical-experiment runs and are not plotted. historical-experiment supplies the MDD planning multiplier only; historical-experiment supplies current historical-experiment MDDs.",
+  "style_reference": "DejaVu Sans; 7-point minimum; 3.33-inch vector PDFs",
+  "source_catalog": [
+    {
+      "source_file": "analysis/cap_selection/cap_reanalysis.json",
+      "sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29"
+    },
+    {
+      "source_file": "analysis/paired_statistics/paired_stats_v5.json",
+      "sha256": "5aa45d3c50da96f75d435520979a09f0bd451635f8557e5d07cb04a662828bdc"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed0/run.json",
+      "sha256": "f1c3a9eab3870248d353d8bc396fb4c4b02b98995f5282dcf293cae7265a510e"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed1/run.json",
+      "sha256": "4486891f9144febd229d1e48222bdbf90227ca782dcead27e5b9bd9cc746d70b"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed2/run.json",
+      "sha256": "554849d6bd845c99aa4439e9bfeb2ceec4cdf0a51548bb992d1a2025273f925f"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/admissible/seed3/run.json",
+      "sha256": "e5325b4ecdb16f6254e1866dc58631483d79d64adea87eea446b48a5c7a32eff"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed0/run.json",
+      "sha256": "fd00fd86f19fbec3714e8a8d7c3580496b746f8325dfc9de83f667a63bee6313"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed1/run.json",
+      "sha256": "9715c274d10627e0ec17c05d4e8daf2a5e3e29061534761366c8ac78faf78470"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed2/run.json",
+      "sha256": "7e5cf0941ad237600614f5d27acc455f8f60f679f664e996761e28712e367cd5"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/dense/seed3/run.json",
+      "sha256": "061d43fdb126dbd833b002476104c969fc0c43b1d806618cd922dba0117b9996"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed0/run.json",
+      "sha256": "397af9043b6b0f4b993013b0e55694f97e1131f0f34932151004a6fc29ebdfe8"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed1/run.json",
+      "sha256": "7cbdf43a769e2347d07cb33d675153bccbf3c88a5e47cb9b95d462040cb4eba0"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed2/run.json",
+      "sha256": "26640de8b5ac4485ef3f006b64b7363a894c26db1d077bfe093477dcedb70207"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/misspecified-1/seed3/run.json",
+      "sha256": "3aeeb23f9a6bdaafe0cfc345438bd73db82fd37b04fbebe1eff90e79bfe7030f"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed0/run.json",
+      "sha256": "2dfb99c297d50deaba329e94b01ac9942cf056b761c2d6cd76b589214d7f0ca9"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed1/run.json",
+      "sha256": "b5ad49c08ab213659b50aaee3b3fa31bce1e1508131f5152cc1bf9fcdad6ff7c"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed2/run.json",
+      "sha256": "0f66445178a1793d7779a18ca9167ecf65ba466422b8e4973c1be2834ea5f462"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none/seed3/run.json",
+      "sha256": "f0a954c1a8a6f96031ac2b4f99e61f006058a3ab05aa064b184492de321c41ae"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed0/run.json",
+      "sha256": "bb8f2e4ba8bec3173d67a7b2a0dbc7e39082cea82416bf5b8d5ba96db669ad7c"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed1/run.json",
+      "sha256": "9e72c2c28ddc36a18b8a5c671abad1b57f02dae8040d6cb0f93bac636b75abe5"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed2/run.json",
+      "sha256": "bbc709361eba738b19c419fe367760d2f78b14a715ac60f02183ca209e720da5"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_norm/seed3/run.json",
+      "sha256": "ebd1a5b98a1d4f9770d57dc358e1cbdbc7a9fb05a322776944b58aa5bb27804d"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed0/run.json",
+      "sha256": "bf4e9d6bfe56c4c66dfa91a2ba8dcba91300b03bd49017ec0f2262d23dcf8f87"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed1/run.json",
+      "sha256": "fa579d6bff19efaaa12140bad49d76d1e1c7de36e7511b9b40bcb8a542617989"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed2/run.json",
+      "sha256": "f73519280ee8edd756e948cbb204a8b7bafa49a1f0c72c14e2b8957b1c80213f"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/none_pmatch/seed3/run.json",
+      "sha256": "f30e35885124695c2b4d000c323df96267b05bfb532424331e5cd64e78aeb168"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed0/run.json",
+      "sha256": "e928fb767f8420b90c105c2b0ec25c4bd3cf343b0d6229a125a3fd19364da334"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed1/run.json",
+      "sha256": "94cf15db4ce04c75b9d7863a90d6446798d3329d0e6e2a8fe1032ac22d5a4cae"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed2/run.json",
+      "sha256": "dffc706ca6b3e1c2dbce18728dd2ecd3a2d5c5dc8ca55293cf248609424a5de3"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s0/seed3/run.json",
+      "sha256": "d7e7be1c3e648c6ff6a92feba968399e1a582f4123f679dd3946a1afbd26b4e1"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed0/run.json",
+      "sha256": "a67498383314601223cbbc82d2acd087eb1c981d1d7b68653328002e574a0130"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed1/run.json",
+      "sha256": "be7f0678715f009f44866aa87696e2f19a5c6ed175a05dec00966d7ad7a0d162"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed2/run.json",
+      "sha256": "fe6e0eedaddf793655325f0d315bf2aa1663e0c67d913bb4ed37e57507af1075"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s1/seed3/run.json",
+      "sha256": "2b7cbb4f2751e5ff4736c9b8f055b5db62740244b704608a5fb89dc612e0cef2"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed0/run.json",
+      "sha256": "e30e52da29926a8aebf106ddae0977506b6001074ded0ddabb7a32ba63e6ea71"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed1/run.json",
+      "sha256": "8795bbb76d990ae05193e932ff5f73ebabb18a864cee72a383cf3083e834bdc4"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed2/run.json",
+      "sha256": "a0ddc710e8b61a20293b95e6e9a9ee42f85250ad722e58bb40f47474ede0c82e"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/random_s2/seed3/run.json",
+      "sha256": "24f96591f0eb3e4e59bea3f4edec9f1af9ea3523649c45b57d29516bc06623f8"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed0/run.json",
+      "sha256": "be50405c5c131de4e40efd3ca5e1f568e7d387a4c635c0bd73e620de67a90547"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed1/run.json",
+      "sha256": "3b7cd665db8222afb214159c16314c0bcc449c058310d81bf1d54d07773521ac"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed2/run.json",
+      "sha256": "51ec62f8cf187b762a14e3240ee8e66a5df99485924b538f03bc1a4ca98c06a6"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/arms/reversed/seed3/run.json",
+      "sha256": "6aeeafffd9d23df455be8c135e8397ca10f27d27ce51bd73cfd1635f716b2de6"
+    },
+    {
+      "source_file": "experiments/shared_input_primary/artifacts/host/e2_e4_summary.json",
+      "sha256": "44efc785edca7f477eb471fc1c63d5a1e1451c0e344d09d2aa689ab8583522f9"
+    }
+  ]
+}

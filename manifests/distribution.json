@@ -28,24 +28,27 @@
   },
   "README.md": {
     "source_file": null,
-    "source_kind": "new_release_file",
+    "source_kind": "release_1_3_adaptation",
     "original_sha256": null,
-    "distributed_sha256": "64f97ff45b8c496453ba44eb6d7bf2f1f51b69ff8044a31c1648d3e34cb3d35b",
     "original_bytes": null,
-    "distributed_bytes": 18182,
+    "distributed_sha256": "281a1bb300068280b97680a8fcb352dd303bc0c42c198ef00e10ddd04911b206",
+    "distributed_bytes": 37484,
     "transformed": true,
-    "previous_release_sha256": "7104d1b29c9e7418d8f7934ae6862cc7df12e1711e345352d377cb14964b3cf4",
-    "previous_release_bytes": 16759,
-    "distribution_update": "round-4 documentation, version, dependencies or no-training test guard"
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
   },
   "REPRODUCE.md": {
     "source_file": null,
-    "source_kind": "new_release_file",
+    "source_kind": "release_1_3_adaptation",
     "original_sha256": null,
-    "distributed_sha256": "badd1876a5e93c3748543a7abc083cea4e5f22989d9580c634bf71582d8a9489",
     "original_bytes": null,
-    "distributed_bytes": 19643,
-    "transformed": null
+    "distributed_sha256": "82918c295d60f4ae3a66fdde0122019a4df9231bdf3ff54eb823eb74ec56150e",
+    "distributed_bytes": 29022,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
   },
   "baselines/METHODS.md": {
     "source_file": null,
@@ -328,15 +331,15 @@
   },
   "manifests/TRANSFORMATIONS.md": {
     "source_file": null,
-    "source_kind": "new_release_file",
+    "source_kind": "release_1_3_adaptation",
     "original_sha256": null,
-    "distributed_sha256": "b0d9f7f5653ae6c904d60f0215675c7931f4dadd17a74b7a9f985168b96e6851",
     "original_bytes": null,
-    "distributed_bytes": 9784,
+    "distributed_sha256": "f4cace294463f33a98064f83f9502649dce4cba97a44c4392d0efee8420ddb73",
+    "distributed_bytes": 11193,
     "transformed": true,
-    "previous_release_sha256": "13a6b1a4d2c513ba4aa466deffa6a03e687d7d7b067989f6a8b2501fd2212ac5",
-    "previous_release_bytes": 6011,
-    "distribution_update": "round-4 documentation, version, dependencies or no-training test guard"
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
   },
   "manifests/cohorts.json": {
     "source_file": null,
@@ -2488,12 +2491,15 @@
   },
   "tools/summarize_results.py": {
     "source_file": null,
-    "source_kind": "new_release_file",
+    "source_kind": "release_1_3_adaptation",
     "original_sha256": null,
-    "distributed_sha256": "659683d0a24f5622282e213839741e1e55149987c59c920f73b60f469a855586",
     "original_bytes": null,
-    "distributed_bytes": 7978,
-    "transformed": null
+    "distributed_sha256": "cbba47b9b8ededcc197150d6bc6f996a45fc6e32420caebac8f96538dc2968e8",
+    "distributed_bytes": 8889,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
   },
   "tools/tuning_grid_runner.py": {
     "source_file": "tuning_grid_runner.py",
@@ -2767,12 +2773,15 @@
   },
   "diagnostics/renal_shared_input/tests/test_saved_runs.py": {
     "source_file": null,
-    "source_kind": "new_release_file",
+    "source_kind": "release_1_3_adaptation",
     "original_sha256": null,
     "original_bytes": null,
-    "distributed_sha256": "357b65a01095dde2cd9f8fb482943f1b61d797a9b4759fdd2e18faf84fe2800c",
-    "distributed_bytes": 5137,
-    "transformed": null
+    "distributed_sha256": "3181108679f48e3a8d3ac41d9a079d416435f53ad762cf1628d27e68a0650885",
+    "distributed_bytes": 5225,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
   },
   "diagnostics/shared_input_edges/EDGE_CHECKS.json": {
     "source_file": "EDGE_CHECKS.json",
@@ -3289,24 +3298,27 @@
   },
   "diagnostics/shared_input_edges/tests/test_saved_runs.py": {
     "source_file": null,
-    "source_kind": "new_release_file",
+    "source_kind": "release_1_3_adaptation",
     "original_sha256": null,
     "original_bytes": null,
-    "distributed_sha256": "c8670d050a40822203fda4a9316b7f7e058ab3b885431a572e7c70fc8ce63066",
-    "distributed_bytes": 5506,
-    "transformed": null
+    "distributed_sha256": "de201ef934b17bdfadd90045432586b340884d26581d9dd5683aee6929356440",
+    "distributed_bytes": 5594,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
   },
   "CITATION.cff": {
     "source_file": null,
-    "source_kind": "new_release_file",
+    "source_kind": "release_1_3_adaptation",
     "original_sha256": null,
     "original_bytes": null,
-    "distributed_sha256": "ea2e78c29861fdda8b908da35492b48400295ee4aa158b2b18be9f35f73b0851",
+    "distributed_sha256": "c93adae1c1b66284c554cd22c8a93dfca5072dcd209177c92f4d1e46f0fd954e",
     "distributed_bytes": 575,
     "transformed": true,
-    "previous_release_sha256": "49ebe54cd0bc9fa6931cacb0b79fd857228bccfa1eaa35d9143af75eeef90531",
-    "previous_release_bytes": 575,
-    "distribution_update": "round-4 documentation, version, dependencies or no-training test guard"
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
   },
   "tools/cinc2012/cinc2012_transfer_eval.py": {
     "source_file": "historical_sources/cinc2012/cinc2012_transfer_eval.py",
@@ -3364,12 +3376,15 @@
   },
   "tools/cinc2012/README.md": {
     "source_file": null,
-    "source_kind": "new_release_file",
+    "source_kind": "release_1_3_adaptation",
     "original_sha256": null,
     "original_bytes": null,
-    "distributed_sha256": "fbc17dfc128a0090789cc3615a3ab519bc2765ef896972a91530b761b0471ded",
-    "distributed_bytes": 5350,
-    "transformed": null
+    "distributed_sha256": "7c853e1bf82bf6ded89deb439d2480a5d0584c0d48a891ae22c390ad0cafa8bc",
+    "distributed_bytes": 5703,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
   },
   "tools/cinc2012/tests/test_protocol.py": {
     "source_file": null,
@@ -5949,14 +5964,14 @@
   },
   "experiments/counterfactual_onset_matched/verify_artifacts.py": {
     "source_file": "verify_artifacts.py",
-    "source_kind": "copied_experiment_input",
+    "source_kind": "release_1_3_adaptation",
     "original_sha256": "7c47aa7a8b38773025a267184bebff296f957151a07539448d33c1b87b8c1786",
     "original_bytes": 5191,
-    "distributed_sha256": "cbeb7553a168843a7ca8aa1a57f01f11e7075f57c06bac0fec3ac4715266eecf",
-    "distributed_bytes": 1123,
+    "distributed_sha256": "1e6c0061d2f19b569dd4032ad8a59ab2a2977363f4139a75626b70d682de714a",
+    "distributed_bytes": 3055,
     "transformed": true,
     "transformations": [
-      "repository-root bootstrap and imports; distributed source checks; scoped runtime/verification adjustments documented in TRANSFORMATIONS.md"
+      "Portable release adaptation; historical fingerprints preserved"
     ]
   },
   "experiments/counterfactual_onset_matched/verify_policies.py": {
@@ -6453,12 +6468,15 @@
   },
   "experiments/positive_control/README.md": {
     "source_file": null,
-    "source_kind": "new_release_file",
+    "source_kind": "release_1_3_adaptation",
     "original_sha256": null,
     "original_bytes": null,
-    "distributed_sha256": "bdcc8b0596becc893d8511e9a5ac37b8d03b2061e4e582f745e24179968c25fb",
-    "distributed_bytes": 3118,
-    "transformed": null
+    "distributed_sha256": "7fd375067d2eb6cccd584ffa6471e2530df03a7239ec09b8f01f0c1e1c01fd2a",
+    "distributed_bytes": 6410,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
   },
   "experiments/positive_control/artifacts/DISTRIBUTION_NOTE.md": {
     "source_file": null,
@@ -7823,12 +7841,15 @@
   },
   "experiments/shared_input_primary/README.md": {
     "source_file": null,
-    "source_kind": "new_release_file",
+    "source_kind": "release_1_3_adaptation",
     "original_sha256": null,
     "original_bytes": null,
-    "distributed_sha256": "7e6dfc8d4bfc3c3492a5d8c0b6e94ec798aadc7731c77c5e91ca509b22e7efbc",
-    "distributed_bytes": 2107,
-    "transformed": null
+    "distributed_sha256": "62aad542ec6b49d5d772e178d869efdaca81c74a53944fc861386322c26c6325",
+    "distributed_bytes": 6229,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
   },
   "experiments/shared_input_primary/REPRODUCTION_NOTE.md": {
     "source_file": "REPRODUCTION_NOTE.md",
@@ -8782,6 +8803,1710 @@
     "transformed": true,
     "transformations": [
       "repository-root bootstrap and imports; distributed source checks; scoped runtime/verification adjustments documented in TRANSFORMATIONS.md"
+    ]
+  },
+  "analysis/cap_selection/CAP_REANALYSIS.md": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "080bcdf8c6cfd2f27fa16d26453563ba93911ca52fb145c5e67a4bc15ca60991",
+    "distributed_bytes": 20064,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "analysis/cap_selection/README.md": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "fcc98f0d53efec23c1c494b596530a1022a52b221e6bca99c9258901cc021611",
+    "distributed_bytes": 980,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "analysis/cap_selection/cap_reanalysis.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "74f6efed10261ca1f5e794c047602e5d87890cb640d3243e0852df1747fc7e29",
+    "distributed_bytes": 628440,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "analysis/cap_selection/cap_reanalysis.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "861fcf8cab1c3078cb5147a6bcc5450c414af2c8a4d0ce303a045cc38be50e09",
+    "distributed_bytes": 42653,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "docs/RELEASE_V1_3_0.md": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "a7b2e5e82b774853a43b84f453c200c9b285b21301b27263d4cfa3b65c9d5315",
+    "distributed_bytes": 3287,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "experiments/counterfactual_onset_matched/tests/test_verify_artifacts.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "f2608201f1b87064c9dd63418f653764872e0a1893271dba8c3fe017a964e661",
+    "distributed_bytes": 4743,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0/shared_admissible/seed0/run.json": {
+    "source_file": "seed0.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "857b0dc0fe66f9576f3fb9480e938a82b5e72a3252125e06fbd05512d8727929",
+    "original_bytes": 17025,
+    "distributed_sha256": "78475a502c689c6940b32ec42c7de8e235c6555618a9576de768aeaef3415982",
+    "distributed_bytes": 16339,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0/shared_admissible/seed1/run.json": {
+    "source_file": "seed1.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "8ad9b2aa94c32ca8c39b3800d1df45b82ca01114f105b7bb16a7732c0bf0c14d",
+    "original_bytes": 17035,
+    "distributed_sha256": "85656e2efe5efef70a69d3a5267eb049282a14f66b9d957724d91f07cfcc433b",
+    "distributed_bytes": 16349,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0/shared_admissible/seed2/run.json": {
+    "source_file": "seed2.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "12448d0d89081911d5ed4238ffc402b62cf42145745916f95efdacba903f8317",
+    "original_bytes": 17027,
+    "distributed_sha256": "a5a62a10523590b5c5e24616ea3bbb706df6f004a8641986fcc756cdc20aa2b8",
+    "distributed_bytes": 16341,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0/shared_admissible/seed3/run.json": {
+    "source_file": "seed3.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "d4b0f60bdf9fac90da62b095a5e6fe6bae9a9d07d44128c9494d7745e465941a",
+    "original_bytes": 17030,
+    "distributed_sha256": "6b277b378b14f05f109702c4508a5ae00ef50554ca280227627d8a36fd98ad77",
+    "distributed_bytes": 16344,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0/shared_none/seed0/run.json": {
+    "source_file": "seed0.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "6a0840dc431ca4f9b6fb35c43255af8518cd97499c8981407d2ca63a7d114dfe",
+    "original_bytes": 16956,
+    "distributed_sha256": "fedce4c92109b0a2cbb6dd23c8b116df851d83a96a7b12d903b204e3c9326dee",
+    "distributed_bytes": 16270,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0/shared_none/seed1/run.json": {
+    "source_file": "seed1.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "5f9c5081f52a1741cf15faa1ddf9802a0223fce056545f17331ca7c12c0cbcb6",
+    "original_bytes": 16956,
+    "distributed_sha256": "b6efdd37a3b0dc3ce9f86753b3b2337cef198571c0c33b30e4fec04645185f31",
+    "distributed_bytes": 16270,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0/shared_none/seed2/run.json": {
+    "source_file": "seed2.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "6a2fc6a7a8c4780c1dc8009e08b5b8b404da44bb87dfe67e3fab1b3f10bc141e",
+    "original_bytes": 16955,
+    "distributed_sha256": "dde4d790ba2940ac167b41415ca7b03ee11bff617a4b44dc08bb01be51881037",
+    "distributed_bytes": 16269,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0/shared_none/seed3/run.json": {
+    "source_file": "seed3.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "79ecbdb3c175db1a862221fffb62731cf02af22fda91a630f80ca8c67cad2ad9",
+    "original_bytes": 16956,
+    "distributed_sha256": "dd0bb7a35c9948375da5cc9f0be9b5aee8d56e48ab82695fe2a70085761dfa9e",
+    "distributed_bytes": 16270,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0.5/shared_admissible/seed0/run.json": {
+    "source_file": "seed0.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "4b54647b986e4454bbd2d6524fcb91c9d300614d570edba15391ac9f66f39f04",
+    "original_bytes": 17026,
+    "distributed_sha256": "558dcf896787b94d48f6fa3e1be3d37c804bb8d7bef4524f4c995fa042e61072",
+    "distributed_bytes": 16340,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0.5/shared_admissible/seed1/run.json": {
+    "source_file": "seed1.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "44fa01e4916120f6a1cc551d5d64146cb7b1cc6dc6ad4c614f62d4b068c6786a",
+    "original_bytes": 17042,
+    "distributed_sha256": "491ff32f7db622e2a8d53fd042b1c33aa4ad0420b6617fe7eeadf89d24e91171",
+    "distributed_bytes": 16356,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0.5/shared_admissible/seed2/run.json": {
+    "source_file": "seed2.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "175f5f88366724c522c0ec5fab58ac6ec0892d58bf138f188fb71feec5fa94aa",
+    "original_bytes": 17033,
+    "distributed_sha256": "1248ee33ae3b2e057ceaab3adbde3cd12c0954f13fe811300dc03b6e9a9ed1c9",
+    "distributed_bytes": 16347,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0.5/shared_admissible/seed3/run.json": {
+    "source_file": "seed3.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "f667af54b66b6f9b85bb0c4f6ad9657b36b61911271bf3cad629d4f0812a0d0c",
+    "original_bytes": 17033,
+    "distributed_sha256": "39392cb8c7478e33e474be73d442faabb4170deb74072f9eddc9cda4d260ef57",
+    "distributed_bytes": 16347,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0.5/shared_none/seed0/run.json": {
+    "source_file": "seed0.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "033d71f7c7ed94ef873f614543905cae1e3749c1fa1796fd5a01c1ffd797f2e8",
+    "original_bytes": 16969,
+    "distributed_sha256": "150958aadb991b856f23d634d48dba9bdde9e1dc1a9caf44a0f53709c36e515f",
+    "distributed_bytes": 16283,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0.5/shared_none/seed1/run.json": {
+    "source_file": "seed1.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "35d0b7657609d89dd05498ac270132200445deedae6634fd4231cfed4238cb97",
+    "original_bytes": 16966,
+    "distributed_sha256": "189e6e907c3145f65fd881ec3a6d4de8f0a950ed01a033623e3e2260b06b06a6",
+    "distributed_bytes": 16280,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0.5/shared_none/seed2/run.json": {
+    "source_file": "seed2.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "6e4c3f3f915d9a7a9cbf4fbcb22952b09309fd2f5409e0d18283a227f26f5f3d",
+    "original_bytes": 16964,
+    "distributed_sha256": "2c583b490b9741cf83738dcff76920a8274fb8ce7a58fee1411e9a5ea165718b",
+    "distributed_bytes": 16278,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_0.5/shared_none/seed3/run.json": {
+    "source_file": "seed3.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "c2723f0f06e00ef0355565e07692855005613f016054c11c2295c119049b1047",
+    "original_bytes": 16972,
+    "distributed_sha256": "0104e0914d579e9d6934f2be0ae36d1fd19dc6165d3583876a82927b08faa1ae",
+    "distributed_bytes": 16286,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/admissible/seed4/run.json": {
+    "source_file": "seed4.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "acd8ec1540b785c39fb045e959abf147a4b2abb04d58a8330652cbbf409fd16b",
+    "original_bytes": 17027,
+    "distributed_sha256": "8ff0f5a6ed0bdbe0f62164f0d0ef1fea09f9ed79b02c2803853f40874a8c6420",
+    "distributed_bytes": 16341,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/admissible/seed5/run.json": {
+    "source_file": "seed5.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "936245582f585590abde192142a91c060a30d6314379bac85e2f6db3f65a54ca",
+    "original_bytes": 17023,
+    "distributed_sha256": "fb2e650386eaf48a81c81c74a740db0253f7ca6139db362c08d2f27aba21223b",
+    "distributed_bytes": 16337,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/admissible/seed6/run.json": {
+    "source_file": "seed6.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "43d2034a976a79cbd634e1b808090f2adba666af1d4c996db69cdd2115d7a8a2",
+    "original_bytes": 17025,
+    "distributed_sha256": "1dbc9cf07f430c5fea03a5a20a6f126fb904dfcb83f6683bdf7d6ce960751ea2",
+    "distributed_bytes": 16339,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/admissible/seed7/run.json": {
+    "source_file": "seed7.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "83da6a5e54e95437f5b84c5c7a90d64a621039115583b8faff41f2012541a2e5",
+    "original_bytes": 17030,
+    "distributed_sha256": "49aff59ca77cd35ce96828fde8c3b565a93e0d2214273e76069a89b93fed0e2b",
+    "distributed_bytes": 16344,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/admissible/seed8/run.json": {
+    "source_file": "seed8.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "cc392c07f00fb46eaee12bcf75db385c7cae3362f977dd996e90acb5c6461d4c",
+    "original_bytes": 17031,
+    "distributed_sha256": "92f988631916c9c86dfca0e26eae76e5c1d52ddf0efeb93ab2aae0fe0766e0c4",
+    "distributed_bytes": 16345,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/admissible/seed9/run.json": {
+    "source_file": "seed9.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "1103a2c92c84b80093a3311759f699efd003e74542e2817aad3f49e36dedafc4",
+    "original_bytes": 17027,
+    "distributed_sha256": "b3e6a404f5ed0aa308a2ab1848b74ba3813e8c1d9507573aea7abb2ae28bcc27",
+    "distributed_bytes": 16341,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed4/run.json": {
+    "source_file": "seed4.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "8cc42d556e7d88501ccf06c36e02d15f5df82e199433edb7d4ffeeacef77e4ca",
+    "original_bytes": 16952,
+    "distributed_sha256": "a8f863c67329ddfe34c84d290ee3c65c259335154afb5dfa4b2b6c0620f4bfe3",
+    "distributed_bytes": 16266,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed5/run.json": {
+    "source_file": "seed5.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "68aea259de2ea520b48cc3e67e7cc19f33138f7d5e3158e427578272188268f6",
+    "original_bytes": 16943,
+    "distributed_sha256": "10881270acc13cabb80871c39ea9dd37d82b3902c88139750eb6e9b2e33eb861",
+    "distributed_bytes": 16257,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed6/run.json": {
+    "source_file": "seed6.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "38270ee9f4d8e392fcaa41833662c125308ceabd62955812b9af45ae68a009ca",
+    "original_bytes": 16946,
+    "distributed_sha256": "cd8827d53d8129a9ec07a22fc09db52eb59e45281bb6018efec52fbe139c2342",
+    "distributed_bytes": 16260,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed7/run.json": {
+    "source_file": "seed7.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "ae2f80978a0db4499d6410681048f46ca8047845e356e283f570e633ab87548a",
+    "original_bytes": 16940,
+    "distributed_sha256": "22bb5bd6b77328a8ed325b4d8fcb74b6155c25230df2c16a902028a944932c4b",
+    "distributed_bytes": 16254,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed8/run.json": {
+    "source_file": "seed8.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "fb16903b198b30b763bb9a907e851e5a9ad3aec8015bc258be9793089dda5ffd",
+    "original_bytes": 16946,
+    "distributed_sha256": "0ca834720b9854460d7892c3ceebf8bc724d6c5a6b24022ef38649fca0b4f8d6",
+    "distributed_bytes": 16260,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed9/run.json": {
+    "source_file": "seed9.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "69cf987f4f0a555cbd40606c9e4c17939e89f687d60f9a219c73ac98f165af1d",
+    "original_bytes": 16947,
+    "distributed_sha256": "f2da1ede2d9ae71c4bf16037c42c27185430ec6df0fab1827ae96add3e97c53f",
+    "distributed_bytes": 16261,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/none/seed4/run.json": {
+    "source_file": "seed4.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "f9bce2e4f0da64698e1dca14fb4e5c6ddf2f486670f0c63a662a98684396e078",
+    "original_bytes": 16951,
+    "distributed_sha256": "a313b163d85e56a0f69533bf5a168f43130777ab9eb31d73fbe7e6571d100a85",
+    "distributed_bytes": 16265,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/none/seed5/run.json": {
+    "source_file": "seed5.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "d4b00dbb0363895c2af9b1d7f5c56fd0d8d83ae27636399fbb73e220b9fad1d8",
+    "original_bytes": 16966,
+    "distributed_sha256": "04473e746dd73511a494d4f8b0c503bf80c8aa3b8253e8ef39bf14ea73963163",
+    "distributed_bytes": 16280,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/none/seed6/run.json": {
+    "source_file": "seed6.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "a3ce6d402556b8b8dee4994d78727fd5ae890fa2a84ffb13670f43b7fcf1fab6",
+    "original_bytes": 16955,
+    "distributed_sha256": "5b415cdd2e47cb1370833ff967d44038a48c183372f2feeea410c7cbc9538184",
+    "distributed_bytes": 16269,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/none/seed7/run.json": {
+    "source_file": "seed7.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "d0e2a528d75b06e6fd87189082a7c972bc07feface1aef0ca199059f40a49a3b",
+    "original_bytes": 16947,
+    "distributed_sha256": "81d2e13fc81eb5d349282fec3f9d4220bff55b07f97c09081004a68a7ab44cf0",
+    "distributed_bytes": 16261,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/none/seed8/run.json": {
+    "source_file": "seed8.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "4802bff862674c616633f763ca06230893d97d56fe9aacb829d690cf87d17989",
+    "original_bytes": 16957,
+    "distributed_sha256": "2cc12d327afb3ee4bf2acd97fcca552f11d6be114d47e27fd5216af1d173df03",
+    "distributed_bytes": 16271,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/none/seed9/run.json": {
+    "source_file": "seed9.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "79ec9e31c648aa81b45db57c0cba5382829df45b2189393a4ea06bb2360e6591",
+    "original_bytes": 16956,
+    "distributed_sha256": "9db63fd071adec987bbc0c4b878f26d853ed9941b06c6b79e65637b5d0a89d37",
+    "distributed_bytes": 16270,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/random/seed4/run.json": {
+    "source_file": "seed4.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "dec014df8b6deac8479249b9721661b000c08e3df2a73f97f77d46a23d85035b",
+    "original_bytes": 17018,
+    "distributed_sha256": "8b044bddb5692fa260f50e6f5c596f61f93a579e7f1259f295c138d825c4c06b",
+    "distributed_bytes": 16332,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/random/seed5/run.json": {
+    "source_file": "seed5.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "afa7c95d2a5e812b76af1aeabac65cc19b8d16a940e8c3cb548f2004de6d2f30",
+    "original_bytes": 17028,
+    "distributed_sha256": "98c0a10b0451523952810633a1b1eb14becd7d5f085a2bba4d96e003d8ac874a",
+    "distributed_bytes": 16342,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/random/seed6/run.json": {
+    "source_file": "seed6.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "ef447acf2e5754167253828ba6410eef6563068a53feb55eeeb6f15b2feff2fb",
+    "original_bytes": 17019,
+    "distributed_sha256": "ed6fc8a7f70755930ea0989dd5153d05df6fb4c5edf6c5bedfb93b93067121bf",
+    "distributed_bytes": 16333,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/random/seed7/run.json": {
+    "source_file": "seed7.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "d0e370c01cd75250ccc119a227f482501d5680f53eaf964a9409d37efeb7fcc9",
+    "original_bytes": 17022,
+    "distributed_sha256": "734c4a8dba8fd797c97f3b71eed3a18a8ffde082c788db13d0df3e2783c76372",
+    "distributed_bytes": 16336,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/random/seed8/run.json": {
+    "source_file": "seed8.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "2ff343a269d6906e61fa92011f96000c6a6977c9efc44b90bdc5b84319a58177",
+    "original_bytes": 17021,
+    "distributed_sha256": "220b2ccbca54a072f315474142efef8b664314f7ee912673fe84ec8986aad876",
+    "distributed_bytes": 16335,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/random/seed9/run.json": {
+    "source_file": "seed9.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "dfe75ca4173830e18ef3bf9b35fefd827415a8bc88cdbed1d4a4b078f8dfc03b",
+    "original_bytes": 17019,
+    "distributed_sha256": "d51ec27bdaf8aa627d395615b4a4a1217b7c4db69ff63da73c4bb08efb32b972",
+    "distributed_bytes": 16333,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/reversed/seed4/run.json": {
+    "source_file": "seed4.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "af6c2922289ec8c078cf958ec67c00f2e5c7788a0055c26e657e0f62a8a81027",
+    "original_bytes": 17031,
+    "distributed_sha256": "dfef39d1464e2c554250633efaf9c94eb684422654bc3f641f7b5b52293c4076",
+    "distributed_bytes": 16345,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/reversed/seed5/run.json": {
+    "source_file": "seed5.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "00dd768ae1348d8ffc5e3a0f7f4a08aea0e4b4f35b56e4e5b11029a34b8922d4",
+    "original_bytes": 17024,
+    "distributed_sha256": "99e289636a03ac3f1fda376c0b612092b9d36164683915a14ca20cab98e94ba0",
+    "distributed_bytes": 16338,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/reversed/seed6/run.json": {
+    "source_file": "seed6.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "7d96faac38c7a69ea4d8ead200e6ce8048efa6a1a0eb6b4f767664ba496215b0",
+    "original_bytes": 17027,
+    "distributed_sha256": "68dc811669453cbffd86b4c1b72a3b29a286a032acc7565be73a4d374ada29d1",
+    "distributed_bytes": 16341,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/reversed/seed7/run.json": {
+    "source_file": "seed7.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "423d652e9adfd48809eed4c37a520e6af1de740d432e02f6d869e2068f26e941",
+    "original_bytes": 17022,
+    "distributed_sha256": "bd5e130e8f40b1066b1d7b450e29d94368d0f00474c9f4d6352ee9baa9834590",
+    "distributed_bytes": 16336,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/reversed/seed8/run.json": {
+    "source_file": "seed8.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "6a7c83377d4067f6aa19eca17b6962ced71c95ef0283a549a771bcf325fca954",
+    "original_bytes": 17018,
+    "distributed_sha256": "d3e18e2bb3f218f655c12f8bdb5f248d56dd7f5ad681f7a8fc0c994da7a04b68",
+    "distributed_bytes": 16332,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/reversed/seed9/run.json": {
+    "source_file": "seed9.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "56c1d52170796c853d227367f216d2c6201ed83a4bc150d87bf7aefcf33ffa97",
+    "original_bytes": 17023,
+    "distributed_sha256": "b09c9d5dac4a37b102aafe2c872cda198cc6f45f960df9c50043c1326ed03dbe",
+    "distributed_bytes": 16337,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed0/run.json": {
+    "source_file": "seed0.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "a7f110bc35ca05e3fc081cf17566e277ea80b4e6403aff0fdab9d276c81d53b8",
+    "original_bytes": 17034,
+    "distributed_sha256": "f16db76c8f7a663695aa7eecc5fd16534d5e4b4f11e397bf3ec2f3e04ba8da4d",
+    "distributed_bytes": 16348,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed1/run.json": {
+    "source_file": "seed1.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "842c1c806ad95d8375eec9ec457b9a195dd1cc3118396c90c94f5e5b69083f36",
+    "original_bytes": 17034,
+    "distributed_sha256": "9a43188a33761dd522c0fcdde21c6682444465eee21c1edf4e527bf55b6cac88",
+    "distributed_bytes": 16348,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed2/run.json": {
+    "source_file": "seed2.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "539af98890026823244eabcca089cc7f20d0e42a4d54db165767fe05597caed1",
+    "original_bytes": 17036,
+    "distributed_sha256": "1c850dc7e0420c7ebaa2fc120f4d63124bfd9791428dc836e00097707d6e702c",
+    "distributed_bytes": 16350,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed3/run.json": {
+    "source_file": "seed3.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "a3917d9d47e09172c77c9ba99ac2fc1a1564870e43f64a7bc125f19afba30ff4",
+    "original_bytes": 17035,
+    "distributed_sha256": "e9407a787c74f6a03b7f7ce0ca57f311afb22b357ebd30ea94f550e2737f5aad",
+    "distributed_bytes": 16349,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed4/run.json": {
+    "source_file": "seed4.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "24da9680810af90845e55e017d5f9a2e9842cd587dbb2b92924e532b294f025b",
+    "original_bytes": 17035,
+    "distributed_sha256": "520915c27516898ee51a1f3d6ac3092dbb05d18230e97bec3ecdafa824b1aee5",
+    "distributed_bytes": 16349,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed5/run.json": {
+    "source_file": "seed5.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "1b7e43b5be6e0cdd08e3d11f562bd4e946d91717c24f8777b0db3c6569521d8e",
+    "original_bytes": 17039,
+    "distributed_sha256": "64146ee8a00aabc5f595a3589dfd57991baf27d4cdb4558a8bbb8d50f225ac05",
+    "distributed_bytes": 16353,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed6/run.json": {
+    "source_file": "seed6.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "f111b59b91ed014b52d7e71bc5b619faeb1e03a2bdd247d478eeb43b5b4519ec",
+    "original_bytes": 17030,
+    "distributed_sha256": "e65b294eab2c612ec39d088209492551e5927428199e2fbf10b2aa7c9576e365",
+    "distributed_bytes": 16344,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed7/run.json": {
+    "source_file": "seed7.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "fb65ae2cd6db070697801929f12972e4738d395dce39c588b2f9aff5f7761e9e",
+    "original_bytes": 17029,
+    "distributed_sha256": "8ff85fab898b4c49ec5bc4bd5a127a712779d6184d8a71c5e4b33eae95e0e88c",
+    "distributed_bytes": 16343,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed8/run.json": {
+    "source_file": "seed8.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "b4471f7908fc85c2c4a785e742120b2cb27d9f7924b7f892bb9cb694d5df8b3e",
+    "original_bytes": 17031,
+    "distributed_sha256": "9beb4ad16bd6e5acee2e7882bd397de062403cbc4320c6f1af72d1a702574388",
+    "distributed_bytes": 16345,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed9/run.json": {
+    "source_file": "seed9.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "7461e4c35e16e9d0577e44e2a66019362a5bb602dd87f0c06ceb1e6a5872c0cf",
+    "original_bytes": 17032,
+    "distributed_sha256": "30903b4d0fac6450a2a232a42d4a583ecdd072164dd032704425e30c5b1dffc0",
+    "distributed_bytes": 16346,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed0/run.json": {
+    "source_file": "seed0.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "86124d1388bb29d04a58fd9c6e9152e02c49fcaa8b906bf41a306004567c86a3",
+    "original_bytes": 16957,
+    "distributed_sha256": "8ae3bdff598dbb06a4b6732da8e0280825413ec05ff3a1354d5f508f43ab7332",
+    "distributed_bytes": 16271,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed1/run.json": {
+    "source_file": "seed1.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "caf0402842be7a061a1a13931e92fc91899dec541ad7f741465591e5b2f4b165",
+    "original_bytes": 16965,
+    "distributed_sha256": "d95681febd73f0a3037a08c621a0c0e3f261677a9fbbdd596579f67f582cc8ea",
+    "distributed_bytes": 16279,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed2/run.json": {
+    "source_file": "seed2.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "9d7dcceeab5dc35d99396ef8317d232de69357c98bd1475e17668ccbdef5e52f",
+    "original_bytes": 16971,
+    "distributed_sha256": "f318b5a53885d923f1d65a35e0f8a9af7c9d43fbda141504cdebf1002c2cf52b",
+    "distributed_bytes": 16285,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed3/run.json": {
+    "source_file": "seed3.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "042cdf8e426354df5378664d2ef1420d4b66a8c9487a09c29d0877d05e632268",
+    "original_bytes": 16969,
+    "distributed_sha256": "88d6f6943451bf06a23d2141a45be4237831fa354c7bab06f3ab5c04435bce11",
+    "distributed_bytes": 16283,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed4/run.json": {
+    "source_file": "seed4.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "cf2e3bd96adf87e595c9bd1d2c204cded75861d7123c8274b1cce5ab22ad23f3",
+    "original_bytes": 16970,
+    "distributed_sha256": "0cd8ba31b35eaa4112437cc7954f1aff350b0bff158ee9660a74d47785589851",
+    "distributed_bytes": 16284,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed5/run.json": {
+    "source_file": "seed5.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "1b6bba2119ef28fcf284f621f879c3af233c13190a194507eaee6e2e32f5cc9d",
+    "original_bytes": 16966,
+    "distributed_sha256": "dd4efe1b928c99003a006067430c8ab4cfe5e927b13c8f61aa75ef76e7553004",
+    "distributed_bytes": 16280,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed6/run.json": {
+    "source_file": "seed6.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "9aa3134ce13aa591c4610db5127e415b76b5636d92a8ea9203fdb87ddf8143f9",
+    "original_bytes": 16965,
+    "distributed_sha256": "23a31f057365515a931073bd71b7c1b2f6be978be41ca317c95930e027b02f46",
+    "distributed_bytes": 16279,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed7/run.json": {
+    "source_file": "seed7.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "2ecade0dc0a48a5c21eb7b7cd720f4f5c3b38a388c378d0ef53e2cd1558f0d34",
+    "original_bytes": 16962,
+    "distributed_sha256": "cc9a8f1675c879ba86e648f80d49e86a63a7cbe3656f317ef7c84b8724ff953e",
+    "distributed_bytes": 16276,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed8/run.json": {
+    "source_file": "seed8.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "43c95f504bfe127010c90d4b158da09189ef9e500fd91b0bd4b5b6874170911d",
+    "original_bytes": 16973,
+    "distributed_sha256": "643c5c663a12fd6a44ad3ff47a2cb7718a33ece78e2e95e45e9a3ede6b326271",
+    "distributed_bytes": 16287,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed9/run.json": {
+    "source_file": "seed9.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "fec0d06a7df3c0b78197902787ad174c815bf0055ba3812f53dfde2932d55895",
+    "original_bytes": 16975,
+    "distributed_sha256": "6514ecbb1e5597745de81f8c99bc0296b150c698fe109efb25d87cb7fe93138a",
+    "distributed_bytes": 16289,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/positive_control/e1b_protocol.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "b08ad31eacf3a6bc4e73db67bc64a20d9cc94fdf5c1f21f54e869213a78af62d",
+    "distributed_bytes": 11309,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "experiments/positive_control/read_e1b.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "827662fcd7f13af4f9036066c39cdf85ea9cb043358f23ca4203d6d8fe7158ae",
+    "distributed_bytes": 7455,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "experiments/positive_control/run_host_e1b.sh": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "3dd5f5cebe126093cdfc54a45dd1f7cb06cdc66780cfa9752664e2da6aecb344",
+    "distributed_bytes": 206,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "experiments/positive_control/shared_input_regime.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "2ef522e05161448816c5dd07d66e1e7f24c514f5a660c4ad2680416a502d73c8",
+    "distributed_bytes": 12118,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed4/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "6a7d8deb9c440ea78370c3f9b5d64901ecb7a66419f517a351aff9745b83c06f",
+    "original_bytes": 466006,
+    "distributed_sha256": "2df116d294fdce8ddc6d69efce27813d3b08a2308746a2c4707d08ccecb84d84",
+    "distributed_bytes": 465840,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed5/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "6e2be16510fadff1f2c738a888f64d863f2a8449245f58ea3b1e725f4342d397",
+    "original_bytes": 468319,
+    "distributed_sha256": "988497ff1a1369afa06a92e868f2a3089dd4dc0d07c5bca9bfeab198fea1cda7",
+    "distributed_bytes": 468153,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed6/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "d11dd2ca8c8392e258ce924a28b71663d446b1bb19aec2022f9ca37d3b5a17db",
+    "original_bytes": 469085,
+    "distributed_sha256": "0177401f74128b95bcaf6f04b5162bb98b98b175cb63b7cd9c2f503c11794fe2",
+    "distributed_bytes": 468919,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed7/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "265264f3eba770ec23e24a2a40284078a58a761c111650aeb2752f14a538f204",
+    "original_bytes": 466765,
+    "distributed_sha256": "fcb284c3c267169c8be2736f7848328431c5d37ee8efbbe73f1f0fe694062a29",
+    "distributed_bytes": 466599,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed8/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "93b1bb172ab664a51276d1780a4dfcb6ffd0c0bed77d61d9070d1eb81a5990f3",
+    "original_bytes": 467786,
+    "distributed_sha256": "2a0e54ff7b21052bfa8e1b6e6fb1f6a0f88e35c09e3f4e2e75d80c71f71f1e3d",
+    "distributed_bytes": 467620,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed9/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "69b0fd9f9290bcf215ad9279062fffd7701c000aaf307e52c5255b7b21158d77",
+    "original_bytes": 468562,
+    "distributed_sha256": "0f24960c1520a94edc730a6c3edac1863edab7da970852c4363aa8d8ad0608b0",
+    "distributed_bytes": 468396,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/grud/epochs35/seed4/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "9f6c6d4ed09678d95d85f4cd1010d0c6552fb7f1fde33d8bcf9f5ce1e5c2c0f4",
+    "original_bytes": 449467,
+    "distributed_sha256": "c3498643b88e69cb1d8673fb424eed1e9f003fc19893dcee6b8c038285322b29",
+    "distributed_bytes": 449405,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/grud/epochs35/seed5/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "f845d9ef4a257b64bde6509b6b0525cf3d6b964f3c9a308748602828793311cc",
+    "original_bytes": 449464,
+    "distributed_sha256": "0b7737e2f1f2116c2a0825504df0ce76a17a16296793c3ff396cee8197fb64fc",
+    "distributed_bytes": 449402,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/grud/epochs35/seed6/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "36594eb5cc09fb070e60742fe893746f97838b010c90e9f4398859ff428af400",
+    "original_bytes": 449469,
+    "distributed_sha256": "e286f8c74c285d95c671a16dc5a46a543cd36a090ced46ee5c10d74c9182703d",
+    "distributed_bytes": 449407,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/grud/epochs35/seed7/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "96eaa0c15755320fdaaca1bf253fe5267ffe8ad14577639699f45e0a1c626495",
+    "original_bytes": 449467,
+    "distributed_sha256": "7252495ded2aba6ad6e609623c6e25dec6bf0f3750090b1c81b8587c9fb56569",
+    "distributed_bytes": 449405,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/grud/epochs35/seed8/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "11dedc1fbdeae874b01eb63ebfc1afdb65c0fc2ced83a09645f774bdc7377c60",
+    "original_bytes": 449468,
+    "distributed_sha256": "ac2e7888c781d01b10020f41ecae8c2ca0d2fd5f1ac3a42853f6d91e5465e721",
+    "distributed_bytes": 449406,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/grud/epochs35/seed9/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "4d509c29f59df4c548a912b224bbf109532097d67dfdde2ac9ad4d20eb979e2b",
+    "original_bytes": 449467,
+    "distributed_sha256": "8f8627b6c17511a91cd6d0d64a54d3af6820043c0af611c9b7cf583cef02923d",
+    "distributed_bytes": 449405,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed4/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "276f6ecbc024864a457cbf22d8fa2447d38d3a34d496537b32b1a8bd7a3c796d",
+    "original_bytes": 466227,
+    "distributed_sha256": "a5f37af47f65b1227221ed1f862f20c5142a99f6319cf0686a558768b89f90dd",
+    "distributed_bytes": 466061,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed5/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "b3d34b5ce7a5e5ec95b9afad972b0d9f51cfbb02761a12ded406c516fa2b383e",
+    "original_bytes": 469578,
+    "distributed_sha256": "d884aefdcb3cfbc3b5884ab61e88e9703012957f104b12c3ed7c47f4c7e93d32",
+    "distributed_bytes": 469412,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed6/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "1906867b97457cf0322b8bd38483dc6683312428549a682f1e23cf32c760488e",
+    "original_bytes": 469068,
+    "distributed_sha256": "705e7824f0341d9ecbf46443b0218a5e28e13f97afc012b2e9044735022f34dd",
+    "distributed_bytes": 468902,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed7/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "315e72c9854d4153fe79657ad129188cd5531db0fde29514ec7093ffb3169958",
+    "original_bytes": 465716,
+    "distributed_sha256": "8229fcdae99b38546468d1bb2780455677ad7049935eafac494b17f700659bf2",
+    "distributed_bytes": 465550,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed8/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "0002ca3acc2b02f3fabbe9f6ae8cc5faf5ac776a1773f5ecf339e2ac37d5c9fc",
+    "original_bytes": 467275,
+    "distributed_sha256": "99e8757952211df0b623fe2b478774bc0b816caac16c1dced5c0890b438c81cc",
+    "distributed_bytes": 467109,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed9/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "37692f4cc357c691f2b0a7db181fb6e33e12b2d07ae2d4a7f2fcc9ea2c2d6af4",
+    "original_bytes": 469580,
+    "distributed_sha256": "da50324663037f31855b77824df1ff0c49fa1f583be6c8f6848d3de1ca05245b",
+    "distributed_bytes": 469414,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "experiments/shared_input_primary/n2_common.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "2203b6c1f4ac8fa4c9ef497c74e9214cab0638a56f31876415365cf6e68e985b",
+    "distributed_bytes": 2290,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "experiments/shared_input_primary/n2_host.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "c1afd50ac7c808d4e90df32f5eda869b9fcb80af8784f07f611de662a687222d",
+    "distributed_bytes": 1126,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "experiments/shared_input_primary/n2_train.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "7926b2b666b4a25852610686d8c8b3b44cf6ae01b9b7de05cbc1f4116032ce80",
+    "distributed_bytes": 2420,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "experiments/shared_input_primary/read_n2.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "26af33ab5a64513bb05c5da4f20474ead9dc7d84375976c089c7c797a2021af2",
+    "distributed_bytes": 6027,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "figures/CHECKS.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "9ec761e05ddf9bac56dbf478e91817c56af1982b3ce610c8359abd52db8d7efe",
+    "distributed_bytes": 15120,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "figures/F5_forest_arms.data.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "993464446fb38d845408de7d6531e9dbd2b38e7a01db35ad8ea92e381afd606b",
+    "distributed_bytes": 132459,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "figures/F5_forest_arms.pdf": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "f0d5876dcfa8c1ed481f6da969a7cf654cad7b1e80136ff66c9324a775a794bb",
+    "distributed_bytes": 17200,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "figures/F5_forest_arms.png": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "bc8bfbcdec983bb2f6d3df3b4094ed6a3ee281e37b27a8aa3f5d0101be4e0016",
+    "distributed_bytes": 102882,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "figures/F6_budget_caps.data.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "6c64af5aa48fc856e35d0d92aaafed0898563919e467516f2f99cb4b54c4cba9",
+    "distributed_bytes": 164944,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "figures/F6_budget_caps.pdf": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "f8822fb2a71d5fd51f699c4e49a631b95f8f3a9043c0455b2337162366ca181d",
+    "distributed_bytes": 17099,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "figures/F6_budget_caps.png": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "74521ee1e78efa9632ca9959019b2bf0ad426e018582c4d1a26f9da1a7c51e20",
+    "distributed_bytes": 106665,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "leaderboard/LEADERBOARD.csv": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "645ce47fe2178545aa292ffc770ac8e9a8f16141ba0aeba0138bf6ec833b04a5",
+    "distributed_bytes": 575748,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "leaderboard/README.md": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "004d513f4a6322fef2cc07a3166d5eda9308e3e17e6c37f981544183eb99f552",
+    "distributed_bytes": 9890,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "leaderboard/RECORD_SCHEMA.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "c52624b80a8a1bee54edf5c0c2139cc8b645047b3da8cbc145d2145047936503",
+    "distributed_bytes": 6236,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "leaderboard/build_leaderboard.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "054da0866415d054c787ce30ad49cb1b0ff7a6b2b415d9e4c0e993ad5ba01550",
+    "distributed_bytes": 16961,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "manifests/release_1_3_records.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "6c6bd5a35ddc949cbee5602f16b321820f69659bb0cd83a8722c77ae473b7a7e",
+    "distributed_bytes": 44643,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "release_records.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "4f043d85885645bc02d58ba432bf59d95149d94e2e0c718ecf0836c162aafc16",
+    "distributed_bytes": 2368,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "requirements-figures.txt": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "184c67c0233299d6881804d1bde57a31ff6da973c48ee6af58a0ef1d27922898",
+    "distributed_bytes": 36,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/DISTRIBUTION_NOTE.md": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "3b5c46ab3bee66c839a674fde120819d95bc121b4ec20617779dffb19b34e309",
+    "distributed_bytes": 862,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/transfer/admissible/seed0/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "04f7427360ae8d13ead88f1b4c56992aff1e7835dc110f22c95c00c726d2eaeb",
+    "original_bytes": 245818,
+    "distributed_sha256": "c7cd5b68c6708e67289759163dc2209fffa80bec9f511075f02decfb63c01839",
+    "distributed_bytes": 245367,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/transfer/admissible/seed1/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "5092775dfb69aa2021fa75975ceef1d70e7ff8bacc3c348fd10858cca3ce6bab",
+    "original_bytes": 245822,
+    "distributed_sha256": "09f8c5233a217ca76ab38e5159f413c3fc3cee67ce427404764ab3c76f1eeda8",
+    "distributed_bytes": 245371,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/transfer/admissible/seed2/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "7430f7fcdf803be41a02e1b1c4f3682031af7ae70f3fa0dc131233072d6f5c2f",
+    "original_bytes": 245820,
+    "distributed_sha256": "fac3d53942a9350bf9686146339029fe1b44c348259baa34ade77433a7b01075",
+    "distributed_bytes": 245369,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/transfer/admissible/seed3/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "28652769d539d861c0a109f83d029af9e615b8199dd8b6be1527185d10bc60de",
+    "original_bytes": 245823,
+    "distributed_sha256": "eb19d14a9d73203790fe002c676a3ae8e99bf3960e2b029f71c13d530347597c",
+    "distributed_bytes": 245372,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/transfer/none/seed0/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "2aec1929f80b6a68994928ac908b2aa1a012667639e2a848584651043c3a7285",
+    "original_bytes": 245560,
+    "distributed_sha256": "426f7e83c3dcf61dd3a1d7ea76aef9befabf2ce36bf420324958c880c17b371c",
+    "distributed_bytes": 245109,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/transfer/none/seed1/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "094e99b0e294d96a1c9c75269116d3367ad1e8f0187ea61a5a59f40e8a9cdb02",
+    "original_bytes": 245562,
+    "distributed_sha256": "b04d13c1ecf7149d877c9847aa403be5fccbefc237be5ba6123601e4ed6549e2",
+    "distributed_bytes": 245111,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/transfer/none/seed2/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "9f27b4637d19b24f2342321c7271253a89e04a41aa02e53e418ecf6fa31d6d28",
+    "original_bytes": 245560,
+    "distributed_sha256": "b86e3d736736d06419181ec0f710ceddc14adca84953450dd2c02ccbf72ea3cb",
+    "distributed_bytes": 245109,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/transfer/none/seed3/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "9cb5157beae1a86244fe49b70e820d87b2aa809ee89e034476e9100fdb3b06cb",
+    "original_bytes": 245561,
+    "distributed_sha256": "f18434a404a82ec550877429130bf0f376a472c0fc000dc99763748623a34ee7",
+    "distributed_bytes": 245110,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/within/admissible/seed0/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "c77822f0f0e5b2eaf9b538ca03dd785b09abe6d23b8cefcad21e88ec0a997cad",
+    "original_bytes": 244594,
+    "distributed_sha256": "aae6fc8ec54d296a3ae11ee359266bcd0e9526831467d403e6abc208eaaece86",
+    "distributed_bytes": 244161,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/within/admissible/seed1/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "664ed79c11fb0fbe8c92457b6b6def1aabdfdecf12d0ee23fd90806785df8e8e",
+    "original_bytes": 244591,
+    "distributed_sha256": "bb2496c9518d15ab58fda936e995ef6450b34fcde4bcdd168b78dc30f3522d67",
+    "distributed_bytes": 244158,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/within/admissible/seed2/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "b3fd4817e83edcdbebf2d6e0965d5b4fd7fe45705833814fd1afd8d708f77a97",
+    "original_bytes": 244594,
+    "distributed_sha256": "1fac0bb4eed00cca7b927fa8d391c66d95e8d0f31cc92ff513717030b5435861",
+    "distributed_bytes": 244161,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/within/admissible/seed3/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "20227de1c523798663a6c26a9a7d304e0ae5401966f782ee610cd111eaa23101",
+    "original_bytes": 244591,
+    "distributed_sha256": "98b92969953aa4e26c2c6ba6adba0e065852fc1ebeb497b3756a6d5512cb5359",
+    "distributed_bytes": 244158,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/within/none/seed0/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "bf197a7685fd17bc4286c638a2dc331f1214f5a04a0e44de0a3e9b66eb766488",
+    "original_bytes": 244329,
+    "distributed_sha256": "b1b76fe62e1213a94b784322756554458d96adbd2b813a99910925ac707e622c",
+    "distributed_bytes": 243896,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/within/none/seed1/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "0ea280a46cac2712fbb93d7a13bbe75899594f9e78d983df81fd6d6f5c0feac3",
+    "original_bytes": 244331,
+    "distributed_sha256": "26f6df2b696dd4973981fa6b05ea7258465ee25c0521878bd3a8fbc7ffd72e78",
+    "distributed_bytes": 243898,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/within/none/seed2/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "4f12eef0835a88f892612f58b6778b9c5152e6b559c766e29c7329d4d7399d27",
+    "original_bytes": 244331,
+    "distributed_sha256": "5d6db6957340ff5b1a2ca101747cf05b340f9cf7de7f61787315d468e12bf10f",
+    "distributed_bytes": 243898,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "results/clinical_v4_v1/cinc2012/shared_input/within/none/seed3/run.json": {
+    "source_file": "run.json",
+    "source_kind": "copied_experiment_input",
+    "original_sha256": "ec261c431d002288fbdb47f997f1d1031d2d078da1884b718aad05efe9f2bb30",
+    "original_bytes": 244329,
+    "distributed_sha256": "645410dff0273a3783026b22e59430e426abc3444914066cb1c29af0cb6d42f8",
+    "distributed_bytes": 243896,
+    "transformed": true,
+    "transformations": [
+      "JSON strings only; all non-string tokens byte-identical"
+    ]
+  },
+  "tests/test_leaderboard.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "1bf5dbd235ce950c81b85b400998d70834da5e7fca1f8d4450b17053bd23c681",
+    "distributed_bytes": 6563,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "tests/test_release_1_3.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "46ceccb21c45e05f9fcd8dcc77e1a019f395f4aa913c0caf3340e75285886ffb",
+    "distributed_bytes": 5290,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "tests/test_release_1_3_torch.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "1077fbf1a6a6b9c2ad39d9169241f02dba616074167847d99017defb814d8687",
+    "distributed_bytes": 2780,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "tools/cinc2012/shared_input/README.md": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "bf811f6ee3a49b325afb08caa146f9f4950c94d4a0397da6800a77b29e602319",
+    "distributed_bytes": 2269,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "tools/cinc2012/shared_input/host_driver_n3.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "d2b9d8538776096550042b9bc9d501445f9167a2a529f1f0c45c07ea716a1762",
+    "distributed_bytes": 7344,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "tools/cinc2012/shared_input/n3_common.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "d3031a308b8bf68623ccb77975abd98bb0aab8d3c1c9e338842a98a1e82850cf",
+    "distributed_bytes": 2176,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "tools/cinc2012/shared_input/n3_runtime.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "14c35ba31c67a3a53d18a911a02e925f7984b6bce61725cf4ca4156003ed8a28",
+    "distributed_bytes": 1433,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "tools/cinc2012/shared_input/read_n3.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "b00278441115abc6f2259a91569baa330052f2c2d47cdd31ae171eb03a4b37a7",
+    "distributed_bytes": 6032,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "tools/cinc2012/shared_input/run_n3.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "7d16ae997abf59f2446317933159d24163d22552cf9a53e9b382c425b98cc264",
+    "distributed_bytes": 7814,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "tools/make_figure_f5.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "02afa71eb4142679d86f56712e40473b63fb50fee6342399ab1296a1b6b31593",
+    "distributed_bytes": 204,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "tools/make_figure_f6.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "c87253a5d9f86370d2c07f8ed1378d374e9846bf9af434843a7202ac271d017f",
+    "distributed_bytes": 204,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "tools/make_figures_v6.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "8325d946d0b729d699611d2ae3b6e1b8d7dd44ca369dc513ff9c368ca16fb71c",
+    "distributed_bytes": 33492,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "tools/verify_release_1_3.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_adaptation",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "82ebfa6dd0bbd3346aade9b9aafbd3f0d3065b8281195eef862f9c295ea1e7ec",
+    "distributed_bytes": 2074,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
     ]
   }
 }

@@ -1,4 +1,4 @@
-# Reproduce PhysioGraphBench v1.2.1 and its v5 findings
+# Reproduce PhysioGraphBench v1.3.0 and its findings
 
 Run commands below from the repository root. The software is a benchmark and
 includes both supported findings and negative controls. No raw data, trained
@@ -427,3 +427,47 @@ External CinC-2019 CDE checkpoint replay remains unresolved, and its finite
 saved errors remain outside confirmed rankings. No new training, repaired
 checkpoint replay, historical training-array recovery or archival deposit is
 claimed by this documentation update.
+
+## Release 1.3.0: saved records, selected caps and input access
+
+These commands require no patient data, weights, PyTorch import or training:
+
+```bash
+python3 -B tools/verify_release_1_3.py
+python3 -B analysis/cap_selection/cap_reanalysis.py --check
+python3 -B experiments/shared_input_primary/read_n2.py
+python3 -B tools/cinc2012/shared_input/read_n3.py
+python3 -B experiments/positive_control/read_e1b.py
+python3 -B leaderboard/build_leaderboard.py --check
+python3 -B -m unittest discover -s tests -p test_release_1_3.py -v
+sha256sum -c SHA256SUMS
+```
+
+The readers verify distributed hashes and saved scalar/configuration records.
+They cannot replay unbundled clinical residual arrays or weights. Original hashes
+remain historical fingerprints; `manifests/distribution.json` separately records
+the distributed bytes. The cap script checks 36 family/cap records, 51 paired
+contrasts, the six-cell configuration grid and selected-model stopping metadata.
+
+Generate the two new figure families from full-precision public fields:
+
+```bash
+python3 -B tools/make_figure_f5.py
+python3 -B tools/make_figure_f6.py
+```
+
+The output goes to `runs/figures_v6/`; each PDF/PNG has a `.data.json` provenance
+ledger. Figure generation uses Matplotlib and an existing PyMuPDF installation
+for vector-PDF/font checks. `requirements-figures.txt` declares the figure environment. Its optional dependency is described in the release
+note. F5 reports the original four-seed 35-epoch edge controls; F6 reports all
+four-seed cap means with validation-selected markers, including cases where
+validation and test ordering differ. These plots do not depict ten-seed means.
+
+To reproduce training, rebuild the cohorts as above, then follow the experiment
+READMEs. The existing shared-input launcher first supplies seeds 0–3 at all caps.
+The extension planner supplies 18 further fits at frozen caps for seeds 4–9.
+CinC-2012 shared-input transfer requires the selected 2019 checkpoints. Synthetic
+extension fits use the three shipped positive-control datasets in place. Every
+launcher defaults to printing its plan, and existing output destinations are
+refused. CPU model smoke checks require PyTorch and are separate from the
+saved-record checks above.

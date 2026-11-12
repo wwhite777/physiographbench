@@ -2,7 +2,7 @@
 """Rebuild readable tables and the README's numerical findings from frozen JSON."""
 from pathlib import Path
 import sys
-sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0,str(Path(__file__).absolute().parents[1]))
 from release_paths import ROOT
 import argparse
 import csv
@@ -102,7 +102,15 @@ def main():
         expected=load('findings.json')
         if findings!=expected:raise ValueError('derived findings differ from results/findings.json')
         readme=(ROOT/'README.md').read_text()
-        if block not in readme:raise ValueError('README clinical table differs from frozen results')
+        archived=(ROOT/'results/tables/clinical.md').read_text().strip().replace('](../', '](results/')
+        if block != archived: raise ValueError('Archived clinical table differs from frozen results')
+        # The README uses the retuned shared-input table; the historical
+        # partitioned table remains separately checked above.
+        shared=ROOT/'experiments/shared_input_primary/artifacts/host'
+        for family,label in [('none','PhysioGraph-GRU shared, no edges (778,384)'),('admissible','PhysioGraph-GRU shared, admissible edges (930,464)')]:
+            means={split:statistics.mean(json.loads((shared/f'arms/{family}/seed{seed}/run.json').read_text())[split]['pooled_masked_RMSE'] for seed in range(4)) for split in 'AB'}
+            prefix=f"| {label} | {means['A']:.4f} | {means['B']:.4f} |"
+            if prefix not in readme: raise ValueError('README shared-input table differs from frozen records')
         snippets=[]
         for split in 'AB':
             gap=findings['paired_stay_gaps'][split]
@@ -113,8 +121,9 @@ def main():
         ci=findings['coupling_A_val']
         snippets.append(f"+{ci['value']:.4f} [{ci['lower_95']:.4f}, {ci['upper_95']:.4f}]")
         snippets.append(f"{sum(c['found'] for c in findings['cohort'].values()):,}")
+        historical=readme+'\n'+(ROOT/'docs/README_APPENDIX.md').read_text()
         for snippet in snippets:
-            if snippet not in readme:raise ValueError(f'README finding differs: {snippet}')
+            if snippet not in historical: raise ValueError(f'Retained finding differs: {snippet}')
         trace=json.loads((ROOT/'manifests/readme_trace.json').read_text())
         assert all(value < .003 for value in trace['variants']['mean_span'].values())
         print('Frozen findings, clinical table and all computed README display values: PASS')

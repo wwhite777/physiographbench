@@ -1,6 +1,7 @@
 """Exercise the release verifier and planted defects without model dependencies."""
 from contextlib import contextmanager
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -8,7 +9,7 @@ import sys
 import tempfile
 import unittest
 
-EXPERIMENT = Path(__file__).resolve().parents[1]
+EXPERIMENT = Path(os.environ.get('PHYSIOGRAPH_ROOT', Path(__file__).absolute().parents[3])) / 'experiments/counterfactual_onset_matched'
 RELEASE = EXPERIMENT.parents[1]
 VERIFIER = 'experiments/counterfactual_onset_matched/verify_artifacts.py'
 HOST = 'experiments/counterfactual_onset_matched/artifacts/host'
@@ -21,9 +22,17 @@ def run_verifier(release):
 
 @contextmanager
 def copied_release():
-    with tempfile.TemporaryDirectory(prefix='e3-verifier-') as scratch:
+    with tempfile.TemporaryDirectory(prefix='e3-verifier-', dir=os.environ.get('TMPDIR')) as scratch:
         release = Path(scratch) / 'release'
-        shutil.copytree(RELEASE, release)
+        release.mkdir()
+        for source in RELEASE.rglob('*'):
+            rel = source.relative_to(RELEASE)
+            if any(part in ('.git', '.scratch', '__pycache__', 'runs') for part in rel.parts): continue
+            dest = release / rel
+            if source.is_dir(): dest.mkdir(exist_ok=True)
+            elif source.is_file():
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                dest.symlink_to(source.absolute())
         yield release
 
 
@@ -52,14 +61,14 @@ class VerifyArtifactsTests(unittest.TestCase):
             for relative in sample_records(release):
                 with self.subTest(record=relative):
                     path = release / relative
-                    original = path.read_bytes()
+                    original_target = path.readlink()
                     path.unlink()
                     try:
                         result = run_verifier(release)
                         self.assertNotEqual(result.returncode, 0)
                         self.assertIn(f"missing run.json: ['{relative}']", result.stderr)
                     finally:
-                        path.write_bytes(original)
+                        path.symlink_to(original_target)
 
     def test_unlisted_record_fails(self):
         with copied_release() as release:
@@ -68,7 +77,7 @@ class VerifyArtifactsTests(unittest.TestCase):
                     relative = f'{HOST}/{branch}/unlisted/run.json'
                     path = release / relative
                     path.parent.mkdir(parents=True)
-                    shutil.copyfile(release / sample_records(release)[0], path)
+                    path.write_text('{"finite":true,"smoke":false}\n')
                     try:
                         result = run_verifier(release)
                         self.assertNotEqual(result.returncode, 0)
@@ -82,6 +91,8 @@ class VerifyArtifactsTests(unittest.TestCase):
                 with self.subTest(record=relative):
                     path = release / relative
                     original = path.read_bytes()
+                    original_target = path.readlink()
+                    path.unlink()
                     # Whitespace keeps the JSON and finite/smoke fields valid.
                     path.write_bytes(original + b'\n')
                     try:
@@ -89,7 +100,8 @@ class VerifyArtifactsTests(unittest.TestCase):
                         self.assertNotEqual(result.returncode, 0)
                         self.assertIn(f'SHA-256 mismatch for {relative}:', result.stderr)
                     finally:
-                        path.write_bytes(original)
+                        path.unlink()
+                        path.symlink_to(original_target)
 
 
 if __name__ == '__main__':

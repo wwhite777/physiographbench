@@ -136,3 +136,23 @@ independent scientific review or a repeat of the complete training series.
     assertions are retained. pytest is added to the pinned verification
     requirements. Package READMEs, notes, the release section and citation
     version/date are documentation additions; the MIT license is unchanged.
+
+13. Release 1.3.0 adds 100 run.json records: 18 clinical seed extensions,
+    16 shared-input CinC-2012 records, and 66 input-access sensitivity records.
+    Only JSON strings change. Every number, Boolean, null and array ordering
+    remains token-identical to its source. Original hashes remain original;
+    `release_1_3_records.json` and this distribution inventory identify both
+    original and distributed record bytes. No new weights, clinical residual
+    arrays, patient data, logs or duplicate synthetic datasets are included.
+    Public cap reconstruction addresses selected v4 records through JSON
+    pointers into the existing tuning summary. Readers check distributed
+    bytes and saved scalars; omitted residuals and weights are not replayed.
+    The existing numerical training bodies are reused, extending only the
+    shared runner's seed guard and the 2012 loop's cap guard in memory. Code
+    setup and source checks use the public tree. Synthetic original dataset
+    fingerprints in records remain historical; newly executed code verifies
+    the distributed archives and their manifests. Figure provenance resolves
+    historical fingerprints through this inventory and recomputes every
+    plotted value from its full-precision field. The existing E3 corruption
+    tests now construct symlink views and alter only fixture links or tiny
+    owned files, avoiding full-tree copies.
