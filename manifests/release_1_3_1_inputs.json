@@ -1,0 +1,1503 @@
+{
+  "records": [
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/admissible/seed0.json",
+      "population": 0,
+      "cell": "admissible",
+      "seed": 0,
+      "sha256": "24ad0b1ba6fdd389bc791a99bbeeb2f86d705f846284361878cafd45e45160a5"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/admissible/seed1.json",
+      "population": 0,
+      "cell": "admissible",
+      "seed": 1,
+      "sha256": "afd22c336a20d32702e52e31d8aaa4b507639a4667c790213e6da5b36f7bf4c9"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/admissible/seed2.json",
+      "population": 0,
+      "cell": "admissible",
+      "seed": 2,
+      "sha256": "fec69c4d6867e8b530f9019558c5b64c251b2b28f2991a06afa7aa1506f58aad"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/admissible/seed3.json",
+      "population": 0,
+      "cell": "admissible",
+      "seed": 3,
+      "sha256": "a856ea3c9d08ee48d5eade3504112ba734947e5bea9378ffff53f60afb49c6f3"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed0.json",
+      "population": 0,
+      "cell": "control_gru",
+      "seed": 0,
+      "sha256": "74d8caa1b473186d48883182d27a9d699a07f33f6184b9f706f840f0d12f6064"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed1.json",
+      "population": 0,
+      "cell": "control_gru",
+      "seed": 1,
+      "sha256": "bc6901efdd42fa358d7ed1946c634e9a342c754f19e0454248d3fb87a098cf1f"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed2.json",
+      "population": 0,
+      "cell": "control_gru",
+      "seed": 2,
+      "sha256": "449167772d4842e9dc7edc8f6f9849f2d7a2fcdb661fd26418bb25c86574d398"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed3.json",
+      "population": 0,
+      "cell": "control_gru",
+      "seed": 3,
+      "sha256": "aa649f94a8ec9f70e8d1a67fd44947d3519b6c821a81ab66492dd616a7f873f6"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/none/seed0.json",
+      "population": 0,
+      "cell": "none",
+      "seed": 0,
+      "sha256": "97c435efe7c52ed1959f03a86c71fc19b64b807f6fe98dbd6e759d6c0ff83f18"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/none/seed1.json",
+      "population": 0,
+      "cell": "none",
+      "seed": 1,
+      "sha256": "94d766d4b1cb3b3d283069ab59c409bc2bd98d9cfdca6f726015ac19522acf15"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/none/seed2.json",
+      "population": 0,
+      "cell": "none",
+      "seed": 2,
+      "sha256": "f925ffa66a9fc6d6f9d7c8d4aecf0e4219b7b691732b712ba16f1c32a931b307"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/none/seed3.json",
+      "population": 0,
+      "cell": "none",
+      "seed": 3,
+      "sha256": "095ce10515c83be7235b104d73153d51c3c62890be14be2562bd645f3571072f"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed0/run.json",
+      "population": 0,
+      "cell": "shared_admissible",
+      "seed": 0,
+      "sha256": "f16db76c8f7a663695aa7eecc5fd16534d5e4b4f11e397bf3ec2f3e04ba8da4d"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed1/run.json",
+      "population": 0,
+      "cell": "shared_admissible",
+      "seed": 1,
+      "sha256": "9a43188a33761dd522c0fcdde21c6682444465eee21c1edf4e527bf55b6cac88"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed2/run.json",
+      "population": 0,
+      "cell": "shared_admissible",
+      "seed": 2,
+      "sha256": "1c850dc7e0420c7ebaa2fc120f4d63124bfd9791428dc836e00097707d6e702c"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed3/run.json",
+      "population": 0,
+      "cell": "shared_admissible",
+      "seed": 3,
+      "sha256": "e9407a787c74f6a03b7f7ce0ca57f311afb22b357ebd30ea94f550e2737f5aad"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed0/run.json",
+      "population": 0,
+      "cell": "shared_none",
+      "seed": 0,
+      "sha256": "8ae3bdff598dbb06a4b6732da8e0280825413ec05ff3a1354d5f508f43ab7332"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed1/run.json",
+      "population": 0,
+      "cell": "shared_none",
+      "seed": 1,
+      "sha256": "d95681febd73f0a3037a08c621a0c0e3f261677a9fbbdd596579f67f582cc8ea"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed2/run.json",
+      "population": 0,
+      "cell": "shared_none",
+      "seed": 2,
+      "sha256": "f318b5a53885d923f1d65a35e0f8a9af7c9d43fbda141504cdebf1002c2cf52b"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed3/run.json",
+      "population": 0,
+      "cell": "shared_none",
+      "seed": 3,
+      "sha256": "88d6f6943451bf06a23d2141a45be4237831fa354c7bab06f3ab5c04435bce11"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/admissible/seed0.json",
+      "population": 1,
+      "cell": "admissible",
+      "seed": 0,
+      "sha256": "39942f0eade05b550f0f1984cbd6329125d5c50bba47a6edae5ff82026694057"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/admissible/seed1.json",
+      "population": 1,
+      "cell": "admissible",
+      "seed": 1,
+      "sha256": "89f4ab28bb55d6f3dcf28d3ee110e36352d51fc5f4728ee77a013ddec8e55e4e"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/admissible/seed2.json",
+      "population": 1,
+      "cell": "admissible",
+      "seed": 2,
+      "sha256": "ee404e8f584bc0cf002a210684c2094a0a45f6895444777f9ba57aa3688fa5d4"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/admissible/seed3.json",
+      "population": 1,
+      "cell": "admissible",
+      "seed": 3,
+      "sha256": "2eac698fac9a814e6296e633676986723878040971800b0d6b46a54c4799b5bb"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/control_gru/seed0.json",
+      "population": 1,
+      "cell": "control_gru",
+      "seed": 0,
+      "sha256": "1bed87ad9a2b9d1e5ec45bae72b7665b8716db0d33446d755d013a68c7c17e7b"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/control_gru/seed1.json",
+      "population": 1,
+      "cell": "control_gru",
+      "seed": 1,
+      "sha256": "0bc41ccdd319be5c4090c5b99f53be9b67e80ab8b6319157bde10034c730f152"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/control_gru/seed2.json",
+      "population": 1,
+      "cell": "control_gru",
+      "seed": 2,
+      "sha256": "1217098af3f773da4005b42eb78ba8939393276cb89471e4551a6b6f54cb8d41"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/control_gru/seed3.json",
+      "population": 1,
+      "cell": "control_gru",
+      "seed": 3,
+      "sha256": "a599a80f9740dc94fd6595c7d6895e138f4123766f89a947221b3adb909f73f8"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/none/seed0.json",
+      "population": 1,
+      "cell": "none",
+      "seed": 0,
+      "sha256": "c56574f7b8edb1fc2fb3bbee4d695945dc3a31aa42f1347d55fae770f00b800f"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/none/seed1.json",
+      "population": 1,
+      "cell": "none",
+      "seed": 1,
+      "sha256": "51dff3f20e8d3011bb07c0e5c0a02f5cb0d5561257ae12b35f9d17270247b15c"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/none/seed2.json",
+      "population": 1,
+      "cell": "none",
+      "seed": 2,
+      "sha256": "c18e82e3a08d7798323a6f2a041a0327239158521d4114c4bfa552130dcfca83"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/none/seed3.json",
+      "population": 1,
+      "cell": "none",
+      "seed": 3,
+      "sha256": "577fbaf382d02a4a900ffabd4153b59b47b2661c2da393e58d86e5c3581b7b92"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_admissible/seed0.json",
+      "population": 1,
+      "cell": "shared_admissible",
+      "seed": 0,
+      "sha256": "3b483437cfb9e348bea777d65f8881d239a4039ac4108afa752516a566d014b5"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_admissible/seed1.json",
+      "population": 1,
+      "cell": "shared_admissible",
+      "seed": 1,
+      "sha256": "29a6af247b11841be1e32aac08ec8be9062211a3fd4e72ac8a3e627a8b80640d"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_admissible/seed2.json",
+      "population": 1,
+      "cell": "shared_admissible",
+      "seed": 2,
+      "sha256": "cea04a16cb9be512c8d2e7def29ad100e3b91e3f648bb3ea6d7551b7ed13a0f1"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_admissible/seed3.json",
+      "population": 1,
+      "cell": "shared_admissible",
+      "seed": 3,
+      "sha256": "465e3d4ae86ecad9f38e2029de7330c02a3dc2247d0abc32b8ba8a07ca94c2f9"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_none/seed0.json",
+      "population": 1,
+      "cell": "shared_none",
+      "seed": 0,
+      "sha256": "b415f3dcd8c4a3ce9930abefcb2866e8658634fb24aaad541f1debbe955c5ee2"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_none/seed1.json",
+      "population": 1,
+      "cell": "shared_none",
+      "seed": 1,
+      "sha256": "695921819a4b6b776b3364912e95222d1fd963765ec1eba82cd823e1fe83e412"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_none/seed2.json",
+      "population": 1,
+      "cell": "shared_none",
+      "seed": 2,
+      "sha256": "1d741a6c9376c0e98ec712b03a2b34f14b38cf7cf520c60785d933102a4a0b30"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_none/seed3.json",
+      "population": 1,
+      "cell": "shared_none",
+      "seed": 3,
+      "sha256": "2fb6a8553f28d1a8297c960543907065c40b16d53caf59e9193bc590dc1ec6b9"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/admissible/seed0.json",
+      "population": 2,
+      "cell": "admissible",
+      "seed": 0,
+      "sha256": "a58134b7caa0d7e5c2d00ce6ec8a473236cd7154c49ba98d0db0ea80f4cef042"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/admissible/seed1.json",
+      "population": 2,
+      "cell": "admissible",
+      "seed": 1,
+      "sha256": "626dcd839c59b34547944b701f0f9d9e813e1601942546429122fd06171c4f61"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/admissible/seed2.json",
+      "population": 2,
+      "cell": "admissible",
+      "seed": 2,
+      "sha256": "0fd0c5d6cac2e386ec55e21b56b6db6e05b06a74f8d344bc569ac74119c73c13"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/admissible/seed3.json",
+      "population": 2,
+      "cell": "admissible",
+      "seed": 3,
+      "sha256": "8ef843bab0b69b4ae7e4c17e8007e33e3ac0b791443d48a71c420fb1e91d3bf8"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/control_gru/seed0.json",
+      "population": 2,
+      "cell": "control_gru",
+      "seed": 0,
+      "sha256": "b04439750d222b4f4f5f721c73654ef97f96873a162f58f393f9ce903285c937"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/control_gru/seed1.json",
+      "population": 2,
+      "cell": "control_gru",
+      "seed": 1,
+      "sha256": "ffc855bf0b89f420686b2196e08164226031a37fab6d0dd36b9b0192b4bd8184"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/control_gru/seed2.json",
+      "population": 2,
+      "cell": "control_gru",
+      "seed": 2,
+      "sha256": "9e1186791bc6133aeb56116878a8ef344b6395da632939648c97e77bfb76a69d"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/control_gru/seed3.json",
+      "population": 2,
+      "cell": "control_gru",
+      "seed": 3,
+      "sha256": "e5481f77e5c8260bedc9179340a525e4278a9deb160767d7a7c34958ce9261cc"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/none/seed0.json",
+      "population": 2,
+      "cell": "none",
+      "seed": 0,
+      "sha256": "763e59c13d5f402a6b4585a9de7e050513327cc12750ded9501cab315609780a"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/none/seed1.json",
+      "population": 2,
+      "cell": "none",
+      "seed": 1,
+      "sha256": "fd0d2ec9689e9bb36894fb53e0ad9dbf8a0048a282a5d56fb78150e4e1d91466"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/none/seed2.json",
+      "population": 2,
+      "cell": "none",
+      "seed": 2,
+      "sha256": "24e715bfb4d4580a6714f58d183d59e92f061d93d9180b6031de98c85ffe9bcb"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/none/seed3.json",
+      "population": 2,
+      "cell": "none",
+      "seed": 3,
+      "sha256": "26551a7e67d807e39dbf0ca140970ade73dd167afdb1f6cc747776c22bae2ac0"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_admissible/seed0.json",
+      "population": 2,
+      "cell": "shared_admissible",
+      "seed": 0,
+      "sha256": "f6523f4f9b7488f3ca5d23d4e2e14c84c563bd6b1854637604b067ade0bce4a1"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_admissible/seed1.json",
+      "population": 2,
+      "cell": "shared_admissible",
+      "seed": 1,
+      "sha256": "a2bb4c04a51b46692010bd24f76328f6b7239aa9addacf5af01d934d88648f1d"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_admissible/seed2.json",
+      "population": 2,
+      "cell": "shared_admissible",
+      "seed": 2,
+      "sha256": "e4978b974eef30b047a9bac61ea4bbebab09c2c62515482035cdc281883a9743"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_admissible/seed3.json",
+      "population": 2,
+      "cell": "shared_admissible",
+      "seed": 3,
+      "sha256": "08ebdcbab4d7efb90143215500c797853b8a143c776f008b39001149e98194b3"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_none/seed0.json",
+      "population": 2,
+      "cell": "shared_none",
+      "seed": 0,
+      "sha256": "55f82c14383c0b7292d666646c392395f3fdc1584f213f54dd14f8487b5d036e"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_none/seed1.json",
+      "population": 2,
+      "cell": "shared_none",
+      "seed": 1,
+      "sha256": "044174eaeb6d4e9914cef1a34bd3116ee54a05c9d50728876f51289054c484e3"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_none/seed2.json",
+      "population": 2,
+      "cell": "shared_none",
+      "seed": 2,
+      "sha256": "9face4017b9da31120478d3af867b4da7910daa0a1f434a946a5ea35ba3ac09c"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_none/seed3.json",
+      "population": 2,
+      "cell": "shared_none",
+      "seed": 3,
+      "sha256": "77b65d3b9a157bb7dcded6f8ee40fad7b273e46f8db44c6e26d964a053f48a9b"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/admissible/seed0.json",
+      "population": 3,
+      "cell": "admissible",
+      "seed": 0,
+      "sha256": "c281a27ef556110ada22076f103259575914e14e6524df0500fa3c12d0a435a0"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/admissible/seed1.json",
+      "population": 3,
+      "cell": "admissible",
+      "seed": 1,
+      "sha256": "0a72a269c7b8a21cfe4f5a0e80b8e0a5aea5b672fa5a9fd05214b8dce324a185"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/admissible/seed2.json",
+      "population": 3,
+      "cell": "admissible",
+      "seed": 2,
+      "sha256": "ce2253a09e9671fb987824b468f093b5eefe866a62dcb5a98f9468ce7732def8"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/admissible/seed3.json",
+      "population": 3,
+      "cell": "admissible",
+      "seed": 3,
+      "sha256": "63d3bb8ca449281c5b1da96f0c6a8b21e3cfd53710d6ad4171851f1e1499886c"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/control_gru/seed0.json",
+      "population": 3,
+      "cell": "control_gru",
+      "seed": 0,
+      "sha256": "e6359ee62ae9d7d1b4f3969cfed0086b4fc1cbc7fd28a8f5d4afa86da7b12237"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/control_gru/seed1.json",
+      "population": 3,
+      "cell": "control_gru",
+      "seed": 1,
+      "sha256": "0c59ade1137154deccd0daf33129c343a360ed89e284d3565a6793a3feeaa91e"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/control_gru/seed2.json",
+      "population": 3,
+      "cell": "control_gru",
+      "seed": 2,
+      "sha256": "2161398a1201f21e228a60de0573db51084db953647711c22dfd48a65c1b52a4"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/control_gru/seed3.json",
+      "population": 3,
+      "cell": "control_gru",
+      "seed": 3,
+      "sha256": "f7eb8f39c12201e9a4d07b855e0fb02864c53d56bfe33538af79a59f4c7a5ee3"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/none/seed0.json",
+      "population": 3,
+      "cell": "none",
+      "seed": 0,
+      "sha256": "7ee5ae64b72188411234828b2e8f5b414788d0990d2650a20bb77bc7675239a0"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/none/seed1.json",
+      "population": 3,
+      "cell": "none",
+      "seed": 1,
+      "sha256": "f12a57d54c26d5d6871aba517b0d9c530bc3af924f3ed6f23b136d6f0901297d"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/none/seed2.json",
+      "population": 3,
+      "cell": "none",
+      "seed": 2,
+      "sha256": "19981309f66ef73c0a462ba7de2563ed1903f1c84daf3b5f67a54f5fa2e3b7b2"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/none/seed3.json",
+      "population": 3,
+      "cell": "none",
+      "seed": 3,
+      "sha256": "a731aeaac42545ef5a65ab3787c0bee97fc8805f141504c9a19c50e26eeaab2a"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_admissible/seed0.json",
+      "population": 3,
+      "cell": "shared_admissible",
+      "seed": 0,
+      "sha256": "ca9db030a1aaaf4c1087f4d778449876bd1b2f8632db493e641ab53b5f634c32"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_admissible/seed1.json",
+      "population": 3,
+      "cell": "shared_admissible",
+      "seed": 1,
+      "sha256": "6c2c2091c2fbf50ea658fa05313410138c3316d400be2287eecf655e9720fda9"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_admissible/seed2.json",
+      "population": 3,
+      "cell": "shared_admissible",
+      "seed": 2,
+      "sha256": "5b897326e92b6b98215781f418278419aa21af7678582bd2d67f435603b1052d"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_admissible/seed3.json",
+      "population": 3,
+      "cell": "shared_admissible",
+      "seed": 3,
+      "sha256": "a665028983b59034b0ff50214513d1403dd8c058f27d831f763a9496e8476054"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_none/seed0.json",
+      "population": 3,
+      "cell": "shared_none",
+      "seed": 0,
+      "sha256": "e54aa60396c6f87078b0afca6e2caa5cdb837d181d7755b47434d383a2c37901"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_none/seed1.json",
+      "population": 3,
+      "cell": "shared_none",
+      "seed": 1,
+      "sha256": "78ff1ab440d30aeba08b8120d8692b81ffde6f012127e23eb977dd6a1af7e89a"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_none/seed2.json",
+      "population": 3,
+      "cell": "shared_none",
+      "seed": 2,
+      "sha256": "dbd33f591f551e1e492712db5848a580b47357e78b5c9c98819f13f5e63d6396"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_none/seed3.json",
+      "population": 3,
+      "cell": "shared_none",
+      "seed": 3,
+      "sha256": "f235c5ff0a4868be81daea6de42cd2c2ac2783ef69b56e301859cc3139aa79f0"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/admissible/seed0.json",
+      "population": 4,
+      "cell": "admissible",
+      "seed": 0,
+      "sha256": "b22b626e0fdc594e048c38898121866d2bcb700198a7f4c14b98afc22068e3b2"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/admissible/seed1.json",
+      "population": 4,
+      "cell": "admissible",
+      "seed": 1,
+      "sha256": "f3e7ea39e008d3c06874818cc97fd7f1b9a29d634e1aa42e3b4a510590835f61"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/admissible/seed2.json",
+      "population": 4,
+      "cell": "admissible",
+      "seed": 2,
+      "sha256": "fcd9b2c09f3bfcf6403cc5c9093b46c474d91766a507833e3e59b43d584c9159"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/admissible/seed3.json",
+      "population": 4,
+      "cell": "admissible",
+      "seed": 3,
+      "sha256": "c8036bf19fcbb9362e629af15020bd82f010403c289b51e42892eb5de5a1aad9"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/control_gru/seed0.json",
+      "population": 4,
+      "cell": "control_gru",
+      "seed": 0,
+      "sha256": "1febf554d6e6ace8970e68f0e0b9bcc28a52ce745227752d0dd3bf8c79b0ba82"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/control_gru/seed1.json",
+      "population": 4,
+      "cell": "control_gru",
+      "seed": 1,
+      "sha256": "bc1ede76d92b6a216406a5dd8b2cae94d30aba7845eceec2bbfdb9973aa6ccea"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/control_gru/seed2.json",
+      "population": 4,
+      "cell": "control_gru",
+      "seed": 2,
+      "sha256": "a13cb7211f113a2de596a0f007178931807f04abbb085bffa36eec2e2cca0249"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/control_gru/seed3.json",
+      "population": 4,
+      "cell": "control_gru",
+      "seed": 3,
+      "sha256": "8ca280730b3a2dc6f006fb4e9d2773f1829a09a92c217502faa8d7d8e6941f71"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/none/seed0.json",
+      "population": 4,
+      "cell": "none",
+      "seed": 0,
+      "sha256": "e8ae81bf4766795e492c1a7386dc7b19ca6c5d055e20220b5735b0df903a4e1f"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/none/seed1.json",
+      "population": 4,
+      "cell": "none",
+      "seed": 1,
+      "sha256": "926c9cbd35471e0b3782bffa5ebcac06e1dabfa8aa4d6956d59443a8c97a5189"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/none/seed2.json",
+      "population": 4,
+      "cell": "none",
+      "seed": 2,
+      "sha256": "757522c26fc610f8c1bbc2cfcfca5b15ded4229eb457c7c891b0769fd2e79508"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/none/seed3.json",
+      "population": 4,
+      "cell": "none",
+      "seed": 3,
+      "sha256": "1c10987a6bf098443c01c044970d8a062278c6e502e95fe3d58751ea3df400d4"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_admissible/seed0.json",
+      "population": 4,
+      "cell": "shared_admissible",
+      "seed": 0,
+      "sha256": "b23d16d1430454bb76a897d553abc08e5e15d66db987a2167d282d9cb53eba47"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_admissible/seed1.json",
+      "population": 4,
+      "cell": "shared_admissible",
+      "seed": 1,
+      "sha256": "cc78eb4ba88d06042c8a9b5c79cb994a64d98df81aae65eef6f4efaa6ab69698"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_admissible/seed2.json",
+      "population": 4,
+      "cell": "shared_admissible",
+      "seed": 2,
+      "sha256": "a12135df88e0ba30bf90630fd9ea93391c17ccf08157199b6c52164b8aaeb513"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_admissible/seed3.json",
+      "population": 4,
+      "cell": "shared_admissible",
+      "seed": 3,
+      "sha256": "f6185a462dba777b9ab69c36fcc452efd1f1b9edce1a4e494d00c35ba0c3742c"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_none/seed0.json",
+      "population": 4,
+      "cell": "shared_none",
+      "seed": 0,
+      "sha256": "764c7cc8d942beb6a8ddb9e4e8495fbb81520d3fb6d72e873ff1b4ebec5f91b0"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_none/seed1.json",
+      "population": 4,
+      "cell": "shared_none",
+      "seed": 1,
+      "sha256": "9c7bb4e568d4ad678b2a403371b71b6d51129b85a7c7138fd7c4e8ea2fb6c4ca"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_none/seed2.json",
+      "population": 4,
+      "cell": "shared_none",
+      "seed": 2,
+      "sha256": "5de37c5d966d9bc0626f750bfbe9af0b1ed8d0679960233db881fb0afbcc21e2"
+    },
+    {
+      "group": "s1",
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_none/seed3.json",
+      "population": 4,
+      "cell": "shared_none",
+      "seed": 3,
+      "sha256": "5de2f9125eba30db3b59443a2bc5369e1f54ff534c1360e8ea5c463fe446ea19"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/learned_cuda/grafiti/seed0/run.json",
+      "role": "cuda",
+      "model": "grafiti",
+      "graph": "learned",
+      "seed": 0,
+      "sha256": "35c0947d8036125d4b8107deb1d37e440515f862816b6c075dee33e274e8e72b"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/learned_cuda/grafiti/seed1/run.json",
+      "role": "cuda",
+      "model": "grafiti",
+      "graph": "learned",
+      "seed": 1,
+      "sha256": "d43af53b27c5474ba99de900937c051d0eb68edd89eef628839f67d0b75a5236"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/learned_cuda/grafiti/seed2/run.json",
+      "role": "cuda",
+      "model": "grafiti",
+      "graph": "learned",
+      "seed": 2,
+      "sha256": "f345642be13eef99e9f07a5cc40c54394196801b74d76a65a8b9adbcbda7585f"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/learned_cuda/grafiti/seed3/run.json",
+      "role": "cuda",
+      "model": "grafiti",
+      "graph": "learned",
+      "seed": 3,
+      "sha256": "0e995fc61412f6ddadb6c13301332818d70ca3974d6ae9faef28e27a2d053569"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/learned_cuda/tpatchgnn/seed0/run.json",
+      "role": "cuda",
+      "model": "tpatchgnn",
+      "graph": "learned",
+      "seed": 0,
+      "sha256": "bb40748ffc197817691e46ddf5a40b5fc16a7096f111719bcae5ddfa94d3dc10"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/learned_cuda/tpatchgnn/seed1/run.json",
+      "role": "cuda",
+      "model": "tpatchgnn",
+      "graph": "learned",
+      "seed": 1,
+      "sha256": "65769e323753522b7422aab82a3d182e53e84d812b29c81fedd58501340242c9"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/learned_cuda/tpatchgnn/seed2/run.json",
+      "role": "cuda",
+      "model": "tpatchgnn",
+      "graph": "learned",
+      "seed": 2,
+      "sha256": "4c2bf6ed35e2d6eed16b43b9fef45322522372af68357df161ce51d3893410f8"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/learned_cuda/tpatchgnn/seed3/run.json",
+      "role": "cuda",
+      "model": "tpatchgnn",
+      "graph": "learned",
+      "seed": 3,
+      "sha256": "db4b63fcd785a2d823662a39610e56ec6cb7a34a71e74e38a362caf2ed6fc75a"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/grafiti_complete_s0.json",
+      "role": "fixed",
+      "model": "grafiti",
+      "graph": "complete",
+      "seed": 0,
+      "sha256": "ab3dfa00714dcacf1798fe81e755ad34e7e01b1552ec34fa9ebb817d3656bf9b"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/grafiti_complete_s1.json",
+      "role": "fixed",
+      "model": "grafiti",
+      "graph": "complete",
+      "seed": 1,
+      "sha256": "c2b16055ed79efbbb77ffe6283b88dace97f5c9421870a88e81d81bc6184aafc"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/grafiti_complete_s2.json",
+      "role": "fixed",
+      "model": "grafiti",
+      "graph": "complete",
+      "seed": 2,
+      "sha256": "dd715c1d6aff0e23e1e5cb09c78aa33c7859b46a1918cb040c4025af7856cec7"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/grafiti_complete_s3.json",
+      "role": "fixed",
+      "model": "grafiti",
+      "graph": "complete",
+      "seed": 3,
+      "sha256": "051f788d6a72278b981ba050371ac54e6ce48d564bd392835555d178a1382bcf"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/grafiti_physiological_s0.json",
+      "role": "fixed",
+      "model": "grafiti",
+      "graph": "physiological",
+      "seed": 0,
+      "sha256": "9cc618e495300a1bc4ea763785fd2e058c25e70b9a86f1d32165881184c01cc6"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/grafiti_physiological_s1.json",
+      "role": "fixed",
+      "model": "grafiti",
+      "graph": "physiological",
+      "seed": 1,
+      "sha256": "8aae9a0e9b71c96137813803d75ab5df4b64a3be4cd7c1f49d466795553e467d"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/grafiti_physiological_s2.json",
+      "role": "fixed",
+      "model": "grafiti",
+      "graph": "physiological",
+      "seed": 2,
+      "sha256": "9f924a8de92149df56bf2a8b756eb27812731ba9b6be49e60d0d844930379236"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/grafiti_physiological_s3.json",
+      "role": "fixed",
+      "model": "grafiti",
+      "graph": "physiological",
+      "seed": 3,
+      "sha256": "70eac1104e7e7242ff141d979672d153aad706b1aa704cf2a71d0d8deae70c26"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/grafiti_random_s0.json",
+      "role": "fixed",
+      "model": "grafiti",
+      "graph": "random",
+      "seed": 0,
+      "sha256": "15d27b35fc90f5ee8567cdd35ecaa54c6f948780bd8a62496a358b1807b5f352"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/grafiti_random_s1.json",
+      "role": "fixed",
+      "model": "grafiti",
+      "graph": "random",
+      "seed": 1,
+      "sha256": "e6d4e885c46634def9f569cec5db82ddd240ef792a8693694cf4d5d9231ed45e"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/grafiti_random_s2.json",
+      "role": "fixed",
+      "model": "grafiti",
+      "graph": "random",
+      "seed": 2,
+      "sha256": "f226a034d3fe038eb4b716958399e57eb0babd3882b18b25732610e13d8dc3a8"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/grafiti_random_s3.json",
+      "role": "fixed",
+      "model": "grafiti",
+      "graph": "random",
+      "seed": 3,
+      "sha256": "3bc3b4a8b136c1a6a95d651dc447b08fd73172ecd20d30ea98b39e1f1d6384b1"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/tpatchgnn_complete_s0.json",
+      "role": "fixed",
+      "model": "tpatchgnn",
+      "graph": "complete",
+      "seed": 0,
+      "sha256": "f5f4032fae6a565ac2c3dd60c3dc366304f6372e28cd9cba8c0de0f36d28abd7"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/tpatchgnn_complete_s1.json",
+      "role": "fixed",
+      "model": "tpatchgnn",
+      "graph": "complete",
+      "seed": 1,
+      "sha256": "d226c8c956914919b5b38bc3d31d0d9a5ce17491fbd02d7d1a6ef308c64a1069"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/tpatchgnn_complete_s2.json",
+      "role": "fixed",
+      "model": "tpatchgnn",
+      "graph": "complete",
+      "seed": 2,
+      "sha256": "26598f8c584a433fc6d029e5830b84d78ec12b240e165d49b33d3bb346541586"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/tpatchgnn_complete_s3.json",
+      "role": "fixed",
+      "model": "tpatchgnn",
+      "graph": "complete",
+      "seed": 3,
+      "sha256": "c16f74d2aed45815bfd4d9fdcb1449f614a3e7c1a0c462d983db932f870dfd29"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/tpatchgnn_physiological_s0.json",
+      "role": "fixed",
+      "model": "tpatchgnn",
+      "graph": "physiological",
+      "seed": 0,
+      "sha256": "427b877963eb72deacaad11dfc31c3a19567ad5c1f40d8a106e775cf5a5f0a3c"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/tpatchgnn_physiological_s1.json",
+      "role": "fixed",
+      "model": "tpatchgnn",
+      "graph": "physiological",
+      "seed": 1,
+      "sha256": "50f8b994ff3d921fc18322778f40aac345e2add37be119b2f83d9b8307c3eb84"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/tpatchgnn_physiological_s2.json",
+      "role": "fixed",
+      "model": "tpatchgnn",
+      "graph": "physiological",
+      "seed": 2,
+      "sha256": "84d0621749e507d7e593ec55e217208fe65d6b0d261d2b4d91add83a1aa5d7eb"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/tpatchgnn_physiological_s3.json",
+      "role": "fixed",
+      "model": "tpatchgnn",
+      "graph": "physiological",
+      "seed": 3,
+      "sha256": "9419ff390018f0bb4c1beeddfc77b1a32fc7a90af27e90660d887b7f452576cd"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/tpatchgnn_random_s0.json",
+      "role": "fixed",
+      "model": "tpatchgnn",
+      "graph": "random",
+      "seed": 0,
+      "sha256": "390f2c096501472fbdcbeaca4f975bf44879c9dded84593970de0ed0dd11b04f"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/tpatchgnn_random_s1.json",
+      "role": "fixed",
+      "model": "tpatchgnn",
+      "graph": "random",
+      "seed": 1,
+      "sha256": "0f3b5d13364c2679bb51280e84d2496fe383d67b3a0ed3817ab99cc1301b039a"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/tpatchgnn_random_s2.json",
+      "role": "fixed",
+      "model": "tpatchgnn",
+      "graph": "random",
+      "seed": 2,
+      "sha256": "03c285d972ef5e11fc7efb50db3f9958e83948487481ac0e0fc3c2293176debd"
+    },
+    {
+      "group": "s3",
+      "path": "experiments/learned_graph_validation/artifacts/e5/tpatchgnn_random_s3.json",
+      "role": "fixed",
+      "model": "tpatchgnn",
+      "graph": "random",
+      "seed": 3,
+      "sha256": "e41536b6a6becf9a46d97fcc7eb78039b442b201d75299431511797af669dfde"
+    },
+    {
+      "group": "s3",
+      "path": "results/learned_graph_baselines_v1/grafiti_v3/cinc_grafiti_s0.json",
+      "role": "cpu",
+      "model": "grafiti",
+      "graph": "learned",
+      "seed": 0,
+      "sha256": "b8e977a6b04e3838aed02cd4c891963748620213e76c5ace112038bb24ee3575"
+    },
+    {
+      "group": "s3",
+      "path": "results/learned_graph_baselines_v1/grafiti_v3/cinc_grafiti_s1.json",
+      "role": "cpu",
+      "model": "grafiti",
+      "graph": "learned",
+      "seed": 1,
+      "sha256": "53586870ebe2022bba38a815640b5551d37d969469d86f7f7044036c288ed4db"
+    },
+    {
+      "group": "s3",
+      "path": "results/learned_graph_baselines_v1/grafiti_v3/cinc_grafiti_s2.json",
+      "role": "cpu",
+      "model": "grafiti",
+      "graph": "learned",
+      "seed": 2,
+      "sha256": "089640844c36f7a31232c83f68009d204b5ec4760def2eead4e1c29515ab21b8"
+    },
+    {
+      "group": "s3",
+      "path": "results/learned_graph_baselines_v1/grafiti_v3/cinc_grafiti_s3.json",
+      "role": "cpu",
+      "model": "grafiti",
+      "graph": "learned",
+      "seed": 3,
+      "sha256": "37126f9ee738e4b27589fc14dc68c00b45979342ab77235e4aed73bd6f83a287"
+    },
+    {
+      "group": "s3",
+      "path": "results/learned_graph_baselines_v1/tpatchgnn/cinc_tpatchgnn_s0.json",
+      "role": "cpu",
+      "model": "tpatchgnn",
+      "graph": "learned",
+      "seed": 0,
+      "sha256": "e31b1ae71ef18459128c55a4b37a1167a0916853f2063f0dfc2367bbece2098a"
+    },
+    {
+      "group": "s3",
+      "path": "results/learned_graph_baselines_v1/tpatchgnn/cinc_tpatchgnn_s1.json",
+      "role": "cpu",
+      "model": "tpatchgnn",
+      "graph": "learned",
+      "seed": 1,
+      "sha256": "3d4760a5dc3ea195a9cf32149b962d57e4203e90cf9c8fa3d70200ab96a88bf3"
+    },
+    {
+      "group": "s3",
+      "path": "results/learned_graph_baselines_v1/tpatchgnn/cinc_tpatchgnn_s2.json",
+      "role": "cpu",
+      "model": "tpatchgnn",
+      "graph": "learned",
+      "seed": 2,
+      "sha256": "a7bfa18da52feae4b4fc8c49b7a06eaa80969e7cc5b303d15359c57365c9ec83"
+    },
+    {
+      "group": "s3",
+      "path": "results/learned_graph_baselines_v1/tpatchgnn/cinc_tpatchgnn_s3.json",
+      "role": "cpu",
+      "model": "tpatchgnn",
+      "graph": "learned",
+      "seed": 3,
+      "sha256": "0e5e3eb7c37baf2b515482a626d2cabcf81dc75e248bec6043c3193e5c0e11f2"
+    }
+  ],
+  "populations": [
+    {
+      "population": 1,
+      "path": "experiments/positive_control/artifacts/population_replication/populations/population_1.npz",
+      "sha256": "4d7bebfda2f12facb20a7fa229f32e4443560947b1f1f99633d754649cbd8845",
+      "original_sha256": "18c66cbe848b894e39ca9cdf79b5df8dbc56eeeb862cad3abfb306dc9b8f0dd3",
+      "arrays": {
+        "values": {
+          "sha256": "c8f8a0b9abc71aad053cb32994aee91cb7ffd74ff926db0aa9c3323bddd947ee",
+          "shape": [
+            400,
+            73,
+            6
+          ],
+          "dtype": "float32"
+        },
+        "mask": {
+          "sha256": "d2e83d64df44c59b2385802f60607e0f87bf286d720db3558da68331a1d2dfbc",
+          "shape": [
+            400,
+            73,
+            6
+          ],
+          "dtype": "bool"
+        },
+        "truth": {
+          "sha256": "bbfeeb8ca27db77b1cbe16fe8752880fa16bab1de4a33adb17327371b2511384",
+          "shape": [
+            400,
+            73,
+            6
+          ],
+          "dtype": "float32"
+        },
+        "controls": {
+          "sha256": "cb0433827262e509cf3e520e067998f16ddbaf89e40947fe9fd9b192e4e70ae8",
+          "shape": [
+            400,
+            73,
+            1
+          ],
+          "dtype": "float32"
+        },
+        "t_min": {
+          "sha256": "1d193caabd18f135dd82a9546e4f2011cf07774893f9df27bb964b2d0c9f44ff",
+          "shape": [
+            73
+          ],
+          "dtype": "float32"
+        },
+        "channels": {
+          "sha256": "66e07c74a1ee7716e9d5a0df34ee531c8796d8f4b55e5f6d8f5c6e2b95011307",
+          "shape": [
+            6
+          ],
+          "dtype": "<U3"
+        },
+        "audit_reserve": {
+          "sha256": "ffab5c57b35e32ca59575b073048d64a524eb1c43d6e5bda5475640b51f18330",
+          "shape": [
+            400,
+            73
+          ],
+          "dtype": "float64"
+        },
+        "audit_source": {
+          "sha256": "a9fb096bd359563739abb1ab33ca0abecb04535c7810ce65323993961e84c419",
+          "shape": [
+            400,
+            73
+          ],
+          "dtype": "float64"
+        },
+        "audit_mask_uniforms": {
+          "sha256": "821dd4eeaf1bf9731db4218f0f714b7a9dec64deb0b99093f46dba1e2a3ca377",
+          "shape": [
+            400,
+            73,
+            2
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "population": 2,
+      "path": "experiments/positive_control/artifacts/population_replication/populations/population_2.npz",
+      "sha256": "c15b97825280b832b3d098c28c98210597512c9f75cab992b78fc1e787f4fea6",
+      "original_sha256": "9f818738d44ea2836fb5ac6dc43ae35806bffe054d1da242661f0b496c319106",
+      "arrays": {
+        "values": {
+          "sha256": "f596902eeb347865999580af42a9fd2986c537cca1646c660cb166e5e4c3e3e5",
+          "shape": [
+            400,
+            73,
+            6
+          ],
+          "dtype": "float32"
+        },
+        "mask": {
+          "sha256": "ced045008c01ee0559c9415cd6c95777cc99db6a7b5784321d0f3fe911007f4b",
+          "shape": [
+            400,
+            73,
+            6
+          ],
+          "dtype": "bool"
+        },
+        "truth": {
+          "sha256": "ad0ab4ba8e96ca76c1b83c54c08b81d4962fe4723aca7145afe084b82052c423",
+          "shape": [
+            400,
+            73,
+            6
+          ],
+          "dtype": "float32"
+        },
+        "controls": {
+          "sha256": "327673d33631dd1167067f0e10b363d83bfa9e005bb25b3f68bf27744fddd91d",
+          "shape": [
+            400,
+            73,
+            1
+          ],
+          "dtype": "float32"
+        },
+        "t_min": {
+          "sha256": "1d193caabd18f135dd82a9546e4f2011cf07774893f9df27bb964b2d0c9f44ff",
+          "shape": [
+            73
+          ],
+          "dtype": "float32"
+        },
+        "channels": {
+          "sha256": "66e07c74a1ee7716e9d5a0df34ee531c8796d8f4b55e5f6d8f5c6e2b95011307",
+          "shape": [
+            6
+          ],
+          "dtype": "<U3"
+        },
+        "audit_reserve": {
+          "sha256": "94c32a08b4608228c7b7e353d684109366587f0ac8b79e252d3b06523ecd876b",
+          "shape": [
+            400,
+            73
+          ],
+          "dtype": "float64"
+        },
+        "audit_source": {
+          "sha256": "013629183179dcde99a0f6959905cc1fba09bf84b56c652331d0e0e480e808c2",
+          "shape": [
+            400,
+            73
+          ],
+          "dtype": "float64"
+        },
+        "audit_mask_uniforms": {
+          "sha256": "c59d70e5ad914bafeb01e047ee8390ce88e352eefef13d69b7ca9d51a0ae44a4",
+          "shape": [
+            400,
+            73,
+            2
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "population": 3,
+      "path": "experiments/positive_control/artifacts/population_replication/populations/population_3.npz",
+      "sha256": "4a01341464b66585f587c5732d152fffb14bc7e91cd79c73f347ca48cec079f3",
+      "original_sha256": "5fb7821201d852922a86a5547437493538dbe2242bbd6d374775a823a2984e78",
+      "arrays": {
+        "values": {
+          "sha256": "91fb6cc525abcc2ceabf95fe99d6b7149d107b1c562ac2d99a8bcc37919b9a09",
+          "shape": [
+            400,
+            73,
+            6
+          ],
+          "dtype": "float32"
+        },
+        "mask": {
+          "sha256": "9c97e850179a50aa8a430a72a2d782d885fc720250ba040ae05563c8eb5b5422",
+          "shape": [
+            400,
+            73,
+            6
+          ],
+          "dtype": "bool"
+        },
+        "truth": {
+          "sha256": "5314cd5d2fdad5d97e75209b5ec7f3685752f7265e22b99abac92f96ba0d5e0e",
+          "shape": [
+            400,
+            73,
+            6
+          ],
+          "dtype": "float32"
+        },
+        "controls": {
+          "sha256": "15f44d614cddcd50941274a0fad3cb6a1b4c3add9a8ee519be3175d43f9b8ebd",
+          "shape": [
+            400,
+            73,
+            1
+          ],
+          "dtype": "float32"
+        },
+        "t_min": {
+          "sha256": "1d193caabd18f135dd82a9546e4f2011cf07774893f9df27bb964b2d0c9f44ff",
+          "shape": [
+            73
+          ],
+          "dtype": "float32"
+        },
+        "channels": {
+          "sha256": "66e07c74a1ee7716e9d5a0df34ee531c8796d8f4b55e5f6d8f5c6e2b95011307",
+          "shape": [
+            6
+          ],
+          "dtype": "<U3"
+        },
+        "audit_reserve": {
+          "sha256": "b442216bf8a74f9daa6e344a008131a36139a0056c2f3498cf57f518e6c3821c",
+          "shape": [
+            400,
+            73
+          ],
+          "dtype": "float64"
+        },
+        "audit_source": {
+          "sha256": "9aeaefb40c800844016bf208540c732cc51ffd71346d9ba92d95ad074b3f1ca2",
+          "shape": [
+            400,
+            73
+          ],
+          "dtype": "float64"
+        },
+        "audit_mask_uniforms": {
+          "sha256": "8d96a786fe439da7654c4e5bd54539764c728331ac912797ed72c00eb91666cb",
+          "shape": [
+            400,
+            73,
+            2
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "population": 4,
+      "path": "experiments/positive_control/artifacts/population_replication/populations/population_4.npz",
+      "sha256": "b8a9f3e3b0326dc7af47d38c5796c94689e418fa5940ac87270820cf0a203041",
+      "original_sha256": "9f45d1b9468553a58e7cbb35e02be5fb193173906fdec429276c5f462630227c",
+      "arrays": {
+        "values": {
+          "sha256": "eea7798da6b4eff6ced4b2574d14065ba828c8c909918f6d416782ed9de6238f",
+          "shape": [
+            400,
+            73,
+            6
+          ],
+          "dtype": "float32"
+        },
+        "mask": {
+          "sha256": "00ef337d4ff13ff876dffbc33300936681c7a826261511ff1f0dda9d4c12a559",
+          "shape": [
+            400,
+            73,
+            6
+          ],
+          "dtype": "bool"
+        },
+        "truth": {
+          "sha256": "0f7301ecb9e2090b0a719a271141bf9206023c369f21659222a46e95418f23fa",
+          "shape": [
+            400,
+            73,
+            6
+          ],
+          "dtype": "float32"
+        },
+        "controls": {
+          "sha256": "75ae47c6a73fec6c854a35346e766215221eb98ff44617f665b04a0093f730a5",
+          "shape": [
+            400,
+            73,
+            1
+          ],
+          "dtype": "float32"
+        },
+        "t_min": {
+          "sha256": "1d193caabd18f135dd82a9546e4f2011cf07774893f9df27bb964b2d0c9f44ff",
+          "shape": [
+            73
+          ],
+          "dtype": "float32"
+        },
+        "channels": {
+          "sha256": "66e07c74a1ee7716e9d5a0df34ee531c8796d8f4b55e5f6d8f5c6e2b95011307",
+          "shape": [
+            6
+          ],
+          "dtype": "<U3"
+        },
+        "audit_reserve": {
+          "sha256": "6ac7e5bdb4c8e12ecbc7ed3591c7b5a12a48aadb5de037b0f8527a721e9728fe",
+          "shape": [
+            400,
+            73
+          ],
+          "dtype": "float64"
+        },
+        "audit_source": {
+          "sha256": "8080de06fe024f131ddd3992dff723f90d7cc2d27917c186c263f7d0b2bf8d11",
+          "shape": [
+            400,
+            73
+          ],
+          "dtype": "float64"
+        },
+        "audit_mask_uniforms": {
+          "sha256": "870064d76c8de9597231fa479ac4ed3a3148634ace298afc404fb001ebba0caa",
+          "shape": [
+            400,
+            73,
+            2
+          ],
+          "dtype": "float64"
+        }
+      }
+    }
+  ],
+  "counts": {
+    "s1": 100,
+    "s3": 40
+  },
+  "note": "Historical fingerprints identify original archives/source. Distributed fingerprints verify released bytes. Checkpoints and clinical archives are not required by these readers."
+}

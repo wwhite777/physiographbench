@@ -102,3 +102,13 @@ Only `run.json` is distributed for new fits. `read_n2.py` checks all selected-ca
 record hashes, identities and stopping fields before printing four/ten-seed paired
 intervals, sign counts and minimum detectable differences at 80% power. It does
 not claim to replay the omitted new weights, CSV curves or per-stay error arrays.
+
+## Post-hoc sensitivity companion (1.3.1)
+
+[analysis/post_hoc/](../../analysis/post_hoc/) supplies the full 3×3 admissible
+versus none cap matrix, validation margins, equal-organ score and historical
+clinical input-access × edges table. Selected-cap stay-cluster intervals use
+released squared-error sums and target counts, paired across arms and all ten
+seeds. They condition on the selected caps and fitted checkpoints. These
+post-hoc analyses do not create a new selection rule or separate cap from the
+cosine learning-rate schedule.

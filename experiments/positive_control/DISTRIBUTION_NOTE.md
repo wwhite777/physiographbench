@@ -15,3 +15,15 @@ not imply those files are distributed or that a new fit/replay was performed.
 Run the documented entry points from the repository root. Existing scientific
 limitations, protocol differences and missing-evidence statements are retained.
 This packaging check does not constitute independent scientific review.
+
+## Release 1.3.1 additions
+
+The new records follow the same rule: historical numerical leaves, source/data
+fingerprints and completion metadata are preserved; string provenance is moved
+to repository-relative locations. `manifests/release_1_3_1_inputs.json` gives
+distributed bytes for the population/device readers. The root distribution
+inventory records original/distributed hashes and exact transformations for
+the added files. Historical references under `provenance/historical/` denote
+unbundled source or runtime paths, not executable dependencies. Synthetic NPZ
+metadata strings are sanitized while every scientific array is byte-identical.
+No fit, integrator replay or checkpoint replay is asserted by packaging.

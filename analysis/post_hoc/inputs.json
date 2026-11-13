@@ -1,0 +1,224 @@
+{
+  "cap/none/35": [
+    "experiments/shared_input_primary/artifacts/host/arms/none/seed0/run.json",
+    "experiments/shared_input_primary/artifacts/host/arms/none/seed1/run.json",
+    "experiments/shared_input_primary/artifacts/host/arms/none/seed2/run.json",
+    "experiments/shared_input_primary/artifacts/host/arms/none/seed3/run.json"
+  ],
+  "cap/none/70": [
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed0/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed1/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed2/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs70/seed3/run.json"
+  ],
+  "cap/none/105": [
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed0/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed1/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed2/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed3/run.json"
+  ],
+  "selected/none": [
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed0/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed1/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed2/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed3/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed4/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed5/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed6/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed7/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed8/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/none/epochs105/seed9/run.json"
+  ],
+  "cap/admissible/35": [
+    "experiments/shared_input_primary/artifacts/host/arms/admissible/seed0/run.json",
+    "experiments/shared_input_primary/artifacts/host/arms/admissible/seed1/run.json",
+    "experiments/shared_input_primary/artifacts/host/arms/admissible/seed2/run.json",
+    "experiments/shared_input_primary/artifacts/host/arms/admissible/seed3/run.json"
+  ],
+  "cap/admissible/70": [
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed0/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed1/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed2/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed3/run.json"
+  ],
+  "cap/admissible/105": [
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed0/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed1/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed2/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs105/seed3/run.json"
+  ],
+  "selected/admissible": [
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed0/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed1/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed2/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed3/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed4/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed5/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed6/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed7/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed8/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/admissible/epochs70/seed9/run.json"
+  ],
+  "cap/grud/35": [
+    "results/v4/tuning_grid.json#/selected_runs/grud/0",
+    "results/v4/tuning_grid.json#/selected_runs/grud/1",
+    "results/v4/tuning_grid.json#/selected_runs/grud/2",
+    "results/v4/tuning_grid.json#/selected_runs/grud/3"
+  ],
+  "cap/grud/70": [
+    "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed0/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed1/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed2/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/grud/epochs70/seed3/run.json"
+  ],
+  "cap/grud/105": [
+    "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed0/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed1/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed2/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/grud/epochs105/seed3/run.json"
+  ],
+  "selected/grud": [
+    "results/v4/tuning_grid.json#/selected_runs/grud/0",
+    "results/v4/tuning_grid.json#/selected_runs/grud/1",
+    "results/v4/tuning_grid.json#/selected_runs/grud/2",
+    "results/v4/tuning_grid.json#/selected_runs/grud/3",
+    "experiments/shared_input_primary/artifacts/host/budget/grud/epochs35/seed4/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/grud/epochs35/seed5/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/grud/epochs35/seed6/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/grud/epochs35/seed7/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/grud/epochs35/seed8/run.json",
+    "experiments/shared_input_primary/artifacts/host/budget/grud/epochs35/seed9/run.json"
+  ],
+  "clinical/partitioned_none": [
+    "results/v4/variant_ablation_v4.json#/table/physiograph_gru/none/runs/0",
+    "results/v4/variant_ablation_v4.json#/table/physiograph_gru/none/runs/1",
+    "results/v4/variant_ablation_v4.json#/table/physiograph_gru/none/runs/2",
+    "results/v4/variant_ablation_v4.json#/table/physiograph_gru/none/runs/3"
+  ],
+  "clinical/partitioned_admissible": [
+    "results/v4/tuning_grid.json#/selected_runs/physiograph_gru/0",
+    "results/v4/tuning_grid.json#/selected_runs/physiograph_gru/1",
+    "results/v4/tuning_grid.json#/selected_runs/physiograph_gru/2",
+    "results/v4/tuning_grid.json#/selected_runs/physiograph_gru/3"
+  ],
+  "clinical/shared_none": [
+    "diagnostics/shared_input_edges/runs/none/seed0/run.json",
+    "diagnostics/shared_input_edges/runs/none/seed1/run.json",
+    "diagnostics/shared_input_edges/runs/none/seed2/run.json",
+    "diagnostics/shared_input_edges/runs/none/seed3/run.json"
+  ],
+  "clinical/shared_admissible": [
+    "diagnostics/shared_input_edges/runs/admissible/seed0/run.json",
+    "diagnostics/shared_input_edges/runs/admissible/seed1/run.json",
+    "diagnostics/shared_input_edges/runs/admissible/seed2/run.json",
+    "diagnostics/shared_input_edges/runs/admissible/seed3/run.json"
+  ],
+  "simulator/none": [
+    "experiments/positive_control/artifacts/full/kappa_1/none/seed0.json",
+    "experiments/positive_control/artifacts/full/kappa_1/none/seed1.json",
+    "experiments/positive_control/artifacts/full/kappa_1/none/seed2.json",
+    "experiments/positive_control/artifacts/full/kappa_1/none/seed3.json",
+    "experiments/positive_control/artifacts/full/kappa_1/none/seed4/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/none/seed5/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/none/seed6/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/none/seed7/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/none/seed8/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/none/seed9/run.json"
+  ],
+  "simulator/admissible": [
+    "experiments/positive_control/artifacts/full/kappa_1/admissible/seed0.json",
+    "experiments/positive_control/artifacts/full/kappa_1/admissible/seed1.json",
+    "experiments/positive_control/artifacts/full/kappa_1/admissible/seed2.json",
+    "experiments/positive_control/artifacts/full/kappa_1/admissible/seed3.json",
+    "experiments/positive_control/artifacts/full/kappa_1/admissible/seed4/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/admissible/seed5/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/admissible/seed6/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/admissible/seed7/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/admissible/seed8/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/admissible/seed9/run.json"
+  ],
+  "simulator/shared_none": [
+    "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed0/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed1/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed2/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed3/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed4/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed5/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed6/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed7/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed8/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed9/run.json"
+  ],
+  "simulator/shared_admissible": [
+    "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed0/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed1/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed2/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed3/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed4/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed5/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed6/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed7/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed8/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed9/run.json"
+  ],
+  "simulator/control_gru": [
+    "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed0.json",
+    "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed1.json",
+    "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed2.json",
+    "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed3.json",
+    "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed4/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed5/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed6/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed7/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed8/run.json",
+    "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed9/run.json"
+  ],
+  "treatment/control_gru/0": [
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/control_gru/seed0/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/control_gru/seed1/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/control_gru/seed2/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/control_gru/seed3/run.json"
+  ],
+  "treatment/control_gru/4": [
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/control_gru/seed0/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/control_gru/seed1/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/control_gru/seed2/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/control_gru/seed3/run.json"
+  ],
+  "treatment/crn_lite/0": [
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/crn_lite/seed0/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/crn_lite/seed1/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/crn_lite/seed2/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/crn_lite/seed3/run.json"
+  ],
+  "treatment/crn_lite/4": [
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/crn_lite/seed0/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/crn_lite/seed1/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/crn_lite/seed2/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main_rerun/dependence_only/point4/crn_lite/seed3/run.json"
+  ],
+  "treatment/physiograph_gru/0": [
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph_gru/seed0/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph_gru/seed1/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph_gru/seed2/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph_gru/seed3/run.json"
+  ],
+  "treatment/physiograph_gru/4": [
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph_gru/seed0/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph_gru/seed1/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph_gru/seed2/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph_gru/seed3/run.json"
+  ],
+  "treatment/physiograph/0": [
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph/seed0/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph/seed1/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph/seed2/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph/seed3/run.json"
+  ],
+  "treatment/physiograph/4": [
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph/seed0/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph/seed1/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph/seed2/run.json",
+    "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph/seed3/run.json"
+  ]
+}

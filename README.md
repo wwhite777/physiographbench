@@ -2,8 +2,8 @@
 
 # PhysioGraphBench: when do physiological graph priors help?
 
-**Version 1.3.0 — input-access regime controls and validation-selected clinical
-extensions ([release note](docs/RELEASE_V1_3_0.md)).**
+**Version 1.3.1 — five-population regime replication, device-matched adjacency
+results and post-hoc companions ([release note](docs/RELEASE_V1_3_1.md)).**
 Earlier [1.2.1](docs/RELEASE_V1_2_1.md) and [1.2.0](docs/RELEASE_V1_2_0.md)
 notes retain the E3 verifier correction and current-archive rerun provenance.
 The concept DOI is [10.5281/zenodo.23976171](https://doi.org/10.5281/zenodo.23976171);
@@ -16,9 +16,9 @@ version 1.1.1 has no separate archival record. Version 1.2.1 is archived as
 Version 1.1.2 corrects one budget-control interpretation; see
 [the 1.1.2 note](docs/RELEASE_V1_1_2.md).
 
-**In this generated sensitivity regime, prescribed edges help when they are
-the only route to information an organ node lacks; with shared inputs they add
-nothing measurable. At validation-selected clinical caps, the organ model
+**Across five generated populations in this sensitivity regime, prescribed
+edges help when they give an organ node direct access to source-organ inputs it lacks; with shared inputs no
+edge benefit is detected. At validation-selected clinical caps, the organ model
 trails GRU-D and shows no edge benefit. The CinC-2012 edge contrast is not
 established.**
 
@@ -31,6 +31,44 @@ not establish clinical utility or validate recovered edges as causal physiology.
 Figure 1 summarizes the v5 pipeline, clinical forecasting and separate simulated
 intervention experiments. The clinical models use four organ groups; the
 simulator uses three. Zero simulator coupling retains a shared sepsis course.
+
+## Results added in 1.3.1
+
+The [population replication reader](experiments/positive_control/read_s1.py)
+checks 80 new records and the matched 20 population-0 records. All four new
+populations pass the frozen rule: partitioned admissible − none has a negative
+mean and an interval below zero, shared none − shared admissible has a mean
+below 0.0040, and the absolute mean shared none − full-input Control-GRU is at
+most 0.0040. Each population uses four paired training/split seeds and the same
+population-0 normalization ranges. The five-population statement applies to
+these generated populations, not general simulator or clinical robustness.
+The [full summary](experiments/positive_control/artifacts/population_replication/summary.json)
+reports every cell and contrast, including population 3 where Control-GRU has
+lower error under the nominal paired comparison. Passing the mean threshold
+does not establish equivalence. S1 records lack explicit runtime dtype fields;
+float32 data and the source-defined float32 path were checked, without inventing
+per-fit dtype attestations.
+
+The [device-matched adjacency reader](experiments/learned_graph_validation/read_s3.py)
+adds eight learned-adjacency CUDA records beside the historical 24 fixed-CUDA
+and eight learned-CPU records. For t-PatchGNN on A, fixed random and complete
+graphs retain positive fixed-minus-learned intervals; the physiological
+interval now contains zero despite four positive seed differences. All six
+matched B intervals and all six matched GraFITi intervals contain zero.
+The operational CUDA refit also changes metric reduction and the t-PatchGNN
+thread setting; it does not isolate hardware. The fixed GraFITi representation
+change remains disclosed. [All original and matched contrasts](experiments/learned_graph_validation/artifacts/learned_cuda_summary.json)
+are retained, without an equivalence claim.
+
+The [post-hoc companion](analysis/post_hoc/) reproduces the cap matrix,
+equal-organ score, clinical input-access × edges table, synthetic input-access
+interaction and exact-versus-thresholded treatment table from released records.
+Small per-stay squared-error sums and target counts reproduce the paired
+stay-cluster bootstrap; no stay identifiers or patient trajectories are shipped.
+Its intervals condition on the fitted checkpoints and selected caps.
+The [official-code GraFITi attempt](experiments/learned_graph_validation/official_code/)
+failed during dataset/encoder construction with `KeyError: 'Time'` before
+fitting; its cause was not diagnosed and it supplies no benchmark score.
 
 ## Results added in 1.3.0
 

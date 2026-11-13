@@ -1,0 +1,4185 @@
+{
+  "decision": "Frozen population replication rule (2026-11-13T06:56:39Z)",
+  "endpoint": "metrics.macro_nrmse_fixed",
+  "validated_records": {
+    "new": 80,
+    "existing": 20
+  },
+  "synthetic_test_fixture_present": false,
+  "evidence_eligible": true,
+  "rule_verbatim": "the pattern replicates in population p if (a) mean < 0 with its interval excluding zero AND (b) mean < 0.0040 AND |(c) mean| ≤ 0.0040 (the fixed thresholds). The paper may say the routing result holds across the five generated populations only if it replicates in all four new ones; otherwise it reports each population and names where it holds or fails.",
+  "threshold": 0.004,
+  "contrast_definitions": {
+    "a_partitioned_admissible_minus_none": "partitioned admissible − partitioned none",
+    "b_shared_none_minus_shared_admissible": "shared none − shared admissible",
+    "c_shared_none_minus_control_gru": "shared none − full-input Control-GRU",
+    "d_interaction_shared_minus_partitioned": "(admissible − none)shared − (admissible − none)partitioned"
+  },
+  "interval_scope": "Pointwise paired t intervals; no multiplicity adjustment. Within-population intervals describe training/split-seed variation.",
+  "fixed_reference": "Frozen population 0, κ=1, full-population organ ranges, unchanged from E1B.",
+  "populations": [
+    {
+      "population": 0,
+      "training_seeds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cells": {
+        "none": {
+          "n": 4,
+          "mean": 0.09604689090214175,
+          "sd": 0.0005296838411951757,
+          "ci95": [
+            0.09520404571045156,
+            0.09688973609383193
+          ],
+          "values": [
+            0.09537383025901784,
+            0.09609191712131955,
+            0.09605313928341282,
+            0.0966686769448168
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "admissible": {
+          "n": 4,
+          "mean": 0.07999859264521333,
+          "sd": 0.0013427497139000249,
+          "ci95": [
+            0.07786197821225202,
+            0.08213520707817465
+          ],
+          "values": [
+            0.07826122234387373,
+            0.08026824165097007,
+            0.08152006402537819,
+            0.07994484256063135
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "shared_none": {
+          "n": 4,
+          "mean": 0.08074336536825116,
+          "sd": 0.001066180995197789,
+          "ci95": [
+            0.07904683348378541,
+            0.08243989725271691
+          ],
+          "values": [
+            0.07962484383236818,
+            0.08188596652198164,
+            0.08138451313071283,
+            0.08007813798794201
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "shared_admissible": {
+          "n": 4,
+          "mean": 0.08106824152089015,
+          "sd": 0.0012198949125263527,
+          "ci95": [
+            0.07912711649228787,
+            0.08300936654949242
+          ],
+          "values": [
+            0.08135163850623596,
+            0.08181773553758163,
+            0.08183416565250842,
+            0.07926942638723455
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "control_gru": {
+          "n": 4,
+          "mean": 0.07982864964036843,
+          "sd": 0.0015062545220979023,
+          "ci95": [
+            0.07743186257103434,
+            0.08222543670970252
+          ],
+          "values": [
+            0.08006205386507259,
+            0.0784690543853989,
+            0.08185278556360942,
+            0.07893070474739276
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        }
+      },
+      "contrasts": {
+        "a_partitioned_admissible_minus_none": {
+          "n": 4,
+          "mean": -0.01604829825692842,
+          "sd": 0.0011453471439448431,
+          "ci95": [
+            -0.017870801150185994,
+            -0.014225795363670845
+          ],
+          "values": [
+            -0.017112607915144115,
+            -0.015823675470349477,
+            -0.014533075258034628,
+            -0.016723834384185454
+          ],
+          "signs": {
+            "negative": 4,
+            "zero": 0,
+            "positive": 0
+          },
+          "sign_sequence": [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        },
+        "b_shared_none_minus_shared_admissible": {
+          "n": 4,
+          "mean": -0.0003248761526389761,
+          "sd": 0.0010677857304085378,
+          "ci95": [
+            -0.0020239615289259307,
+            0.0013742092236479785
+          ],
+          "values": [
+            -0.0017267946738677847,
+            6.823098440000841e-05,
+            -0.0004496525217955877,
+            0.0008087116007074596
+          ],
+          "signs": {
+            "negative": 2,
+            "zero": 0,
+            "positive": 2
+          },
+          "sign_sequence": [
+            "-",
+            "+",
+            "-",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        },
+        "c_shared_none_minus_control_gru": {
+          "n": 4,
+          "mean": 0.0009147157278827471,
+          "sd": 0.0018308016298339371,
+          "ci95": [
+            -0.001998498213403963,
+            0.003827929669169457
+          ],
+          "values": [
+            -0.00043721003270441594,
+            0.0034169121365827393,
+            -0.0004682724328965854,
+            0.0011474332405492504
+          ],
+          "signs": {
+            "negative": 2,
+            "zero": 0,
+            "positive": 2
+          },
+          "sign_sequence": [
+            "-",
+            "+",
+            "-",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        },
+        "d_interaction_shared_minus_partitioned": {
+          "n": 4,
+          "mean": 0.016373174409567395,
+          "sd": 0.0016938147098516797,
+          "ci95": [
+            0.013677937226965588,
+            0.019068411592169203
+          ],
+          "values": [
+            0.0188394025890119,
+            0.01575544448594947,
+            0.014982727779830216,
+            0.015915122783477995
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        }
+      },
+      "tests": {
+        "a_mean_negative": true,
+        "a_interval_excludes_zero": true,
+        "b_mean_below_0_0040": true,
+        "absolute_c_mean_at_most_0_0040": true
+      },
+      "replicates": true
+    },
+    {
+      "population": 1,
+      "training_seeds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cells": {
+        "none": {
+          "n": 4,
+          "mean": 0.10162989053988099,
+          "sd": 0.0030405594785254874,
+          "ci95": [
+            0.09679168190066574,
+            0.10646809917909623
+          ],
+          "values": [
+            0.10483701773527594,
+            0.09884277231691917,
+            0.10360998984374876,
+            0.09922978226358008
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "admissible": {
+          "n": 4,
+          "mean": 0.07581415834520908,
+          "sd": 0.0018526209365983984,
+          "ci95": [
+            0.07286622501782415,
+            0.078762091672594
+          ],
+          "values": [
+            0.07385882640325862,
+            0.07764136988345954,
+            0.07712849463187367,
+            0.07462794246224445
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "shared_none": {
+          "n": 4,
+          "mean": 0.07875381895762917,
+          "sd": 0.0014334350182977737,
+          "ci95": [
+            0.07647290396870576,
+            0.08103473394655258
+          ],
+          "values": [
+            0.07884178206375887,
+            0.0787870338689642,
+            0.08044651615780761,
+            0.07693994373998599
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "shared_admissible": {
+          "n": 4,
+          "mean": 0.07889467680154866,
+          "sd": 0.0008756936662194213,
+          "ci95": [
+            0.07750125276523824,
+            0.08028810083785907
+          ],
+          "values": [
+            0.07969878515358571,
+            0.07769932919306453,
+            0.07936281979239763,
+            0.07881777306714678
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "control_gru": {
+          "n": 4,
+          "mean": 0.0780487638019453,
+          "sd": 0.001783404240014399,
+          "ci95": [
+            0.07521096968471423,
+            0.08088655791917636
+          ],
+          "values": [
+            0.07621871617552228,
+            0.07747604180385455,
+            0.0804703650527055,
+            0.07802993217569884
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        }
+      },
+      "contrasts": {
+        "a_partitioned_admissible_minus_none": {
+          "n": 4,
+          "mean": -0.025815732194671915,
+          "sd": 0.004076755189594036,
+          "ci95": [
+            -0.032302759440007905,
+            -0.019328704949335924
+          ],
+          "values": [
+            -0.03097819133201732,
+            -0.021201402433459623,
+            -0.026481495211875095,
+            -0.024601839801335623
+          ],
+          "signs": {
+            "negative": 4,
+            "zero": 0,
+            "positive": 0
+          },
+          "sign_sequence": [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        },
+        "b_shared_none_minus_shared_admissible": {
+          "n": 4,
+          "mean": -0.00014085784391949796,
+          "sd": 0.0014763505482009906,
+          "ci95": [
+            -0.0024900610176328175,
+            0.0022083453297938216
+          ],
+          "values": [
+            -0.0008570030898268355,
+            0.0010877046758996645,
+            0.0010836963654099752,
+            -0.001877829327160796
+          ],
+          "signs": {
+            "negative": 2,
+            "zero": 0,
+            "positive": 2
+          },
+          "sign_sequence": [
+            "-",
+            "+",
+            "+",
+            "-"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        },
+        "c_shared_none_minus_control_gru": {
+          "n": 4,
+          "mean": 0.0007050551556838751,
+          "sd": 0.0016123902875710982,
+          "ci95": [
+            -0.0018606176009945607,
+            0.003270727912362311
+          ],
+          "values": [
+            0.0026230658882365893,
+            0.0013109920651096507,
+            -2.3848894897884887e-05,
+            -0.0010899884357128548
+          ],
+          "signs": {
+            "negative": 2,
+            "zero": 0,
+            "positive": 2
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "-",
+            "-"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        },
+        "d_interaction_shared_minus_partitioned": {
+          "n": 4,
+          "mean": 0.025956590038591413,
+          "sd": 0.0048056646794253505,
+          "ci95": [
+            0.01830970513685527,
+            0.03360347494032756
+          ],
+          "values": [
+            0.031835194421844154,
+            0.02011369775755996,
+            0.02539779884646512,
+            0.02647966912849642
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        }
+      },
+      "tests": {
+        "a_mean_negative": true,
+        "a_interval_excludes_zero": true,
+        "b_mean_below_0_0040": true,
+        "absolute_c_mean_at_most_0_0040": true
+      },
+      "replicates": true
+    },
+    {
+      "population": 2,
+      "training_seeds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cells": {
+        "none": {
+          "n": 4,
+          "mean": 0.09457815835536276,
+          "sd": 0.002556276054431238,
+          "ci95": [
+            0.0905105527130071,
+            0.09864576399771842
+          ],
+          "values": [
+            0.09759850782891116,
+            0.09578408726318806,
+            0.09224575693827843,
+            0.09268428139107343
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "admissible": {
+          "n": 4,
+          "mean": 0.07921816665727302,
+          "sd": 0.0032443389490338288,
+          "ci95": [
+            0.07405569940655175,
+            0.08438063390799429
+          ],
+          "values": [
+            0.07968642532335911,
+            0.08360979747448916,
+            0.07715033746390103,
+            0.07642610636734282
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "shared_none": {
+          "n": 4,
+          "mean": 0.08013126184784192,
+          "sd": 0.0040174581454707975,
+          "ci95": [
+            0.07373858943199807,
+            0.08652393426368576
+          ],
+          "values": [
+            0.07761396641860918,
+            0.0842373954845701,
+            0.08279809950330203,
+            0.07587558598488638
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "shared_admissible": {
+          "n": 4,
+          "mean": 0.07932159261817678,
+          "sd": 0.0024518109326758858,
+          "ci95": [
+            0.07542021429620181,
+            0.08322297094015176
+          ],
+          "values": [
+            0.07854643661651929,
+            0.07897697671478406,
+            0.08277003868270583,
+            0.07699291845869798
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "control_gru": {
+          "n": 4,
+          "mean": 0.07952916939928759,
+          "sd": 0.003266071173312284,
+          "ci95": [
+            0.07433212133013603,
+            0.08472621746843914
+          ],
+          "values": [
+            0.07797290024424257,
+            0.08425401949474826,
+            0.07900212252256296,
+            0.07688763533559656
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        }
+      },
+      "contrasts": {
+        "a_partitioned_admissible_minus_none": {
+          "n": 4,
+          "mean": -0.015359991698089742,
+          "sd": 0.0024178913604660755,
+          "ci95": [
+            -0.019207396411436744,
+            -0.01151258698474274
+          ],
+          "values": [
+            -0.017912082505552054,
+            -0.012174289788698903,
+            -0.015095419474377397,
+            -0.016258175023730614
+          ],
+          "signs": {
+            "negative": 4,
+            "zero": 0,
+            "positive": 0
+          },
+          "sign_sequence": [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        },
+        "b_shared_none_minus_shared_admissible": {
+          "n": 4,
+          "mean": 0.0008096692296651331,
+          "sd": 0.0030093448082225576,
+          "ci95": [
+            -0.003978869903461996,
+            0.005598208362792262
+          ],
+          "values": [
+            -0.0009324701979101097,
+            0.005260418769786043,
+            2.806082059619852e-05,
+            -0.0011173324738115997
+          ],
+          "signs": {
+            "negative": 2,
+            "zero": 0,
+            "positive": 2
+          },
+          "sign_sequence": [
+            "-",
+            "+",
+            "+",
+            "-"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        },
+        "c_shared_none_minus_control_gru": {
+          "n": 4,
+          "mean": 0.0006020924485543346,
+          "sd": 0.0021689270549473216,
+          "ci95": [
+            -0.002849154497669756,
+            0.004053339394778425
+          ],
+          "values": [
+            -0.00035893382563338683,
+            -1.6624010178156734e-05,
+            0.003795976980739066,
+            -0.001012049350710184
+          ],
+          "signs": {
+            "negative": 3,
+            "zero": 0,
+            "positive": 1
+          },
+          "sign_sequence": [
+            "-",
+            "-",
+            "+",
+            "-"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        },
+        "d_interaction_shared_minus_partitioned": {
+          "n": 4,
+          "mean": 0.014550322468424609,
+          "sd": 0.005323056794674126,
+          "ci95": [
+            0.006080151253910128,
+            0.02302049368293909
+          ],
+          "values": [
+            0.018844552703462164,
+            0.006913871018912859,
+            0.015067358653781199,
+            0.017375507497542214
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        }
+      },
+      "tests": {
+        "a_mean_negative": true,
+        "a_interval_excludes_zero": true,
+        "b_mean_below_0_0040": true,
+        "absolute_c_mean_at_most_0_0040": true
+      },
+      "replicates": true
+    },
+    {
+      "population": 3,
+      "training_seeds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cells": {
+        "none": {
+          "n": 4,
+          "mean": 0.0968568583473893,
+          "sd": 0.003875046291510396,
+          "ci95": [
+            0.09069079497077794,
+            0.10302292172400067
+          ],
+          "values": [
+            0.09415699050412574,
+            0.09966377926276208,
+            0.09293848189784026,
+            0.1006681817248291
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "admissible": {
+          "n": 4,
+          "mean": 0.0772733369400557,
+          "sd": 0.0016745949272390982,
+          "ci95": [
+            0.07460868272053578,
+            0.07993799115957562
+          ],
+          "values": [
+            0.07626546549704588,
+            0.07595889795431275,
+            0.07721533528298725,
+            0.07965364902587689
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "shared_none": {
+          "n": 4,
+          "mean": 0.07833395854051467,
+          "sd": 0.0022720462750379553,
+          "ci95": [
+            0.07471862590379996,
+            0.08194929117722938
+          ],
+          "values": [
+            0.0785455068439903,
+            0.07519009587434138,
+            0.07900679235827258,
+            0.08059343908545441
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "shared_admissible": {
+          "n": 4,
+          "mean": 0.07903384271577994,
+          "sd": 0.001924310484603207,
+          "ci95": [
+            0.07597183531980732,
+            0.08209585011175256
+          ],
+          "values": [
+            0.08003769872007395,
+            0.07619305685283607,
+            0.07953759951026607,
+            0.08036701577994367
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "control_gru": {
+          "n": 4,
+          "mean": 0.07484114950026832,
+          "sd": 0.0018833518275638262,
+          "ci95": [
+            0.07184431646767789,
+            0.07783798253285876
+          ],
+          "values": [
+            0.0729070235839173,
+            0.07358598588937057,
+            0.07678146732071957,
+            0.07609012120706588
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        }
+      },
+      "contrasts": {
+        "a_partitioned_admissible_minus_none": {
+          "n": 4,
+          "mean": -0.0195835214073336,
+          "sd": 0.003502320474016992,
+          "ci95": [
+            -0.025156494833562002,
+            -0.014010547981105199
+          ],
+          "values": [
+            -0.017891525007079856,
+            -0.023704881308449333,
+            -0.01572314661485301,
+            -0.021014532698952204
+          ],
+          "signs": {
+            "negative": 4,
+            "zero": 0,
+            "positive": 0
+          },
+          "sign_sequence": [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        },
+        "b_shared_none_minus_shared_admissible": {
+          "n": 4,
+          "mean": -0.0006998841752652724,
+          "sd": 0.0007317193519767762,
+          "ci95": [
+            -0.0018642129493670156,
+            0.0004644445988364709
+          ],
+          "values": [
+            -0.0014921918760836539,
+            -0.0010029609784946991,
+            -0.0005308071519934815,
+            0.00022642330551074508
+          ],
+          "signs": {
+            "negative": 3,
+            "zero": 0,
+            "positive": 1
+          },
+          "sign_sequence": [
+            "-",
+            "-",
+            "-",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        },
+        "c_shared_none_minus_control_gru": {
+          "n": 4,
+          "mean": 0.003492809040246337,
+          "sd": 0.0018972564216146763,
+          "ci95": [
+            0.000473850695674103,
+            0.006511767384818571
+          ],
+          "values": [
+            0.005638483260072991,
+            0.0016041099849708057,
+            0.0022253250375530165,
+            0.004503317878388535
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        },
+        "d_interaction_shared_minus_partitioned": {
+          "n": 4,
+          "mean": 0.020283405582598873,
+          "sd": 0.003506008546234,
+          "ci95": [
+            0.01470456361047015,
+            0.025862247554727595
+          ],
+          "values": [
+            0.01938371688316351,
+            0.02470784228694403,
+            0.01625395376684649,
+            0.02078810939344146
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        }
+      },
+      "tests": {
+        "a_mean_negative": true,
+        "a_interval_excludes_zero": true,
+        "b_mean_below_0_0040": true,
+        "absolute_c_mean_at_most_0_0040": true
+      },
+      "replicates": true
+    },
+    {
+      "population": 4,
+      "training_seeds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cells": {
+        "none": {
+          "n": 4,
+          "mean": 0.09703303590693207,
+          "sd": 0.0023311259039709023,
+          "ci95": [
+            0.09332369439680975,
+            0.1007423774170544
+          ],
+          "values": [
+            0.09968787204454987,
+            0.098293603507373,
+            0.0950696273923169,
+            0.09508104068348855
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "admissible": {
+          "n": 4,
+          "mean": 0.07503077379053463,
+          "sd": 0.002743970186003499,
+          "ci95": [
+            0.07066450490040613,
+            0.07939704268066314
+          ],
+          "values": [
+            0.07877359441736494,
+            0.07486964306881319,
+            0.07427414267049746,
+            0.07220571500546295
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "shared_none": {
+          "n": 4,
+          "mean": 0.07721870110908109,
+          "sd": 0.0037236277652813307,
+          "ci95": [
+            0.07129357839714436,
+            0.08314382382101783
+          ],
+          "values": [
+            0.08183656840222632,
+            0.07321404344889659,
+            0.07833445645510694,
+            0.07548973613009452
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "shared_admissible": {
+          "n": 4,
+          "mean": 0.07933301121716228,
+          "sd": 0.0035189249689730204,
+          "ci95": [
+            0.07373361633412193,
+            0.08493240610020264
+          ],
+          "values": [
+            0.08431644491857211,
+            0.07603865889010986,
+            0.07835687996025731,
+            0.07862006109970986
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        },
+        "control_gru": {
+          "n": 4,
+          "mean": 0.07568454372085388,
+          "sd": 0.0020166167953366847,
+          "ci95": [
+            0.07247565638610717,
+            0.0788934310556006
+          ],
+          "values": [
+            0.07823446248162245,
+            0.07418251446672235,
+            0.07636330760262856,
+            0.07395789033244216
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Training/split seeds within one population"
+        }
+      },
+      "contrasts": {
+        "a_partitioned_admissible_minus_none": {
+          "n": 4,
+          "mean": -0.022002262116397445,
+          "sd": 0.0013445554445879852,
+          "ci95": [
+            -0.02414174986983688,
+            -0.01986277436295801
+          ],
+          "values": [
+            -0.020914277627184938,
+            -0.023423960438559807,
+            -0.02079548472181944,
+            -0.022875325678025596
+          ],
+          "signs": {
+            "negative": 4,
+            "zero": 0,
+            "positive": 0
+          },
+          "sign_sequence": [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        },
+        "b_shared_none_minus_shared_admissible": {
+          "n": 4,
+          "mean": -0.002114310108081191,
+          "sd": 0.0014196769847993624,
+          "ci95": [
+            -0.004373332995567108,
+            0.00014471277940472562
+          ],
+          "values": [
+            -0.0024798765163457914,
+            -0.002824615441213263,
+            -2.24235051503735e-05,
+            -0.0031303249696153362
+          ],
+          "signs": {
+            "negative": 4,
+            "zero": 0,
+            "positive": 0
+          },
+          "sign_sequence": [
+            "-",
+            "-",
+            "-",
+            "-"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        },
+        "c_shared_none_minus_control_gru": {
+          "n": 4,
+          "mean": 0.001534157388227212,
+          "sd": 0.0018912541654169876,
+          "ci95": [
+            -0.00147525002731517,
+            0.004543564803769594
+          ],
+          "values": [
+            0.0036021059206038653,
+            -0.0009684710178257533,
+            0.0019711488524783716,
+            0.0015318457976523647
+          ],
+          "signs": {
+            "negative": 1,
+            "zero": 0,
+            "positive": 3
+          },
+          "sign_sequence": [
+            "+",
+            "-",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        },
+        "d_interaction_shared_minus_partitioned": {
+          "n": 4,
+          "mean": 0.024116572224478636,
+          "sd": 0.002550629264004441,
+          "ci95": [
+            0.02005795188578821,
+            0.02817519256316906
+          ],
+          "values": [
+            0.02339415414353073,
+            0.02624857587977307,
+            0.020817908226969814,
+            0.026005650647640932
+          ],
+          "signs": {
+            "negative": 0,
+            "zero": 0,
+            "positive": 4
+          },
+          "sign_sequence": [
+            "+",
+            "+",
+            "+",
+            "+"
+          ],
+          "method": "two-sided Student t 95%, df=3",
+          "scope": "Four pairs matched by training/split seed 0--3 within population"
+        }
+      },
+      "tests": {
+        "a_mean_negative": true,
+        "a_interval_excludes_zero": true,
+        "b_mean_below_0_0040": true,
+        "absolute_c_mean_at_most_0_0040": true
+      },
+      "replicates": true
+    }
+  ],
+  "descriptive_five_population_summary": {
+    "a_partitioned_admissible_minus_none": {
+      "n": 5,
+      "mean": -0.019761961134684224,
+      "sd": 0.004326302120808259,
+      "ci95": [
+        -0.02513377472344444,
+        -0.014390147545924006
+      ],
+      "values": [
+        -0.01604829825692842,
+        -0.025815732194671915,
+        -0.015359991698089742,
+        -0.0195835214073336,
+        -0.022002262116397445
+      ],
+      "signs": {
+        "negative": 5,
+        "zero": 0,
+        "positive": 0
+      },
+      "sign_sequence": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      "method": "two-sided Student t 95%, df=4",
+      "scope": "DESCRIPTIVE: five population means, dataset seeds 0--4; n=5"
+    },
+    "b_shared_none_minus_shared_admissible": {
+      "n": 5,
+      "mean": -0.0004940518100479609,
+      "sd": 0.001063092052114538,
+      "ci95": [
+        -0.001814054937935145,
+        0.0008259513178392232
+      ],
+      "values": [
+        -0.0003248761526389761,
+        -0.00014085784391949796,
+        0.0008096692296651331,
+        -0.0006998841752652724,
+        -0.002114310108081191
+      ],
+      "signs": {
+        "negative": 4,
+        "zero": 0,
+        "positive": 1
+      },
+      "sign_sequence": [
+        "-",
+        "-",
+        "+",
+        "-",
+        "-"
+      ],
+      "method": "two-sided Student t 95%, df=4",
+      "scope": "DESCRIPTIVE: five population means, dataset seeds 0--4; n=5"
+    },
+    "d_interaction_shared_minus_partitioned": {
+      "n": 5,
+      "mean": 0.020256012944732185,
+      "sd": 0.004874232924616598,
+      "ci95": [
+        0.014203853403376304,
+        0.026308172486088067
+      ],
+      "values": [
+        0.016373174409567395,
+        0.025956590038591413,
+        0.014550322468424609,
+        0.020283405582598873,
+        0.024116572224478636
+      ],
+      "signs": {
+        "negative": 0,
+        "zero": 0,
+        "positive": 5
+      },
+      "sign_sequence": [
+        "+",
+        "+",
+        "+",
+        "+",
+        "+"
+      ],
+      "method": "two-sided Student t 95%, df=4",
+      "scope": "DESCRIPTIVE: five population means, dataset seeds 0--4; n=5"
+    }
+  },
+  "replicating_new_populations": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "failing_new_populations": [],
+  "routing_result_holds_across_five_generated_populations": true,
+  "reporting_rule": "Report every population and every contrast whatever the outcome. The across-five statement requires all four new populations to pass.",
+  "records": [
+    {
+      "population": 0,
+      "cell": "admissible",
+      "seed": 0,
+      "value": 0.07826122234387373,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.764700894922727,
+          "renal": 0.2044445985001612,
+          "metabolic": 0.37906637520117736
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04801919274365549,
+          "renal": 0.09552762591015199,
+          "metabolic": 0.0912368483778137
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.048837095786743424,
+          "renal": 0.09659760985036916,
+          "metabolic": 0.09206781188695255
+        },
+        "macro_nrmse_fixed": 0.07826122234387373,
+        "macro_nrmse_per_kappa": 0.07916750584135505
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/admissible/seed0.json",
+      "sha256": "24ad0b1ba6fdd389bc791a99bbeeb2f86d705f846284361878cafd45e45160a5"
+    },
+    {
+      "population": 0,
+      "cell": "admissible",
+      "seed": 1,
+      "value": 0.08026824165097007,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.650518250044467,
+          "renal": 0.21012846506765362,
+          "metabolic": 0.39641566542522655
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.047208667856072535,
+          "renal": 0.09818343723099844,
+          "metabolic": 0.09541261986583922
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04801276536153738,
+          "renal": 0.09818343723099844,
+          "metabolic": 0.10252342488067484
+        },
+        "macro_nrmse_fixed": 0.08026824165097007,
+        "macro_nrmse_per_kappa": 0.08290654249107023
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/admissible/seed1.json",
+      "sha256": "afd22c336a20d32702e52e31d8aaa4b507639a4667c790213e6da5b36f7bf4c9"
+    },
+    {
+      "population": 0,
+      "cell": "admissible",
+      "seed": 2,
+      "value": 0.08152006402537819,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.387214189806729,
+          "renal": 0.20754418543695352,
+          "metabolic": 0.39530863558345425
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.05243810000309676,
+          "renal": 0.09697592135814181,
+          "metabolic": 0.09514617071489596
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.053271682110103684,
+          "renal": 0.10686194477318259,
+          "metabolic": 0.10707137507966064
+        },
+        "macro_nrmse_fixed": 0.08152006402537819,
+        "macro_nrmse_per_kappa": 0.08906833398764898
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/admissible/seed2.json",
+      "sha256": "fec69c4d6867e8b530f9019558c5b64c251b2b28f2991a06afa7aa1506f58aad"
+    },
+    {
+      "population": 0,
+      "cell": "admissible",
+      "seed": 3,
+      "value": 0.07994484256063135,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.625619114593586,
+          "renal": 0.2182767295686875,
+          "metabolic": 0.37730064199915175
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04703192147763862,
+          "renal": 0.10199074918143435,
+          "metabolic": 0.0908118570228211
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04708370019609449,
+          "renal": 0.10199074918143435,
+          "metabolic": 0.09163894981180709
+        },
+        "macro_nrmse_fixed": 0.07994484256063135,
+        "macro_nrmse_per_kappa": 0.08023779972977864
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/admissible/seed3.json",
+      "sha256": "a856ea3c9d08ee48d5eade3504112ba734947e5bea9378ffff53f60afb49c6f3"
+    },
+    {
+      "population": 0,
+      "cell": "control_gru",
+      "seed": 0,
+      "value": 0.08006205386507259,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.167388068167021,
+          "renal": 0.2061590954570348,
+          "metabolic": 0.3863077557093869
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.05087766546665922,
+          "renal": 0.09632873205392808,
+          "metabolic": 0.09297976407463047
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05174425640733863,
+          "renal": 0.09740768900797328,
+          "metabolic": 0.09382660164528406
+        },
+        "macro_nrmse_fixed": 0.08006205386507259,
+        "macro_nrmse_per_kappa": 0.08099284902019865
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed0.json",
+      "sha256": "74d8caa1b473186d48883182d27a9d699a07f33f6184b9f706f840f0d12f6064"
+    },
+    {
+      "population": 0,
+      "cell": "control_gru",
+      "seed": 1,
+      "value": 0.0784690543853989,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.8154880094700365,
+          "renal": 0.20443499182331396,
+          "metabolic": 0.38017765816560345
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04837970480179715,
+          "renal": 0.09552313714870349,
+          "metabolic": 0.0915043212056961
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.049203748387709245,
+          "renal": 0.09552313714870349,
+          "metabolic": 0.09832385290940057
+        },
+        "macro_nrmse_fixed": 0.0784690543853989,
+        "macro_nrmse_per_kappa": 0.0810169128152711
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed1.json",
+      "sha256": "bc6901efdd42fa358d7ed1946c634e9a342c754f19e0454248d3fb87a098cf1f"
+    },
+    {
+      "population": 0,
+      "cell": "control_gru",
+      "seed": 2,
+      "value": 0.08185278556360942,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.166692409401086,
+          "renal": 0.2142872229280683,
+          "metabolic": 0.39286906454591525
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.050872727336668824,
+          "renal": 0.10012663488970441,
+          "metabolic": 0.09455899446445505
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05168142550155246,
+          "renal": 0.11033385172380104,
+          "metabolic": 0.10641060472940435
+        },
+        "macro_nrmse_fixed": 0.08185278556360942,
+        "macro_nrmse_per_kappa": 0.08947529398491928
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed2.json",
+      "sha256": "449167772d4842e9dc7edc8f6f9849f2d7a2fcdb661fd26418bb25c86574d398"
+    },
+    {
+      "population": 0,
+      "cell": "control_gru",
+      "seed": 3,
+      "value": 0.07893070474739276,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.784420431853613,
+          "renal": 0.20637396501790034,
+          "metabolic": 0.38308386683679446
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.048159171769987685,
+          "renal": 0.09642913078874633,
+          "metabolic": 0.09220381168344428
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.0482121915088757,
+          "renal": 0.09642913078874633,
+          "metabolic": 0.09304358206432345
+        },
+        "macro_nrmse_fixed": 0.07893070474739276,
+        "macro_nrmse_per_kappa": 0.07922830145398183
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/control_gru/seed3.json",
+      "sha256": "aa649f94a8ec9f70e8d1a67fd44947d3519b6c821a81ab66492dd616a7f873f6"
+    },
+    {
+      "population": 0,
+      "cell": "none",
+      "seed": 0,
+      "value": 0.09537383025901784,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.91308999562961,
+          "renal": 0.2497775219334938,
+          "metabolic": 0.49997992641423034
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04907253197307354,
+          "renal": 0.11670963112292139,
+          "metabolic": 0.1203393276810586
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04990837637068911,
+          "renal": 0.1180168700475823,
+          "metabolic": 0.1214353496480074
+        },
+        "macro_nrmse_fixed": 0.09537383025901784,
+        "macro_nrmse_per_kappa": 0.09645353202209293
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/none/seed0.json",
+      "sha256": "97c435efe7c52ed1959f03a86c71fc19b64b807f6fe98dbd6e759d6c0ff83f18"
+    },
+    {
+      "population": 0,
+      "cell": "none",
+      "seed": 1,
+      "value": 0.09609191712131955,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.989805135433315,
+          "renal": 0.245714790837574,
+          "metabolic": 0.5145549059661407
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04961709397837306,
+          "renal": 0.11481130238666835,
+          "metabolic": 0.12384735499891723
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05046221381141009,
+          "renal": 0.11481130238666835,
+          "metabolic": 0.13307731214964558
+        },
+        "macro_nrmse_fixed": 0.09609191712131955,
+        "macro_nrmse_per_kappa": 0.09945027611590801
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/none/seed1.json",
+      "sha256": "94d766d4b1cb3b3d283069ab59c409bc2bd98d9cfdca6f726015ac19522acf15"
+    },
+    {
+      "population": 0,
+      "cell": "none",
+      "seed": 2,
+      "value": 0.09605313928341282,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.493837872873525,
+          "renal": 0.24988929542165586,
+          "metabolic": 0.4911023238067704
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.053194967641112464,
+          "renal": 0.11676185777034641,
+          "metabolic": 0.11820259243877959
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05404058129236652,
+          "renal": 0.12866492034232568,
+          "metabolic": 0.1330175877316669
+        },
+        "macro_nrmse_fixed": 0.09605313928341282,
+        "macro_nrmse_per_kappa": 0.10524102978878636
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/none/seed2.json",
+      "sha256": "f925ffa66a9fc6d6f9d7c8d4aecf0e4219b7b691732b712ba16f1c32a931b307"
+    },
+    {
+      "population": 0,
+      "cell": "none",
+      "seed": 3,
+      "value": 0.0966686769448168,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.692171489302343,
+          "renal": 0.25956700366650076,
+          "metabolic": 0.503630087178363
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.047504343149835,
+          "renal": 0.12128380894764987,
+          "metabolic": 0.12121787873696555
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04755664197012785,
+          "renal": 0.12128380894764987,
+          "metabolic": 0.12232190233791809
+        },
+        "macro_nrmse_fixed": 0.0966686769448168,
+        "macro_nrmse_per_kappa": 0.09705411775189861
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/none/seed3.json",
+      "sha256": "095ce10515c83be7235b104d73153d51c3c62890be14be2562bd645f3571072f"
+    },
+    {
+      "population": 0,
+      "cell": "shared_admissible",
+      "seed": 0,
+      "value": 0.08135163850623596,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.858645737224392,
+          "renal": 0.21151679698222065,
+          "metabolic": 0.4010859984869228
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04868605969902107,
+          "renal": 0.09883214134324614,
+          "metabolic": 0.09653671447644067
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.0495153213777079,
+          "renal": 0.0999391384344751,
+          "metabolic": 0.09741594790513049
+        },
+        "macro_nrmse_fixed": 0.08135163850623596,
+        "macro_nrmse_per_kappa": 0.08229013590577117
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed0/run.json",
+      "sha256": "f16db76c8f7a663695aa7eecc5fd16534d5e4b4f11e397bf3ec2f3e04ba8da4d"
+    },
+    {
+      "population": 0,
+      "cell": "shared_admissible",
+      "seed": 1,
+      "value": 0.08181773553758163,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.710228408384044,
+          "renal": 0.21035444053980892,
+          "metabolic": 0.4135292562811818
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04763252009235017,
+          "renal": 0.09828902525106493,
+          "metabolic": 0.09953166126932976
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04844383700351644,
+          "renal": 0.09828902525106493,
+          "metabolic": 0.10694944559475805
+        },
+        "macro_nrmse_fixed": 0.08181773553758163,
+        "macro_nrmse_per_kappa": 0.08456076928311314
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed1/run.json",
+      "sha256": "9a43188a33761dd522c0fcdde21c6682444465eee21c1edf4e527bf55b6cac88"
+    },
+    {
+      "population": 0,
+      "cell": "shared_admissible",
+      "seed": 2,
+      "value": 0.08183416565250842,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.363761108869254,
+          "renal": 0.21196891295408388,
+          "metabolic": 0.3913255312429382
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.05227161843481125,
+          "renal": 0.09904339449321929,
+          "metabolic": 0.09418748402949473
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05310255406804317,
+          "renal": 0.10914018247267043,
+          "metabolic": 0.1059925308034779
+        },
+        "macro_nrmse_fixed": 0.08183416565250842,
+        "macro_nrmse_per_kappa": 0.08941175578139716
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed2/run.json",
+      "sha256": "1c850dc7e0420c7ebaa2fc120f4d63124bfd9791428dc836e00097707d6e702c"
+    },
+    {
+      "population": 0,
+      "cell": "shared_admissible",
+      "seed": 3,
+      "value": 0.07926942638723455,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.936371470687335,
+          "renal": 0.21182569951827776,
+          "metabolic": 0.37224077593920646
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04923779539794907,
+          "renal": 0.09897647739381261,
+          "metabolic": 0.08959400636994198
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04929200262285503,
+          "renal": 0.09897647739381261,
+          "metabolic": 0.09041000726491677
+        },
+        "macro_nrmse_fixed": 0.07926942638723455,
+        "macro_nrmse_per_kappa": 0.07955949576052813
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_admissible/seed3/run.json",
+      "sha256": "e9407a787c74f6a03b7f7ce0ca57f311afb22b357ebd30ea94f550e2737f5aad"
+    },
+    {
+      "population": 0,
+      "cell": "shared_none",
+      "seed": 0,
+      "value": 0.07962484383236818,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.038730561865503,
+          "renal": 0.20160716192450662,
+          "metabolic": 0.3934894719844772
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04996439085349079,
+          "renal": 0.09420182135609965,
+          "metabolic": 0.0947083192875141
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05081542613730456,
+          "renal": 0.09525695525092748,
+          "metabolic": 0.0955709001278112
+        },
+        "macro_nrmse_fixed": 0.07962484383236818,
+        "macro_nrmse_per_kappa": 0.08054776050534775
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed0/run.json",
+      "sha256": "8ae3bdff598dbb06a4b6732da8e0280825413ec05ff3a1354d5f508f43ab7332"
+    },
+    {
+      "population": 0,
+      "cell": "shared_none",
+      "seed": 1,
+      "value": 0.08188596652198164,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.851381673351244,
+          "renal": 0.21722950390198434,
+          "metabolic": 0.3968700101817172
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.048634495780875225,
+          "renal": 0.10150142844385443,
+          "metabolic": 0.09552197534121525
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04946287917979192,
+          "renal": 0.10150142844385443,
+          "metabolic": 0.10264093027860616
+        },
+        "macro_nrmse_fixed": 0.08188596652198164,
+        "macro_nrmse_per_kappa": 0.08453507930075084
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed1/run.json",
+      "sha256": "d95681febd73f0a3037a08c621a0c0e3f261677a9fbbdd596579f67f582cc8ea"
+    },
+    {
+      "population": 0,
+      "cell": "shared_none",
+      "seed": 2,
+      "value": 0.08138451313071283,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.321674425250938,
+          "renal": 0.2124333067234148,
+          "metabolic": 0.38606064974741244
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.05197286633859868,
+          "renal": 0.09926038449734315,
+          "metabolic": 0.09292028855619666
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.052799052859986,
+          "renal": 0.10937929310459091,
+          "metabolic": 0.10456651059897266
+        },
+        "macro_nrmse_fixed": 0.08138451313071283,
+        "macro_nrmse_per_kappa": 0.08891495218784985
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed2/run.json",
+      "sha256": "f318b5a53885d923f1d65a35e0f8a9af7c9d43fbda141504cdebf1002c2cf52b"
+    },
+    {
+      "population": 0,
+      "cell": "shared_none",
+      "seed": 3,
+      "value": 0.08007813798794201,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.83548194843014,
+          "renal": 0.21419737001667227,
+          "metabolic": 0.3806920593739345
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04852163166945078,
+          "renal": 0.10008465072690556,
+          "metabolic": 0.09162813156746971
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.048575050450276616,
+          "renal": 0.10008465072690556,
+          "metabolic": 0.09246265879081092
+        },
+        "macro_nrmse_fixed": 0.08007813798794201,
+        "macro_nrmse_per_kappa": 0.08037411998933104
+      },
+      "path": "experiments/positive_control/artifacts/full/kappa_1/shared_none/seed3/run.json",
+      "sha256": "88d6f6943451bf06a23d2141a45be4237831fa354c7bab06f3ab5c04435bce11"
+    },
+    {
+      "population": 1,
+      "cell": "admissible",
+      "seed": 0,
+      "value": 0.07385882640325862,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.6741171095924425,
+          "renal": 0.19446085410822853,
+          "metabolic": 0.34624703660067174
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04737618423303685,
+          "renal": 0.09086267801496771,
+          "metabolic": 0.08333761696177129
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.050857132308358866,
+          "renal": 0.09612335607433285,
+          "metabolic": 0.09265318621517969
+        },
+        "macro_nrmse_fixed": 0.07385882640325862,
+        "macro_nrmse_per_kappa": 0.07987789153262381
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/admissible/seed0.json",
+      "sha256": "39942f0eade05b550f0f1984cbd6329125d5c50bba47a6edae5ff82026694057"
+    },
+    {
+      "population": 1,
+      "cell": "admissible",
+      "seed": 1,
+      "value": 0.07764136988345954,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.183873430359135,
+          "renal": 0.1943696147921223,
+          "metabolic": 0.378536762887774
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.050994686721086924,
+          "renal": 0.09082004604855122,
+          "metabolic": 0.0911093768807405
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.052971303676130566,
+          "renal": 0.08210217819013778,
+          "metabolic": 0.0850807264207493
+        },
+        "macro_nrmse_fixed": 0.07764136988345954,
+        "macro_nrmse_per_kappa": 0.07338473609567255
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/admissible/seed1.json",
+      "sha256": "89f4ab28bb55d6f3dcf28d3ee110e36352d51fc5f4728ee77a013ddec8e55e4e"
+    },
+    {
+      "population": 1,
+      "cell": "admissible",
+      "seed": 2,
+      "value": 0.07712849463187367,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.092318770418272,
+          "renal": 0.19859941673865386,
+          "metabolic": 0.36663290800915493
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.05034478646229206,
+          "renal": 0.0927964393648167,
+          "metabolic": 0.08824425806851224
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04936262193541164,
+          "renal": 0.08027619245850288,
+          "metabolic": 0.0807476236484613
+        },
+        "macro_nrmse_fixed": 0.07712849463187367,
+        "macro_nrmse_per_kappa": 0.07012881268079195
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/admissible/seed2.json",
+      "sha256": "ee404e8f584bc0cf002a210684c2094a0a45f6895444777f9ba57aa3688fa5d4"
+    },
+    {
+      "population": 1,
+      "cell": "admissible",
+      "seed": 3,
+      "value": 0.07462794246224445,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.7529338687672285,
+          "renal": 0.18360805653720333,
+          "metabolic": 0.3745778033377797
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04793566457208406,
+          "renal": 0.08579166125028324,
+          "metabolic": 0.09015650156436607
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.049806105718778235,
+          "renal": 0.08738593921228656,
+          "metabolic": 0.08695092649855544
+        },
+        "macro_nrmse_fixed": 0.07462794246224445,
+        "macro_nrmse_per_kappa": 0.07471432380987342
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/admissible/seed3.json",
+      "sha256": "2eac698fac9a814e6296e633676986723878040971800b0d6b46a54c4799b5bb"
+    },
+    {
+      "population": 1,
+      "cell": "control_gru",
+      "seed": 0,
+      "value": 0.07621871617552228,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.4196890115172005,
+          "renal": 0.2000006800927962,
+          "metabolic": 0.37241040882671056
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.045570127753873584,
+          "renal": 0.0934511857483266,
+          "metabolic": 0.08963483502436666
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04891837647978953,
+          "renal": 0.09886173068523563,
+          "metabolic": 0.09965431414590616
+        },
+        "macro_nrmse_fixed": 0.07621871617552228,
+        "macro_nrmse_per_kappa": 0.0824781404369771
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/control_gru/seed0.json",
+      "sha256": "1bed87ad9a2b9d1e5ec45bae72b7665b8716db0d33446d755d013a68c7c17e7b"
+    },
+    {
+      "population": 1,
+      "cell": "control_gru",
+      "seed": 1,
+      "value": 0.07747604180385455,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.987611275151436,
+          "renal": 0.20464818858225933,
+          "metabolic": 0.36231027284012957
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04960152087301858,
+          "renal": 0.09562275425956482,
+          "metabolic": 0.08720385027898023
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05152413700143608,
+          "renal": 0.0864438717092655,
+          "metabolic": 0.08143362607049365
+        },
+        "macro_nrmse_fixed": 0.07747604180385455,
+        "macro_nrmse_per_kappa": 0.07313387826039841
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/control_gru/seed1.json",
+      "sha256": "0bc41ccdd319be5c4090c5b99f53be9b67e80ab8b6319157bde10034c730f152"
+    },
+    {
+      "population": 1,
+      "cell": "control_gru",
+      "seed": 2,
+      "value": 0.0804703650527055,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.864347249677593,
+          "renal": 0.2029196188663649,
+          "metabolic": 0.4066233518515312
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.048726531854357026,
+          "renal": 0.09481507255806243,
+          "metabolic": 0.09786949074569702
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04777593747372333,
+          "renal": 0.08202246836987752,
+          "metabolic": 0.0895551617564112
+        },
+        "macro_nrmse_fixed": 0.0804703650527055,
+        "macro_nrmse_per_kappa": 0.07311785586667069
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/control_gru/seed2.json",
+      "sha256": "1217098af3f773da4005b42eb78ba8939393276cb89471e4551a6b6f54cb8d41"
+    },
+    {
+      "population": 1,
+      "cell": "control_gru",
+      "seed": 3,
+      "value": 0.07802993217569884,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.060314655109985,
+          "renal": 0.2014457360405155,
+          "metabolic": 0.37328690200356013
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.0501176054227383,
+          "renal": 0.09412639441123906,
+          "metabolic": 0.08984579669311918
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.052073185515208,
+          "renal": 0.09587555783884637,
+          "metabolic": 0.08665126894803211
+        },
+        "macro_nrmse_fixed": 0.07802993217569884,
+        "macro_nrmse_per_kappa": 0.0782000041006955
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/control_gru/seed3.json",
+      "sha256": "a599a80f9740dc94fd6595c7d6895e138f4123766f89a947221b3adb909f73f8"
+    },
+    {
+      "population": 1,
+      "cell": "none",
+      "seed": 0,
+      "value": 0.10483701773527594,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.777659738431356,
+          "renal": 0.2894175909372884,
+          "metabolic": 0.5449713874826815
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04811118102426709,
+          "renal": 0.13523162539729747,
+          "metabolic": 0.13116824678426328
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.051646132724136325,
+          "renal": 0.14306113317982902,
+          "metabolic": 0.1458303757401162
+        },
+        "macro_nrmse_fixed": 0.10483701773527594,
+        "macro_nrmse_per_kappa": 0.11351254721469384
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/none/seed0.json",
+      "sha256": "c56574f7b8edb1fc2fb3bbee4d695945dc3a31aa42f1347d55fae770f00b800f"
+    },
+    {
+      "population": 1,
+      "cell": "none",
+      "seed": 1,
+      "value": 0.09884277231691917,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.423963879074749,
+          "renal": 0.2638625789007885,
+          "metabolic": 0.5008070819623998
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.052698967473756846,
+          "renal": 0.1232909351180663,
+          "metabolic": 0.12053841435893434
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05474164445286352,
+          "renal": 0.11145616815566095,
+          "metabolic": 0.11256246290310552
+        },
+        "macro_nrmse_fixed": 0.09884277231691917,
+        "macro_nrmse_per_kappa": 0.09292009183720999
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/none/seed1.json",
+      "sha256": "51dff3f20e8d3011bb07c0e5c0a02f5cb0d5561257ae12b35f9d17270247b15c"
+    },
+    {
+      "population": 1,
+      "cell": "none",
+      "seed": 2,
+      "value": 0.10360998984374876,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.008235691987987,
+          "renal": 0.2714106855317521,
+          "metabolic": 0.5578344083598303
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.049747923184470834,
+          "renal": 0.12681782069911068,
+          "metabolic": 0.13426422564766483
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.048777402722052034,
+          "renal": 0.10970735355035172,
+          "metabolic": 0.12285804651031733
+        },
+        "macro_nrmse_fixed": 0.10360998984374876,
+        "macro_nrmse_per_kappa": 0.09378093426090701
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/none/seed2.json",
+      "sha256": "c18e82e3a08d7798323a6f2a041a0327239158521d4114c4bfa552130dcfca83"
+    },
+    {
+      "population": 1,
+      "cell": "none",
+      "seed": 3,
+      "value": 0.09922978226358008,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.701404748184543,
+          "renal": 0.26484508354629005,
+          "metabolic": 0.5250335687601446
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04756988538811035,
+          "renal": 0.12375001467760958,
+          "metabolic": 0.1263694467250203
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04942605389579104,
+          "renal": 0.12604967781879217,
+          "metabolic": 0.12187629603180265
+        },
+        "macro_nrmse_fixed": 0.09922978226358008,
+        "macro_nrmse_per_kappa": 0.09911734258212862
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/none/seed3.json",
+      "sha256": "577fbaf382d02a4a900ffabd4153b59b47b2661c2da393e58d86e5c3581b7b92"
+    },
+    {
+      "population": 1,
+      "cell": "shared_admissible",
+      "seed": 0,
+      "value": 0.07969878515358571,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.631385502607124,
+          "renal": 0.20329882932389773,
+          "metabolic": 0.4031406330696053
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.047072854151789016,
+          "renal": 0.09499226029006498,
+          "metabolic": 0.09703124101890313
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05053151515862715,
+          "renal": 0.10049202884668983,
+          "metabolic": 0.10787749842833196
+        },
+        "macro_nrmse_fixed": 0.07969878515358571,
+        "macro_nrmse_per_kappa": 0.08630034747788297
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_admissible/seed0.json",
+      "sha256": "3b483437cfb9e348bea777d65f8881d239a4039ac4108afa752516a566d014b5"
+    },
+    {
+      "population": 1,
+      "cell": "shared_admissible",
+      "seed": 1,
+      "value": 0.07769932919306453,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.09503169261015,
+          "renal": 0.20414670202829224,
+          "metabolic": 0.3628988376884447
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.05036404412580947,
+          "renal": 0.09538843249084221,
+          "metabolic": 0.0873455109625419
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.0523162165960146,
+          "renal": 0.08623204262035261,
+          "metabolic": 0.08156591315526278
+        },
+        "macro_nrmse_fixed": 0.07769932919306453,
+        "macro_nrmse_per_kappa": 0.07337139079054333
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_admissible/seed1.json",
+      "sha256": "29a6af247b11841be1e32aac08ec8be9062211a3fd4e72ac8a3e627a8b80640d"
+    },
+    {
+      "population": 1,
+      "cell": "shared_admissible",
+      "seed": 2,
+      "value": 0.07936281979239763,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.2405914117070775,
+          "renal": 0.205349417024893,
+          "metabolic": 0.37700522698314987
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.051397299005160275,
+          "renal": 0.09595040629261872,
+          "metabolic": 0.09074075407941393
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.050394601260118806,
+          "renal": 0.0830046210257738,
+          "metabolic": 0.08303203426894228
+        },
+        "macro_nrmse_fixed": 0.07936281979239763,
+        "macro_nrmse_per_kappa": 0.07214375218494495
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_admissible/seed2.json",
+      "sha256": "cea04a16cb9be512c8d2e7def29ad100e3b91e3f648bb3ea6d7551b7ed13a0f1"
+    },
+    {
+      "population": 1,
+      "cell": "shared_admissible",
+      "seed": 3,
+      "value": 0.07881777306714678,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.1426700331558335,
+          "renal": 0.2009746646676413,
+          "metabolic": 0.38159238864162853
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.05070220462871773,
+          "renal": 0.09390628426787975,
+          "metabolic": 0.09184483030484285
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05268059567872709,
+          "renal": 0.09565135735913435,
+          "metabolic": 0.08857922557484323
+        },
+        "macro_nrmse_fixed": 0.07881777306714678,
+        "macro_nrmse_per_kappa": 0.07897039287090156
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_admissible/seed3.json",
+      "sha256": "465e3d4ae86ecad9f38e2029de7330c02a3dc2247d0abc32b8ba8a07ca94c2f9"
+    },
+    {
+      "population": 1,
+      "cell": "shared_none",
+      "seed": 0,
+      "value": 0.07884178206375887,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.667414706465875,
+          "renal": 0.20449194348492297,
+          "metabolic": 0.3890799168217046
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04732860726066518,
+          "renal": 0.09554974805975254,
+          "metabolic": 0.0936469908708589
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.050806059635075694,
+          "renal": 0.10108179349553648,
+          "metabolic": 0.10411495312649871
+        },
+        "macro_nrmse_fixed": 0.07884178206375887,
+        "macro_nrmse_per_kappa": 0.08533426875237031
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_none/seed0.json",
+      "sha256": "b415f3dcd8c4a3ce9930abefcb2866e8658634fb24aaad541f1debbe955c5ee2"
+    },
+    {
+      "population": 1,
+      "cell": "shared_none",
+      "seed": 1,
+      "value": 0.0787870338689642,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.3430710368923995,
+          "renal": 0.20652463376379254,
+          "metabolic": 0.364524629759453
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.05212475007070037,
+          "renal": 0.09649953141414574,
+          "metabolic": 0.0877368201220465
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.054145169675014836,
+          "renal": 0.08723648652626266,
+          "metabolic": 0.08193132963252972
+        },
+        "macro_nrmse_fixed": 0.0787870338689642,
+        "macro_nrmse_per_kappa": 0.0744376619446024
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_none/seed1.json",
+      "sha256": "695921819a4b6b776b3364912e95222d1fd963765ec1eba82cd823e1fe83e412"
+    },
+    {
+      "population": 1,
+      "cell": "shared_none",
+      "seed": 2,
+      "value": 0.08044651615780761,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.112962260681334,
+          "renal": 0.2120884773247715,
+          "metabolic": 0.38119408322005544
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.05049132416635932,
+          "renal": 0.09909926146431573,
+          "metabolic": 0.09174896284274774
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.049506300870082925,
+          "renal": 0.08572862752340824,
+          "metabolic": 0.08395459244510772
+        },
+        "macro_nrmse_fixed": 0.08044651615780761,
+        "macro_nrmse_per_kappa": 0.0730631736128663
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_none/seed2.json",
+      "sha256": "1d741a6c9376c0e98ec712b03a2b34f14b38cf7cf520c60785d933102a4a0b30"
+    },
+    {
+      "population": 1,
+      "cell": "shared_none",
+      "seed": 3,
+      "value": 0.07693994373998599,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.954877880307593,
+          "renal": 0.1943759159875329,
+          "metabolic": 0.37653542347825786
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04936916304662296,
+          "renal": 0.09082299030945312,
+          "metabolic": 0.09062767786388189
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05129553905005557,
+          "renal": 0.09251076613502177,
+          "metabolic": 0.08740534980775862
+        },
+        "macro_nrmse_fixed": 0.07693994373998599,
+        "macro_nrmse_per_kappa": 0.07707055166427866
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_1/shared_none/seed3.json",
+      "sha256": "2fb6a8553f28d1a8297c960543907065c40b16d53caf59e9193bc590dc1ec6b9"
+    },
+    {
+      "population": 2,
+      "cell": "admissible",
+      "seed": 0,
+      "value": 0.07968642532335911,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.473557843739934,
+          "renal": 0.21273065541458497,
+          "metabolic": 0.38933106223506486
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.0459525153682795,
+          "renal": 0.09939932196374412,
+          "metabolic": 0.09370743863805368
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.048208433038226035,
+          "renal": 0.11378221303352744,
+          "metabolic": 0.1007195313464121
+        },
+        "macro_nrmse_fixed": 0.07968642532335911,
+        "macro_nrmse_per_kappa": 0.08757005913938853
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/admissible/seed0.json",
+      "sha256": "a58134b7caa0d7e5c2d00ce6ec8a473236cd7154c49ba98d0db0ea80f4cef042"
+    },
+    {
+      "population": 2,
+      "cell": "admissible",
+      "seed": 1,
+      "value": 0.08360979747448916,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.912308307074202,
+          "renal": 0.224250356640482,
+          "metabolic": 0.4029296377362454
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.049066983161087506,
+          "renal": 0.104781952355436,
+          "metabolic": 0.09698045690694394
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04735386155568065,
+          "renal": 0.12888154203021293,
+          "metabolic": 0.10400963351985401
+        },
+        "macro_nrmse_fixed": 0.08360979747448916,
+        "macro_nrmse_per_kappa": 0.09341501236858252
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/admissible/seed1.json",
+      "sha256": "626dcd839c59b34547944b701f0f9d9e813e1601942546429122fd06171c4f61"
+    },
+    {
+      "population": 2,
+      "cell": "admissible",
+      "seed": 2,
+      "value": 0.07715033746390103,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.94389234515196,
+          "renal": 0.206981237563622,
+          "metabolic": 0.3550107840013562
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.049291182284690614,
+          "renal": 0.09671288152121266,
+          "metabolic": 0.08544694858579982
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05352472567202843,
+          "renal": 0.10817557653795709,
+          "metabolic": 0.08389334426122731
+        },
+        "macro_nrmse_fixed": 0.07715033746390103,
+        "macro_nrmse_per_kappa": 0.08186454882373762
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/admissible/seed2.json",
+      "sha256": "0fd0c5d6cac2e386ec55e21b56b6db6e05b06a74f8d344bc569ac74119c73c13"
+    },
+    {
+      "population": 2,
+      "cell": "admissible",
+      "seed": 3,
+      "value": 0.07642610636734282,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.53894974458653,
+          "renal": 0.18951322953669322,
+          "metabolic": 0.39183763207292027
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.046416699423036965,
+          "renal": 0.08855087896191947,
+          "metabolic": 0.09431074071707202
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04937559406674087,
+          "renal": 0.10915211908828217,
+          "metabolic": 0.09997467782323925
+        },
+        "macro_nrmse_fixed": 0.07642610636734282,
+        "macro_nrmse_per_kappa": 0.08616746365942075
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/admissible/seed3.json",
+      "sha256": "8ef843bab0b69b4ae7e4c17e8007e33e3ac0b791443d48a71c420fb1e91d3bf8"
+    },
+    {
+      "population": 2,
+      "cell": "control_gru",
+      "seed": 0,
+      "value": 0.07797290024424257,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.466471689590322,
+          "renal": 0.20568560588781576,
+          "metabolic": 0.3818589744450307
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.045902214341344685,
+          "renal": 0.096107491997832,
+          "metabolic": 0.09190899439355098
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.048155662614903026,
+          "renal": 0.11001406159092322,
+          "metabolic": 0.09878651018937659
+        },
+        "macro_nrmse_fixed": 0.07797290024424257,
+        "macro_nrmse_per_kappa": 0.0856520781317343
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/control_gru/seed0.json",
+      "sha256": "b04439750d222b4f4f5f721c73654ef97f96873a162f58f393f9ce903285c937"
+    },
+    {
+      "population": 2,
+      "cell": "control_gru",
+      "seed": 1,
+      "value": 0.08425401949474826,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.806338691956087,
+          "renal": 0.22906251004553063,
+          "metabolic": 0.404742734613832
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04831475842087069,
+          "renal": 0.10703045191801744,
+          "metabolic": 0.09741684814535663
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04662789994336709,
+          "renal": 0.13164719092647267,
+          "metabolic": 0.10447765454415309
+        },
+        "macro_nrmse_fixed": 0.08425401949474826,
+        "macro_nrmse_per_kappa": 0.09425091513799762
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/control_gru/seed1.json",
+      "sha256": "ffc855bf0b89f420686b2196e08164226031a37fab6d0dd36b9b0192b4bd8184"
+    },
+    {
+      "population": 2,
+      "cell": "control_gru",
+      "seed": 2,
+      "value": 0.07900212252256296,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.59075517329232,
+          "renal": 0.21335406492579928,
+          "metabolic": 0.37613505906105227
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.046784439978729254,
+          "renal": 0.09969061276336906,
+          "metabolic": 0.09053131482559057
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.050802683147624976,
+          "renal": 0.11150623724032385,
+          "metabolic": 0.08888526608365051
+        },
+        "macro_nrmse_fixed": 0.07900212252256296,
+        "macro_nrmse_per_kappa": 0.08373139549053311
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/control_gru/seed2.json",
+      "sha256": "9e1186791bc6133aeb56116878a8ef344b6395da632939648c97e77bfb76a69d"
+    },
+    {
+      "population": 2,
+      "cell": "control_gru",
+      "seed": 3,
+      "value": 0.07688763533559656,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.32112818780849,
+          "renal": 0.19922654687237673,
+          "metabolic": 0.3851576334655306
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04487049427943656,
+          "renal": 0.09308946864145574,
+          "metabolic": 0.09270294308589737
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04773082400632529,
+          "renal": 0.1147466054107345,
+          "metabolic": 0.09827032210553936
+        },
+        "macro_nrmse_fixed": 0.07688763533559656,
+        "macro_nrmse_per_kappa": 0.08691591717419972
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/control_gru/seed3.json",
+      "sha256": "e5481f77e5c8260bedc9179340a525e4278a9deb160767d7a7c34958ce9261cc"
+    },
+    {
+      "population": 2,
+      "cell": "none",
+      "seed": 0,
+      "value": 0.09759850782891116,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.511969398565896,
+          "renal": 0.2573265617514142,
+          "metabolic": 0.5248837668886561
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.0462251795826213,
+          "renal": 0.12023695273962125,
+          "metabolic": 0.12633339116449094
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.0484944829837768,
+          "renal": 0.13763500898036138,
+          "metabolic": 0.1357868717406528
+        },
+        "macro_nrmse_fixed": 0.09759850782891116,
+        "macro_nrmse_per_kappa": 0.10730545456826367
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/none/seed0.json",
+      "sha256": "763e59c13d5f402a6b4585a9de7e050513327cc12750ded9501cab315609780a"
+    },
+    {
+      "population": 2,
+      "cell": "none",
+      "seed": 1,
+      "value": 0.09578408726318806,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.692471346041739,
+          "renal": 0.25011434448230146,
+          "metabolic": 0.5109461815489404
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04750647168127907,
+          "renal": 0.1168670129206145,
+          "metabolic": 0.12297877718767064
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04584783367684618,
+          "renal": 0.14374613661120822,
+          "metabolic": 0.13189232092691403
+        },
+        "macro_nrmse_fixed": 0.09578408726318806,
+        "macro_nrmse_per_kappa": 0.10716209707165614
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/none/seed1.json",
+      "sha256": "fd0d2ec9689e9bb36894fb53e0ad9dbf8a0048a282a5d56fb78150e4e1d91466"
+    },
+    {
+      "population": 2,
+      "cell": "none",
+      "seed": 2,
+      "value": 0.09224575693827843,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.7838874925098684,
+          "renal": 0.24346184207536856,
+          "metabolic": 0.47706212172903256
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.048155388702936314,
+          "renal": 0.11375860230004546,
+          "metabolic": 0.11482327981185354
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05229138053673977,
+          "renal": 0.12724160625139122,
+          "metabolic": 0.11273555231508788
+        },
+        "macro_nrmse_fixed": 0.09224575693827843,
+        "macro_nrmse_per_kappa": 0.09742284636773962
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/none/seed2.json",
+      "sha256": "24e715bfb4d4580a6714f58d183d59e92f061d93d9180b6031de98c85ffe9bcb"
+    },
+    {
+      "population": 2,
+      "cell": "none",
+      "seed": 3,
+      "value": 0.09268428139107343,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.495690923692133,
+          "renal": 0.22906113916457957,
+          "metabolic": 0.5189840818277176
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04610962691670481,
+          "renal": 0.10702981136794362,
+          "metabolic": 0.12491340588857183
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.049048946812408345,
+          "renal": 0.13193014968777586,
+          "metabolic": 0.1324152203085485
+        },
+        "macro_nrmse_fixed": 0.09268428139107343,
+        "macro_nrmse_per_kappa": 0.10446477226957757
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/none/seed3.json",
+      "sha256": "26551a7e67d807e39dbf0ca140970ade73dd167afdb1f6cc747776c22bae2ac0"
+    },
+    {
+      "population": 2,
+      "cell": "shared_admissible",
+      "seed": 0,
+      "value": 0.07854643661651929,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.534595877927856,
+          "renal": 0.21001108031242074,
+          "metabolic": 0.37860137238005587
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04638579352409028,
+          "renal": 0.09812858869468247,
+          "metabolic": 0.09112492763078515
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04866298184352927,
+          "renal": 0.11232760709987828,
+          "metabolic": 0.09794377200297606
+        },
+        "macro_nrmse_fixed": 0.07854643661651929,
+        "macro_nrmse_per_kappa": 0.08631145364879454
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_admissible/seed0.json",
+      "sha256": "f6523f4f9b7488f3ca5d23d4e2e14c84c563bd6b1854637604b067ade0bce4a1"
+    },
+    {
+      "population": 2,
+      "cell": "shared_admissible",
+      "seed": 1,
+      "value": 0.07897697671478406,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.810463873742001,
+          "renal": 0.21298679718087746,
+          "metabolic": 0.3700548678468832
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.048344041001483984,
+          "renal": 0.09951900531566371,
+          "metabolic": 0.08906788382720447
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04665616015377788,
+          "renal": 0.1224081301986762,
+          "metabolic": 0.09552355444298964
+        },
+        "macro_nrmse_fixed": 0.07897697671478406,
+        "macro_nrmse_per_kappa": 0.08819594826514791
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_admissible/seed1.json",
+      "sha256": "a2bb4c04a51b46692010bd24f76328f6b7239aa9addacf5af01d934d88648f1d"
+    },
+    {
+      "population": 2,
+      "cell": "shared_admissible",
+      "seed": 2,
+      "value": 0.08277003868270583,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.039521331409783,
+          "renal": 0.2235508016521873,
+          "metabolic": 0.39006890873004046
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04997000412682725,
+          "renal": 0.10445508225118454,
+          "metabolic": 0.09388502967010569
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05426185047197118,
+          "renal": 0.11683540565755168,
+          "metabolic": 0.09217800337458347
+        },
+        "macro_nrmse_fixed": 0.08277003868270583,
+        "macro_nrmse_per_kappa": 0.08775841983470212
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_admissible/seed2.json",
+      "sha256": "e4978b974eef30b047a9bac61ea4bbebab09c2c62515482035cdc281883a9743"
+    },
+    {
+      "population": 2,
+      "cell": "shared_admissible",
+      "seed": 3,
+      "value": 0.07699291845869798,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.450192517351564,
+          "renal": 0.19877128322515084,
+          "metabolic": 0.3835472970594741
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.045786656725186545,
+          "renal": 0.0928767447265089,
+          "metabolic": 0.09231535392439846
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04870538845366496,
+          "renal": 0.11448439156972692,
+          "metabolic": 0.0978594558430754
+        },
+        "macro_nrmse_fixed": 0.07699291845869798,
+        "macro_nrmse_per_kappa": 0.08701641195548909
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_admissible/seed3.json",
+      "sha256": "08ebdcbab4d7efb90143215500c797853b8a143c776f008b39001149e98194b3"
+    },
+    {
+      "population": 2,
+      "cell": "shared_none",
+      "seed": 0,
+      "value": 0.07761396641860918,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.57872961097845,
+          "renal": 0.20907158521974115,
+          "metabolic": 0.36750108085522654
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.046699076589634854,
+          "renal": 0.09768960553535068,
+          "metabolic": 0.08845321713084199
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04899164471576327,
+          "renal": 0.11182510392011374,
+          "metabolic": 0.09507213840207335
+        },
+        "macro_nrmse_fixed": 0.07761396641860918,
+        "macro_nrmse_per_kappa": 0.08529629567931679
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_none/seed0.json",
+      "sha256": "55f82c14383c0b7292d666646c392395f3fdc1584f213f54dd14f8487b5d036e"
+    },
+    {
+      "population": 2,
+      "cell": "shared_none",
+      "seed": 1,
+      "value": 0.0842373954845701,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.928115185614721,
+          "renal": 0.2305053490168028,
+          "metabolic": 0.39814301845479155
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.049179188202981144,
+          "renal": 0.10770462468906361,
+          "metabolic": 0.09582837356166556
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.0474621490777041,
+          "renal": 0.1324764217660783,
+          "metabolic": 0.10277404678054104
+        },
+        "macro_nrmse_fixed": 0.0842373954845701,
+        "macro_nrmse_per_kappa": 0.0942375392081078
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_none/seed1.json",
+      "sha256": "044174eaeb6d4e9914cef1a34bd3116ee54a05c9d50728876f51289054c484e3"
+    },
+    {
+      "population": 2,
+      "cell": "shared_none",
+      "seed": 2,
+      "value": 0.08279809950330203,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.0808149430415765,
+          "renal": 0.23143795828103064,
+          "metabolic": 0.37388927771004715
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.05026312660582954,
+          "renal": 0.10814039041516778,
+          "metabolic": 0.08999078148890875
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05458014878720099,
+          "renal": 0.12095750737852552,
+          "metabolic": 0.08835456077410532
+        },
+        "macro_nrmse_fixed": 0.08279809950330203,
+        "macro_nrmse_per_kappa": 0.08796407231327728
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_none/seed2.json",
+      "sha256": "9face4017b9da31120478d3af867b4da7910daa0a1f434a946a5ea35ba3ac09c"
+    },
+    {
+      "population": 2,
+      "cell": "shared_none",
+      "seed": 3,
+      "value": 0.07587558598488638,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.511107971004251,
+          "renal": 0.19682044512920327,
+          "metabolic": 0.3716112467626947
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.046219064743730436,
+          "renal": 0.09196520715981303,
+          "metabolic": 0.08944248605111568
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.049165360900224366,
+          "renal": 0.11336078604260146,
+          "metabolic": 0.09481405467374507
+        },
+        "macro_nrmse_fixed": 0.07587558598488638,
+        "macro_nrmse_per_kappa": 0.08578006720552363
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_2/shared_none/seed3.json",
+      "sha256": "77b65d3b9a157bb7dcded6f8ee40fad7b273e46f8db44c6e26d964a053f48a9b"
+    },
+    {
+      "population": 3,
+      "cell": "admissible",
+      "seed": 0,
+      "value": 0.07626546549704588,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.792298691872534,
+          "renal": 0.2029402303409892,
+          "metabolic": 0.35629729841267505
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.048215095556154955,
+          "renal": 0.09482470335903155,
+          "metabolic": 0.08575659757595115
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05107427416158472,
+          "renal": 0.11418925867496746,
+          "metabolic": 0.09697005335813924
+        },
+        "macro_nrmse_fixed": 0.07626546549704588,
+        "macro_nrmse_per_kappa": 0.08741119539823046
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/admissible/seed0.json",
+      "sha256": "c281a27ef556110ada22076f103259575914e14e6524df0500fa3c12d0a435a0"
+    },
+    {
+      "population": 3,
+      "cell": "admissible",
+      "seed": 1,
+      "value": 0.07595889795431275,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.977186959724073,
+          "renal": 0.19849480098205424,
+          "metabolic": 0.35565337502279676
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04952752392629431,
+          "renal": 0.09274755719852779,
+          "metabolic": 0.08560161273811616
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04938206891118032,
+          "renal": 0.09130216099033875,
+          "metabolic": 0.09408976667574093
+        },
+        "macro_nrmse_fixed": 0.07595889795431275,
+        "macro_nrmse_per_kappa": 0.07825799885908667
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/admissible/seed1.json",
+      "sha256": "0a72a269c7b8a21cfe4f5a0e80b8e0a5aea5b672fa5a9fd05214b8dce324a185"
+    },
+    {
+      "population": 3,
+      "cell": "admissible",
+      "seed": 2,
+      "value": 0.07721533528298725,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.7236093948320566,
+          "renal": 0.18462933438665927,
+          "metabolic": 0.40570993981619724
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.047727504952335575,
+          "renal": 0.08626885775764451,
+          "metabolic": 0.0976496431389817
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05077190666347029,
+          "renal": 0.09934241841044919,
+          "metabolic": 0.10150469580984069
+        },
+        "macro_nrmse_fixed": 0.07721533528298725,
+        "macro_nrmse_per_kappa": 0.08387300696125338
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/admissible/seed2.json",
+      "sha256": "ce2253a09e9671fb987824b468f093b5eefe866a62dcb5a98f9468ce7732def8"
+    },
+    {
+      "population": 3,
+      "cell": "admissible",
+      "seed": 3,
+      "value": 0.07965364902587689,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.029774588121754,
+          "renal": 0.20487481792147882,
+          "metabolic": 0.38776905753463614
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04990081692227219,
+          "renal": 0.09572864780185475,
+          "metabolic": 0.09333148235350375
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.053004342589616296,
+          "renal": 0.11359950967868006,
+          "metabolic": 0.09701606090142546
+        },
+        "macro_nrmse_fixed": 0.07965364902587689,
+        "macro_nrmse_per_kappa": 0.08787330438990727
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/admissible/seed3.json",
+      "sha256": "63d3bb8ca449281c5b1da96f0c6a8b21e3cfd53710d6ad4171851f1e1499886c"
+    },
+    {
+      "population": 3,
+      "cell": "control_gru",
+      "seed": 0,
+      "value": 0.0729070235839173,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.1531561100885614,
+          "renal": 0.18944694885230068,
+          "metabolic": 0.35948157741360715
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.043678145393525075,
+          "renal": 0.08851990902448816,
+          "metabolic": 0.08652301633373866
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.046268280648749625,
+          "renal": 0.10659693551806011,
+          "metabolic": 0.09783668834527841
+        },
+        "macro_nrmse_fixed": 0.0729070235839173,
+        "macro_nrmse_per_kappa": 0.08356730150402937
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/control_gru/seed0.json",
+      "sha256": "e6359ee62ae9d7d1b4f3969cfed0086b4fc1cbc7fd28a8f5d4afa86da7b12237"
+    },
+    {
+      "population": 3,
+      "cell": "control_gru",
+      "seed": 1,
+      "value": 0.07358598588937057,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.654960543485011,
+          "renal": 0.18936620886532973,
+          "metabolic": 0.3533016221783303
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04724020145205243,
+          "renal": 0.08848218291517573,
+          "metabolic": 0.08503557330088354
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04710146396486406,
+          "renal": 0.0871032591403519,
+          "metabolic": 0.09346759944226345
+        },
+        "macro_nrmse_fixed": 0.07358598588937057,
+        "macro_nrmse_per_kappa": 0.07589077418249314
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/control_gru/seed1.json",
+      "sha256": "0c59ade1137154deccd0daf33129c343a360ed89e284d3565a6793a3feeaa91e"
+    },
+    {
+      "population": 3,
+      "cell": "control_gru",
+      "seed": 2,
+      "value": 0.07678146732071957,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.941038975572442,
+          "renal": 0.19094568931687853,
+          "metabolic": 0.3816274630080862
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04927092765615108,
+          "renal": 0.08922020201088607,
+          "metabolic": 0.09185327229512158
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05241377990906862,
+          "renal": 0.10274102230181481,
+          "metabolic": 0.09547949345994927
+        },
+        "macro_nrmse_fixed": 0.07678146732071957,
+        "macro_nrmse_per_kappa": 0.08354476522361091
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/control_gru/seed2.json",
+      "sha256": "2161398a1201f21e228a60de0573db51084db953647711c22dfd48a65c1b52a4"
+    },
+    {
+      "population": 3,
+      "cell": "control_gru",
+      "seed": 3,
+      "value": 0.07609012120706588,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.711960145429241,
+          "renal": 0.18906241792017633,
+          "metabolic": 0.3834224949940477
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04764481281840655,
+          "renal": 0.08834023527764262,
+          "metabolic": 0.09228531552514845
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.050608028826033324,
+          "renal": 0.104831809942739,
+          "metabolic": 0.09592859306984915
+        },
+        "macro_nrmse_fixed": 0.07609012120706588,
+        "macro_nrmse_per_kappa": 0.08378947727954049
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/control_gru/seed3.json",
+      "sha256": "f7eb8f39c12201e9a4d07b855e0fb02864c53d56bfe33538af79a59f4c7a5ee3"
+    },
+    {
+      "population": 3,
+      "cell": "none",
+      "seed": 0,
+      "value": 0.09415699050412574,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.476584321737339,
+          "renal": 0.2562981275604778,
+          "metabolic": 0.48502794452963205
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04597399880598787,
+          "renal": 0.11975641240064572,
+          "metabolic": 0.11674056030574359
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.048700279284661606,
+          "renal": 0.1442123778845542,
+          "metabolic": 0.13200545126433055
+        },
+        "macro_nrmse_fixed": 0.09415699050412574,
+        "macro_nrmse_per_kappa": 0.10830603614451546
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/none/seed0.json",
+      "sha256": "7ee5ae64b72188411234828b2e8f5b414788d0990d2650a20bb77bc7675239a0"
+    },
+    {
+      "population": 3,
+      "cell": "none",
+      "seed": 1,
+      "value": 0.09966377926276208,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.100183476438828,
+          "renal": 0.2627052104774668,
+          "metabolic": 0.5228362345672811
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.05040061403547519,
+          "renal": 0.12275014969945221,
+          "metabolic": 0.12584057405335883
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05025259488379714,
+          "renal": 0.12083718717742645,
+          "metabolic": 0.13831877545631394
+        },
+        "macro_nrmse_fixed": 0.09966377926276208,
+        "macro_nrmse_per_kappa": 0.10313618583917916
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/none/seed1.json",
+      "sha256": "f12a57d54c26d5d6871aba517b0d9c530bc3af924f3ed6f23b136d6f0901297d"
+    },
+    {
+      "population": 3,
+      "cell": "none",
+      "seed": 2,
+      "value": 0.09293848189784026,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.732267695555247,
+          "renal": 0.24424245781616805,
+          "metabolic": 0.4857033871227339
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04778896585322647,
+          "renal": 0.11412334839269712,
+          "metabolic": 0.11690313144759718
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.050837287980314776,
+          "renal": 0.1314181005882642,
+          "metabolic": 0.12151828122830265
+        },
+        "macro_nrmse_fixed": 0.09293848189784026,
+        "macro_nrmse_per_kappa": 0.10125788993229388
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/none/seed2.json",
+      "sha256": "19981309f66ef73c0a462ba7de2563ed1903f1c84daf3b5f67a54f5fa2e3b7b2"
+    },
+    {
+      "population": 3,
+      "cell": "none",
+      "seed": 3,
+      "value": 0.1006681817248291,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.868091459167035,
+          "renal": 0.2843092505623879,
+          "metabolic": 0.5002598577423238
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04875311010518273,
+          "renal": 0.13284473118764276,
+          "metabolic": 0.12040670388166175
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05178525542677075,
+          "renal": 0.15764451575194904,
+          "metabolic": 0.1251601691321971
+        },
+        "macro_nrmse_fixed": 0.1006681817248291,
+        "macro_nrmse_per_kappa": 0.11152998010363897
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/none/seed3.json",
+      "sha256": "a731aeaac42545ef5a65ab3787c0bee97fc8805f141504c9a19c50e26eeaab2a"
+    },
+    {
+      "population": 3,
+      "cell": "shared_admissible",
+      "seed": 0,
+      "value": 0.08003769872007395,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.720918335443062,
+          "renal": 0.20589082955809881,
+          "metabolic": 0.3996924765711784
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04770840248180628,
+          "renal": 0.09620338364841377,
+          "metabolic": 0.09620131003000182
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.050537533941606934,
+          "renal": 0.11584948512037242,
+          "metabolic": 0.10878050704460572
+        },
+        "macro_nrmse_fixed": 0.08003769872007395,
+        "macro_nrmse_per_kappa": 0.09172250870219502
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_admissible/seed0.json",
+      "sha256": "ca9db030a1aaaf4c1087f4d778449876bd1b2f8632db493e641ab53b5f634c32"
+    },
+    {
+      "population": 3,
+      "cell": "shared_admissible",
+      "seed": 1,
+      "value": 0.07619305685283607,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.862558013195406,
+          "renal": 0.19746844454780108,
+          "metabolic": 0.36394517399794823
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04871383096885792,
+          "renal": 0.09226798770037967,
+          "metabolic": 0.08759735188927065
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.0485707656496552,
+          "renal": 0.0908300651977536,
+          "metabolic": 0.09628340094349992
+        },
+        "macro_nrmse_fixed": 0.07619305685283607,
+        "macro_nrmse_per_kappa": 0.07856141059696958
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_admissible/seed1.json",
+      "sha256": "6c2c2091c2fbf50ea658fa05313410138c3316d400be2287eecf655e9720fda9"
+    },
+    {
+      "population": 3,
+      "cell": "shared_admissible",
+      "seed": 2,
+      "value": 0.07953759951026607,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.698890677994149,
+          "renal": 0.19979815040194968,
+          "metabolic": 0.4059366365101587
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04755203927445081,
+          "renal": 0.09335655287132803,
+          "metabolic": 0.09770420638501938
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.050585248529358626,
+          "renal": 0.10750421389320963,
+          "metabolic": 0.10156141312608903
+        },
+        "macro_nrmse_fixed": 0.07953759951026607,
+        "macro_nrmse_per_kappa": 0.08655029184955243
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_admissible/seed2.json",
+      "sha256": "5b897326e92b6b98215781f418278419aa21af7678582bd2d67f435603b1052d"
+    },
+    {
+      "population": 3,
+      "cell": "shared_admissible",
+      "seed": 3,
+      "value": 0.08036701577994367,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.8472875843658505,
+          "renal": 0.2022916371565795,
+          "metabolic": 0.407057429017027
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04860543391233839,
+          "renal": 0.09452164537881245,
+          "metabolic": 0.09797396804868017
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05162839467777651,
+          "renal": 0.11216718104365753,
+          "metabolic": 0.10184182455137272
+        },
+        "macro_nrmse_fixed": 0.08036701577994367,
+        "macro_nrmse_per_kappa": 0.0885458000909356
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_admissible/seed3.json",
+      "sha256": "a665028983b59034b0ff50214513d1403dd8c058f27d831f763a9496e8476054"
+    },
+    {
+      "population": 3,
+      "cell": "shared_none",
+      "seed": 0,
+      "value": 0.0785455068439903,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.787307887262209,
+          "renal": 0.21281599086698383,
+          "metabolic": 0.3656914364041029
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04817966835660072,
+          "renal": 0.09943919532422141,
+          "metabolic": 0.08801765685114876
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.051036746111874594,
+          "renal": 0.11974609563834339,
+          "metabolic": 0.09952676671617147
+        },
+        "macro_nrmse_fixed": 0.0785455068439903,
+        "macro_nrmse_per_kappa": 0.09010320282212982
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_none/seed0.json",
+      "sha256": "e54aa60396c6f87078b0afca6e2caa5cdb837d181d7755b47434d383a2c37901"
+    },
+    {
+      "population": 3,
+      "cell": "shared_none",
+      "seed": 1,
+      "value": 0.07519009587434138,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.827972046850115,
+          "renal": 0.19195270967480893,
+          "metabolic": 0.36317187687794056
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.048468322673671266,
+          "renal": 0.0896907366434565,
+          "metabolic": 0.08741122830589637
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.048325978376033044,
+          "renal": 0.08829297852917388,
+          "metabolic": 0.0960788215673366
+        },
+        "macro_nrmse_fixed": 0.07519009587434138,
+        "macro_nrmse_per_kappa": 0.07756592615751451
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_none/seed1.json",
+      "sha256": "78ff1ab440d30aeba08b8120d8692b81ffde6f012127e23eb977dd6a1af7e89a"
+    },
+    {
+      "population": 3,
+      "cell": "shared_none",
+      "seed": 2,
+      "value": 0.07900679235827258,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.840799523096666,
+          "renal": 0.19818838197194058,
+          "metabolic": 0.3982603630880091
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04855937844448297,
+          "renal": 0.09260438158623654,
+          "metabolic": 0.09585661704409824
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05165684299821695,
+          "renal": 0.10663805527627508,
+          "metabolic": 0.09964088389522656
+        },
+        "macro_nrmse_fixed": 0.07900679235827258,
+        "macro_nrmse_per_kappa": 0.08597859405657286
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_none/seed2.json",
+      "sha256": "dbd33f591f551e1e492712db5848a580b47357e78b5c9c98819f13f5e63d6396"
+    },
+    {
+      "population": 3,
+      "cell": "shared_none",
+      "seed": 3,
+      "value": 0.08059343908545441,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.102981835053306,
+          "renal": 0.1966539556851794,
+          "metabolic": 0.41328314368664737
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.05042047816897669,
+          "renal": 0.09188741424455199,
+          "metabolic": 0.09947242484283456
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05355632358811932,
+          "renal": 0.10904118509465277,
+          "metabolic": 0.10339943803756181
+        },
+        "macro_nrmse_fixed": 0.08059343908545441,
+        "macro_nrmse_per_kappa": 0.08866564890677797
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_3/shared_none/seed3.json",
+      "sha256": "f235c5ff0a4868be81daea6de42cd2c2ac2783ef69b56e301859cc3139aa79f0"
+    },
+    {
+      "population": 4,
+      "cell": "admissible",
+      "seed": 0,
+      "value": 0.07877359441736494,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.625106760729209,
+          "renal": 0.19927680055444544,
+          "metabolic": 0.3996020641778528
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04702828453650129,
+          "renal": 0.0931129498924963,
+          "metabolic": 0.09617954882309725
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04641087737733491,
+          "renal": 0.10519052649775605,
+          "metabolic": 0.10623536516137276
+        },
+        "macro_nrmse_fixed": 0.07877359441736494,
+        "macro_nrmse_per_kappa": 0.08594558967882125
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/admissible/seed0.json",
+      "sha256": "b22b626e0fdc594e048c38898121866d2bcb700198a7f4c14b98afc22068e3b2"
+    },
+    {
+      "population": 4,
+      "cell": "admissible",
+      "seed": 1,
+      "value": 0.07486964306881319,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 5.887876418378672,
+          "renal": 0.19351685486656806,
+          "metabolic": 0.3838669057322563
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.0417950589355923,
+          "renal": 0.09042159027247723,
+          "metabolic": 0.09239227999837005
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.044962191560738905,
+          "renal": 0.09112586868520432,
+          "metabolic": 0.11046717779332269
+        },
+        "macro_nrmse_fixed": 0.07486964306881319,
+        "macro_nrmse_per_kappa": 0.08218507934642197
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/admissible/seed1.json",
+      "sha256": "f3e7ea39e008d3c06874818cc97fd7f1b9a29d634e1aa42e3b4a510590835f61"
+    },
+    {
+      "population": 4,
+      "cell": "admissible",
+      "seed": 2,
+      "value": 0.07427414267049746,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.362710916173746,
+          "renal": 0.19262666818018825,
+          "metabolic": 0.3641685350260537
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04516566905200883,
+          "renal": 0.09000564667998061,
+          "metabolic": 0.08765111227950297
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04631189648273362,
+          "renal": 0.09905978005937628,
+          "metabolic": 0.09186727937142707
+        },
+        "macro_nrmse_fixed": 0.07427414267049746,
+        "macro_nrmse_per_kappa": 0.079079651971179
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/admissible/seed2.json",
+      "sha256": "fcd9b2c09f3bfcf6403cc5c9093b46c474d91766a507833e3e59b43d584c9159"
+    },
+    {
+      "population": 4,
+      "cell": "admissible",
+      "seed": 3,
+      "value": 0.07220571500546295,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.419744191358342,
+          "renal": 0.18744388923014682,
+          "metabolic": 0.3467665378576323
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04557051944767771,
+          "renal": 0.08758397072303828,
+          "metabolic": 0.08346265484567286
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.048232380656289604,
+          "renal": 0.08888579529528437,
+          "metabolic": 0.09064318677325837
+        },
+        "macro_nrmse_fixed": 0.07220571500546295,
+        "macro_nrmse_per_kappa": 0.07592045424161077
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/admissible/seed3.json",
+      "sha256": "c8036bf19fcbb9362e629af15020bd82f010403c289b51e42892eb5de5a1aad9"
+    },
+    {
+      "population": 4,
+      "cell": "control_gru",
+      "seed": 0,
+      "value": 0.07823446248162245,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.596528532812939,
+          "renal": 0.19789193626226445,
+          "metabolic": 0.3964135024498152
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.046825422140085,
+          "renal": 0.09246586604185747,
+          "metabolic": 0.0954120992629249
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.046210678244040106,
+          "renal": 0.10445951012446447,
+          "metabolic": 0.10538767679866479
+        },
+        "macro_nrmse_fixed": 0.07823446248162245,
+        "macro_nrmse_per_kappa": 0.08535262172238978
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/control_gru/seed0.json",
+      "sha256": "1febf554d6e6ace8970e68f0e0b9bcc28a52ce745227752d0dd3bf8c79b0ba82"
+    },
+    {
+      "population": 4,
+      "cell": "control_gru",
+      "seed": 1,
+      "value": 0.07418251446672235,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 5.994988902486697,
+          "renal": 0.19823129875681106,
+          "metabolic": 0.36299107927458707
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.042555396325157514,
+          "renal": 0.09262443464022012,
+          "metabolic": 0.08736771243478941
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.045780145554130944,
+          "renal": 0.0933458706336768,
+          "metabolic": 0.104459643415013
+        },
+        "macro_nrmse_fixed": 0.07418251446672235,
+        "macro_nrmse_per_kappa": 0.08119521986760692
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/control_gru/seed1.json",
+      "sha256": "bc1ede76d92b6a216406a5dd8b2cae94d30aba7845eceec2bbfdb9973aa6ccea"
+    },
+    {
+      "population": 4,
+      "cell": "control_gru",
+      "seed": 2,
+      "value": 0.07636330760262856,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.221418060435285,
+          "renal": 0.1941169748094842,
+          "metabolic": 0.39148232065118627
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.044162702479148386,
+          "renal": 0.09070199892024139,
+          "metabolic": 0.09422522140849593
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.045283476333693694,
+          "renal": 0.09982618197201794,
+          "metabolic": 0.09875761429433799
+        },
+        "macro_nrmse_fixed": 0.07636330760262856,
+        "macro_nrmse_per_kappa": 0.0812890908666832
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/control_gru/seed2.json",
+      "sha256": "a13cb7211f113a2de596a0f007178931807f04abbb085bffa36eec2e2cca0249"
+    },
+    {
+      "population": 4,
+      "cell": "control_gru",
+      "seed": 3,
+      "value": 0.07395789033244216,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.2270859355724255,
+          "renal": 0.2004044506510217,
+          "metabolic": 0.3491273960890699
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04420293586017808,
+          "renal": 0.09363984929396518,
+          "metabolic": 0.08403088584318318
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.046784913895518726,
+          "renal": 0.09503168681567097,
+          "metabolic": 0.09126030431562414
+        },
+        "macro_nrmse_fixed": 0.07395789033244216,
+        "macro_nrmse_per_kappa": 0.0776923016756046
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/control_gru/seed3.json",
+      "sha256": "8ca280730b3a2dc6f006fb4e9d2773f1829a09a92c217502faa8d7d8e6941f71"
+    },
+    {
+      "population": 4,
+      "cell": "none",
+      "seed": 0,
+      "value": 0.09968787204454987,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.610714029684188,
+          "renal": 0.2629367999404004,
+          "metabolic": 0.5371226087889074
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04692611781296187,
+          "renal": 0.12285836088107381,
+          "metabolic": 0.12927913743961397
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04631005194164308,
+          "renal": 0.13879418148230036,
+          "metabolic": 0.1427955999139237
+        },
+        "macro_nrmse_fixed": 0.09968787204454987,
+        "macro_nrmse_per_kappa": 0.10929994444595571
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/none/seed0.json",
+      "sha256": "e8ae81bf4766795e492c1a7386dc7b19ca6c5d055e20220b5735b0df903a4e1f"
+    },
+    {
+      "population": 4,
+      "cell": "none",
+      "seed": 1,
+      "value": 0.098293603507373,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.061224322033674,
+          "renal": 0.26694236849785585,
+          "metabolic": 0.5281737939957516
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04302556809285094,
+          "renal": 0.12472998017315194,
+          "metabolic": 0.12712526225611614
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04628594584784654,
+          "renal": 0.12570148080912966,
+          "metabolic": 0.15199504707446232
+        },
+        "macro_nrmse_fixed": 0.098293603507373,
+        "macro_nrmse_per_kappa": 0.1079941579104795
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/none/seed1.json",
+      "sha256": "926c9cbd35471e0b3782bffa5ebcac06e1dabfa8aa4d6956d59443a8c97a5189"
+    },
+    {
+      "population": 4,
+      "cell": "none",
+      "seed": 2,
+      "value": 0.0950696273923169,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.8359762152739085,
+          "renal": 0.2421613388073188,
+          "metabolic": 0.5132480309662129
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04852514021997007,
+          "renal": 0.11315093650404699,
+          "metabolic": 0.12353280545293364
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04975662528301316,
+          "renal": 0.12453337426102211,
+          "metabolic": 0.12947494281523975
+        },
+        "macro_nrmse_fixed": 0.0950696273923169,
+        "macro_nrmse_per_kappa": 0.10125498078642499
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/none/seed2.json",
+      "sha256": "757522c26fc610f8c1bbc2cfcfca5b15ded4229eb457c7c891b0769fd2e79508"
+    },
+    {
+      "population": 4,
+      "cell": "none",
+      "seed": 3,
+      "value": 0.09508104068348855,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.571291576821246,
+          "renal": 0.2621711091930474,
+          "metabolic": 0.48235101961473564
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04664627774436784,
+          "renal": 0.1225005885563824,
+          "metabolic": 0.11609625574971544
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04937097605280893,
+          "renal": 0.12432140434014727,
+          "metabolic": 0.12608435009712626
+        },
+        "macro_nrmse_fixed": 0.09508104068348855,
+        "macro_nrmse_per_kappa": 0.0999255768300275
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/none/seed3.json",
+      "sha256": "1c10987a6bf098443c01c044970d8a062278c6e502e95fe3d58751ea3df400d4"
+    },
+    {
+      "population": 4,
+      "cell": "shared_admissible",
+      "seed": 0,
+      "value": 0.08431644491857211,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 7.259563997566174,
+          "renal": 0.21423298419465625,
+          "metabolic": 0.42094301898219816
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.05153197580334618,
+          "renal": 0.10010129160612913,
+          "metabolic": 0.10131606734624106
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05085544228526133,
+          "renal": 0.11308531820022051,
+          "metabolic": 0.11190891975423123
+        },
+        "macro_nrmse_fixed": 0.08431644491857211,
+        "macro_nrmse_per_kappa": 0.09194989341323768
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_admissible/seed0.json",
+      "sha256": "b23d16d1430454bb76a897d553abc08e5e15d66db987a2167d282d9cb53eba47"
+    },
+    {
+      "population": 4,
+      "cell": "shared_admissible",
+      "seed": 1,
+      "value": 0.07603865889010986,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.109986826989064,
+          "renal": 0.19372609703186308,
+          "metabolic": 0.3914810210816527
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04337170847074612,
+          "renal": 0.09051935958229305,
+          "metabolic": 0.09422490861729037
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04665831594072792,
+          "renal": 0.09122439950357272,
+          "metabolic": 0.112658327437849
+        },
+        "macro_nrmse_fixed": 0.07603865889010986,
+        "macro_nrmse_per_kappa": 0.08351368096071654
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_admissible/seed1.json",
+      "sha256": "cc78eb4ba88d06042c8a9b5c79cb994a64d98df81aae65eef6f4efaa6ab69698"
+    },
+    {
+      "population": 4,
+      "cell": "shared_admissible",
+      "seed": 2,
+      "value": 0.07835687996025731,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.823360940024928,
+          "renal": 0.20295133544959984,
+          "metabolic": 0.38142755534034667
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04843559075679281,
+          "renal": 0.09482989226922449,
+          "metabolic": 0.09180515685475461
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.0496648032076228,
+          "renal": 0.10436932145650742,
+          "metabolic": 0.09622114053292707
+        },
+        "macro_nrmse_fixed": 0.07835687996025731,
+        "macro_nrmse_per_kappa": 0.08341842173235244
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_admissible/seed2.json",
+      "sha256": "a12135df88e0ba30bf90630fd9ea93391c17ccf08157199b6c52164b8aaeb513"
+    },
+    {
+      "population": 4,
+      "cell": "shared_admissible",
+      "seed": 3,
+      "value": 0.07862006109970986,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.940745708835712,
+          "renal": 0.20211808762657613,
+          "metabolic": 0.3828635491403293
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.049268845903805314,
+          "renal": 0.0944405536077377,
+          "metabolic": 0.09215078378758652
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.05214673343490959,
+          "renal": 0.09584429258289628,
+          "metabolic": 0.10007878040310637
+        },
+        "macro_nrmse_fixed": 0.07862006109970986,
+        "macro_nrmse_per_kappa": 0.08268993547363741
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_admissible/seed3.json",
+      "sha256": "f6185a462dba777b9ab69c36fcc452efd1f1b9edce1a4e494d00c35ba0c3742c"
+    },
+    {
+      "population": 4,
+      "cell": "shared_none",
+      "seed": 0,
+      "value": 0.08183656840222632,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.928765007645913,
+          "renal": 0.21262814765608898,
+          "metabolic": 0.40290480300316844
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04918380096115768,
+          "renal": 0.09935142476871754,
+          "metabolic": 0.09697447947680378
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.048538095273023045,
+          "renal": 0.11223818697388087,
+          "metabolic": 0.10711340783580671
+        },
+        "macro_nrmse_fixed": 0.08183656840222632,
+        "macro_nrmse_per_kappa": 0.08929656336090354
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_none/seed0.json",
+      "sha256": "764c7cc8d942beb6a8ddb9e4e8495fbb81520d3fb6d72e873ff1b4ebec5f91b0"
+    },
+    {
+      "population": 4,
+      "cell": "shared_none",
+      "seed": 1,
+      "value": 0.07321404344889659,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 5.971636759597093,
+          "renal": 0.19407726472949086,
+          "metabolic": 0.35967285605639876
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.042389631265059305,
+          "renal": 0.0906834442130283,
+          "metabolic": 0.08656905486860218
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04560181920226005,
+          "renal": 0.09138976216163462,
+          "metabolic": 0.10350474277438
+        },
+        "macro_nrmse_fixed": 0.07321404344889659,
+        "macro_nrmse_per_kappa": 0.08016544137942488
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_none/seed1.json",
+      "sha256": "9c7bb4e568d4ad678b2a403371b71b6d51129b85a7c7138fd7c4e8ea2fb6c4ca"
+    },
+    {
+      "population": 4,
+      "cell": "shared_none",
+      "seed": 2,
+      "value": 0.07833445645510694,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.681654445294775,
+          "renal": 0.20312199967641079,
+          "metabolic": 0.384996023793343
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.0474296879697853,
+          "renal": 0.09490963586986077,
+          "metabolic": 0.09266404552567473
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.04863337232834275,
+          "renal": 0.104457086878251,
+          "metabolic": 0.09712134320495663
+        },
+        "macro_nrmse_fixed": 0.07833445645510694,
+        "macro_nrmse_per_kappa": 0.08340393413718346
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_none/seed2.json",
+      "sha256": "5de37c5d966d9bc0626f750bfbe9af0b1ed8d0679960233db881fb0afbcc21e2"
+    },
+    {
+      "population": 4,
+      "cell": "shared_none",
+      "seed": 3,
+      "value": 0.07548973613009452,
+      "metrics": {
+        "organ_rmse": {
+          "cardiovascular": 6.851998179846533,
+          "renal": 0.1928868514333811,
+          "metabolic": 0.3643846054529447
+        },
+        "organ_nrmse_fixed": {
+          "cardiovascular": 0.04863887204890021,
+          "renal": 0.09012721843419388,
+          "metabolic": 0.08770311790718947
+        },
+        "organ_nrmse_per_kappa": {
+          "cardiovascular": 0.051479961602120185,
+          "renal": 0.09146684515603833,
+          "metabolic": 0.09524846905191191
+        },
+        "macro_nrmse_fixed": 0.07548973613009452,
+        "macro_nrmse_per_kappa": 0.07939842527002348
+      },
+      "path": "experiments/positive_control/artifacts/population_replication/records/population_4/shared_none/seed3.json",
+      "sha256": "5de2f9125eba30db3b59443a2bc5369e1f54ff534c1360e8ea5c463fe446ea19"
+    }
+  ]
+}

@@ -54,3 +54,31 @@ These four-seed paired ablations limit topology attribution. They do not isolate
 all sparse-observation encoding effects or establish that a specific learned
 topology explains the external implementation advantage. Exact paired intervals
 for both cohorts remain in [E5_READING.md](artifacts/E5_READING.md).
+
+## Device-matched learned adjacency (1.3.1)
+
+Eight learned-CUDA records are in `artifacts/learned_cuda/<model>/seedN/run.json`.
+The reader combines them with 24 existing fixed-CUDA and eight original
+learned-CPU records; no weights or lock files are shipped.
+
+```bash
+python3 -B experiments/learned_graph_validation/read_s3.py --check
+```
+
+`artifacts/learned_cuda_summary.json` gives absolute arms, original and matched
+fixed-minus-learned differences, and learned-CUDA-minus-learned-CPU differences
+for A test and external B. Differences pair seeds 0–3, with sample SD and
+pointwise two-sided 95% t intervals (df=3), without multiplicity correction.
+Positive fixed-minus-learned differences favor learned adjacency. t-PatchGNN A
+random and complete intervals remain positive; A physiological contains zero.
+Every matched B and every matched GraFITi interval contains zero. All four
+operational device-effect intervals contain zero, without establishing
+equivalence. The refit combines CUDA execution with float64 metric reduction
+after float32 subtraction; the historical CPU reduction was float32.
+t-PatchGNN CPU threads also change from six to four. Fixed GraFITi uses a
+separate time state per receiving variable, so that contrast includes the
+declared representation change. No isolated hardware effect is identified.
+
+The [official-code attempt](official_code/) is distinct from these paper-based
+adaptations. Its record and full sanitized log document a pre-fit dataset/encoder
+failure; the cause was not diagnosed and no score enters a benchmark ranking.

@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-11-13T07:03:47.725505+00:00",
+  "frozen_path": "experiments/positive_control/artifacts/full/datasets/kappa_1.npz",
+  "recorded_sha256": "2b83c9f4039eb76053101e948db4bebb22bdfbf2d1afbd75daa23f90abb5fd04",
+  "reproduced_sha256": "2b83c9f4039eb76053101e948db4bebb22bdfbf2d1afbd75daa23f90abb5fd04",
+  "raw_generation_seconds": 39.50452097784728,
+  "timing_field_restored": "metadata_json.generation_seconds only",
+  "scientific_arrays_exact": true,
+  "array_content_sha256": {
+    "values": "255642568f297a4573263ac450b037214b90ec1ced66f21609df95d94c71f18f",
+    "mask": "9c35b9c2afbedc3fb6a82b80bf10cef649f442159830788eef26918772df8208",
+    "truth": "8e7a44f341f71b78d514a9b7b3eadeb67b7a271ebb007edef387346f129bd4b8",
+    "controls": "c284f7d8d692b1618901406443ea1bac449d2b9b5118dc7f90ce633462d3006c",
+    "t_min": "1d193caabd18f135dd82a9546e4f2011cf07774893f9df27bb964b2d0c9f44ff",
+    "channels": "66e07c74a1ee7716e9d5a0df34ee531c8796d8f4b55e5f6d8f5c6e2b95011307",
+    "audit_reserve": "7eca2f2f121e7b6a35c177f25dba7091ba98ea13c23818e07f6deedbdab2ca8d",
+    "audit_source": "a4b0091d84d8367ca17438aecdd36d6636f78f74d072c88e59dcfbfa93f27a69",
+    "audit_mask_uniforms": "1aa67395bc255f36364a9f7c303031a2021fa011538fe5c9537d068a8fbb420f"
+  },
+  "generator_config": {
+    "n_patients": 400,
+    "kappa": 1.0,
+    "seed": 0,
+    "horizon_h": 6.0,
+    "out_dt": 300.0,
+    "C": 12,
+    "K": 24,
+    "parameters": {
+      "source_tau_min": 60.0,
+      "source_sd": 1.0,
+      "source_loadings": [
+        12.0,
+        -3.0,
+        0.6,
+        0.3
+      ],
+      "reserve_tau_min": 30.0,
+      "reserve_initial_sd": 0.25,
+      "drive_weights": [
+        0.6,
+        0.25,
+        -0.15,
+        0.3
+      ],
+      "drive_centers": [
+        85.0,
+        5.0,
+        8.0,
+        0.0
+      ],
+      "drive_scales": [
+        15.0,
+        1.5,
+        4.0,
+        0.3
+      ],
+      "local_tau_min": 90.0,
+      "local_sd": [
+        0.08,
+        0.15
+      ],
+      "offset_sd": [
+        0.12,
+        0.25
+      ],
+      "target_centers": [
+        1.1,
+        3.2
+      ],
+      "target_loadings": [
+        0.45,
+        -1.0
+      ],
+      "target_lag_steps": [
+        6,
+        9
+      ],
+      "target_tau_min": [
+        10.0,
+        20.0
+      ],
+      "clean_bounds": [
+        [
+          0.05,
+          2.8
+        ],
+        [
+          0.1,
+          10.0
+        ]
+      ],
+      "noise_sd": [
+        0.08,
+        0.15
+      ]
+    },
+    "target_probabilities": [
+      0.08274778380622017,
+      0.0345577989267396
+    ],
+    "source_sha256": {
+      "src/cvsim_hemodynamics_simulator.py": "7cf88f7918b698a03e09b5efc5dfd2691fb44b2550df861f6ea7d54ef5868af0",
+      "sim/sim_policy_ext.py": "fcc48abf17728656c18bc4e57b23029f2887effefef191b799c3396cd964f5b7",
+      "sim/sim_policy_ext2.py": "ec7ea141a631e4d8e07a1a5b80ce9d6da8c57a2d1e22289250382f5e5f5de777",
+      "experiments/positive_control/sim_positive_control.py": "c6886108780814aa92a4c8ff9a65c1866406f2badff1ea32f25b313e9a39c436"
+    },
+    "clinical_input_sha256": "d52d8131323fc7a3838ae4fe523c2edbc02d2daa781de1859e7d184897dfb51f"
+  },
+  "numpy_version": "2.2.6"
+}

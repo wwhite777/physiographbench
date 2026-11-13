@@ -136,3 +136,13 @@ fail verification. It also checks finite/non-smoke status on every physical
 record and the existing dry-run plan counts, then prints the three record counts.
 Policy verification uses `--no-legacy`; protocol regeneration requires
 unbundled archives and is separate from inspecting these saved replacement records.
+
+## Exact and thresholded dependence endpoints (1.3.1)
+
+The [post-hoc treatment reader](../../analysis/post_hoc/read_post_hoc.py)
+reproduces the point4-minus-point0 contrasts from the 32 effective endpoint
+records, including the CRN-lite point4 seed3 current-archive replacement. It
+reports saved exact and thresholded correct/count ratios and pairs four seeds;
+it does not pool target cells as independent replicates. Numerical sensitivity
+thresholds, zero-class equality handling and the limitation that trajectories
+are not redistributed are documented in the [companion](../../analysis/post_hoc/).

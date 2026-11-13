@@ -95,8 +95,8 @@ the second is abs(mean(shared none − Control-GRU))≤0.0040. Neither condition
 uses confidence intervals or implies equivalence. Both pass for ten seeds and
 also for seeds 0–3. At κ=1 partitioned admissible − none is −0.01688
 [−0.01914, −0.01462]; shared admissible − none is +0.00056 [−0.00066,
-+0.00178]. In this regime, prescribed edges help when they are the only route
-to information a node lacks; with shared inputs they add nothing measurable.
++0.00178]. In this regime, prescribed edges help when they give a node direct access
+to source-organ inputs it lacks; with shared inputs no edge benefit is detected.
 
 Scope is one generated 400-patient population (dataset seed 0), with uncertainty
 over split/initialization seeds. Shared nodes receive all values and masks in
@@ -108,3 +108,39 @@ folder. CPU smoke is explicit through `shared_input_regime.py run-cell --smoke`;
 use `--help` for its one-epoch/population limits. Saved-record validation checks
 configuration, completion, scores and distributed bytes; it does not replay
 unavailable predictions or numerical training.
+
+## Five-population replication (1.3.1)
+
+The delayed-drive regime now includes independently generated dataset seeds
+1–4, with the same 400 patients per population, 60 epochs, κ=1, five cells and
+four split/initialization seeds per cell. The 80 added records live in
+`artifacts/population_replication/records/`; the four synthetic populations,
+their original manifests and the retained seed-0 reproduction proof live in
+`artifacts/population_replication/populations/`. Population 0 reuses 20 existing
+records. Only metadata strings are relocated in the new NPZs; every scientific
+array remains byte-identical, with original/distributed archive hashes and
+array hashes in `manifests/release_1_3_1_inputs.json` at the repository root.
+Original hashes in records and population manifests remain historical hashes.
+
+```bash
+python3 -B experiments/positive_control/read_s1.py --check
+```
+
+All four new populations meet the frozen rule: mean partitioned admissible −
+none <0 and paired t CI upper endpoint <0, mean shared none − shared admissible
+<0.0040, and abs(mean shared none − full-input Control-GRU)≤0.0040. All
+within-population intervals use four seed pairs, sample SD and df=3; the
+descriptive five-population summary uses five population means and df=4.
+No multiplicity adjustment is made. The rule imposes no interval requirement
+on the latter two contrasts and is not an equivalence test. Population 3 has
+a positive shared-none-minus-Control-GRU interval and still meets its mean
+threshold. The complete deterministic `summary.json` reports all outcomes.
+
+New S1 records omit explicit runtime dtype fields. Float32 scientific data and
+the source-defined computation path were verified; logged per-fit dtype
+attestations are unavailable. This extension supports the routing pattern
+across these five generated populations, without a clinical or universal claim.
+Its rule was frozen at 2026-11-13T06:56:39Z before the new results. The separate
+original positive-control criterion and historical ten-seed rule above remain
+as originally defined. The public reader reproduces saved-record arithmetic;
+it does not rerun the integrator or fit models.

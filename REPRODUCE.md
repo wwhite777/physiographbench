@@ -1,4 +1,4 @@
-# Reproduce PhysioGraphBench v1.3.0 and its findings
+# Reproduce PhysioGraphBench v1.3.1 and its findings
 
 Run commands below from the repository root. The software is a benchmark and
 includes both supported findings and negative controls. No raw data, trained
@@ -471,3 +471,29 @@ extension fits use the three shipped positive-control datasets in place. Every
 launcher defaults to printing its plan, and existing output destinations are
 refused. CPU model smoke checks require PyTorch and are separate from the
 saved-record checks above.
+
+
+## Release 1.3.1: population replication and post-hoc companion
+
+From the repository root, with the NumPy/SciPy environment in `requirements.txt`:
+
+```bash
+python3 -B experiments/positive_control/read_s1.py --check
+python3 -B experiments/learned_graph_validation/read_s3.py --check
+for table in cap_matrix equal_organ clinical_2x2 input_access treatment; do
+  python3 -B analysis/post_hoc/read_post_hoc.py "$table" --check
+done
+python3 -B analysis/post_hoc/stay_bootstrap.py --check
+python3 -B -m unittest discover -s tests -p test_release_1_3_1.py -v
+sha256sum -c SHA256SUMS
+```
+
+Omit `--check` to print each complete deterministic JSON. These commands read
+only distributed files, need no PyTorch, and do no fitting, checkpoint inference,
+clinical downloads or new population generation. They reject missing or changed
+inputs. Population and device-matched results are linked from the affected
+experiment READMEs; bootstrap seeds, resampling details, estimands and limitations
+are in [analysis/post_hoc/README.md](analysis/post_hoc/README.md).
+The concept DOI in `CITATION.cff` identifies all versions; a new version-specific
+DOI is not asserted by this source release. Historical DOI links retain their
+stated version labels.

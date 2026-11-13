@@ -1,0 +1,760 @@
+{
+  "thresholds": {
+    "MAP": 0.1,
+    "HR": 0.1,
+    "CO": 0.01,
+    "CVP": 0.05,
+    "UO": 0.01,
+    "Lac": 0.01
+  },
+  "rows": [
+    {
+      "model": "control_gru",
+      "point": 0,
+      "seed": 0,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/control_gru/seed0/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 60250,
+          "denominator": 60480,
+          "accuracy": 0.99619708994709
+        },
+        "effect_tolerance": {
+          "n_correct": 52609,
+          "denominator": 57131,
+          "accuracy": 0.9208485760795365
+        }
+      }
+    },
+    {
+      "model": "control_gru",
+      "point": 0,
+      "seed": 1,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/control_gru/seed1/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 60348,
+          "denominator": 60480,
+          "accuracy": 0.9978174603174603
+        },
+        "effect_tolerance": {
+          "n_correct": 51868,
+          "denominator": 56796,
+          "accuracy": 0.9132333262905838
+        }
+      }
+    },
+    {
+      "model": "control_gru",
+      "point": 0,
+      "seed": 2,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/control_gru/seed2/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 60076,
+          "denominator": 60480,
+          "accuracy": 0.9933201058201058
+        },
+        "effect_tolerance": {
+          "n_correct": 53034,
+          "denominator": 57043,
+          "accuracy": 0.9297196851497993
+        }
+      }
+    },
+    {
+      "model": "control_gru",
+      "point": 0,
+      "seed": 3,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/control_gru/seed3/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 59129,
+          "denominator": 60480,
+          "accuracy": 0.977662037037037
+        },
+        "effect_tolerance": {
+          "n_correct": 50931,
+          "denominator": 56427,
+          "accuracy": 0.9025998192354724
+        }
+      }
+    },
+    {
+      "model": "control_gru",
+      "point": 4,
+      "seed": 0,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/control_gru/seed0/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 60433,
+          "denominator": 60480,
+          "accuracy": 0.9992228835978836
+        },
+        "effect_tolerance": {
+          "n_correct": 48994,
+          "denominator": 57131,
+          "accuracy": 0.8575729463863752
+        }
+      }
+    },
+    {
+      "model": "control_gru",
+      "point": 4,
+      "seed": 1,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/control_gru/seed1/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 53634,
+          "denominator": 60480,
+          "accuracy": 0.8868055555555555
+        },
+        "effect_tolerance": {
+          "n_correct": 41393,
+          "denominator": 56796,
+          "accuracy": 0.728801324036904
+        }
+      }
+    },
+    {
+      "model": "control_gru",
+      "point": 4,
+      "seed": 2,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/control_gru/seed2/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 51878,
+          "denominator": 60480,
+          "accuracy": 0.857771164021164
+        },
+        "effect_tolerance": {
+          "n_correct": 41731,
+          "denominator": 57043,
+          "accuracy": 0.7315709201830198
+        }
+      }
+    },
+    {
+      "model": "control_gru",
+      "point": 4,
+      "seed": 3,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/control_gru/seed3/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 53851,
+          "denominator": 60480,
+          "accuracy": 0.8903935185185186
+        },
+        "effect_tolerance": {
+          "n_correct": 44176,
+          "denominator": 56427,
+          "accuracy": 0.782887624718663
+        }
+      }
+    },
+    {
+      "model": "crn_lite",
+      "point": 0,
+      "seed": 0,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/crn_lite/seed0/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 60284,
+          "denominator": 60480,
+          "accuracy": 0.9967592592592592
+        },
+        "effect_tolerance": {
+          "n_correct": 52367,
+          "denominator": 57131,
+          "accuracy": 0.9166126971346554
+        }
+      }
+    },
+    {
+      "model": "crn_lite",
+      "point": 0,
+      "seed": 1,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/crn_lite/seed1/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 60410,
+          "denominator": 60480,
+          "accuracy": 0.9988425925925926
+        },
+        "effect_tolerance": {
+          "n_correct": 53400,
+          "denominator": 56796,
+          "accuracy": 0.9402070568349884
+        }
+      }
+    },
+    {
+      "model": "crn_lite",
+      "point": 0,
+      "seed": 2,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/crn_lite/seed2/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 59591,
+          "denominator": 60480,
+          "accuracy": 0.9853009259259259
+        },
+        "effect_tolerance": {
+          "n_correct": 52787,
+          "denominator": 57043,
+          "accuracy": 0.9253896183580808
+        }
+      }
+    },
+    {
+      "model": "crn_lite",
+      "point": 0,
+      "seed": 3,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/crn_lite/seed3/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 59454,
+          "denominator": 60480,
+          "accuracy": 0.9830357142857142
+        },
+        "effect_tolerance": {
+          "n_correct": 50772,
+          "denominator": 56427,
+          "accuracy": 0.8997820192461056
+        }
+      }
+    },
+    {
+      "model": "crn_lite",
+      "point": 4,
+      "seed": 0,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/crn_lite/seed0/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 60459,
+          "denominator": 60480,
+          "accuracy": 0.9996527777777777
+        },
+        "effect_tolerance": {
+          "n_correct": 48900,
+          "denominator": 57131,
+          "accuracy": 0.855927604978033
+        }
+      }
+    },
+    {
+      "model": "crn_lite",
+      "point": 4,
+      "seed": 1,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/crn_lite/seed1/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 53414,
+          "denominator": 60480,
+          "accuracy": 0.8831679894179895
+        },
+        "effect_tolerance": {
+          "n_correct": 42563,
+          "denominator": 56796,
+          "accuracy": 0.7494013662934009
+        }
+      }
+    },
+    {
+      "model": "crn_lite",
+      "point": 4,
+      "seed": 2,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/crn_lite/seed2/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 50546,
+          "denominator": 60480,
+          "accuracy": 0.8357473544973545
+        },
+        "effect_tolerance": {
+          "n_correct": 41909,
+          "denominator": 57043,
+          "accuracy": 0.7346913731746226
+        }
+      }
+    },
+    {
+      "model": "crn_lite",
+      "point": 4,
+      "seed": 3,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main_rerun/dependence_only/point4/crn_lite/seed3/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 55563,
+          "denominator": 60480,
+          "accuracy": 0.9187003968253968
+        },
+        "effect_tolerance": {
+          "n_correct": 44414,
+          "denominator": 56427,
+          "accuracy": 0.7871054636964574
+        }
+      }
+    },
+    {
+      "model": "physiograph_gru",
+      "point": 0,
+      "seed": 0,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph_gru/seed0/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 58439,
+          "denominator": 60480,
+          "accuracy": 0.9662533068783069
+        },
+        "effect_tolerance": {
+          "n_correct": 49480,
+          "denominator": 57131,
+          "accuracy": 0.8660797115401446
+        }
+      }
+    },
+    {
+      "model": "physiograph_gru",
+      "point": 0,
+      "seed": 1,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph_gru/seed1/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 58627,
+          "denominator": 60480,
+          "accuracy": 0.9693617724867725
+        },
+        "effect_tolerance": {
+          "n_correct": 51895,
+          "denominator": 56796,
+          "accuracy": 0.9137087118811184
+        }
+      }
+    },
+    {
+      "model": "physiograph_gru",
+      "point": 0,
+      "seed": 2,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph_gru/seed2/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 58446,
+          "denominator": 60480,
+          "accuracy": 0.9663690476190476
+        },
+        "effect_tolerance": {
+          "n_correct": 51328,
+          "denominator": 57043,
+          "accuracy": 0.8998124222078081
+        }
+      }
+    },
+    {
+      "model": "physiograph_gru",
+      "point": 0,
+      "seed": 3,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph_gru/seed3/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 57719,
+          "denominator": 60480,
+          "accuracy": 0.9543485449735449
+        },
+        "effect_tolerance": {
+          "n_correct": 50672,
+          "denominator": 56427,
+          "accuracy": 0.8980098179949315
+        }
+      }
+    },
+    {
+      "model": "physiograph_gru",
+      "point": 4,
+      "seed": 0,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph_gru/seed0/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 57370,
+          "denominator": 60480,
+          "accuracy": 0.9485780423280423
+        },
+        "effect_tolerance": {
+          "n_correct": 46675,
+          "denominator": 57131,
+          "accuracy": 0.8169820237699322
+        }
+      }
+    },
+    {
+      "model": "physiograph_gru",
+      "point": 4,
+      "seed": 1,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph_gru/seed1/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 53149,
+          "denominator": 60480,
+          "accuracy": 0.8787863756613756
+        },
+        "effect_tolerance": {
+          "n_correct": 44097,
+          "denominator": 56796,
+          "accuracy": 0.7764103105852525
+        }
+      }
+    },
+    {
+      "model": "physiograph_gru",
+      "point": 4,
+      "seed": 2,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph_gru/seed2/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 51616,
+          "denominator": 60480,
+          "accuracy": 0.8534391534391534
+        },
+        "effect_tolerance": {
+          "n_correct": 42486,
+          "denominator": 57043,
+          "accuracy": 0.7448065494451555
+        }
+      }
+    },
+    {
+      "model": "physiograph_gru",
+      "point": 4,
+      "seed": 3,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph_gru/seed3/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 54790,
+          "denominator": 60480,
+          "accuracy": 0.9059193121693122
+        },
+        "effect_tolerance": {
+          "n_correct": 45749,
+          "denominator": 56427,
+          "accuracy": 0.8107643503996314
+        }
+      }
+    },
+    {
+      "model": "physiograph",
+      "point": 0,
+      "seed": 0,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph/seed0/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 57731,
+          "denominator": 60480,
+          "accuracy": 0.9545469576719576
+        },
+        "effect_tolerance": {
+          "n_correct": 50030,
+          "denominator": 57131,
+          "accuracy": 0.875706709142147
+        }
+      }
+    },
+    {
+      "model": "physiograph",
+      "point": 0,
+      "seed": 1,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph/seed1/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 57873,
+          "denominator": 60480,
+          "accuracy": 0.9568948412698413
+        },
+        "effect_tolerance": {
+          "n_correct": 48915,
+          "denominator": 56796,
+          "accuracy": 0.8612402281850835
+        }
+      }
+    },
+    {
+      "model": "physiograph",
+      "point": 0,
+      "seed": 2,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph/seed2/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 59582,
+          "denominator": 60480,
+          "accuracy": 0.9851521164021164
+        },
+        "effect_tolerance": {
+          "n_correct": 53498,
+          "denominator": 57043,
+          "accuracy": 0.9378538996897078
+        }
+      }
+    },
+    {
+      "model": "physiograph",
+      "point": 0,
+      "seed": 3,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point0/physiograph/seed3/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 57961,
+          "denominator": 60480,
+          "accuracy": 0.9583498677248677
+        },
+        "effect_tolerance": {
+          "n_correct": 50303,
+          "denominator": 56427,
+          "accuracy": 0.8914703953780991
+        }
+      }
+    },
+    {
+      "model": "physiograph",
+      "point": 4,
+      "seed": 0,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph/seed0/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 57412,
+          "denominator": 60480,
+          "accuracy": 0.9492724867724868
+        },
+        "effect_tolerance": {
+          "n_correct": 44410,
+          "denominator": 57131,
+          "accuracy": 0.777336297281686
+        }
+      }
+    },
+    {
+      "model": "physiograph",
+      "point": 4,
+      "seed": 1,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph/seed1/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 52545,
+          "denominator": 60480,
+          "accuracy": 0.8687996031746031
+        },
+        "effect_tolerance": {
+          "n_correct": 39519,
+          "denominator": 56796,
+          "accuracy": 0.6958060426790619
+        }
+      }
+    },
+    {
+      "model": "physiograph",
+      "point": 4,
+      "seed": 2,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph/seed2/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 50591,
+          "denominator": 60480,
+          "accuracy": 0.8364914021164022
+        },
+        "effect_tolerance": {
+          "n_correct": 43962,
+          "denominator": 57043,
+          "accuracy": 0.7706817663867609
+        }
+      }
+    },
+    {
+      "model": "physiograph",
+      "point": 4,
+      "seed": 3,
+      "path": "experiments/counterfactual_onset_matched/artifacts/host/main/dependence_only/point4/physiograph/seed3/run.json",
+      "counts": {
+        "exact": {
+          "n_correct": 54877,
+          "denominator": 60480,
+          "accuracy": 0.9073578042328042
+        },
+        "effect_tolerance": {
+          "n_correct": 42309,
+          "denominator": 56427,
+          "accuracy": 0.7498006273592429
+        }
+      }
+    }
+  ],
+  "endpoint4_minus_endpoint0": {
+    "control_gru": {
+      "exact": {
+        "n": 4,
+        "mean": -0.08270089285714285,
+        "sd": 0.060454825161269,
+        "ci95": [
+          -0.17889801034268615,
+          0.013496224628400458
+        ],
+        "signs": {
+          "negative": 3,
+          "zero": 0,
+          "positive": 1
+        },
+        "values": [
+          0.0030257936507935845,
+          -0.11101190476190481,
+          -0.13554894179894172,
+          -0.08726851851851847
+        ]
+      },
+      "effect_tolerance": {
+        "n": 4,
+        "mean": -0.1413921478576075,
+        "sd": 0.062305573424073085,
+        "ci95": [
+          -0.2405342188286369,
+          -0.04225007688657813
+        ],
+        "signs": {
+          "negative": 4,
+          "zero": 0,
+          "positive": 0
+        },
+        "values": [
+          -0.06327562969316136,
+          -0.18443200225367984,
+          -0.19814876496677947,
+          -0.11971219451680937
+        ]
+      }
+    },
+    "crn_lite": {
+      "exact": {
+        "n": 4,
+        "mean": -0.08166749338624335,
+        "sd": 0.06637261524858759,
+        "ci95": [
+          -0.18728113547120412,
+          0.023946148698717404
+        ],
+        "signs": {
+          "negative": 3,
+          "zero": 0,
+          "positive": 1
+        },
+        "values": [
+          0.0028935185185184897,
+          -0.1156746031746031,
+          -0.1495535714285714,
+          -0.0643353174603174
+        ]
+      },
+      "effect_tolerance": {
+        "n": 4,
+        "mean": -0.13871639585782905,
+        "sd": 0.06372431487940673,
+        "ci95": [
+          -0.2401160010801985,
+          -0.03731679063545959
+        ],
+        "signs": {
+          "negative": 4,
+          "zero": 0,
+          "positive": 0
+        },
+        "values": [
+          -0.06068509215662243,
+          -0.19080569054158747,
+          -0.19069824518345813,
+          -0.11267655554964817
+        ]
+      }
+    },
+    "physiograph_gru": {
+      "exact": {
+        "n": 4,
+        "mean": -0.06740244708994708,
+        "sd": 0.04259307291738158,
+        "ci95": [
+          -0.13517753085825918,
+          0.00037263667836502645
+        ],
+        "signs": {
+          "negative": 4,
+          "zero": 0,
+          "positive": 0
+        },
+        "values": [
+          -0.01767526455026458,
+          -0.09057539682539684,
+          -0.11292989417989419,
+          -0.048429232804232725
+        ]
+      },
+      "effect_tolerance": {
+        "n": 4,
+        "mean": -0.10716185735600778,
+        "sd": 0.04818496121425818,
+        "ci95": [
+          -0.1838348832492985,
+          -0.030488831462717053
+        ],
+        "signs": {
+          "negative": 4,
+          "zero": 0,
+          "positive": 0
+        },
+        "values": [
+          -0.049097687770212395,
+          -0.1372984012958659,
+          -0.15500587276265265,
+          -0.08724546759530016
+        ]
+      }
+    },
+    "physiograph": {
+      "exact": {
+        "n": 4,
+        "mean": -0.07325562169312169,
+        "sd": 0.06061695332402319,
+        "ci95": [
+          -0.1697107212649348,
+          0.02319947787869142
+        ],
+        "signs": {
+          "negative": 4,
+          "zero": 0,
+          "positive": 0
+        },
+        "values": [
+          -0.005274470899470862,
+          -0.08809523809523812,
+          -0.14866071428571426,
+          -0.05099206349206353
+        ]
+      },
+      "effect_tolerance": {
+        "n": 4,
+        "mean": -0.14316162467207144,
+        "sd": 0.03204710008838071,
+        "ci95": [
+          -0.19415571230774253,
+          -0.09216753703640036
+        ],
+        "signs": {
+          "negative": 4,
+          "zero": 0,
+          "positive": 0
+        },
+        "values": [
+          -0.09837041186046103,
+          -0.16543418550602162,
+          -0.1671721333029469,
+          -0.14166976801885622
+        ]
+      }
+    }
+  },
+  "definition": "Adjacent-dose predicted and true signs; exact excludes zero true effects. Thresholded class is zero when abs(effect)<=threshold, separately for truth and prediction; only nonzero thresholded truth enters the denominator. Cutoffs are numerical sensitivity values, not clinical thresholds.",
+  "scope": "Means of four per-seed ratios, no pooling of cells as independent replicates. Effective rerun replaces CRN-lite endpoint4 seed3. Reads saved verified counts; does not replay unbundled trajectories."
+}

@@ -27,27 +27,27 @@
     "transformed": null
   },
   "README.md": {
-    "source_file": null,
-    "source_kind": "release_1_3_adaptation",
-    "original_sha256": null,
-    "original_bytes": null,
-    "distributed_sha256": "281a1bb300068280b97680a8fcb352dd303bc0c42c198ef00e10ddd04911b206",
-    "distributed_bytes": 37484,
+    "source_file": "README.md",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "281a1bb300068280b97680a8fcb352dd303bc0c42c198ef00e10ddd04911b206",
+    "original_bytes": 37484,
+    "distributed_sha256": "619934b379b20027d5a8551625e02b93d5f168a94e708f8b00e4ad4311766c4b",
+    "distributed_bytes": 40108,
     "transformed": true,
     "transformations": [
-      "Portable release adaptation; historical fingerprints preserved"
+      "Portable release adaptation; original scientific evidence and fingerprints preserved"
     ]
   },
   "REPRODUCE.md": {
-    "source_file": null,
-    "source_kind": "release_1_3_adaptation",
-    "original_sha256": null,
-    "original_bytes": null,
-    "distributed_sha256": "82918c295d60f4ae3a66fdde0122019a4df9231bdf3ff54eb823eb74ec56150e",
-    "distributed_bytes": 29022,
+    "source_file": "REPRODUCE.md",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "82918c295d60f4ae3a66fdde0122019a4df9231bdf3ff54eb823eb74ec56150e",
+    "original_bytes": 29022,
+    "distributed_sha256": "28c8258306be047cc08958c793db4ff22f9bd7f123f36dc42928ad07c5f09d8c",
+    "distributed_bytes": 30253,
     "transformed": true,
     "transformations": [
-      "Portable release adaptation; historical fingerprints preserved"
+      "Portable release adaptation; original scientific evidence and fingerprints preserved"
     ]
   },
   "baselines/METHODS.md": {
@@ -3309,15 +3309,15 @@
     ]
   },
   "CITATION.cff": {
-    "source_file": null,
-    "source_kind": "release_1_3_adaptation",
-    "original_sha256": null,
-    "original_bytes": null,
-    "distributed_sha256": "c93adae1c1b66284c554cd22c8a93dfca5072dcd209177c92f4d1e46f0fd954e",
+    "source_file": "CITATION.cff",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "c93adae1c1b66284c554cd22c8a93dfca5072dcd209177c92f4d1e46f0fd954e",
+    "original_bytes": 575,
+    "distributed_sha256": "58fdf8c764d4afd5e3a2f1ff58700fbe6f0599f83eeb76cf3835cd5225cada3b",
     "distributed_bytes": 575,
     "transformed": true,
     "transformations": [
-      "Portable release adaptation; historical fingerprints preserved"
+      "Portable release adaptation; original scientific evidence and fingerprints preserved"
     ]
   },
   "tools/cinc2012/cinc2012_transfer_eval.py": {
@@ -3504,13 +3504,16 @@
     "transformed": null
   },
   "experiments/counterfactual_onset_matched/README.md": {
-    "source_file": null,
-    "source_kind": "new_release_file",
-    "original_sha256": null,
-    "original_bytes": null,
-    "distributed_sha256": "cf8339f1fc077d74508b80cb88cd97edbf8441f1d322eebc3cae73f1e901c64d",
-    "distributed_bytes": 2654,
-    "transformed": null
+    "source_file": "README.md",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "c1da26af3db327f05abeace084be4a9aa1d203831a22f968975a912bd00dfcc0",
+    "original_bytes": 8662,
+    "distributed_sha256": "3bb7473f21e799241f64131d158eb4823ea80ef0882fae9ded4aaf3d3ea4a6d8",
+    "distributed_bytes": 9264,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; original scientific evidence and fingerprints preserved"
+    ]
   },
   "experiments/counterfactual_onset_matched/artifacts/DISTRIBUTION_NOTE.md": {
     "source_file": null,
@@ -6011,13 +6014,16 @@
     ]
   },
   "experiments/learned_graph_validation/DISTRIBUTION_NOTE.md": {
-    "source_file": null,
-    "source_kind": "new_release_file",
-    "original_sha256": null,
-    "original_bytes": null,
-    "distributed_sha256": "98837a41fac9fc4e3fd2bfa3cd835bd1b9beb21447eb3f9022e817861baef4a4",
-    "distributed_bytes": 1102,
-    "transformed": null
+    "source_file": "DISTRIBUTION_NOTE.md",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "98837a41fac9fc4e3fd2bfa3cd835bd1b9beb21447eb3f9022e817861baef4a4",
+    "original_bytes": 1102,
+    "distributed_sha256": "53f80c846f0a42cfd47832baa7cd3046f5e154d5cb15ab21d5db2358b1e76988",
+    "distributed_bytes": 1825,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; original scientific evidence and fingerprints preserved"
+    ]
   },
   "experiments/learned_graph_validation/PROTOCOL_GRAFITI_P12.md": {
     "source_file": "PROTOCOL_GRAFITI_P12.md",
@@ -6032,13 +6038,16 @@
     ]
   },
   "experiments/learned_graph_validation/README.md": {
-    "source_file": null,
-    "source_kind": "new_release_file",
-    "original_sha256": null,
-    "original_bytes": null,
-    "distributed_sha256": "285de982ffde646d1c36144451477f543b0430f9672546a83c331729535b3682",
-    "distributed_bytes": 2179,
-    "transformed": null
+    "source_file": "README.md",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "1350123708ed5a08db216345d3eb60d070a5a5c12956fad1403f56b563121de0",
+    "original_bytes": 3253,
+    "distributed_sha256": "d521ddb0df41c5d25ac187c2d389affc6932f94b6e30dddd54724e5246ec97c1",
+    "distributed_bytes": 4819,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; original scientific evidence and fingerprints preserved"
+    ]
   },
   "experiments/learned_graph_validation/artifacts/DISTRIBUTION_NOTE.md": {
     "source_file": null,
@@ -6458,24 +6467,27 @@
     ]
   },
   "experiments/positive_control/DISTRIBUTION_NOTE.md": {
-    "source_file": null,
-    "source_kind": "new_release_file",
-    "original_sha256": null,
-    "original_bytes": null,
-    "distributed_sha256": "98837a41fac9fc4e3fd2bfa3cd835bd1b9beb21447eb3f9022e817861baef4a4",
-    "distributed_bytes": 1102,
-    "transformed": null
-  },
-  "experiments/positive_control/README.md": {
-    "source_file": null,
-    "source_kind": "release_1_3_adaptation",
-    "original_sha256": null,
-    "original_bytes": null,
-    "distributed_sha256": "7fd375067d2eb6cccd584ffa6471e2530df03a7239ec09b8f01f0c1e1c01fd2a",
-    "distributed_bytes": 6410,
+    "source_file": "DISTRIBUTION_NOTE.md",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "98837a41fac9fc4e3fd2bfa3cd835bd1b9beb21447eb3f9022e817861baef4a4",
+    "original_bytes": 1102,
+    "distributed_sha256": "53f80c846f0a42cfd47832baa7cd3046f5e154d5cb15ab21d5db2358b1e76988",
+    "distributed_bytes": 1825,
     "transformed": true,
     "transformations": [
-      "Portable release adaptation; historical fingerprints preserved"
+      "Portable release adaptation; original scientific evidence and fingerprints preserved"
+    ]
+  },
+  "experiments/positive_control/README.md": {
+    "source_file": "README.md",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "7fd375067d2eb6cccd584ffa6471e2530df03a7239ec09b8f01f0c1e1c01fd2a",
+    "original_bytes": 6410,
+    "distributed_sha256": "acd75015ae32517c21f0253a30278355d3293ed3b6ffdbdd6e90318c0b8ac3e6",
+    "distributed_bytes": 8574,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; original scientific evidence and fingerprints preserved"
     ]
   },
   "experiments/positive_control/artifacts/DISTRIBUTION_NOTE.md": {
@@ -7840,15 +7852,15 @@
     ]
   },
   "experiments/shared_input_primary/README.md": {
-    "source_file": null,
-    "source_kind": "release_1_3_adaptation",
-    "original_sha256": null,
-    "original_bytes": null,
-    "distributed_sha256": "62aad542ec6b49d5d772e178d869efdaca81c74a53944fc861386322c26c6325",
-    "distributed_bytes": 6229,
+    "source_file": "README.md",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "62aad542ec6b49d5d772e178d869efdaca81c74a53944fc861386322c26c6325",
+    "original_bytes": 6229,
+    "distributed_sha256": "dfb0a05feaf1866179ccb97fe16c435315e6cf8c73b0dff17dad3ff49442bddd",
+    "distributed_bytes": 6769,
     "transformed": true,
     "transformations": [
-      "Portable release adaptation; historical fingerprints preserved"
+      "Portable release adaptation; original scientific evidence and fingerprints preserved"
     ]
   },
   "experiments/shared_input_primary/REPRODUCTION_NOTE.md": {
@@ -10507,6 +10519,1458 @@
     "transformed": true,
     "transformations": [
       "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "analysis/post_hoc/inputs.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "551ca48ed03236e4321537844f213d2ea1d0ac5185d40fb857bfc098292f355a",
+    "distributed_bytes": 15841,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/admissible/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "7ca61ecea8d2d0e55c225f94f52dd043e3ddfd47ef74fc4d5f35760c56542e2a",
+    "original_bytes": 18645,
+    "distributed_sha256": "39942f0eade05b550f0f1984cbd6329125d5c50bba47a6edae5ff82026694057",
+    "distributed_bytes": 17488,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/admissible/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "32551c9b08d32f6f9572746392ec567bd2c9cc26d9d66b8e336959dc270ff091",
+    "original_bytes": 18642,
+    "distributed_sha256": "89f4ab28bb55d6f3dcf28d3ee110e36352d51fc5f4728ee77a013ddec8e55e4e",
+    "distributed_bytes": 17485,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/admissible/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "cd99301b6df2f8a02f81799abdd6f46f357e9e8b6351942d92bfef14725c38b7",
+    "original_bytes": 18635,
+    "distributed_sha256": "ee404e8f584bc0cf002a210684c2094a0a45f6895444777f9ba57aa3688fa5d4",
+    "distributed_bytes": 17478,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/admissible/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "4a5a8ebbba4793848289da55e65ee4200f2c3f970e306ef86002960d13e0e47b",
+    "original_bytes": 18642,
+    "distributed_sha256": "2eac698fac9a814e6296e633676986723878040971800b0d6b46a54c4799b5bb",
+    "distributed_bytes": 17485,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/control_gru/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "0dfa220c6b0ab602eefbeb7fe9e4e58e6db6d7999392d04f77ff30aaddf4f5d7",
+    "original_bytes": 18546,
+    "distributed_sha256": "1bed87ad9a2b9d1e5ec45bae72b7665b8716db0d33446d755d013a68c7c17e7b",
+    "distributed_bytes": 17389,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/control_gru/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "f038e234976f065f715d01addf2fb1b25477774976c051e82a8d7ca027543228",
+    "original_bytes": 18559,
+    "distributed_sha256": "0bc41ccdd319be5c4090c5b99f53be9b67e80ab8b6319157bde10034c730f152",
+    "distributed_bytes": 17402,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/control_gru/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "0d2dd15d173971eff9888b146a7958006c68a0371573516056b5a25f5c3b7b8c",
+    "original_bytes": 18548,
+    "distributed_sha256": "1217098af3f773da4005b42eb78ba8939393276cb89471e4551a6b6f54cb8d41",
+    "distributed_bytes": 17391,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/control_gru/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "c5f0385274211c424da0bcc5c394411fbcdb5d12e723c9d6b68a473ab9436bb6",
+    "original_bytes": 18548,
+    "distributed_sha256": "a599a80f9740dc94fd6595c7d6895e138f4123766f89a947221b3adb909f73f8",
+    "distributed_bytes": 17391,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/none/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "0fca4fe245883b40632c94ac5a4a8ed547676e75034c2cb2bea89b2da880d0e3",
+    "original_bytes": 18557,
+    "distributed_sha256": "c56574f7b8edb1fc2fb3bbee4d695945dc3a31aa42f1347d55fae770f00b800f",
+    "distributed_bytes": 17400,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/none/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "f46e2f28f6741beb3bfe1ad816c4845c6e66d754cc170adbed0ec32f8c84658f",
+    "original_bytes": 18561,
+    "distributed_sha256": "51dff3f20e8d3011bb07c0e5c0a02f5cb0d5561257ae12b35f9d17270247b15c",
+    "distributed_bytes": 17404,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/none/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "07f54b3f5ebca1ef1a1cb60ceed1504325fcd95aecc6c9e79539812e77ca803c",
+    "original_bytes": 18560,
+    "distributed_sha256": "c18e82e3a08d7798323a6f2a041a0327239158521d4114c4bfa552130dcfca83",
+    "distributed_bytes": 17403,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/none/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "59f0abe8c858716f4d64a77f9253708dcf92d7b06e3f118596a46a702f2b068e",
+    "original_bytes": 18559,
+    "distributed_sha256": "577fbaf382d02a4a900ffabd4153b59b47b2661c2da393e58d86e5c3581b7b92",
+    "distributed_bytes": 17402,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/shared_admissible/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "969379396040456e7415b5f90c352601888d1971de1f0157716613cb82b6d648",
+    "original_bytes": 18651,
+    "distributed_sha256": "3b483437cfb9e348bea777d65f8881d239a4039ac4108afa752516a566d014b5",
+    "distributed_bytes": 17494,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/shared_admissible/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "1dfc00edfa802304570254876219e8f3969a4a2eec50c3671d71e27dfcaffd4c",
+    "original_bytes": 18650,
+    "distributed_sha256": "29a6af247b11841be1e32aac08ec8be9062211a3fd4e72ac8a3e627a8b80640d",
+    "distributed_bytes": 17493,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/shared_admissible/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "02fe4bf5134688af3f271b3f3c5773393ba1cd33e6bcc965b4a0e5e4addb6b2c",
+    "original_bytes": 18651,
+    "distributed_sha256": "cea04a16cb9be512c8d2e7def29ad100e3b91e3f648bb3ea6d7551b7ed13a0f1",
+    "distributed_bytes": 17494,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/shared_admissible/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "1c133098bc24802f07858fbe31e9e6d6afd2800de30255b0b1cac978bc783a10",
+    "original_bytes": 18653,
+    "distributed_sha256": "465e3d4ae86ecad9f38e2029de7330c02a3dc2247d0abc32b8ba8a07ca94c2f9",
+    "distributed_bytes": 17496,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/shared_none/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "9d5043240060aa64c313e6206637ad82714e101ae079751d98da8323f774419b",
+    "original_bytes": 18568,
+    "distributed_sha256": "b415f3dcd8c4a3ce9930abefcb2866e8658634fb24aaad541f1debbe955c5ee2",
+    "distributed_bytes": 17411,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/shared_none/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "09aa0cf20a6b931e5a0699c875c07060407bf09a9d4166f61054234ad50c377a",
+    "original_bytes": 18575,
+    "distributed_sha256": "695921819a4b6b776b3364912e95222d1fd963765ec1eba82cd823e1fe83e412",
+    "distributed_bytes": 17418,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/shared_none/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "54329b868625b7278c96b99a125e9dd5ce56259c9b0baec9f43153349faed560",
+    "original_bytes": 18586,
+    "distributed_sha256": "1d741a6c9376c0e98ec712b03a2b34f14b38cf7cf520c60785d933102a4a0b30",
+    "distributed_bytes": 17429,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_1/shared_none/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "4910cf11fcaefd2805bfdb7f7580651fb55d389755340068105151f643abe2fe",
+    "original_bytes": 18581,
+    "distributed_sha256": "2fb6a8553f28d1a8297c960543907065c40b16d53caf59e9193bc590dc1ec6b9",
+    "distributed_bytes": 17424,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/admissible/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "dc97efbb4682093344808adc39784ef2fa9cab5863975a001873793595d6c766",
+    "original_bytes": 18624,
+    "distributed_sha256": "a58134b7caa0d7e5c2d00ce6ec8a473236cd7154c49ba98d0db0ea80f4cef042",
+    "distributed_bytes": 17467,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/admissible/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "1135f06a76993b18ca042d8ea822033c18da3ebcc101d409f9ee6fcc4721ab5e",
+    "original_bytes": 18620,
+    "distributed_sha256": "626dcd839c59b34547944b701f0f9d9e813e1601942546429122fd06171c4f61",
+    "distributed_bytes": 17463,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/admissible/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "755a7e6240f7dbbb6984b00628377976e40ff757cbc7d5d631ff7f372c07fcba",
+    "original_bytes": 18605,
+    "distributed_sha256": "0fd0c5d6cac2e386ec55e21b56b6db6e05b06a74f8d344bc569ac74119c73c13",
+    "distributed_bytes": 17448,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/admissible/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "0c33f7ec11a4a6efd28b79dfa0efb238be87608fb3c57d03653c1405b032af6b",
+    "original_bytes": 18620,
+    "distributed_sha256": "8ef843bab0b69b4ae7e4c17e8007e33e3ac0b791443d48a71c420fb1e91d3bf8",
+    "distributed_bytes": 17463,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/control_gru/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "59b6b01fdbf7ec587afbecf50400adbc045c6d9a68f4ea2835ece89500a25c48",
+    "original_bytes": 18531,
+    "distributed_sha256": "b04439750d222b4f4f5f721c73654ef97f96873a162f58f393f9ce903285c937",
+    "distributed_bytes": 17374,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/control_gru/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "616d436521f593751543ff010d448a05bb3bd82cf3fbc7fedcb3631b6059a52a",
+    "original_bytes": 18541,
+    "distributed_sha256": "ffc855bf0b89f420686b2196e08164226031a37fab6d0dd36b9b0192b4bd8184",
+    "distributed_bytes": 17384,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/control_gru/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "627b7982a63962e4e7d7d7eb95b87f307e63fa599d4c7f02e0c43f956b18f9d7",
+    "original_bytes": 18527,
+    "distributed_sha256": "9e1186791bc6133aeb56116878a8ef344b6395da632939648c97e77bfb76a69d",
+    "distributed_bytes": 17370,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/control_gru/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "fc28a2421801ce63b626416dc9c0b3ac3af7a186de9425f3aae1dbc4353bdf29",
+    "original_bytes": 18526,
+    "distributed_sha256": "e5481f77e5c8260bedc9179340a525e4278a9deb160767d7a7c34958ce9261cc",
+    "distributed_bytes": 17369,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/none/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "29822ad03fccc036b029fdb492b1415276cf7e6cb6b63b3a70109b9b6849facb",
+    "original_bytes": 18539,
+    "distributed_sha256": "763e59c13d5f402a6b4585a9de7e050513327cc12750ded9501cab315609780a",
+    "distributed_bytes": 17382,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/none/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "884a0a145bf22243abeab1c56d9f08f8c79ffcd59a9e5fb06f41719d02ba60d1",
+    "original_bytes": 18539,
+    "distributed_sha256": "fd0d2ec9689e9bb36894fb53e0ad9dbf8a0048a282a5d56fb78150e4e1d91466",
+    "distributed_bytes": 17382,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/none/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "fbe73144756d7a0b03c72d7fb3ac76d950f31322e4e3ffd040dc54ae2e52bf2e",
+    "original_bytes": 18543,
+    "distributed_sha256": "24e715bfb4d4580a6714f58d183d59e92f061d93d9180b6031de98c85ffe9bcb",
+    "distributed_bytes": 17386,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/none/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "3598c51109eca14eef6bd1556677323788a84c9622602e7759ffa68daf50018b",
+    "original_bytes": 18536,
+    "distributed_sha256": "26551a7e67d807e39dbf0ca140970ade73dd167afdb1f6cc747776c22bae2ac0",
+    "distributed_bytes": 17379,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/shared_admissible/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "729ff05669574c2b164d58dd3f3765c371473d9dcf92ebc05f632e7e24b82a09",
+    "original_bytes": 18636,
+    "distributed_sha256": "f6523f4f9b7488f3ca5d23d4e2e14c84c563bd6b1854637604b067ade0bce4a1",
+    "distributed_bytes": 17479,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/shared_admissible/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "c52668c4ffefdf8b2fddfe605ee43712b8c0e5c7e9a3542cdb9c63b6e3761d52",
+    "original_bytes": 18633,
+    "distributed_sha256": "a2bb4c04a51b46692010bd24f76328f6b7239aa9addacf5af01d934d88648f1d",
+    "distributed_bytes": 17476,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/shared_admissible/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "e4b9649423db2065251474a32826635550063e221142bbc2e2744c71746a8a29",
+    "original_bytes": 18631,
+    "distributed_sha256": "e4978b974eef30b047a9bac61ea4bbebab09c2c62515482035cdc281883a9743",
+    "distributed_bytes": 17474,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/shared_admissible/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "f89c5a516ee9c63f28a88d018495f08618101e740907383739ddab720e8e44f9",
+    "original_bytes": 18638,
+    "distributed_sha256": "08ebdcbab4d7efb90143215500c797853b8a143c776f008b39001149e98194b3",
+    "distributed_bytes": 17481,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/shared_none/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "80174cfd3c7bfe7537619a043e55cd5c2b3a8208cb638c07e20ce7d6d9d84531",
+    "original_bytes": 18565,
+    "distributed_sha256": "55f82c14383c0b7292d666646c392395f3fdc1584f213f54dd14f8487b5d036e",
+    "distributed_bytes": 17408,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/shared_none/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "dee9836099117cb0e98e2cc2c48cf93b43278b3ed2427096347a5cdb4ba87cde",
+    "original_bytes": 18568,
+    "distributed_sha256": "044174eaeb6d4e9914cef1a34bd3116ee54a05c9d50728876f51289054c484e3",
+    "distributed_bytes": 17411,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/shared_none/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "b60446270d03e65ea5f92bea7f7b117d8a99c5504e995fd6358cc7347c4916d3",
+    "original_bytes": 18570,
+    "distributed_sha256": "9face4017b9da31120478d3af867b4da7910daa0a1f434a946a5ea35ba3ac09c",
+    "distributed_bytes": 17413,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_2/shared_none/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "ff9b2971fb042079d1a3252eec7faba37a05c919736aaccf882d65e351a0e0b7",
+    "original_bytes": 18563,
+    "distributed_sha256": "77b65d3b9a157bb7dcded6f8ee40fad7b273e46f8db44c6e26d964a053f48a9b",
+    "distributed_bytes": 17406,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/admissible/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "309c17a9a817973c28b3c067a71dc57ba9f79ab429165c6eb396801292fb584d",
+    "original_bytes": 18621,
+    "distributed_sha256": "c281a27ef556110ada22076f103259575914e14e6524df0500fa3c12d0a435a0",
+    "distributed_bytes": 17464,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/admissible/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "da96d802648c4289ed2c70d1ef0d7b15933cdd1da8db6923f635ec73a66cfa6e",
+    "original_bytes": 18614,
+    "distributed_sha256": "0a72a269c7b8a21cfe4f5a0e80b8e0a5aea5b672fa5a9fd05214b8dce324a185",
+    "distributed_bytes": 17457,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/admissible/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "9ad1d9ba2307b492bb16edf7f8491014351ef0c141e87a91fdb5d24c376b2a2f",
+    "original_bytes": 18623,
+    "distributed_sha256": "ce2253a09e9671fb987824b468f093b5eefe866a62dcb5a98f9468ce7732def8",
+    "distributed_bytes": 17466,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/admissible/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "c62cd6bb25ce21d4a39d275b9420519f85eeacc69e4dcf985e44f8194bb6dada",
+    "original_bytes": 18631,
+    "distributed_sha256": "63d3bb8ca449281c5b1da96f0c6a8b21e3cfd53710d6ad4171851f1e1499886c",
+    "distributed_bytes": 17474,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/control_gru/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "f866865e7c4927364559b5deb9e5f21efd6dedbebf821d8618bb17f726704443",
+    "original_bytes": 18534,
+    "distributed_sha256": "e6359ee62ae9d7d1b4f3969cfed0086b4fc1cbc7fd28a8f5d4afa86da7b12237",
+    "distributed_bytes": 17377,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/control_gru/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "496d8c206975feb66592c3975155ec047120217727266c62a795090056713d76",
+    "original_bytes": 18520,
+    "distributed_sha256": "0c59ade1137154deccd0daf33129c343a360ed89e284d3565a6793a3feeaa91e",
+    "distributed_bytes": 17363,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/control_gru/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "1ee0a8e0dff7400bd000b9e7a3f7a3ac2a16369ff55ef9ab3a3bf8994282cac6",
+    "original_bytes": 18523,
+    "distributed_sha256": "2161398a1201f21e228a60de0573db51084db953647711c22dfd48a65c1b52a4",
+    "distributed_bytes": 17366,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/control_gru/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "64170e6e47c4ca47e44845f9815ff624c0d3dd11290b33dd44dd8f9b0350dbe6",
+    "original_bytes": 18543,
+    "distributed_sha256": "f7eb8f39c12201e9a4d07b855e0fb02864c53d56bfe33538af79a59f4c7a5ee3",
+    "distributed_bytes": 17386,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/none/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "71d60f7b87c2412aef6f4d769cbdb7f0e4042e11218c386f7ed3474c4c30e176",
+    "original_bytes": 18545,
+    "distributed_sha256": "7ee5ae64b72188411234828b2e8f5b414788d0990d2650a20bb77bc7675239a0",
+    "distributed_bytes": 17388,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/none/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "78feaa446fa0b540caa8e05e0d3ff16b4a32d5d69d5776a9c961812668f03cff",
+    "original_bytes": 18536,
+    "distributed_sha256": "f12a57d54c26d5d6871aba517b0d9c530bc3af924f3ed6f23b136d6f0901297d",
+    "distributed_bytes": 17379,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/none/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "9d51537ac69c6c05fcec346d64169545fa079c83dabc0fc669c05b47c4975457",
+    "original_bytes": 18534,
+    "distributed_sha256": "19981309f66ef73c0a462ba7de2563ed1903f1c84daf3b5f67a54f5fa2e3b7b2",
+    "distributed_bytes": 17377,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/none/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "3675cc71c599bc511a4ee85c4f996e552ff6ff773bb9716e8ea16468f8225131",
+    "original_bytes": 18532,
+    "distributed_sha256": "a731aeaac42545ef5a65ab3787c0bee97fc8805f141504c9a19c50e26eeaab2a",
+    "distributed_bytes": 17375,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/shared_admissible/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "38050e1ef3f14ea639a7039d0a1056e8a7c72039d197df5741f5004c762c853b",
+    "original_bytes": 18636,
+    "distributed_sha256": "ca9db030a1aaaf4c1087f4d778449876bd1b2f8632db493e641ab53b5f634c32",
+    "distributed_bytes": 17479,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/shared_admissible/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "7f43d6f7ec48734851e6a1d19f5bd952f72670d2fa660f03a1db1892c713a8e4",
+    "original_bytes": 18628,
+    "distributed_sha256": "6c2c2091c2fbf50ea658fa05313410138c3316d400be2287eecf655e9720fda9",
+    "distributed_bytes": 17471,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/shared_admissible/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "c6aebefdbcd02d5e7e931c504564bde46164789bc7d1b7c60a5f0d59b1e926be",
+    "original_bytes": 18626,
+    "distributed_sha256": "5b897326e92b6b98215781f418278419aa21af7678582bd2d67f435603b1052d",
+    "distributed_bytes": 17469,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/shared_admissible/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "99af355a22783732000cbe0751bdd1c1db3e847be502af378c608f9f530dceb0",
+    "original_bytes": 18636,
+    "distributed_sha256": "a665028983b59034b0ff50214513d1403dd8c058f27d831f763a9496e8476054",
+    "distributed_bytes": 17479,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/shared_none/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "b97c69d9c22b69fffe4def6ead4edf2bef70b702e83a24bb4b3a11c24fcb9cac",
+    "original_bytes": 18565,
+    "distributed_sha256": "e54aa60396c6f87078b0afca6e2caa5cdb837d181d7755b47434d383a2c37901",
+    "distributed_bytes": 17408,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/shared_none/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "f1ecc7be999bcc79e728ec11f028b119e7e6f05945831b3e4b50fa5e8d7034a3",
+    "original_bytes": 18561,
+    "distributed_sha256": "78ff1ab440d30aeba08b8120d8692b81ffde6f012127e23eb977dd6a1af7e89a",
+    "distributed_bytes": 17404,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/shared_none/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "cf382b3d996d977d7ee42fbcb2174da2c6bda3d4c4fec101b95e5f462f3a51d2",
+    "original_bytes": 18561,
+    "distributed_sha256": "dbd33f591f551e1e492712db5848a580b47357e78b5c9c98819f13f5e63d6396",
+    "distributed_bytes": 17404,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_3/shared_none/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "e057829527e2662a0d4587a70cecf09ee47ce9dd0b55b8f45480ddba5b3db23f",
+    "original_bytes": 18556,
+    "distributed_sha256": "f235c5ff0a4868be81daea6de42cd2c2ac2783ef69b56e301859cc3139aa79f0",
+    "distributed_bytes": 17399,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/admissible/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "a925e7d407c7d966ef7aaf93d024aea0b92c743f35d5f78c26ae9ae9ca0babc2",
+    "original_bytes": 18618,
+    "distributed_sha256": "b22b626e0fdc594e048c38898121866d2bcb700198a7f4c14b98afc22068e3b2",
+    "distributed_bytes": 17461,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/admissible/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "3766b957d7c954704313028d659b6ce5ac7256eb70e0b6fd7b7373edde88d967",
+    "original_bytes": 18616,
+    "distributed_sha256": "f3e7ea39e008d3c06874818cc97fd7f1b9a29d634e1aa42e3b4a510590835f61",
+    "distributed_bytes": 17459,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/admissible/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "8d07b7ded5e2cafb7837b815fe5d36b7762eed6645f8b42caaa6c211c0f5a0ca",
+    "original_bytes": 18622,
+    "distributed_sha256": "fcd9b2c09f3bfcf6403cc5c9093b46c474d91766a507833e3e59b43d584c9159",
+    "distributed_bytes": 17465,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/admissible/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "ab42ee6cc5ff69d83e7c8dadab4f7788ddb8f747c7f6f1e3299c537a8a5f669e",
+    "original_bytes": 18613,
+    "distributed_sha256": "c8036bf19fcbb9362e629af15020bd82f010403c289b51e42892eb5de5a1aad9",
+    "distributed_bytes": 17456,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/control_gru/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "5352c77d12cf750e73c0c86fc4e1c4d7340f5621c789e92630cb65f1395cbe28",
+    "original_bytes": 18533,
+    "distributed_sha256": "1febf554d6e6ace8970e68f0e0b9bcc28a52ce745227752d0dd3bf8c79b0ba82",
+    "distributed_bytes": 17376,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/control_gru/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "80ddb38177678821544797d51d4cd24f896c88bbd5804a75d25935268bb83571",
+    "original_bytes": 18530,
+    "distributed_sha256": "bc1ede76d92b6a216406a5dd8b2cae94d30aba7845eceec2bbfdb9973aa6ccea",
+    "distributed_bytes": 17373,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/control_gru/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "2060ac01b0c9b39c393f189865563c7709f93adafa3aaa352d5ca7ce34a2c9cb",
+    "original_bytes": 18534,
+    "distributed_sha256": "a13cb7211f113a2de596a0f007178931807f04abbb085bffa36eec2e2cca0249",
+    "distributed_bytes": 17377,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/control_gru/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "b7b2f432cc6a31ac09ab244bd86821723d2ae892f157ecc929df09f34e234e35",
+    "original_bytes": 18535,
+    "distributed_sha256": "8ca280730b3a2dc6f006fb4e9d2773f1829a09a92c217502faa8d7d8e6941f71",
+    "distributed_bytes": 17378,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/none/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "e664da583889e1c0deb096fb94ac72015ba33c566dc69c2872b4a90f25541e7f",
+    "original_bytes": 18531,
+    "distributed_sha256": "e8ae81bf4766795e492c1a7386dc7b19ca6c5d055e20220b5735b0df903a4e1f",
+    "distributed_bytes": 17374,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/none/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "1c2ef1c9801891c2a8a6e0b7097a9ca5edbfedc1cb3c556dcbc1da42f3fa511e",
+    "original_bytes": 18529,
+    "distributed_sha256": "926c9cbd35471e0b3782bffa5ebcac06e1dabfa8aa4d6956d59443a8c97a5189",
+    "distributed_bytes": 17372,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/none/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "9862d48beb84773c7aa52d3555c7592cb5d2f8dfed22b2981ed6d0a63ad95a3b",
+    "original_bytes": 18542,
+    "distributed_sha256": "757522c26fc610f8c1bbc2cfcfca5b15ded4229eb457c7c891b0769fd2e79508",
+    "distributed_bytes": 17385,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/none/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "ad9c62db6f5949df952e30d4471a18405ae900cc248eda9b25062f39cedc9e4b",
+    "original_bytes": 18536,
+    "distributed_sha256": "1c10987a6bf098443c01c044970d8a062278c6e502e95fe3d58751ea3df400d4",
+    "distributed_bytes": 17379,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/shared_admissible/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "3b006424fb1999e7d07ea725ed887cbe3b43b95a6f0602bdd648905407b17771",
+    "original_bytes": 18638,
+    "distributed_sha256": "b23d16d1430454bb76a897d553abc08e5e15d66db987a2167d282d9cb53eba47",
+    "distributed_bytes": 17481,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/shared_admissible/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "5cf1ddc704df19314ba3d0c524e2eb5b25d9f9f157cbbb03789a7009b90e2a00",
+    "original_bytes": 18633,
+    "distributed_sha256": "cc78eb4ba88d06042c8a9b5c79cb994a64d98df81aae65eef6f4efaa6ab69698",
+    "distributed_bytes": 17476,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/shared_admissible/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "666b6fb8e80524bd11cbc70fe8be76daf90ff46718370844050c58dfde4bac9f",
+    "original_bytes": 18639,
+    "distributed_sha256": "a12135df88e0ba30bf90630fd9ea93391c17ccf08157199b6c52164b8aaeb513",
+    "distributed_bytes": 17482,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/shared_admissible/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "63e9392146a7c2ac579f222774dff4b00b3d45ff0a3a5dddd85b47c3f1b57962",
+    "original_bytes": 18640,
+    "distributed_sha256": "f6185a462dba777b9ab69c36fcc452efd1f1b9edce1a4e494d00c35ba0c3742c",
+    "distributed_bytes": 17483,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/shared_none/seed0.json": {
+    "source_file": "seed0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "75200d41b70f0ec9560045b0c98490af571c1850d05a1602832a7c75f0870d67",
+    "original_bytes": 18555,
+    "distributed_sha256": "764c7cc8d942beb6a8ddb9e4e8495fbb81520d3fb6d72e873ff1b4ebec5f91b0",
+    "distributed_bytes": 17398,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/shared_none/seed1.json": {
+    "source_file": "seed1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "25c1a97afe3f2d2e45eb2295a6986b25bff2615163c602bdde43f8ca6c74d0e4",
+    "original_bytes": 18552,
+    "distributed_sha256": "9c7bb4e568d4ad678b2a403371b71b6d51129b85a7c7138fd7c4e8ea2fb6c4ca",
+    "distributed_bytes": 17395,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/shared_none/seed2.json": {
+    "source_file": "seed2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "278a37d92dcdfc9ed882e1351a7ca03ab3244967fe476fca79527265f53105b6",
+    "original_bytes": 18559,
+    "distributed_sha256": "5de37c5d966d9bc0626f750bfbe9af0b1ed8d0679960233db881fb0afbcc21e2",
+    "distributed_bytes": 17402,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/records/population_4/shared_none/seed3.json": {
+    "source_file": "seed3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "8b2943598738c80156956e83cf9f053d1a1a2eb98f2aa1948930ecc97828d0e3",
+    "original_bytes": 18556,
+    "distributed_sha256": "5de2f9125eba30db3b59443a2bc5369e1f54ff534c1360e8ea5c463fe446ea19",
+    "distributed_bytes": 17399,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/learned_graph_validation/artifacts/learned_cuda/grafiti/seed0/run.json": {
+    "source_file": "grafiti_learned_s0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "e589f1d4cb254d49f7dd530de28b3fc42c699d8abdb412ef8297cb50fd7cd457",
+    "original_bytes": 14576,
+    "distributed_sha256": "35c0947d8036125d4b8107deb1d37e440515f862816b6c075dee33e274e8e72b",
+    "distributed_bytes": 14089,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/learned_graph_validation/artifacts/learned_cuda/grafiti/seed1/run.json": {
+    "source_file": "grafiti_learned_s1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "38a390ef3749b3a33aefe5a268970edab8f9259c6a6f607c20afbc5bbe1de99c",
+    "original_bytes": 14579,
+    "distributed_sha256": "d43af53b27c5474ba99de900937c051d0eb68edd89eef628839f67d0b75a5236",
+    "distributed_bytes": 14092,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/learned_graph_validation/artifacts/learned_cuda/grafiti/seed2/run.json": {
+    "source_file": "grafiti_learned_s2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "2737794b39520541025dae98a142588aa3d73659623cd5d507ca3218f90e747a",
+    "original_bytes": 14574,
+    "distributed_sha256": "f345642be13eef99e9f07a5cc40c54394196801b74d76a65a8b9adbcbda7585f",
+    "distributed_bytes": 14087,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/learned_graph_validation/artifacts/learned_cuda/grafiti/seed3/run.json": {
+    "source_file": "grafiti_learned_s3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "8858000d2f40e8fcfc6f307cb24b1ca8f1c7a1c0df101f9b6b9be1a2051dc277",
+    "original_bytes": 14587,
+    "distributed_sha256": "0e995fc61412f6ddadb6c13301332818d70ca3974d6ae9faef28e27a2d053569",
+    "distributed_bytes": 14100,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/learned_graph_validation/artifacts/learned_cuda/tpatchgnn/seed0/run.json": {
+    "source_file": "tpatchgnn_learned_s0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "ed4b0d8b80e070381f0d4cca318998c897a50da73ca854627cfd5ce36e168e54",
+    "original_bytes": 14711,
+    "distributed_sha256": "bb40748ffc197817691e46ddf5a40b5fc16a7096f111719bcae5ddfa94d3dc10",
+    "distributed_bytes": 14224,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/learned_graph_validation/artifacts/learned_cuda/tpatchgnn/seed1/run.json": {
+    "source_file": "tpatchgnn_learned_s1.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "28c1cabd2bc68344abac0eade503c77dc12e9c7c4de0654b604f0c67b8369510",
+    "original_bytes": 14718,
+    "distributed_sha256": "65769e323753522b7422aab82a3d182e53e84d812b29c81fedd58501340242c9",
+    "distributed_bytes": 14231,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/learned_graph_validation/artifacts/learned_cuda/tpatchgnn/seed2/run.json": {
+    "source_file": "tpatchgnn_learned_s2.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "a0aa78613640e15c8b445efa4cc67c370b8cfeea9302ad55466f10926f5c910a",
+    "original_bytes": 14707,
+    "distributed_sha256": "4c2bf6ed35e2d6eed16b43b9fef45322522372af68357df161ce51d3893410f8",
+    "distributed_bytes": 14220,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/learned_graph_validation/artifacts/learned_cuda/tpatchgnn/seed3/run.json": {
+    "source_file": "tpatchgnn_learned_s3.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "df1b23601c0faccdacaadb7c2f4fe3f526b858823f5a57e74f13e033781a4a2f",
+    "original_bytes": 14717,
+    "distributed_sha256": "db4b63fcd785a2d823662a39610e56ec6cb7a34a71e74e38a362caf2ed6fc75a",
+    "distributed_bytes": 14230,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/populations/population_1.npz": {
+    "source_file": "population_1.npz",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "18c66cbe848b894e39ca9cdf79b5df8dbc56eeeb862cad3abfb306dc9b8f0dd3",
+    "original_bytes": 1988955,
+    "distributed_sha256": "4d7bebfda2f12facb20a7fa229f32e4443560947b1f1f99633d754649cbd8845",
+    "distributed_bytes": 1988808,
+    "transformed": true,
+    "transformations": [
+      "Synthetic arrays byte-identical; only embedded metadata string paths relocated; historical archive hashes preserved"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/populations/population_1.manifest.json": {
+    "source_file": "population_1.manifest.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "af6e3b64a1c15d6cbd5f9d9558c664dd90f5b8572eea680abce3b64102ede335",
+    "original_bytes": 6493,
+    "distributed_sha256": "ef703cd6310424bf37e18dc03cde4836dcd84c9f93739c083c66cd05c2d034f4",
+    "distributed_bytes": 6011,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/populations/population_2.npz": {
+    "source_file": "population_2.npz",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "9f818738d44ea2836fb5ac6dc43ae35806bffe054d1da242661f0b496c319106",
+    "original_bytes": 1988328,
+    "distributed_sha256": "c15b97825280b832b3d098c28c98210597512c9f75cab992b78fc1e787f4fea6",
+    "distributed_bytes": 1988180,
+    "transformed": true,
+    "transformations": [
+      "Synthetic arrays byte-identical; only embedded metadata string paths relocated; historical archive hashes preserved"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/populations/population_2.manifest.json": {
+    "source_file": "population_2.manifest.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "82d89b6977693fa069ce8861806d7edfef2fece580caff9bc1ae9d5e2201dc79",
+    "original_bytes": 6473,
+    "distributed_sha256": "7b8efb86ab89574aed1fd8f3375cb369ce502a3b2e97541780046583805b8c1a",
+    "distributed_bytes": 5991,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/populations/population_3.npz": {
+    "source_file": "population_3.npz",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "5fb7821201d852922a86a5547437493538dbe2242bbd6d374775a823a2984e78",
+    "original_bytes": 1988035,
+    "distributed_sha256": "4a01341464b66585f587c5732d152fffb14bc7e91cd79c73f347ca48cec079f3",
+    "distributed_bytes": 1987887,
+    "transformed": true,
+    "transformations": [
+      "Synthetic arrays byte-identical; only embedded metadata string paths relocated; historical archive hashes preserved"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/populations/population_3.manifest.json": {
+    "source_file": "population_3.manifest.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "52afbea841f8205d4e23605599072d2bd18bacee38e9864394581dc1d1396886",
+    "original_bytes": 6474,
+    "distributed_sha256": "93081f95beb1df9163e67f2ef8e3126a2a6bf7870847a1dfb754ada96d8a5de2",
+    "distributed_bytes": 5992,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/populations/population_4.npz": {
+    "source_file": "population_4.npz",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "9f45d1b9468553a58e7cbb35e02be5fb193173906fdec429276c5f462630227c",
+    "original_bytes": 1988228,
+    "distributed_sha256": "b8a9f3e3b0326dc7af47d38c5796c94689e418fa5940ac87270820cf0a203041",
+    "distributed_bytes": 1988081,
+    "transformed": true,
+    "transformations": [
+      "Synthetic arrays byte-identical; only embedded metadata string paths relocated; historical archive hashes preserved"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/populations/population_4.manifest.json": {
+    "source_file": "population_4.manifest.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "724e2114d292e6420ffafff621b51c45b8d2e7cda741771d0ca0e7ad1d34c990",
+    "original_bytes": 6473,
+    "distributed_sha256": "75fbf889186b442083aad92f15766d8ef5a9316caac47ea2534577c8f3bf61db",
+    "distributed_bytes": 5991,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/populations/seed0_reproduction.json": {
+    "source_file": "seed0_reproduction.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "59546b12f574a5d8d0f1ca2d3a194a01ea83ab1d22624af25fea93f5c3ebef7b",
+    "original_bytes": 3465,
+    "distributed_sha256": "cc635c061f6473f44b6a22f34ffc64bd1548258835f10967b0083c0b5d28a756",
+    "distributed_bytes": 3193,
+    "transformed": true,
+    "transformations": [
+      "String paths and workflow labels relocated recursively; all numerical, Boolean and null leaves unchanged; historical hashes retained"
+    ]
+  },
+  "manifests/release_1_3_1_inputs.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "b2dba492b075c16548ef96894daef671f47748324541b1ad926571874c8786f7",
+    "distributed_bytes": 52001,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "analysis/post_hoc/stay_A.npz": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "c93584a32910ee46bc0eaa9b4f61fd0d789f322f91704b21609769903af96949",
+    "distributed_bytes": 200434,
+    "transformed": true,
+    "transformations": [
+      "Extract aligned SSE and target counts only; discard stay identifiers and other fields; SSE float32 values represented exactly as float64; seed order 0 through 9"
+    ]
+  },
+  "analysis/post_hoc/stay_B.npz": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "e503ca3e157d08ca81c439a2569a014a91c953feb627019d3d84d6a3331823bb",
+    "distributed_bytes": 1251343,
+    "transformed": true,
+    "transformations": [
+      "Extract aligned SSE and target counts only; discard stay identifiers and other fields; SSE float32 values represented exactly as float64; seed order 0 through 9"
+    ]
+  },
+  "analysis/post_hoc/stay_manifest.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "0aeb8135726769f8cafb2f847165c4363adfac2f4c1ecbf9a504dbd1d64da355",
+    "distributed_bytes": 8508,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "experiments/learned_graph_validation/official_code/grafiti_fold0.json": {
+    "source_file": "grafiti_fold0.json",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "0a01931c540ccbef6a6d4706dba24821349d5d5386eb5e03383820a031ac94a5",
+    "original_bytes": 6178,
+    "distributed_sha256": "0a01931c540ccbef6a6d4706dba24821349d5d5386eb5e03383820a031ac94a5",
+    "distributed_bytes": 6178,
+    "transformed": true,
+    "transformations": [
+      "Already sanitized source bytes preserved exactly"
+    ]
+  },
+  "experiments/learned_graph_validation/official_code/grafiti_fold0.log": {
+    "source_file": "grafiti_fold0.log",
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": "e8abe982f732d051e99d2900fdf42e75e511973ed4374210139a9f8857b77811",
+    "original_bytes": 2114714,
+    "distributed_sha256": "e8abe982f732d051e99d2900fdf42e75e511973ed4374210139a9f8857b77811",
+    "distributed_bytes": 2114714,
+    "transformed": true,
+    "transformations": [
+      "Already sanitized source bytes preserved exactly"
+    ]
+  },
+  "experiments/learned_graph_validation/official_code/README.md": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "964cb797b7532a610f10023fec3733b190ebf1d5a7e8a49bcbbabcf1bfc6e420",
+    "distributed_bytes": 940,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "release_1_3_1.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "e4dc0b63460ab832305783d8e1efdcd4ec28ca1b97cee27eea03d4e83523c721",
+    "distributed_bytes": 5414,
+    "transformed": true,
+    "transformations": [
+      "Portable release code or deterministic output from released inputs"
+    ]
+  },
+  "experiments/positive_control/read_s1.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "e2b873bc8c33a886714958384e7bdcec7ac316645f6ba30f9a1c4c80b531a4ca",
+    "distributed_bytes": 6743,
+    "transformed": true,
+    "transformations": [
+      "Portable release code or deterministic output from released inputs"
+    ]
+  },
+  "experiments/learned_graph_validation/read_s3.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "32238ad62dbb1f97b40520cde8418a3bbf213db61376d9134b5ac683892371d6",
+    "distributed_bytes": 3877,
+    "transformed": true,
+    "transformations": [
+      "Portable release code or deterministic output from released inputs"
+    ]
+  },
+  "analysis/post_hoc/stay_bootstrap.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "8eb2e4c7b6f190722d6366a34650897acda1eda6c84e8d2d187b7255a3b8d4c4",
+    "distributed_bytes": 4306,
+    "transformed": true,
+    "transformations": [
+      "Portable release code or deterministic output from released inputs"
+    ]
+  },
+  "analysis/post_hoc/read_post_hoc.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "662bc0332df9691be55e0a859b2c160663269eb05b657ab1bb07f3c983167c37",
+    "distributed_bytes": 10043,
+    "transformed": true,
+    "transformations": [
+      "Portable release code or deterministic output from released inputs"
+    ]
+  },
+  "experiments/positive_control/artifacts/population_replication/summary.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "97c4388d19944af84a242c2ba8ddeb7040614ee9aa4d8a4e24aa60284f136c7f",
+    "distributed_bytes": 136200,
+    "transformed": true,
+    "transformations": [
+      "Portable release code or deterministic output from released inputs"
+    ]
+  },
+  "analysis/post_hoc/input_access.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "f5d15a4c200ff2cbc73db53173e3657714b8137e334e1bcdccc9f03acf3a71e4",
+    "distributed_bytes": 1681,
+    "transformed": true,
+    "transformations": [
+      "Portable release code or deterministic output from released inputs"
+    ]
+  },
+  "analysis/post_hoc/stay_bootstrap.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "4c4f7a70e7cd5d3939535ee8f11776e270456d48bc1a3bd7d22f5153a591dae7",
+    "distributed_bytes": 129079,
+    "transformed": true,
+    "transformations": [
+      "Portable release code or deterministic output from released inputs"
+    ]
+  },
+  "analysis/post_hoc/equal_organ.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "ec27cbeb3a58df233889ca499a01ffff5b7133159063b72b7b6fefa328fe9dc0",
+    "distributed_bytes": 5212,
+    "transformed": true,
+    "transformations": [
+      "Portable release code or deterministic output from released inputs"
+    ]
+  },
+  "analysis/post_hoc/treatment.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "0f35f0b9aba0ae5ee0ff97a20c7fc72781706e91dc4a32ba682e33ab8c55a4b0",
+    "distributed_bytes": 20824,
+    "transformed": true,
+    "transformations": [
+      "Portable release code or deterministic output from released inputs"
+    ]
+  },
+  "analysis/post_hoc/clinical_2x2.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "3a82e68438f245017fe81db7cc8f736af169c7a3a9dc6a04833a650e1bf3f63b",
+    "distributed_bytes": 9666,
+    "transformed": true,
+    "transformations": [
+      "Portable release code or deterministic output from released inputs"
+    ]
+  },
+  "analysis/post_hoc/cap_matrix.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "86bb60bc58ca3e3ff3d9d4a25f4f1c9b5e9b144cf9ac65ef16bbd6e74f8fd0b7",
+    "distributed_bytes": 16121,
+    "transformed": true,
+    "transformations": [
+      "Portable release code or deterministic output from released inputs"
+    ]
+  },
+  "experiments/learned_graph_validation/artifacts/learned_cuda_summary.json": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "41d08b1a82909c1a4849063c5522a77dc622a9870f70eac46bc9203341593e3c",
+    "distributed_bytes": 53618,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; historical fingerprints preserved"
+    ]
+  },
+  "tests/test_release_1_3_1.py": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "816e2c1dab5a0d0d9b6cabc645cb8069edc869aebeb05cccf3716306c5822b92",
+    "distributed_bytes": 6405,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; original scientific evidence and fingerprints preserved"
+    ]
+  },
+  "docs/RELEASE_V1_3_1.md": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "2efb3425d9aa5069b8800c0118551e3a43740c6bab8e021f13d8472006e09327",
+    "distributed_bytes": 2512,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; original scientific evidence and fingerprints preserved"
+    ]
+  },
+  "analysis/post_hoc/README.md": {
+    "source_file": null,
+    "source_kind": "release_1_3_1_overlay",
+    "original_sha256": null,
+    "original_bytes": null,
+    "distributed_sha256": "b3355c99a8731a30be2eebacfce20efeb7c1c45f4a4ed346ad53b58d00c993b2",
+    "distributed_bytes": 4683,
+    "transformed": true,
+    "transformations": [
+      "Portable release adaptation; original scientific evidence and fingerprints preserved"
     ]
   }
 }
