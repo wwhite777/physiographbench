@@ -2,8 +2,10 @@
 
 # PhysioGraphBench: when do physiological graph priors help?
 
-**Version 1.3.1 — five-population regime replication, device-matched adjacency
-results and post-hoc companions ([release note](docs/RELEASE_V1_3_1.md)).**
+**Version 1.3.2 — release tests with automatic repository scratch fallback
+([release note](docs/RELEASE_V1_3_2.md)).**
+Version 1.3.1 added five-population regime replication, device-matched adjacency
+results and post-hoc companions ([release note](docs/RELEASE_V1_3_1.md)).
 Earlier [1.2.1](docs/RELEASE_V1_2_1.md) and [1.2.0](docs/RELEASE_V1_2_0.md)
 notes retain the E3 verifier correction and current-archive rerun provenance.
 The concept DOI is [10.5281/zenodo.23976171](https://doi.org/10.5281/zenodo.23976171);

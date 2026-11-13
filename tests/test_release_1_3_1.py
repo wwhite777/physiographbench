@@ -10,6 +10,7 @@ import unittest
 
 ROOT=Path(os.environ.get('PHYSIOGRAPH_ROOT',Path(__file__).absolute().parents[1]))
 sys.path.insert(0,str(ROOT))
+from release_paths import SCRATCH
 from release_1_3_1 import records
 
 def module(name,relative):
@@ -63,7 +64,7 @@ class Release131(unittest.TestCase):
 
     def test_missing_record_prevents_result_from_both_readers(self):
         for group,relative in [('s1','experiments/positive_control/read_s1.py'),('s3','experiments/learned_graph_validation/read_s3.py')]:
-            with self.subTest(group=group),tempfile.TemporaryDirectory(dir=os.environ['TMPDIR'],prefix='missing-') as folder:
+            with self.subTest(group=group),tempfile.TemporaryDirectory(dir=SCRATCH,prefix='missing-') as folder:
                 root=Path(folder);name=self.record_view(root,group)
                 self.assertTrue(records(group,root))
                 (root/name).unlink()
@@ -73,7 +74,7 @@ class Release131(unittest.TestCase):
 
     def test_changed_record_and_unlisted_duplicate_are_rejected(self):
         for group in ('s1','s3'):
-            with self.subTest(group=group),tempfile.TemporaryDirectory(dir=os.environ['TMPDIR'],prefix='changed-') as folder:
+            with self.subTest(group=group),tempfile.TemporaryDirectory(dir=SCRATCH,prefix='changed-') as folder:
                 root=Path(folder);name=self.record_view(root,group);path=root/name
                 original=path.readlink();path.unlink();path.write_text('{}\n')
                 with self.assertRaises(ValueError):records(group,root)
@@ -85,7 +86,7 @@ class Release131(unittest.TestCase):
         reader=module('post_hoc_control','analysis/post_hoc/read_post_hoc.py')
         index=json.loads((ROOT/'analysis/post_hoc/inputs.json').read_text())
         for mode,key in [('cap_matrix','cap/none/35'),('equal_organ','selected/none'),('clinical_2x2','clinical/partitioned_none'),('input_access','simulator/none'),('treatment','treatment/control_gru/0')]:
-            with self.subTest(mode=mode),tempfile.TemporaryDirectory(dir=os.environ['TMPDIR'],prefix='post-missing-') as folder:
+            with self.subTest(mode=mode),tempfile.TemporaryDirectory(dir=SCRATCH,prefix='post-missing-') as folder:
                 root=Path(folder)
                 required={'manifests/distribution.json','SHA256SUMS','analysis/post_hoc/inputs.json'}
                 required.update(loc.partition('#')[0] for paths in index.values() for loc in paths)

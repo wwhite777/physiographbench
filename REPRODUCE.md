@@ -1,4 +1,4 @@
-# Reproduce PhysioGraphBench v1.3.1 and its findings
+# Reproduce PhysioGraphBench v1.3.2 and its findings
 
 Run commands below from the repository root. The software is a benchmark and
 includes both supported findings and negative controls. No raw data, trained
@@ -474,6 +474,9 @@ saved-record checks above.
 
 
 ## Release 1.3.1: population replication and post-hoc companion
+
+Version 1.3.2 initializes repository scratch for the release tests below.
+They use `.scratch/` when `TMPDIR` is unset and respect a supplied `TMPDIR`.
 
 From the repository root, with the NumPy/SciPy environment in `requirements.txt`:
 
